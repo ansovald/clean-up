@@ -2,8 +2,7 @@ records/*
 *.ipynb
 .idea/*
 
-resources/icons/normal/*
-resources/icons/abstract/*
+resources/icons/*/  
 
 temp.ipynb
 temp.py

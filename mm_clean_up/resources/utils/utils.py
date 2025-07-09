@@ -1,5 +1,7 @@
 import json
 import os
+from typing import List
+from .types import Icon
 
 def load_or_create_json(filepath):
     if os.path.exists(filepath):
@@ -15,7 +17,7 @@ def load_or_create_json(filepath):
 
 def save_json(data, filepath):
     with open(filepath, "w") as f:
-        json.dump(data, f, indent=2)
+        json.dump(data, f, indent=4)
 
 """
 Adding a grandchild level key-value pair to the JSON file at filepath. 
@@ -43,14 +45,14 @@ Adding a grandchild level key-value pair to the JSON file at filepath.
     }
 }
 """
-def update_json_file(filepath, parent_key: str, new_items: dict):
+def update_metadata(filepath, noun: str, color: str, new_items: List[Icon]):
     data = load_or_create_json(filepath)
 
     # Ensure parent_key exists and is a dict
-    if parent_key not in data or not isinstance(data[parent_key], dict):
-        data[parent_key] = {}
+    if noun not in data or not isinstance(data[noun], dict):
+        data[noun] = {}
 
     # Update nested dict
-    data[parent_key].update(new_items)
+    data[noun].update({color: new_items})
 
     save_json(data, filepath)
