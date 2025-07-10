@@ -24,13 +24,29 @@ from resources.utils.constant import ICON_WIDTH
 from resources.utils.types import Icon, PositionedIcon
 
 
+# """
+# 6 variations of the game: 
+# - dimension 1: diff type of icons (normal, abstract, similar)
+#     * when normal, randomly select N normal category, from each category pick 1 icon
+#     * when similar, randomly select 1 normal category, from it select N icons
+#     * when abstract, randomly select 1 abstract category, from it select N icons
+# - dimension 2: diff number of icons (N = 5, 9)
+# """
+
 """
-6 variations of the game: 
-- dimension 1: diff type of icons (normal, abstract, similar)
-    * when normal, randomly select N normal category, from each category pick 1 icon
-    * when similar, randomly select 1 normal category, from it select N icons
-    * when abstract, randomly select 1 abstract category, from it select N icons
-- dimension 2: diff number of icons (N = 5, 9)
+Experiment Naming: {ICON_TYPE}_{ICON_NUM}_{LANGUAGE}
+
+More details on ICON_TYPE:
+    Models have 2 main dimensions to to describe and differentiate icons: (noun, color)
+    - in the 2D experiment, we keep both dimensions;
+    - in the 1D experiment, the noun is the same for all icons, and color is as close as possible, 
+                            models can only use variations in color and style;
+    - in the 0D experiment, both noun and color are the same for all icons, models can only use other minor details.
+
+    As shown in this schema:
+        2D:    (noun, color)   
+        1D:    (_,    color)      
+        0D:    (_,    _)          
 """
 
 # LANGUAGES = ['zh-CN', 'en', 'de']
@@ -57,7 +73,8 @@ from resources.utils.types import Icon, PositionedIcon
 #         }
 
 # -------- dev --------
-LANGUAGES = ['zh-CN', 'en', 'de']
+# LANGUAGES = ['zh-CN', 'en', 'de']
+LANGUAGES = ['de']
 N_INSTANCES = 1
 ICON_NUM_OPTIONS = [2]
 ICON_TYPE_CONFIGS = {

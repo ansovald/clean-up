@@ -9,6 +9,7 @@ from typing import Dict, List
 from string import Template
 
 from clemcore.backends import Model
+from clemcore.clemgame.recorder import GameRecorder
 from clemcore.clemgame import GameSpec, GameMaster, GameBenchmark, Player, DialogueGameMaster, GameScorer, ParseError, GameError, RuleViolationError
 from clemcore.clemgame.metrics import METRIC_ABORTED, METRIC_SUCCESS, METRIC_LOSE, BENCH_SCORE
 # from clemcore.utils import file_utils, string_utils
@@ -52,25 +53,26 @@ class Cleaner(Player):
             context['content'] = self._relay_message + context['content']
         # `image` in context is set by init message
         if 'image' in context:
-            self.log_image(context['image'])
-        # `image` in self._relay_image only log, don't send 
-        if self._relay_image:
-            self.log_image(self._relay_image)
+            log_image(self._game_recorder, context['image'], self, toPlayer=True)
         response = super().__call__(context, memorize=memorize)
         self._relay_message = ""
         self._relay_image = None
         return response
     
-    def log_image(self, image: str):
-        """
-        image: a list of image paths. Should have only one image.
-        """
-        assert self._game_recorder is not None, "Cannot log player event, because game_recorder has not been set"
-        assert len(image) == 1, "Image should be a list with one image path"
-        assert os.path.exists(image[0]), f"Image path {image[0]} does not exist"
-        content = png_to_base64(image[0])
-        action = {'type': 'send message', 'label': 'base64_image', 'content': content}
-        self._game_recorder.log_event(from_='GM', to=self.name, action=action)
+def log_image(game_recorder: GameRecorder, image: str, player , toPlayer=True):
+    """
+    image: a list of image paths. Should have only one image.
+    """
+    assert game_recorder is not None, "Cannot log player event, because game_recorder has not been set"
+    assert len(image) == 1, "Image should be a list with one image path"
+    assert os.path.exists(image[0]), f"Image path {image[0]} does not exist"
+    content = png_to_base64(image[0])
+    action = {
+                'type': 'send message' if toPlayer else f"{player.name}'s image after move", 
+                'label': 'base64_image', 
+                'content': content
+            }
+    game_recorder.log_event(from_='GM', to=player.name if toPlayer else "GM", action=action)
 
 
 
@@ -241,8 +243,9 @@ class MultimodalCleanUpMaster(DialogueGameMaster):
                 icon_element: FullPositionedIcon = player.pic_state.get_element_by_id(obj)
                 self.metric_preparer.add_move((player.name, icon_element))                
                 # log the move message to the player and add it to the message history (without response)
-                # self.log_to_self('valid move', message)
+                self.log_to_self('valid move', message)
                 player.store_relay_message(message, image=image)  
+                log_image(self._game_recorder, image, player,  toPlayer=False)
                 # turn is passed to the other player
                 next_player_prompt = self._penalty_counter_message()
                 next_player_prompt += self.game_instance["new_turn_move"]
