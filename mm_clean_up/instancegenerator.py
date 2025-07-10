@@ -49,26 +49,46 @@ More details on ICON_TYPE:
         0D:    (_,    _)          
 """
 
+"""
+Experiment Naming: 
+Models have 2 main dimensions to to describe and differentiate icons: (noun, color)
+in the 2D experiment, we keep both dimensions;
+in the 1D experiment, the noun is the same for all icons, models can only use variations in color and style;
+in the 0D experiment, both noun and color are the same for all icons, models can only use other minor details.
+    2D:    (noun, color)   
+    1D:    (_, color)      
+    0D:    (_, _)          
+"""
+
 # LANGUAGES = ['zh-CN', 'en', 'de']
 # N_INSTANCES = 3  # number of instances per experiment
 # ICON_NUM_OPTIONS = [5, 9]
 
-# # configurations for each icon type
-# ICON_TYPE_CONFIGS = {
-#             "normal": {
-#                 "category": "normal", 
-#                 "n_subcategories": "$$ICON_NUM$$",
-#                 "n_icons_per_subcategory": 1,
+# # configurations for each experiment type
+# CONFIGS = {
+#             "2D": {
+#                 # get randomly N nouns
+#                 # from each noun get 1 random non-black color
+#                 # from color folder get 1 random icon                
+#                 "n_nouns": "$$ICON_NUM$$", 
+#                 "colored": True,
+#                 "n_per_color": 1,
 #             }, 
-#             "similar": { 
-#                 "category": "normal", 
-#                 "n_subcategories": 1,
-#                 "n_icons_per_subcategory": "$$ICON_NUM$$",
+#             "1D": { 
+#                 # get randomly 1 nouns
+#                 # from each noun get 1 random non-black color
+#                 # from color folder get N random icon                        
+#                 "n_nouns": 1, 
+#                 "colored": True,
+#                 "n_per_color": "$$ICON_NUM$$",
 #             }, 
-#             "abstract": {
-#                 "category": "abstract",
-#                 "n_subcategories": 1,
-#                 "n_icons_per_subcategory": "$$ICON_NUM$$",
+#             "0D": {
+#                 # get randomly 1 nouns
+#                 # from each noun get black color
+#                 # from black color folder get N random icon                  
+#                 "n_nouns": 1,
+#                 "colored": False,
+#                 "n_per_color": "$$ICON_NUM$$",
 #             }   
 #         }
 
@@ -76,26 +96,33 @@ More details on ICON_TYPE:
 # LANGUAGES = ['zh-CN', 'en', 'de']
 LANGUAGES = ['de']
 N_INSTANCES = 1
-ICON_NUM_OPTIONS = [2]
-ICON_TYPE_CONFIGS = {
-            # "abstract": {
-            #     "category": "abstract",
-            #     "n_subcategories": 1,
-            #     "n_icons_per_subcategory": "$$ICON_NUM$$",
-            # }
-            "normal": {
-                "category": "normal", 
-                "n_subcategories": "$$ICON_NUM$$",
-                "n_icons_per_subcategory": 1,
+ICON_NUM_OPTIONS = [4]
+CONFIGS = {
+            "1D": { 
+                # get randomly 1 nouns
+                # from each noun get 1 random non-black color
+                # from color folder get N random icon                        
+                "n_nouns": 1, 
+                "colored": True,
+                "n_per_color": "$$ICON_NUM$$",
             }, 
+            "0D": {
+                # get randomly 1 nouns
+                # from each noun get black color
+                # from black color folder get N random icon                  
+                "n_nouns": 1,
+                "colored": False,
+                "n_per_color": "$$ICON_NUM$$",
+            }              
         }
 # ---------------------
 
 
 ICON_METADATA_PATH = "resources/icons/metadata.json"
+# ICON_METADATA_PATH = "resources/icons/metadata_old.json"
 
 # logger = logging.getLogger(__name__)
-num_instance = len(ICON_TYPE_CONFIGS) * len(ICON_NUM_OPTIONS) * N_INSTANCES * len(LANGUAGES) 
+num_instance = len(CONFIGS) * len(ICON_NUM_OPTIONS) * N_INSTANCES * len(LANGUAGES) 
 print(f"will generate in total {num_instance} instances")
 
 SEED = 73128361  # seed for reproducibility
@@ -115,11 +142,11 @@ class CleanUpMultiModalInstanceGenerator(GameInstanceGenerator):
         # 3. shuffle the selected icons twice,
         #    assemble two state per instance: [ { id, path, coord }, .. ]
 
-        for icon_type, icon_type_config in ICON_TYPE_CONFIGS.items():
+        for exp_type, exp_config in CONFIGS.items():
             for icon_num in ICON_NUM_OPTIONS:
-                config = copy.deepcopy(icon_type_config)
+                config = copy.deepcopy(exp_config)
                 config = {key: icon_num if val == "$$ICON_NUM$$" else val for key, val in config.items() }
-                e = f"{icon_type}_{icon_num}_{language}"
+                e = f"{exp_type}_{icon_num}_{language}"
                 
                 print(f"===== Adding experiment of type {e} =====")
                 print(config)
@@ -160,23 +187,33 @@ class CleanUpMultiModalInstanceGenerator(GameInstanceGenerator):
                     bg_img = Image.open(background_path)
                     bg_size = bg_img.size
 
-                    category = config["category"]
-                    n_subcategories = config["n_subcategories"]
-                    n_icons_per_subcategory = config["n_icons_per_subcategory"]
+                    n_nouns = config["n_nouns"]
+                    colored = config["colored"]
+                    n_per_color = config["n_per_color"]
 
                     metadata = self.load_json(ICON_METADATA_PATH)
+                    
+                    if colored: # sampling the nouns that has non-black colors
+                        noun_sample_base = [key for key in metadata.keys() if set(metadata[key].keys()) != set(['black'])]
+                    else:       # sampling the nouns that has black color
+                        noun_sample_base = [key for key in metadata.keys() if 'black' in metadata[key].keys()]
 
-                    assert n_subcategories <= len(metadata[category]), \
-                        f"n_subcategories ({n_subcategories}) must be less than or equal to the number of subcategories in {category} ({len(metadata[category])})"
+                    assert n_nouns <= len(noun_sample_base), \
+                        f"Not enough nouns in {ICON_METADATA_PATH}, only {len(noun_sample_base)} available, but n_nouns ({n_nouns}) is needed."
 
-                    subcategories = random.sample(list(metadata[category].keys()), n_subcategories)
+                    sampled_nouns = random.sample(noun_sample_base, n_nouns)
 
                     chosen_icons: List[Icon] = []
-                    for sub in subcategories:
-                        assert n_icons_per_subcategory <= len(metadata[category][sub]), \
-                            f"n_icons_per_subcategory ({n_icons_per_subcategory}) must be less than or equal to the number of icons in subcategory {sub} ({len(metadata[category][sub])})"
+                    for sampled_noun in sampled_nouns:
+                        if colored: 
+                            sampled_color = random.choice(list(set(metadata[sampled_noun].keys()) - set(['black'])))
+                        else: 
+                            sampled_color = 'black'
+
+                        assert n_per_color <= len(metadata[sampled_noun][sampled_color]), \
+                            f"n_per_color ({n_per_color}) must be less than or equal to the number of icons under {sampled_noun}-{sampled_color} combination ({len(metadata[sampled_noun][sampled_color])})"
                         
-                        for icon in random.sample(metadata[category][sub], n_icons_per_subcategory):
+                        for icon in random.sample(metadata[sampled_noun][sampled_color], n_per_color):
                             chosen_icons.append(icon)
                 
                     state1: List[PositionedIcon] = self._get_random_icon_state(chosen_icons, bg_size)
