@@ -1,6 +1,6 @@
 from typing import Dict, List, Tuple
 from statistics import harmonic_mean
-from math import prod
+import math
 from resources.utils.types import PositionedIcon, FullPositionedIcon
 
 # ingredients to compute sub-metrics 
@@ -137,38 +137,112 @@ class MetricCalculator:
             DISTANCE_SCORE: self.compute_distance_score,
             CONSISTENCY_SCORE: self.compute_consistency_score,
             COVERAGE_SCORE: self.compute_coverage_score
-        }        
+        }
+        
+        # these 3 functions follows (smaller ingredients -> higher score)
+        self.distance_score_func = None
+        self.consistency_score_func = None
+        self.penalty_score_func = None
+
+    @staticmethod
+    def function_factory(min_value, x_bad, y_bad): 
+        """
+        ========================================================
+        new idea: **dynamically create the scoring function**!!
+        ========================================================
+        Old problem:
+        - Had problem defining max_shift in consistency_score,
+        - also, the add-one smoothing means different scale when number of objects differs
+        - (text-only) scores are inflated
+        Let's make it generic:
+            we want a scoring function f that: 
+            f(min_value) = 1
+            f(x_bad) = y_bad, where x_bad is a bad enough ingredient(eg. a big end_distance_sum, #shifts, or #penalties), 
+                                and y_bad is a bad enough small score
+            assume the function f takes the format `y = base^{-(x-min_value)}`
+            then we just need to solve the equation `y_bad = base^{-(x_bad-min_value)}`
+            solving for base, we get `base = math.pow(1/y_bad, 1 / (x_bad - min_value))`
+            then we can get the return value by plugging in shifts to `y = base^{-(x-min_value)}`        
+        Now we can precisely control the behavior of the scoring function!! That is, 
+        if a scoring func is made with `scoring_func = function_factory(min_value, x_bad, y_bad)`, 
+        then it's guaranteed that 
+            scoring_func(min_value) = 1
+            scoring_func(x_bad) = y_bad
+            and scoring_func(x) always > 0 (because it's an exponential function)
+        """
+        base = math.pow(1/y_bad, 1 / (x_bad - min_value))
+        def scoring_func(x_input): 
+            if x_input <= min_value: 
+                return 1
+            return math.pow(base, -(x_input - min_value))
+        return scoring_func
 
     def compute_distance_score(self):
-        end_distance_sum = self.ingredients[END_DISTANCE_SUM]
-        init_distance_sum = self.ingredients[INIT_DISTANCE_SUM]
-        expected_distance_sum = self.ingredients[EXPECTED_DISTANCE_SUM]
+        # end_distance_sum = self.ingredients[END_DISTANCE_SUM]
+        # init_distance_sum = self.ingredients[INIT_DISTANCE_SUM]
+        # expected_distance_sum = self.ingredients[EXPECTED_DISTANCE_SUM]
 
-        if end_distance_sum > expected_distance_sum: 
-            # worse than random, absolutely bad, # distance_score is 0
-            # game is lost, bench_score is 0
-            return 0
+        # if end_distance_sum > expected_distance_sum: 
+        #     # worse than random, absolutely bad, # distance_score is 0
+        #     # game is lost, bench_score is 0
+        #     return 0
 
+        # # expected_distance_score = max(0, 1 - end_distance_sum / expected_distance_sum)
+        # # distance_reduction_score = max(0, 1 - end_distance_sum / init_distance_sum)
+
+        # # return (expected_distance_score + distance_reduction_score) / 2
         # expected_distance_score = max(0, 1 - end_distance_sum / expected_distance_sum)
-        # distance_reduction_score = max(0, 1 - end_distance_sum / init_distance_sum)
+        # return expected_distance_score        
+        end_distance_sum = self.ingredients[END_DISTANCE_SUM]
 
-        # return (expected_distance_score + distance_reduction_score) / 2
-        expected_distance_score = max(0, 1 - end_distance_sum / expected_distance_sum)
-        return expected_distance_score
+        if self.distance_score_func is None: 
+            expected_distance_sum = self.ingredients[EXPECTED_DISTANCE_SUM]
+            x_bad = expected_distance_sum
+            y_bad = 0.2 # an arbitrary number
+            self.distance_score_func = MetricCalculator.function_factory(0, x_bad, y_bad)
+
+        # now we have a softer score when end_distance_sum > expected_distance_sum,
+        # it's a small number rather than a hard line 0
+        return self.distance_score_func(end_distance_sum)
 
     def compute_consistency_score(self):
-        max_shifts = self.ingredients[MAX_SHIFTS]
+        # max_shifts = self.ingredients[MAX_SHIFTS]
+        # min_shifts = self.ingredients[MIN_SHIFTS]
+        # shifts = self.ingredients[SHIFTS]
+
+        # # when the players don't cover all the icons, return the best score 1
+        # # we will capture this error with another metric, Coverage Score
+        # if shifts < min_shifts: 
+        #     return 1
+
+        # # add-one smoothing
+        # normalized = (shifts - min_shifts) / (max_shifts + 1 - min_shifts)
+        # return 1 - normalized
         min_shifts = self.ingredients[MIN_SHIFTS]
         shifts = self.ingredients[SHIFTS]
 
-        # when the players don't cover all the icons, return the best score 1
-        # we will capture this error with another metric, Coverage Score
-        if shifts < min_shifts: 
-            return 1
+        if self.consistency_score_func is None: 
+            bad_enough_shifts = min_shifts * 2 # min_shifts * k, actually, k might need to be a function of #objects, too
+            bad_enough_score = 0.2
+            self.consistency_score_func = MetricCalculator.function_factory(min_shifts, bad_enough_shifts, bad_enough_score)
+        
+        return self.consistency_score_func(shifts)
 
-        # add-one smoothing
-        normalized = (shifts - min_shifts) / (max_shifts + 1 - min_shifts)
-        return 1 - normalized
+    def compute_penalty_score(self):     
+        # penalties = self.ingredients[PENALTIES]
+        # max_penalties = self.ingredients[MAX_PENALTIES]
+        # normalized = penalties / max_penalties
+        # return 1 - normalized  # we can use different function at this step
+        penalties = self.ingredients[PENALTIES]
+        max_penalties = self.ingredients[MAX_PENALTIES]
+
+        if self.penalty_score_func is None: 
+            bad_enough_penalties = max_penalties # this should probably also be a function of #objects
+            bad_enough_score = 0.1
+            self.penalty_score_func = MetricCalculator.function_factory(0, bad_enough_penalties, bad_enough_score)        
+
+        return self.penalty_score_func(penalties)
+    
     
     def compute_coverage_score(self):
         id_set = set([ele['freepik_id'] for ele in self.ingredients[INIT_STATES]['state1']])
@@ -184,13 +258,7 @@ class MetricCalculator:
         # add-one smoothing to avoid return 0
         coverage_per_player = [(len(moved_obj_set) + 1) / (len(id_set) + 1) for moved_obj_set in moved_obj_per_player]
         # return product(% of icons moved by each player)
-        return prod(coverage_per_player) # we can also plug it in a monotonously increasing function on (0, 1]
-
-    def compute_penalty_score(self):     
-        penalties = self.ingredients[PENALTIES]
-        max_penalties = self.ingredients[MAX_PENALTIES]
-        normalized = penalties / max_penalties
-        return 1 - normalized  # we can use different function at this step
+        return math.prod(coverage_per_player) # we can also plug it in a monotonously increasing function on (0, 1]
 
     def compute_metrics(self): 
         sub_metrics = {name: func() for name, func in self.sub_metric_funcs.items()}
