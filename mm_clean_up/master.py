@@ -322,7 +322,11 @@ class MultimodalCleanUpMaster(DialogueGameMaster):
             if key not in [MOVES, INIT_STATES, END_STATES]:
                 ingredients_string += f"* {key}: {float(val):.2f}\n"
 
-        lose = ingredients[END_DISTANCE_SUM] > ingredients[EXPECTED_DISTANCE_SUM]
+        lose = not self.success
+        if self.success:
+            # If the game is terminated successfully, we check whether 
+            # the end distance is greater than the expected distance
+            lose = ingredients[END_DISTANCE_SUM] > ingredients[EXPECTED_DISTANCE_SUM]
 
         self.log_key(METRIC_ABORTED, int(self.aborted))
         self.log_key(METRIC_LOSE, int(lose))

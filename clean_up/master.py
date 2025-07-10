@@ -10,7 +10,7 @@ from clemcore.clemgame import GameSpec, GameMaster, GameBenchmark, Player, Dialo
 from clemcore.clemgame.metrics import METRIC_ABORTED, METRIC_SUCCESS, METRIC_LOSE, BENCH_SCORE
 # from clemcore.utils import file_utils, string_utils
 from resources.grids.game_grid import GameGrid
-from resources.utils.metrics import MetricPreparer, MetricCalculator, END_DISTANCE_SUM, EXPECTED_DISTANCE_SUM, MOVES, INIT_STATES, END_STATES, ingredients_registry, sub_metrics_registry, validate
+from resources.utils.metrics import MetricPreparer, MetricCalculator, END_DISTANCE_SUM, EXPECTED_DISTANCE_SUM, MOVES, INIT_STATES, END_STATES, ingredients_registry, sub_metrics_registry #, validate
 
 logger = logging.getLogger(__name__)
 
@@ -126,6 +126,8 @@ class CleanUpMaster(DialogueGameMaster):
         self.log_to_self('player_response', response)
         # TODO: for now, we will just remove backticks and newlines
         response = response.replace('`', '').replace('\n', ' ').strip()
+        print(f"===== {player.name} =====")
+        print(response)
         move_matches = list(self.move_pattern.finditer(response))
         message_matches = list(self.message_pattern.finditer(response))
         if len(move_matches) + len(message_matches) > 1:
@@ -281,17 +283,21 @@ class CleanUpMaster(DialogueGameMaster):
 
     def _on_after_game(self):
         ingredients = self.metric_preparer.compute_ingredients()
-        validate(ingredients_registry, ingredients, self.__class__.__name__)
+        # validate(ingredients_registry, ingredients, self.__class__.__name__)
 
         ingredients_string = ""
-        for key, val in ingredients.items(): 
+        for key, val in ingredients.items():
             # log all the necessary metrics to `interaction.json`
             self.log_key(key, val)
             # not display some of the ingredients in transcript
             if key not in [MOVES, INIT_STATES, END_STATES]:
                 ingredients_string += f"* {key}: {float(val):.2f}\n"
 
-        lose = ingredients[END_DISTANCE_SUM] > ingredients[EXPECTED_DISTANCE_SUM]
+        lose = not self.success
+        if self.success:
+            # If the game is terminated successfully, we check whether 
+            # the end distance is greater than the expected distance
+            lose = ingredients[END_DISTANCE_SUM] > ingredients[EXPECTED_DISTANCE_SUM]
 
         self.log_key(METRIC_ABORTED, int(self.aborted))
         self.log_key(METRIC_LOSE, int(lose))
@@ -331,7 +337,7 @@ class CleanUpScorer(GameScorer):
     def compute_episode_scores(self, episode_interactions: Dict) -> float:
         """ Compute the episode score based on the ingredients logged in interactions """
         # reconstruct ingredients from episode_interactions
-        validate(ingredients_registry, episode_interactions, self.__class__.__name__)
+        # validate(ingredients_registry, episode_interactions, self.__class__.__name__)
 
         ingredients = {}
         for key in ingredients_registry:
@@ -339,7 +345,7 @@ class CleanUpScorer(GameScorer):
         
         metrics_calculator = MetricCalculator(ingredients)
         sub_metrics, bench_score = metrics_calculator.compute_metrics()        
-        validate(sub_metrics_registry, sub_metrics, self.__class__.__name__)
+        # validate(sub_metrics_registry, sub_metrics, self.__class__.__name__)
 
         # log sub-metrics
         for key in sub_metrics:

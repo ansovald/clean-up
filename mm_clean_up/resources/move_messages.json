@@ -1,12 +1,17 @@
 {
   "en": {
-    "successful": "Moved object '$object' to ($x,$y) successfully. Your updated image is attached.\n\n",
+    "successful": "Moved object '$object' to ($x,$y) successfully.\n\n",
     "out_of_bounds": "Invalid move: ($x,$y) is out of bounds. Please try again!\n\n",
     "obj_not_found": "Invalid move: Your image has no object with ID '$object'. Please try again!\n\n"
   },
   "zh-CN": {
-    "successful": "已成功将图标 '$object' 移动到 ($x,$y)。\n\n",
-    "out_of_bounds": "无效移动：($x,$y) 超出边界。请重试！\n\n",
-    "obj_not_found": "无效移动：你的图片中没有 ID 为 '$object' 的图标。请重试！\n\n"
+    "successful": "已成功将图标'$object'移动到 ($x,$y)。\n\n",
+    "out_of_bounds": "无效移动：($x,$y)超出边界。请重试！\n\n",
+    "obj_not_found": "无效移动：你的图片中没有ID为'$object'的图标。请重试！\n\n"
+  },
+  "de": {
+    "successful": "'$object' erfolgreich nach ($x,$y) verschoben.\n\n",
+    "out_of_bounds": "Ungültiger Zug: ($x,$y) liegt außerhalb des Bildes. Bitte versuche es erneut!\n\n",
+    "obj_not_found": "Ungültiger Zug: Dein Bild enhält kein Objekt mit der ID '$object'. Bitte versuche es erneut!\n\n"
   }
 }

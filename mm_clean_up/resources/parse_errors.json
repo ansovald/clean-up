@@ -12,5 +12,12 @@
     "restriction": "你的消息中有受限内容！",
     "invalid_format": "你的消息格式不符合要求！",
     "invalid_start": "你必须先向另一位玩家发送一条消息来开始游戏！"
+  },
+  "de": {
+    "head_tail": "Deine Nachricht darf nichts vor oder nach dem Befehl enthalten!",
+    "several_commands": "Deine Nachricht enthält mehr als einen Befehl!",
+    "restriction": "Deine Nachricht enthält regelwidrige Angaben!",
+    "invalid_format": "Deine Nachricht entspricht keinem gültigen Format!",
+    "invalid_start": "Du musst das Spiel beginnen, indem du eine Nachricht an den anderen Spieler sendest!"
   }
 }

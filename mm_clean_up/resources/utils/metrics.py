@@ -30,7 +30,7 @@ CONSISTENCY_SCORE = "Consistency Score"
 COVERAGE_SCORE = "Coverage Score"
 PENALTY_SCORE = "Penalty Score"
 sub_metrics_registry = [DISTANCE_SCORE, CONSISTENCY_SCORE, 
-                        COVERAGE_SCORE, PENALTY_SCORE]
+                        COVERAGE_SCORE]
 
 
 class MetricPreparer: 
@@ -136,8 +136,7 @@ class MetricCalculator:
         self.sub_metric_funcs = {
             DISTANCE_SCORE: self.compute_distance_score,
             CONSISTENCY_SCORE: self.compute_consistency_score,
-            COVERAGE_SCORE: self.compute_coverage_score,
-            PENALTY_SCORE: self.compute_penalty_score
+            COVERAGE_SCORE: self.compute_coverage_score
         }        
 
     def compute_distance_score(self):
@@ -190,7 +189,7 @@ class MetricCalculator:
     def compute_penalty_score(self):     
         penalties = self.ingredients[PENALTIES]
         max_penalties = self.ingredients[MAX_PENALTIES]
-        normalized = penalties / (max_penalties + 1)
+        normalized = penalties / max_penalties
         return 1 - normalized  # we can use different function at this step
 
     def compute_metrics(self): 
@@ -205,6 +204,11 @@ class MetricCalculator:
         if sub_metrics[DISTANCE_SCORE] == 0:
             bench_score = 0
 
-        bench_score = harmonic_mean(sub_metrics.values())
+        penalty_score = self.compute_penalty_score()
+
+        # Take the harmonic mean of the sub-metrics, and multiply by the penalty score
+        bench_score = harmonic_mean(sub_metrics.values()) * penalty_score
+
+        sub_metrics[PENALTY_SCORE] = penalty_score
 
         return sub_metrics, bench_score

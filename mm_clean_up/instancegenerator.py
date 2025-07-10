@@ -44,7 +44,7 @@ in the 0D experiment, both noun and color are the same for all icons, models can
     0D:    (_, _)          
 """
 
-# LANGUAGES = ['zh-CN', 'en']
+# LANGUAGES = ['zh-CN', 'en', 'de']
 # N_INSTANCES = 3  # number of instances per experiment
 # ICON_NUM_OPTIONS = [5, 9]
 
@@ -77,7 +77,7 @@ in the 0D experiment, both noun and color are the same for all icons, models can
 #         }
 
 # -------- dev --------
-LANGUAGES = ['zh-CN']
+LANGUAGES = ['zh-CN', 'en', 'de']
 N_INSTANCES = 1
 ICON_NUM_OPTIONS = [4]
 CONFIGS = {

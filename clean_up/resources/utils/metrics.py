@@ -1,3 +1,4 @@
+from re import sub
 from typing import Dict, List, Tuple
 from statistics import harmonic_mean
 from math import prod
@@ -30,12 +31,12 @@ CONSISTENCY_SCORE = "Consistency Score"
 COVERAGE_SCORE = "Coverage Score"
 PENALTY_SCORE = "Penalty Score"
 sub_metrics_registry = [DISTANCE_SCORE, CONSISTENCY_SCORE, 
-                        COVERAGE_SCORE, PENALTY_SCORE]
+                        COVERAGE_SCORE]
 
-def validate(key_registry, to_validate: Dict, classname: str): 
-    missing = [key for key in key_registry if key not in to_validate]
-    if missing:
-        raise ValueError(f"{classname}: Missing keys: {', '.join(missing)}")
+# def validate(key_registry, to_validate: Dict, classname: str): 
+#     missing = [key for key in key_registry if key not in to_validate]
+#     if missing:
+#         raise ValueError(f"{classname}: Missing keys: {', '.join(missing)}")
 
 class MetricPreparer: 
     def __init__(self, gm, player_1, player_2): 
@@ -64,7 +65,7 @@ class MetricPreparer:
             OBJECT_COUNT: len(player_1.grid.get_objects()),
         }
 
-        validate(ingredients_registry, self.ingredients, self.__class__.__name__)
+        # validate(ingredients_registry, self.ingredients, self.__class__.__name__)
                 
 
     def add_move(self, move_info: Tuple[str, str]): 
@@ -111,18 +112,17 @@ class MetricCalculator:
     This class centralizes the computation of all the sub-metrics, and the main metric.
     """
     def __init__(self, ingredients: Dict):
-        validate(ingredients_registry, ingredients, self.__class__.__name__)
+        # validate(ingredients_registry, ingredients, self.__class__.__name__)
 
         self.ingredients = ingredients
 
         self.sub_metric_funcs = {
             DISTANCE_SCORE: self.compute_distance_score,
             CONSISTENCY_SCORE: self.compute_consistency_score,
-            COVERAGE_SCORE: self.compute_coverage_score,
-            PENALTY_SCORE: self.compute_penalty_score
-        }    
+            COVERAGE_SCORE: self.compute_coverage_score
+        }
 
-        validate(sub_metrics_registry, self.sub_metric_funcs, self.__class__.__name__)    
+        # validate(sub_metrics_registry, self.sub_metric_funcs, self.__class__.__name__)    
 
     def compute_distance_score(self):
         end_distance_sum = self.ingredients[END_DISTANCE_SUM]
@@ -169,22 +169,27 @@ class MetricCalculator:
         # return product(% of icons moved by each player)
         return prod(coverage_per_player) # we can also plug it in a monotonously increasing function on (0, 1]
 
-    def compute_penalty_score(self):     
+    def compute_penalty_score(self):  
         penalties = self.ingredients[PENALTIES]
         max_penalties = self.ingredients[MAX_PENALTIES]
-        normalized = penalties / (max_penalties + 1)
+        normalized = penalties / max_penalties
         return 1 - normalized  # we can use different function at this step
 
     def compute_metrics(self): 
         sub_metrics = {name: func() for name, func in self.sub_metric_funcs.items()}
 
-        validate(sub_metrics_registry, sub_metrics, self.__class__.__name__)
+        # validate(sub_metrics_registry, sub_metrics, self.__class__.__name__)
             
         # DISTANCE_SCORE is the only sub-metric that can be 0
         # when it's 0, game is lost, bench_score is 0
         if sub_metrics[DISTANCE_SCORE] == 0:
             bench_score = 0
 
-        bench_score = harmonic_mean(sub_metrics.values())
+        penalty_score = self.compute_penalty_score()
+
+        # Take the harmonic mean of the sub-metrics, and multiply by the penalty score
+        bench_score = harmonic_mean(sub_metrics.values()) * penalty_score
+
+        sub_metrics[PENALTY_SCORE] = penalty_score
 
         return sub_metrics, bench_score
