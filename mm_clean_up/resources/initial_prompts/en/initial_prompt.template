@@ -6,48 +6,60 @@ Attached is an image consisting of two parts:
 
 You are playing a collaborative game with another player based on your image. The other player sees a variation of the image, where the IDs are shuffled and the icons are overlaid on the background at different coordinates. The goal of the game is for both players to move the icons on their own images so that identical icons end up at the same coordinates. You have to communicate with the other player to agree upon a common goal state.
 
-**Rules:**
+
+**Rules**
 
 * In each turn, you can send exactly one command. Valid commands are:
-    * Send a message to the other player: `$say`
-    * Move an icon with id <ID> to a new position: `$move`, where `<X>` and `<Y>` are coordinates as shown in the image. You will **not** receive visual feedback. The other player can't see your move commands.
+    * `$say`: to send a message to the other player: 
+    * `$move`: to move the icon with id `<ID>` to the coordinates `(<X>,<y>)`. You will **not** receive visual feedback. The other player can't see your move commands.
     * You must not use coordinates when communicating with the other player.
 * Strictly follow the format without adding anything else. No thinking process, no extra formatting, no backticks.
 
+
 **Communication Guidelines**
 
-1. Agree on which icon to move. You cannot instruct the other player to focus on an icon with just its ID, because the icons have different IDs for each player. Instead, describe the icon and agree on it.
+First of all, agree on which icon to move. You cannot instruct the other player to focus on an icon with just its ID, because the icons have different IDs for each player. Instead, describe the icon and agree on it.
 
-```
-# Wrong example
-# icon D could be different icons for you and the other player
-$say_describe_icon_wrong
+* Wrong example:
+    
+    ```
+    $say_describe_icon_wrong
+    ```
 
-# Correct example
-# suppose you describe an icon with $icon_description
-$say_describe_icon_right
+    ID 'D' could reference different icons for you and the other player!
 
-# If the other player agrees, move on to choose and agree on a target location
-```
+* Correct example:
+    Suppose `$icon_description` matches one of your icons. Then you could send a message like this:
+    
+    ```
+    $say_describe_icon_right
+    ```
 
-2. Agree on the target location. You must not instruct the other player using coordinates. Instead, describe the target location using the background image as reference, agree on it, then formulate the `$move` command with the coordinates of the target location.
+    If the other player agrees, move on to choose and agree on a target location
 
-```
-# Wrong example
-$say_describe_location_wrong
+Following that, you can agree on the target location. You must not instruct the other player using coordinates. Instead, describe the target location using the background image as reference, agree on it, then formulate the `$move` command with the coordinates of the target location.
 
-# Correct example
-# suppose you describe the target location with $target_location_description using objects in the background image as reference
-$say_describe_location_right
+* Wrong example
 
-# If the other player agrees, 
-# and if the icon that suits $icon_description has ID <ID> for you
-# and if the location at $target_location_description is at coordinates (<X>, <Y>)
-# then you send the `move` command 
-$move
-```
+    ```
+    $say_describe_location_wrong
+    ```
+
+    If you use coordinates or numbers in your message, you both get penalized.
+
+* Correct example
+
+    Suppose you describe the target location with `$target_location_description` using objects in the background image as reference. Then you could send a message like this:
+    
+    ```
+    $say_describe_location_right
+    ```
+
+    If the other player agrees, and if the icon that suits `$icon_description` has ID `<ID>` for you, and if the location at `$target_location_description` is at coordinates `(<X>, <Y>)` then you move the object using the command `$move`
+
 
 **End of Game** 
+
 If you think you reached the goal of aligning all icons, you can ask the other player to finish the game by sending `$end_1`. If the other player asks you to finish the game, and you reply `$end_2`, the game will end.
 
 Both players win if the game ends within $max_rounds rounds, where one round is defined as two players each sending a valid command.

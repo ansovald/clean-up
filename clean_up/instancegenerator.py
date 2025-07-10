@@ -18,41 +18,53 @@ logger = logging.getLogger(__name__)
 # Seed for reproducibility
 SEED = 73128361
 
-N_INSTANCES = 1
-LANGUAGES = ['en', 'zh-CN', 'de'] # maybe adding Traditional Chinese as well? 'zh-TW'
+# N_INSTANCES = 3
+# LANGUAGES = ['en', 'zh-CN', 'de'] # maybe adding Traditional Chinese as well? 'zh-TW'
 
+# experiments = [
+#     {
+#         'name': 'gs7x7_obj3',
+#         'grid_file': 'resources/grids/gs7x7_b2.json',
+#         'objects': 'CLP'
+#     },
+#     {
+#         'name': 'gs7x7_obj4',
+#         'grid_file': 'resources/grids/gs7x7_b2.json',
+#         'objects': 'DUMB'
+#     },
+#     {
+#         'name': 'gs9x9_obj4',
+#         'grid_file': 'resources/grids/gs9x9_b3.json',
+#         'objects': 'DUMB'
+#     },
+#     {
+#         'name': 'gs9x9_obj5',
+#         'grid_file': 'resources/grids/gs9x9_b3.json',
+#         'objects': 'CHITW'
+#     },
+#     {
+#         'name': 'gs11x11_obj5',
+#         'grid_file': 'resources/grids/gs11x11_b7.json',
+#         'objects': 'CHITW'
+#     },
+#     {
+#         'name': 'gs11x11_obj7',
+#         'grid_file': 'resources/grids/gs11x11_b7.json',
+#         'objects': 'POTSDAM'
+#     }
+# ]
+
+# -------- dev --------
+LANGUAGES = ['de', 'zh-CN', 'en']
+N_INSTANCES = 1
 experiments = [
     {
         'name': 'gs7x7_obj3',
         'grid_file': 'resources/grids/gs7x7_b2.json',
         'objects': 'CLP'
-    },
-    {
-        'name': 'gs7x7_obj4',
-        'grid_file': 'resources/grids/gs7x7_b2.json',
-        'objects': 'DUMB'
-    },
-    {
-        'name': 'gs9x9_obj4',
-        'grid_file': 'resources/grids/gs9x9_b3.json',
-        'objects': 'DUMB'
-    },
-    {
-        'name': 'gs9x9_obj5',
-        'grid_file': 'resources/grids/gs9x9_b3.json',
-        'objects': 'CHITW'
-    },
-    {
-        'name': 'gs11x11_obj5',
-        'grid_file': 'resources/grids/gs11x11_b7.json',
-        'objects': 'CHITW'
-    },
-    {
-        'name': 'gs11x11_obj7',
-        'grid_file': 'resources/grids/gs11x11_b7.json',
-        'objects': 'POTSDAM'
     }
 ]
+# ---------------------
 
 class CleanUpInstanceGenerator(GameInstanceGenerator):
     def __init__(self):

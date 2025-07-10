@@ -20,7 +20,19 @@
     "say_describe_icon_right": "say(我们来移动那个 <图标描述> 图标吧！)",
     "say_describe_location_wrong": "say(我们把 <图标描述> 图标移动到坐标 (800, 100) 吧！)",
     "say_describe_location_right": "say(我们把 <图标描述> 图标移动到 <目标位置描述> 吧！)",
-    "end_1": "发送(结束了？)",
+    "end_1": "发送(结束了吗？)",
     "end_2": "发送(结束了！)"
+  },
+  "de": {
+    "say": "sprich(<NACHRICHT>)",
+    "move": "verschiebe(<OBJECT>,<X>,<Y>)",
+    "icon_description": "<OBJEKTBESCHREIBUNG>",
+    "target_location_description": "<BESCHREIBUNG_ZIELPOSITION>",
+    "say_describe_icon_wrong": "sprich(Lass uns das Objekt D verschieben!)",
+    "say_describe_icon_right": "sprich(Lass uns <OBJEKTBESCHREIBUNG> verschieben!)",
+    "say_describe_location_wrong": "sprich(Lass uns <OBJEKTBESCHREIBUNG> nach (800, 100) bewegen!)",
+    "say_describe_location_right": "sprich(Lass uns <OBJEKTBESCHREIBUNG> nach <BESCHREIBUNG_ZIELPOSITION> verschieben!)",
+    "end_1": "sprich(fertig?)",
+    "end_2": "sprich(fertig!)"
   }
 }

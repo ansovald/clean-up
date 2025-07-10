@@ -11,7 +11,7 @@ You have to communicate with the other player to agree upon a common goal state.
 
 * In each turn, you can send exactly one of the following two commands:
     * `$say`: to send a message to the other player
-    * Move an object to a new position: `$move`
+    * `$move`: to move an object to a new position
   * If you use any other format, or send several commands at once, you will be penalized!
   * If both players accumulate more than $max_penalties penalties, you lose the game.
 

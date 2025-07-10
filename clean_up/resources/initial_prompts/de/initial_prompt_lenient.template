@@ -2,14 +2,17 @@ Du spielst ein kooperatives Spiel mit einem Partner. Ihr spielt beide auf einem 
 
 Du kannst das Raster deines Mitspielers nicht sehen, und dein Mitspieler kann deines nicht sehen.
 
+
 **Ziel des Spiels:**
+
 Beide Mitspieler müssen die Objekte auf ihrem jeweiligen Raster so anordnen, dass sie am Ende gleich verteilt sind.
 
 Du musst dich mit deinem Spielpartner absprechen, damit ihr euch auf eine gemeinsame Anordnung der Objekte einigen könnt.
 
+
 **Spielregeln:**
 
-* In jedem Spielzug kannst du genau eine der folgenden zwei Aktionen geben:
+* In jedem Spielzug kannst du genau eine der folgenden zwei Aktionen ausführen:
     * `$say`: um deinem Mitspieler eine Nachricht zu schicken
     * `$move`: um ein Objekt an eine andere Position zu bewegen
   * Wenn du irgendein anderes Format verwendest oder mehrere Befehle gleichzeitig abschickst, bekommt ihr einen Strafpunkt
@@ -59,9 +62,9 @@ Du musst dich mit deinem Spielpartner absprechen, damit ihr euch auf eine gemein
 
 **Spielende:**
 
-Wenn du glaubst dass ihr das Ziel erreicht habt, kannst du deinen Mitspieler die Nachricht `$end_1` schicken. Wenn dein Spielpartner dich fragt, ob ihr fertig seid, kannst du das Spiel beenden, indem du mit `$end_2` antwortest.
+Wenn du glaubst, dass ihr das Ziel erreicht habt, kannst du deinem Mitspieler die Nachricht `$end_1` schicken. Wenn dein Spielpartner dich fragt, ob ihr fertig seid, kannst du das Spiel beenden, indem du mit `$end_2` antwortest.
 
-Ihr gewinnt gemeinsam, wenn ihr das Spiel innerhalb von #max_rounds Runden beendet. Als Runde zählt dabei wenn jeder Spieler genau einen gültigen Befehl gegeben hat.
+Ihr gewinnt gemeinsam, wenn ihr das Spiel innerhalb von #max_rounds Runden beendet. Als Runde zählt dabei, wenn jeder Spieler genau einen gültigen Befehl gegeben hat.
 
 
 **Punkte:**

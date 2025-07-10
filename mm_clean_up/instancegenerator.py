@@ -33,41 +33,46 @@ from resources.utils.types import Icon, PositionedIcon
 - dimension 2: diff number of icons (N = 5, 9)
 """
 
-LANGUAGES = ['zh-CN', 'en']
-N_INSTANCES = 3  # number of instances per experiment
-ICON_NUM_OPTIONS = [5, 9]
+# LANGUAGES = ['zh-CN', 'en', 'de']
+# N_INSTANCES = 3  # number of instances per experiment
+# ICON_NUM_OPTIONS = [5, 9]
 
-# configurations for each icon type
-ICON_TYPE_CONFIGS = {
-            "normal": {
-                "category": "normal", 
-                "n_subcategories": "$$ICON_NUM$$",
-                "n_icons_per_subcategory": 1,
-            }, 
-            "similar": { 
-                "category": "normal", 
-                "n_subcategories": 1,
-                "n_icons_per_subcategory": "$$ICON_NUM$$",
-            }, 
-            "abstract": {
-                "category": "abstract",
-                "n_subcategories": 1,
-                "n_icons_per_subcategory": "$$ICON_NUM$$",
-            }   
-        }
-
-# # -------- dev --------
-# LANGUAGES = ['zh-CN']
-# N_INSTANCES = 1
-# ICON_NUM_OPTIONS = [2]
+# # configurations for each icon type
 # ICON_TYPE_CONFIGS = {
+#             "normal": {
+#                 "category": "normal", 
+#                 "n_subcategories": "$$ICON_NUM$$",
+#                 "n_icons_per_subcategory": 1,
+#             }, 
+#             "similar": { 
+#                 "category": "normal", 
+#                 "n_subcategories": 1,
+#                 "n_icons_per_subcategory": "$$ICON_NUM$$",
+#             }, 
 #             "abstract": {
 #                 "category": "abstract",
 #                 "n_subcategories": 1,
 #                 "n_icons_per_subcategory": "$$ICON_NUM$$",
 #             }   
 #         }
-# # ---------------------
+
+# -------- dev --------
+LANGUAGES = ['zh-CN', 'en', 'de']
+N_INSTANCES = 1
+ICON_NUM_OPTIONS = [2]
+ICON_TYPE_CONFIGS = {
+            # "abstract": {
+            #     "category": "abstract",
+            #     "n_subcategories": 1,
+            #     "n_icons_per_subcategory": "$$ICON_NUM$$",
+            # }
+            "normal": {
+                "category": "normal", 
+                "n_subcategories": "$$ICON_NUM$$",
+                "n_icons_per_subcategory": 1,
+            }, 
+        }
+# ---------------------
 
 
 ICON_METADATA_PATH = "resources/icons/metadata.json"
