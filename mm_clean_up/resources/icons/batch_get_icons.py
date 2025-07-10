@@ -70,7 +70,7 @@ terms = [
         # "donut",           # no icons in any color
         # "cookie",          # no icons in any color
         # "muffin",          # no icons in any color
-        # ---------- 10 household items ----------
+        # ----------many household items ----------
         # "coin",
         # "camera",
         # "shopping bag",
@@ -112,7 +112,7 @@ terms = [
         # "calculator",
         # "ID card",
         # "credit card",
-        "lock",
+        # "lock",
         # "car key",         # no icons in any color
         # "lighter",         # no icons in any color
         # "water jug",       # no icons in any color
