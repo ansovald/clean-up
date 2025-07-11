@@ -118,8 +118,10 @@ class PicState:
             filename = f'tmp/{self.img_prefix}pic_state_{self.image_counter}.png'
             self.image_counter += 1
             plt.savefig(filename, bbox_inches='tight', dpi=100)  
+            plt.close(fig)
             return [filename]
         else:
+            plt.close(fig)
             raise ValueError("img_prefix is not set. Cannot save image without a prefix.")
     
     def move_abs(self, obj, x, y):
