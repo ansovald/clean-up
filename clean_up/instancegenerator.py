@@ -6,6 +6,7 @@ Creates instance.json file in ./in
 
 """
 import os
+from pickle import OBJ
 import random
 import logging
 
@@ -18,53 +19,76 @@ logger = logging.getLogger(__name__)
 # Seed for reproducibility
 SEED = 73128361
 
-# N_INSTANCES = 3
-# LANGUAGES = ['en', 'zh-CN', 'de'] # maybe adding Traditional Chinese as well? 'zh-TW'
+N_INSTANCES = 2
+LANGUAGES = ['en'] #, 'zh-CN', 'de'] # maybe adding Traditional Chinese as well? 'zh-TW'
 
+experiments = [
+    # {
+    #     'name': 'gs7x7_b7_obj3',
+    #     'grid_file': 'resources/grids/gs7x7_b7.json',
+    #     'objects': 3
+    # },
+    # {
+    #     'name': 'gs9x9_b6_obj5',
+    #     'grid_file': 'resources/grids/gs9x9_b6.json',
+    #     'objects': 5
+    # },
+    # {
+    #     'name': 'gs9x9_b6_obj7',
+    #     'grid_file': 'resources/grids/gs9x9_b6.json',
+    #     'objects': 7
+    # },
+    # {
+    #     'name': 'gs11x11_b9_obj7',
+    #     'grid_file': 'resources/grids/gs11x11_b9.json',
+    #     'objects': 7
+    # },
+    {
+        'name': 'gs11x11_b11_obj7',
+        'grid_file': 'resources/grids/gs11x11_b7.json',
+        'objects': 7
+    },
+    # {
+    #     'name': 'gs11x16_b13_obj7',
+    #     'grid_file': 'resources/grids/gs11x16_b10.json',
+    #     'objects': 7
+    # },
+    {
+        'name': 'gs11x16_b13_obj9',
+        'grid_file': 'resources/grids/gs11x16_b13.json',
+        'objects': 9
+    },
+    # {
+    #     'name': 'gs11x21_b15_obj9',
+    #     'grid_file': 'resources/grids/gs11x21_b15.json',
+    #     'objects': 9
+    # },
+    {
+        'name': 'gs11x21_b15_obj11',
+        'grid_file': 'resources/grids/gs11x21_b15.json',
+        'objects': 11
+    },
+]
+
+objects_by_number = {
+     3: 'CLP',
+     5: 'WITCH',
+     7: 'POTSDAM',
+     9: 'APHRODITE',
+    11: 'MAGICREDFOX'
+}
+
+# # -------- dev --------
+# LANGUAGES = ['de', 'zh-CN', 'en']
+# N_INSTANCES = 1
 # experiments = [
 #     {
 #         'name': 'gs7x7_obj3',
 #         'grid_file': 'resources/grids/gs7x7_b2.json',
 #         'objects': 'CLP'
-#     },
-#     {
-#         'name': 'gs7x7_obj4',
-#         'grid_file': 'resources/grids/gs7x7_b2.json',
-#         'objects': 'DUMB'
-#     },
-#     {
-#         'name': 'gs9x9_obj4',
-#         'grid_file': 'resources/grids/gs9x9_b3.json',
-#         'objects': 'DUMB'
-#     },
-#     {
-#         'name': 'gs9x9_obj5',
-#         'grid_file': 'resources/grids/gs9x9_b3.json',
-#         'objects': 'CHITW'
-#     },
-#     {
-#         'name': 'gs11x11_obj5',
-#         'grid_file': 'resources/grids/gs11x11_b7.json',
-#         'objects': 'CHITW'
-#     },
-#     {
-#         'name': 'gs11x11_obj7',
-#         'grid_file': 'resources/grids/gs11x11_b7.json',
-#         'objects': 'POTSDAM'
 #     }
 # ]
-
-# -------- dev --------
-LANGUAGES = ['de', 'zh-CN', 'en']
-N_INSTANCES = 1
-experiments = [
-    {
-        'name': 'gs7x7_obj3',
-        'grid_file': 'resources/grids/gs7x7_b2.json',
-        'objects': 'CLP'
-    }
-]
-# ---------------------
+# # ---------------------
 
 class CleanUpInstanceGenerator(GameInstanceGenerator):
     def __init__(self):
@@ -76,7 +100,7 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
             for instance_id in range(N_INSTANCES):
                 grid1, grid2 = GameGrid.pair_from_json(experiment_conf['grid_file'])
                 show_coords = True
-                objects = experiment_conf['objects']
+                objects = objects_by_number[experiment_conf['objects']]
                 # Allow one penalty per object per player
                 max_penalties = len(objects) * 2
                 max_rounds = len(objects) * 4
@@ -109,8 +133,8 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
                 game_instance['message_relay'] = self.load_template(f'resources/intermittent_prompts/{language}/message_relay')
 
                 keywords = self.load_json('resources/keywords.json')[language]
-                game_instance['move_pattern'] = f"(?P<head>.*){keywords['move_command']}\((?P<obj>[A-Z]), *(?P<x>\d+), *(?P<y>\d+)\)(?P<tail>.*)"
-                game_instance['message_pattern'] = f"(?P<head>.*){keywords['message_command']}\((?P<message>[^)]+)\)(?P<tail>.*)"
+                game_instance['move_pattern'] = f"(?P<head>.*){keywords['move_command']}: (?P<obj>[^,]+), *(?P<x>\d+), *(?P<y>\d+)(?P<tail>.*)"
+                game_instance['message_pattern'] = f"(?P<head>.*){keywords['message_command']}: (?P<message>.+)"
                 game_instance['terminate_question'] = keywords['terminate_question']    # 'finished?'
                 game_instance['terminate_answer'] = keywords['terminate_answer']        # 'finished!'
                 game_instance['restricted'] = self.load_json('resources/restricted_patterns.json')[language]
@@ -124,7 +148,7 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
         :param grid: The game grid
         :return: The initial prompt string
         """
-        initial_prompt = Template(self.load_template(f'resources/initial_prompts/{language}/initial_prompt_lenient'))
+        initial_prompt = Template(self.load_template(f'resources/initial_prompts/{language}/initial_prompt_unrestricted'))
         commands = self.load_json(f'resources/commands.json')[language]
         restricted_literals = self.load_json(f'resources/restricted_literals.json')[language]
         return initial_prompt.substitute(

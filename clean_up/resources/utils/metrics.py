@@ -30,6 +30,7 @@ DISTANCE_SCORE = "Distance Score"
 CONSISTENCY_SCORE = "Consistency Score"
 COVERAGE_SCORE = "Coverage Score"
 PENALTY_SCORE = "Penalty Score"
+ALT_MAIN_SCORE = "Alternative Main Score"
 sub_metrics_registry = [DISTANCE_SCORE, CONSISTENCY_SCORE, 
                         COVERAGE_SCORE]
 
@@ -191,5 +192,6 @@ class MetricCalculator:
         bench_score = harmonic_mean(sub_metrics.values()) * penalty_score
 
         sub_metrics[PENALTY_SCORE] = penalty_score
+        sub_metrics[ALT_MAIN_SCORE] = sub_metrics[DISTANCE_SCORE] * penalty_score
 
         return sub_metrics, bench_score

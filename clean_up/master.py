@@ -1,9 +1,12 @@
+from ast import parse
 import re
 import logging
 import os.path
 from typing import Dict, List, Tuple
 import numpy as np
 from string import Template
+import time
+import random
 
 from clemcore.backends import Model
 from clemcore.clemgame import GameSpec, GameMaster, GameBenchmark, Player, DialogueGameMaster, GameScorer, ParseError, GameError, RuleViolationError
@@ -21,14 +24,14 @@ class Cleaner(Player):
     def __init__(self, model: Model):
         super().__init__(model)
         self._custom_responses = [
-            "say(Put C in the first row and eigth column.)",
-            "move(C,1,1)",
-            "say(Let's move C to the top left corner.)",
+            "SAY: Put C in the first row and eigth column.",
+            "MOVE: C, 1, 1",
+            "SAY: Let's move C to the top left corner.",
             "I'm ready to go! Let's start by agreeing on a common goal state. I suggest we move all objects to the top-left corner in a specific order. Let's start by moving 'C' to the top-left corner. `move(C, 5, 5)`",
-            "Let's gooo! `say(You are the best cleaner ever!)`",
-            "move(C, 1, 1",
-            "say(Move C to (1, 1).)",
-            "move(C, 1, 1) say(I did it! C is now in the top-left corner.)",
+            "Let's gooo! SAY: You are the best cleaner ever!",
+            "MOVE C, 1, 1",
+            "SAY: Move C to (1, 1).",
+            "MOVE: C, 1, 1\nSAY: I did it! C is now in the top-left corner.",
             "haha, I love cleaning!",
             ]
         self.grid = None  # This will be set in the game master
@@ -60,6 +63,7 @@ class CleanUpMaster(DialogueGameMaster):
     """
     def __init__(self, game_name: str, game_path: str, experiment: Dict, player_models: List[Model]):
         super().__init__(game_name, game_path, experiment, player_models)
+        print(f"\n\nRunning game instance: {game_name}, {experiment}")
 
     def _on_setup(self, **game_instance):
         self.game_instance = game_instance
@@ -126,8 +130,6 @@ class CleanUpMaster(DialogueGameMaster):
         self.log_to_self('player_response', response)
         # TODO: for now, we will just remove backticks and newlines
         response = response.replace('`', '').replace('\n', ' ').strip()
-        print(f"===== {player.name} =====")
-        print(response)
         move_matches = list(self.move_pattern.finditer(response))
         message_matches = list(self.message_pattern.finditer(response))
         if len(move_matches) + len(message_matches) > 1:
@@ -157,13 +159,13 @@ class CleanUpMaster(DialogueGameMaster):
                 self.success = True
                 self.terminate = True
                 self.log_to_self('success', 'true')
-            else:
-                for restricted_pattern in self.restricted:
-                    restricted_match = restricted_pattern.search(message_match.group('message'))
-                    if restricted_match:
-                        self.log_to_self('rule_violation', f"Response violates restriction: {restricted_pattern}")
-                        logger.warning(f"Response '{response}' violates restriction: {restricted_pattern}")
-                        raise ParseError(reason=self.game_instance["parse_errors"]["restriction"], response=response)
+            # else:
+            #     for restricted_pattern in self.restricted:
+            #         restricted_match = restricted_pattern.search(message_match.group('message'))
+            #         if restricted_match:
+            #             self.log_to_self('rule_violation', f"Response violates restriction: {restricted_pattern}")
+            #             logger.warning(f"Response '{response}' violates restriction: {restricted_pattern}")
+            #             raise ParseError(reason=self.game_instance["parse_errors"]["restriction"], response=response)
             return response
         else:
             self.log_to_self('parse_error', f"Invalid response format")
@@ -190,7 +192,7 @@ class CleanUpMaster(DialogueGameMaster):
         """
         Check if the player should pass their turn.
         """
-        # time.sleep(3)
+        time.sleep(random.uniform(1, 2))
         return self.pass_turn
 
     def _start_next_round(self) -> bool:
@@ -308,6 +310,7 @@ class CleanUpMaster(DialogueGameMaster):
         self.log_to_self('grids', f"Player 1 grid:\n```\n{self.player_1.grid.__str__(show_coords=self.game_instance['show_coords'])}\n```\nPlayer 2 grid:\n```\n{self.player_2.grid.__str__(show_coords=self.game_instance['show_coords'])}```")
 
         self.log_to_self('game_finished', f"* success: {self.success}\n* lose: {lose}\n* aborted: {self.aborted}\n-------\n{ingredients_string}")            
+
         
         # ----------------------------------------------------------
         # dev: also compute sub-metrics and bench score to show on transcript
@@ -321,6 +324,11 @@ class CleanUpMaster(DialogueGameMaster):
             sub_metrics_string += f"* {key}: {float(val):.2f}\n"    
 
         self.log_to_self('dev:game_finished', f"{bench_score_string}\n-------\n{sub_metrics_string}")
+        # print the sub-metrics and bench score to the console
+        print(bench_score_string)
+        print(f"Sub-metrics:")
+        for key, val in sub_metrics.items():
+            print(f"{key}: {val:.2f}")
         # ----------------------------------------------------------
 
 class CleanUpScorer(GameScorer):
@@ -351,6 +359,14 @@ class CleanUpScorer(GameScorer):
         for key in sub_metrics:
             self.log_episode_score(key, sub_metrics[key])
 
+        alt_main_score = sub_metrics.get('ALT_MAIN_SCORE', None)
+        if alt_main_score is not None:
+            # log the alternative main score
+            self.log_episode_score('ALT_MAIN_SCORE', alt_main_score)
+            # use the alternative main score as the main score
+            bench_score = alt_main_score
+        else:
+            self.log_episode_score('ALT_MAIN_SCORE', np.nan)
         # log the bench score
         if episode_interactions[METRIC_SUCCESS]:
             # the case when game is LOSE is taken care of by MetricCalculator

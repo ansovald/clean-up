@@ -1,12 +1,12 @@
 {
   "en": {
-    "say": "say(<MESSAGE>)",
-    "move": "move(<OBJECT>,<X>,<Y>)",
-    "say_example": "say(Let's move 'W' to the lower right corner. Do you agree?)",
-    "move_example_1": "move(C,1,1)",
-    "move_example_2": "move(C,2,1)",
-    "end_1": "say(finished?)",
-    "end_2": "say(finished!)"
+    "say": "SAY: <MESSAGE>",
+    "move": "MOVE: <OBJECT>, <X>, <Y>",
+    "say_example": "SAY: Let's move 'W' to the lower right corner. Do you agree?",
+    "move_example_1": "MOVE: C, 1, 1",
+    "move_example_2": "MOVE: C, 2, 1",
+    "end_1": "SAY: finished?",
+    "end_2": "SAY: finished!"
   },
   "zh-CN": {
     "say": "发送(<消息>)",

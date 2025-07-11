@@ -116,6 +116,9 @@ def generate_grid(encoding: str='grid_encoding.lp', models: int=1000, grid_size:
             for i in rand_array:
                 print(f'grid {i}:')
                 print(grids[i])
+                # count the number of empty cells in the grid
+                empty_cells = sum(row.count(EMPTY_SYMB) for row in grids[i])
+                print(f'Number of empty cells: {empty_cells}')                                  
 
     id_string = f'gs{grid_size[0]}x{grid_size[1]}'
     if neighbors[0]:
