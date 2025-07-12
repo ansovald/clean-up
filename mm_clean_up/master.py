@@ -15,7 +15,7 @@ from clemcore.clemgame.metrics import METRIC_ABORTED, METRIC_SUCCESS, METRIC_LOS
 # from clemcore.utils import file_utils, string_utils
 
 from resources.utils.PicState import PicState, png_to_base64
-from resources.utils.metrics import MetricPreparer, MetricCalculator, END_DISTANCE_SUM, EXPECTED_DISTANCE_SUM, MOVES, INIT_STATES, END_STATES, ingredients_registry, sub_metrics_registry
+from resources.utils.metrics import MetricPreparer, MetricCalculator, MOVES, INIT_STATES, END_STATES, PLAYERS, ingredients_registry, sub_metrics_registry
 from resources.utils.types import FullPositionedIcon
 
 logger = logging.getLogger(__name__)
@@ -322,7 +322,7 @@ class MultimodalCleanUpMaster(DialogueGameMaster):
             # log all the necessary metrics to `interaction.json`
             self.log_key(key, val)
             # display some of the ingredients in transcript
-            if key not in [MOVES, INIT_STATES, END_STATES]:
+            if key not in [MOVES, INIT_STATES, END_STATES, PLAYERS]:
                 ingredients_string += f"* {key}: {float(val):.2f}\n"
 
         lose = not self.success
