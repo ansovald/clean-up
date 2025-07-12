@@ -210,7 +210,7 @@ class MultimodalCleanUpMaster(DialogueGameMaster):
         """
         Check if the player should pass their turn.
         """
-        time.sleep(random.uniform(0, 1))
+        # time.sleep(random.uniform(2, 3))  # only for batch_run
         return self.pass_turn
 
     def _start_next_round(self) -> bool:
@@ -326,10 +326,11 @@ class MultimodalCleanUpMaster(DialogueGameMaster):
                 ingredients_string += f"* {key}: {float(val):.2f}\n"
 
         lose = not self.success
-        if self.success:
-            # If the game is terminated successfully, we check whether 
-            # the end distance is greater than the expected distance
-            lose = ingredients[END_DISTANCE_SUM] > ingredients[EXPECTED_DISTANCE_SUM]
+        # now distance_score is never 0, but a very small number when it's bad
+        # if self.success:
+        #     # If the game is terminated successfully, we check whether 
+        #     # the end distance is greater than the expected distance
+        #     lose = ingredients[END_DISTANCE_SUM] > ingredients[EXPECTED_DISTANCE_SUM]
 
         self.log_key(METRIC_ABORTED, int(self.aborted))
         self.log_key(METRIC_LOSE, int(lose))
