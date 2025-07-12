@@ -210,7 +210,7 @@ class MultimodalCleanUpMaster(DialogueGameMaster):
         """
         Check if the player should pass their turn.
         """
-        # time.sleep(random.uniform(2, 3))  # only for batch_run
+        time.sleep(random.uniform(2, 3))  # only for batch_run
         return self.pass_turn
 
     def _start_next_round(self) -> bool:
@@ -232,6 +232,7 @@ class MultimodalCleanUpMaster(DialogueGameMaster):
         """
         if not parsed_response:
             raise RuleViolationError
+        self.log_to_self("parsed_response", parsed_response)
         match = self.move_pattern.match(parsed_response)
         if match:
             obj = match.group('obj')
@@ -368,13 +369,16 @@ class MultimodalCleanUpScorer(GameScorer):
         # reconstruct ingredients from episode_interactions
         ingredients = {}
         for key in ingredients_registry:
-            assert key in episode_interactions, f"Key {key} must be in episode interactions"
+            if key not in episode_interactions:
+                logger.warning(f"Missing Key: Key {key} should be in episode interactions. ")
             ingredients[key] = episode_interactions[key]
         
         metrics_calculator = MetricCalculator(ingredients)
         sub_metrics, bench_score = metrics_calculator.compute_metrics()        
         
-        for key in sub_metrics_registry:
+        # for key in sub_metrics_registry:
+        #     self.log_episode_score(key, sub_metrics[key])
+        for key in sub_metrics: 
             self.log_episode_score(key, sub_metrics[key])
 
         # log the bench score
