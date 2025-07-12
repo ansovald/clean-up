@@ -15,6 +15,7 @@ import random
 import math
 import copy
 
+from collections import defaultdict
 from PIL import Image
 from typing import List, Tuple
 from string import Template
@@ -23,15 +24,6 @@ from clemcore.clemgame import GameInstanceGenerator
 from resources.utils.constant import ICON_WIDTH
 from resources.utils.types import Icon, PositionedIcon
 
-
-# """
-# 6 variations of the game: 
-# - dimension 1: diff type of icons (normal, abstract, similar)
-#     * when normal, randomly select N normal category, from each category pick 1 icon
-#     * when similar, randomly select 1 normal category, from it select N icons
-#     * when abstract, randomly select 1 abstract category, from it select N icons
-# - dimension 2: diff number of icons (N = 5, 9)
-# """
 
 """
 Experiment Naming: {ICON_TYPE}_{ICON_NUM}_{LANGUAGE}
@@ -47,17 +39,6 @@ More details on ICON_TYPE:
         2D:    (noun, color)   
         1D:    (_,    color)      
         0D:    (_,    _)          
-"""
-
-"""
-Experiment Naming: 
-Models have 2 main dimensions to to describe and differentiate icons: (noun, color)
-in the 2D experiment, we keep both dimensions;
-in the 1D experiment, the noun is the same for all icons, models can only use variations in color and style;
-in the 0D experiment, both noun and color are the same for all icons, models can only use other minor details.
-    2D:    (noun, color)   
-    1D:    (_, color)      
-    0D:    (_, _)          
 """
 
 # LANGUAGES = ['zh-CN', 'en', 'de']
@@ -94,26 +75,25 @@ in the 0D experiment, both noun and color are the same for all icons, models can
 
 # -------- dev --------
 # LANGUAGES = ['zh-CN', 'en', 'de']
-LANGUAGES = ['de']
-N_INSTANCES = 1
-ICON_NUM_OPTIONS = [4]
+LANGUAGES = ['en']
+N_INSTANCES = 3
+ICON_NUM_OPTIONS = [5, 9]
 CONFIGS = {
+            "2D": {
+                "n_nouns": "$$ICON_NUM$$", 
+                "colored": True,
+                "n_per_color": 1,
+            }, 
             "1D": { 
-                # get randomly 1 nouns
-                # from each noun get 1 random non-black color
-                # from color folder get N random icon                        
                 "n_nouns": 1, 
                 "colored": True,
                 "n_per_color": "$$ICON_NUM$$",
             }, 
             "0D": {
-                # get randomly 1 nouns
-                # from each noun get black color
-                # from black color folder get N random icon                  
                 "n_nouns": 1,
                 "colored": False,
                 "n_per_color": "$$ICON_NUM$$",
-            }              
+            }   
         }
 # ---------------------
 
@@ -127,26 +107,23 @@ print(f"will generate in total {num_instance} instances")
 
 SEED = 73128361  # seed for reproducibility
 
+# experiment: "{exp_type}_{icon_num}_{language}"
+# for the same {exp_type}_{icon_num}, across languages, the state should be the same, 
+# so that the difference in result can only be caused by the prompting language
+cached_state = defaultdict(lambda: None)
+
 class CleanUpMultiModalInstanceGenerator(GameInstanceGenerator):
 
     def __init__(self):
         super().__init__(os.path.dirname(__file__))
 
     def on_generate(self, seed: int, language: str):
-        # for each experiment type, 
-        # 1. load background
-
-        # 2. randomly choose N_ICONS categories of icons, 
-        #    and for each category, randomly choose 1 of the icons
-
-        # 3. shuffle the selected icons twice,
-        #    assemble two state per instance: [ { id, path, coord }, .. ]
-
         for exp_type, exp_config in CONFIGS.items():
             for icon_num in ICON_NUM_OPTIONS:
                 config = copy.deepcopy(exp_config)
                 config = {key: icon_num if val == "$$ICON_NUM$$" else val for key, val in config.items() }
                 e = f"{exp_type}_{icon_num}_{language}"
+                e_prefix = f"{exp_type}_{icon_num}"
                 
                 print(f"===== Adding experiment of type {e} =====")
                 print(config)
@@ -157,7 +134,7 @@ class CleanUpMultiModalInstanceGenerator(GameInstanceGenerator):
                     game_instance = self.add_game_instance(experiment, instance_id)
 
                     self.commands = self.load_json(f'resources/commands.json')[language]
-                    max_rounds = icon_num * 5      # arbitrary calculation, might change
+                    max_rounds = icon_num * 4      # arbitrary calculation, might change
                     max_penalties = icon_num * 3   # arbitrary calculation, might change
                     game_instance['max_rounds'] = max_rounds
                     game_instance['max_penalties'] = max_penalties
@@ -216,8 +193,15 @@ class CleanUpMultiModalInstanceGenerator(GameInstanceGenerator):
                         for icon in random.sample(metadata[sampled_noun][sampled_color], n_per_color):
                             chosen_icons.append(icon)
                 
-                    state1: List[PositionedIcon] = self._get_random_icon_state(chosen_icons, bg_size)
-                    state2: List[PositionedIcon] = self._get_random_icon_state(chosen_icons, bg_size)
+                    if cached_state[e_prefix]: 
+                        state1 = cached_state[e_prefix]['state1']
+                        state2 = cached_state[e_prefix]['state2']
+                    else: 
+                        state1: List[PositionedIcon] = self._get_random_icon_state(chosen_icons, bg_size)
+                        state2: List[PositionedIcon] = self._get_random_icon_state(chosen_icons, bg_size)
+                        cached_state[e_prefix] = {}
+                        cached_state[e_prefix]['state1'] = state1
+                        cached_state[e_prefix]['state2'] = state2
 
                     game_instance["state1"] = state1
                     game_instance["state2"] = state2
