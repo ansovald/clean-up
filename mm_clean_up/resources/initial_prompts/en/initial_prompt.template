@@ -18,7 +18,7 @@ You are playing a collaborative game with another player based on your image. Th
 
 **Communication Guidelines**
 
-First of all, agree on which icon to move. You cannot instruct the other player to focus on an icon with just its ID, because the icons have different IDs for each player. Instead, describe the icon and agree on it.
+***Agree on which icon to move.*** Think of an effective strategy. Don't instruct the other player to target an icon by its ID. IDs are randomized per player, so the same ID likely refers to different icons for you and the other player.
 
 * Wrong example:
     
@@ -28,16 +28,18 @@ First of all, agree on which icon to move. You cannot instruct the other player 
 
     ID 'D' could reference different icons for you and the other player!
 
-* Correct example:
-    Suppose `$icon_description` matches one of your icons. Then you could send a message like this:
+Similarly, don't instruct the other player to target an icon by its initial position in the picture. Icon placement is randomized, so positions relative to background elements or other icons are unreliable.
+
+* Wrong example:
     
     ```
-    $say_describe_icon_right
+    $say_describe_icon_wrong2
+    $say_describe_icon_wrong3
     ```
 
-    If the other player agrees, move on to choose and agree on a target location
+    The other player might have an different icon or no icon at all at that position.
 
-Following that, you can agree on the target location. You must not instruct the other player using coordinates. Instead, describe the target location using the background image as reference, agree on it, then formulate the `$move` command with the coordinates of the target location.
+***Agree on the target location.*** You must not instruct the other player using coordinates. Apart from this restriction, you are free to come up with any strategy, agree on the location, then formulate the `$move` command with the coordinates of the target location.
 
 * Wrong example
 
@@ -46,16 +48,6 @@ Following that, you can agree on the target location. You must not instruct the 
     ```
 
     If you use coordinates or numbers in your message, you both get penalized.
-
-* Correct example
-
-    Suppose you describe the target location with `$target_location_description` using objects in the background image as reference. Then you could send a message like this:
-    
-    ```
-    $say_describe_location_right
-    ```
-
-    If the other player agrees, and if the icon that suits `$icon_description` has ID `<ID>` for you, and if the location at `$target_location_description` is at coordinates `(<X>, <Y>)` then you move the object using the command `$move`
 
 
 **End of Game** 

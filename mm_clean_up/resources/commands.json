@@ -5,6 +5,8 @@
     "icon_description": "<ICON_DESCRIPTION>",
     "target_location_description": "<TARGET_LOCATION_DESCRIPTION>",
     "say_describe_icon_wrong": "say(Let's move icon D!)",
+    "say_describe_icon_wrong2": "say(Let's move the icon near the plant in the bottom right corner!)",
+    "say_describe_icon_wrong3": "say(Let's move the headphone icon right beneath the bottle icon!)",
     "say_describe_icon_right": "say(Let's move the icon <ICON_DESCRIPTION>!)",
     "say_describe_location_wrong": "say(Let's move the <ICON_DESCRIPTION> icon to location (800, 100)!)",
     "say_describe_location_right": "say(Let's move the <ICON_DESCRIPTION> icon to <TARGET_LOCATION_DESCRIPTION>!)",

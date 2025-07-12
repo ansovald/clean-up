@@ -221,6 +221,8 @@ class CleanUpMultiModalInstanceGenerator(GameInstanceGenerator):
             icon_description=self.commands['icon_description'],
             target_location_description=self.commands['target_location_description'],
             say_describe_icon_wrong=self.commands['say_describe_icon_wrong'],
+            say_describe_icon_wrong2=self.commands['say_describe_icon_wrong2'],
+            say_describe_icon_wrong3=self.commands['say_describe_icon_wrong3'],
             say_describe_icon_right=self.commands['say_describe_icon_right'],
             say_describe_location_wrong=self.commands['say_describe_location_wrong'],
             say_describe_location_right=self.commands['say_describe_location_right'],
