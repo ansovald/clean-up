@@ -25,7 +25,7 @@ pattern = os.path.join(root_dir, "results", "*", "*", "*", "*", "interactions.js
 files = glob.glob(pattern)
 
 for file in files: 
-    print(f"Processing file: {file}")
+    print(f"Processing file: {file}\n")
 
     interactions = None
     with open(file, 'r') as f:
@@ -52,7 +52,7 @@ for file in files:
 
     for obj in interactions['turns'][-1]: 
         if obj['action']['type'] == action_type: 
-            print(f"Replacing old content:\n{obj['action']['content']} with new content:\n{action_content}")
+            print(f"================\nReplacing old content:\n{obj['action']['content']} with new content:\n{action_content}")
 
             obj['action']['content'] = action_content
             break
