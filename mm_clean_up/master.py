@@ -140,12 +140,32 @@ class MultimodalCleanUpMaster(DialogueGameMaster):
                 self.log_to_self('parse_error', "Invalid format: head or tail is not empty")
                 raise ParseError(reason=self.game_instance["parse_errors"]["head_tail"], response=match.group(0))
 
+    def _find_recur_matches(self, pattern, string): 
+        """
+        Assuming pattern has a `head` and `tail` group, around the central info (eg. `say` or `move` command),
+        recursively find pattern in head and tail and return a list of all match objects
+        """
+        matches = list(pattern.finditer(string))
+        
+        if len(matches) == 0: 
+            return []
+        
+        to_return = []
+        to_return.extend(matches)
+
+        for match in matches:
+            m_head = self._find_recur_matches(pattern, match.group('head'))
+            m_tail = self._find_recur_matches(pattern, match.group('tail'))
+            to_return.extend(m_head)
+            to_return.extend(m_tail)
+        return to_return
+    
     def _parse_response(self, player: Player, response: str) -> str:
         self.log_to_self('player_response', response)
         # TODO: for now, we will just remove backticks and newlines
         response = response.replace('`', '').replace('\n', ' ').strip()
-        move_matches = list(self.move_pattern.finditer(response))
-        message_matches = list(self.message_pattern.finditer(response))
+        move_matches = self._find_recur_matches(self.move_pattern, response)
+        message_matches = self._find_recur_matches(self.message_pattern, response)
         if len(move_matches) + len(message_matches) > 1:
             self.log_to_self('parse_error', f"Invalid response format: {response}")
             logger.warning(f"Response '{response}' contains several commands.")
