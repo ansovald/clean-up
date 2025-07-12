@@ -153,7 +153,7 @@ class MetricCalculator:
     def function_factory(anchor, x_bad, y_bad, monoDecr=True): 
         """
         Returns a function f such that, for a given ingredient (eg. end_distance_sum, focus_shift, penalties)
-        f satisfies f(anchor) = 1, f(x_bad) = y_bad
+        f is an exponential function that satisfies f(anchor) = 1, f(x_bad) = y_bad
         Params: 
         - anchor: the input ingredient that would achieve output (sub)metric 1
         - (x_bad, y_bad): represent a undesired input ingredient x_bad that would achieve score y_bad
