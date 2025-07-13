@@ -1,6 +1,6 @@
 {
   "en": {
-    "say": "SAY: <MESSAGE>n",
+    "say": "SAY: <MESSAGE>",
     "move": "MOVE: <OBJECT>, <X>, <Y>",
     "say_example": "SAY: Let's move 'W' to the lower right corner. Do you agree?",
     "move_example_1": "MOVE: C, 1, 1",

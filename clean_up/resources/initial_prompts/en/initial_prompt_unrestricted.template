@@ -11,9 +11,10 @@ You have to communicate with the other player to agree upon a common goal state.
 
 * In each turn, you can send exactly one of the following two commands:
     * `$say`: to send a message (everything up until the next line break) to the other player. I will forward it to your partner.
-    * `$move`: to move an object to a new position. I will inform you if your move was successful or not.
-  * If you use any other format, or send several commands at once, I have to penalize you.
-  * If both players accumulate more than $max_penalties penalties, you lose the game.
+    * `$move`: to move an object to a new position, where `<X>` is the column and `<Y>` is the row. I will inform you if your move was successful or not.
+    * Your message must only contain the command, and nothing else, especially no reasoning or explanations before or after the command.
+    * If you don't stick to the format, or send several commands at once, I have to penalize you.
+* If both players accumulate more than $max_penalties penalties, you lose the game.
 * It is vital that you communicate with the other player regarding your goal state! For example, it might be a good idea to agree on moving one object at a time. The *only* way you can transmit your strategy to the other player is using the `$say` command!
 
 **Moving Objects**

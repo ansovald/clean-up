@@ -19,50 +19,50 @@ logger = logging.getLogger(__name__)
 # Seed for reproducibility
 SEED = 73128361
 
-N_INSTANCES = 2
+N_INSTANCES = 3
 LANGUAGES = ['en'] #, 'zh-CN', 'de'] # maybe adding Traditional Chinese as well? 'zh-TW'
 
 experiments = [
+        # {
+        #     'name': 'gs7x7_b7_obj3',
+        #     'grid_file': 'resources/grids/gs7x7_b7.json',
+        #     'objects': 3
+        # },
     # {
-    #     'name': 'gs7x7_b7_obj3',
-    #     'grid_file': 'resources/grids/gs7x7_b7.json',
-    #     'objects': 3
-    # },
-    {
-        'name': 'gs9x9_b6_obj5',
-        'grid_file': 'resources/grids/gs9x9_b6.json',
-        'objects': 5
-    },
-    # {
-    #     'name': 'gs9x9_b6_obj7',
+    #     'name': 'gs9x9_b6_obj5',
     #     'grid_file': 'resources/grids/gs9x9_b6.json',
+    #     'objects': 5
+    # },
+        # {
+        #     'name': 'gs9x9_b6_obj7',
+        #     'grid_file': 'resources/grids/gs9x9_b6.json',
+        #     'objects': 7
+        # },
+        # {
+        #     'name': 'gs11x11_b9_obj7',
+        #     'grid_file': 'resources/grids/gs11x11_b9.json',
+        #     'objects': 7
+        # },
+    # {
+    #     'name': 'gs11x11_b11_obj7',
+    #     'grid_file': 'resources/grids/gs11x11_b7.json',
     #     'objects': 7
     # },
+        # {
+        #     'name': 'gs11x16_b13_obj7',
+        #     'grid_file': 'resources/grids/gs11x16_b10.json',
+        #     'objects': 7
+        # },
     # {
-    #     'name': 'gs11x11_b9_obj7',
-    #     'grid_file': 'resources/grids/gs11x11_b9.json',
-    #     'objects': 7
-    # },
-    {
-        'name': 'gs11x11_b11_obj7',
-        'grid_file': 'resources/grids/gs11x11_b7.json',
-        'objects': 7
-    },
-    # {
-    #     'name': 'gs11x16_b13_obj7',
-    #     'grid_file': 'resources/grids/gs11x16_b10.json',
-    #     'objects': 7
-    # },
-    {
-        'name': 'gs11x16_b13_obj9',
-        'grid_file': 'resources/grids/gs11x16_b13.json',
-        'objects': 9
-    },
-    # {
-    #     'name': 'gs11x21_b15_obj9',
-    #     'grid_file': 'resources/grids/gs11x21_b15.json',
+    #     'name': 'gs11x16_b13_obj9',
+    #     'grid_file': 'resources/grids/gs11x16_b13.json',
     #     'objects': 9
     # },
+        # {
+        #     'name': 'gs11x21_b15_obj9',
+        #     'grid_file': 'resources/grids/gs11x21_b15.json',
+        #     'objects': 9
+        # },
     {
         'name': 'gs11x21_b15_obj11',
         'grid_file': 'resources/grids/gs11x21_b15.json',

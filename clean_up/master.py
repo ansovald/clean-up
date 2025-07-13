@@ -128,19 +128,19 @@ class CleanUpMaster(DialogueGameMaster):
         if head != '' and tail != '':
             # self.terminate = True
             # self.aborted = True
-            self.log_to_self('parse_error', "Invalid format: head or tail is not empty")
+            self.log_to_self('parse_error', f"Invalid format: head and tail are not empty\nhead: '{head}'\ntail: '{tail}'")
             raise ParseError(reason=self.game_instance["parse_errors"]["head_tail"], response=match.group(0))
         elif head != '':
-            self.log_to_self('parse_error', "Invalid format: head is not empty")
+            self.log_to_self('parse_error', f"Invalid format: head is not empty: '{head}'")
             raise ParseError(reason=self.game_instance["parse_errors"]["head"], response=match.group(0))
         elif tail != '':
-            self.log_to_self('parse_error', "Invalid format: tail is not empty")
+            self.log_to_self('parse_error', f"Invalid format: tail is not empty: '{tail}")
             raise ParseError(reason=self.game_instance["parse_errors"]["tail"], response=match.group(0))
 
     def _parse_response(self, player: Player, response: str) -> str:
         self.log_to_self('player_response', response)
         logger.info(f"Player {player.name} response:\n{response}")
-        # TODO: for now, we will just remove backticks and newlines
+        # TODO: for now, we will just remove backticks
         response = response.replace('`', '').strip()
         logger.info(f"response after cleaning: {response}")
         move_matches = list(self.move_pattern.finditer(response))
@@ -158,11 +158,9 @@ class CleanUpMaster(DialogueGameMaster):
                 logger.warning(f"Response '{response}' is not a valid message, first command must be a message.")
                 raise ParseError(reason=self.game_instance["parse_errors"]["invalid_start"], response=response)
         if move_match:
-            self.log_to_self('move match', move_match.groupdict())
             self._check_head_tail(move_match)
             return response
         if message_match:
-            self.log_to_self('message match', message_match.groupdict())
             self._check_head_tail(message_match)
             # TODO: This doesn't take into account that *both* players should agree on ending the game.
             #       It would also end if one player writes `finished!` twice
