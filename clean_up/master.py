@@ -71,8 +71,8 @@ class CleanUpMaster(DialogueGameMaster):
         self.game_instance = game_instance
 
         # Compile all regex patterns used in the game instance
-        self.message_pattern = re.compile(self.game_instance['message_pattern'])
-        self.move_pattern = re.compile(self.game_instance['move_pattern'])
+        self.message_pattern = re.compile(self.game_instance['message_pattern'], re.DOTALL)
+        self.move_pattern = re.compile(self.game_instance['move_pattern'], re.DOTALL)
         self.restricted = []
         for restricted in self.game_instance['restricted']:
             self.restricted.append(re.compile(restricted))
@@ -141,7 +141,8 @@ class CleanUpMaster(DialogueGameMaster):
         self.log_to_self('player_response', response)
         logger.info(f"Player {player.name} response:\n{response}")
         # TODO: for now, we will just remove backticks and newlines
-        response = response.replace('`', '').replace('\n', ' ').strip()
+        response = response.replace('`', '').strip()
+        logger.info(f"response after cleaning: {response}")
         move_matches = list(self.move_pattern.finditer(response))
         message_matches = list(self.message_pattern.finditer(response))
         if len(move_matches) + len(message_matches) > 1:
