@@ -10,16 +10,11 @@ You have to communicate with the other player to agree upon a common goal state.
 **Rules:**
 
 * In each turn, you can send exactly one of the following two commands:
-    * `$say`: to send a message to the other player. I will forward it to your partner.
+    * `$say`: to send a message (everything up until the next line break) to the other player. I will forward it to your partner.
     * `$move`: to move an object to a new position. I will inform you if your move was successful or not.
   * If you use any other format, or send several commands at once, I have to penalize you.
   * If both players accumulate more than $max_penalties penalties, you lose the game.
-
-**Communicating with the Other Player**
-
 * It is vital that you communicate with the other player regarding your goal state! For example, it might be a good idea to agree on moving one object at a time. The *only* way you can transmit your strategy to the other player is using the `$say` command!
-    * For example, if you want to move the object 'W' to the lower right corner, you could send a message such as `$say_example`
-    * Make sure that you have agreed with the other player before you move any object!
 
 **Moving Objects**
 
@@ -38,21 +33,7 @@ You have to communicate with the other player to agree upon a common goal state.
 ```
 
 
-* In this example, the top left corner is at `(1,1)`, the top right corner is at `(3,1)`, the bottom left corner at `(1,3)` and the bottom right corner is at `(3,3)`.
-* If you have agreed with the other player to move 'C' to the top left corner, you can do this with the following command: `$move_example_1`. The resulting grid would look like this: 
-
-
-```
-    123
-   ╔═╤═╗
- 1 ║C│◌║
- 2 ╟─┘◌║
- 3 ║◌◌◌║
-   ╚═══╝
-```
-
-
-* However, if you try `$move_example_2`, you will be penalized, since the spot `(2,1)` is already occupied by the vertical line '│'.
+* In this example, the top left corner is at `(1,1)`, the top right corner is at `(3,1)`, the bottom left corner at `(1,3)` and the bottom right corner is at `(3,3)`. Object 'C' is at position `(3,2)`, and the corner `┘` is at `(2,2)`
 * Before making a move, double check that the target spot is empty, and does not hold any letter, frame, or line!
 
 
@@ -73,10 +54,3 @@ The closer the identical objects are in both grids, the more points you get. Pen
 Here is your grid:
 ```
 $grid```
-
-
-**IMPORTANT:**
-
-* Each message must only contain exactly one command of the type `$say` or `$move`, and nothing else!
-* You can only see your own grid, and the messages that I forward from the other player!
-* The only way to communicate with the other player is by using the command `$say`!

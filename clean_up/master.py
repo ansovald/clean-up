@@ -8,6 +8,8 @@ from string import Template
 import time
 import random
 
+from regex import T
+
 from clemcore.backends import Model
 from clemcore.clemgame import GameSpec, GameMaster, GameBenchmark, Player, DialogueGameMaster, GameScorer, ParseError, GameError, RuleViolationError
 from clemcore.clemgame.metrics import METRIC_ABORTED, METRIC_SUCCESS, METRIC_LOSE, BENCH_SCORE
@@ -119,15 +121,25 @@ class CleanUpMaster(DialogueGameMaster):
         """
         Check if the head and tail of the match are empty.
         """
-        if not self.game_instance['lenient']:
-            if match.group('head') != '' or match.group('tail') != '':
-                self.terminate = True
-                self.aborted = True
-                self.log_to_self('parse_error', "Invalid format: head or tail is not empty")
-                raise ParseError(reason=self.game_instance["parse_errors"]["head_tail"], response=match.group(0))
+        # if not self.game_instance['lenient']:
+        head = match.group('head')
+        tail = match.group('tail')
+        logger.info('head: ' + match.group('head') + '; tail: ' + match.group('tail'))
+        if head != '' and tail != '':
+            # self.terminate = True
+            # self.aborted = True
+            self.log_to_self('parse_error', "Invalid format: head or tail is not empty")
+            raise ParseError(reason=self.game_instance["parse_errors"]["head_tail"], response=match.group(0))
+        elif head != '':
+            self.log_to_self('parse_error', "Invalid format: head is not empty")
+            raise ParseError(reason=self.game_instance["parse_errors"]["head"], response=match.group(0))
+        elif tail != '':
+            self.log_to_self('parse_error', "Invalid format: tail is not empty")
+            raise ParseError(reason=self.game_instance["parse_errors"]["tail"], response=match.group(0))
 
     def _parse_response(self, player: Player, response: str) -> str:
         self.log_to_self('player_response', response)
+        logger.info(f"Player {player.name} response:\n{response}")
         # TODO: for now, we will just remove backticks and newlines
         response = response.replace('`', '').replace('\n', ' ').strip()
         move_matches = list(self.move_pattern.finditer(response))
@@ -145,17 +157,21 @@ class CleanUpMaster(DialogueGameMaster):
                 logger.warning(f"Response '{response}' is not a valid message, first command must be a message.")
                 raise ParseError(reason=self.game_instance["parse_errors"]["invalid_start"], response=response)
         if move_match:
+            self.log_to_self('move match', move_match.groupdict())
             self._check_head_tail(move_match)
             return response
         if message_match:
+            self.log_to_self('message match', message_match.groupdict())
             self._check_head_tail(message_match)
-            if self.game_instance['lenient'] and message_match.group('message') == self.game_instance['terminate_answer']:
+            # TODO: This doesn't take into account that *both* players should agree on ending the game.
+            #       It would also end if one player writes `finished!` twice
+            if self.game_instance['lenient'] and  self.game_instance['terminate_answer'] in message_match.group('message'):
                 # For now, we allow to finish the game if both players send `say(finished!)` as well, 
                 # because some models are too chatty
                 self.finished = True
-            if message_match.group('message') == self.game_instance['terminate_question']:
+            if self.game_instance['terminate_question'] in message_match.group('message'):
                 self.finished = True
-            elif message_match.group('message') == self.game_instance['terminate_answer'] and self.finished:
+            elif self.game_instance['terminate_answer'] in message_match.group('message') and self.finished:
                 self.success = True
                 self.terminate = True
                 self.log_to_self('success', 'true')
@@ -192,7 +208,7 @@ class CleanUpMaster(DialogueGameMaster):
         """
         Check if the player should pass their turn.
         """
-        time.sleep(random.uniform(1, 2))
+        # time.sleep(random.uniform(1, 2))
         return self.pass_turn
 
     def _start_next_round(self) -> bool:
@@ -220,7 +236,7 @@ class CleanUpMaster(DialogueGameMaster):
                 self.log_to_self('valid move', message)
                 player.store_relay_message(message)
                 # turn is passed to the other player
-                next_player_prompt = self._penalty_counter_message()
+                next_player_prompt = self._round_counter_message() + self._penalty_counter_message()
                 next_player_prompt += self.game_instance["new_turn_move"]
                 self.set_context_for(self._other_player(), next_player_prompt)
             if not success:
@@ -242,9 +258,17 @@ class CleanUpMaster(DialogueGameMaster):
                     )
                     self.set_context_for(self.player_2, p2_initial_prompt)
                 else:
-                    next_player_prompt = self._penalty_counter_message()
+                    next_player_prompt = self._round_counter_message() + self._penalty_counter_message()
                     next_player_prompt += Template(self.game_instance['new_turn']).substitute(turn_message=message)
                     self.set_context_for(self._other_player(), next_player_prompt)
+    
+    def _round_counter_message(self) -> str:
+        """
+        Returns a message with the current turn count.
+        """
+        return Template(self.game_instance['round_counter']).substitute(
+            round=self.current_round + 1
+        )
             
     def _penalty_counter_message(self) -> str:
         """

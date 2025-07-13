@@ -28,11 +28,11 @@ experiments = [
     #     'grid_file': 'resources/grids/gs7x7_b7.json',
     #     'objects': 3
     # },
-    # {
-    #     'name': 'gs9x9_b6_obj5',
-    #     'grid_file': 'resources/grids/gs9x9_b6.json',
-    #     'objects': 5
-    # },
+    {
+        'name': 'gs9x9_b6_obj5',
+        'grid_file': 'resources/grids/gs9x9_b6.json',
+        'objects': 5
+    },
     # {
     #     'name': 'gs9x9_b6_obj7',
     #     'grid_file': 'resources/grids/gs9x9_b6.json',
@@ -127,6 +127,7 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
                 game_instance['p2_initial_prompt'] = self.initial_prompt(grid2, language=language, max_penalties=max_penalties, max_rounds=max_rounds) + self.load_template(f'resources/initial_prompts/{language}/p2_start')
                 game_instance['new_turn'] = self.load_template(f'resources/intermittent_prompts/{language}/new_turn')
                 game_instance['new_turn_move'] = self.load_template(f'resources/intermittent_prompts/{language}/new_turn_move')
+                game_instance['round_counter'] = self.load_template(f'resources/intermittent_prompts/{language}/round_counter').replace('$max_rounds', str(max_rounds))
                 game_instance['invalid_response'] = self.invalid_response(language)
                 game_instance['penalty_message'] = self.load_template(f'resources/intermittent_prompts/{language}/penalty_message')
                 game_instance['penalty_counter'] = self.load_template(f'resources/intermittent_prompts/{language}/penalty_counter')
@@ -134,7 +135,7 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
 
                 keywords = self.load_json('resources/keywords.json')[language]
                 game_instance['move_pattern'] = f"(?P<head>.*){keywords['move_command']}: (?P<obj>[^,]+), *(?P<x>\d+), *(?P<y>\d+)(?P<tail>.*)"
-                game_instance['message_pattern'] = f"(?P<head>.*){keywords['message_command']}: (?P<message>.+)"
+                game_instance['message_pattern'] = f"(?P<head>.*){keywords['message_command']}: (?P<message>[^\n]+)(?P<tail>.*)"
                 game_instance['terminate_question'] = keywords['terminate_question']    # 'finished?'
                 game_instance['terminate_answer'] = keywords['terminate_answer']        # 'finished!'
                 game_instance['restricted'] = self.load_json('resources/restricted_patterns.json')[language]

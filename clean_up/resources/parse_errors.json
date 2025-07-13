@@ -1,5 +1,7 @@
 {
   "en": {
+    "head": "Your message must not contain anything before the command!",
+    "tail": "Your message must not contain anything after the command!",
     "head_tail": "Your message must not contain anything before or after the command!",
     "several_commands": "Your message contains more than one command!",
     "restriction": "Your message contains restricted content!",
