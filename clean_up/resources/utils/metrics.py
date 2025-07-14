@@ -63,7 +63,6 @@ class MetricPreparer:
             ROUNDS: lambda: gm.current_round,
             MAX_ROUNDS: gm.max_rounds,
             OBJECT_COUNT: len(player_1.grid.get_objects()),
-            PLAYERS: [player_1.name, player_2.name]
         }
 
         # validate(ingredients_registry, self.ingredients, self.__class__.__name__)
