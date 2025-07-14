@@ -26,15 +26,15 @@ class Cleaner(Player):
     def __init__(self, model: Model):
         super().__init__(model)
         self._custom_responses = [
-            "SAY: Put C in the first row and eigth column.",
-            "MOVE: C, 1, 1",
-            "SAY: Let's move C to the top left corner.",
-            "I'm ready to go! Let's start by agreeing on a common goal state. I suggest we move all objects to the top-left corner in a specific order. Let's start by moving 'C' to the top-left corner. `move(C, 5, 5)`",
-            "Let's gooo! SAY: You are the best cleaner ever!",
-            "MOVE C, 1, 1",
-            "SAY: Move C to (1, 1).",
-            "MOVE: C, 1, 1\nSAY: I did it! C is now in the top-left corner.",
-            "haha, I love cleaning!",
+            # "SAY: Put C in the first row and eigth column.",
+            "MOVE: C, (A, 1)",
+            # "SAY: Let's move C to the top left corner.",
+            # "I'm ready to go! Let's start by agreeing on a common goal state. I suggest we move all objects to the top-left corner in a specific order. Let's start by moving 'C' to the top-left corner. `move(C, 5, 5)`",
+            # "Let's gooo! SAY: You are the best cleaner ever!",
+            # "MOVE C, 1, 1",
+            "SAY: Move C to (A, 1).",
+            "MOVE: C, (B, 1)\nSAY: I did it! C is now in the top-left corner.",
+            # "haha, I love cleaning!",
             ]
         self.grid = None  # This will be set in the game master
         self._relay_message = ""
@@ -73,6 +73,7 @@ class CleanUpMaster(DialogueGameMaster):
         # Compile all regex patterns used in the game instance
         self.message_pattern = re.compile(self.game_instance['message_pattern'], re.DOTALL)
         self.move_pattern = re.compile(self.game_instance['move_pattern'], re.DOTALL)
+
         self.restricted = []
         for restricted in self.game_instance['restricted']:
             self.restricted.append(re.compile(restricted))
@@ -225,8 +226,8 @@ class CleanUpMaster(DialogueGameMaster):
         match = self.move_pattern.match(parsed_response)
         if match:
             obj = match.group('obj')
-            x = int(match.group('x'))
-            y = int(match.group('y'))
+            x = match.group('x')
+            y = match.group('y')
             success, message = player.grid.move_abs(obj, x, y, check_empty=True)
             self.pass_turn = success
             if success:

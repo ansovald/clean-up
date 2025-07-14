@@ -25,16 +25,17 @@ You have to communicate with the other player to agree upon a common goal state.
 
 
 ```
-    123
-   ╔═╤═╗
- 1 ║◌│◌║
- 2 ╟─┘C║
- 3 ║◌◌◌║
-   ╚═══╝
+ ABC
+╔═╤═╗
+║◌│◌║ 1
+║◌│C║ 2
+╟─┘◌║ 3
+║◌◌◌║ 4
+╚═══╝
 ```
 
 
-* In this example, the top left corner is at `(1,1)`, the top right corner is at `(3,1)`, the bottom left corner at `(1,3)` and the bottom right corner is at `(3,3)`. Object 'C' is at position `(3,2)`, and the corner `┘` is at `(2,2)`
+* In this example, the empty symbol in the top left corner is at `(A,1)`, the empty symbol in the top right corner is at `(C,1)`, the one in the bottom left corner at `(A,4)` and the one in the bottom right corner is at `(C,4)`. Object 'C' is at position `(C,2)`, and the corner symbol `┘` is at `(B,3)`
 * Before making a move, double check that the target spot is empty, and does not hold any letter, frame, or line!
 
 

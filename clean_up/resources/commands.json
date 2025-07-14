@@ -1,12 +1,16 @@
 {
   "en": {
+    "say_keyword": "SAY",
     "say": "SAY: <MESSAGE>",
-    "move": "MOVE: <OBJECT>, <X>, <Y>",
+    "say_pattern": "(?P<head>.*)SAY: (?P<message>[^\\n]+)(?P<tail>.*)",
+    "move_keyword": "MOVE",
+    "move": "MOVE: <OBJECT>, (<X>, <Y>)",
+    "move_pattern": "(?P<head>.*)MOVE: (?P<obj>[A-Z]), \\((?P<x>[A-Z]), ?(?P<y>\\d+)\\)(?P<tail>.*)",
     "say_example": "SAY: Let's move 'W' to the lower right corner. Do you agree?",
-    "move_example_1": "MOVE: C, 1, 1",
-    "move_example_2": "MOVE: C, 2, 1",
     "end_1": "SAY: finished?",
-    "end_2": "SAY: finished!"
+    "terminate_question": "finished?",
+    "end_2": "SAY: finished!",
+    "terminate_answer": "finished!"
   },
   "zh-CN": {
     "say": "发送(<消息>)",
