@@ -19,11 +19,12 @@ MAX_PENALTIES = "Max Penalties"
 OBJECT_COUNT = "Object Count"
 ROUNDS = "Rounds"
 MAX_ROUNDS = "Max Rounds"
+PLAYERS = "Players"
 ingredients_registry = [MOVES, INIT_STATES, END_STATES,
                         SHIFTS, MAX_SHIFTS, MIN_SHIFTS, 
                         END_DISTANCE_SUM, INIT_DISTANCE_SUM, EXPECTED_DISTANCE_SUM,
                         PENALTIES, MAX_PENALTIES, ROUNDS, MAX_ROUNDS,
-                        OBJECT_COUNT]
+                        OBJECT_COUNT, PLAYERS]
 
 # sub-metrics
 DISTANCE_SCORE = "Distance Score"
@@ -63,6 +64,7 @@ class MetricPreparer:
             ROUNDS: lambda: gm.current_round,
             MAX_ROUNDS: gm.max_rounds,
             OBJECT_COUNT: len(player_1.grid.get_objects()),
+            PLAYERS: [player_1.name, player_2.name]
         }
 
         # validate(ingredients_registry, self.ingredients, self.__class__.__name__)
@@ -144,10 +146,10 @@ class MetricCalculator:
         min_shifts = self.ingredients[MIN_SHIFTS]
         shifts = self.ingredients[SHIFTS]
 
-        # when the players don't cover all the icons, return the best score 1
-        # we will capture this error with another metric, Coverage Score
+        # in this case consistency score doesn't make sense
+        # and will be taken out of bench_score
         if shifts < min_shifts: 
-            return 1
+            return None
 
         # add-one smoothing
         normalized = (shifts - min_shifts) / (max_shifts + 1 - min_shifts)
@@ -156,12 +158,12 @@ class MetricCalculator:
     def compute_coverage_score(self):
         id_set = set(self.ingredients[INIT_STATES]['state1'].keys())
         moves: List[Tuple[str, str]] = self.ingredients[MOVES]
+        players = self.ingredients[PLAYERS]
 
-        unique_players = list(set(move[0] for move in moves))
-        moved_obj_per_player = [set() for _ in unique_players]
+        moved_obj_per_player = [set() for _ in players]
         
         for move in moves: 
-            idx = unique_players.index(move[0])
+            idx = players.index(move[0])
             moved_obj_per_player[idx].add(move[1])
 
         # add-one smoothing to avoid return 0
@@ -185,6 +187,11 @@ class MetricCalculator:
         if sub_metrics[DISTANCE_SCORE] == 0:
             bench_score = 0
 
+        if self.ingredients[SHIFTS] < self.ingredients[MIN_SHIFTS]: 
+            # in this case, consistency score doesn't make sense,
+            # rm consistency score to prevent it artificially drives up the bench_score
+            del sub_metrics[CONSISTENCY_SCORE]
+            
         penalty_score = self.compute_penalty_score()
 
         # Take the harmonic mean of the sub-metrics, and multiply by the penalty score

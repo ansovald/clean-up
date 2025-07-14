@@ -10,7 +10,7 @@ from clemcore.clemgame import GameSpec, GameMaster, GameBenchmark, Player, Dialo
 from clemcore.clemgame.metrics import METRIC_ABORTED, METRIC_SUCCESS, METRIC_LOSE, BENCH_SCORE
 # from clemcore.utils import file_utils, string_utils
 from resources.grids.game_grid import GameGrid
-from resources.utils.metrics import MetricPreparer, MetricCalculator, END_DISTANCE_SUM, EXPECTED_DISTANCE_SUM, MOVES, INIT_STATES, END_STATES, ingredients_registry, sub_metrics_registry #, validate
+from resources.utils.metrics import MetricPreparer, MetricCalculator, END_DISTANCE_SUM, EXPECTED_DISTANCE_SUM, MOVES, INIT_STATES, END_STATES, PLAYERS, ingredients_registry, sub_metrics_registry #, validate
 
 logger = logging.getLogger(__name__)
 
@@ -290,7 +290,7 @@ class CleanUpMaster(DialogueGameMaster):
             # log all the necessary metrics to `interaction.json`
             self.log_key(key, val)
             # not display some of the ingredients in transcript
-            if key not in [MOVES, INIT_STATES, END_STATES]:
+            if key not in [MOVES, INIT_STATES, END_STATES, PLAYERS]:
                 ingredients_string += f"* {key}: {float(val):.2f}\n"
 
         lose = not self.success
@@ -341,6 +341,8 @@ class CleanUpScorer(GameScorer):
 
         ingredients = {}
         for key in ingredients_registry:
+            if key not in episode_interactions:
+                logger.warning(f"Missing Key: Key {key} should be in episode interactions. ")            
             ingredients[key] = episode_interactions[key]
         
         metrics_calculator = MetricCalculator(ingredients)
