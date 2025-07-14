@@ -18,7 +18,7 @@ You are playing a collaborative game with another player based on your image. Th
 
 **Communication Guidelines**
 
-***Agree on which icon to move.*** Think of an effective strategy. Don't instruct the other player to target an icon by its ID. IDs are randomized per player, so the same ID likely refers to different icons for you and the other player.
+*Agree on which icon to move.* Think of an effective strategy. Don't instruct the other player to target an icon by its ID. IDs are randomized per player, so the same ID likely refers to different icons for you and the other player.
 
 * Wrong example:
     
@@ -33,13 +33,13 @@ Similarly, don't instruct the other player to target an icon by its initial posi
 * Wrong example:
     
     ```
-    $say_describe_icon_wrong2
+    $say_describe_icon_wrong2  
     $say_describe_icon_wrong3
     ```
 
     The other player might have an different icon or no icon at all at that position.
 
-***Agree on the target location.*** You must not instruct the other player using coordinates. Apart from this restriction, you are free to come up with any strategy, agree on the location, then formulate the `$move` command with the coordinates of the target location.
+*Agree on the target location.* You must not instruct the other player using coordinates. Apart from this restriction, you are free to come up with any strategy, agree on the location, then formulate the `$move` command with the coordinates of the target location.
 
 * Wrong example
 
