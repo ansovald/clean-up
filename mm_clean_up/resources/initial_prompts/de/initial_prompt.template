@@ -18,7 +18,7 @@ Du spielst ein kooperatives Spiel mit einem Spielpartner auf Grundlage dieses Bi
 
 **Absprachen mit dem Spielpartner**
 
-Als erstes müsst ihr euch auf das zu verschiebende Objekt einigen. Da die Objekte bei jedem Spieler andere IDs haben, müsst ihr sie genau beschreiben, um sicher zu gehen, dass ihr auch wirklich vom selben Objekt sprecht.
+*Einigt euch darauf, welches Symbol verschoben werden soll.* Überlegt euch eine sinnvolle Strategie. Gib dem anderen Spieler nicht einfach eine ID an, um ein Symbol zu identifizieren. Die IDs sind für jeden Spieler zufällig vergeben, sodass dieselbe ID bei dir und dem anderen Spieler höchstwahrscheinlich unterschiedliche Symbole meint.
 
 * Falsches Beispiel:
 
@@ -28,15 +28,18 @@ Als erstes müsst ihr euch auf das zu verschiebende Objekt einigen. Da die Objek
 
     Die ID 'D' könnte sich bei deinem Mitspieler auf ein anderes Objekt beziehen als bei dir!
 
-* Richtiges Beispiel:
+Ebenso solltest du dem anderen Spieler kein Symbol anhand seiner Startposition im Bild zuweisen. Die Symbole sind zufällig verteilt, daher sind Positionen relativ zu Hintergrundelementen oder anderen Symbolen nicht verlässlich.
 
-    Angenommen, eines deiner Objekte entspricht der Beschreibung `$icon_description`. Dann kannst du folgende Nachricht schicken:
-
+* Falsches Beispiel:
+    
     ```
-    $say_describe_icon_right
+    $say_describe_icon_wrong2  
+    $say_describe_icon_wrong3
     ```
 
-Als nächstes könnt ihr euch auf eine Zielposition einigen. Dabei darfst du keine Koordinaten verwenden! Ihr könnt euch stattdessen am Hintergrund orientieren, auf eine Zielposition einigen, und das vereinbarte Objekt dann mit dem Befehl `$move` verschieben.
+    An dieser Position könnte beim anderen Spieler ein anderes Symbol oder gar kein Symbol sein.
+
+*Einigt euch auf das Zielposition.* Du darfst dem anderen Spieler keine Koordinaten nennen. Abgesehen von dieser Einschränkung könnt ihr frei eine Strategie entwickeln, euch auf eine Zielposition einigen und dann mit den entsprechenden Koordinaten den `$move` Befehl formulieren.
 
 * Falsches Beispiel:
 
@@ -45,17 +48,6 @@ Als nächstes könnt ihr euch auf eine Zielposition einigen. Dabei darfst du kei
     ```
     
     Wenn du Koordinaten oder Zahlen in deiner Nachricht verwendest, kriegt ihr beide einen Strafpunkt.
-
-* Richtiges Beispiel:
-
-    Angenommen, du beschreibst den Zielort als `$target_location_description` und verwendest dabei Objekte im Hintergrundbild als Referenz, kannst du folgende Nachricht schicken:
-
-    ```
-    $say_describe_location_right
-    ```
-
-    Wenn der andere Spieler zustimmt, und das Symbol, das zu `$icon_description passt`, bei dir die ID `<ID>` hat
-    und der mit `$target_location_description` beschriebene Ort die Koordinaten `(<X>, <Y>)` hat, dann kannst du das Objekt mit dem Befehl `$move` verschieben
 
 
 **Spielende** 
