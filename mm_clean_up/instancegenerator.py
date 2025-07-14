@@ -74,10 +74,14 @@ More details on ICON_TYPE:
 #         }
 
 # -------- dev --------
-# LANGUAGES = ['zh-CN', 'en', 'de']
-LANGUAGES = ['en']
+# always generate all languages, to ensure same experiments have the same state across languages
+# control what experiments to run in `dev_batchrun.py`
+LANGUAGES = ['zh-CN', 'en', 'de']  
 N_INSTANCES = 3
-ICON_NUM_OPTIONS = [5, 9]
+# N_INSTANCES = 1
+ICON_NUM_OPTIONS = [3, 6]
+# ICON_NUM_OPTIONS = [2] # dev: for debug
+
 CONFIGS = {
             "2D": {
                 "n_nouns": "$$ICON_NUM$$", 

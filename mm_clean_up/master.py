@@ -230,7 +230,7 @@ class MultimodalCleanUpMaster(DialogueGameMaster):
         """
         Check if the player should pass their turn.
         """
-        time.sleep(random.uniform(2, 3))  # only for batch_run
+        time.sleep(random.uniform(2, 3))  # only for overnight batch_run
         return self.pass_turn
 
     def _start_next_round(self) -> bool:
