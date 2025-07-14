@@ -19,12 +19,11 @@ MAX_PENALTIES = "Max Penalties"
 OBJECT_COUNT = "Object Count"
 ROUNDS = "Rounds"
 MAX_ROUNDS = "Max Rounds"
-PLAYERS = "Players"
 ingredients_registry = [MOVES, INIT_STATES, END_STATES,
                         SHIFTS, MAX_SHIFTS, MIN_SHIFTS, 
                         END_DISTANCE_SUM, INIT_DISTANCE_SUM, EXPECTED_DISTANCE_SUM,
                         PENALTIES, MAX_PENALTIES, ROUNDS, MAX_ROUNDS,
-                        OBJECT_COUNT, PLAYERS]
+                        OBJECT_COUNT]
 
 # sub-metrics
 DISTANCE_SCORE = "Distance Score"
@@ -158,12 +157,13 @@ class MetricCalculator:
     def compute_coverage_score(self):
         id_set = set(self.ingredients[INIT_STATES]['state1'].keys())
         moves: List[Tuple[str, str]] = self.ingredients[MOVES]
-        players = self.ingredients[PLAYERS]
+        states = self.ingredients[INIT_STATES]
 
-        moved_obj_per_player = [set() for _ in players]
+        moved_obj_per_player = [set() for _ in states.keys()]
+        players_recorded = list(set(move[0] for move in moves))
         
         for move in moves: 
-            idx = players.index(move[0])
+            idx = players_recorded.index(move[0])
             moved_obj_per_player[idx].add(move[1])
 
         # add-one smoothing to avoid return 0
