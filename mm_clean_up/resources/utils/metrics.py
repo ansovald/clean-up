@@ -219,7 +219,7 @@ class MetricCalculator:
         if self.distance_score_func is None: 
             expected_distance_sum = self.ingredients[EXPECTED_DISTANCE_SUM]
             x_bad = expected_distance_sum
-            self.distance_score_func = MetricCalculator.quad_function_factory(0, x_bad)
+            self.distance_score_func = MetricCalculator.quad_function_factory(0, x_bad, power=1)
 
         return max(self.distance_score_func(end_distance_sum), 0)
 
@@ -234,7 +234,7 @@ class MetricCalculator:
 
         if self.consistency_score_func is None: 
             bad_enough_shifts = min_shifts * 2 # min_shifts * k, k might need to be a function of #objects, too
-            self.consistency_score_func = MetricCalculator.quad_function_factory(min_shifts, bad_enough_shifts)
+            self.consistency_score_func = MetricCalculator.quad_function_factory(min_shifts, bad_enough_shifts, power=1)
         
         return max(self.consistency_score_func(shifts), 0)
 
@@ -254,7 +254,7 @@ class MetricCalculator:
         mean_coverage = sum(coverage_per_player) / len(coverage_per_player)
 
         if self.coverage_score_func is None: 
-            self.coverage_score_func = MetricCalculator.quad_function_factory(1, 0)
+            self.coverage_score_func = MetricCalculator.quad_function_factory(1, 0, power=1)
 
         self.ingredients["Coverage_per_Player"] = coverage_per_player
 
@@ -265,7 +265,7 @@ class MetricCalculator:
         max_penalties = self.ingredients[MAX_PENALTIES]
 
         if self.penalty_score_func is None: 
-            self.penalty_score_func = MetricCalculator.quad_function_factory(0, max_penalties)        
+            self.penalty_score_func = MetricCalculator.quad_function_factory(0, max_penalties, power=1)        
 
         return self.penalty_score_func(penalties)
     
