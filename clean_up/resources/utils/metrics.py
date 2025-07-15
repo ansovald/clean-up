@@ -53,7 +53,8 @@ class MetricPreparer:
             INIT_STATES: self.get_states(),
             END_STATES: lambda: self.get_states(),
             SHIFTS: lambda: self.compute_shifts(),
-            MAX_SHIFTS: gm.max_rounds * 2,
+            # MAX_SHIFTS: gm.max_rounds * 2,
+            MAX_SHIFTS: (len(player_1.grid.get_objects()) - 1) * 2,
             MIN_SHIFTS: len(player_1.grid.get_objects()) - 1,
             END_DISTANCE_SUM: lambda: self.player_1.grid.distance_sum(self.player_2.grid), 
             INIT_DISTANCE_SUM: self.gm.initial_distance, 
@@ -198,4 +199,7 @@ class MetricCalculator:
 
         sub_metrics[PENALTY_SCORE] = penalty_score
 
-        return sub_metrics, bench_score
+        # overwrite MAX_SHIFT for existing interactions.json file
+        self.ingredients[MAX_SHIFTS] = self.ingredients[MIN_SHIFTS] * 2 
+
+        return sub_metrics, bench_score, self.ingredients
