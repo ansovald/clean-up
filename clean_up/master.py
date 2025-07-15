@@ -74,10 +74,6 @@ class CleanUpMaster(DialogueGameMaster):
         self.message_pattern = re.compile(self.game_instance['message_pattern'], re.DOTALL)
         self.move_pattern = re.compile(self.game_instance['move_pattern'], re.DOTALL)
 
-        self.restricted = []
-        for restricted in self.game_instance['restricted']:
-            self.restricted.append(re.compile(restricted))
-
         self.player_1 = Cleaner(self.player_models[0])
         self.player_1.grid = GameGrid(self.game_instance['background'], move_messages=self.game_instance['move_messages'])
         self.player_1.grid.set_objects(self.game_instance['state1'])
@@ -175,13 +171,6 @@ class CleanUpMaster(DialogueGameMaster):
                 self.success = True
                 self.terminate = True
                 self.log_to_self('success', 'true')
-            # else:
-            #     for restricted_pattern in self.restricted:
-            #         restricted_match = restricted_pattern.search(message_match.group('message'))
-            #         if restricted_match:
-            #             self.log_to_self('rule_violation', f"Response violates restriction: {restricted_pattern}")
-            #             logger.warning(f"Response '{response}' violates restriction: {restricted_pattern}")
-            #             raise ParseError(reason=self.game_instance["parse_errors"]["restriction"], response=response)
             return response
         else:
             self.log_to_self('parse_error', f"Invalid response format")
@@ -345,7 +334,7 @@ class CleanUpMaster(DialogueGameMaster):
 
         sub_metrics_string = ""
         for key, val in sub_metrics.items(): 
-            sub_metrics_string += f"* {key}: {float(val):.2f}\n"    
+            sub_metrics_string += f"* {key}: {float(val):.2f}\n"
 
         self.log_to_self('dev:game_finished', f"{bench_score_string}\n-------\n{sub_metrics_string}")
         # print the sub-metrics and bench score to the console

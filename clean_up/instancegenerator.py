@@ -21,7 +21,8 @@ logger = logging.getLogger(__name__)
 SEED = 73128361
 
 N_INSTANCES = 2
-LANGUAGES = ['en'] #, 'zh-CN', 'de'] # maybe adding Traditional Chinese as well? 'zh-TW'
+# LANGUAGES = ['en', 'zh-CN', 'de'] # maybe adding Traditional Chinese as well? 'zh-TW'
+LANGUAGES = ['zh-CN']
 
 experiments = [
     {
@@ -122,7 +123,6 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
 
                 game_instance['terminate_question'] = commands['terminate_question']    # 'finished?'
                 game_instance['terminate_answer'] = commands['terminate_answer']        # 'finished!'
-                game_instance['restricted'] = self.load_json('resources/restricted_patterns.json')[language]
                 game_instance['parse_errors'] = self.load_json('resources/parse_errors.json')[language]
 
                 game_instance['move_messages'] = self.load_json('resources/move_messages.json')[language]
@@ -139,7 +139,6 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
             objects=grid.object_string(),
             say=commands['say'],
             move=commands['move'],
-            say_example=commands['say_example'],
             end_1=commands['end_1'],
             end_2=commands['end_2'],
             empty_symbol=EMPTY_SYMB,
@@ -157,14 +156,11 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
         """
         invalid_response = Template(self.load_template(f'resources/intermittent_prompts/{language}/invalid_response'))
         commands = self.load_json(f'resources/commands.json')[language]
-        restricted_literals = self.load_json(f'resources/restricted_literals.json')[language]
         return invalid_response.substitute(
             reason="$reason",   # ugly, I know 
             say=commands['say'],
             move=commands['move'],
-            row=restricted_literals['row'],
-            column=restricted_literals['column'],
-        )        
+        )
 
 if __name__ == '__main__':
     for language in LANGUAGES:

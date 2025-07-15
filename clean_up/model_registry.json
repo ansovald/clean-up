@@ -478,5 +478,23 @@
             "url": "https://github.com/deepseek-ai/DeepSeek-R1/blob/main/LICENSE"
         },
         "model_config": {}
+    },
+    {
+        "model_name": "qwen3-235b-a22b",
+        "model_id": "qwen/qwen3-235b-a22b:free",
+        "backend": "openai_compatible",
+        "model_config": {}
+    },
+    {
+        "model_name": "llama-3.3-70b-instruct",
+        "model_id": "meta-llama/llama-3.3-70b-instruct:free",
+        "backend": "openai_compatible",
+        "model_config": {}
+    },
+    {
+        "model_name": "qwen3-32b",
+        "model_id": "qwen/qwen3-32b:free",
+        "backend": "openai_compatible",
+        "model_config": {}
     }
 ]

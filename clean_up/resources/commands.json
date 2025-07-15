@@ -6,28 +6,34 @@
     "move_keyword": "MOVE",
     "move": "MOVE: <OBJECT>, (<X>, <Y>)",
     "move_pattern": "(?P<head>.*)MOVE: (?P<obj>[A-Z]), \\((?P<x>[A-Z]), ?(?P<y>\\d+)\\)(?P<tail>.*)",
-    "say_example": "SAY: Let's move 'W' to the lower right corner. Do you agree?",
     "end_1": "SAY: finished?",
     "terminate_question": "finished?",
     "end_2": "SAY: finished!",
     "terminate_answer": "finished!"
   },
   "zh-CN": {
-    "say": "发送(<消息>)",
-    "move": "移动(<物体>, <X>, <Y>)",
-    "say_example": "发送(我们可以把“W”移动到右下角。你同意吗？)",
-    "move_example_1": "移动(C,1,1)",
-    "move_example_2": "移动(C,2,1)",
-    "end_1": "发送(结束了吗？)",
-    "end_2": "发送(结束了！)"
+    "say_keyword": "发送",
+    "say": "发送：<消息>",
+    "say_pattern": "(?P<head>.*)发送[：:] ?(?P<message>[^\\n]+)(?P<tail>.*)",
+    "move_keyword": "移动",
+    "move": "移动：<物体>，（<X>，<Y>）",
+    "move_pattern": "(?P<head>.*)移动[：:] ?(?P<obj>[A-Z])[，,] ?[（\\(](?P<x>[A-Z])[，,] ?(?P<y>\\d+)[）\\)](?P<tail>.*)",
+    "say_example": "发送：我们可以把“W”移动到右下角。你同意吗？",
+    "end_1": "发送：结束了吗？",
+    "terminate_question": "结束了吗？",
+    "end_2": "发送：结束了！",
+    "terminate_answer": "结束了！"
   },
   "de": {
-    "say": "sprich(<NACHRICHT>)",
-    "move": "verschiebe(<OBJECT>,<X>,<Y>)",
-    "say_example": "sprich(Lass uns 'W' in die rechte untere Ecke bewegen, einverstanden?)",
-    "move_example_1": "verschiebe(C,1,1)",
-    "move_example_2": "verschiebe(C,2,1)",
-    "end_1": "sprich(fertig?)",
-    "end_2": "sprich(fertig!)"
+    "say_keyword": "SPRICH",
+    "say": "SPRICH: <NACHRICHT>",
+    "say_pattern": "(?P<head>.*)SPRICH: (?P<message>[^\\n]+)(?P<tail>.*)",
+    "move_keyword": "VERSCHIEBE",
+    "move": "VERSCHIEBE: <OBJECT>, (<X>, <Y>)",
+    "move_pattern": "(?P<head>.*)VERSCHIEBE: (?P<obj>[A-Z]), \\((?P<x>[A-Z]), ?(?P<y>\\d+)\\)(?P<tail>.*)",
+    "end_1": "SPRICH: fertig?",
+    "terminate_question": "fertig?",
+    "end_2": "SPRICH: fertig!",
+    "terminate_answer": "fertig!"
   }
 }

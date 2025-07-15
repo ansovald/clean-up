@@ -3,6 +3,7 @@ I am your game master, and you are playing a collaborative game with another pla
 You cannot see the other player's grid, and they cannot see yours.
 
 **Goal:**
+
 Both players need to align the objects on their respective grid in such a way that in the end both grids look the same.
 
 You have to communicate with the other player to agree upon a common goal state.
@@ -10,10 +11,10 @@ You have to communicate with the other player to agree upon a common goal state.
 **Rules:**
 
 * In each turn, you can send exactly one of the following two commands:
-    * `$say`: to send a message (everything up until the next line break) to the other player. I will forward it to your partner.
-    * `$move`: to move an object to a new position, where `<X>` is the column and `<Y>` is the row. I will inform you if your move was successful or not.
-    * Your message must only contain the command, and nothing else, especially no reasoning or explanations before or after the command.
-    * If you don't stick to the format, or send several commands at once, I have to penalize you.
+  * `$say`: to send a message (everything up until the next line break) to the other player. I will forward it to your partner.
+  * `$move`: to move an object to a new position, where `<X>` is the column and `<Y>` is the row. I will inform you if your move was successful or not.
+* Your message must only contain the command, and nothing else, especially no reasoning or explanations before or after the command.
+* If you don't stick to the format, or send several commands at once, I have to penalize you.
 * If both players accumulate more than $max_penalties penalties, you lose the game.
 * It is vital that you communicate with the other player regarding your goal state! For example, it might be a good idea to agree on moving one object at a time. The *only* way you can transmit your strategy to the other player is using the `$say` command!
 
@@ -38,13 +39,11 @@ You have to communicate with the other player to agree upon a common goal state.
 * In this example, the empty symbol in the top left corner is at `(A,1)`, the empty symbol in the top right corner is at `(C,1)`, the one in the bottom left corner at `(A,4)` and the one in the bottom right corner is at `(C,4)`. Object 'C' is at position `(C,2)`, and the corner symbol `┘` is at `(B,3)`
 * Before making a move, double check that the target spot is empty, and does not hold any letter, frame, or line!
 
-
 **End of Game:**
 
 If you think you reached the goal, you can ask the other player to finish the game by sending `$end_1`. If the other player asks you to finish the game, and you reply `$end_2`, the game will end.
 
 Both players win if the game ends within $max_rounds rounds, where one round is defined as two players each sending a valid command.
-
 
 **Scoring:**
 

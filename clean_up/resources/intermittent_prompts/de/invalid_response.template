@@ -1,4 +1,1 @@
-Strafpunkt: $reason Stelle sicher, dass
-
-* Nachrichten an deinen Mitspieler weder die Wörter '$row' und '$column' noch Zahlen oder Koordinaten enthalten!
-* deine Antwort ausschließlich einen der beiden Befehle `$say` und `$move` und sonst nichts enthält!
+Strafpunkt: $reason Stelle sicher, dass deine Antwort ausschließlich einen der beiden Befehle `$say` und `$move` und sonst nichts enthält!
