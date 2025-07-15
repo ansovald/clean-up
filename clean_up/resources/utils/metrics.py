@@ -258,10 +258,10 @@ class MetricCalculator:
         # validate(sub_metrics_registry, sub_metrics, self.__class__.__name__)
             
         weights = {
-            DISTANCE_SCORE: 50, 
-            CONSISTENCY_SCORE: 10, 
-            COVERAGE_SCORE: 10, 
-            PENALTY_SCORE: 30,
+            DISTANCE_SCORE: 1,
+            CONSISTENCY_SCORE: 1,
+            COVERAGE_SCORE: 1,
+            PENALTY_SCORE:1
         }
 
         if self.ingredients[SHIFTS] < self.ingredients[MIN_SHIFTS]: 
@@ -273,7 +273,7 @@ class MetricCalculator:
         if sub_metrics[PENALTY_SCORE] == 0: 
             bench_score = 0
         else: 
-            bench_score = fmean(sub_metrics.values())
+            bench_score = fmean(sub_metrics.values(), weights=weights.values())
 
         # overwrite MAX_SHIFT for existing interactions.json file
         self.ingredients[MAX_SHIFTS] = self.ingredients[MIN_SHIFTS] * 2 

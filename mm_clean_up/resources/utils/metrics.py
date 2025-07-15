@@ -199,7 +199,7 @@ class MetricCalculator:
     def quad_function_factory(anchor, x_bad, power=2): 
         denominator = abs(x_bad - anchor)
         def scoring_func(x_input): 
-            return - math.pow( (x_input - anchor)/ denominator, power) + 1
+            return float(- math.pow( (x_input - anchor)/ denominator, power) + 1)
         return scoring_func
     
     @staticmethod
@@ -273,10 +273,10 @@ class MetricCalculator:
         sub_metrics = {name: func() for name, func in self.sub_metric_funcs.items()}
 
         weights = {
-            DISTANCE_SCORE: 50, 
-            CONSISTENCY_SCORE: 10, 
-            COVERAGE_SCORE: 10, 
-            PENALTY_SCORE: 30,
+            DISTANCE_SCORE: 1,
+            CONSISTENCY_SCORE: 1,
+            COVERAGE_SCORE: 1,
+            PENALTY_SCORE:1
         }
 
         if self.ingredients[SHIFTS] < self.ingredients[MIN_SHIFTS]: 
@@ -288,7 +288,7 @@ class MetricCalculator:
         if sub_metrics[PENALTY_SCORE] == 0: 
             bench_score = 0
         else: 
-            bench_score = fmean(sub_metrics.values())
+            bench_score = fmean(sub_metrics.values(), weights=weights.values())
 
         # overwrite MAX_SHIFT for existing interactions.json file
         self.ingredients[MAX_SHIFTS] = self.ingredients[MIN_SHIFTS] * 2         
