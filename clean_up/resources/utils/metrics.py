@@ -135,7 +135,7 @@ class MetricCalculator:
         # validate(sub_metrics_registry, self.sub_metric_funcs, self.__class__.__name__)    
 
     @staticmethod
-    def function_factory(anchor, x_bad, y_bad, monoDecr=True): 
+    def exp_function_factory(anchor, x_bad, y_bad, monoDecr=True): 
         """
         Returns a function f such that, for a given ingredient (eg. end_distance_sum, focus_shift, penalties)
         f is an exponential function that satisfies f(anchor) = 1, f(x_bad) = y_bad
@@ -202,9 +202,10 @@ class MetricCalculator:
         if self.distance_score_func is None: 
             expected_distance_sum = self.ingredients[EXPECTED_DISTANCE_SUM]
             x_bad = expected_distance_sum
-            self.distance_score_func = MetricCalculator.quad_function_factory(0, x_bad)
+            y_bad = 0.05 # arbitrary
+            self.distance_score_func = MetricCalculator.exp_function_factory(0, x_bad, y_bad)
 
-        return max(self.distance_score_func(end_distance_sum), 0)
+        return self.distance_score_func(end_distance_sum)
 
     def compute_consistency_score(self):
         min_shifts = self.ingredients[MIN_SHIFTS]
@@ -217,9 +218,10 @@ class MetricCalculator:
 
         if self.consistency_score_func is None: 
             bad_enough_shifts = min_shifts * 2 # min_shifts * k, k might need to be a function of #objects, too
-            self.consistency_score_func = MetricCalculator.quad_function_factory(min_shifts, bad_enough_shifts)
+            y_bad = 0.05 # arbitrary
+            self.consistency_score_func = MetricCalculator.exp_function_factory(min_shifts, bad_enough_shifts, y_bad)
         
-        return max(self.consistency_score_func(shifts), 0)
+        return self.consistency_score_func(shifts)
     
     def compute_coverage_score(self):
         id_set = set(self.ingredients[INIT_STATES]['state1'].keys())
@@ -237,7 +239,9 @@ class MetricCalculator:
         mean_coverage = sum(coverage_per_player) / len(coverage_per_player)
 
         if self.coverage_score_func is None: 
-            self.coverage_score_func = MetricCalculator.quad_function_factory(1, 0)
+            x_bad = 0
+            y_bad = 0.005 # arbitrary
+            self.coverage_score_func = MetricCalculator.exp_function_factory(1, x_bad, y_bad, monoDecr=False)
 
         self.ingredients["Coverage_per_Player"] = coverage_per_player
 
@@ -248,7 +252,9 @@ class MetricCalculator:
         max_penalties = self.ingredients[MAX_PENALTIES]
 
         if self.penalty_score_func is None: 
-            self.penalty_score_func = MetricCalculator.quad_function_factory(0, max_penalties)        
+            x_bad = max_penalties
+            y_bad = 0.005 # arbitrary
+            self.penalty_score_func = MetricCalculator.exp_function_factory(0, x_bad, y_bad)        
 
         return self.penalty_score_func(penalties)
 
