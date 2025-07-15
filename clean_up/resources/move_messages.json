@@ -3,13 +3,13 @@
     "successful": "Moved '$object' to ($x,$y) successfully. Your updated grid looks like this:\n```\n$grid```\n",
     "out_of_bounds": "Invalid move: ($x,$y) is out of bounds. Please try again!\n",
     "not_empty": "Penalty: ($x,$y) is not empty, but contains '$object'.\n",
-    "obj_not_found": "Invalid move: $object not found on the grid. Please try again!\n"
+    "obj_not_found": "Invalid move: '$object' not found on the grid. Please try again!\n"
   },
   "zh-CN": {
     "successful": "已成功将“$object”移动到 ($x,$y)。更新后的网格如下所示：\n```\n$grid```\n",
     "out_of_bounds": "无效移动：($x,$y) 超出网格范围。请重试！\n",
     "not_empty": "犯规：单元格 ($x,$y) 不为空，“$object”在此位置。\n",
-    "obj_not_found": "无效移动：网格中未找到 $object。请重试！\n"
+    "obj_not_found": "无效移动：网格中未找到“$object”。请重试！\n"
   },
   "de": {
     "successful": "'$object' erfolgreich nach ($x,$y) verschoben. Dein Raster sieht jetzt so aus:\n```\n$grid```\n",

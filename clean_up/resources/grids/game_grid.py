@@ -10,6 +10,26 @@ DISTANCE_SCORE = "Distance Score"
 DISTANCE_REDUCTION_SCORE = "Distance Reduction Score"
 EXPECTED_DISTANCE_SCORE = "Expected Distance Score"
 
+def number_to_letter(number: int) -> str:
+        """
+        Converts a number to a letter (1 -> A, 2 -> B, ..., 26 -> Z).
+        :param number: The number to convert
+        :return: The corresponding letter
+        """
+        if 1 <= number <= 26:
+            return chr(number + 64)
+        raise ValueError(f"Number {number} is out of bounds for letter conversion (1-26)")
+
+def letter_to_number(letter: str) -> int:
+        """
+        Converts a letter to a number (A -> 1, B -> 2, ..., Z -> 26).
+        :param letter: The letter to convert
+        :return: The corresponding number
+        """
+        if len(letter) == 1 and letter.isalpha():
+            return ord(letter.upper()) - 64
+        raise ValueError(f"Letter '{letter}' is not a valid single letter (A-Z)")
+
 class GameGrid:
     def __init__(self, grid: str=None, move_messages: dict=None, object_string: str=None, show_coords: bool = False):
         """
@@ -84,14 +104,13 @@ class GameGrid:
             i = 0
         grid_str = ""
         if coords:
-            grid_str += "    " + "".join([str(i % 10) for i in range(1,self.width-1)]) + "\n"
+            grid_str += " " + "".join([number_to_letter(i) for i in range(1,self.width-1)]) + "\n"
         for j, row in enumerate(self.grid):
+            grid_str += "".join([cell[i] for cell in row])
             if coords:
-                if j == 0 or j == len(self.grid) - 1:
-                    grid_str += "   "
-                else:
-                    grid_str += f"{j} ".rjust(3)
-            grid_str += "".join([cell[i] for cell in row]) + "\n"
+                if not (j == 0 or j == len(self.grid) - 1):
+                    grid_str += f" {j}"
+            grid_str += "\n"
         return grid_str
     
     def place_objects(self, objects: list[str] | str):
@@ -157,31 +176,32 @@ class GameGrid:
         Moves an object to a specific position on the grid.
         :param obj: The object to move
         :param x: The x-coordinate to move to (0-9+)
-        :param y: The y-coordinate to move to (0-9+)
+        :param y: The y-coordinate to move to (A-Z)
         Returns:
             A tuple (success, message) where success is a boolean indicating if the move was successful,
             and message is a string with the result of the move.
         """
+        x_letter = x
         if isinstance(x, str):
             try:
-                x = int(x) + 1
+                x = letter_to_number(x)
             except ValueError:
-                raise ValueError(f"Invalid x-coordinate: {x}. It should be an integer.")
+                raise ValueError(f"Invalid x-coordinate: {x}. It should be a capital letter.")
         if isinstance(y, str):
             try:
-                y = int(y) + 1
+                y = int(y)
             except ValueError:
-                raise ValueError(f"Invalid x-coordinate: {y}. It should be an integer.")
+                raise ValueError(f"Invalid y-coordinate: {y}. It should be an string that can be converted to an integer.")
         if obj in self.objects:
             old_x, old_y = self.objects[obj]
             if not (0 <= x < self.width and 0 <= y < self.height):
-                return False, Template(self.move_messages["out_of_bounds"]).substitute(x=x, y=y)
+                return False, Template(self.move_messages["out_of_bounds"]).substitute(x=x_letter, y=y)
             if check_empty and self.grid[y][x][-1] != EMPTY_SYMB:
-                return False, Template(self.move_messages["not_empty"]).substitute(object=self.grid[y][x][-1], x=x, y=y)
+                return False, Template(self.move_messages["not_empty"]).substitute(object=self.grid[y][x][-1], x=x_letter, y=y)
             self.grid[old_y][old_x] = self.grid[old_y][old_x][:-1]  # Remove the object from the old position
             self.grid[y][x].append(obj)  # Place the object at the new position
             self.objects[obj] = (x, y)
-            return True, Template(self.move_messages["successful"]).substitute(object=obj, x=x, y=y, grid=str(self))
+            return True, Template(self.move_messages["successful"]).substitute(object=obj, x=x_letter, y=y, grid=str(self))
         else:
             return False, Template(self.move_messages["obj_not_found"]).substitute(object=obj)
 

@@ -30,6 +30,7 @@ DISTANCE_SCORE = "Distance Score"
 CONSISTENCY_SCORE = "Consistency Score"
 COVERAGE_SCORE = "Coverage Score"
 PENALTY_SCORE = "Penalty Score"
+ALT_MAIN_SCORE = "Alternative Main Score"
 sub_metrics_registry = [DISTANCE_SCORE, CONSISTENCY_SCORE, 
                         COVERAGE_SCORE]
 
@@ -175,6 +176,7 @@ class MetricCalculator:
         penalties = self.ingredients[PENALTIES]
         max_penalties = self.ingredients[MAX_PENALTIES]
         normalized = penalties / max_penalties
+        print(f"penalties: {penalties}, max_penalties: {max_penalties}, penalty score: {1 - normalized}")
         return 1 - normalized  # we can use different function at this step
 
     def compute_metrics(self): 
@@ -198,6 +200,7 @@ class MetricCalculator:
         bench_score = harmonic_mean(sub_metrics.values()) * penalty_score
 
         sub_metrics[PENALTY_SCORE] = penalty_score
+        sub_metrics[ALT_MAIN_SCORE] = sub_metrics[DISTANCE_SCORE] * penalty_score
 
         # overwrite MAX_SHIFT for existing interactions.json file
         self.ingredients[MAX_SHIFTS] = self.ingredients[MIN_SHIFTS] * 2 

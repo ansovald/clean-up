@@ -1,9 +1,14 @@
+from ast import parse
 import re
 import logging
 import os.path
 from typing import Dict, List, Tuple
 import numpy as np
 from string import Template
+import time
+import random
+
+from regex import T
 
 from clemcore.backends import Model
 from clemcore.clemgame import GameSpec, GameMaster, GameBenchmark, Player, DialogueGameMaster, GameScorer, ParseError, GameError, RuleViolationError
@@ -21,15 +26,15 @@ class Cleaner(Player):
     def __init__(self, model: Model):
         super().__init__(model)
         self._custom_responses = [
-            "say(Put C in the first row and eigth column.)",
-            "move(C,1,1)",
-            "say(Let's move C to the top left corner.)",
-            "I'm ready to go! Let's start by agreeing on a common goal state. I suggest we move all objects to the top-left corner in a specific order. Let's start by moving 'C' to the top-left corner. `move(C, 5, 5)`",
-            "Let's gooo! `say(You are the best cleaner ever!)`",
-            "move(C, 1, 1",
-            "say(Move C to (1, 1).)",
-            "move(C, 1, 1) say(I did it! C is now in the top-left corner.)",
-            "haha, I love cleaning!",
+            # "SAY: Put C in the first row and eigth column.",
+            "MOVE: C, (A, 1)",
+            # "SAY: Let's move C to the top left corner.",
+            # "I'm ready to go! Let's start by agreeing on a common goal state. I suggest we move all objects to the top-left corner in a specific order. Let's start by moving 'C' to the top-left corner. `move(C, 5, 5)`",
+            # "Let's gooo! SAY: You are the best cleaner ever!",
+            # "MOVE C, 1, 1",
+            "SAY: Move C to (A, 1).",
+            "MOVE: C, (B, 1)\nSAY: I did it! C is now in the top-left corner.",
+            # "haha, I love cleaning!",
             ]
         self.grid = None  # This will be set in the game master
         self._relay_message = ""
@@ -60,16 +65,14 @@ class CleanUpMaster(DialogueGameMaster):
     """
     def __init__(self, game_name: str, game_path: str, experiment: Dict, player_models: List[Model]):
         super().__init__(game_name, game_path, experiment, player_models)
+        print(f"\n\nRunning game instance: {game_name}, {experiment}")
 
     def _on_setup(self, **game_instance):
         self.game_instance = game_instance
 
         # Compile all regex patterns used in the game instance
-        self.message_pattern = re.compile(self.game_instance['message_pattern'])
-        self.move_pattern = re.compile(self.game_instance['move_pattern'])
-        self.restricted = []
-        for restricted in self.game_instance['restricted']:
-            self.restricted.append(re.compile(restricted))
+        self.message_pattern = re.compile(self.game_instance['message_pattern'], re.DOTALL)
+        self.move_pattern = re.compile(self.game_instance['move_pattern'], re.DOTALL)
 
         self.player_1 = Cleaner(self.player_models[0])
         self.player_1.grid = GameGrid(self.game_instance['background'], move_messages=self.game_instance['move_messages'])
@@ -115,19 +118,28 @@ class CleanUpMaster(DialogueGameMaster):
         """
         Check if the head and tail of the match are empty.
         """
-        if not self.game_instance['lenient']:
-            if match.group('head') != '' or match.group('tail') != '':
-                self.terminate = True
-                self.aborted = True
-                self.log_to_self('parse_error', "Invalid format: head or tail is not empty")
-                raise ParseError(reason=self.game_instance["parse_errors"]["head_tail"], response=match.group(0))
+        # if not self.game_instance['lenient']:
+        head = match.group('head')
+        tail = match.group('tail')
+        logger.info('head: ' + match.group('head') + '; tail: ' + match.group('tail'))
+        if head != '' and tail != '':
+            # self.terminate = True
+            # self.aborted = True
+            self.log_to_self('parse_error', f"Invalid format: head and tail are not empty\nhead: '{head}'\ntail: '{tail}'")
+            raise ParseError(reason=self.game_instance["parse_errors"]["head_tail"], response=match.group(0))
+        elif head != '':
+            self.log_to_self('parse_error', f"Invalid format: head is not empty: '{head}'")
+            raise ParseError(reason=self.game_instance["parse_errors"]["head"], response=match.group(0))
+        elif tail != '':
+            self.log_to_self('parse_error', f"Invalid format: tail is not empty: '{tail}")
+            raise ParseError(reason=self.game_instance["parse_errors"]["tail"], response=match.group(0))
 
     def _parse_response(self, player: Player, response: str) -> str:
         self.log_to_self('player_response', response)
-        # TODO: for now, we will just remove backticks and newlines
-        response = response.replace('`', '').replace('\n', ' ').strip()
-        print(f"===== {player.name} =====")
-        print(response)
+        logger.info(f"Player {player.name} response:\n{response}")
+        # TODO: for now, we will just remove backticks
+        response = response.replace('`', '').strip()
+        logger.info(f"response after cleaning: {response}")
         move_matches = list(self.move_pattern.finditer(response))
         message_matches = list(self.message_pattern.finditer(response))
         if len(move_matches) + len(message_matches) > 1:
@@ -147,23 +159,18 @@ class CleanUpMaster(DialogueGameMaster):
             return response
         if message_match:
             self._check_head_tail(message_match)
-            if self.game_instance['lenient'] and message_match.group('message') == self.game_instance['terminate_answer']:
+            # TODO: This doesn't take into account that *both* players should agree on ending the game.
+            #       It would also end if one player writes `finished!` twice
+            if self.game_instance['lenient'] and  self.game_instance['terminate_answer'] in message_match.group('message'):
                 # For now, we allow to finish the game if both players send `say(finished!)` as well, 
                 # because some models are too chatty
                 self.finished = True
-            if message_match.group('message') == self.game_instance['terminate_question']:
+            if self.game_instance['terminate_question'] in message_match.group('message'):
                 self.finished = True
-            elif message_match.group('message') == self.game_instance['terminate_answer'] and self.finished:
+            elif self.game_instance['terminate_answer'] in message_match.group('message') and self.finished:
                 self.success = True
                 self.terminate = True
                 self.log_to_self('success', 'true')
-            else:
-                for restricted_pattern in self.restricted:
-                    restricted_match = restricted_pattern.search(message_match.group('message'))
-                    if restricted_match:
-                        self.log_to_self('rule_violation', f"Response violates restriction: {restricted_pattern}")
-                        logger.warning(f"Response '{response}' violates restriction: {restricted_pattern}")
-                        raise ParseError(reason=self.game_instance["parse_errors"]["restriction"], response=response)
             return response
         else:
             self.log_to_self('parse_error', f"Invalid response format")
@@ -190,7 +197,7 @@ class CleanUpMaster(DialogueGameMaster):
         """
         Check if the player should pass their turn.
         """
-        # time.sleep(3)
+        # time.sleep(random.uniform(1, 2))
         return self.pass_turn
 
     def _start_next_round(self) -> bool:
@@ -208,8 +215,8 @@ class CleanUpMaster(DialogueGameMaster):
         match = self.move_pattern.match(parsed_response)
         if match:
             obj = match.group('obj')
-            x = int(match.group('x'))
-            y = int(match.group('y'))
+            x = match.group('x')
+            y = match.group('y')
             success, message = player.grid.move_abs(obj, x, y, check_empty=True)
             self.pass_turn = success
             if success:
@@ -218,7 +225,7 @@ class CleanUpMaster(DialogueGameMaster):
                 self.log_to_self('valid move', message)
                 player.store_relay_message(message)
                 # turn is passed to the other player
-                next_player_prompt = self._penalty_counter_message()
+                next_player_prompt = self._round_counter_message() + self._penalty_counter_message()
                 next_player_prompt += self.game_instance["new_turn_move"]
                 self.set_context_for(self._other_player(), next_player_prompt)
             if not success:
@@ -240,9 +247,17 @@ class CleanUpMaster(DialogueGameMaster):
                     )
                     self.set_context_for(self.player_2, p2_initial_prompt)
                 else:
-                    next_player_prompt = self._penalty_counter_message()
+                    next_player_prompt = self._round_counter_message() + self._penalty_counter_message()
                     next_player_prompt += Template(self.game_instance['new_turn']).substitute(turn_message=message)
                     self.set_context_for(self._other_player(), next_player_prompt)
+    
+    def _round_counter_message(self) -> str:
+        """
+        Returns a message with the current turn count.
+        """
+        return Template(self.game_instance['round_counter']).substitute(
+            round=self.current_round + 1
+        )
             
     def _penalty_counter_message(self) -> str:
         """
@@ -309,6 +324,7 @@ class CleanUpMaster(DialogueGameMaster):
         self.log_to_self('grids', f"Player 1 grid:\n```\n{self.player_1.grid.__str__(show_coords=self.game_instance['show_coords'])}\n```\nPlayer 2 grid:\n```\n{self.player_2.grid.__str__(show_coords=self.game_instance['show_coords'])}```")
 
         self.log_to_self('game_finished', f"* success: {self.success}\n* lose: {lose}\n* aborted: {self.aborted}\n-------\n{ingredients_string}")            
+
         
         # ----------------------------------------------------------
         # dev: also compute sub-metrics and bench score to show on transcript
@@ -319,7 +335,7 @@ class CleanUpMaster(DialogueGameMaster):
 
         sub_metrics_string = ""
         for key, val in sub_metrics.items(): 
-            sub_metrics_string += f"* {key}: {float(val):.2f}\n"    
+            sub_metrics_string += f"* {key}: {float(val):.2f}\n"
 
         temp_log_string = ""
         for key, val in temp_log.items(): 
