@@ -51,7 +51,8 @@ class MetricPreparer:
             INIT_STATES: {k:v for k, v in gm.game_instance.items() if k in ['state1', 'state2']},
             END_STATES: lambda: self.get_end_states(),
             SHIFTS: lambda: self.compute_shifts(),
-            MAX_SHIFTS: lambda: gm.current_round * 2,
+            # MAX_SHIFTS: lambda: gm.current_round * 2,
+            MAX_SHIFTS: (len(player_1.pic_state.state) - 1)*2,
             MIN_SHIFTS: len(player_1.pic_state.state) - 1,
             END_DISTANCE_SUM: lambda: self.player_1.pic_state.distance_sum(self.player_2.pic_state), 
             INIT_DISTANCE_SUM: self.gm.initial_distance, 
@@ -306,4 +307,7 @@ class MetricCalculator:
         # Take the harmonic mean of the sub-metrics
         bench_score = harmonic_mean(sub_metrics.values()) 
 
-        return sub_metrics, bench_score
+        # overwrite MAX_SHIFT for existing interactions.json file
+        self.ingredients[MAX_SHIFTS] = self.ingredients[MIN_SHIFTS] * 2         
+
+        return sub_metrics, bench_score, self.ingredients

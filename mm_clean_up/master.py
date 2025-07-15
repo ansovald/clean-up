@@ -343,7 +343,8 @@ class MultimodalCleanUpMaster(DialogueGameMaster):
             # log all the necessary metrics to `interaction.json`
             self.log_key(key, val)
             # display some of the ingredients in transcript
-            if key not in [MOVES, INIT_STATES, END_STATES, PLAYERS]:
+            # if key not in [MOVES, INIT_STATES, END_STATES, PLAYERS]:
+            if key not in [INIT_STATES, END_STATES, PLAYERS]:
                 ingredients_string += f"* {key}: {float(val):.2f}\n"
 
         lose = not self.success
@@ -362,7 +363,7 @@ class MultimodalCleanUpMaster(DialogueGameMaster):
         # ----------------------------------------------------------
         # # dev: also compute sub-metrics and bench score to show on transcript
         metrics_calculator = MetricCalculator(ingredients)
-        sub_metrics, bench_score = metrics_calculator.compute_metrics()
+        sub_metrics, bench_score, temp_log = metrics_calculator.compute_metrics()
 
         bench_score_string = f"* {BENCH_SCORE}: {float(bench_score):.2f}\n"
 
@@ -370,7 +371,11 @@ class MultimodalCleanUpMaster(DialogueGameMaster):
         for key, val in sub_metrics.items(): 
             sub_metrics_string += f"* {key}: {float(val):.2f}\n"    
 
-        self.log_to_self('dev:game_finished', f"{bench_score_string}\n-------\n{sub_metrics_string}")
+        temp_log_string = ""
+        for key, val in temp_log.items(): 
+            temp_log_string += f"* {key}: {float(val):.2f}\n"
+
+        self.log_to_self('dev:game_finished', f"{bench_score_string}\n-------\n{sub_metrics_string}\n-------\n{temp_log_string}")
         # ----------------------------------------------------------
 
 class MultimodalCleanUpScorer(GameScorer):
@@ -394,12 +399,15 @@ class MultimodalCleanUpScorer(GameScorer):
             ingredients[key] = episode_interactions[key]
         
         metrics_calculator = MetricCalculator(ingredients)
-        sub_metrics, bench_score = metrics_calculator.compute_metrics()        
+        sub_metrics, bench_score, temp_log = metrics_calculator.compute_metrics()        
         
         # for key in sub_metrics_registry:
         #     self.log_episode_score(key, sub_metrics[key])
         for key in sub_metrics: 
             self.log_episode_score(key, sub_metrics[key])
+
+        for key in temp_log: 
+            self.log_episode_score(key, temp_log[key])
 
         # log the bench score
         if episode_interactions[METRIC_SUCCESS]:
