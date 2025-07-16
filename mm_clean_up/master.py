@@ -230,7 +230,7 @@ class MultimodalCleanUpMaster(DialogueGameMaster):
         """
         Check if the player should pass their turn.
         """
-        time.sleep(random.uniform(2, 3))  # only for overnight batch_run
+        # time.sleep(random.uniform(2, 3))  # only for overnight batch_run
         return self.pass_turn
 
     def _start_next_round(self) -> bool:
@@ -345,7 +345,10 @@ class MultimodalCleanUpMaster(DialogueGameMaster):
             # display some of the ingredients in transcript
             # if key not in [MOVES, INIT_STATES, END_STATES, PLAYERS]:
             if key not in [INIT_STATES, END_STATES, PLAYERS]:
-                ingredients_string += f"* {key}: {float(val):.2f}\n"
+                if type(val) is list:
+                    continue
+                else:
+                    ingredients_string += f"* {key}: {float(val):.2f}\n"
 
         lose = not self.success
         # now distance_score is never 0, but a very small number when it's bad
@@ -369,11 +372,17 @@ class MultimodalCleanUpMaster(DialogueGameMaster):
 
         sub_metrics_string = ""
         for key, val in sub_metrics.items(): 
-            sub_metrics_string += f"* {key}: {float(val):.2f}\n"    
+            if type(val) is list:
+                continue
+            else:
+                sub_metrics_string += f"* {key}: {float(val):.2f}\n"    
 
         temp_log_string = ""
         for key, val in temp_log.items(): 
-            temp_log_string += f"* {key}: {float(val):.2f}\n"
+            if type(val) is list:
+                continue
+            else:
+                temp_log_string += f"* {key}: {float(val):.2f}\n"
 
         self.log_to_self('dev:game_finished', f"{bench_score_string}\n-------\n{sub_metrics_string}\n-------\n{temp_log_string}")
         # ----------------------------------------------------------

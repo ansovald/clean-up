@@ -307,7 +307,10 @@ class CleanUpMaster(DialogueGameMaster):
             # not display some of the ingredients in transcript
             # if key not in [MOVES, INIT_STATES, END_STATES]:
             if key not in [INIT_STATES, END_STATES]:
-                ingredients_string += f"* {key}: {float(val):.2f}\n"
+                if type(val) is list:
+                    continue
+                else:
+                    ingredients_string += f"* {key}: {float(val):.2f}\n"
 
         lose = not self.success
         if self.success:
@@ -339,7 +342,10 @@ class CleanUpMaster(DialogueGameMaster):
 
         temp_log_string = ""
         for key, val in temp_log.items(): 
-            temp_log_string += f"* {key}: {float(val):.2f}\n"
+            if type(val) is list or type(val) is dict:
+                continue
+            else:
+                temp_log_string += f"* {key}: {float(val):.2f}\n"
 
         self.log_to_self('dev:game_finished', f"{bench_score_string}\n-------\n{sub_metrics_string}\n-------\n{temp_log_string}")
         # ----------------------------------------------------------
