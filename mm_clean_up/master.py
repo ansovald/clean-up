@@ -379,7 +379,7 @@ class MultimodalCleanUpMaster(DialogueGameMaster):
 
         temp_log_string = ""
         for key, val in temp_log.items(): 
-            if type(val) is list:
+            if type(val) is list or type(val) is dict:
                 continue
             else:
                 temp_log_string += f"* {key}: {float(val):.2f}\n"
