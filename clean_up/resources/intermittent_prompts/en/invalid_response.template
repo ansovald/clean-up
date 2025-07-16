@@ -1,4 +1,1 @@
-Penalty: $reason Make sure that 
-
-* messages to the other player do not contain the words '$row' or '$column', or any numbers or coordinates!
-* your response only contains either `$say` or `$move`, and nothing else!
+Penalty: $reason Make sure that your response only contains either `$say` or `$move`, and nothing else!

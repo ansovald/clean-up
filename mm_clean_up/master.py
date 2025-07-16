@@ -180,8 +180,8 @@ class MultimodalCleanUpMaster(DialogueGameMaster):
                 raise ParseError(reason=self.game_instance["parse_errors"]["invalid_start"], response=response)
         if move_match:
             self._check_head_tail(move_match)
-            print(f"===== {player.name} =====")
-            print(response)
+            # print(f"===== {player.name} =====")
+            # print(response)
             return response
         if message_match:
             self._check_head_tail(message_match)
@@ -202,8 +202,8 @@ class MultimodalCleanUpMaster(DialogueGameMaster):
                         self.log_to_self('rule_violation', f"Response violates restriction: {restricted_pattern}")
                         logger.warning(f"Response '{response}' violates restriction: {restricted_pattern}")
                         raise ParseError(reason=self.game_instance["parse_errors"]["restriction"], response=response)
-            print(f"===== {player.name} =====")
-            print(response)
+            # print(f"===== {player.name} =====")
+            # print(response)
             return response
         else:
             self.log_to_self('parse_error', f"Invalid response format")
@@ -230,7 +230,7 @@ class MultimodalCleanUpMaster(DialogueGameMaster):
         """
         Check if the player should pass their turn.
         """
-        time.sleep(random.uniform(2, 3))  # only for overnight batch_run
+        # time.sleep(random.uniform(2, 3))  # only for overnight batch_run
         return self.pass_turn
 
     def _start_next_round(self) -> bool:
@@ -345,7 +345,10 @@ class MultimodalCleanUpMaster(DialogueGameMaster):
             # display some of the ingredients in transcript
             # if key not in [MOVES, INIT_STATES, END_STATES, PLAYERS]:
             if key not in [INIT_STATES, END_STATES, PLAYERS]:
-                ingredients_string += f"* {key}: {float(val):.2f}\n"
+                if type(val) is list:
+                    continue
+                else:
+                    ingredients_string += f"* {key}: {float(val):.2f}\n"
 
         lose = not self.success
         # now distance_score is never 0, but a very small number when it's bad
@@ -358,7 +361,8 @@ class MultimodalCleanUpMaster(DialogueGameMaster):
         self.log_key(METRIC_LOSE, int(lose))
         self.log_key(METRIC_SUCCESS, int(self.success))  
 
-        self.log_to_self('game_finished', f"* success: {self.success}\n* lose: {lose}\n* aborted: {self.aborted}\n-------\n{ingredients_string}")            
+        self.log_to_self('game_finished', f"* success: {self.success}\n* lose: {lose}\n* aborted: {self.aborted}\n-------\n{ingredients_string}")
+        print(f"game_finished\n * success: {self.success}\n* lose: {lose}\n* aborted: {self.aborted}\n-------\n{ingredients_string}")
 
         # ----------------------------------------------------------
         # # dev: also compute sub-metrics and bench score to show on transcript
@@ -369,13 +373,20 @@ class MultimodalCleanUpMaster(DialogueGameMaster):
 
         sub_metrics_string = ""
         for key, val in sub_metrics.items(): 
-            sub_metrics_string += f"* {key}: {float(val):.2f}\n"    
+            if type(val) is list:
+                continue
+            else:
+                sub_metrics_string += f"* {key}: {float(val):.2f}\n"    
 
         temp_log_string = ""
         for key, val in temp_log.items(): 
-            temp_log_string += f"* {key}: {float(val):.2f}\n"
+            if type(val) is list or type(val) is dict:
+                continue
+            else:
+                temp_log_string += f"* {key}: {float(val):.2f}\n"
 
         self.log_to_self('dev:game_finished', f"{bench_score_string}\n-------\n{sub_metrics_string}\n-------\n{temp_log_string}")
+        print(f"\n\n{bench_score_string}\n-------\n{sub_metrics_string}\n-------\n{temp_log_string}")
         # ----------------------------------------------------------
 
 class MultimodalCleanUpScorer(GameScorer):
