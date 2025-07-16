@@ -328,6 +328,7 @@ class CleanUpMaster(DialogueGameMaster):
 
         self.log_to_self('game_finished', f"* success: {self.success}\n* lose: {lose}\n* aborted: {self.aborted}\n-------\n{ingredients_string}")            
 
+        print(f"game_finished\n * success: {self.success}\n* lose: {lose}\n* aborted: {self.aborted}\n-------\n{ingredients_string}")
         
         # ----------------------------------------------------------
         # dev: also compute sub-metrics and bench score to show on transcript
@@ -348,6 +349,7 @@ class CleanUpMaster(DialogueGameMaster):
                 temp_log_string += f"* {key}: {float(val):.2f}\n"
 
         self.log_to_self('dev:game_finished', f"{bench_score_string}\n-------\n{sub_metrics_string}\n-------\n{temp_log_string}")
+        print(f"\n\n{bench_score_string}\n-------\n{sub_metrics_string}\n-------\n{temp_log_string}")
         # ----------------------------------------------------------
 
 class CleanUpScorer(GameScorer):

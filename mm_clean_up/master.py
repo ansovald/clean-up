@@ -180,8 +180,8 @@ class MultimodalCleanUpMaster(DialogueGameMaster):
                 raise ParseError(reason=self.game_instance["parse_errors"]["invalid_start"], response=response)
         if move_match:
             self._check_head_tail(move_match)
-            print(f"===== {player.name} =====")
-            print(response)
+            # print(f"===== {player.name} =====")
+            # print(response)
             return response
         if message_match:
             self._check_head_tail(message_match)
@@ -202,8 +202,8 @@ class MultimodalCleanUpMaster(DialogueGameMaster):
                         self.log_to_self('rule_violation', f"Response violates restriction: {restricted_pattern}")
                         logger.warning(f"Response '{response}' violates restriction: {restricted_pattern}")
                         raise ParseError(reason=self.game_instance["parse_errors"]["restriction"], response=response)
-            print(f"===== {player.name} =====")
-            print(response)
+            # print(f"===== {player.name} =====")
+            # print(response)
             return response
         else:
             self.log_to_self('parse_error', f"Invalid response format")
@@ -361,7 +361,8 @@ class MultimodalCleanUpMaster(DialogueGameMaster):
         self.log_key(METRIC_LOSE, int(lose))
         self.log_key(METRIC_SUCCESS, int(self.success))  
 
-        self.log_to_self('game_finished', f"* success: {self.success}\n* lose: {lose}\n* aborted: {self.aborted}\n-------\n{ingredients_string}")            
+        self.log_to_self('game_finished', f"* success: {self.success}\n* lose: {lose}\n* aborted: {self.aborted}\n-------\n{ingredients_string}")
+        print(f"game_finished\n * success: {self.success}\n* lose: {lose}\n* aborted: {self.aborted}\n-------\n{ingredients_string}")
 
         # ----------------------------------------------------------
         # # dev: also compute sub-metrics and bench score to show on transcript
@@ -385,6 +386,7 @@ class MultimodalCleanUpMaster(DialogueGameMaster):
                 temp_log_string += f"* {key}: {float(val):.2f}\n"
 
         self.log_to_self('dev:game_finished', f"{bench_score_string}\n-------\n{sub_metrics_string}\n-------\n{temp_log_string}")
+        print(f"\n\n{bench_score_string}\n-------\n{sub_metrics_string}\n-------\n{temp_log_string}")
         # ----------------------------------------------------------
 
 class MultimodalCleanUpScorer(GameScorer):
