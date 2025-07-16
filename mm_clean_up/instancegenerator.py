@@ -197,18 +197,31 @@ class CleanUpMultiModalInstanceGenerator(GameInstanceGenerator):
                         for icon in random.sample(metadata[sampled_noun][sampled_color], n_per_color):
                             chosen_icons.append(icon)
                 
-                    if cached_state[e_prefix]: 
-                        state1 = cached_state[e_prefix]['state1']
-                        state2 = cached_state[e_prefix]['state2']
-                    else: 
+                    # if cached_state[e_prefix]: 
+                    #     state1 = cached_state[e_prefix]['state1']
+                    #     state2 = cached_state[e_prefix]['state2']
+                    # else: 
+                    #     state1: List[PositionedIcon] = self._get_random_icon_state(chosen_icons, bg_size)
+                    #     state2: List[PositionedIcon] = self._get_random_icon_state(chosen_icons, bg_size)
+                    #     cached_state[e_prefix] = {}
+                    #     cached_state[e_prefix]['state1'] = state1
+                    #     cached_state[e_prefix]['state2'] = state2
+                            
+                    if cached_state[e_prefix] is None: 
+                        cached_state[e_prefix] = defaultdict(lambda: None)
+
+                    if cached_state[e_prefix][instance_id] is None: 
                         state1: List[PositionedIcon] = self._get_random_icon_state(chosen_icons, bg_size)
                         state2: List[PositionedIcon] = self._get_random_icon_state(chosen_icons, bg_size)
-                        cached_state[e_prefix] = {}
-                        cached_state[e_prefix]['state1'] = state1
-                        cached_state[e_prefix]['state2'] = state2
+                        cached_state[e_prefix][instance_id] = {}
+                        cached_state[e_prefix][instance_id]['state1'] = state1
+                        cached_state[e_prefix][instance_id]['state2'] = state2
+                    
+                    game_instance["state1"] = cached_state[e_prefix][instance_id]['state1']
+                    game_instance["state2"] = cached_state[e_prefix][instance_id]['state1']
 
-                    game_instance["state1"] = state1
-                    game_instance["state2"] = state2
+        print(cached_state)
+
 
 
     def initial_prompt(self, language: str, max_rounds: int, max_penalties: int = 10) -> str:

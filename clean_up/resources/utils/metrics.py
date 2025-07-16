@@ -31,6 +31,7 @@ DISTANCE_SCORE = "Distance Score"
 CONSISTENCY_SCORE = "Consistency Score"
 COVERAGE_SCORE = "Coverage Score"
 PENALTY_SCORE = "Penalty Score"
+ALT_MAIN_SCORE = "Alternative Main Score"
 sub_metrics_registry = [DISTANCE_SCORE, CONSISTENCY_SCORE, 
                         COVERAGE_SCORE]
 
