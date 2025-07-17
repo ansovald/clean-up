@@ -341,5 +341,76 @@
       "url": "https://www.apache.org/licenses/LICENSE-2.0"
     },
     "model_config": {}
-  }
+  },
+  {
+        "model_name": "gpt-4o-0524",
+        "model_id": "openai/gpt-4o",
+        "backend": "openai_compatible",
+        "release_date": "2024-05-13",
+        "open_weight": false,
+        "parameters": "",
+        "languages": [
+            "en",
+            "es",
+            "fr",
+            "de",
+            "it",
+            "pt",
+            "ru",
+            "zh",
+            "ja",
+            "ko",
+            "ar",
+            "hi",
+            "bn",
+            "te",
+            "ta",
+            "ml",
+            "kn",
+            "gu",
+            "mr",
+            "pa",
+            "ur",
+            "vi",
+            "th",
+            "id",
+            "ms",
+            "tl",
+            "sw",
+            "yo",
+            "zu",
+            "tr",
+            "he",
+            "fa",
+            "uk",
+            "pl",
+            "cs",
+            "hu",
+            "ro",
+            "nl",
+            "sv",
+            "no",
+            "da",
+            "fi",
+            "el",
+            "bg",
+            "sr",
+            "hr",
+            "sk",
+            "is"
+        ],
+        "context_size": "128k",
+        "license": {
+            "name": "OpenAI",
+            "url": "https://openai.com/policies/row-terms-of-use/"
+        },
+        "model_config": {
+            "multimodality": {
+                "single_image": true,
+                "multiple_images": true,
+                "audio": false,
+                "video": false
+            }
+        }
+    }
 ]
