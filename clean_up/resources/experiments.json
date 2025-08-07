@@ -1,0 +1,69 @@
+{
+    "languages": [
+        "en",
+        "zh-CN",
+        "de"
+    ],
+    "n_instances": 3,
+    "modalities": {
+        "text": { 
+            "objects_by_number": {
+                "3": "CLP",
+                "5": "WITCH",
+                "7": "POTSDAM",
+                "9": "APHRODITE",
+                "11": "MAGICREDFOX"
+            },
+            "experiments": [
+                {
+                    "name": "gs7x7_obj3",
+                    "grid_file": "resources/backgrounds/gs7x7_b7.json",
+                    "objects": 3
+                },
+                {
+                    "name": "gs9x9_obj5",
+                    "grid_file": "resources/backgrounds/gs9x9_b9.json",
+                    "objects": 5
+                },
+                {
+                    "name": "gs11x11_obj7",
+                    "grid_file": "resources/backgrounds/gs11x11_b11.json",
+                    "objects": 7
+                },
+                {
+                    "name": "gs13x13_obj9",
+                    "grid_file": "resources/backgrounds/gs13x13_b13.json",
+                    "objects": 9
+                },
+                {
+                    "name": "gs15x15_obj11",
+                    "grid_file": "resources/backgrounds/gs15x15_b15.json",
+                    "objects": 11
+                }
+            ]
+        },
+        "image": {
+            "icon_number": [
+                "3",
+                "6"
+            ],
+            "experiments": {
+                "2D": {
+                    "n_nouns": "$$ICON_NUM$$", 
+                    "colored": true,
+                    "n_per_color": 1
+                }, 
+                "1D": { 
+                    "n_nouns": 1, 
+                    "colored": true,
+                    "n_per_color": "$$ICON_NUM$$"
+                }, 
+                "0D": {
+                    "n_nouns": 1,
+                    "colored": false,
+                    "n_per_color": "$$ICON_NUM$$"
+                }
+            }
+        }
+    }
+}

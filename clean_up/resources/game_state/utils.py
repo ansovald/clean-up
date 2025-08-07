@@ -92,7 +92,7 @@ def place_icons(objects: List[Icon], img_size: Tuple[int, int]) -> List[Icon]:
         obj['coord'] = coords[i]
     return objects
 
-def parse_grid(self, grid: str) -> list[list[str]]:
+def parse_grid(grid: str) -> list[list[str]]:
     """
     Parses the grid from a string into a 2D list.
     """

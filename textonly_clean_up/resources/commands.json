@@ -18,7 +18,6 @@
     "move_keyword": "移动",
     "move": "移动：<物体>，（<X>，<Y>）",
     "move_pattern": "(?P<head>.*)移动[：:] ?(?P<obj>[A-Z])[，,] ?[（\\(](?P<x>[A-Z])[，,] ?(?P<y>\\d+)[）\\)](?P<tail>.*)",
-    "say_example": "发送：我们可以把“W”移动到右下角。你同意吗？",
     "end_1": "发送：结束了吗？",
     "terminate_question": "结束了吗？",
     "end_2": "发送：结束了！",

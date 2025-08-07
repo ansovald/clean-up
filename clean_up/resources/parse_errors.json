@@ -1,0 +1,29 @@
+{
+  "en": {
+    "head": "Your message must not contain anything before the command!",
+    "tail": "Your message must not contain anything after the command!",
+    "head_tail": "Your message must not contain anything before or after the command!",
+    "several_commands": "Your message contains more than one command!",
+    "restriction": "Your message contains restricted content!",
+    "invalid_format": "Your message is not in the expected format!",
+    "invalid_start": "You must begin the game by sending a message to the other player!"
+  },
+  "zh-CN": {
+    "head": "指令前不得包含任何其它内容！",
+    "tail": "指令后不得包含任何其它内容！",
+    "head_tail": "指令前后不得包含任何其它内容！",
+    "several_commands": "你的消息包含多条指令！",
+    "restriction": "你的消息中包含受限内容！",
+    "invalid_format": "你的消息格式不符合要求！",
+    "invalid_start": "你必须先向另一位玩家发送一条消息来开始游戏！"
+  },
+  "de": {
+    "head": "Deine Nachricht darf nichts vor dem Befehl enthalten!",
+    "tail": "Deine Nachricht darf nichts nach dem Befehl enthalten!",
+    "head_tail": "Deine Nachricht darf nichts vor oder nach dem Befehl enthalten!",
+    "several_commands": "Deine Nachricht enthält mehr als einen Befehl!",
+    "restriction": "Deine Nachricht enthält regelwidrige Angaben!",
+    "invalid_format": "Deine Nachricht entspricht keinem gültigen Format!",
+    "invalid_start": "Du musst das Spiel beginnen, indem du eine Nachricht an den anderen Spieler sendest!"
+  }
+}

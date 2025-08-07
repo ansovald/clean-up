@@ -201,6 +201,7 @@ class GameGrid:
             self.grid[old_y][old_x] = self.grid[old_y][old_x][:-1]  # Remove the object from the old position
             self.grid[y][x].append(obj)  # Place the object at the new position
             self.objects[obj] = (x, y)
+            
             return True, Template(self.move_messages["successful"]).substitute(object=obj, x=x_letter, y=y, grid=str(self))
         else:
             return False, Template(self.move_messages["obj_not_found"]).substitute(object=obj)

@@ -5,10 +5,7 @@ python3 instancegenerator.py
 Creates instance.json file in ./in
 
 """
-from email import message
 import os
-from pickle import OBJ
-import random
 import logging
 
 from string import Template
