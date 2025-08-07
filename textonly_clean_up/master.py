@@ -382,7 +382,7 @@ class CleanUpScorer(GameScorer):
         for key in sub_metrics:
             self.log_episode_score(key, sub_metrics[key])
 
-        for key in temp_log: 
+        for key in temp_log:
             self.log_episode_score(key, temp_log[key])
 
         # log the bench score

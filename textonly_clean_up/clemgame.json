@@ -1,0 +1,9 @@
+{
+  "game_name": "clean_up",
+  "description": "Two players have to arrange objects on a grid according to a negotiated goal state",
+  "main_game": "clean_up",
+  "players": "two",
+  "image": "none",
+  "languages": ["en", "zh-CN", "de"],
+  "benchmark": []
+}
