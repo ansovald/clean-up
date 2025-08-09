@@ -26,17 +26,11 @@ You have to communicate with the other player to agree upon a common goal state.
 
 
 ```
- abc
-╔═╤═╗
-║◌│◌║ 1
-║◌│C║ 2
-╟─┘◌║ 3
-║◌◌◌║ 4
-╚═══╝
+$example_grid
 ```
 
 
-* In this example, the empty symbol in the top left corner is at `(a,1)`, the empty symbol in the top right corner is at `(c,1)`, the one in the bottom left corner at `(a,4)` and the one in the bottom right corner is at `(c,4)`. Object 'C' is at position `(c,2)`, and the corner symbol `┘` is at `(b,3)`
+* In this example, the empty symbol in the top left corner is at `$top_left`, the empty symbol in the top right corner is at `$top_right`, the one in the bottom left corner at `$bottom_left` and the one in the bottom right corner is at `$bottom_right`. Object 'C' is at position `$obj_pos`, and the corner symbol `┘` is at `$symb_pos`
 * Before making a move, double check that the target spot is empty, and does not hold any letter, frame, or line!
 
 **End of Game:**
@@ -53,5 +47,7 @@ The closer the identical objects are in both grids, the more points you get. Pen
 **Your Grid:**
 
 Here is your grid:
+
 ```
-$grid```
+$grid
+```

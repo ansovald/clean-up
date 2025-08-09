@@ -4,27 +4,17 @@
         "zh-CN",
         "de"
     ],
-    "n_instances": 3,
+    "n_instances": 1,
     "modalities": {
         "text": {
             "objects": {
-                "5": "WITCH",
-                "7": "POTSDAM",
-                "9": "APHRODITE"
+                "5": "WITCH"
             },
             "penalty_factor": 2,
             "experiments": [
                 {
                     "name": "easy",
                     "grid_config": "9x9_e34_b7"
-                },
-                {
-                    "name": "medium",
-                    "grid_config": "9x9_e29_b11"
-                },
-                {
-                    "name": "hard",
-                    "grid_config": "9x9_e24_b15"
                 }
             ]
         },
@@ -32,8 +22,7 @@
             "instances": "mm_instances",
             "penalty_factor": 1,
             "objects": [
-                "3",
-                "6"
+                "3"
             ],
             "experiments": [
                 {
@@ -41,18 +30,6 @@
                     "object_categories": "OBJECT_COUNT", 
                     "colored": true,
                     "objects_per_color": 1
-                },
-                {
-                    "name": "mm_medium",
-                    "object_categories": 1, 
-                    "colored": true,
-                    "objects_per_color": "OBJECT_COUNT"
-                }, 
-                {
-                    "name": "mm_hard",
-                    "object_categories": 1,
-                    "colored": false,
-                    "objects_per_color": "OBJECT_COUNT"
                 }
             ]
         }

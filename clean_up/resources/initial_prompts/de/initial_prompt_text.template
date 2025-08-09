@@ -26,17 +26,11 @@ Du musst dich mit deinem Spielpartner absprechen, damit ihr euch auf eine gemein
 
 
 ```
- abc
-╔═╤═╗
-║◌│◌║ 1
-║◌│C║ 2
-╟─┘◌║ 3
-║◌◌◌║ 4
-╚═══╝
+$example_grid
 ```
 
 
-* In diesem Beispiel wäre die leere Zelle in der linken oberen Ecke an der Position `(a,1)`, die leere Zelle in der rechten obere Ecke bei `(c,1)`, die in der linken unteren Ecke bei `(a,4)` und die in der rechten unteren Ecke bei `(c,4)`. Das Object 'C' ist an der Position `(c,2)` und das Eckensymbol `┘` bei `(b,3)`.
+* In diesem Beispiel wäre die leere Zelle in der linken oberen Ecke an der Position `$top_left`, die leere Zelle in der rechten obere Ecke bei `$top_right`, die in der linken unteren Ecke bei `$bottom_left` und die in der rechten unteren Ecke bei `$bottom_right`. Das Object 'C' ist an der Position `$obj_pos` und das Eckensymbol `┘` bei `$symb_pos`.
 * Wenn du ein Objekt bewegen willst, solltest du dich erst vergewissern, ob die Zielposition auch wirklich leer ist und weder Buchstaben noch Rahmenteile noch Linien enthält!
 
 **Spielende:**
@@ -53,5 +47,7 @@ Je näher sich die jeweils gleichen Objekte auf beiden Rastern sind, desto mehr 
 **Dein Raster:**
 
 Dein Raster sieht so aus:
+
 ```
-$grid```
+$grid
+```

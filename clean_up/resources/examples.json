@@ -10,7 +10,15 @@
             "say_describe_location_wrong": "SAY: Let's move the <ICON_DESCRIPTION> icon to location (800, 100)!",
             "say_describe_location_right": "SAY: Let's move the <ICON_DESCRIPTION> icon to <TARGET_LOCATION_DESCRIPTION>!"
         },
-        "text": {}
+        "text": {
+            "example_grid": " 123\n╔═╤═╗\n║◌│◌║ 1\n║◌│C║ 2\n╟─┘◌║ 3\n║◌◌◌║ 4\n╚═══╝",
+            "top_left": "(1,1)",
+            "top_right": "(3,1)",
+            "bottom_left": "(1,4)",
+            "bottom_right": "(3,4)",
+            "obj_pos": "(3,2)",
+            "symb_pos": "(2,3)"
+        }
     },
     "zh-CN": {
         "image": {
@@ -23,7 +31,15 @@
             "say_describe_location_wrong": "发送：我们把 <图标描述> 图标移动到坐标 (800, 100) 吧！",
             "say_describe_location_right": "发送：我们把 <图标描述> 图标移动到 <目标位置描述> 吧！"
         },
-        "text": {}
+        "text": {
+            "example_grid": " 123\n╔═╤═╗\n║◌│◌║ 1\n║◌│C║ 2\n╟─┘◌║ 3\n║◌◌◌║ 4\n╚═══╝",
+            "top_left": "(1,1)",
+            "top_right": "(3,1)",
+            "bottom_left": "(1,4)",
+            "bottom_right": "(3,4)",
+            "obj_pos": "(3,2)",
+            "symb_pos": "(2,3)"
+        }
     },
     "de": {
         "image": {
@@ -36,6 +52,14 @@
             "say_describe_location_wrong": "SPRICH: Lass uns <OBJEKTBESCHREIBUNG> nach (800, 100) bewegen!",
             "say_describe_location_right": "SPRICH: Lass uns <OBJEKTBESCHREIBUNG> nach <BESCHREIBUNG_ZIELPOSITION> verschieben!"
         },
-        "text": {}
+        "text": {
+            "example_grid": " 123\n╔═╤═╗\n║◌│◌║ 1\n║◌│C║ 2\n╟─┘◌║ 3\n║◌◌◌║ 4\n╚═══╝",
+            "top_left": "(1,1)",
+            "top_right": "(3,1)",
+            "bottom_left": "(1,4)",
+            "bottom_right": "(3,4)",
+            "obj_pos": "(3,2)",
+            "symb_pos": "(2,3)"
+        }
     }
 }

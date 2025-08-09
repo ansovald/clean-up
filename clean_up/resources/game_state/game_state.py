@@ -19,7 +19,8 @@ from resources.game_state.utils import GameObject, Icon, png_to_base64, number_t
 class GameState(abc.ABC):
     # Superclass for GridState and PicState, holding the game state for one player.
     @abc.abstractmethod
-    def __init__(self, background: str, move_messages: dict = None, objects: List[GameObject] = None):
+    def __init__(self, player_id: str, background: str, move_messages: dict = None, objects: List[GameObject] = None):
+        self.player_id = player_id
         self.width = None
         self.height = None
         self.background = None
@@ -27,6 +28,7 @@ class GameState(abc.ABC):
         self.move_messages = move_messages
         self.check_empty = False
         self.objects = []
+        assert objects is not None, "Objects must be provided when initializing the GameState."
         self.place_objects(objects)
 
     @abc.abstractmethod
@@ -44,17 +46,33 @@ class GameState(abc.ABC):
             if obj['id'] == obj_id:
                 return obj
         return None
+    
+    @abc.abstractmethod
+    def get_clean_objects(self) -> List[GameObject]:
+        """
+        Returns a list of all objects in the game state, but only with 'id' and 'coord' attributes.
+        For PicState, it returns the value of `freepik_id` under the 'id' key.
+        Only use for metric calculation!
+        """
+        pass
 
     @abc.abstractmethod
     def move_abs(self, obj: str, x: str, y: str):
         """
-        Move an object to an absolute position (x, y).
-        :param obj: id of the object to move
-        :param x: The x-coordinate
-        :param y: The y-coordinate
-        :return: A tuple (success, message)
+        This abstract method just parses the coordinates and gets the object by id.
+        The actual moving logic is implemented in the subclasses.
         """
-        pass
+        if isinstance(x, str):
+            try:
+                x = int(x)
+            except ValueError:
+                raise ValueError(f"Invalid x-coordinate: {x}. It should be an integer.")
+        if isinstance(y, str):
+            try:
+                y = int(y)
+            except ValueError:
+                raise ValueError(f"Invalid y-coordinate: {y}. It should be an integer.")
+        return self.object_by_id(obj), x, y
 
     @final
     def distance_sum(self, other):
@@ -109,9 +127,9 @@ class PicState(GameState):
     Represents the state of a picture-based game for one player.
     """
 
-    def __init__(self, background: str, move_messages: dict, objects: List[Icon], img_prefix: str = None):
-        super().__init__(background, move_messages, objects)
-        self.img_prefix = img_prefix
+    def __init__(self, player_id: str, background: str, move_messages: dict, objects: List[Icon]):
+        super().__init__(player_id, background, move_messages, objects)
+        self.img_prefix = f'player_{self.player_id}_'
         self.image_counter = 0
 
     def set_background(self, background: str):
@@ -138,6 +156,14 @@ class PicState(GameState):
             obj_copy['img'] = Image.open(BytesIO(response.content))
             self.objects.append(obj_copy)
 
+    def get_clean_objects(self) -> List[GameObject]:
+        """
+        Returns a list of all objects, but only with 'id' and 'coord' attributes.
+        `id` key holds the actual `freepik_id`.
+        Only use for metric calculation!
+        """
+        return [{'id': obj['freepik_id'], 'coord': obj['coord']} for obj in self.objects]
+
     def move_abs(self, obj, x, y):
         """
         Move the object to the absolute coordinates (x, y).
@@ -145,17 +171,7 @@ class PicState(GameState):
             success: bool, action success status
             message: str, message to be passed to the player
         """
-        if isinstance(x, str):
-            try:
-                x = int(x)
-            except ValueError:
-                raise ValueError(f"Invalid x-coordinate: {x}. It should be an integer.")
-        if isinstance(y, str):
-            try:
-                y = int(y)
-            except ValueError:
-                raise ValueError(f"Invalid y-coordinate: {y}. It should be an integer.")
-        element = self.object_by_id(obj)
+        element, x, y = super().move_abs(obj, x, y)
         if element is None:
             return False, Template(self.move_messages["obj_not_found"]).substitute(object=obj)
         if x < 0 or x > self.width or y < 0 or y > self.height:
@@ -251,8 +267,8 @@ class GridState(GameState):
     """
     Represents the state of a grid-based game for one player.
     """
-    def __init__(self, background: str, move_messages: dict = None, objects: List[GameObject] = None):
-        super().__init__(background, move_messages, objects)
+    def __init__(self, player_id: str=None, background: str=None, move_messages: dict = None, objects: List[GameObject] = None, **kwargs):
+        super().__init__(player_id, background, move_messages, objects)
         self.check_empty = True
 
     def set_background(self, background: str):
@@ -270,7 +286,7 @@ class GridState(GameState):
         :param empty: don't show objects if True
         :return: String representation of the grid
         """
-        grid_str = " " + "".join([number_to_letter(i+1) for i in range(self.width-2)]) + "\n"
+        grid_str = " " + "".join([str(i+1) for i in range(self.width-2)]) + "\n"
         i = 0 if empty else -1
         for j, row in enumerate(self.background):
             grid_str += ''.join([cell[i] for cell in row])
@@ -303,6 +319,13 @@ class GridState(GameState):
         """
         return "'" + "', '".join(self.objects.keys()) + "'"
     
+    def get_clean_objects(self) -> List[GameObject]:
+        """
+        Returns a list of all objects in the game state, but only with 'id' and 'coord' attributes.
+        Only use for metric calculation!
+        """
+        return [{'id': obj['id'], 'coord': obj['coord']} for obj in self.objects]
+    
     def move_abs(self, obj: str, x: str, y: str):
         """
         Move the object to the absolute coordinates (x, y).
@@ -310,29 +333,20 @@ class GridState(GameState):
             success: bool, action success status
             message: str, message to be passed to the player
         """
-        x_letter = x
-        if isinstance(x, str):
-            try:
-                x = letter_to_number(x)
-            except ValueError:
-                raise ValueError(f"Invalid x-coordinate: {x}. It should be a lowercase letter.")
-        if isinstance(y, str):
-            try:
-                y = int(y)
-            except ValueError:
-                raise ValueError(f"Invalid y-coordinate: {y}. It should be an integer.")
-        element = self.object_by_id(obj)
+        element, x, y = super().move_abs(obj, x, y)
         if element is None:
             return False, Template(self.move_messages["obj_not_found"]).substitute(object=obj)
         if x < 0 or x >= self.width or y < 0 or y >= self.height:
-            return False, Template(self.move_messages["out_of_bounds"]).substitute(object=obj, x=x_letter, y=y)
+            return False, Template(self.move_messages["out_of_bounds"]).substitute(object=obj, x=x, y=y)
+        if self.check_empty and self.background[y][x][-1] != EMPTY_SYMBOL:
+            return False, Template(self.move_messages["not_empty"]).substitute(object=obj, x=x, y=y)
         # Update the coordinates of the object
         old_x = element['coord'][0]
         old_y = element['coord'][1]
         self.background[old_y][old_x] = self.background[old_y][old_x][:-1]  # Remove the object from the old position
         self.background[y][x].append(obj)  # Place the object at the new position
         element['coord'] = (x, y)
-        return True, Template(self.move_messages["successful"]).substitute(object=obj, x=x_letter, y=y)
+        return True, Template(self.move_messages["successful"]).substitute(object=obj, x=x, y=y, grid=str(self))
         
     def get_pairwise_distances(self, other_objects):
         distances = {}
@@ -344,3 +358,8 @@ class GridState(GameState):
                     dist = self.euclidean_distance(obj['coord'], other_obj['coord'])
                     distances[other_obj['id']] = dist
         return distances
+    
+state_dict = {
+    "text": GridState,
+    "image": PicState
+}

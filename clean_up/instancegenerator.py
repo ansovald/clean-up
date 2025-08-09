@@ -87,16 +87,17 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
                     for key in template_instance:
                         game_instance[key] = template_instance[key]
                     game_instance['intermittent_prompts']['penalty_counter'] = Template(game_instance['intermittent_prompts']['penalty_counter']).safe_substitute(max_penalties=max_penalties)
-                    game_instance['state_1'] = place_objects(self.modality, objects_1, game_instance['background'])
-                    game_instance['state_2'] = place_objects(self.modality, objects_2, game_instance['background'])
+                    game_instance['intermittent_prompts']['round_counter'] = Template(game_instance['intermittent_prompts']['round_counter']).safe_substitute(max_rounds=max_rounds)
+                    game_instance['objects_1'] = place_objects(self.modality, objects_1, game_instance['background'])
+                    game_instance['objects_2'] = place_objects(self.modality, objects_2, game_instance['background'])
                     
                     object_string = None
                     grid_1 = None
                     grid_2 = None
                     if modality == 'text':
                         object_string = "'" + "', '".join([obj['id'] for obj in objects_1]) + "'"
-                        grid_1 = str(GridState(self.background, objects=objects_1))
-                        grid_2 = str(GridState(self.background, objects=objects_2))
+                        grid_1 = str(GridState(background=self.background, objects=objects_1))
+                        grid_2 = str(GridState(background=self.background, objects=objects_2))
                     
                     p1_initial_prompt = self.prepare_initial_prompt(grid=grid_1, max_penalties=max_penalties, max_rounds=max_rounds, object_string=object_string)
                     if not grid_2:
@@ -130,25 +131,6 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
         else:
             background = 'resources/backgrounds/kitchen.png'
         return background
-    
-    def fill_grid(self, grid, objects):
-        """
-        Fills the grid with objects.
-        For text modality, it places objects in the grid.
-        """
-        assert self.modality == 'text', "This method is only implemented for text modality."
-        width = grid.index('\n')
-        for obj in objects:
-            x, y = obj['coord']
-            print(f"Placing object {obj['id']} at ({x}, {y})")
-            x += 1  # Adjust for frame
-            # map to index in grid string
-            index = y * (width + 1) + x
-            if index < len(grid):
-                grid = grid[:index] + obj['id'] + grid[index + 1:]
-        print(grid)
-        return grid
-
     
     def get_objects(self, object_count):
         objects = []
