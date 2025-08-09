@@ -14,12 +14,12 @@ from io import BytesIO
 from PIL import Image
 import numpy as np
 
-from utils import GameObject, Icon, png_to_base64, number_to_letter, letter_to_number, place_grid_objects, place_icons, EMPTY_SYMBOL, parse_grid
+from resources.game_state.utils import GameObject, Icon, png_to_base64, number_to_letter, letter_to_number, EMPTY_SYMBOL, parse_grid
 
 class GameState(abc.ABC):
     # Superclass for GridState and PicState, holding the game state for one player.
     @abc.abstractmethod
-    def __init__(self, background: str, move_messages: dict, objects: List[GameObject]):
+    def __init__(self, background: str, move_messages: dict = None, objects: List[GameObject] = None):
         self.width = None
         self.height = None
         self.background = None
@@ -251,7 +251,7 @@ class GridState(GameState):
     """
     Represents the state of a grid-based game for one player.
     """
-    def __init__(self, background: str, move_messages: dict, objects: str=None):
+    def __init__(self, background: str, move_messages: dict = None, objects: List[GameObject] = None):
         super().__init__(background, move_messages, objects)
         self.check_empty = True
 
@@ -292,6 +292,7 @@ class GridState(GameState):
             y = int(y)
             if 0 <= x < self.width and 0 <= y < self.height:
                 if self.background[y][x][-1] != EMPTY_SYMBOL:
+                    print(str(self))
                     raise ValueError(f"Cannot place object {obj['id']} at ({x}, {y}): position already occupied.")
                 self.background[y][x].append(obj['id'])
                 self.objects.append(obj)

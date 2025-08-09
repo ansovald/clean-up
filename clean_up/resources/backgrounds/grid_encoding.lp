@@ -15,6 +15,7 @@ frame("◌",-1,-1,-1,-1).
 
 corner("┌";"┐";"└";"┘").
 branch("├";"┤";"┬";"┴";"┼").
+empty("◌").
 
 1 { cell(X,Y,F) : frame(F,_,_,_,_) } 1 :- X=0..W, Y=0..H, grid_size(W,H).
 
@@ -75,3 +76,6 @@ branch("├";"┤";"┬";"┴";"┼").
 % limit number of corners+branches in each row and column
 % :- Y=0..H, grid_size(_,H), CC = #count { X,F : cell(X,Y,F), corner(F) }, BC = #count { X,F : cell(X,Y,F), branch(F) }, not CC+BC < 8.
 % :- X=0..W, grid_size(W,_), CC = #count { Y,F : cell(X,Y,F), corner(F) }, BC = #count { Y,F : cell(X,Y,F), branch(F) }, not CC+BC < 4.
+
+% Fix number of empty cells
+% :- 10 != #count { X,Y,F : cell(X,Y,F), empty(F) }.

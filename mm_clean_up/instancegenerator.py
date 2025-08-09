@@ -222,8 +222,6 @@ class CleanUpMultiModalInstanceGenerator(GameInstanceGenerator):
 
         print(cached_state)
 
-
-
     def initial_prompt(self, language: str, max_rounds: int, max_penalties: int = 10) -> str:
         """
         Returns the initial prompt for the game.

@@ -18,8 +18,8 @@ logger = logging.getLogger(__name__)
 SEED = 73128361
 
 N_INSTANCES = 2
-# LANGUAGES = ['en', 'zh-CN', 'de'] # maybe adding Traditional Chinese as well? 'zh-TW'
-LANGUAGES = ['zh-CN']
+LANGUAGES = ['en', 'zh-CN', 'de'] # maybe adding Traditional Chinese as well? 'zh-TW'
+# LANGUAGES = ['zh-CN']
 
 experiments = [
     {

@@ -6,64 +6,55 @@
     ],
     "n_instances": 3,
     "modalities": {
-        "text": { 
-            "objects_by_number": {
-                "3": "CLP",
+        "text": {
+            "objects": {
                 "5": "WITCH",
                 "7": "POTSDAM",
-                "9": "APHRODITE",
-                "11": "MAGICREDFOX"
+                "9": "APHRODITE"
             },
+            "penalty_factor": 2,
             "experiments": [
                 {
-                    "name": "gs7x7_obj3",
-                    "grid_file": "resources/backgrounds/gs7x7_b7.json",
-                    "objects": 3
+                    "name": "easy",
+                    "grid_config": "9x9_e34_b7"
                 },
                 {
-                    "name": "gs9x9_obj5",
-                    "grid_file": "resources/backgrounds/gs9x9_b9.json",
-                    "objects": 5
+                    "name": "medium",
+                    "grid_config": "9x9_e29_b11"
                 },
                 {
-                    "name": "gs11x11_obj7",
-                    "grid_file": "resources/backgrounds/gs11x11_b11.json",
-                    "objects": 7
-                },
-                {
-                    "name": "gs13x13_obj9",
-                    "grid_file": "resources/backgrounds/gs13x13_b13.json",
-                    "objects": 9
-                },
-                {
-                    "name": "gs15x15_obj11",
-                    "grid_file": "resources/backgrounds/gs15x15_b15.json",
-                    "objects": 11
+                    "name": "hard",
+                    "grid_config": "9x9_e24_b15"
                 }
             ]
         },
         "image": {
-            "icon_number": [
+            "instances": "mm_instances",
+            "penalty_factor": 1,
+            "objects": [
                 "3",
                 "6"
             ],
-            "experiments": {
-                "2D": {
-                    "n_nouns": "$$ICON_NUM$$", 
+            "experiments": [
+                {
+                    "name": "mm_easy",
+                    "object_categories": "OBJECT_COUNT", 
                     "colored": true,
-                    "n_per_color": 1
-                }, 
-                "1D": { 
-                    "n_nouns": 1, 
+                    "objects_per_color": 1
+                },
+                {
+                    "name": "mm_medium",
+                    "object_categories": 1, 
                     "colored": true,
-                    "n_per_color": "$$ICON_NUM$$"
+                    "objects_per_color": "OBJECT_COUNT"
                 }, 
-                "0D": {
-                    "n_nouns": 1,
+                {
+                    "name": "mm_hard",
+                    "object_categories": 1,
                     "colored": false,
-                    "n_per_color": "$$ICON_NUM$$"
+                    "objects_per_color": "OBJECT_COUNT"
                 }
-            }
+            ]
         }
     }
 }

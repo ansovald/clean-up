@@ -1,3 +1,14 @@
 {
-  "image": ["[0-9]+"]
+  "en": {
+    "image": ["[0-9]+"],
+    "text": null
+  },
+  "zh-CN": {
+    "image": ["[0-9]+"],
+    "text": null
+  },
+  "de": {
+    "image": ["[0-9]+"],
+    "text": null
+  }
 }

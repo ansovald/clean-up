@@ -1,8 +1,11 @@
 from clingo.control import Control
 from random import randint
-from game_grid import GameGrid
+import json
+import random
+import os
 
-EMPTY_SYMB = "◌"
+from numpy import empty
+EMPTY_SYMBOL = "◌"
 
 frame_dict = {
     "┌": "╔",
@@ -15,7 +18,7 @@ frame_dict = {
     "┴": "╧",
     "─": "═",
     "│": "║"
-}
+}    
 
 # used for debugging asp encoding
 # def find_attribute(model, attribute="r_count"):
@@ -32,7 +35,7 @@ def parse_model(model, width, height):
         model = str(model)
         model = model.split(" ")
         # Initalize grid as list of height empty lists, each representing a row
-        grid = [[EMPTY_SYMB for _ in range(width)] for _ in range(height)]
+        grid = [[EMPTY_SYMBOL for _ in range(width)] for _ in range(height)]
         for atom in model:
             if atom.startswith("cell("):
                 if atom.endswith(")."):
@@ -47,94 +50,100 @@ def parse_model(model, width, height):
                 grid[y][x] = value
                 if x == 0 or y == 0 or x == width - 1 or y == height - 1:
                     grid[y][x] = frame_dict[grid[y][x][0]]
-        # parsed_grid = []
-        # for row in grid:
-        #     parsed_grid.append("".join(row))
         return "\n".join("".join(row) for row in grid)
 
-def generate_grid(encoding: str='grid_encoding.lp', models: int=1000, grid_size: tuple[int, int]=(8, 12), branches: int=None, save_file: bool=False, display: int=None):
-    """
-    Generates a grid based on the provided parameters.
-    :param model: Number of models to generate
-    :param grid_size: Size of the grid (width, height)
-    :param neighbors: Minimum and maximum number of empty neighbors any empty cell must have
-    :param single: Enforce number of empty cells without neighbors
-    :param corners: Limit number of corner tiles
-    :param branches: Limit number of branch tiles
-    :param corner_branches_per_row: Limit number of corners/branches per row
-    :param corner_branches_per_column: Limit number of corners/branches per column
-    :param display: Number of random grids to display
-    :return: Name of the generated JSON file containing the grids
-    """
-    # load ASP encoding:
-    with open(encoding, 'r', encoding='utf-8') as lp_file:
-        grid_lp = lp_file.read()
+GRID_CONFIGS = [
+    {'dim': 9, 'branches': 7, 'empty_cells': 34},
+    {'dim': 9, 'branches': 11, 'empty_cells': 29},
+    {'dim': 9, 'branches': 15, 'empty_cells': 24}
+]
 
-    # init clingo controller with maximum args.models answer sets
-    ctl = Control([f"{models}"])
+def generate_all_grids(grid_configs=GRID_CONFIGS, models=1000, encoding='grid_encoding.lp'):
+    for config in grid_configs:
+        dim = config['dim']
+        branches = config['branches']
+        empty_cells = config['empty_cells']
+        id_string = f'{dim}x{dim}_e{empty_cells}_b{branches}'
+        # load ASP encoding:
+        with open(encoding, 'r', encoding='utf-8') as lp_file:
+            grid_lp = lp_file.read()
 
-    grid_lp += f"\ngrid_size({grid_size[0]-1},{grid_size[1]}-1)."
-    if branches:
+        # init clingo controller with maximum args.models answer sets
+        ctl = Control([f"{models}"])
+
+        grid_lp += f"\ngrid_size({dim-1},{dim}-1)."
         grid_lp += f'\n:- {branches} != #count {{ X,Y,F : cell(X,Y,F), branch(F) }}.'
-
-    # add encoding to clingo controller:
-    ctl.add(grid_lp)
-    # ground the encoding:
-    ctl.ground()
-    # report successful grounding:
-    print("Grounded!")
-    # solve encoding, collect produced models:
-    grids = { }
-    with ctl.solve(yield_=True) as solve:
-        print(f'Encoding is {str(solve.get()).lower()}isfiable')
-        for i, model in enumerate(solve):
-            grids[i] = parse_model(model=model, width=grid_size[0], height=grid_size[1])
-
-    if display > models:
-        display = models
-
-    if display:
+        grid_lp += f'\n:- {empty_cells} != #count {{ X,Y,F : cell(X,Y,F), empty(F) }}.'
+        
+        # add encoding to clingo controller:
+        ctl.add(grid_lp)
+        # ground the encoding:
+        ctl.ground()
+        grids = {}
+        # solve encoding, collect produced models:
+        with ctl.solve(yield_=True) as solve:
+            print(f'\tEncoding is {str(solve.get()).lower()}isfiable')
+            for i, model in enumerate(solve):
+                grids[i] = parse_model(model=model, width=dim, height=dim)
         if len(grids) > 0:
-            rand_array = [randint(0,len(grids)-1) for _ in range(display)]
-            for i in rand_array:
-                print(f'grid {i}:')
-                grid = GameGrid(grids[i])
-                print(grid.__str__(show_coords=True))
-                # count the number of empty cells in the grid
-                empty_cells = sum(row.count(EMPTY_SYMB) for row in grids[i])
-                print(f'Number of empty cells: {empty_cells}')                                  
+            empty_cell_counts = []
+            for grid in grids:
+                empty_cells = sum(row.count(EMPTY_SYMBOL) for row in grids[grid])
+                empty_cell_counts.append(empty_cells)
 
-    id_string = f'gs{grid_size[0]}x{grid_size[1]}'
-    if branches:
-        id_string += f'_b{branches}'
+            with open(id_string + '.json', 'w', encoding='utf-8') as f:
+                json.dump(grids, f, ensure_ascii=False, indent=4)
 
-    if save_file:
-        import json
-        with open(f'{id_string}.json', 'w', encoding='utf-8') as f:
-            json.dump(grids, f, ensure_ascii=False, indent=4)
-
-    return f'{id_string}.json'
-
-def main():
-    import argparse
-    parser = argparse.ArgumentParser(description="Generate grids from ASP encoding.")
-    parser.add_argument("-e", "--encoding", type=str, default="grid_encoding.lp", help="Path to the ASP encoding file")
-    parser.add_argument("-m", "--models", type=int, default=1000, help="Number of models to generate")
-    parser.add_argument("-d", "--display", type=int, default=20, help="Number of random grids to display")
-    parser.add_argument("-gs", "--grid_size", type=int, nargs=2, default=[21,9], help="Width and height of the grid, default is 21, 9")
-    parser.add_argument("-b", "--branches", type=int, default=None, help="Limit number of branch tiles (\"├\";\"┤\";\"┬\";\"┴\";\"┼\"), e.g. to 14")
-    parser.add_argument("-s", "--save", help="Save the generated grids to a file", action='store_true')
-    args = parser.parse_args()
-    print(args)
-
-    generate_grid(
-        models=args.models,
-        grid_size=tuple(args.grid_size),
-        branches=args.branches,
-        save_file=args.save,
-        display=args.display
-    )
+def sample_exhaustive_files(n_samples=10000):
+    """
+    Samples from the exhaustive grid files and returns a grids.json file with the sampled grids.
+    """
+    # Find exhaustive grid files, ending with `_exhaustive.json`
+    exhaustive_files = [f for f in os.listdir('.') if f.endswith('_exhaustive.json')]
+    sampled_grids = {
+        "info": {
+            "text": "For each difficulty level, 10.000 grids have been samples from the exhaustive files enumerating all grids with the respective specifications",
+            "easy": {
+                "id_string": "9x9_e34_b7",
+                "dim": 9,
+                "empty_cells": 34,
+                "total_cells": 49,
+                "empty_cell_ratio": 0.6938775510204082,
+                "branch_count": 7,
+                "model_count": 63859
+            },
+            "medium": {
+                "id_string": "9x9_e29_b11",
+                "dim": 9,
+                "empty_cells": 29,
+                "total_cells": 49,
+                "empty_cell_ratio": 0.5918367346938775,
+                "branch_count": 11,
+                "model_count": 1222435
+            },
+            "hard": {
+                "id_string": "9x9_e24_b15",
+                "dim": 9,
+                "empty_cells": 24,
+                "total_cells": 49,
+                "empty_cell_ratio": 0.4897959183673469,
+                "branch_count": 15,
+                "model_count": 2696476
+            }
+        }
+    }
+    for file in exhaustive_files:
+        with open(file, 'r', encoding='utf-8') as f:
+            id_string = file.split('_exhaustive.json')[0]
+            grids = json.load(f)
+            sampled_keys = random.sample(list(grids.keys()), min(n_samples, len(grids)))
+            sampled_grids[id_string] = {}
+            for key in sampled_keys:
+                sampled_grids[id_string][key] = grids[key]['grid']
+    with open('grids.json', 'w', encoding='utf-8') as f:
+        json.dump(sampled_grids, f, ensure_ascii=False, indent=4)
 
 if __name__ == "__main__":
-    main()
+    # generate_all_grids(grid_configs=GRID_CONFIGS, models=10000, encoding='grid_encoding.lp')
+    sample_exhaustive_files(n_samples=10000)
     

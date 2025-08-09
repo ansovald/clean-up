@@ -13,6 +13,7 @@
   "description": "Two players arrange objects on a background image according to a negotiated goal state",
   "main_game": "clean_up",
   "players": 2,
+  "instances": "mm_instances",
   "image": "multi",
   "languages": ["en", "zh-CN", "de"],
   "benchmark": []

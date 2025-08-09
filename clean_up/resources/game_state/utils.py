@@ -2,6 +2,7 @@ from typing import List, Tuple, TypedDict
 import base64
 import math
 import random
+from PIL import Image
 
 EMPTY_SYMBOL = "◌"
 ICON_SIZE = 128 # Icons are square
@@ -43,6 +44,23 @@ def letter_to_number(letter: str) -> int:
         return ord(letter.lower()) - 96
     raise ValueError(f"Letter '{letter}' is not a valid single lowercase letter (a-z)")
 
+def place_objects(modality: str, objects: List[GameObject], background: str) -> List[GameObject]:
+    """
+    Place objects on the grid based on the modality.
+    :param modality: The modality of the game (e.g., 'text', 'image')
+    :param objects: List of GameObject to place
+    :param grid: The grid string representation
+    :return: List of GameObject with updated coordinates
+    """
+    if modality == 'text':
+        return place_grid_objects(objects, background)
+    elif modality == 'image':
+        # Load the background image to get dimensions
+        dim = Image.open(background).size
+        return place_icons(objects, dim)
+    else:
+        raise ValueError(f"Unsupported modality: {modality}")
+
 def place_grid_objects(objects: List[GameObject], grid: str) -> List[GameObject]:
     """
     Sample unique coordinates for each object in objects.
@@ -51,14 +69,17 @@ def place_grid_objects(objects: List[GameObject], grid: str) -> List[GameObject]
     :param objects: List of GameObject to place
     :return: List of GameObject with updated coordinates
     """
-    width = grid.index('\n') if '\n' in grid else len(grid)
-    # TODO: test if this actually works as intended!
+    width = grid.index('\n') + 1 if '\n' in grid else len(grid)
+    # + 1 to account for the newline character
     empty_indices = [i for i, char in enumerate(grid) if char == EMPTY_SYMBOL]
-    # sample len(objects) unique indices from empty_indices
+    random.shuffle(empty_indices)
     if len(empty_indices) < len(objects):
         raise ValueError("Not enough empty positions in the grid to place all objects.")
-    sampled_indices = random.sample(empty_indices, len(objects))
-    for obj, index in zip(objects, sampled_indices):
+    for obj in objects:
+        # For some reason, sample() produces conspicuously many duplicate indices when called twice
+        # random.choice() works better
+        index = random.choice(empty_indices)
+        empty_indices.remove(index)  # Ensure unique placement
         x = index % width
         y = index // width
         obj['coord'] = (x, y)
@@ -83,12 +104,13 @@ def place_icons(objects: List[Icon], img_size: Tuple[int, int]) -> List[Icon]:
         for x in range(min_x, max_x + 1, step)
         for y in range(min_y, max_y + 1, step)
     ]
+    random.shuffle(valid_positions)
     assert len(valid_positions) >= len(objects), "Not enough valid positions to place all objects."
     coords = random.sample(valid_positions, len(objects))
     random.shuffle(objects)
     # Assign IDs and random unique coordinates
     for i, obj in enumerate(objects):
-        obj['ID'] = chr(ord('A') + i)
+        obj['id'] = chr(ord('A') + i)
         obj['coord'] = coords[i]
     return objects
 
