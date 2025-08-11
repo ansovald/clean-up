@@ -21,6 +21,13 @@ You have to communicate with the other player to agree upon a common goal state.
 
 * You can only move objects to cells within the bounds of the grid. The target cell must be empty, i.e., it must only contain the symbol '$empty_symbol'.
 * If you try to move an object to a spot that is not empty, or try to move it outside of the grid, I have to penalize you and give you another try.
+* For example, imagine you have a grid that looks like this: 
+
+```
+$example_grid
+```
+
+* In this example, the empty symbol in the top left corner is at `$top_left`, the empty symbol in the top right corner is at `$top_right`, the one in the bottom left corner at `$bottom_left` and the one in the bottom right corner is at `$bottom_right`. Object 'C' is at position `$obj_pos`, and the corner symbol `┘` is at `$symb_pos`
 * Before making a move, double check that the target spot is empty, and does not hold any letter, frame, or line!
 
 **End of Game:**

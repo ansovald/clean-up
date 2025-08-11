@@ -1,36 +1,37 @@
-Attached is an image consisting of two parts:
+Attached are two images:
 
-- On the right is a legend showing several icons, each with an associated ID on the left.
+* The first image is a legend showing several objects, each with an associated ID on the left.
 
-- On the left is a background image overlaid with these icons placed at random coordinates. An x–y coordinate system is shown along the left and bottom edges of the image. Note that the y-axis values increase downward.
+* The second image is your background, overlaid with these objects placed at random coordinates. An x–y coordinate system is shown along the left and bottom edges of the image. Note that the y-axis values increase downward.
 
-You are playing a collaborative game with another player based on your image. The other player sees a variation of the image, where the IDs are shuffled and the icons are overlaid on the background at different coordinates. The goal of the game is for both players to move the icons on their own images so that identical icons end up at the same coordinates. You have to communicate with the other player to agree upon a common goal state.
+I am your game master, and you are playing a collaborative game with another player based on your image. The other player sees a variation of the image, where the IDs are shuffled and the objects are placed at different locations on the background image.
 
+**Goal:** 
+
+Both players need to move the objects on their own images so that identical objects end up at the same coordinates. You have to communicate with the other player to agree upon a common goal state.
 
 **Rules**
 
-* In each turn, you can send exactly one command. Valid commands are:
-    `$say`: to send a message (everything up until the next line break) to the other player. I will forward it to your partner.
-    * `$move`: to move the icon with id `<ID>` to the coordinates `(<X>,<y>)`. You will **not** receive visual feedback. The other player can't see your move commands.
-    * You must not use coordinates when communicating with the other player.
-* Strictly follow the format without adding anything else. No thinking process, no extra formatting, no backticks.
+* In each turn, you can send exactly one of the following two commands:
+    * `$say`: to send a message (everything up until the next line break) to the other player. I will forward it to your partner.
+    * `$move`: to move the object with id `<ID>` to the coordinates `(<X>,<y>)`. You will **not** receive visual feedback. The other player can't see which objects you move where.
+* You must not use coordinates when communicating with the other player.
+* If you don't stick to the format, send several commands at once, or use coordinates in a message, I have to penalize you.
+* If both players accumulate more than $max_penalties penalties, you both lose the game.
+* It is vital that you communicate with the other player regarding your goal state! The *only* way you can transmit your strategy to the other player is using the `$say` command!
 
+**Moving Objects**
 
-**Communication Guidelines**
-
-*Agree on which icon to move.* Think of an effective strategy. Don't instruct the other player to target an icon by its ID. IDs are randomized per player, so the same ID likely refers to different icons for you and the other player.
-
-Similarly, don't instruct the other player to target an icon by its initial position in the picture. Icon placement is randomized, so positions relative to background elements or other icons are unreliable.
-
-*Agree on the target location.* You must not instruct the other player using coordinates. Apart from this restriction, you are free to come up with any strategy, agree on the location, then formulate the `$move` command with the coordinates of the target location.
+* You can only move the objects that you see in your legend.
+* To agree on which object to move, you have to make sure that you describe the object concisely so that the other player knows exactly which one you are talking about. Do *not* use the object's ID to describe it, since it might be different for the other player!
+* Describe the position you want to move the object to using only the background as reference, and not the other objects!
 
 **End of Game** 
 
-If you think you reached the goal of aligning all icons, you can ask the other player to finish the game by sending `$end_1`. If the other player asks you to finish the game, and you reply `$end_2`, the game will end.
+If you think you reached the goal of aligning all objects, you can ask the other player to finish the game by sending `$end_1`. If the other player asks you to finish the game, and you reply with `$end_2`, the game will end.
 
 Both players win if the game ends within $max_rounds rounds, where one round is defined as two players each sending a valid command.
 
-You will immediately lose the game if you:
+**Scoring:**
 
-- send any analysis, reasoning, or any other formatting apart from `$say` or `$move`.
-- use coordinates in any of your `$say` messages
+The closer the identical objects are in both grids, the more points you get. Penalties reduce your points. Can you beat the record?

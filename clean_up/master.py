@@ -31,9 +31,10 @@ class Cleaner(Player):
         super().__init__(model)
         self._custom_responses = [
             "MOVE: C, (1, 1)",
-            "MOVE: W, (3, 2)",
-            "SAY: Move C to (1, 1).",
-            "MOVE: C, (2, 1)\nSAY: I did it! C is now in the top-left corner."
+            # "MOVE: W, (3, 2)",
+            # "SAY: Move C to (1, 1).",
+            "SAY: Ok, let's start the game."
+            # "MOVE: C, (2, 1)\nSAY: I did it! C is now in the top-left corner."
             ]
         self.game_state = None  # This will be set in the game master
         self._relay_message = ""
@@ -53,22 +54,23 @@ class Cleaner(Player):
         if self._relay_message:
             context['content'] = self._relay_message + context['content']
         if 'image' in context:
-            log_image(self, context['image'], self, toPlayer=True)
+            log_images(self, context['image'], self)
         self._relay_message = ""
         return super().perceive_context(context, log_event=log_event, memorize=memorize)
 
 
-def log_image(game_event_source: GameEventSource, image: list[str], player: Player, toPlayer=True):
+def log_images(game_event_source: GameEventSource, images: list[str], player: Player):
     """
     image: an image path. Should have only one image.
     """
-    content = png_to_base64(image[0])
-    action = {
-                'type': 'send message' if toPlayer else f"{player.name}'s image after move", 
-                'label': 'base64_image', 
-                'content': content
-            }
-    game_event_source.log_event(from_='GM', to=player.name if toPlayer else "GM", action=action)
+    for image in images:
+        image = png_to_base64(image)
+        action = {
+                    'type': 'send message', 
+                    'label': 'base64_image', 
+                    'content': f'<img src="{image}" alt="Image">',
+                }
+        game_event_source.log_event(from_='GM', to=player.name, action=action)
 
 class CleanUpMaster(DialogueGameMaster):
     """
@@ -123,10 +125,8 @@ class CleanUpMaster(DialogueGameMaster):
         if self.modality == 'image':
             # Initialize img_prefix, consisting of experiment name, game instance ID, and player ID
             id = len(self.players_by_names)  # Player IDs start from 1
-            # Generate random number to ensure unique prefixes even for batch runs
-            random_number = random.randint(1000, 9999)
             model = str(player._model)
-            img_prefix = f"{self.experiment['name']}_{self.game_instance['game_id']}_player{id}_{model}_{random_number}"
+            img_prefix = f"{self.experiment['name']}_{self.game_instance['game_id']}_player{id}_{model}"
             self.img_prefixes.append(img_prefix)
         player.game_state = state_dict[self.modality](background=self.game_instance['background'], move_messages=self.game_instance['move_messages'], objects=objects, img_prefix=img_prefix)
     
@@ -135,8 +135,8 @@ class CleanUpMaster(DialogueGameMaster):
         Set the initial context for the first player.
         """
         if self.modality == 'image':
-            image = self.player_1.game_state.draw()
-            self.set_context_for(self.player_1, self.game_instance['p1_initial_prompt'], image=[image])
+            images = self.player_1.game_state.draw()
+            self.set_context_for(self.player_1, self.game_instance['p1_initial_prompt'], image=images)
         else:
             self.set_context_for(self.player_1, self.game_instance['p1_initial_prompt'])
 
@@ -197,8 +197,9 @@ class CleanUpMaster(DialogueGameMaster):
             for restricted_pattern in self.restricted_patterns:
                 restricted_match = restricted_pattern.search(say_match.group('message'))
                 if restricted_match:
+                    self.pass_turn = False
                     self.log_to_self('rule_violation', f"Response violates restriction: {restricted_pattern}")
-                    logger.warning(f"Response '{response}' violates restriction: {restricted_pattern.pattern}")
+                    raise ParseError(reason=self.parse_errors["restriction"], response=response)
             return response
         else:
             self.log_to_self('parse_error', f"Invalid response format")
@@ -240,7 +241,7 @@ class CleanUpMaster(DialogueGameMaster):
             obj = match.group('obj')
             x = match.group('x')
             y = match.group('y')
-            success, message, image = player.game_state.move_abs(obj, x, y)
+            success, message, images = player.game_state.move_abs(obj, x, y)
             self.pass_turn = success
             if success:
                 self.metric_preparer.add_move((player.name, obj))
@@ -249,7 +250,7 @@ class CleanUpMaster(DialogueGameMaster):
                 player.store_relay_message(message) #, image=image)
                 if self.modality == 'image':
                     # log the image to the player
-                    log_image(self, [image], player, toPlayer=True)
+                    log_images(self, images, player)
                 # turn is passed to the other player
                 next_player_prompt = self._new_turn_prompt(self.intermittent_prompts["new_turn_move"])
                 self.set_context_for(self._other_player(), next_player_prompt)
@@ -271,8 +272,8 @@ class CleanUpMaster(DialogueGameMaster):
                         start_message=message
                     )
                     if self.game_instance['modality'] == 'image':
-                        image = self.player_2.game_state.draw()
-                        self.set_context_for(self.player_2, p2_initial_prompt, image=[image])
+                        images = self.player_2.game_state.draw()
+                        self.set_context_for(self.player_2, p2_initial_prompt, image=images)
                     else:
                         self.set_context_for(self.player_2, p2_initial_prompt)
                 else:
@@ -338,13 +339,19 @@ class CleanUpMaster(DialogueGameMaster):
         return 0
 
     def _on_after_game(self):
+        for player in self.get_players():
+            if self.modality == 'image':
+                move_image = player.game_state.draw_moves()
+                if move_image:
+                    log_images(self, move_image, player)
+        
         # remove images from tmp directory
         for img_prefix in self.img_prefixes:
             for file in os.listdir('tmp'):
                 if file.startswith(img_prefix):
                     os.remove(os.path.join('tmp', file))
         ingredients = self.metric_preparer.compute_ingredients()
-        # validate(ingredients_registry, ingredients, self.__class__.__name__)
+
 
         ingredients_string = ""
         for key, val in ingredients.items():

@@ -4,7 +4,7 @@
         "zh-CN",
         "de"
     ],
-    "n_instances": 1,
+    "n_instances": 3,
     "modalities": {
         "text": {
             "objects": {
@@ -32,7 +32,8 @@
             "instances": "mm_instances",
             "penalty_factor": 1,
             "objects": [
-                "3"
+                "3",
+                "6"
             ],
             "experiments": [
                 {
