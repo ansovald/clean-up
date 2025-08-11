@@ -13,8 +13,11 @@ from typing import Tuple, List, final, Union
 from io import BytesIO
 from PIL import Image
 import numpy as np
+import logging
 
 from resources.game_state.utils import GameObject, Icon, png_to_base64, number_to_letter, letter_to_number, EMPTY_SYMBOL, parse_grid
+
+logger = logging.getLogger(__name__)
 
 class GameState(abc.ABC):
     # Superclass for GridState and PicState, holding the game state for one player.
@@ -170,15 +173,16 @@ class PicState(GameState):
         Returns:
             success: bool, action success status
             message: str, message to be passed to the player
+            image: path to the saved image
         """
         element, x, y = super().move_abs(obj, x, y)
         if element is None:
-            return False, Template(self.move_messages["obj_not_found"]).substitute(object=obj)
+            return False, Template(self.move_messages["obj_not_found"]).substitute(object=obj), None
         if x < 0 or x > self.width or y < 0 or y > self.height:
-            return False, Template(self.move_messages["out_of_bounds"]).substitute(object=obj, x=x, y=y)
+            return False, Template(self.move_messages["out_of_bounds"]).substitute(object=obj, x=x, y=y), None
         # Update the coordinates of the object
         element['coord'] = (x, y)
-        return True, Template(self.move_messages["successful"]).substitute(object=obj, x=x, y=y)
+        return True, Template(self.move_messages["successful"]).substitute(object=obj, x=x, y=y), self.draw()
     
     def get_pairwise_distances(self, other_objects):
         distances = {}
@@ -257,6 +261,7 @@ class PicState(GameState):
             self.image_counter += 1
             plt.savefig(filepath, bbox_inches='tight', pad_inches=0.1)
             plt.close(fig)
+            logger.info(f"Saved image to {filepath}, returning path.")
             return filepath
         else:
             plt.close(fig)
@@ -308,7 +313,6 @@ class GridState(GameState):
             y = int(y)
             if 0 <= x < self.width and 0 <= y < self.height:
                 if self.background[y][x][-1] != EMPTY_SYMBOL:
-                    print(str(self))
                     raise ValueError(f"Cannot place object {obj['id']} at ({x}, {y}): position already occupied.")
                 self.background[y][x].append(obj['id'])
                 self.objects.append(obj)
@@ -332,21 +336,23 @@ class GridState(GameState):
         Returns:
             success: bool, action success status
             message: str, message to be passed to the player
+            image: None, only used for PicState
         """
+        logger.info(f"Moving object {obj} to ({x}, {y})")
         element, x, y = super().move_abs(obj, x, y)
         if element is None:
-            return False, Template(self.move_messages["obj_not_found"]).substitute(object=obj)
+            return False, Template(self.move_messages["obj_not_found"]).substitute(object=obj), None
         if x < 0 or x >= self.width or y < 0 or y >= self.height:
-            return False, Template(self.move_messages["out_of_bounds"]).substitute(object=obj, x=x, y=y)
+            return False, Template(self.move_messages["out_of_bounds"]).substitute(object=obj, x=x, y=y), None
         if self.check_empty and self.background[y][x][-1] != EMPTY_SYMBOL:
-            return False, Template(self.move_messages["not_empty"]).substitute(object=obj, x=x, y=y)
+            return False, Template(self.move_messages["not_empty"]).substitute(object=self.background[y][x][-1], x=x, y=y), None
         # Update the coordinates of the object
         old_x = element['coord'][0]
         old_y = element['coord'][1]
         self.background[old_y][old_x] = self.background[old_y][old_x][:-1]  # Remove the object from the old position
         self.background[y][x].append(obj)  # Place the object at the new position
         element['coord'] = (x, y)
-        return True, Template(self.move_messages["successful"]).substitute(object=obj, x=x, y=y, grid=str(self))
+        return True, Template(self.move_messages["successful"]).substitute(object=obj, x=x, y=y, grid=str(self)), None
         
     def get_pairwise_distances(self, other_objects):
         distances = {}
@@ -358,8 +364,3 @@ class GridState(GameState):
                     dist = self.euclidean_distance(obj['coord'], other_obj['coord'])
                     distances[other_obj['id']] = dist
         return distances
-    
-state_dict = {
-    "text": GridState,
-    "image": PicState
-}

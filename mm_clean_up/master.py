@@ -20,9 +20,6 @@ from resources.utils.types import FullPositionedIcon
 
 logger = logging.getLogger(__name__)
 
-# TODO: implement strict mode. Should not end game immediately, 
-#       but enforce one-command-only responses with penalties.
-
 class Cleaner(Player):
     def __init__(self, model: Model):
         super().__init__(model)

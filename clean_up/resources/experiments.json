@@ -8,13 +8,23 @@
     "modalities": {
         "text": {
             "objects": {
-                "5": "WITCH"
+                "5": "WITCH",
+                "7": "POTSDAM",
+                "9": "APHRODITE"
             },
             "penalty_factor": 2,
             "experiments": [
                 {
                     "name": "easy",
                     "grid_config": "9x9_e34_b7"
+                },
+                {
+                    "name": "medium",
+                    "grid_config": "9x9_e29_b11"
+                },
+                {
+                    "name": "hard",
+                    "grid_config": "9x9_e24_b15"
                 }
             ]
         },

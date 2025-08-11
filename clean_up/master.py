@@ -1,4 +1,5 @@
 import re
+import os
 import logging
 from typing import Dict, List, Tuple
 import numpy as np
@@ -10,11 +11,18 @@ from regex import T
 
 from clemcore.backends import Model
 from clemcore.clemgame import GameSpec, GameMaster, GameBenchmark, Player, DialogueGameMaster, GameScorer, ParseError, GameError, RuleViolationError
+from clemcore.clemgame.events import GameEventSource
 from clemcore.clemgame.metrics import METRIC_ABORTED, METRIC_SUCCESS, METRIC_LOSE, BENCH_SCORE
 # from clemcore.utils import file_utils, string_utils
-from resources.game_state.game_state import state_dict
-from resources.game_state.utils import GameObject
+from resources.game_state.utils import GameObject, png_to_base64
+from resources.game_state.game_state import PicState, GridState
 from resources.metrics import MetricPreparer, MetricCalculator, END_DISTANCE_SUM, EXPECTED_DISTANCE_SUM, MOVES, INIT_STATES, END_STATES, ingredients_registry, sub_metrics_registry #, validate
+
+# Stores the game state class for each modality
+state_dict = {
+    "text": GridState,
+    "image": PicState
+}
 
 logger = logging.getLogger(__name__)
 
@@ -22,50 +30,48 @@ class Cleaner(Player):
     def __init__(self, model: Model):
         super().__init__(model)
         self._custom_responses = [
-            # "SAY: Put C in the first row and eigth column.",
             "MOVE: C, (1, 1)",
             "MOVE: W, (3, 2)",
-            # "SAY: Let's move C to the top left corner.",
-            # "I'm ready to go! Let's start by agreeing on a common goal state. I suggest we move all objects to the top-left corner in a specific order. Let's start by moving 'C' to the top-left corner. `move(C, 5, 5)`",
-            # "Let's gooo! SAY: You are the best cleaner ever!",
-            # "MOVE C, 1, 1",
             "SAY: Move C to (1, 1).",
-            "MOVE: C, (2, 1)\nSAY: I did it! C is now in the top-left corner.",
-            # "haha, I love cleaning!",
+            "MOVE: C, (2, 1)\nSAY: I did it! C is now in the top-left corner."
             ]
         self.game_state = None  # This will be set in the game master
         self._relay_message = ""
+        self.finished = False # Used to store whether the player already suggested finishing the game
 
     def _custom_response(self, messages):
         response = self._custom_responses[np.random.randint(0, len(self._custom_responses))]
         return response
     
-    def store_relay_message(self, message: str):
+    def store_relay_message(self, message: str): # , image: str = None):
         """
         Store the relay message to add it to the next message.
         """
         self._relay_message = message
-        logger.info(f"Storing relay message:\n{message}")
+        # TODO: do we need this?
+        # self._relay_image = image
 
     def perceive_context(self, context, *, log_event=True, memorize=True):
         if self._relay_message:
             context['content'] = self._relay_message + context['content']
-            logger.info(f"Adding relay message to context: {self._relay_message}")
-            self._relay_message = ""
-        logger.info(f"Perceiving context: {context}")
+        if 'image' in context:
+            log_image(self, context['image'], self, toPlayer=True)
+        self._relay_message = ""
+        # self._relay_image = None
         return super().perceive_context(context, log_event=log_event, memorize=memorize)
 
-    def __call__(self, context: Dict, memorize: bool = True) -> str:
-        """
-        adds the relay message to the context, then calls the super class __call__ method
-        """
-        logger.info(f"Calling Cleaner with context: {context}")
-        logger.info(f"Relay message: {self._relay_message}")
-        if self._relay_message:
-            context['content'] = self._relay_message + context['content']
-            self._relay_message = ""
-        return super().__call__(context, memorize=memorize)
 
+def log_image(game_event_source: GameEventSource, image: str, player: Player, toPlayer=True):
+    """
+    image: an image path. Should have only one image.
+    """
+    content = png_to_base64(image)
+    action = {
+                'type': 'send message' if toPlayer else f"{player.name}'s image after move", 
+                'label': 'base64_image', 
+                'content': content
+            }
+    game_event_source.log_event(from_='GM', to=player.name if toPlayer else "GM", action=action)
 
 class CleanUpMaster(DialogueGameMaster):
     """
@@ -73,7 +79,6 @@ class CleanUpMaster(DialogueGameMaster):
     """
     def __init__(self, game_spec, experiment: Dict, player_models: List[Model]):
         super().__init__(game_spec, experiment, player_models)
-        print(f"\n\nRunning game instance: {game_spec}, {experiment}")
 
     def _on_setup(self, **game_instance):
         self.game_instance = game_instance
@@ -123,7 +128,11 @@ class CleanUpMaster(DialogueGameMaster):
         """
         Set the initial context for the first player.
         """
-        self.set_context_for(self.player_1, self.game_instance['p1_initial_prompt'])
+        if self.modality == 'image':
+            image = self.player_1.game_state.draw()
+            self.set_context_for(self.player_1, self.game_instance['p1_initial_prompt'], image=image)
+        else:
+            self.set_context_for(self.player_1, self.game_instance['p1_initial_prompt'])
 
     def _other_player(self) -> Player:
         """
@@ -139,7 +148,6 @@ class CleanUpMaster(DialogueGameMaster):
         # if not self.game_instance['lenient']:
         head = match.group('head')
         tail = match.group('tail')
-        logger.info('head: ' + match.group('head') + '; tail: ' + match.group('tail'))
         if head != '' and tail != '':
             # self.terminate = True
             # self.aborted = True
@@ -154,10 +162,8 @@ class CleanUpMaster(DialogueGameMaster):
 
     def _parse_response(self, player: Player, response: str) -> str:
         self.log_to_self('player_response', response)
-        logger.info(f"Player {player.name} response:\n{response}")
         # We just remove backticks
         response = response.replace('`', '').strip()
-        logger.info(f"response after cleaning: {response}")
         move_matches = list(self.move_pattern.finditer(response))
         say_matches = list(self.say_pattern.finditer(response))
         if len(move_matches) + len(say_matches) > 1:
@@ -176,13 +182,9 @@ class CleanUpMaster(DialogueGameMaster):
             return response
         if say_match:
             self._check_head_tail(say_match)
-            # TODO: This doesn't take into account that *both* players should agree on ending the game.
-            #       It would also end if one player writes `finished!` twice
-            if self.game_instance['terminate_answer'] in say_match.group('message'):
-                self.finished = True
             if self.game_instance['terminate_question'] in say_match.group('message'):
-                self.finished = True
-            elif self.game_instance['terminate_answer'] in say_match.group('message') and self.finished:
+                player.finished = True
+            if self.game_instance['terminate_answer'] in say_match.group('message') and self._other_player().finished:
                 self.success = True
                 self.terminate = True
                 self.log_to_self('success', 'true')
@@ -199,6 +201,7 @@ class CleanUpMaster(DialogueGameMaster):
     def _on_parse_error(self, error: GameError):
         self.pass_turn = False
         self.penalties += 1
+        logger.warning(f"Parse error: {error}")
         message = self._reprompt_message(error.reason)
         self.set_context_for(self._current_player, message)
 
@@ -231,13 +234,16 @@ class CleanUpMaster(DialogueGameMaster):
             obj = match.group('obj')
             x = match.group('x')
             y = match.group('y')
-            success, message = player.game_state.move_abs(obj, x, y)
+            success, message, image = player.game_state.move_abs(obj, x, y)
             self.pass_turn = success
             if success:
                 self.metric_preparer.add_move((player.name, obj))
                 # log the move message to the player and add it to the message history (without response)
                 self.log_to_self('valid move', message)
-                player.store_relay_message(message)
+                player.store_relay_message(message) #, image=image)
+                if self.modality == 'image':
+                    # log the image to the player
+                    log_image(self, image, player, toPlayer=True)
                 # turn is passed to the other player
                 next_player_prompt = self._new_turn_prompt(self.intermittent_prompts["new_turn_move"])
                 self.set_context_for(self._other_player(), next_player_prompt)
@@ -258,7 +264,11 @@ class CleanUpMaster(DialogueGameMaster):
                     p2_initial_prompt = Template(self.game_instance['p2_initial_prompt']).substitute(
                         start_message=message
                     )
-                    self.set_context_for(self.player_2, p2_initial_prompt)
+                    if self.game_instance['modality'] == 'image':
+                        image = self.player_2.game_state.draw()
+                        self.set_context_for(self.player_2, p2_initial_prompt, image=image)
+                    else:
+                        self.set_context_for(self.player_2, p2_initial_prompt)
                 else:
                     next_player_prompt = self._new_turn_prompt(Template(self.intermittent_prompts['new_turn']).substitute(turn_message=message))
                     self.set_context_for(self._other_player(), next_player_prompt)
@@ -299,7 +309,7 @@ class CleanUpMaster(DialogueGameMaster):
         """
         Check if the game should continue.
         """
-        if self.penalties >= self.max_penalties:
+        if self.penalties > self.max_penalties:
             self.log_to_self('end', 'Maximum number of penalties exceeded')
             self.aborted = True
             return False

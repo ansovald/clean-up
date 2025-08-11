@@ -53,9 +53,9 @@ def parse_model(model, width, height):
         return "\n".join("".join(row) for row in grid)
 
 GRID_CONFIGS = [
-    {'dim': 9, 'branches': 7, 'empty_cells': 34},
-    {'dim': 9, 'branches': 11, 'empty_cells': 29},
-    {'dim': 9, 'branches': 15, 'empty_cells': 24}
+    {'dim': 9, 'branches': 7, 'empty_cells': 34, 'difficulty': 'easy'},
+    {'dim': 9, 'branches': 11, 'empty_cells': 29, 'difficulty': 'medium'},
+    {'dim': 9, 'branches': 15, 'empty_cells': 24, 'difficulty': 'hard'}
 ]
 
 def generate_all_grids(grid_configs=GRID_CONFIGS, models=1000, encoding='grid_encoding.lp'):
@@ -86,64 +86,50 @@ def generate_all_grids(grid_configs=GRID_CONFIGS, models=1000, encoding='grid_en
             for i, model in enumerate(solve):
                 grids[i] = parse_model(model=model, width=dim, height=dim)
         if len(grids) > 0:
+            print(f"Generated {len(grids)} grids for {id_string}")
             empty_cell_counts = []
             for grid in grids:
                 empty_cells = sum(row.count(EMPTY_SYMBOL) for row in grids[grid])
                 empty_cell_counts.append(empty_cells)
 
-            with open(id_string + '.json', 'w', encoding='utf-8') as f:
+            with open(id_string + '_exhaustive.json', 'w', encoding='utf-8') as f:
                 json.dump(grids, f, ensure_ascii=False, indent=4)
 
 def sample_exhaustive_files(n_samples=10000):
     """
     Samples from the exhaustive grid files and returns a grids.json file with the sampled grids.
     """
-    # Find exhaustive grid files, ending with `_exhaustive.json`
-    exhaustive_files = [f for f in os.listdir('.') if f.endswith('_exhaustive.json')]
+    info_text = f"For each difficulty level, max. {n_samples} grids have been samples from the exhaustive files enumerating all grids with the respective specifications"
     sampled_grids = {
         "info": {
-            "text": "For each difficulty level, 10.000 grids have been samples from the exhaustive files enumerating all grids with the respective specifications",
-            "easy": {
-                "id_string": "9x9_e34_b7",
-                "dim": 9,
-                "empty_cells": 34,
-                "total_cells": 49,
-                "empty_cell_ratio": 0.6938775510204082,
-                "branch_count": 7,
-                "model_count": 63859
-            },
-            "medium": {
-                "id_string": "9x9_e29_b11",
-                "dim": 9,
-                "empty_cells": 29,
-                "total_cells": 49,
-                "empty_cell_ratio": 0.5918367346938775,
-                "branch_count": 11,
-                "model_count": 1222435
-            },
-            "hard": {
-                "id_string": "9x9_e24_b15",
-                "dim": 9,
-                "empty_cells": 24,
-                "total_cells": 49,
-                "empty_cell_ratio": 0.4897959183673469,
-                "branch_count": 15,
-                "model_count": 2696476
-            }
+            "text": info_text,
         }
     }
-    for file in exhaustive_files:
-        with open(file, 'r', encoding='utf-8') as f:
-            id_string = file.split('_exhaustive.json')[0]
+    for config in GRID_CONFIGS:
+        id_string = f"{config['dim']}x{config['dim']}_e{config['empty_cells']}_b{config['branches']}"
+        total_cells = (config['dim']-2) * (config['dim']-2)
+        empty_cell_ratio = config['empty_cells'] / total_cells
+        branch_count = config['branches']
+        sampled_grids["info"][id_string] = {
+            "difficulty": config['difficulty'],
+            "dim": config['dim'],
+            "empty_cells": config['empty_cells'],
+            "total_cells": total_cells,
+            "empty_cell_ratio": empty_cell_ratio,
+            "branch_count": branch_count,
+        }
+        with open(id_string + '_exhaustive.json', 'r', encoding='utf-8') as f:
             grids = json.load(f)
+            sampled_grids["info"][id_string]['total_model_count'] = len(grids)
             sampled_keys = random.sample(list(grids.keys()), min(n_samples, len(grids)))
             sampled_grids[id_string] = {}
             for key in sampled_keys:
-                sampled_grids[id_string][key] = grids[key]['grid']
+                sampled_grids[id_string][key] = grids[key]
+
     with open('grids.json', 'w', encoding='utf-8') as f:
         json.dump(sampled_grids, f, ensure_ascii=False, indent=4)
 
 if __name__ == "__main__":
-    # generate_all_grids(grid_configs=GRID_CONFIGS, models=10000, encoding='grid_encoding.lp')
+    # generate_all_grids(grid_configs=GRID_CONFIGS, models=5000000)
     sample_exhaustive_files(n_samples=10000)
     
