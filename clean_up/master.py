@@ -43,13 +43,11 @@ class Cleaner(Player):
         response = self._custom_responses[np.random.randint(0, len(self._custom_responses))]
         return response
     
-    def store_relay_message(self, message: str): # , image: str = None):
+    def store_relay_message(self, message: str):
         """
         Store the relay message to add it to the next message.
         """
         self._relay_message = message
-        # TODO: do we need this?
-        # self._relay_image = image
 
     def perceive_context(self, context, *, log_event=True, memorize=True):
         if self._relay_message:
@@ -57,15 +55,14 @@ class Cleaner(Player):
         if 'image' in context:
             log_image(self, context['image'], self, toPlayer=True)
         self._relay_message = ""
-        # self._relay_image = None
         return super().perceive_context(context, log_event=log_event, memorize=memorize)
 
 
-def log_image(game_event_source: GameEventSource, image: str, player: Player, toPlayer=True):
+def log_image(game_event_source: GameEventSource, image: list[str], player: Player, toPlayer=True):
     """
     image: an image path. Should have only one image.
     """
-    content = png_to_base64(image)
+    content = png_to_base64(image[0])
     action = {
                 'type': 'send message' if toPlayer else f"{player.name}'s image after move", 
                 'label': 'base64_image', 
@@ -83,6 +80,7 @@ class CleanUpMaster(DialogueGameMaster):
     def _on_setup(self, **game_instance):
         self.game_instance = game_instance
         self.modality = game_instance['modality']
+        self.img_prefixes = []
 
         self.intermittent_prompts = game_instance['intermittent_prompts']
         self.parse_errors = game_instance['parse_errors']
@@ -121,8 +119,16 @@ class CleanUpMaster(DialogueGameMaster):
         Add a player to the game.
         """
         super().add_player(player)
-        id = len(self.players_by_names)  # Player IDs start from 1
-        player.game_state = state_dict[self.modality](player_id=id, background=self.game_instance['background'], move_messages=self.game_instance['move_messages'], objects=objects)
+        img_prefix = None
+        if self.modality == 'image':
+            # Initialize img_prefix, consisting of experiment name, game instance ID, and player ID
+            id = len(self.players_by_names)  # Player IDs start from 1
+            # Generate random number to ensure unique prefixes even for batch runs
+            random_number = random.randint(1000, 9999)
+            model = str(player._model)
+            img_prefix = f"{self.experiment['name']}_{self.game_instance['game_id']}_player{id}_{model}_{random_number}"
+            self.img_prefixes.append(img_prefix)
+        player.game_state = state_dict[self.modality](background=self.game_instance['background'], move_messages=self.game_instance['move_messages'], objects=objects, img_prefix=img_prefix)
     
     def _on_before_game(self):
         """
@@ -130,7 +136,7 @@ class CleanUpMaster(DialogueGameMaster):
         """
         if self.modality == 'image':
             image = self.player_1.game_state.draw()
-            self.set_context_for(self.player_1, self.game_instance['p1_initial_prompt'], image=image)
+            self.set_context_for(self.player_1, self.game_instance['p1_initial_prompt'], image=[image])
         else:
             self.set_context_for(self.player_1, self.game_instance['p1_initial_prompt'])
 
@@ -243,7 +249,7 @@ class CleanUpMaster(DialogueGameMaster):
                 player.store_relay_message(message) #, image=image)
                 if self.modality == 'image':
                     # log the image to the player
-                    log_image(self, image, player, toPlayer=True)
+                    log_image(self, [image], player, toPlayer=True)
                 # turn is passed to the other player
                 next_player_prompt = self._new_turn_prompt(self.intermittent_prompts["new_turn_move"])
                 self.set_context_for(self._other_player(), next_player_prompt)
@@ -266,7 +272,7 @@ class CleanUpMaster(DialogueGameMaster):
                     )
                     if self.game_instance['modality'] == 'image':
                         image = self.player_2.game_state.draw()
-                        self.set_context_for(self.player_2, p2_initial_prompt, image=image)
+                        self.set_context_for(self.player_2, p2_initial_prompt, image=[image])
                     else:
                         self.set_context_for(self.player_2, p2_initial_prompt)
                 else:
@@ -332,6 +338,11 @@ class CleanUpMaster(DialogueGameMaster):
         return 0
 
     def _on_after_game(self):
+        # remove images from tmp directory
+        for img_prefix in self.img_prefixes:
+            for file in os.listdir('tmp'):
+                if file.startswith(img_prefix):
+                    os.remove(os.path.join('tmp', file))
         ingredients = self.metric_preparer.compute_ingredients()
         # validate(ingredients_registry, ingredients, self.__class__.__name__)
 

@@ -10,7 +10,7 @@ You are playing a collaborative game with another player based on your image. Th
 **Rules**
 
 * In each turn, you can send exactly one command. Valid commands are:
-    `$say`: to send a message (everything up until the next line break) to the other player. I will forward it to your partner.
+    *`$say`: to send a message (everything up until the next line break) to the other player. I will forward it to your partner.
     * `$move`: to move the icon with id `<ID>` to the coordinates `(<X>,<y>)`. You will **not** receive visual feedback. The other player can't see your move commands.
     * You must not use coordinates when communicating with the other player.
 * Strictly follow the format without adding anything else. No thinking process, no extra formatting, no backticks.
@@ -20,9 +20,35 @@ You are playing a collaborative game with another player based on your image. Th
 
 *Agree on which icon to move.* Think of an effective strategy. Don't instruct the other player to target an icon by its ID. IDs are randomized per player, so the same ID likely refers to different icons for you and the other player.
 
+* Wrong example:
+    
+    ```
+    $say_describe_icon_wrong
+    ```
+
+    ID 'D' could reference different icons for you and the other player!
+
 Similarly, don't instruct the other player to target an icon by its initial position in the picture. Icon placement is randomized, so positions relative to background elements or other icons are unreliable.
 
+* Wrong example:
+    
+    ```
+    $say_describe_icon_wrong2  
+    $say_describe_icon_wrong3
+    ```
+
+    The other player might have an different icon or no icon at all at that position.
+
 *Agree on the target location.* You must not instruct the other player using coordinates. Apart from this restriction, you are free to come up with any strategy, agree on the location, then formulate the `$move` command with the coordinates of the target location.
+
+* Wrong example
+
+    ```
+    $say_describe_location_wrong
+    ```
+
+    If you use coordinates or numbers in your message, you both get penalized.
+
 
 **End of Game** 
 

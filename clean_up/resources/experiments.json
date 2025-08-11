@@ -40,6 +40,18 @@
                     "object_categories": "OBJECT_COUNT", 
                     "colored": true,
                     "objects_per_color": 1
+                },
+                {
+                    "name": "mm_medium",
+                    "object_categories": 1, 
+                    "colored": true,
+                    "objects_per_color": "OBJECT_COUNT"
+                }, 
+                {
+                    "name": "mm_hard",
+                    "object_categories": 1,
+                    "colored": false,
+                    "objects_per_color": "OBJECT_COUNT"
                 }
             ]
         }

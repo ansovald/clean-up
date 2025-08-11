@@ -44,9 +44,9 @@
           ],
           "objects_1": [
             {
-              "freepik_id": 17348290,
+              "freepik_id": 1456509,
               "name": "key",
-              "url": "https://cdn-icons-png.freepik.com/128/17348/17348290.png",
+              "url": "https://cdn-icons-png.freepik.com/128/1456/1456509.png",
               "id": "A",
               "coord": [
                 900,
@@ -54,9 +54,9 @@
               ]
             },
             {
-              "freepik_id": 3123513,
+              "freepik_id": 2520094,
               "name": "chocolate",
-              "url": "https://cdn-icons-png.freepik.com/128/3123/3123513.png",
+              "url": "https://cdn-icons-png.freepik.com/128/2520/2520094.png",
               "id": "B",
               "coord": [
                 300,
@@ -64,9 +64,9 @@
               ]
             },
             {
-              "freepik_id": 1989218,
+              "freepik_id": 362094,
               "name": "coin",
-              "url": "https://cdn-icons-png.freepik.com/128/1989/1989218.png",
+              "url": "https://cdn-icons-png.freepik.com/128/362/362094.png",
               "id": "C",
               "coord": [
                 500,
@@ -76,9 +76,9 @@
           ],
           "objects_2": [
             {
-              "freepik_id": 1989218,
+              "freepik_id": 362094,
               "name": "coin",
-              "url": "https://cdn-icons-png.freepik.com/128/1989/1989218.png",
+              "url": "https://cdn-icons-png.freepik.com/128/362/362094.png",
               "id": "A",
               "coord": [
                 700,
@@ -86,9 +86,9 @@
               ]
             },
             {
-              "freepik_id": 3123513,
+              "freepik_id": 2520094,
               "name": "chocolate",
-              "url": "https://cdn-icons-png.freepik.com/128/3123/3123513.png",
+              "url": "https://cdn-icons-png.freepik.com/128/2520/2520094.png",
               "id": "B",
               "coord": [
                 400,
@@ -96,13 +96,235 @@
               ]
             },
             {
-              "freepik_id": 17348290,
+              "freepik_id": 1456509,
               "name": "key",
-              "url": "https://cdn-icons-png.freepik.com/128/17348/17348290.png",
+              "url": "https://cdn-icons-png.freepik.com/128/1456/1456509.png",
               "id": "C",
               "coord": [
                 300,
                 500
+              ]
+            }
+          ],
+          "p1_initial_prompt": "Im Anhang findest du ein zweiteiliges Bild:\n\n- Auf der rechten Seite befindet sich eine Legende mit Symbolen, die jeweils mit einer ID versehen sind.\n\n- Auf der linken Seite ist ein Hintergrundbild zu sehen, auf dem diese Symbole an zufälligen Koordinaten platziert sind. Am linken und unteren Rand des Bildes ist ein x-y-Koordinatensystem eingezeichnet. Beachte, dass die Werte auf der y-Achse nach unten hin zunehmen.\n\nDu spielst ein kooperatives Spiel mit einem Spielpartner auf Grundlage dieses Bildes. Dein Mitspieler sieht dieselben Objekte und dasselbe Hintergrundbild. Allerdings haben die Objekte andere IDs und befinden sich an anderen Positionen auf dem Hintergrundbild. Ziel des Spiels ist es, dass beide Spieler die Objekte auf ihren jeweiligen Bildern so verschieben, dass dieselben Objekte jeweils an denselben Positionen landen. Du musst dich mit deinem Mitspieler absprechen, damit ihr euch auf einen gemeinsamen Zielzustand einigen könnt.\n\n\n**Spielregeln**\n\n* In jedem Spielzug kannst du genau eine der folgenden zwei Aktionen ausführen:\n    * `SPRICH: <NACHRICHT>`: um deinem Mitspieler eine Nachricht zu schicken\n    * `VERSCHIEBE: <OBJECT>, (<X>, <Y>)`: um ein Objekt mit der ID `<ID>` and die Koordinaten `(<X>,<Y>)` zu bewegen. Du erhältst kein visuelles Feedback, und dein Mitspieler kann deine Bewegungsbefehle nicht sehen.\n    * Du darfst keine Koordinaten verwenden, wenn du mit dem anderen Spieler kommunizierst.\n* Halte dich strikt an dieses Format, ohne etwas anderes hinzuzufügen: Kein Denkprozess, keine zusätzliche Formatierung, keine Backticks.\n\n\n**Absprachen mit dem Spielpartner**\n\n*Einigt euch darauf, welches Symbol verschoben werden soll.* Überlegt euch eine sinnvolle Strategie. Gib dem anderen Spieler nicht einfach eine ID an, um ein Symbol zu identifizieren. Die IDs sind für jeden Spieler zufällig vergeben, sodass dieselbe ID bei dir und dem anderen Spieler höchstwahrscheinlich unterschiedliche Symbole meint.\n\n* Falsches Beispiel:\n\n    ```\n    SPRICH: Lass uns das Objekt D verschieben!\n    ```\n\n    Die ID 'D' könnte sich bei deinem Mitspieler auf ein anderes Objekt beziehen als bei dir!\n\nEbenso solltest du dem anderen Spieler kein Symbol anhand seiner Startposition im Bild zuweisen. Die Symbole sind zufällig verteilt, daher sind Positionen relativ zu Hintergrundelementen oder anderen Symbolen nicht verlässlich.\n\n* Falsches Beispiel:\n    \n    ```\n    SPRICH: Lass uns das Symbol verschieben, das sich unten rechts in der Nähe der Pflanze befindet!  \n    SPRICH: Lass uns das Kopfhörer-Symbol verschieben, das sich direkt unter dem Flaschen-Symbol befindet!\n    ```\n\n    An dieser Position könnte beim anderen Spieler ein anderes Symbol oder gar kein Symbol sein.\n\n*Einigt euch auf das Zielposition.* Du darfst dem anderen Spieler keine Koordinaten nennen. Abgesehen von dieser Einschränkung könnt ihr frei eine Strategie entwickeln, euch auf eine Zielposition einigen und dann mit den entsprechenden Koordinaten den `VERSCHIEBE: <OBJECT>, (<X>, <Y>)` Befehl formulieren.\n\n* Falsches Beispiel:\n\n    ```\n    SPRICH: Lass uns <OBJEKTBESCHREIBUNG> nach (800, 100) bewegen!\n    ```\n    \n    Wenn du Koordinaten oder Zahlen in deiner Nachricht verwendest, kriegt ihr beide einen Strafpunkt.\n\n\n**Spielende** \n\nWenn du denkst, dass ihr das Ziel, alle Objekte an die gleichen Positionen zu bewegen, erreicht habt, kannst du deinem Mitspieler die Nachricht `SPRICH: fertig?` schicken. Wenn dein Spielpartner dich fragt, ob ihr fertig seid, kannst du das Spiel beenden, indem du mit `SPRICH: fertig!` antwortest.\n\nIhr gewinnt gemeinsam, wenn ihr das Spiel innerhalb von 12 Runden beendet. Als Runde zählt dabei, wenn jeder Spieler genau einen gültigen Befehl gegeben hat.\n\nIhr verliert das Spiel sofort, wenn einer von euch...\n\n- irgendeine Analyse, Argumentation oder jegliche Formatierungen außer `SPRICH: <NACHRICHT>` oder `VERSCHIEBE: <OBJECT>, (<X>, <Y>)` sendet.\n- Koordinaten in einer deiner `SPRICH: <NACHRICHT>`-Nachrichten verwendet\nSchicke eine Nachricht an deinen Mitspieler um das Spiel zu starten!",
+          "p2_initial_prompt": "Im Anhang findest du ein zweiteiliges Bild:\n\n- Auf der rechten Seite befindet sich eine Legende mit Symbolen, die jeweils mit einer ID versehen sind.\n\n- Auf der linken Seite ist ein Hintergrundbild zu sehen, auf dem diese Symbole an zufälligen Koordinaten platziert sind. Am linken und unteren Rand des Bildes ist ein x-y-Koordinatensystem eingezeichnet. Beachte, dass die Werte auf der y-Achse nach unten hin zunehmen.\n\nDu spielst ein kooperatives Spiel mit einem Spielpartner auf Grundlage dieses Bildes. Dein Mitspieler sieht dieselben Objekte und dasselbe Hintergrundbild. Allerdings haben die Objekte andere IDs und befinden sich an anderen Positionen auf dem Hintergrundbild. Ziel des Spiels ist es, dass beide Spieler die Objekte auf ihren jeweiligen Bildern so verschieben, dass dieselben Objekte jeweils an denselben Positionen landen. Du musst dich mit deinem Mitspieler absprechen, damit ihr euch auf einen gemeinsamen Zielzustand einigen könnt.\n\n\n**Spielregeln**\n\n* In jedem Spielzug kannst du genau eine der folgenden zwei Aktionen ausführen:\n    * `SPRICH: <NACHRICHT>`: um deinem Mitspieler eine Nachricht zu schicken\n    * `VERSCHIEBE: <OBJECT>, (<X>, <Y>)`: um ein Objekt mit der ID `<ID>` and die Koordinaten `(<X>,<Y>)` zu bewegen. Du erhältst kein visuelles Feedback, und dein Mitspieler kann deine Bewegungsbefehle nicht sehen.\n    * Du darfst keine Koordinaten verwenden, wenn du mit dem anderen Spieler kommunizierst.\n* Halte dich strikt an dieses Format, ohne etwas anderes hinzuzufügen: Kein Denkprozess, keine zusätzliche Formatierung, keine Backticks.\n\n\n**Absprachen mit dem Spielpartner**\n\n*Einigt euch darauf, welches Symbol verschoben werden soll.* Überlegt euch eine sinnvolle Strategie. Gib dem anderen Spieler nicht einfach eine ID an, um ein Symbol zu identifizieren. Die IDs sind für jeden Spieler zufällig vergeben, sodass dieselbe ID bei dir und dem anderen Spieler höchstwahrscheinlich unterschiedliche Symbole meint.\n\n* Falsches Beispiel:\n\n    ```\n    SPRICH: Lass uns das Objekt D verschieben!\n    ```\n\n    Die ID 'D' könnte sich bei deinem Mitspieler auf ein anderes Objekt beziehen als bei dir!\n\nEbenso solltest du dem anderen Spieler kein Symbol anhand seiner Startposition im Bild zuweisen. Die Symbole sind zufällig verteilt, daher sind Positionen relativ zu Hintergrundelementen oder anderen Symbolen nicht verlässlich.\n\n* Falsches Beispiel:\n    \n    ```\n    SPRICH: Lass uns das Symbol verschieben, das sich unten rechts in der Nähe der Pflanze befindet!  \n    SPRICH: Lass uns das Kopfhörer-Symbol verschieben, das sich direkt unter dem Flaschen-Symbol befindet!\n    ```\n\n    An dieser Position könnte beim anderen Spieler ein anderes Symbol oder gar kein Symbol sein.\n\n*Einigt euch auf das Zielposition.* Du darfst dem anderen Spieler keine Koordinaten nennen. Abgesehen von dieser Einschränkung könnt ihr frei eine Strategie entwickeln, euch auf eine Zielposition einigen und dann mit den entsprechenden Koordinaten den `VERSCHIEBE: <OBJECT>, (<X>, <Y>)` Befehl formulieren.\n\n* Falsches Beispiel:\n\n    ```\n    SPRICH: Lass uns <OBJEKTBESCHREIBUNG> nach (800, 100) bewegen!\n    ```\n    \n    Wenn du Koordinaten oder Zahlen in deiner Nachricht verwendest, kriegt ihr beide einen Strafpunkt.\n\n\n**Spielende** \n\nWenn du denkst, dass ihr das Ziel, alle Objekte an die gleichen Positionen zu bewegen, erreicht habt, kannst du deinem Mitspieler die Nachricht `SPRICH: fertig?` schicken. Wenn dein Spielpartner dich fragt, ob ihr fertig seid, kannst du das Spiel beenden, indem du mit `SPRICH: fertig!` antwortest.\n\nIhr gewinnt gemeinsam, wenn ihr das Spiel innerhalb von 12 Runden beendet. Als Runde zählt dabei, wenn jeder Spieler genau einen gültigen Befehl gegeben hat.\n\nIhr verliert das Spiel sofort, wenn einer von euch...\n\n- irgendeine Analyse, Argumentation oder jegliche Formatierungen außer `SPRICH: <NACHRICHT>` oder `VERSCHIEBE: <OBJECT>, (<X>, <Y>)` sendet.\n- Koordinaten in einer deiner `SPRICH: <NACHRICHT>`-Nachrichten verwendet\nDein Mitspieler hat das Spiel mit dieser Nachricht begonnen:\n\n\"$start_message\"\n\nWie lautet dein erster Befehl?"
+        }
+      ]
+    },
+    {
+      "name": "mm_medium_3obj_de",
+      "game_instances": [
+        {
+          "game_id": 0,
+          "modality": "image",
+          "language": "de",
+          "max_penalties": 3,
+          "max_rounds": 12,
+          "background": "resources/backgrounds/kitchen.png",
+          "intermittent_prompts": {
+            "invalid_response": "Strafpunkt: $reason Stelle sicher, dass\n\n* Nachrichten an deinen Mitspieler weder Zahlen noch Koordinaten enthalten!\n* deine Antwort ausschließlich einen der beiden Befehle `SPRICH: <NACHRICHT>` und `VERSCHIEBE: <OBJECT>, (<X>, <Y>)` und sonst nichts enthält!\n",
+            "message_relay": "Deine Nachricht wurde an deinen Mitspieler übermittelt.\n\n\n",
+            "command_prompt": "\n\n\nWie lautet dein nächster Befehl?",
+            "new_turn_move": "Dein Mitspieler hat ein Objekt auf seinem Bild bewegt.",
+            "new_turn": "Dein Mitspieler hat dir diese Nachricht geschickt:\n\n\n\"$turn_message\"",
+            "penalty_counter": "Ihr habt gemeinsam $penalty von maximal 3 Strafpunkten angesammelt.\n",
+            "penalty_reprompt": "Bitte versuche es noch mal!",
+            "round_counter": "Ihr seid gerade bei Runde $round von maximal 12.\n"
+          },
+          "say_pattern": "(?P<head>.*)SPRICH: (?P<message>[^\\n]+)(?P<tail>.*)",
+          "move_pattern": "(?P<head>.*)VERSCHIEBE: (?P<obj>[A-Z]), \\((?P<x>\\d+), ?(?P<y>\\d+)\\)(?P<tail>.*)",
+          "parse_errors": {
+            "head": "Deine Nachricht darf nichts vor dem Befehl enthalten!",
+            "tail": "Deine Nachricht darf nichts nach dem Befehl enthalten!",
+            "head_tail": "Deine Nachricht darf nichts vor oder nach dem Befehl enthalten!",
+            "several_commands": "Deine Nachricht enthält mehr als einen Befehl!",
+            "restriction": "Deine Nachricht enthält regelwidrige Angaben!",
+            "invalid_format": "Deine Nachricht entspricht keinem gültigen Format!",
+            "invalid_start": "Du musst das Spiel beginnen, indem du eine Nachricht an den anderen Spieler sendest!"
+          },
+          "move_messages": {
+            "successful": "'$object' erfolgreich nach ($x,$y) verschoben.\n\n",
+            "out_of_bounds": "Ungültiger Zug: ($x,$y) liegt außerhalb des Bildes. Bitte versuche es erneut!\n\n",
+            "not_empty": "Strafpunkt: ($x,$y) ist nicht leer, sondern enthält '$object'.\n",
+            "obj_not_found": "Ungültiger Zug: Dein Bild enhält kein Objekt mit der ID '$object'. Bitte versuche es erneut!\n\n"
+          },
+          "terminate_question": "fertig?",
+          "terminate_answer": "fertig!",
+          "restricted_patterns": [
+            "[0-9]+"
+          ],
+          "objects_1": [
+            {
+              "freepik_id": 3005272,
+              "name": "brush",
+              "url": "https://cdn-icons-png.freepik.com/128/3005/3005272.png",
+              "id": "A",
+              "coord": [
+                300,
+                200
+              ]
+            },
+            {
+              "freepik_id": 7310425,
+              "name": "brush",
+              "url": "https://cdn-icons-png.freepik.com/128/7310/7310425.png",
+              "id": "B",
+              "coord": [
+                200,
+                100
+              ]
+            },
+            {
+              "freepik_id": 6873541,
+              "name": "brush",
+              "url": "https://cdn-icons-png.freepik.com/128/6873/6873541.png",
+              "id": "C",
+              "coord": [
+                700,
+                300
+              ]
+            }
+          ],
+          "objects_2": [
+            {
+              "freepik_id": 6873541,
+              "name": "brush",
+              "url": "https://cdn-icons-png.freepik.com/128/6873/6873541.png",
+              "id": "A",
+              "coord": [
+                100,
+                200
+              ]
+            },
+            {
+              "freepik_id": 3005272,
+              "name": "brush",
+              "url": "https://cdn-icons-png.freepik.com/128/3005/3005272.png",
+              "id": "B",
+              "coord": [
+                200,
+                400
+              ]
+            },
+            {
+              "freepik_id": 7310425,
+              "name": "brush",
+              "url": "https://cdn-icons-png.freepik.com/128/7310/7310425.png",
+              "id": "C",
+              "coord": [
+                600,
+                200
+              ]
+            }
+          ],
+          "p1_initial_prompt": "Im Anhang findest du ein zweiteiliges Bild:\n\n- Auf der rechten Seite befindet sich eine Legende mit Symbolen, die jeweils mit einer ID versehen sind.\n\n- Auf der linken Seite ist ein Hintergrundbild zu sehen, auf dem diese Symbole an zufälligen Koordinaten platziert sind. Am linken und unteren Rand des Bildes ist ein x-y-Koordinatensystem eingezeichnet. Beachte, dass die Werte auf der y-Achse nach unten hin zunehmen.\n\nDu spielst ein kooperatives Spiel mit einem Spielpartner auf Grundlage dieses Bildes. Dein Mitspieler sieht dieselben Objekte und dasselbe Hintergrundbild. Allerdings haben die Objekte andere IDs und befinden sich an anderen Positionen auf dem Hintergrundbild. Ziel des Spiels ist es, dass beide Spieler die Objekte auf ihren jeweiligen Bildern so verschieben, dass dieselben Objekte jeweils an denselben Positionen landen. Du musst dich mit deinem Mitspieler absprechen, damit ihr euch auf einen gemeinsamen Zielzustand einigen könnt.\n\n\n**Spielregeln**\n\n* In jedem Spielzug kannst du genau eine der folgenden zwei Aktionen ausführen:\n    * `SPRICH: <NACHRICHT>`: um deinem Mitspieler eine Nachricht zu schicken\n    * `VERSCHIEBE: <OBJECT>, (<X>, <Y>)`: um ein Objekt mit der ID `<ID>` and die Koordinaten `(<X>,<Y>)` zu bewegen. Du erhältst kein visuelles Feedback, und dein Mitspieler kann deine Bewegungsbefehle nicht sehen.\n    * Du darfst keine Koordinaten verwenden, wenn du mit dem anderen Spieler kommunizierst.\n* Halte dich strikt an dieses Format, ohne etwas anderes hinzuzufügen: Kein Denkprozess, keine zusätzliche Formatierung, keine Backticks.\n\n\n**Absprachen mit dem Spielpartner**\n\n*Einigt euch darauf, welches Symbol verschoben werden soll.* Überlegt euch eine sinnvolle Strategie. Gib dem anderen Spieler nicht einfach eine ID an, um ein Symbol zu identifizieren. Die IDs sind für jeden Spieler zufällig vergeben, sodass dieselbe ID bei dir und dem anderen Spieler höchstwahrscheinlich unterschiedliche Symbole meint.\n\n* Falsches Beispiel:\n\n    ```\n    SPRICH: Lass uns das Objekt D verschieben!\n    ```\n\n    Die ID 'D' könnte sich bei deinem Mitspieler auf ein anderes Objekt beziehen als bei dir!\n\nEbenso solltest du dem anderen Spieler kein Symbol anhand seiner Startposition im Bild zuweisen. Die Symbole sind zufällig verteilt, daher sind Positionen relativ zu Hintergrundelementen oder anderen Symbolen nicht verlässlich.\n\n* Falsches Beispiel:\n    \n    ```\n    SPRICH: Lass uns das Symbol verschieben, das sich unten rechts in der Nähe der Pflanze befindet!  \n    SPRICH: Lass uns das Kopfhörer-Symbol verschieben, das sich direkt unter dem Flaschen-Symbol befindet!\n    ```\n\n    An dieser Position könnte beim anderen Spieler ein anderes Symbol oder gar kein Symbol sein.\n\n*Einigt euch auf das Zielposition.* Du darfst dem anderen Spieler keine Koordinaten nennen. Abgesehen von dieser Einschränkung könnt ihr frei eine Strategie entwickeln, euch auf eine Zielposition einigen und dann mit den entsprechenden Koordinaten den `VERSCHIEBE: <OBJECT>, (<X>, <Y>)` Befehl formulieren.\n\n* Falsches Beispiel:\n\n    ```\n    SPRICH: Lass uns <OBJEKTBESCHREIBUNG> nach (800, 100) bewegen!\n    ```\n    \n    Wenn du Koordinaten oder Zahlen in deiner Nachricht verwendest, kriegt ihr beide einen Strafpunkt.\n\n\n**Spielende** \n\nWenn du denkst, dass ihr das Ziel, alle Objekte an die gleichen Positionen zu bewegen, erreicht habt, kannst du deinem Mitspieler die Nachricht `SPRICH: fertig?` schicken. Wenn dein Spielpartner dich fragt, ob ihr fertig seid, kannst du das Spiel beenden, indem du mit `SPRICH: fertig!` antwortest.\n\nIhr gewinnt gemeinsam, wenn ihr das Spiel innerhalb von 12 Runden beendet. Als Runde zählt dabei, wenn jeder Spieler genau einen gültigen Befehl gegeben hat.\n\nIhr verliert das Spiel sofort, wenn einer von euch...\n\n- irgendeine Analyse, Argumentation oder jegliche Formatierungen außer `SPRICH: <NACHRICHT>` oder `VERSCHIEBE: <OBJECT>, (<X>, <Y>)` sendet.\n- Koordinaten in einer deiner `SPRICH: <NACHRICHT>`-Nachrichten verwendet\nSchicke eine Nachricht an deinen Mitspieler um das Spiel zu starten!",
+          "p2_initial_prompt": "Im Anhang findest du ein zweiteiliges Bild:\n\n- Auf der rechten Seite befindet sich eine Legende mit Symbolen, die jeweils mit einer ID versehen sind.\n\n- Auf der linken Seite ist ein Hintergrundbild zu sehen, auf dem diese Symbole an zufälligen Koordinaten platziert sind. Am linken und unteren Rand des Bildes ist ein x-y-Koordinatensystem eingezeichnet. Beachte, dass die Werte auf der y-Achse nach unten hin zunehmen.\n\nDu spielst ein kooperatives Spiel mit einem Spielpartner auf Grundlage dieses Bildes. Dein Mitspieler sieht dieselben Objekte und dasselbe Hintergrundbild. Allerdings haben die Objekte andere IDs und befinden sich an anderen Positionen auf dem Hintergrundbild. Ziel des Spiels ist es, dass beide Spieler die Objekte auf ihren jeweiligen Bildern so verschieben, dass dieselben Objekte jeweils an denselben Positionen landen. Du musst dich mit deinem Mitspieler absprechen, damit ihr euch auf einen gemeinsamen Zielzustand einigen könnt.\n\n\n**Spielregeln**\n\n* In jedem Spielzug kannst du genau eine der folgenden zwei Aktionen ausführen:\n    * `SPRICH: <NACHRICHT>`: um deinem Mitspieler eine Nachricht zu schicken\n    * `VERSCHIEBE: <OBJECT>, (<X>, <Y>)`: um ein Objekt mit der ID `<ID>` and die Koordinaten `(<X>,<Y>)` zu bewegen. Du erhältst kein visuelles Feedback, und dein Mitspieler kann deine Bewegungsbefehle nicht sehen.\n    * Du darfst keine Koordinaten verwenden, wenn du mit dem anderen Spieler kommunizierst.\n* Halte dich strikt an dieses Format, ohne etwas anderes hinzuzufügen: Kein Denkprozess, keine zusätzliche Formatierung, keine Backticks.\n\n\n**Absprachen mit dem Spielpartner**\n\n*Einigt euch darauf, welches Symbol verschoben werden soll.* Überlegt euch eine sinnvolle Strategie. Gib dem anderen Spieler nicht einfach eine ID an, um ein Symbol zu identifizieren. Die IDs sind für jeden Spieler zufällig vergeben, sodass dieselbe ID bei dir und dem anderen Spieler höchstwahrscheinlich unterschiedliche Symbole meint.\n\n* Falsches Beispiel:\n\n    ```\n    SPRICH: Lass uns das Objekt D verschieben!\n    ```\n\n    Die ID 'D' könnte sich bei deinem Mitspieler auf ein anderes Objekt beziehen als bei dir!\n\nEbenso solltest du dem anderen Spieler kein Symbol anhand seiner Startposition im Bild zuweisen. Die Symbole sind zufällig verteilt, daher sind Positionen relativ zu Hintergrundelementen oder anderen Symbolen nicht verlässlich.\n\n* Falsches Beispiel:\n    \n    ```\n    SPRICH: Lass uns das Symbol verschieben, das sich unten rechts in der Nähe der Pflanze befindet!  \n    SPRICH: Lass uns das Kopfhörer-Symbol verschieben, das sich direkt unter dem Flaschen-Symbol befindet!\n    ```\n\n    An dieser Position könnte beim anderen Spieler ein anderes Symbol oder gar kein Symbol sein.\n\n*Einigt euch auf das Zielposition.* Du darfst dem anderen Spieler keine Koordinaten nennen. Abgesehen von dieser Einschränkung könnt ihr frei eine Strategie entwickeln, euch auf eine Zielposition einigen und dann mit den entsprechenden Koordinaten den `VERSCHIEBE: <OBJECT>, (<X>, <Y>)` Befehl formulieren.\n\n* Falsches Beispiel:\n\n    ```\n    SPRICH: Lass uns <OBJEKTBESCHREIBUNG> nach (800, 100) bewegen!\n    ```\n    \n    Wenn du Koordinaten oder Zahlen in deiner Nachricht verwendest, kriegt ihr beide einen Strafpunkt.\n\n\n**Spielende** \n\nWenn du denkst, dass ihr das Ziel, alle Objekte an die gleichen Positionen zu bewegen, erreicht habt, kannst du deinem Mitspieler die Nachricht `SPRICH: fertig?` schicken. Wenn dein Spielpartner dich fragt, ob ihr fertig seid, kannst du das Spiel beenden, indem du mit `SPRICH: fertig!` antwortest.\n\nIhr gewinnt gemeinsam, wenn ihr das Spiel innerhalb von 12 Runden beendet. Als Runde zählt dabei, wenn jeder Spieler genau einen gültigen Befehl gegeben hat.\n\nIhr verliert das Spiel sofort, wenn einer von euch...\n\n- irgendeine Analyse, Argumentation oder jegliche Formatierungen außer `SPRICH: <NACHRICHT>` oder `VERSCHIEBE: <OBJECT>, (<X>, <Y>)` sendet.\n- Koordinaten in einer deiner `SPRICH: <NACHRICHT>`-Nachrichten verwendet\nDein Mitspieler hat das Spiel mit dieser Nachricht begonnen:\n\n\"$start_message\"\n\nWie lautet dein erster Befehl?"
+        }
+      ]
+    },
+    {
+      "name": "mm_hard_3obj_de",
+      "game_instances": [
+        {
+          "game_id": 0,
+          "modality": "image",
+          "language": "de",
+          "max_penalties": 3,
+          "max_rounds": 12,
+          "background": "resources/backgrounds/kitchen.png",
+          "intermittent_prompts": {
+            "invalid_response": "Strafpunkt: $reason Stelle sicher, dass\n\n* Nachrichten an deinen Mitspieler weder Zahlen noch Koordinaten enthalten!\n* deine Antwort ausschließlich einen der beiden Befehle `SPRICH: <NACHRICHT>` und `VERSCHIEBE: <OBJECT>, (<X>, <Y>)` und sonst nichts enthält!\n",
+            "message_relay": "Deine Nachricht wurde an deinen Mitspieler übermittelt.\n\n\n",
+            "command_prompt": "\n\n\nWie lautet dein nächster Befehl?",
+            "new_turn_move": "Dein Mitspieler hat ein Objekt auf seinem Bild bewegt.",
+            "new_turn": "Dein Mitspieler hat dir diese Nachricht geschickt:\n\n\n\"$turn_message\"",
+            "penalty_counter": "Ihr habt gemeinsam $penalty von maximal 3 Strafpunkten angesammelt.\n",
+            "penalty_reprompt": "Bitte versuche es noch mal!",
+            "round_counter": "Ihr seid gerade bei Runde $round von maximal 12.\n"
+          },
+          "say_pattern": "(?P<head>.*)SPRICH: (?P<message>[^\\n]+)(?P<tail>.*)",
+          "move_pattern": "(?P<head>.*)VERSCHIEBE: (?P<obj>[A-Z]), \\((?P<x>\\d+), ?(?P<y>\\d+)\\)(?P<tail>.*)",
+          "parse_errors": {
+            "head": "Deine Nachricht darf nichts vor dem Befehl enthalten!",
+            "tail": "Deine Nachricht darf nichts nach dem Befehl enthalten!",
+            "head_tail": "Deine Nachricht darf nichts vor oder nach dem Befehl enthalten!",
+            "several_commands": "Deine Nachricht enthält mehr als einen Befehl!",
+            "restriction": "Deine Nachricht enthält regelwidrige Angaben!",
+            "invalid_format": "Deine Nachricht entspricht keinem gültigen Format!",
+            "invalid_start": "Du musst das Spiel beginnen, indem du eine Nachricht an den anderen Spieler sendest!"
+          },
+          "move_messages": {
+            "successful": "'$object' erfolgreich nach ($x,$y) verschoben.\n\n",
+            "out_of_bounds": "Ungültiger Zug: ($x,$y) liegt außerhalb des Bildes. Bitte versuche es erneut!\n\n",
+            "not_empty": "Strafpunkt: ($x,$y) ist nicht leer, sondern enthält '$object'.\n",
+            "obj_not_found": "Ungültiger Zug: Dein Bild enhält kein Objekt mit der ID '$object'. Bitte versuche es erneut!\n\n"
+          },
+          "terminate_question": "fertig?",
+          "terminate_answer": "fertig!",
+          "restricted_patterns": [
+            "[0-9]+"
+          ],
+          "objects_1": [
+            {
+              "freepik_id": 8565807,
+              "name": "plant pot",
+              "url": "https://cdn-icons-png.freepik.com/128/8565/8565807.png",
+              "id": "A",
+              "coord": [
+                100,
+                500
+              ]
+            },
+            {
+              "freepik_id": 18923224,
+              "name": "plant pot",
+              "url": "https://cdn-icons-png.freepik.com/128/18923/18923224.png",
+              "id": "B",
+              "coord": [
+                800,
+                100
+              ]
+            },
+            {
+              "freepik_id": 10141730,
+              "name": "plant pot",
+              "url": "https://cdn-icons-png.freepik.com/128/10141/10141730.png",
+              "id": "C",
+              "coord": [
+                900,
+                300
+              ]
+            }
+          ],
+          "objects_2": [
+            {
+              "freepik_id": 18923224,
+              "name": "plant pot",
+              "url": "https://cdn-icons-png.freepik.com/128/18923/18923224.png",
+              "id": "A",
+              "coord": [
+                300,
+                300
+              ]
+            },
+            {
+              "freepik_id": 8565807,
+              "name": "plant pot",
+              "url": "https://cdn-icons-png.freepik.com/128/8565/8565807.png",
+              "id": "B",
+              "coord": [
+                300,
+                500
+              ]
+            },
+            {
+              "freepik_id": 10141730,
+              "name": "plant pot",
+              "url": "https://cdn-icons-png.freepik.com/128/10141/10141730.png",
+              "id": "C",
+              "coord": [
+                700,
+                100
               ]
             }
           ],

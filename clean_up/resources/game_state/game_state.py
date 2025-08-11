@@ -22,8 +22,8 @@ logger = logging.getLogger(__name__)
 class GameState(abc.ABC):
     # Superclass for GridState and PicState, holding the game state for one player.
     @abc.abstractmethod
-    def __init__(self, player_id: str, background: str, move_messages: dict = None, objects: List[GameObject] = None):
-        self.player_id = player_id
+    def __init__(self, background: str, move_messages: dict = None, objects: List[GameObject] = None, img_prefix: str=None):
+        self.img_prefix = img_prefix
         self.width = None
         self.height = None
         self.background = None
@@ -130,9 +130,8 @@ class PicState(GameState):
     Represents the state of a picture-based game for one player.
     """
 
-    def __init__(self, player_id: str, background: str, move_messages: dict, objects: List[Icon]):
-        super().__init__(player_id, background, move_messages, objects)
-        self.img_prefix = f'player_{self.player_id}_'
+    def __init__(self, background: str, move_messages: dict, objects: List[Icon], img_prefix: str):
+        super().__init__(background=background, move_messages=move_messages, objects=objects, img_prefix=img_prefix)
         self.image_counter = 0
 
     def set_background(self, background: str):
@@ -257,11 +256,10 @@ class PicState(GameState):
             # create tmp directory if it does not exist
             if not os.path.exists('tmp'):
                 os.makedirs('tmp')
-            filepath = f'tmp/{self.img_prefix}_pic_state_{self.image_counter}.png'
+            filepath = f'tmp/{self.img_prefix}_state_{self.image_counter}.png'
             self.image_counter += 1
             plt.savefig(filepath, bbox_inches='tight', pad_inches=0.1)
             plt.close(fig)
-            logger.info(f"Saved image to {filepath}, returning path.")
             return filepath
         else:
             plt.close(fig)
@@ -272,8 +270,8 @@ class GridState(GameState):
     """
     Represents the state of a grid-based game for one player.
     """
-    def __init__(self, player_id: str=None, background: str=None, move_messages: dict = None, objects: List[GameObject] = None, **kwargs):
-        super().__init__(player_id, background, move_messages, objects)
+    def __init__(self, background: str=None, move_messages: dict = None, objects: List[GameObject] = None, **kwargs):
+        super().__init__(background, move_messages, objects, **kwargs)
         self.check_empty = True
 
     def set_background(self, background: str):

@@ -44,9 +44,9 @@
           ],
           "objects_1": [
             {
-              "freepik_id": 17348290,
+              "freepik_id": 1456509,
               "name": "key",
-              "url": "https://cdn-icons-png.freepik.com/128/17348/17348290.png",
+              "url": "https://cdn-icons-png.freepik.com/128/1456/1456509.png",
               "id": "A",
               "coord": [
                 900,
@@ -54,9 +54,9 @@
               ]
             },
             {
-              "freepik_id": 3123513,
+              "freepik_id": 2520094,
               "name": "chocolate",
-              "url": "https://cdn-icons-png.freepik.com/128/3123/3123513.png",
+              "url": "https://cdn-icons-png.freepik.com/128/2520/2520094.png",
               "id": "B",
               "coord": [
                 300,
@@ -64,9 +64,9 @@
               ]
             },
             {
-              "freepik_id": 1989218,
+              "freepik_id": 362094,
               "name": "coin",
-              "url": "https://cdn-icons-png.freepik.com/128/1989/1989218.png",
+              "url": "https://cdn-icons-png.freepik.com/128/362/362094.png",
               "id": "C",
               "coord": [
                 500,
@@ -76,9 +76,9 @@
           ],
           "objects_2": [
             {
-              "freepik_id": 1989218,
+              "freepik_id": 362094,
               "name": "coin",
-              "url": "https://cdn-icons-png.freepik.com/128/1989/1989218.png",
+              "url": "https://cdn-icons-png.freepik.com/128/362/362094.png",
               "id": "A",
               "coord": [
                 700,
@@ -86,9 +86,9 @@
               ]
             },
             {
-              "freepik_id": 3123513,
+              "freepik_id": 2520094,
               "name": "chocolate",
-              "url": "https://cdn-icons-png.freepik.com/128/3123/3123513.png",
+              "url": "https://cdn-icons-png.freepik.com/128/2520/2520094.png",
               "id": "B",
               "coord": [
                 400,
@@ -96,9 +96,9 @@
               ]
             },
             {
-              "freepik_id": 17348290,
+              "freepik_id": 1456509,
               "name": "key",
-              "url": "https://cdn-icons-png.freepik.com/128/17348/17348290.png",
+              "url": "https://cdn-icons-png.freepik.com/128/1456/1456509.png",
               "id": "C",
               "coord": [
                 300,
@@ -106,8 +106,230 @@
               ]
             }
           ],
-          "p1_initial_prompt": "Attached is an image consisting of two parts:\n\n- On the right is a legend showing several icons, each with an associated ID on the left.\n\n- On the left is a background image overlaid with these icons placed at random coordinates. An x–y coordinate system is shown along the left and bottom edges of the image. Note that the y-axis values increase downward.\n\nYou are playing a collaborative game with another player based on your image. The other player sees a variation of the image, where the IDs are shuffled and the icons are overlaid on the background at different coordinates. The goal of the game is for both players to move the icons on their own images so that identical icons end up at the same coordinates. You have to communicate with the other player to agree upon a common goal state.\n\n\n**Rules**\n\n* In each turn, you can send exactly one command. Valid commands are:\n    * `SAY: <MESSAGE>`: to send a message to the other player: \n    * `MOVE: <OBJECT>, (<X>, <Y>)`: to move the icon with id `<ID>` to the coordinates `(<X>,<y>)`. You will **not** receive visual feedback. The other player can't see your move commands.\n    * You must not use coordinates when communicating with the other player.\n* Strictly follow the format without adding anything else. No thinking process, no extra formatting, no backticks.\n\n\n**Communication Guidelines**\n\n*Agree on which icon to move.* Think of an effective strategy. Don't instruct the other player to target an icon by its ID. IDs are randomized per player, so the same ID likely refers to different icons for you and the other player.\n\n* Wrong example:\n    \n    ```\n    SAY: Let's move icon D!\n    ```\n\n    ID 'D' could reference different icons for you and the other player!\n\nSimilarly, don't instruct the other player to target an icon by its initial position in the picture. Icon placement is randomized, so positions relative to background elements or other icons are unreliable.\n\n* Wrong example:\n    \n    ```\n    SAY: Let's move the icon that's near the plant in the bottom right corner!  \n    SAY: Let's move the headphone icon that's right beneath the bottle icon!\n    ```\n\n    The other player might have an different icon or no icon at all at that position.\n\n*Agree on the target location.* You must not instruct the other player using coordinates. Apart from this restriction, you are free to come up with any strategy, agree on the location, then formulate the `MOVE: <OBJECT>, (<X>, <Y>)` command with the coordinates of the target location.\n\n* Wrong example\n\n    ```\n    SAY: Let's move the <ICON_DESCRIPTION> icon to location (800, 100)!\n    ```\n\n    If you use coordinates or numbers in your message, you both get penalized.\n\n\n**End of Game** \n\nIf you think you reached the goal of aligning all icons, you can ask the other player to finish the game by sending `SAY: finished?`. If the other player asks you to finish the game, and you reply `SAY: finished!`, the game will end.\n\nBoth players win if the game ends within 12 rounds, where one round is defined as two players each sending a valid command.\n\nYou will immediately lose the game if you:\n\n- send any analysis, reasoning, or any other formatting apart from `SAY: <MESSAGE>` or `MOVE: <OBJECT>, (<X>, <Y>)`.\n- use coordinates in any of your `SAY: <MESSAGE>` messages\n\nPlease send a message to the other player to start the game!",
-          "p2_initial_prompt": "Attached is an image consisting of two parts:\n\n- On the right is a legend showing several icons, each with an associated ID on the left.\n\n- On the left is a background image overlaid with these icons placed at random coordinates. An x–y coordinate system is shown along the left and bottom edges of the image. Note that the y-axis values increase downward.\n\nYou are playing a collaborative game with another player based on your image. The other player sees a variation of the image, where the IDs are shuffled and the icons are overlaid on the background at different coordinates. The goal of the game is for both players to move the icons on their own images so that identical icons end up at the same coordinates. You have to communicate with the other player to agree upon a common goal state.\n\n\n**Rules**\n\n* In each turn, you can send exactly one command. Valid commands are:\n    * `SAY: <MESSAGE>`: to send a message to the other player: \n    * `MOVE: <OBJECT>, (<X>, <Y>)`: to move the icon with id `<ID>` to the coordinates `(<X>,<y>)`. You will **not** receive visual feedback. The other player can't see your move commands.\n    * You must not use coordinates when communicating with the other player.\n* Strictly follow the format without adding anything else. No thinking process, no extra formatting, no backticks.\n\n\n**Communication Guidelines**\n\n*Agree on which icon to move.* Think of an effective strategy. Don't instruct the other player to target an icon by its ID. IDs are randomized per player, so the same ID likely refers to different icons for you and the other player.\n\n* Wrong example:\n    \n    ```\n    SAY: Let's move icon D!\n    ```\n\n    ID 'D' could reference different icons for you and the other player!\n\nSimilarly, don't instruct the other player to target an icon by its initial position in the picture. Icon placement is randomized, so positions relative to background elements or other icons are unreliable.\n\n* Wrong example:\n    \n    ```\n    SAY: Let's move the icon that's near the plant in the bottom right corner!  \n    SAY: Let's move the headphone icon that's right beneath the bottle icon!\n    ```\n\n    The other player might have an different icon or no icon at all at that position.\n\n*Agree on the target location.* You must not instruct the other player using coordinates. Apart from this restriction, you are free to come up with any strategy, agree on the location, then formulate the `MOVE: <OBJECT>, (<X>, <Y>)` command with the coordinates of the target location.\n\n* Wrong example\n\n    ```\n    SAY: Let's move the <ICON_DESCRIPTION> icon to location (800, 100)!\n    ```\n\n    If you use coordinates or numbers in your message, you both get penalized.\n\n\n**End of Game** \n\nIf you think you reached the goal of aligning all icons, you can ask the other player to finish the game by sending `SAY: finished?`. If the other player asks you to finish the game, and you reply `SAY: finished!`, the game will end.\n\nBoth players win if the game ends within 12 rounds, where one round is defined as two players each sending a valid command.\n\nYou will immediately lose the game if you:\n\n- send any analysis, reasoning, or any other formatting apart from `SAY: <MESSAGE>` or `MOVE: <OBJECT>, (<X>, <Y>)`.\n- use coordinates in any of your `SAY: <MESSAGE>` messages\n\nThe other player started the game by sending this message:\n\n\"$start_message\"\n\nWhat is your first command?"
+          "p1_initial_prompt": "Attached is an image consisting of two parts:\n\n- On the right is a legend showing several icons, each with an associated ID on the left.\n\n- On the left is a background image overlaid with these icons placed at random coordinates. An x–y coordinate system is shown along the left and bottom edges of the image. Note that the y-axis values increase downward.\n\nYou are playing a collaborative game with another player based on your image. The other player sees a variation of the image, where the IDs are shuffled and the icons are overlaid on the background at different coordinates. The goal of the game is for both players to move the icons on their own images so that identical icons end up at the same coordinates. You have to communicate with the other player to agree upon a common goal state.\n\n\n**Rules**\n\n* In each turn, you can send exactly one command. Valid commands are:\n    `SAY: <MESSAGE>`: to send a message (everything up until the next line break) to the other player. I will forward it to your partner.\n    * `MOVE: <OBJECT>, (<X>, <Y>)`: to move the icon with id `<ID>` to the coordinates `(<X>,<y>)`. You will **not** receive visual feedback. The other player can't see your move commands.\n    * You must not use coordinates when communicating with the other player.\n* Strictly follow the format without adding anything else. No thinking process, no extra formatting, no backticks.\n\n\n**Communication Guidelines**\n\n*Agree on which icon to move.* Think of an effective strategy. Don't instruct the other player to target an icon by its ID. IDs are randomized per player, so the same ID likely refers to different icons for you and the other player.\n\nSimilarly, don't instruct the other player to target an icon by its initial position in the picture. Icon placement is randomized, so positions relative to background elements or other icons are unreliable.\n\n*Agree on the target location.* You must not instruct the other player using coordinates. Apart from this restriction, you are free to come up with any strategy, agree on the location, then formulate the `MOVE: <OBJECT>, (<X>, <Y>)` command with the coordinates of the target location.\n\n**End of Game** \n\nIf you think you reached the goal of aligning all icons, you can ask the other player to finish the game by sending `SAY: finished?`. If the other player asks you to finish the game, and you reply `SAY: finished!`, the game will end.\n\nBoth players win if the game ends within 12 rounds, where one round is defined as two players each sending a valid command.\n\nYou will immediately lose the game if you:\n\n- send any analysis, reasoning, or any other formatting apart from `SAY: <MESSAGE>` or `MOVE: <OBJECT>, (<X>, <Y>)`.\n- use coordinates in any of your `SAY: <MESSAGE>` messages\n\nPlease send a message to the other player to start the game!",
+          "p2_initial_prompt": "Attached is an image consisting of two parts:\n\n- On the right is a legend showing several icons, each with an associated ID on the left.\n\n- On the left is a background image overlaid with these icons placed at random coordinates. An x–y coordinate system is shown along the left and bottom edges of the image. Note that the y-axis values increase downward.\n\nYou are playing a collaborative game with another player based on your image. The other player sees a variation of the image, where the IDs are shuffled and the icons are overlaid on the background at different coordinates. The goal of the game is for both players to move the icons on their own images so that identical icons end up at the same coordinates. You have to communicate with the other player to agree upon a common goal state.\n\n\n**Rules**\n\n* In each turn, you can send exactly one command. Valid commands are:\n    `SAY: <MESSAGE>`: to send a message (everything up until the next line break) to the other player. I will forward it to your partner.\n    * `MOVE: <OBJECT>, (<X>, <Y>)`: to move the icon with id `<ID>` to the coordinates `(<X>,<y>)`. You will **not** receive visual feedback. The other player can't see your move commands.\n    * You must not use coordinates when communicating with the other player.\n* Strictly follow the format without adding anything else. No thinking process, no extra formatting, no backticks.\n\n\n**Communication Guidelines**\n\n*Agree on which icon to move.* Think of an effective strategy. Don't instruct the other player to target an icon by its ID. IDs are randomized per player, so the same ID likely refers to different icons for you and the other player.\n\nSimilarly, don't instruct the other player to target an icon by its initial position in the picture. Icon placement is randomized, so positions relative to background elements or other icons are unreliable.\n\n*Agree on the target location.* You must not instruct the other player using coordinates. Apart from this restriction, you are free to come up with any strategy, agree on the location, then formulate the `MOVE: <OBJECT>, (<X>, <Y>)` command with the coordinates of the target location.\n\n**End of Game** \n\nIf you think you reached the goal of aligning all icons, you can ask the other player to finish the game by sending `SAY: finished?`. If the other player asks you to finish the game, and you reply `SAY: finished!`, the game will end.\n\nBoth players win if the game ends within 12 rounds, where one round is defined as two players each sending a valid command.\n\nYou will immediately lose the game if you:\n\n- send any analysis, reasoning, or any other formatting apart from `SAY: <MESSAGE>` or `MOVE: <OBJECT>, (<X>, <Y>)`.\n- use coordinates in any of your `SAY: <MESSAGE>` messages\n\nThe other player started the game by sending this message:\n\n\"$start_message\"\n\nWhat is your first command?"
+        }
+      ]
+    },
+    {
+      "name": "mm_medium_3obj_en",
+      "game_instances": [
+        {
+          "game_id": 0,
+          "modality": "image",
+          "language": "en",
+          "max_penalties": 3,
+          "max_rounds": 12,
+          "background": "resources/backgrounds/kitchen.png",
+          "intermittent_prompts": {
+            "invalid_response": "Penalty: $reason\n\nMake sure that \n\n* messages to the other player do not contain any numbers or coordinates!\n* your response only contains either `SAY: <MESSAGE>` or `MOVE: <OBJECT>, (<X>, <Y>)`, and nothing else! Do not use any formatting, comments, or reasoning!\n",
+            "message_relay": "Your message has been relayed to the other player.\n\n\n",
+            "command_prompt": "\n\n\nWhat is your next command?",
+            "new_turn_move": "The other player moved an icon on their image.",
+            "new_turn": "The other player sent this message:\n\n\n\"$turn_message\"",
+            "penalty_counter": "You have collectively accumulated $penalty of 3 penalties.\n",
+            "penalty_reprompt": "Please try again!",
+            "round_counter": "You are currently playing round $round of maximum 12.\n"
+          },
+          "say_pattern": "(?P<head>.*)SAY: (?P<message>[^\\n]+)(?P<tail>.*)",
+          "move_pattern": "(?P<head>.*)MOVE: (?P<obj>[A-Z]), \\((?P<x>\\d+), ?(?P<y>\\d+)\\)(?P<tail>.*)",
+          "parse_errors": {
+            "head": "Your message must not contain anything before the command!",
+            "tail": "Your message must not contain anything after the command!",
+            "head_tail": "Your message must not contain anything before or after the command!",
+            "several_commands": "Your message contains more than one command!",
+            "restriction": "Your message contains restricted content!",
+            "invalid_format": "Your message is not in the expected format!",
+            "invalid_start": "You must begin the game by sending a message to the other player!"
+          },
+          "move_messages": {
+            "successful": "Moved object '$object' to ($x,$y) successfully.\n\n",
+            "out_of_bounds": "Invalid move: ($x,$y) is out of bounds. Please try again!\n\n",
+            "not_empty": "Penalty: ($x,$y) is not empty, but contains '$object'.\n",
+            "obj_not_found": "Invalid move: Your image has no object with ID '$object'. Please try again!\n\n"
+          },
+          "terminate_question": "finished?",
+          "terminate_answer": "finished!",
+          "restricted_patterns": [
+            "[0-9]+"
+          ],
+          "objects_1": [
+            {
+              "freepik_id": 3005272,
+              "name": "brush",
+              "url": "https://cdn-icons-png.freepik.com/128/3005/3005272.png",
+              "id": "A",
+              "coord": [
+                300,
+                200
+              ]
+            },
+            {
+              "freepik_id": 7310425,
+              "name": "brush",
+              "url": "https://cdn-icons-png.freepik.com/128/7310/7310425.png",
+              "id": "B",
+              "coord": [
+                200,
+                100
+              ]
+            },
+            {
+              "freepik_id": 6873541,
+              "name": "brush",
+              "url": "https://cdn-icons-png.freepik.com/128/6873/6873541.png",
+              "id": "C",
+              "coord": [
+                700,
+                300
+              ]
+            }
+          ],
+          "objects_2": [
+            {
+              "freepik_id": 6873541,
+              "name": "brush",
+              "url": "https://cdn-icons-png.freepik.com/128/6873/6873541.png",
+              "id": "A",
+              "coord": [
+                100,
+                200
+              ]
+            },
+            {
+              "freepik_id": 3005272,
+              "name": "brush",
+              "url": "https://cdn-icons-png.freepik.com/128/3005/3005272.png",
+              "id": "B",
+              "coord": [
+                200,
+                400
+              ]
+            },
+            {
+              "freepik_id": 7310425,
+              "name": "brush",
+              "url": "https://cdn-icons-png.freepik.com/128/7310/7310425.png",
+              "id": "C",
+              "coord": [
+                600,
+                200
+              ]
+            }
+          ],
+          "p1_initial_prompt": "Attached is an image consisting of two parts:\n\n- On the right is a legend showing several icons, each with an associated ID on the left.\n\n- On the left is a background image overlaid with these icons placed at random coordinates. An x–y coordinate system is shown along the left and bottom edges of the image. Note that the y-axis values increase downward.\n\nYou are playing a collaborative game with another player based on your image. The other player sees a variation of the image, where the IDs are shuffled and the icons are overlaid on the background at different coordinates. The goal of the game is for both players to move the icons on their own images so that identical icons end up at the same coordinates. You have to communicate with the other player to agree upon a common goal state.\n\n\n**Rules**\n\n* In each turn, you can send exactly one command. Valid commands are:\n    `SAY: <MESSAGE>`: to send a message (everything up until the next line break) to the other player. I will forward it to your partner.\n    * `MOVE: <OBJECT>, (<X>, <Y>)`: to move the icon with id `<ID>` to the coordinates `(<X>,<y>)`. You will **not** receive visual feedback. The other player can't see your move commands.\n    * You must not use coordinates when communicating with the other player.\n* Strictly follow the format without adding anything else. No thinking process, no extra formatting, no backticks.\n\n\n**Communication Guidelines**\n\n*Agree on which icon to move.* Think of an effective strategy. Don't instruct the other player to target an icon by its ID. IDs are randomized per player, so the same ID likely refers to different icons for you and the other player.\n\nSimilarly, don't instruct the other player to target an icon by its initial position in the picture. Icon placement is randomized, so positions relative to background elements or other icons are unreliable.\n\n*Agree on the target location.* You must not instruct the other player using coordinates. Apart from this restriction, you are free to come up with any strategy, agree on the location, then formulate the `MOVE: <OBJECT>, (<X>, <Y>)` command with the coordinates of the target location.\n\n**End of Game** \n\nIf you think you reached the goal of aligning all icons, you can ask the other player to finish the game by sending `SAY: finished?`. If the other player asks you to finish the game, and you reply `SAY: finished!`, the game will end.\n\nBoth players win if the game ends within 12 rounds, where one round is defined as two players each sending a valid command.\n\nYou will immediately lose the game if you:\n\n- send any analysis, reasoning, or any other formatting apart from `SAY: <MESSAGE>` or `MOVE: <OBJECT>, (<X>, <Y>)`.\n- use coordinates in any of your `SAY: <MESSAGE>` messages\n\nPlease send a message to the other player to start the game!",
+          "p2_initial_prompt": "Attached is an image consisting of two parts:\n\n- On the right is a legend showing several icons, each with an associated ID on the left.\n\n- On the left is a background image overlaid with these icons placed at random coordinates. An x–y coordinate system is shown along the left and bottom edges of the image. Note that the y-axis values increase downward.\n\nYou are playing a collaborative game with another player based on your image. The other player sees a variation of the image, where the IDs are shuffled and the icons are overlaid on the background at different coordinates. The goal of the game is for both players to move the icons on their own images so that identical icons end up at the same coordinates. You have to communicate with the other player to agree upon a common goal state.\n\n\n**Rules**\n\n* In each turn, you can send exactly one command. Valid commands are:\n    `SAY: <MESSAGE>`: to send a message (everything up until the next line break) to the other player. I will forward it to your partner.\n    * `MOVE: <OBJECT>, (<X>, <Y>)`: to move the icon with id `<ID>` to the coordinates `(<X>,<y>)`. You will **not** receive visual feedback. The other player can't see your move commands.\n    * You must not use coordinates when communicating with the other player.\n* Strictly follow the format without adding anything else. No thinking process, no extra formatting, no backticks.\n\n\n**Communication Guidelines**\n\n*Agree on which icon to move.* Think of an effective strategy. Don't instruct the other player to target an icon by its ID. IDs are randomized per player, so the same ID likely refers to different icons for you and the other player.\n\nSimilarly, don't instruct the other player to target an icon by its initial position in the picture. Icon placement is randomized, so positions relative to background elements or other icons are unreliable.\n\n*Agree on the target location.* You must not instruct the other player using coordinates. Apart from this restriction, you are free to come up with any strategy, agree on the location, then formulate the `MOVE: <OBJECT>, (<X>, <Y>)` command with the coordinates of the target location.\n\n**End of Game** \n\nIf you think you reached the goal of aligning all icons, you can ask the other player to finish the game by sending `SAY: finished?`. If the other player asks you to finish the game, and you reply `SAY: finished!`, the game will end.\n\nBoth players win if the game ends within 12 rounds, where one round is defined as two players each sending a valid command.\n\nYou will immediately lose the game if you:\n\n- send any analysis, reasoning, or any other formatting apart from `SAY: <MESSAGE>` or `MOVE: <OBJECT>, (<X>, <Y>)`.\n- use coordinates in any of your `SAY: <MESSAGE>` messages\n\nThe other player started the game by sending this message:\n\n\"$start_message\"\n\nWhat is your first command?"
+        }
+      ]
+    },
+    {
+      "name": "mm_hard_3obj_en",
+      "game_instances": [
+        {
+          "game_id": 0,
+          "modality": "image",
+          "language": "en",
+          "max_penalties": 3,
+          "max_rounds": 12,
+          "background": "resources/backgrounds/kitchen.png",
+          "intermittent_prompts": {
+            "invalid_response": "Penalty: $reason\n\nMake sure that \n\n* messages to the other player do not contain any numbers or coordinates!\n* your response only contains either `SAY: <MESSAGE>` or `MOVE: <OBJECT>, (<X>, <Y>)`, and nothing else! Do not use any formatting, comments, or reasoning!\n",
+            "message_relay": "Your message has been relayed to the other player.\n\n\n",
+            "command_prompt": "\n\n\nWhat is your next command?",
+            "new_turn_move": "The other player moved an icon on their image.",
+            "new_turn": "The other player sent this message:\n\n\n\"$turn_message\"",
+            "penalty_counter": "You have collectively accumulated $penalty of 3 penalties.\n",
+            "penalty_reprompt": "Please try again!",
+            "round_counter": "You are currently playing round $round of maximum 12.\n"
+          },
+          "say_pattern": "(?P<head>.*)SAY: (?P<message>[^\\n]+)(?P<tail>.*)",
+          "move_pattern": "(?P<head>.*)MOVE: (?P<obj>[A-Z]), \\((?P<x>\\d+), ?(?P<y>\\d+)\\)(?P<tail>.*)",
+          "parse_errors": {
+            "head": "Your message must not contain anything before the command!",
+            "tail": "Your message must not contain anything after the command!",
+            "head_tail": "Your message must not contain anything before or after the command!",
+            "several_commands": "Your message contains more than one command!",
+            "restriction": "Your message contains restricted content!",
+            "invalid_format": "Your message is not in the expected format!",
+            "invalid_start": "You must begin the game by sending a message to the other player!"
+          },
+          "move_messages": {
+            "successful": "Moved object '$object' to ($x,$y) successfully.\n\n",
+            "out_of_bounds": "Invalid move: ($x,$y) is out of bounds. Please try again!\n\n",
+            "not_empty": "Penalty: ($x,$y) is not empty, but contains '$object'.\n",
+            "obj_not_found": "Invalid move: Your image has no object with ID '$object'. Please try again!\n\n"
+          },
+          "terminate_question": "finished?",
+          "terminate_answer": "finished!",
+          "restricted_patterns": [
+            "[0-9]+"
+          ],
+          "objects_1": [
+            {
+              "freepik_id": 8565807,
+              "name": "plant pot",
+              "url": "https://cdn-icons-png.freepik.com/128/8565/8565807.png",
+              "id": "A",
+              "coord": [
+                100,
+                500
+              ]
+            },
+            {
+              "freepik_id": 18923224,
+              "name": "plant pot",
+              "url": "https://cdn-icons-png.freepik.com/128/18923/18923224.png",
+              "id": "B",
+              "coord": [
+                800,
+                100
+              ]
+            },
+            {
+              "freepik_id": 10141730,
+              "name": "plant pot",
+              "url": "https://cdn-icons-png.freepik.com/128/10141/10141730.png",
+              "id": "C",
+              "coord": [
+                900,
+                300
+              ]
+            }
+          ],
+          "objects_2": [
+            {
+              "freepik_id": 18923224,
+              "name": "plant pot",
+              "url": "https://cdn-icons-png.freepik.com/128/18923/18923224.png",
+              "id": "A",
+              "coord": [
+                300,
+                300
+              ]
+            },
+            {
+              "freepik_id": 8565807,
+              "name": "plant pot",
+              "url": "https://cdn-icons-png.freepik.com/128/8565/8565807.png",
+              "id": "B",
+              "coord": [
+                300,
+                500
+              ]
+            },
+            {
+              "freepik_id": 10141730,
+              "name": "plant pot",
+              "url": "https://cdn-icons-png.freepik.com/128/10141/10141730.png",
+              "id": "C",
+              "coord": [
+                700,
+                100
+              ]
+            }
+          ],
+          "p1_initial_prompt": "Attached is an image consisting of two parts:\n\n- On the right is a legend showing several icons, each with an associated ID on the left.\n\n- On the left is a background image overlaid with these icons placed at random coordinates. An x–y coordinate system is shown along the left and bottom edges of the image. Note that the y-axis values increase downward.\n\nYou are playing a collaborative game with another player based on your image. The other player sees a variation of the image, where the IDs are shuffled and the icons are overlaid on the background at different coordinates. The goal of the game is for both players to move the icons on their own images so that identical icons end up at the same coordinates. You have to communicate with the other player to agree upon a common goal state.\n\n\n**Rules**\n\n* In each turn, you can send exactly one command. Valid commands are:\n    `SAY: <MESSAGE>`: to send a message (everything up until the next line break) to the other player. I will forward it to your partner.\n    * `MOVE: <OBJECT>, (<X>, <Y>)`: to move the icon with id `<ID>` to the coordinates `(<X>,<y>)`. You will **not** receive visual feedback. The other player can't see your move commands.\n    * You must not use coordinates when communicating with the other player.\n* Strictly follow the format without adding anything else. No thinking process, no extra formatting, no backticks.\n\n\n**Communication Guidelines**\n\n*Agree on which icon to move.* Think of an effective strategy. Don't instruct the other player to target an icon by its ID. IDs are randomized per player, so the same ID likely refers to different icons for you and the other player.\n\nSimilarly, don't instruct the other player to target an icon by its initial position in the picture. Icon placement is randomized, so positions relative to background elements or other icons are unreliable.\n\n*Agree on the target location.* You must not instruct the other player using coordinates. Apart from this restriction, you are free to come up with any strategy, agree on the location, then formulate the `MOVE: <OBJECT>, (<X>, <Y>)` command with the coordinates of the target location.\n\n**End of Game** \n\nIf you think you reached the goal of aligning all icons, you can ask the other player to finish the game by sending `SAY: finished?`. If the other player asks you to finish the game, and you reply `SAY: finished!`, the game will end.\n\nBoth players win if the game ends within 12 rounds, where one round is defined as two players each sending a valid command.\n\nYou will immediately lose the game if you:\n\n- send any analysis, reasoning, or any other formatting apart from `SAY: <MESSAGE>` or `MOVE: <OBJECT>, (<X>, <Y>)`.\n- use coordinates in any of your `SAY: <MESSAGE>` messages\n\nPlease send a message to the other player to start the game!",
+          "p2_initial_prompt": "Attached is an image consisting of two parts:\n\n- On the right is a legend showing several icons, each with an associated ID on the left.\n\n- On the left is a background image overlaid with these icons placed at random coordinates. An x–y coordinate system is shown along the left and bottom edges of the image. Note that the y-axis values increase downward.\n\nYou are playing a collaborative game with another player based on your image. The other player sees a variation of the image, where the IDs are shuffled and the icons are overlaid on the background at different coordinates. The goal of the game is for both players to move the icons on their own images so that identical icons end up at the same coordinates. You have to communicate with the other player to agree upon a common goal state.\n\n\n**Rules**\n\n* In each turn, you can send exactly one command. Valid commands are:\n    `SAY: <MESSAGE>`: to send a message (everything up until the next line break) to the other player. I will forward it to your partner.\n    * `MOVE: <OBJECT>, (<X>, <Y>)`: to move the icon with id `<ID>` to the coordinates `(<X>,<y>)`. You will **not** receive visual feedback. The other player can't see your move commands.\n    * You must not use coordinates when communicating with the other player.\n* Strictly follow the format without adding anything else. No thinking process, no extra formatting, no backticks.\n\n\n**Communication Guidelines**\n\n*Agree on which icon to move.* Think of an effective strategy. Don't instruct the other player to target an icon by its ID. IDs are randomized per player, so the same ID likely refers to different icons for you and the other player.\n\nSimilarly, don't instruct the other player to target an icon by its initial position in the picture. Icon placement is randomized, so positions relative to background elements or other icons are unreliable.\n\n*Agree on the target location.* You must not instruct the other player using coordinates. Apart from this restriction, you are free to come up with any strategy, agree on the location, then formulate the `MOVE: <OBJECT>, (<X>, <Y>)` command with the coordinates of the target location.\n\n**End of Game** \n\nIf you think you reached the goal of aligning all icons, you can ask the other player to finish the game by sending `SAY: finished?`. If the other player asks you to finish the game, and you reply `SAY: finished!`, the game will end.\n\nBoth players win if the game ends within 12 rounds, where one round is defined as two players each sending a valid command.\n\nYou will immediately lose the game if you:\n\n- send any analysis, reasoning, or any other formatting apart from `SAY: <MESSAGE>` or `MOVE: <OBJECT>, (<X>, <Y>)`.\n- use coordinates in any of your `SAY: <MESSAGE>` messages\n\nThe other player started the game by sending this message:\n\n\"$start_message\"\n\nWhat is your first command?"
         }
       ]
     }

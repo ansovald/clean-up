@@ -176,9 +176,10 @@ class MetricCalculator:
         # return product(% of icons moved by each player)
         return prod(coverage_per_player) # we can also plug it in a monotonously increasing function on (0, 1]
 
-    def compute_penalty_score(self):  
+    def compute_penalty_score(self):
         penalties = self.ingredients[PENALTIES]
-        max_penalties = self.ingredients[MAX_PENALTIES]
+        # with penalties==max_penalties, score should still be slightly above 0
+        max_penalties = self.ingredients[MAX_PENALTIES] + 1
         normalized = penalties / max_penalties
         return 1 - normalized  # we can use different function at this step
 

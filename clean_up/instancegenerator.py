@@ -30,7 +30,7 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
         super().__init__(os.path.dirname(__file__))
 
     def on_generate(self, seed, config, n_instances, language, modality, **kwargs):
-        print(f"Generating instances for language '{language}' and modality '{modality}'")
+        logger.info(f"Generating a total of {n_instances * len(config['experiments'])} instances for language '{language}' and modality '{modality}'")
         self.modality = modality
         self.objects = config['objects']
         self.language = language
@@ -63,7 +63,7 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
 
         for experiment_conf in config['experiments']:
             for object_count in config['objects']:
-                if modality == 'image':
+                if self.modality == 'image':
                     self.current_experiment_conf = {key: object_count if val == 'OBJECT_COUNT' else val for key, val in experiment_conf.items()}
                 else:
                     self.current_experiment_conf = experiment_conf
@@ -139,20 +139,23 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
                 object = GameObject(id=letter, coord=(None, None))
                 objects.append(object)
         else:
-            metadata = self.load_json(ICON_METADATA_PATH)
+            object_categories = int(self.current_experiment_conf['object_categories'])
             colored = self.current_experiment_conf['colored']
+            objects_per_color = int(self.current_experiment_conf['objects_per_color'])
+
+            metadata = self.load_json(ICON_METADATA_PATH)
             if colored:  # sampling colored icons
                 category_sample_base = [key for key in metadata.keys() if set(metadata[key].keys()) != set(['black'])]
             else:  # sampling black icons
                 category_sample_base = [key for key in metadata.keys() if 'black' in metadata[key]]
 
-            sampled_categories = random.sample(category_sample_base, k=int(object_count))
+            sampled_categories = random.sample(category_sample_base, k=int(object_categories))
             for category in sampled_categories:
                 if colored:
                     color = random.choice(list(set(metadata[category].keys()) - set(['black'])))
                 else:
                     color = 'black'
-                for icon in random.sample(metadata[category][color], k=int(self.current_experiment_conf['objects_per_color'])):
+                for icon in random.sample(metadata[category][color], k=objects_per_color):
                     objects.append(icon)
         return objects
 
@@ -177,7 +180,6 @@ if __name__ == '__main__':
     n_instances = experiments.get('n_instances', 2)
     for language in experiments['languages']:
         for modality in experiments['modalities']:
-            logger.info(f"Generating instances for modality '{modality}' and language {language}")
             file_name = experiments['modalities'][modality].get('instances', 'instances')
             if language == 'en':
                 file_name = file_name + '.json'
