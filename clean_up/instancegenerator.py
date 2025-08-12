@@ -14,6 +14,7 @@ from copy import deepcopy
 from shutil import move
 from string import Template
 
+from matplotlib.pyplot import grid
 from numpy import empty, object_
 from clemcore.clemgame import GameInstanceGenerator
 from resources.game_state.utils import EMPTY_SYMBOL, place_objects, GameObject
@@ -62,25 +63,38 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
             template_instance["restricted_patterns"] = restricted_patterns
 
         for experiment_conf in config['experiments']:
+            self.current_experiment_conf = deepcopy(experiment_conf)
+            sampled_backgrounds = []
+            if self.modality == 'text':
+                # For each experiment and object count, sample n_instances backgrounds
+                # This way we ensure that easy_3obj/instance_0000 has the same background
+                # as easy_5obj/instance_0000 and so on.
+                for _ in range(n_instances):
+                    background, background_stats = self.sample_background()
+                    sampled_backgrounds.append((background, background_stats))
+            else:
+                # For image modality, we use the same background for all instances
+                background, background_stats = self.sample_background()
+                sampled_backgrounds = [(background, background_stats)] * n_instances
             for object_count in config['objects']:
                 if self.modality == 'image':
-                    self.current_experiment_conf = {key: object_count if val == 'OBJECT_COUNT' else val for key, val in experiment_conf.items()}
-                else:
-                    self.current_experiment_conf = experiment_conf
-                experiment_name = f"{experiment_conf['name']}_{object_count}obj_{language}"
+                    self.current_experiment_conf = {key: object_count if val == 'OBJECT_COUNT' else val for key, val in self.current_experiment_conf.items()}
+                experiment_name = f"{self.current_experiment_conf['name']}_{object_count}obj_{language}"
                 experiment = self.add_experiment(experiment_name)
                 max_penalties = config['penalty_factor'] * int(object_count)
                 max_rounds = int(object_count) * 4
                 for instance_id in range(n_instances):
                     game_instance = self.add_game_instance(experiment, instance_id)
-                    # TODO: Do I need to pass modality?
                     game_instance['modality'] = modality
                     game_instance['language'] = language
                     game_instance['max_penalties'] = max_penalties
                     game_instance['max_rounds'] = max_rounds
+                    # self.background, background_stats = self.sample_background()
+                    self.background, background_stats = sampled_backgrounds[instance_id]
                     if modality == 'text':
+                        game_instance['empty_cells'] = background_stats['empty']
+                        game_instance['total_cells'] = background_stats['total']
                         game_instance['empty_symbol'] = EMPTY_SYMBOL
-                    self.background = self.sample_background()
                     game_instance['background'] = self.background
                     objects_1 = self.get_objects(object_count)
                     objects_2 = deepcopy(objects_1)
@@ -126,11 +140,18 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
         Might implement sampling background images in the future.
         """
         if modality == 'text':
-            backgrounds = self.load_json('resources/backgrounds/grids.json')[self.current_experiment_conf['grid_config']]
+            grid_data = self.load_json('resources/backgrounds/grids.json')
+            info = grid_data['info'][self.current_experiment_conf['grid_config']]
+            empty_cells = info['empty_cells']
+            total_cells = info['total_cells']
+            background_stats = {'empty': empty_cells, 'total': total_cells}
+
+            backgrounds = grid_data[self.current_experiment_conf['grid_config']]
             background = random.choice(list(backgrounds.values()))
         else:
+            background_stats = None
             background = 'resources/backgrounds/kitchen.png'
-        return background
+        return background, background_stats
     
     def get_objects(self, object_count):
         objects = []

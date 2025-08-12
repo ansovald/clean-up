@@ -37,7 +37,7 @@ class GameState(abc.ABC):
         self.place_objects(objects)
         self.move_log = {}  # Dictionary to keep track of moves for each object
         for obj in self.objects:
-            self.move_log[obj['id']] = [obj['coord']]
+            self.move_log[obj['id']] = [tuple(obj['coord'])]
 
     @abc.abstractmethod
     def set_background(self, background: str):
@@ -201,7 +201,7 @@ class PicState(GameState):
                     distances[other_obj['id']] = dist
         return distances
     
-    def draw_legend(self, icon_bounds=[0.2, 0.15, 0.7, 0.7]):
+    def draw_legend(self, icon_bounds=[0.3, 0.15, 0.6, 0.7]):
         """
         Draw a legend for the objects.
         """
@@ -424,7 +424,7 @@ class GridState(GameState):
         self.background[old_y][old_x] = self.background[old_y][old_x][:-1]  # Remove the object from the old position
         self.background[y][x].append(obj)  # Place the object at the new position
         element['coord'] = (x, y)
-        self.move_log[obj['id']].append((x, y))
+        self.move_log[element['id']].append((x, y))
         return True, Template(self.move_messages["successful"]).substitute(object=obj, x=x, y=y, grid=str(self)), None
         
     def get_pairwise_distances(self, other_objects):

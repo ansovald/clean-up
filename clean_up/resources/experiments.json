@@ -8,9 +8,9 @@
     "modalities": {
         "text": {
             "objects": {
+                "3": "CLP",
                 "5": "WITCH",
-                "7": "POTSDAM",
-                "9": "APHRODITE"
+                "7": "POTSDAM"
             },
             "penalty_factor": 2,
             "experiments": [

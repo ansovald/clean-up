@@ -221,7 +221,7 @@ class CleanUpMaster(DialogueGameMaster):
         """
         Check if the player should pass their turn.
         """
-        # time.sleep(random.uniform(1, 2))
+        time.sleep(random.uniform(1, 2))
         return self.pass_turn
 
     def _start_next_round(self) -> bool:
@@ -350,6 +350,8 @@ class CleanUpMaster(DialogueGameMaster):
             for file in os.listdir('tmp'):
                 if file.startswith(img_prefix):
                     os.remove(os.path.join('tmp', file))
+                    # if not file.endswith('state_0.png'):
+                    #     os.remove(os.path.join('tmp', file))
         ingredients = self.metric_preparer.compute_ingredients()
 
 
@@ -408,6 +410,7 @@ class CleanUpMaster(DialogueGameMaster):
 class CleanUpScorer(GameScorer):
     def __init__(self, game_name: str, experiment: Dict, game_instance: Dict):
         super().__init__(game_name, experiment, game_instance)
+        print(f"{experiment['name']}", end=' ')
 
     def score_turns(self, episode_interactions: Dict) -> None:
         """ Turn-level scores """

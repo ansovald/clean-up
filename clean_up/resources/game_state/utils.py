@@ -94,25 +94,33 @@ def place_icons(objects: List[Icon], img_size: Tuple[int, int]) -> List[Icon]:
     :return: List of placed Icon objects with updated coordinates
     """
     width, height = img_size
-    step = (ICON_SIZE // 50) * 50  # the largest multiple of 50 that is less than or equal to w
-    min_x = math.ceil(ICON_SIZE / 2 / step) * step
-    max_x = (width - ICON_SIZE // 2) // step * step
-    min_y = math.ceil(ICON_SIZE / 2 / step) * step
-    max_y = (height - ICON_SIZE // 2) // step * step
+    min_x = ICON_SIZE / 2 + 10
+    min_y = ICON_SIZE / 2 + 10
+    max_x = width - ICON_SIZE / 2 - 10
+    max_y = height - ICON_SIZE / 2 - 10
 
-    valid_positions = [
-        (x, y)
-        for x in range(min_x, max_x + 1, step)
-        for y in range(min_y, max_y + 1, step)
-    ]
-    random.shuffle(valid_positions)
-    assert len(valid_positions) >= len(objects), "Not enough valid positions to place all objects."
-    coords = random.sample(valid_positions, len(objects))
+    min_diff = ICON_SIZE + 20
+
+    sampled_coordinates = []
+
     random.shuffle(objects)
-    # Assign IDs and random unique coordinates
-    for i, obj in enumerate(objects):
-        obj['id'] = chr(ord('A') + i)
-        obj['coord'] = coords[i]
+
+    for obj in objects:
+        # Ensure the coordinates are within the bounds of the image
+        overlap = True
+        while overlap:
+            overlap = False
+            x = random.randint(int(min_x), int(max_x))
+            y = random.randint(int(min_y), int(max_y))
+            for coord in sampled_coordinates:
+                # Ensure the new coordinate is at least min_diff away from existing ones
+                if abs(coord[0] - x) < min_diff and abs(coord[1] - y) < min_diff:
+                    overlap = True
+                    break
+        sampled_coordinates.append((x, y))
+        obj['id'] = chr(ord('A') + len(sampled_coordinates))
+        obj['coord'] = (x, y)
+
     return objects
 
 def parse_grid(grid: str) -> list[list[str]]:

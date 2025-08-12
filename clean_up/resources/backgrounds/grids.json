@@ -1,6 +1,5 @@
 {
     "info": {
-        "text": "For each difficulty level, max. 10000 grids have been samples from the exhaustive files enumerating all grids with the respective specifications",
         "9x9_e34_b7": {
             "difficulty": "easy",
             "dim": 9,
@@ -27,7 +26,8 @@
             "empty_cell_ratio": 0.4897959183673469,
             "branch_count": 15,
             "total_model_count": 317419
-        }
+        },
+        "description": "For each difficulty level, max. 10000 grids have been samples from the exhaustive files enumerating all grids with the respective specifications"
     },
     "9x9_e34_b7": {
         "613": "╔═══════╗\n║◌◌◌◌◌◌◌║\n║◌◌◌◌◌◌◌║\n║◌◌◌◌┌──╢\n║◌◌◌◌│◌◌║\n╟─┬──┼──╢\n║◌│◌◌│◌◌║\n║◌│◌◌│◌◌║\n╚═╧══╧══╝",

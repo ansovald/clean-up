@@ -44,65 +44,65 @@
           ],
           "objects_1": [
             {
-              "freepik_id": 5170106,
-              "name": "key",
-              "url": "https://cdn-icons-png.freepik.com/128/5170/5170106.png",
-              "id": "A",
-              "coord": [
-                900,
-                300
-              ]
-            },
-            {
-              "freepik_id": 2520094,
-              "name": "chocolate",
-              "url": "https://cdn-icons-png.freepik.com/128/2520/2520094.png",
+              "freepik_id": 1989218,
+              "name": "coin",
+              "url": "https://cdn-icons-png.freepik.com/128/1989/1989218.png",
               "id": "B",
               "coord": [
-                300,
-                100
+                416,
+                326
               ]
             },
             {
-              "freepik_id": 10399396,
-              "name": "coin",
-              "url": "https://cdn-icons-png.freepik.com/128/10399/10399396.png",
+              "freepik_id": 17348290,
+              "name": "key",
+              "url": "https://cdn-icons-png.freepik.com/128/17348/17348290.png",
               "id": "C",
               "coord": [
-                500,
-                500
+                286,
+                90
+              ]
+            },
+            {
+              "freepik_id": 3123513,
+              "name": "chocolate",
+              "url": "https://cdn-icons-png.freepik.com/128/3123/3123513.png",
+              "id": "D",
+              "coord": [
+                903,
+                152
               ]
             }
           ],
           "objects_2": [
             {
-              "freepik_id": 10399396,
-              "name": "coin",
-              "url": "https://cdn-icons-png.freepik.com/128/10399/10399396.png",
-              "id": "A",
-              "coord": [
-                700,
-                400
-              ]
-            },
-            {
-              "freepik_id": 2520094,
+              "freepik_id": 3123513,
               "name": "chocolate",
-              "url": "https://cdn-icons-png.freepik.com/128/2520/2520094.png",
+              "url": "https://cdn-icons-png.freepik.com/128/3123/3123513.png",
               "id": "B",
               "coord": [
-                400,
-                200
+                642,
+                153
               ]
             },
             {
-              "freepik_id": 5170106,
-              "name": "key",
-              "url": "https://cdn-icons-png.freepik.com/128/5170/5170106.png",
+              "freepik_id": 1989218,
+              "name": "coin",
+              "url": "https://cdn-icons-png.freepik.com/128/1989/1989218.png",
               "id": "C",
               "coord": [
-                300,
-                500
+                232,
+                428
+              ]
+            },
+            {
+              "freepik_id": 17348290,
+              "name": "key",
+              "url": "https://cdn-icons-png.freepik.com/128/17348/17348290.png",
+              "id": "D",
+              "coord": [
+                82,
+                467
               ]
             }
           ],
@@ -150,65 +150,65 @@
           ],
           "objects_1": [
             {
-              "freepik_id": 18663825,
-              "name": "alarm clock",
-              "url": "https://cdn-icons-png.freepik.com/128/18663/18663825.png",
-              "id": "A",
-              "coord": [
-                600,
-                200
-              ]
-            },
-            {
-              "freepik_id": 2499637,
-              "name": "game controller",
-              "url": "https://cdn-icons-png.freepik.com/128/2499/2499637.png",
+              "freepik_id": 6384974,
+              "name": "smartphone",
+              "url": "https://cdn-icons-png.freepik.com/128/6384/6384974.png",
               "id": "B",
               "coord": [
-                200,
-                300
+                592,
+                160
               ]
             },
             {
-              "freepik_id": 9059083,
-              "name": "brush",
-              "url": "https://cdn-icons-png.freepik.com/128/9059/9059083.png",
+              "freepik_id": 561778,
+              "name": "umbrella",
+              "url": "https://cdn-icons-png.freepik.com/128/561/561778.png",
               "id": "C",
               "coord": [
-                400,
-                500
+                190,
+                499
+              ]
+            },
+            {
+              "freepik_id": 855279,
+              "name": "wallet",
+              "url": "https://cdn-icons-png.freepik.com/128/855/855279.png",
+              "id": "D",
+              "coord": [
+                222,
+                307
               ]
             }
           ],
           "objects_2": [
             {
-              "freepik_id": 18663825,
-              "name": "alarm clock",
-              "url": "https://cdn-icons-png.freepik.com/128/18663/18663825.png",
-              "id": "A",
-              "coord": [
-                800,
-                400
-              ]
-            },
-            {
-              "freepik_id": 9059083,
-              "name": "brush",
-              "url": "https://cdn-icons-png.freepik.com/128/9059/9059083.png",
+              "freepik_id": 6384974,
+              "name": "smartphone",
+              "url": "https://cdn-icons-png.freepik.com/128/6384/6384974.png",
               "id": "B",
               "coord": [
-                200,
-                100
+                619,
+                242
               ]
             },
             {
-              "freepik_id": 2499637,
-              "name": "game controller",
-              "url": "https://cdn-icons-png.freepik.com/128/2499/2499637.png",
+              "freepik_id": 855279,
+              "name": "wallet",
+              "url": "https://cdn-icons-png.freepik.com/128/855/855279.png",
               "id": "C",
               "coord": [
-                600,
-                300
+                167,
+                290
+              ]
+            },
+            {
+              "freepik_id": 561778,
+              "name": "umbrella",
+              "url": "https://cdn-icons-png.freepik.com/128/561/561778.png",
+              "id": "D",
+              "coord": [
+                406,
+                110
               ]
             }
           ],
@@ -256,65 +256,65 @@
           ],
           "objects_1": [
             {
-              "freepik_id": 5550867,
-              "name": "battery",
-              "url": "https://cdn-icons-png.freepik.com/128/5550/5550867.png",
-              "id": "A",
-              "coord": [
-                400,
-                300
-              ]
-            },
-            {
-              "freepik_id": 1587507,
-              "name": "tape",
-              "url": "https://cdn-icons-png.freepik.com/128/1587/1587507.png",
+              "freepik_id": 4508296,
+              "name": "shopping bag",
+              "url": "https://cdn-icons-png.freepik.com/128/4508/4508296.png",
               "id": "B",
               "coord": [
-                700,
-                200
+                695,
+                370
               ]
             },
             {
-              "freepik_id": 1457753,
-              "name": "game controller",
-              "url": "https://cdn-icons-png.freepik.com/128/1457/1457753.png",
+              "freepik_id": 10263734,
+              "name": "lock",
+              "url": "https://cdn-icons-png.freepik.com/128/10263/10263734.png",
               "id": "C",
               "coord": [
-                600,
-                200
+                390,
+                407
+              ]
+            },
+            {
+              "freepik_id": 855279,
+              "name": "wallet",
+              "url": "https://cdn-icons-png.freepik.com/128/855/855279.png",
+              "id": "D",
+              "coord": [
+                119,
+                164
               ]
             }
           ],
           "objects_2": [
             {
-              "freepik_id": 1457753,
-              "name": "game controller",
-              "url": "https://cdn-icons-png.freepik.com/128/1457/1457753.png",
-              "id": "A",
-              "coord": [
-                100,
-                200
-              ]
-            },
-            {
-              "freepik_id": 5550867,
-              "name": "battery",
-              "url": "https://cdn-icons-png.freepik.com/128/5550/5550867.png",
+              "freepik_id": 855279,
+              "name": "wallet",
+              "url": "https://cdn-icons-png.freepik.com/128/855/855279.png",
               "id": "B",
               "coord": [
-                400,
-                400
+                411,
+                138
               ]
             },
             {
-              "freepik_id": 1587507,
-              "name": "tape",
-              "url": "https://cdn-icons-png.freepik.com/128/1587/1587507.png",
+              "freepik_id": 10263734,
+              "name": "lock",
+              "url": "https://cdn-icons-png.freepik.com/128/10263/10263734.png",
               "id": "C",
               "coord": [
-                100,
-                300
+                741,
+                314
+              ]
+            },
+            {
+              "freepik_id": 4508296,
+              "name": "shopping bag",
+              "url": "https://cdn-icons-png.freepik.com/128/4508/4508296.png",
+              "id": "D",
+              "coord": [
+                560,
+                329
               ]
             }
           ],
@@ -367,125 +367,65 @@
           ],
           "objects_1": [
             {
-              "freepik_id": 14499462,
-              "name": "bowl",
-              "url": "https://cdn-icons-png.freepik.com/128/14499/14499462.png",
-              "id": "A",
-              "coord": [
-                800,
-                300
-              ]
-            },
-            {
-              "freepik_id": 1688956,
-              "name": "laptop",
-              "url": "https://cdn-icons-png.freepik.com/128/1688/1688956.png",
+              "freepik_id": 889906,
+              "name": "mirror",
+              "url": "https://cdn-icons-png.freepik.com/128/889/889906.png",
               "id": "B",
               "coord": [
-                400,
-                200
+                747,
+                219
               ]
             },
             {
-              "freepik_id": 18758385,
-              "name": "plant pot",
-              "url": "https://cdn-icons-png.freepik.com/128/18758/18758385.png",
+              "freepik_id": 12836254,
+              "name": "light bulb",
+              "url": "https://cdn-icons-png.freepik.com/128/12836/12836254.png",
               "id": "C",
               "coord": [
-                100,
-                200
+                124,
+                185
               ]
             },
             {
-              "freepik_id": 5101638,
-              "name": "coin",
-              "url": "https://cdn-icons-png.freepik.com/128/5101/5101638.png",
+              "freepik_id": 6449568,
+              "name": "pot",
+              "url": "https://cdn-icons-png.freepik.com/128/6449/6449568.png",
               "id": "D",
               "coord": [
-                200,
-                400
-              ]
-            },
-            {
-              "freepik_id": 7839075,
-              "name": "wallet",
-              "url": "https://cdn-icons-png.freepik.com/128/7839/7839075.png",
-              "id": "E",
-              "coord": [
-                100,
-                400
-              ]
-            },
-            {
-              "freepik_id": 3311234,
-              "name": "bucket",
-              "url": "https://cdn-icons-png.freepik.com/128/3311/3311234.png",
-              "id": "F",
-              "coord": [
-                400,
-                100
+                510,
+                270
               ]
             }
           ],
           "objects_2": [
             {
-              "freepik_id": 14499462,
-              "name": "bowl",
-              "url": "https://cdn-icons-png.freepik.com/128/14499/14499462.png",
-              "id": "A",
-              "coord": [
-                900,
-                400
-              ]
-            },
-            {
-              "freepik_id": 7839075,
-              "name": "wallet",
-              "url": "https://cdn-icons-png.freepik.com/128/7839/7839075.png",
+              "freepik_id": 6449568,
+              "name": "pot",
+              "url": "https://cdn-icons-png.freepik.com/128/6449/6449568.png",
               "id": "B",
               "coord": [
-                900,
-                200
+                257,
+                203
               ]
             },
             {
-              "freepik_id": 1688956,
-              "name": "laptop",
-              "url": "https://cdn-icons-png.freepik.com/128/1688/1688956.png",
+              "freepik_id": 12836254,
+              "name": "light bulb",
+              "url": "https://cdn-icons-png.freepik.com/128/12836/12836254.png",
               "id": "C",
               "coord": [
-                600,
-                400
+                447,
+                156
               ]
             },
             {
-              "freepik_id": 5101638,
-              "name": "coin",
-              "url": "https://cdn-icons-png.freepik.com/128/5101/5101638.png",
+              "freepik_id": 889906,
+              "name": "mirror",
+              "url": "https://cdn-icons-png.freepik.com/128/889/889906.png",
               "id": "D",
               "coord": [
-                500,
-                500
-              ]
-            },
-            {
-              "freepik_id": 18758385,
-              "name": "plant pot",
-              "url": "https://cdn-icons-png.freepik.com/128/18758/18758385.png",
-              "id": "E",
-              "coord": [
-                100,
-                300
-              ]
-            },
-            {
-              "freepik_id": 3311234,
-              "name": "bucket",
-              "url": "https://cdn-icons-png.freepik.com/128/3311/3311234.png",
-              "id": "F",
-              "coord": [
-                800,
-                500
+                869,
+                84
               ]
             }
           ],
@@ -533,125 +473,65 @@
           ],
           "objects_1": [
             {
-              "freepik_id": 727340,
-              "name": "speaker",
-              "url": "https://cdn-icons-png.freepik.com/128/727/727340.png",
-              "id": "A",
-              "coord": [
-                300,
-                500
-              ]
-            },
-            {
-              "freepik_id": 6222817,
-              "name": "tape",
-              "url": "https://cdn-icons-png.freepik.com/128/6222/6222817.png",
+              "freepik_id": 549178,
+              "name": "laptop",
+              "url": "https://cdn-icons-png.freepik.com/128/549/549178.png",
               "id": "B",
               "coord": [
-                300,
-                100
+                210,
+                264
               ]
             },
             {
-              "freepik_id": 2491634,
-              "name": "pencil",
-              "url": "https://cdn-icons-png.freepik.com/128/2491/2491634.png",
+              "freepik_id": 14244736,
+              "name": "speaker",
+              "url": "https://cdn-icons-png.freepik.com/128/14244/14244736.png",
               "id": "C",
               "coord": [
-                100,
-                200
+                898,
+                437
               ]
             },
             {
-              "freepik_id": 12057527,
-              "name": "fork",
-              "url": "https://cdn-icons-png.freepik.com/128/12057/12057527.png",
+              "freepik_id": 129498,
+              "name": "light bulb",
+              "url": "https://cdn-icons-png.freepik.com/128/129/129498.png",
               "id": "D",
               "coord": [
-                700,
-                300
-              ]
-            },
-            {
-              "freepik_id": 1894947,
-              "name": "soap",
-              "url": "https://cdn-icons-png.freepik.com/128/1894/1894947.png",
-              "id": "E",
-              "coord": [
-                600,
-                400
-              ]
-            },
-            {
-              "freepik_id": 12318485,
-              "name": "bookmark",
-              "url": "https://cdn-icons-png.freepik.com/128/12318/12318485.png",
-              "id": "F",
-              "coord": [
-                800,
-                500
+                401,
+                78
               ]
             }
           ],
           "objects_2": [
             {
-              "freepik_id": 1894947,
-              "name": "soap",
-              "url": "https://cdn-icons-png.freepik.com/128/1894/1894947.png",
-              "id": "A",
-              "coord": [
-                100,
-                100
-              ]
-            },
-            {
-              "freepik_id": 2491634,
-              "name": "pencil",
-              "url": "https://cdn-icons-png.freepik.com/128/2491/2491634.png",
+              "freepik_id": 14244736,
+              "name": "speaker",
+              "url": "https://cdn-icons-png.freepik.com/128/14244/14244736.png",
               "id": "B",
               "coord": [
-                500,
-                500
+                527,
+                93
               ]
             },
             {
-              "freepik_id": 6222817,
-              "name": "tape",
-              "url": "https://cdn-icons-png.freepik.com/128/6222/6222817.png",
+              "freepik_id": 129498,
+              "name": "light bulb",
+              "url": "https://cdn-icons-png.freepik.com/128/129/129498.png",
               "id": "C",
               "coord": [
-                800,
-                500
+                578,
+                400
               ]
             },
             {
-              "freepik_id": 12318485,
-              "name": "bookmark",
-              "url": "https://cdn-icons-png.freepik.com/128/12318/12318485.png",
+              "freepik_id": 549178,
+              "name": "laptop",
+              "url": "https://cdn-icons-png.freepik.com/128/549/549178.png",
               "id": "D",
               "coord": [
-                900,
-                500
-              ]
-            },
-            {
-              "freepik_id": 727340,
-              "name": "speaker",
-              "url": "https://cdn-icons-png.freepik.com/128/727/727340.png",
-              "id": "E",
-              "coord": [
-                700,
-                100
-              ]
-            },
-            {
-              "freepik_id": 12057527,
-              "name": "fork",
-              "url": "https://cdn-icons-png.freepik.com/128/12057/12057527.png",
-              "id": "F",
-              "coord": [
-                700,
-                300
+                835,
+                336
               ]
             }
           ],
@@ -699,125 +579,65 @@
           ],
           "objects_1": [
             {
-              "freepik_id": 12428099,
+              "freepik_id": 8207867,
               "name": "bookmark",
-              "url": "https://cdn-icons-png.freepik.com/128/12428/12428099.png",
-              "id": "A",
-              "coord": [
-                400,
-                400
-              ]
-            },
-            {
-              "freepik_id": 9716430,
-              "name": "water bottle",
-              "url": "https://cdn-icons-png.freepik.com/128/9716/9716430.png",
+              "url": "https://cdn-icons-png.freepik.com/128/8207/8207867.png",
               "id": "B",
               "coord": [
-                300,
-                300
+                770,
+                423
               ]
             },
             {
-              "freepik_id": 3014795,
-              "name": "soap",
-              "url": "https://cdn-icons-png.freepik.com/128/3014/3014795.png",
+              "freepik_id": 18424759,
+              "name": "lock",
+              "url": "https://cdn-icons-png.freepik.com/128/18424/18424759.png",
               "id": "C",
               "coord": [
-                100,
-                400
+                267,
+                145
               ]
             },
             {
-              "freepik_id": 12044437,
-              "name": "cake",
-              "url": "https://cdn-icons-png.freepik.com/128/12044/12044437.png",
+              "freepik_id": 1966591,
+              "name": "game controller",
+              "url": "https://cdn-icons-png.freepik.com/128/1966/1966591.png",
               "id": "D",
               "coord": [
-                800,
-                500
-              ]
-            },
-            {
-              "freepik_id": 3618268,
-              "name": "helmet",
-              "url": "https://cdn-icons-png.freepik.com/128/3618/3618268.png",
-              "id": "E",
-              "coord": [
-                100,
-                200
-              ]
-            },
-            {
-              "freepik_id": 2665447,
-              "name": "speaker",
-              "url": "https://cdn-icons-png.freepik.com/128/2665/2665447.png",
-              "id": "F",
-              "coord": [
-                700,
-                400
+                585,
+                210
               ]
             }
           ],
           "objects_2": [
             {
-              "freepik_id": 12428099,
-              "name": "bookmark",
-              "url": "https://cdn-icons-png.freepik.com/128/12428/12428099.png",
-              "id": "A",
-              "coord": [
-                100,
-                300
-              ]
-            },
-            {
-              "freepik_id": 2665447,
-              "name": "speaker",
-              "url": "https://cdn-icons-png.freepik.com/128/2665/2665447.png",
+              "freepik_id": 1966591,
+              "name": "game controller",
+              "url": "https://cdn-icons-png.freepik.com/128/1966/1966591.png",
               "id": "B",
               "coord": [
-                600,
-                400
+                880,
+                252
               ]
             },
             {
-              "freepik_id": 3618268,
-              "name": "helmet",
-              "url": "https://cdn-icons-png.freepik.com/128/3618/3618268.png",
+              "freepik_id": 8207867,
+              "name": "bookmark",
+              "url": "https://cdn-icons-png.freepik.com/128/8207/8207867.png",
               "id": "C",
               "coord": [
-                800,
-                100
+                421,
+                239
               ]
             },
             {
-              "freepik_id": 12044437,
-              "name": "cake",
-              "url": "https://cdn-icons-png.freepik.com/128/12044/12044437.png",
+              "freepik_id": 18424759,
+              "name": "lock",
+              "url": "https://cdn-icons-png.freepik.com/128/18424/18424759.png",
               "id": "D",
               "coord": [
-                900,
-                400
-              ]
-            },
-            {
-              "freepik_id": 3014795,
-              "name": "soap",
-              "url": "https://cdn-icons-png.freepik.com/128/3014/3014795.png",
-              "id": "E",
-              "coord": [
-                300,
-                500
-              ]
-            },
-            {
-              "freepik_id": 9716430,
-              "name": "water bottle",
-              "url": "https://cdn-icons-png.freepik.com/128/9716/9716430.png",
-              "id": "F",
-              "coord": [
-                200,
-                300
+                167,
+                215
               ]
             }
           ],
@@ -870,65 +690,65 @@
           ],
           "objects_1": [
             {
-              "freepik_id": 18298016,
-              "name": "candle",
-              "url": "https://cdn-icons-png.freepik.com/128/18298/18298016.png",
-              "id": "A",
-              "coord": [
-                400,
-                100
-              ]
-            },
-            {
-              "freepik_id": 5816528,
-              "name": "candle",
-              "url": "https://cdn-icons-png.freepik.com/128/5816/5816528.png",
+              "freepik_id": 2831256,
+              "name": "soap",
+              "url": "https://cdn-icons-png.freepik.com/128/2831/2831256.png",
               "id": "B",
               "coord": [
-                800,
-                100
+                278,
+                305
               ]
             },
             {
-              "freepik_id": 1301822,
-              "name": "candle",
-              "url": "https://cdn-icons-png.freepik.com/128/1301/1301822.png",
+              "freepik_id": 501379,
+              "name": "soap",
+              "url": "https://cdn-icons-png.freepik.com/128/501/501379.png",
               "id": "C",
               "coord": [
-                100,
-                400
+                728,
+                112
+              ]
+            },
+            {
+              "freepik_id": 5060808,
+              "name": "soap",
+              "url": "https://cdn-icons-png.freepik.com/128/5060/5060808.png",
+              "id": "D",
+              "coord": [
+                890,
+                320
               ]
             }
           ],
           "objects_2": [
             {
-              "freepik_id": 5816528,
-              "name": "candle",
-              "url": "https://cdn-icons-png.freepik.com/128/5816/5816528.png",
-              "id": "A",
-              "coord": [
-                500,
-                300
-              ]
-            },
-            {
-              "freepik_id": 18298016,
-              "name": "candle",
-              "url": "https://cdn-icons-png.freepik.com/128/18298/18298016.png",
+              "freepik_id": 5060808,
+              "name": "soap",
+              "url": "https://cdn-icons-png.freepik.com/128/5060/5060808.png",
               "id": "B",
               "coord": [
-                200,
-                100
+                416,
+                247
               ]
             },
             {
-              "freepik_id": 1301822,
-              "name": "candle",
-              "url": "https://cdn-icons-png.freepik.com/128/1301/1301822.png",
+              "freepik_id": 2831256,
+              "name": "soap",
+              "url": "https://cdn-icons-png.freepik.com/128/2831/2831256.png",
               "id": "C",
               "coord": [
-                300,
-                100
+                606,
+                273
+              ]
+            },
+            {
+              "freepik_id": 501379,
+              "name": "soap",
+              "url": "https://cdn-icons-png.freepik.com/128/501/501379.png",
+              "id": "D",
+              "coord": [
+                617,
+                91
               ]
             }
           ],
@@ -976,65 +796,65 @@
           ],
           "objects_1": [
             {
-              "freepik_id": 570668,
-              "name": "apple",
-              "url": "https://cdn-icons-png.freepik.com/128/570/570668.png",
-              "id": "A",
-              "coord": [
-                500,
-                200
-              ]
-            },
-            {
-              "freepik_id": 5129999,
-              "name": "apple",
-              "url": "https://cdn-icons-png.freepik.com/128/5129/5129999.png",
+              "freepik_id": 4315183,
+              "name": "keyboard",
+              "url": "https://cdn-icons-png.freepik.com/128/4315/4315183.png",
               "id": "B",
               "coord": [
-                900,
-                400
+                672,
+                502
               ]
             },
             {
-              "freepik_id": 1155289,
-              "name": "apple",
-              "url": "https://cdn-icons-png.freepik.com/128/1155/1155289.png",
+              "freepik_id": 2824587,
+              "name": "keyboard",
+              "url": "https://cdn-icons-png.freepik.com/128/2824/2824587.png",
               "id": "C",
               "coord": [
-                800,
-                300
+                317,
+                161
+              ]
+            },
+            {
+              "freepik_id": 6162668,
+              "name": "keyboard",
+              "url": "https://cdn-icons-png.freepik.com/128/6162/6162668.png",
+              "id": "D",
+              "coord": [
+                364,
+                454
               ]
             }
           ],
           "objects_2": [
             {
-              "freepik_id": 1155289,
-              "name": "apple",
-              "url": "https://cdn-icons-png.freepik.com/128/1155/1155289.png",
-              "id": "A",
-              "coord": [
-                700,
-                500
-              ]
-            },
-            {
-              "freepik_id": 5129999,
-              "name": "apple",
-              "url": "https://cdn-icons-png.freepik.com/128/5129/5129999.png",
+              "freepik_id": 4315183,
+              "name": "keyboard",
+              "url": "https://cdn-icons-png.freepik.com/128/4315/4315183.png",
               "id": "B",
               "coord": [
-                500,
-                300
+                902,
+                329
               ]
             },
             {
-              "freepik_id": 570668,
-              "name": "apple",
-              "url": "https://cdn-icons-png.freepik.com/128/570/570668.png",
+              "freepik_id": 6162668,
+              "name": "keyboard",
+              "url": "https://cdn-icons-png.freepik.com/128/6162/6162668.png",
               "id": "C",
               "coord": [
-                500,
-                200
+                629,
+                433
+              ]
+            },
+            {
+              "freepik_id": 2824587,
+              "name": "keyboard",
+              "url": "https://cdn-icons-png.freepik.com/128/2824/2824587.png",
+              "id": "D",
+              "coord": [
+                441,
+                391
               ]
             }
           ],
@@ -1082,65 +902,65 @@
           ],
           "objects_1": [
             {
-              "freepik_id": 685229,
-              "name": "mirror",
-              "url": "https://cdn-icons-png.freepik.com/128/685/685229.png",
-              "id": "A",
-              "coord": [
-                600,
-                100
-              ]
-            },
-            {
-              "freepik_id": 4397790,
-              "name": "mirror",
-              "url": "https://cdn-icons-png.freepik.com/128/4397/4397790.png",
+              "freepik_id": 381455,
+              "name": "chocolate",
+              "url": "https://cdn-icons-png.freepik.com/128/381/381455.png",
               "id": "B",
               "coord": [
-                100,
-                200
+                798,
+                491
               ]
             },
             {
-              "freepik_id": 12602709,
-              "name": "mirror",
-              "url": "https://cdn-icons-png.freepik.com/128/12602/12602709.png",
+              "freepik_id": 14433280,
+              "name": "chocolate",
+              "url": "https://cdn-icons-png.freepik.com/128/14433/14433280.png",
               "id": "C",
               "coord": [
-                500,
-                500
+                777,
+                145
+              ]
+            },
+            {
+              "freepik_id": 1513696,
+              "name": "chocolate",
+              "url": "https://cdn-icons-png.freepik.com/128/1513/1513696.png",
+              "id": "D",
+              "coord": [
+                295,
+                415
               ]
             }
           ],
           "objects_2": [
             {
-              "freepik_id": 4397790,
-              "name": "mirror",
-              "url": "https://cdn-icons-png.freepik.com/128/4397/4397790.png",
-              "id": "A",
-              "coord": [
-                700,
-                400
-              ]
-            },
-            {
-              "freepik_id": 12602709,
-              "name": "mirror",
-              "url": "https://cdn-icons-png.freepik.com/128/12602/12602709.png",
+              "freepik_id": 14433280,
+              "name": "chocolate",
+              "url": "https://cdn-icons-png.freepik.com/128/14433/14433280.png",
               "id": "B",
               "coord": [
-                100,
-                500
+                383,
+                290
               ]
             },
             {
-              "freepik_id": 685229,
-              "name": "mirror",
-              "url": "https://cdn-icons-png.freepik.com/128/685/685229.png",
+              "freepik_id": 1513696,
+              "name": "chocolate",
+              "url": "https://cdn-icons-png.freepik.com/128/1513/1513696.png",
               "id": "C",
               "coord": [
-                300,
-                200
+                595,
+                74
+              ]
+            },
+            {
+              "freepik_id": 381455,
+              "name": "chocolate",
+              "url": "https://cdn-icons-png.freepik.com/128/381/381455.png",
+              "id": "D",
+              "coord": [
+                97,
+                395
               ]
             }
           ],
@@ -1193,125 +1013,65 @@
           ],
           "objects_1": [
             {
-              "freepik_id": 575919,
-              "name": "watch",
-              "url": "https://cdn-icons-png.freepik.com/128/575/575919.png",
-              "id": "A",
-              "coord": [
-                100,
-                500
-              ]
-            },
-            {
-              "freepik_id": 469875,
-              "name": "watch",
-              "url": "https://cdn-icons-png.freepik.com/128/469/469875.png",
+              "freepik_id": 355073,
+              "name": "headphones",
+              "url": "https://cdn-icons-png.freepik.com/128/355/355073.png",
               "id": "B",
               "coord": [
-                600,
-                400
+                543,
+                384
               ]
             },
             {
-              "freepik_id": 7097761,
-              "name": "watch",
-              "url": "https://cdn-icons-png.freepik.com/128/7097/7097761.png",
+              "freepik_id": 614664,
+              "name": "headphones",
+              "url": "https://cdn-icons-png.freepik.com/128/614/614664.png",
               "id": "C",
               "coord": [
-                400,
-                500
+                372,
+                178
               ]
             },
             {
-              "freepik_id": 609954,
-              "name": "watch",
-              "url": "https://cdn-icons-png.freepik.com/128/609/609954.png",
+              "freepik_id": 7934103,
+              "name": "headphones",
+              "url": "https://cdn-icons-png.freepik.com/128/7934/7934103.png",
               "id": "D",
               "coord": [
-                800,
-                300
-              ]
-            },
-            {
-              "freepik_id": 17059000,
-              "name": "watch",
-              "url": "https://cdn-icons-png.freepik.com/128/17059/17059000.png",
-              "id": "E",
-              "coord": [
-                100,
-                200
-              ]
-            },
-            {
-              "freepik_id": 2443661,
-              "name": "watch",
-              "url": "https://cdn-icons-png.freepik.com/128/2443/2443661.png",
-              "id": "F",
-              "coord": [
-                200,
-                500
+                858,
+                159
               ]
             }
           ],
           "objects_2": [
             {
-              "freepik_id": 609954,
-              "name": "watch",
-              "url": "https://cdn-icons-png.freepik.com/128/609/609954.png",
-              "id": "A",
-              "coord": [
-                400,
-                300
-              ]
-            },
-            {
-              "freepik_id": 7097761,
-              "name": "watch",
-              "url": "https://cdn-icons-png.freepik.com/128/7097/7097761.png",
+              "freepik_id": 614664,
+              "name": "headphones",
+              "url": "https://cdn-icons-png.freepik.com/128/614/614664.png",
               "id": "B",
               "coord": [
-                200,
-                300
+                117,
+                369
               ]
             },
             {
-              "freepik_id": 575919,
-              "name": "watch",
-              "url": "https://cdn-icons-png.freepik.com/128/575/575919.png",
+              "freepik_id": 7934103,
+              "name": "headphones",
+              "url": "https://cdn-icons-png.freepik.com/128/7934/7934103.png",
               "id": "C",
               "coord": [
-                100,
-                200
+                564,
+                303
               ]
             },
             {
-              "freepik_id": 2443661,
-              "name": "watch",
-              "url": "https://cdn-icons-png.freepik.com/128/2443/2443661.png",
+              "freepik_id": 355073,
+              "name": "headphones",
+              "url": "https://cdn-icons-png.freepik.com/128/355/355073.png",
               "id": "D",
               "coord": [
-                100,
-                400
-              ]
-            },
-            {
-              "freepik_id": 469875,
-              "name": "watch",
-              "url": "https://cdn-icons-png.freepik.com/128/469/469875.png",
-              "id": "E",
-              "coord": [
-                800,
-                300
-              ]
-            },
-            {
-              "freepik_id": 17059000,
-              "name": "watch",
-              "url": "https://cdn-icons-png.freepik.com/128/17059/17059000.png",
-              "id": "F",
-              "coord": [
-                100,
-                300
+                332,
+                308
               ]
             }
           ],
@@ -1359,125 +1119,65 @@
           ],
           "objects_1": [
             {
-              "freepik_id": 1888906,
+              "freepik_id": 9481356,
               "name": "cake",
-              "url": "https://cdn-icons-png.freepik.com/128/1888/1888906.png",
-              "id": "A",
+              "url": "https://cdn-icons-png.freepik.com/128/9481/9481356.png",
+              "id": "B",
               "coord": [
-                900,
-                500
+                766,
+                241
               ]
             },
             {
               "freepik_id": 1399274,
               "name": "cake",
               "url": "https://cdn-icons-png.freepik.com/128/1399/1399274.png",
-              "id": "B",
-              "coord": [
-                800,
-                300
-              ]
-            },
-            {
-              "freepik_id": 3501804,
-              "name": "cake",
-              "url": "https://cdn-icons-png.freepik.com/128/3501/3501804.png",
               "id": "C",
               "coord": [
-                900,
-                300
+                374,
+                290
               ]
             },
             {
-              "freepik_id": 1517168,
+              "freepik_id": 2682446,
               "name": "cake",
-              "url": "https://cdn-icons-png.freepik.com/128/1517/1517168.png",
+              "url": "https://cdn-icons-png.freepik.com/128/2682/2682446.png",
               "id": "D",
               "coord": [
-                200,
-                500
-              ]
-            },
-            {
-              "freepik_id": 12219970,
-              "name": "cake",
-              "url": "https://cdn-icons-png.freepik.com/128/12219/12219970.png",
-              "id": "E",
-              "coord": [
-                600,
-                100
-              ]
-            },
-            {
-              "freepik_id": 790252,
-              "name": "cake",
-              "url": "https://cdn-icons-png.freepik.com/128/790/790252.png",
-              "id": "F",
-              "coord": [
-                200,
-                200
+                211,
+                318
               ]
             }
           ],
           "objects_2": [
             {
-              "freepik_id": 1888906,
+              "freepik_id": 9481356,
               "name": "cake",
-              "url": "https://cdn-icons-png.freepik.com/128/1888/1888906.png",
-              "id": "A",
+              "url": "https://cdn-icons-png.freepik.com/128/9481/9481356.png",
+              "id": "B",
               "coord": [
-                900,
-                300
+                511,
+                450
               ]
             },
             {
               "freepik_id": 1399274,
               "name": "cake",
               "url": "https://cdn-icons-png.freepik.com/128/1399/1399274.png",
-              "id": "B",
-              "coord": [
-                800,
-                500
-              ]
-            },
-            {
-              "freepik_id": 1517168,
-              "name": "cake",
-              "url": "https://cdn-icons-png.freepik.com/128/1517/1517168.png",
               "id": "C",
               "coord": [
-                100,
-                200
+                831,
+                436
               ]
             },
             {
-              "freepik_id": 12219970,
+              "freepik_id": 2682446,
               "name": "cake",
-              "url": "https://cdn-icons-png.freepik.com/128/12219/12219970.png",
+              "url": "https://cdn-icons-png.freepik.com/128/2682/2682446.png",
               "id": "D",
               "coord": [
-                400,
-                400
-              ]
-            },
-            {
-              "freepik_id": 3501804,
-              "name": "cake",
-              "url": "https://cdn-icons-png.freepik.com/128/3501/3501804.png",
-              "id": "E",
-              "coord": [
-                600,
-                100
-              ]
-            },
-            {
-              "freepik_id": 790252,
-              "name": "cake",
-              "url": "https://cdn-icons-png.freepik.com/128/790/790252.png",
-              "id": "F",
-              "coord": [
-                400,
-                100
+                694,
+                257
               ]
             }
           ],
@@ -1525,125 +1225,65 @@
           ],
           "objects_1": [
             {
-              "freepik_id": 4898374,
-              "name": "notebook",
-              "url": "https://cdn-icons-png.freepik.com/128/4898/4898374.png",
-              "id": "A",
-              "coord": [
-                500,
-                500
-              ]
-            },
-            {
-              "freepik_id": 3303808,
-              "name": "notebook",
-              "url": "https://cdn-icons-png.freepik.com/128/3303/3303808.png",
+              "freepik_id": 2367741,
+              "name": "bucket",
+              "url": "https://cdn-icons-png.freepik.com/128/2367/2367741.png",
               "id": "B",
               "coord": [
-                600,
-                500
+                756,
+                415
               ]
             },
             {
-              "freepik_id": 4631215,
-              "name": "notebook",
-              "url": "https://cdn-icons-png.freepik.com/128/4631/4631215.png",
+              "freepik_id": 164501,
+              "name": "bucket",
+              "url": "https://cdn-icons-png.freepik.com/128/164/164501.png",
               "id": "C",
               "coord": [
-                700,
-                200
+                340,
+                230
               ]
             },
             {
-              "freepik_id": 2997296,
-              "name": "notebook",
-              "url": "https://cdn-icons-png.freepik.com/128/2997/2997296.png",
+              "freepik_id": 1676497,
+              "name": "bucket",
+              "url": "https://cdn-icons-png.freepik.com/128/1676/1676497.png",
               "id": "D",
               "coord": [
-                100,
-                100
-              ]
-            },
-            {
-              "freepik_id": 17239057,
-              "name": "notebook",
-              "url": "https://cdn-icons-png.freepik.com/128/17239/17239057.png",
-              "id": "E",
-              "coord": [
-                200,
-                300
-              ]
-            },
-            {
-              "freepik_id": 3286266,
-              "name": "notebook",
-              "url": "https://cdn-icons-png.freepik.com/128/3286/3286266.png",
-              "id": "F",
-              "coord": [
-                900,
-                300
+                162,
+                283
               ]
             }
           ],
           "objects_2": [
             {
-              "freepik_id": 4631215,
-              "name": "notebook",
-              "url": "https://cdn-icons-png.freepik.com/128/4631/4631215.png",
-              "id": "A",
-              "coord": [
-                100,
-                200
-              ]
-            },
-            {
-              "freepik_id": 2997296,
-              "name": "notebook",
-              "url": "https://cdn-icons-png.freepik.com/128/2997/2997296.png",
+              "freepik_id": 1676497,
+              "name": "bucket",
+              "url": "https://cdn-icons-png.freepik.com/128/1676/1676497.png",
               "id": "B",
               "coord": [
-                800,
-                100
+                736,
+                445
               ]
             },
             {
-              "freepik_id": 4898374,
-              "name": "notebook",
-              "url": "https://cdn-icons-png.freepik.com/128/4898/4898374.png",
+              "freepik_id": 164501,
+              "name": "bucket",
+              "url": "https://cdn-icons-png.freepik.com/128/164/164501.png",
               "id": "C",
               "coord": [
-                300,
-                500
+                130,
+                206
               ]
             },
             {
-              "freepik_id": 3286266,
-              "name": "notebook",
-              "url": "https://cdn-icons-png.freepik.com/128/3286/3286266.png",
+              "freepik_id": 2367741,
+              "name": "bucket",
+              "url": "https://cdn-icons-png.freepik.com/128/2367/2367741.png",
               "id": "D",
               "coord": [
-                800,
-                300
-              ]
-            },
-            {
-              "freepik_id": 17239057,
-              "name": "notebook",
-              "url": "https://cdn-icons-png.freepik.com/128/17239/17239057.png",
-              "id": "E",
-              "coord": [
-                800,
-                400
-              ]
-            },
-            {
-              "freepik_id": 3303808,
-              "name": "notebook",
-              "url": "https://cdn-icons-png.freepik.com/128/3303/3303808.png",
-              "id": "F",
-              "coord": [
-                900,
-                300
+                491,
+                255
               ]
             }
           ],
@@ -1696,65 +1336,65 @@
           ],
           "objects_1": [
             {
-              "freepik_id": 16962448,
-              "name": "game controller",
-              "url": "https://cdn-icons-png.freepik.com/128/16962/16962448.png",
-              "id": "A",
-              "coord": [
-                100,
-                400
-              ]
-            },
-            {
-              "freepik_id": 141298,
-              "name": "game controller",
-              "url": "https://cdn-icons-png.freepik.com/128/141/141298.png",
+              "freepik_id": 17515129,
+              "name": "bowl",
+              "url": "https://cdn-icons-png.freepik.com/128/17515/17515129.png",
               "id": "B",
               "coord": [
-                400,
-                100
+                117,
+                441
               ]
             },
             {
-              "freepik_id": 6392986,
-              "name": "game controller",
-              "url": "https://cdn-icons-png.freepik.com/128/6392/6392986.png",
+              "freepik_id": 1394093,
+              "name": "bowl",
+              "url": "https://cdn-icons-png.freepik.com/128/1394/1394093.png",
               "id": "C",
               "coord": [
-                600,
-                300
+                668,
+                353
+              ]
+            },
+            {
+              "freepik_id": 17784239,
+              "name": "bowl",
+              "url": "https://cdn-icons-png.freepik.com/128/17784/17784239.png",
+              "id": "D",
+              "coord": [
+                463,
+                111
               ]
             }
           ],
           "objects_2": [
             {
-              "freepik_id": 141298,
-              "name": "game controller",
-              "url": "https://cdn-icons-png.freepik.com/128/141/141298.png",
-              "id": "A",
-              "coord": [
-                400,
-                100
-              ]
-            },
-            {
-              "freepik_id": 16962448,
-              "name": "game controller",
-              "url": "https://cdn-icons-png.freepik.com/128/16962/16962448.png",
+              "freepik_id": 17515129,
+              "name": "bowl",
+              "url": "https://cdn-icons-png.freepik.com/128/17515/17515129.png",
               "id": "B",
               "coord": [
-                200,
-                200
+                897,
+                265
               ]
             },
             {
-              "freepik_id": 6392986,
-              "name": "game controller",
-              "url": "https://cdn-icons-png.freepik.com/128/6392/6392986.png",
+              "freepik_id": 1394093,
+              "name": "bowl",
+              "url": "https://cdn-icons-png.freepik.com/128/1394/1394093.png",
               "id": "C",
               "coord": [
-                400,
-                300
+                386,
+                94
+              ]
+            },
+            {
+              "freepik_id": 17784239,
+              "name": "bowl",
+              "url": "https://cdn-icons-png.freepik.com/128/17784/17784239.png",
+              "id": "D",
+              "coord": [
+                88,
+                341
               ]
             }
           ],
@@ -1802,65 +1442,65 @@
           ],
           "objects_1": [
             {
-              "freepik_id": 10482163,
-              "name": "bucket",
-              "url": "https://cdn-icons-png.freepik.com/128/10482/10482163.png",
-              "id": "A",
-              "coord": [
-                200,
-                200
-              ]
-            },
-            {
-              "freepik_id": 4163858,
-              "name": "bucket",
-              "url": "https://cdn-icons-png.freepik.com/128/4163/4163858.png",
+              "freepik_id": 14433576,
+              "name": "chocolate",
+              "url": "https://cdn-icons-png.freepik.com/128/14433/14433576.png",
               "id": "B",
               "coord": [
-                300,
-                100
+                264,
+                328
               ]
             },
             {
-              "freepik_id": 17373142,
-              "name": "bucket",
-              "url": "https://cdn-icons-png.freepik.com/128/17373/17373142.png",
+              "freepik_id": 2106823,
+              "name": "chocolate",
+              "url": "https://cdn-icons-png.freepik.com/128/2106/2106823.png",
               "id": "C",
               "coord": [
-                400,
-                100
+                947,
+                244
+              ]
+            },
+            {
+              "freepik_id": 4731318,
+              "name": "chocolate",
+              "url": "https://cdn-icons-png.freepik.com/128/4731/4731318.png",
+              "id": "D",
+              "coord": [
+                525,
+                431
               ]
             }
           ],
           "objects_2": [
             {
-              "freepik_id": 4163858,
-              "name": "bucket",
-              "url": "https://cdn-icons-png.freepik.com/128/4163/4163858.png",
-              "id": "A",
-              "coord": [
-                300,
-                500
-              ]
-            },
-            {
-              "freepik_id": 10482163,
-              "name": "bucket",
-              "url": "https://cdn-icons-png.freepik.com/128/10482/10482163.png",
+              "freepik_id": 2106823,
+              "name": "chocolate",
+              "url": "https://cdn-icons-png.freepik.com/128/2106/2106823.png",
               "id": "B",
               "coord": [
-                300,
-                300
+                131,
+                167
               ]
             },
             {
-              "freepik_id": 17373142,
-              "name": "bucket",
-              "url": "https://cdn-icons-png.freepik.com/128/17373/17373142.png",
+              "freepik_id": 4731318,
+              "name": "chocolate",
+              "url": "https://cdn-icons-png.freepik.com/128/4731/4731318.png",
               "id": "C",
               "coord": [
-                100,
-                400
+                621,
+                245
+              ]
+            },
+            {
+              "freepik_id": 14433576,
+              "name": "chocolate",
+              "url": "https://cdn-icons-png.freepik.com/128/14433/14433576.png",
+              "id": "D",
+              "coord": [
+                530,
+                461
               ]
             }
           ],
@@ -1908,65 +1548,65 @@
           ],
           "objects_1": [
             {
-              "freepik_id": 14781974,
-              "name": "fork",
-              "url": "https://cdn-icons-png.freepik.com/128/14781/14781974.png",
-              "id": "A",
-              "coord": [
-                600,
-                300
-              ]
-            },
-            {
-              "freepik_id": 2427872,
-              "name": "fork",
-              "url": "https://cdn-icons-png.freepik.com/128/2427/2427872.png",
+              "freepik_id": 5831932,
+              "name": "calculator",
+              "url": "https://cdn-icons-png.freepik.com/128/5831/5831932.png",
               "id": "B",
               "coord": [
-                800,
-                400
+                244,
+                177
               ]
             },
             {
-              "freepik_id": 7670227,
-              "name": "fork",
-              "url": "https://cdn-icons-png.freepik.com/128/7670/7670227.png",
+              "freepik_id": 6417900,
+              "name": "calculator",
+              "url": "https://cdn-icons-png.freepik.com/128/6417/6417900.png",
               "id": "C",
               "coord": [
-                400,
-                100
+                260,
+                328
+              ]
+            },
+            {
+              "freepik_id": 9321253,
+              "name": "calculator",
+              "url": "https://cdn-icons-png.freepik.com/128/9321/9321253.png",
+              "id": "D",
+              "coord": [
+                618,
+                414
               ]
             }
           ],
           "objects_2": [
             {
-              "freepik_id": 2427872,
-              "name": "fork",
-              "url": "https://cdn-icons-png.freepik.com/128/2427/2427872.png",
-              "id": "A",
-              "coord": [
-                500,
-                400
-              ]
-            },
-            {
-              "freepik_id": 7670227,
-              "name": "fork",
-              "url": "https://cdn-icons-png.freepik.com/128/7670/7670227.png",
+              "freepik_id": 6417900,
+              "name": "calculator",
+              "url": "https://cdn-icons-png.freepik.com/128/6417/6417900.png",
               "id": "B",
               "coord": [
-                100,
-                500
+                448,
+                369
               ]
             },
             {
-              "freepik_id": 14781974,
-              "name": "fork",
-              "url": "https://cdn-icons-png.freepik.com/128/14781/14781974.png",
+              "freepik_id": 9321253,
+              "name": "calculator",
+              "url": "https://cdn-icons-png.freepik.com/128/9321/9321253.png",
               "id": "C",
               "coord": [
-                200,
-                100
+                809,
+                221
+              ]
+            },
+            {
+              "freepik_id": 5831932,
+              "name": "calculator",
+              "url": "https://cdn-icons-png.freepik.com/128/5831/5831932.png",
+              "id": "D",
+              "coord": [
+                336,
+                163
               ]
             }
           ],
@@ -2019,125 +1659,65 @@
           ],
           "objects_1": [
             {
-              "freepik_id": 722391,
-              "name": "lock",
-              "url": "https://cdn-icons-png.freepik.com/128/722/722391.png",
-              "id": "A",
-              "coord": [
-                100,
-                400
-              ]
-            },
-            {
-              "freepik_id": 12237379,
-              "name": "lock",
-              "url": "https://cdn-icons-png.freepik.com/128/12237/12237379.png",
+              "freepik_id": 1084868,
+              "name": "helmet",
+              "url": "https://cdn-icons-png.freepik.com/128/1084/1084868.png",
               "id": "B",
               "coord": [
-                200,
-                300
+                515,
+                138
               ]
             },
             {
-              "freepik_id": 17707565,
-              "name": "lock",
-              "url": "https://cdn-icons-png.freepik.com/128/17707/17707565.png",
+              "freepik_id": 14536657,
+              "name": "helmet",
+              "url": "https://cdn-icons-png.freepik.com/128/14536/14536657.png",
               "id": "C",
               "coord": [
-                800,
-                500
+                885,
+                194
               ]
             },
             {
-              "freepik_id": 483408,
-              "name": "lock",
-              "url": "https://cdn-icons-png.freepik.com/128/483/483408.png",
+              "freepik_id": 12693434,
+              "name": "helmet",
+              "url": "https://cdn-icons-png.freepik.com/128/12693/12693434.png",
               "id": "D",
               "coord": [
-                600,
-                400
-              ]
-            },
-            {
-              "freepik_id": 14440486,
-              "name": "lock",
-              "url": "https://cdn-icons-png.freepik.com/128/14440/14440486.png",
-              "id": "E",
-              "coord": [
-                300,
-                100
-              ]
-            },
-            {
-              "freepik_id": 6177818,
-              "name": "lock",
-              "url": "https://cdn-icons-png.freepik.com/128/6177/6177818.png",
-              "id": "F",
-              "coord": [
-                600,
-                200
+                200,
+                385
               ]
             }
           ],
           "objects_2": [
             {
-              "freepik_id": 722391,
-              "name": "lock",
-              "url": "https://cdn-icons-png.freepik.com/128/722/722391.png",
-              "id": "A",
-              "coord": [
-                300,
-                200
-              ]
-            },
-            {
-              "freepik_id": 17707565,
-              "name": "lock",
-              "url": "https://cdn-icons-png.freepik.com/128/17707/17707565.png",
+              "freepik_id": 1084868,
+              "name": "helmet",
+              "url": "https://cdn-icons-png.freepik.com/128/1084/1084868.png",
               "id": "B",
               "coord": [
-                100,
-                500
+                423,
+                275
               ]
             },
             {
-              "freepik_id": 14440486,
-              "name": "lock",
-              "url": "https://cdn-icons-png.freepik.com/128/14440/14440486.png",
+              "freepik_id": 12693434,
+              "name": "helmet",
+              "url": "https://cdn-icons-png.freepik.com/128/12693/12693434.png",
               "id": "C",
               "coord": [
-                600,
-                500
+                189,
+                239
               ]
             },
             {
-              "freepik_id": 483408,
-              "name": "lock",
-              "url": "https://cdn-icons-png.freepik.com/128/483/483408.png",
+              "freepik_id": 14536657,
+              "name": "helmet",
+              "url": "https://cdn-icons-png.freepik.com/128/14536/14536657.png",
               "id": "D",
               "coord": [
-                200,
-                300
-              ]
-            },
-            {
-              "freepik_id": 12237379,
-              "name": "lock",
-              "url": "https://cdn-icons-png.freepik.com/128/12237/12237379.png",
-              "id": "E",
-              "coord": [
-                700,
-                100
-              ]
-            },
-            {
-              "freepik_id": 6177818,
-              "name": "lock",
-              "url": "https://cdn-icons-png.freepik.com/128/6177/6177818.png",
-              "id": "F",
-              "coord": [
-                800,
-                500
+                950,
+                262
               ]
             }
           ],
@@ -2185,125 +1765,65 @@
           ],
           "objects_1": [
             {
-              "freepik_id": 1535959,
-              "name": "credit card",
-              "url": "https://cdn-icons-png.freepik.com/128/1535/1535959.png",
-              "id": "A",
-              "coord": [
-                900,
-                300
-              ]
-            },
-            {
-              "freepik_id": 465689,
-              "name": "credit card",
-              "url": "https://cdn-icons-png.freepik.com/128/465/465689.png",
+              "freepik_id": 3370765,
+              "name": "ice cream",
+              "url": "https://cdn-icons-png.freepik.com/128/3370/3370765.png",
               "id": "B",
               "coord": [
-                700,
-                500
+                766,
+                94
               ]
             },
             {
-              "freepik_id": 1326113,
-              "name": "credit card",
-              "url": "https://cdn-icons-png.freepik.com/128/1326/1326113.png",
+              "freepik_id": 1816267,
+              "name": "ice cream",
+              "url": "https://cdn-icons-png.freepik.com/128/1816/1816267.png",
               "id": "C",
               "coord": [
-                600,
-                500
+                806,
+                353
               ]
             },
             {
-              "freepik_id": 9355587,
-              "name": "credit card",
-              "url": "https://cdn-icons-png.freepik.com/128/9355/9355587.png",
+              "freepik_id": 7703445,
+              "name": "ice cream",
+              "url": "https://cdn-icons-png.freepik.com/128/7703/7703445.png",
               "id": "D",
               "coord": [
-                800,
-                100
-              ]
-            },
-            {
-              "freepik_id": 13012087,
-              "name": "credit card",
-              "url": "https://cdn-icons-png.freepik.com/128/13012/13012087.png",
-              "id": "E",
-              "coord": [
-                800,
-                500
-              ]
-            },
-            {
-              "freepik_id": 3662567,
-              "name": "credit card",
-              "url": "https://cdn-icons-png.freepik.com/128/3662/3662567.png",
-              "id": "F",
-              "coord": [
-                100,
-                100
+                619,
+                305
               ]
             }
           ],
           "objects_2": [
             {
-              "freepik_id": 1535959,
-              "name": "credit card",
-              "url": "https://cdn-icons-png.freepik.com/128/1535/1535959.png",
-              "id": "A",
-              "coord": [
-                700,
-                500
-              ]
-            },
-            {
-              "freepik_id": 465689,
-              "name": "credit card",
-              "url": "https://cdn-icons-png.freepik.com/128/465/465689.png",
+              "freepik_id": 1816267,
+              "name": "ice cream",
+              "url": "https://cdn-icons-png.freepik.com/128/1816/1816267.png",
               "id": "B",
               "coord": [
-                600,
-                100
+                327,
+                352
               ]
             },
             {
-              "freepik_id": 1326113,
-              "name": "credit card",
-              "url": "https://cdn-icons-png.freepik.com/128/1326/1326113.png",
+              "freepik_id": 3370765,
+              "name": "ice cream",
+              "url": "https://cdn-icons-png.freepik.com/128/3370/3370765.png",
               "id": "C",
               "coord": [
-                500,
-                300
+                774,
+                180
               ]
             },
             {
-              "freepik_id": 9355587,
-              "name": "credit card",
-              "url": "https://cdn-icons-png.freepik.com/128/9355/9355587.png",
+              "freepik_id": 7703445,
+              "name": "ice cream",
+              "url": "https://cdn-icons-png.freepik.com/128/7703/7703445.png",
               "id": "D",
               "coord": [
-                200,
-                200
-              ]
-            },
-            {
-              "freepik_id": 13012087,
-              "name": "credit card",
-              "url": "https://cdn-icons-png.freepik.com/128/13012/13012087.png",
-              "id": "E",
-              "coord": [
-                400,
-                400
-              ]
-            },
-            {
-              "freepik_id": 3662567,
-              "name": "credit card",
-              "url": "https://cdn-icons-png.freepik.com/128/3662/3662567.png",
-              "id": "F",
-              "coord": [
-                100,
-                100
+                796,
+                442
               ]
             }
           ],
@@ -2351,125 +1871,65 @@
           ],
           "objects_1": [
             {
-              "freepik_id": 5429628,
-              "name": "candle",
-              "url": "https://cdn-icons-png.freepik.com/128/5429/5429628.png",
-              "id": "A",
-              "coord": [
-                100,
-                100
-              ]
-            },
-            {
-              "freepik_id": 2115189,
-              "name": "candle",
-              "url": "https://cdn-icons-png.freepik.com/128/2115/2115189.png",
+              "freepik_id": 598062,
+              "name": "notebook",
+              "url": "https://cdn-icons-png.freepik.com/128/598/598062.png",
               "id": "B",
               "coord": [
-                500,
-                300
+                851,
+                259
               ]
             },
             {
-              "freepik_id": 3720634,
-              "name": "candle",
-              "url": "https://cdn-icons-png.freepik.com/128/3720/3720634.png",
+              "freepik_id": 7561093,
+              "name": "notebook",
+              "url": "https://cdn-icons-png.freepik.com/128/7561/7561093.png",
               "id": "C",
               "coord": [
-                300,
-                200
+                176,
+                122
               ]
             },
             {
-              "freepik_id": 628492,
-              "name": "candle",
-              "url": "https://cdn-icons-png.freepik.com/128/628/628492.png",
+              "freepik_id": 2004206,
+              "name": "notebook",
+              "url": "https://cdn-icons-png.freepik.com/128/2004/2004206.png",
               "id": "D",
               "coord": [
-                500,
-                100
-              ]
-            },
-            {
-              "freepik_id": 2410133,
-              "name": "candle",
-              "url": "https://cdn-icons-png.freepik.com/128/2410/2410133.png",
-              "id": "E",
-              "coord": [
-                200,
-                300
-              ]
-            },
-            {
-              "freepik_id": 6224911,
-              "name": "candle",
-              "url": "https://cdn-icons-png.freepik.com/128/6224/6224911.png",
-              "id": "F",
-              "coord": [
-                200,
-                200
+                428,
+                480
               ]
             }
           ],
           "objects_2": [
             {
-              "freepik_id": 2410133,
-              "name": "candle",
-              "url": "https://cdn-icons-png.freepik.com/128/2410/2410133.png",
-              "id": "A",
-              "coord": [
-                800,
-                400
-              ]
-            },
-            {
-              "freepik_id": 3720634,
-              "name": "candle",
-              "url": "https://cdn-icons-png.freepik.com/128/3720/3720634.png",
+              "freepik_id": 598062,
+              "name": "notebook",
+              "url": "https://cdn-icons-png.freepik.com/128/598/598062.png",
               "id": "B",
               "coord": [
-                900,
-                300
+                865,
+                464
               ]
             },
             {
-              "freepik_id": 2115189,
-              "name": "candle",
-              "url": "https://cdn-icons-png.freepik.com/128/2115/2115189.png",
+              "freepik_id": 2004206,
+              "name": "notebook",
+              "url": "https://cdn-icons-png.freepik.com/128/2004/2004206.png",
               "id": "C",
               "coord": [
-                700,
-                300
+                571,
+                351
               ]
             },
             {
-              "freepik_id": 6224911,
-              "name": "candle",
-              "url": "https://cdn-icons-png.freepik.com/128/6224/6224911.png",
+              "freepik_id": 7561093,
+              "name": "notebook",
+              "url": "https://cdn-icons-png.freepik.com/128/7561/7561093.png",
               "id": "D",
               "coord": [
-                700,
-                400
-              ]
-            },
-            {
-              "freepik_id": 628492,
-              "name": "candle",
-              "url": "https://cdn-icons-png.freepik.com/128/628/628492.png",
-              "id": "E",
-              "coord": [
-                600,
-                300
-              ]
-            },
-            {
-              "freepik_id": 5429628,
-              "name": "candle",
-              "url": "https://cdn-icons-png.freepik.com/128/5429/5429628.png",
-              "id": "F",
-              "coord": [
-                300,
-                200
+                87,
+                154
               ]
             }
           ],
