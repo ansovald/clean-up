@@ -39,10 +39,8 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
         self.modality = modality
         self.objects = config['objects']
         self.language = language
-        # self.initial_prompt = self.load_template(f'resources/initial_prompts/initial_prompt')
-        self.initial_prompt = self.load_json('resources/initial_prompts/initial_prompt.json')
-        self.p1_start = self.load_template(f'resources/initial_prompts/{language}/p1_start')
-        self.p2_start = self.load_template(f'resources/initial_prompts/{language}/p2_start')
+        self.initial_prompt = self.load_json('resources/initial_prompt.json')
+        self.start_messages = self.load_json(f'resources/start_messages.json')
         self.commands = self.load_json('resources/commands.json')
         move_messages = self.load_json('resources/move_messages.json')
         parse_errors = self.load_json('resources/parse_errors.json')
@@ -125,8 +123,8 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
                         p2_initial_prompt = p1_initial_prompt
                     else:
                         p2_initial_prompt = self.prepare_initial_prompt(grid=grid_2, max_penalties=max_penalties, max_rounds=max_rounds, object_string=object_string)
-                    game_instance['p1_initial_prompt'] = p1_initial_prompt + self.p1_start
-                    game_instance['p2_initial_prompt'] = p2_initial_prompt + self.p2_start
+                    game_instance['p1_initial_prompt'] = p1_initial_prompt + self.start_messages['p1_start']
+                    game_instance['p2_initial_prompt'] = p2_initial_prompt + self.start_messages['p2_start']
 
     def load_json(self, file_path: str) -> dict:
         """
@@ -195,7 +193,7 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
 
     def prepare_initial_prompt(self, max_penalties, max_rounds, grid=None, object_string=None) -> str:
         initial_prompt = ""
-        for key, value in self.initial_prompt.items():
+        for _, value in self.initial_prompt.items():
             initial_prompt += value + "\n"
         initial_prompt = Template(initial_prompt).safe_substitute(
             grid=grid,

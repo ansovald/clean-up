@@ -1,0 +1,86 @@
+{
+    "en": {
+        "board_description": {
+            "text": "I am your game master, and you are playing a collaborative game with the following grid as game board:\n\n```\n$grid\n```\n\n* The upper edge displays x-coordinates increasing to the right, and the right edge y-coordinates increasing downward.\n* The following objects are randomly placed on your grid: $objects.\n\n",
+            "image": "I am your game master, and your are playing a collaborative game based on the following two images:\n\n* The first image is a legend showing several objects, each with an associated ID on the left.\n\n* The second image is your game board, a background overlaid with these objects placed at random coordinates. An x–y coordinate system is shown along the left and bottom edges of the image. Note that the y-axis values increase downward.\n\n"
+        },
+        "introduction": {
+            "text": "The other player sees a variation of the grid, where the objects are placed at different random locations. You cannot see the other player's grid, and they cannot see yours.\n\n",
+            "image": "The other player sees a variation of the image, where the IDs are shuffled and the objects are placed at different random locations on the background. You cannot see the other player's grid, and they cannot see yours.\n\n"
+        },
+        "goal": "**Goal:**\n\nBoth players need to move the objects on their respective background so that identical objects end up at the same coordinates. You have to communicate with the other player to agree upon a common goal configuration.\n\n",
+        "rule_intro": "**Rules:**\n\n* In each turn, you can send exactly one of the following two commands:",
+        "explain_say": " 1. `$say`: to send a message (everything up until the next line break) to the other player. I will forward it to your partner.",
+        "explain_move": {
+            "text": "2. `$move`: to move an object to a new position, where `<X>` is the column and `<Y>` is the row. I will inform you if your move was successful or not.",
+            "image": "2. `$move`: to move the object with id `<ID>` to the coordinates `(<X>,<y>)`. You will **not** receive visual feedback. The other player can't see which objects you move where."
+        },
+        "explain_restrictions": {
+            "text": "* If you don't stick to the format, or send several commands at once, I have to penalize you.",
+            "image": "* You must not use coordinates when communicating with the other player.\n* If you don't stick to the format, send several commands at once, or use coordinates in a message, I have to penalize you."
+        },
+        "rule_end": "* If both players accumulate more than $max_penalties penalties, you both lose the game.\n* It is vital that you communicate with the other player regarding your goal state! The *only* way you can transmit your strategy to the other player is using the `$say` command!\n\n",
+        "moving_objects": {
+            "text": "**Moving Objects**\n\n* You can only move objects to cells within the bounds of the grid. The target cell must be empty, i.e., it must only contain the symbol '$empty_symbol'.\n* If you try to move an object to a spot that is not empty, or try to move it outside of the grid, I have to penalize you. You get another try.\n* Before making a move, double check that the target spot is empty, and does not hold any letter, frame, or line!\n\n",
+            "image": "**Moving Objects**\n\n* You can only move the objects that you see in your legend.\n* To agree on which object to move, you have to make sure that you describe the object concisely so that the other player knows exactly which one you are talking about. Do *not* use the object's ID to describe it, since it might be different for the other player!\n* Describe the position you want to move the object to using only the background as reference, and not the other objects!\n\n"
+        },
+        "end_of_game": "**End of Game**\n\nIf you think you reached the goal of aligning all objects, you can ask the other player to finish the game by sending `$end_1`. If the other player asks you to finish the game, and you reply with `$end_2`, the game will end.\n\nBoth players win if the game ends within $max_rounds rounds, where one round is defined as two players each sending a valid command.",
+        "scoring": "**Scoring:**\n\nThe closer the identical objects are in both game boards, the more points you get. Penalties reduce your points. Can you beat the record?"
+    },
+    "de": {
+        "board_description": {
+            "text": "Ich bin der Spielleiter, und du spielst ein kooperatives Spiel mit dem folgenden Raster als Spielbrett:\n\n```\n$grid\n```\n\n* Am oberen Rand sind die x-Koordinaten angegeben, die nach rechts hin zunehmen, und am rechten Rand die y-Koordinaten, die nach unten zunehmen.\n* Die folgenden Objekte sind zufällig auf deinem Raster platziert: $objects.\n\n",
+            "image": "Ich bin der Spielleiter, und du spielst ein kooperatives Spiel auf Grundlage der folgenden zwei Bilder:\n\n* Das erste Bild ist eine Legende mit mehreren Objekten und jeweils einer zugehörigen ID links davon.\n\n* Das zweite Bild ist dein Spielbrett. Es besteht aus einem Hintergrund, auf dem diese Objekte an zufälligen Koordinaten platziert sind. Am linken und unteren Rand des Bildes ist ein x-y-Koordinatensystem eingezeichnet. Beachte, dass die Werte auf der y-Achse nach unten hin zunehmen.\n\n"
+        },
+        "introduction": {
+            "text": "Dein Mitspieler sieht eine Variation des Spielbretts, auf dem dieselben Objekte an anderen zufälligen Positionen platziert sind. Du kannst das Spielbrett des anderen Spielers nicht sehen, und er kann deins nicht sehen.\n\n",
+            "image": "Dein Mitspieler sieht dieselben Objekte und dasselbe Hintergrundbild. Allerdings haben die Objekte andere IDs und befinden sich an anderen zufälligen Positionen auf dem Hintergrund. Du kannst das Spielbrett des anderen Spielers nicht sehen, und er kann deins nicht sehen.\n\n"
+        },
+        "goal": "**Ziel des Spiels:**\n\nBeide Spieler müssen die Objekte auf ihrem jeweiligen Spielbrett so bewegen, dass identische Objekte am Ende an denselben Koordinaten liegen. Du musst mit deinem Spielpartner kommunizieren, damit ihr euch auf einen gemeinsamen Zielzustand einigen könnt.\n\n",
+        "rule_intro": "**Spielregeln:**\n\n* In jedem Spielzug kannst du genau eine der folgenden zwei Aktionen ausführen:",
+        "explain_say": "1. `$say`: um eine Nachricht zu schicken, die ich dann an deinen Spielpartner weiterleite. Als Nachricht gilt alles bis zum nächsten Zeilenumbruch.",
+        "explain_move": {
+            "text": "2. `$move`: um ein Objekt an eine andere Position zu bewegen, wobei `<X>` die Spalte und `<Y>` die Zeile bezeichnet. Ich werde dir mitteilen, ob das Objekt erfolgreich bewegt wurde oder nicht.",
+            "image": "2. `$move`: um ein Objekt mit der ID `<ID>` and die Koordinaten `(<X>,<Y>)` zu bewegen. Du erhältst kein visuelles Feedback, und dein Mitspieler kann deine Bewegungsbefehle nicht sehen."
+        },
+        "explain_restrictions": {
+            "text": "* Wenn du irgendein anderes Format verwendest oder mehrere Befehle gleichzeitig abschickst, muss ich euch einen Strafpunkt geben.",
+            "image": "* Du darfst keine Koordinaten verwenden, wenn du mit dem anderen Spieler kommunizierst.\n* Wenn du irgendein anderes Format verwendest oder mehrere Befehle gleichzeitig abschickst, muss ich euch einen Strafpunkt geben."
+        },
+        "rule_end": "* Wenn ihr gemeinsam mehr als $max_penalties Strafpunkte ansammelt, verliert ihr das Spiel.\n* Es ist essenziell, dass du dich mit deinem Mitspieler auf eine gemeinsame Zielanordnung einigst! Du kannst deinem Mitspieler deine Strategie ausschließlich mithilfe des Befehls `$say` mitteilen!\n\n",
+        "moving_objects": {
+            "text": "**Objekte bewegen**\n\n* Du kannst Objekte nur innerhalb des Rasters und in leere Zellen bewegen. Leere Zellen erkennst am Zeichen '$empty_symbol'.\n* Solltest du versuchen, ein Objekt an eine Stelle zu bewegen, die entweder nicht leer ist oder sich außerhalb des Rasters befindet, muss ich euch einen Strafpunkt geben und du bekommst einen weiteren Versuch.\n* Wenn du ein Objekt bewegen willst, solltest du dich erst vergewissern, ob die Zielposition auch wirklich leer ist und weder Buchstaben noch Rahmenteile noch Linien enthält!\n\n",
+            "image": "**Objekte bewegen**\n\n* Du kannst nur die Objekte bewegen, die du in deiner Legende siehst.\n* Um euch auf ein Objekt zu einigen, das ihr bewegen wollt, musst du das Objekt so beschreiben, dass dein Mitspieler genau weiß, welches du meinst. Verwende *nicht* die ID des Objekts, da diese bei deinem Mitspieler anders sein könnte!\n* Du solltest die Position, an die du das Objekt bewegen willst, nur anhand des Hintergrunds beschreiben und nicht anhand der anderen Objekte!\n\n"
+        },
+        "end_of_game": "**Spielende:**\n\nWenn du glaubst, dass ihr das Ziel erreicht habt, kannst du deinem Mitspieler die Nachricht `$end_1` schicken. Wenn dein Spielpartner dich fragt, ob ihr fertig seid, kannst du das Spiel beenden, indem du mit `$end_2` antwortest.\n\nIhr gewinnt gemeinsam, wenn ihr das Spiel innerhalb von #max_rounds Runden beendet. Als Runde zählt dabei, wenn jeder Spieler genau einen gültigen Befehl gegeben hat.",
+        "scoring": "**Punkte:**\n\nJe näher sich die jeweils gleichen Objekte auf beiden Rastern sind, desto mehr Punkte bekommt ihr. Für Strafpunkte gibt es Punktabzug. Könnt ihr den Rekord brechen?"
+    },
+    "zh-CN": {
+        "board_description": {
+            "text": "我是你的游戏主持人，而你正在和另一位玩家进行一场协作游戏。 游戏的棋盘如下所示：\n\n```\n$grid\n```\n\n* 上边缘显示 x 坐标，向右递增；右边缘显示 y 坐标，向下递增。\n* 你的棋盘上随机放置了以下物体：$objects。\n\n",
+            "image": "我是你的游戏主持人，而你正在进行一场基于以下两张图片的协作游戏：\n\n* 第一张图片是一个图例，展示了若干图标，每个图标左方标有一个对应的 ID。\n\n* 第二张图片是你的游戏棋盘，由一个背景图和随机放置在其上的这些图标组成。图片的左侧和底部显示了一个x-y坐标系。请注意，y轴上数值是向下递增的。\n\n"
+        },
+        "introduction": {
+            "text": "另一位玩家看到的是该棋盘的一个变体，其中图标的位置与你的不同。你无法看到对方的棋盘，对方也无法看到你的。\n\n",
+            "image": "另一位玩家看到的是该图片的一个变体，其中图标的位置与你的不同。你无法看到对方的棋盘，对方也无法看到你的。\n\n"
+        },
+        "goal": "**目标：**\n\n双方玩家需要将各自棋盘上的图标移动，使得相同的图标最终位于相同的坐标位置。你需要与对方玩家沟通，以达成一致的目标配置。\n\n",
+        "rule_intro": "**规则**\n\n* 每一回合，你只能发送以下两个指令中的一个：",
+        "explain_say": "1. `$say`：发送一条消息（直到下一行换行之前的所有内容）给另一位玩家。我会将这条消息转发给你的伙伴。",
+        "explain_move": {
+            "text": "2. `$move`：将一个物体移动到一个新的位置，其中`<X>`表示列，`<Y>`表示行。我会告诉你这次移动是否成功。",
+            "image": "2. `$move` —— 用来将某个图标依据左侧图像中的坐标系统移动到指定的坐标位置`(<X>, <Y>)`。你将**不会**收到更新后的图片作为视觉反馈。你的移动指令对另一位玩家不可见。"
+        },
+        "explain_restrictions": {
+            "text": "* 如果你没有遵守格式，或者一次发送了多个指令，我将不得不给你们惩罚。",
+            "image": "* 你在与另一位玩家沟通时，**不能**使用坐标。\n* 如果你没有遵守格式，或者一次发送了多个指令，或者在消息中使用了坐标，我将不得不给你们惩罚。"
+        },
+        "rule_end": "* 如果你们两位玩家累计超过`$max_penalties`次惩罚，你们将输掉这场游戏。\n* 与另一位玩家沟通目标状态至关重要！例如，先约定每次只移动一个物体可能是个好主意。你和对方**唯一**可以传递策略的方式就是使用`$say`指令！\n\n",
+        "moving_objects": {
+            "text": "**移动物体**\n\n* 物体只能移动到网格范围内的空格，目标位置必须是空的，即只能包含符号“$empty_symbol”。\n* 如果你将物体移动到了非空格子，或超出了网格范围，你将被记一次犯规，并需要重新尝试。\n* 在移动物体之前，请务必再次确认目标位置是空的，且**没有任何字母、边框或线条**！\n\n",
+            "image": "**移动物体**\n\n* 你只能移动图例中显示的那些物体。\n* 为了达成一致，你必须确保对所要移动的物体进行简明描述，以便另一位玩家确切知道你指的是哪个物体。**不要**使用物体的 ID 来描述它，因为对方玩家看到的 ID 可能不同！\n* 你应该仅使用背景来描述你想要将物体移动到的位置，而不是使用其他物体作为参考！\n\n"
+        },
+        "end_of_game": "**游戏结束：**\n\n如果你认为已达到目标，可以发送`$end_1`提议结束游戏。如果对方提议结束游戏，而你回复`$end_2`，游戏将结束。\n\n如果游戏在`$max_rounds`回合内结束（每回合定义为两位玩家各发送一个有效指令），则双方玩家获胜。",
+        "scoring": "**评分规则：**\n\n两个网格中相同的物体越接近，你获得的分数就越高。犯规会导致扣分。你们能打破纪录吗？"
+    }
+}

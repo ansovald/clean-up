@@ -1,6 +1,8 @@
 {
     "languages": [
-        "en"
+        "en",
+        "zh-CN",
+        "de"
     ],
     "n_instances": 3,
     "modalities": {
