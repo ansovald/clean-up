@@ -310,17 +310,7 @@ class PicState(GameState):
                     x0, y0 = coords[i - 1]
                     x1, y1 = coords[i]
                     if x0 != x1 or y0 != y1:  # Only draw an arrow if the positions are different
-                        ax.annotate("", xytext=(x0, y0), xy=(x1, y1), arrowprops=dict(arrowstyle="->", color='black', lw=1.5))
-                
-            # ax.imshow(img, extent=(x0 - w // 2, x0 + w // 2, y0 + h // 2, y0 - h // 2))
-            # # Plot an arrow from x0, y0 to x1, y
-            # circle = Circle((x0, y0), radius=15, color='white', fill=True)
-            # ax.add_patch(circle)
-            # ax.annotate(obj['id'], xy=(x0, y0), ha='center', va='center', fontsize=8)
-            # if x0 != x1 and y0 != y1 and obj_id in obj_ids:
-            #     ax.imshow(img, extent=(x1 - w // 2, x1 + w // 2, y1 + h // 2, y1 - h // 2))
-            #     ax.annotate("", xytext=(x0, y0), xy=(x1, y1), arrowprops=dict(arrowstyle="->"))
-        
+                        ax.annotate("", xytext=(x0, y0), xy=(x1, y1), arrowprops=dict(arrowstyle="->", color='black', lw=1.5))        
         plt.tight_layout()
         assert self.img_prefix is not None, "img_prefix must be set to save the image."
         # create tmp directory if it does not exist
@@ -437,3 +427,69 @@ class GridState(GameState):
                     dist = self.euclidean_distance(obj['coord'], other_obj['coord'])
                     distances[other_obj['id']] = dist
         return distances
+    
+
+class HybridState(GridState):
+    """
+    Represents a hybrid state that combines both grid and picture-based game states.
+    It holds two players' game states and manages moves between them.
+    """
+    def __init__(self, background: str, move_messages: dict, objects: List[Icon], img_prefix: str):
+        super().__init__(background=background, move_messages=move_messages, objects=objects, img_prefix=img_prefix)
+
+    def draw_legend(self):
+        legend_text = f"Objects:\n{self.object_string()}"
+        fig, ax = plt.subplots(figsize=(7.1, .8))
+        ax.text(0, 0.1, legend_text, fontsize=20, ha='left', fontfamily='monospace')
+        ax.set_axis_off()
+        ax.set_xlim(0, 1)
+        ax.set_ylim(0, 1)
+        plt.show()
+        assert self.img_prefix is not None, "img_prefix must be set to save the image."
+        # create tmp directory if it does not exist
+        if not os.path.exists('tmp'):
+            os.makedirs('tmp')
+        legend_path = f'tmp/{self.img_prefix}_legend.png'
+        plt.savefig(legend_path, transparent=True)
+        plt.close(fig)
+        return legend_path
+    
+    def draw_image(self, dpi=100):
+        """
+        Draw the game state with background and objects, save it to a file and return its path.
+        """
+        fig, ax = plt.subplots(figsize=(3.7, 5))
+        text = str(self).split('\n')
+        height = len(text)
+        width = len(text[2])
+        print(height)
+        for i, line in enumerate(text):
+            # fill line with spaces to match width
+            line = line.ljust(width)
+            ax.text(0, 0.9 - i * 0.1, line, fontsize=30, ha='left', fontfamily='monospace')
+        ax.set_axis_off()
+        ax.set_xlim(0, 1)
+        ax.set_ylim(0, 1)
+        assert self.img_prefix is not None, "img_prefix must be set to save the image."
+        # create tmp directory if it does not exist
+        if not os.path.exists('tmp'):
+            os.makedirs('tmp')
+        filepath = f'tmp/{self.img_prefix}_state.png'
+        plt.savefig(filepath, transparent=True, bbox_inches='tight')
+        plt.close(fig)
+        return filepath
+    
+    def draw(self):
+        """
+        Draw the game state with background and objects, save it to a file and return its path
+        :param filename: Optional filename to save the figure
+        """
+        images = [self.draw_legend(), self.draw_image()]
+        return images
+    
+    def move_abs(self, obj: str, x: str, y: str):
+        result, message, image = super().move_abs(obj, x, y)
+        if result:
+            image = [self.draw()]
+        return result, message, image
+    

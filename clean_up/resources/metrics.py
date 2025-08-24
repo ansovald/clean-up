@@ -178,15 +178,16 @@ class MetricCalculator:
         return prod(coverage_per_player) # we can also plug it in a monotonously increasing function on (0, 1]
 
     def compute_penalty_score(self):
-        penalties = self.ingredients[PENALTIES]
-        # with penalties==max_penalties, score should still be slightly above 0
-        max_penalties = self.ingredients[MAX_PENALTIES] + 1
+        # We allow 2 'free' penalties for each player to account for format errors etc.
+        penalties = self.ingredients[PENALTIES] - 2
+        # with (penalties-2)==max_penalties, score should still be slightly above 0
+        max_penalties = self.ingredients[MAX_PENALTIES] - 1
         normalized = penalties / max_penalties
         return 1 - normalized  # we can use different function at this step
     
     def alt_penalty_score(self):
-        penalties = self.ingredients[PENALTIES]
-        max_penalties = self.ingredients[MAX_PENALTIES] + 1
+        penalties = self.ingredients[PENALTIES] - 2
+        max_penalties = self.ingredients[MAX_PENALTIES] - 1
         normalized = penalties / max_penalties
         return 1 / (0.5 * normalized - 1) + 2
 

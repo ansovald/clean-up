@@ -16,11 +16,15 @@ from string import Template
 
 from matplotlib.pyplot import grid
 from numpy import empty, object_
+from pandas import value_counts
 from clemcore.clemgame import GameInstanceGenerator
 from resources.game_state.utils import EMPTY_SYMBOL, place_objects, GameObject
 from resources.game_state.game_state import GridState
 
 logger = logging.getLogger(__name__)
+
+TEXT_BASED = ['text', 'hybrid']
+IMAGE_BASED = ['image']
 
 # Seed for reproducibility
 SEED = 73128361
@@ -35,7 +39,8 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
         self.modality = modality
         self.objects = config['objects']
         self.language = language
-        self.initial_prompt = Template(self.load_template(f'resources/initial_prompts/{language}/initial_prompt_{modality}'))
+        # self.initial_prompt = self.load_template(f'resources/initial_prompts/initial_prompt')
+        self.initial_prompt = self.load_json('resources/initial_prompts/initial_prompt.json')
         self.p1_start = self.load_template(f'resources/initial_prompts/{language}/p1_start')
         self.p2_start = self.load_template(f'resources/initial_prompts/{language}/p2_start')
         self.commands = self.load_json('resources/commands.json')
@@ -65,7 +70,7 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
         for experiment_conf in config['experiments']:
             self.current_experiment_conf = deepcopy(experiment_conf)
             sampled_backgrounds = []
-            if self.modality == 'text':
+            if self.modality in TEXT_BASED:
                 # For each experiment and object count, sample n_instances backgrounds
                 # This way we ensure that easy_3obj/instance_0000 has the same background
                 # as easy_5obj/instance_0000 and so on.
@@ -77,11 +82,13 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
                 background, background_stats = self.sample_background()
                 sampled_backgrounds = [(background, background_stats)] * n_instances
             for object_count in config['objects']:
-                if self.modality == 'image':
+                if self.modality in IMAGE_BASED:
                     self.current_experiment_conf = {key: object_count if val == 'OBJECT_COUNT' else val for key, val in self.current_experiment_conf.items()}
                 experiment_name = f"{self.current_experiment_conf['name']}_{object_count}obj_{language}"
                 experiment = self.add_experiment(experiment_name)
-                max_penalties = config['penalty_factor'] * int(object_count)
+                # max_penalties: 2 'free' penalties for each player for format errors etc.
+                #                + config['penalty_factor'] * object_count
+                max_penalties = config['penalty_factor'] * int(object_count) + 2
                 max_rounds = int(object_count) * 4
                 for instance_id in range(n_instances):
                     game_instance = self.add_game_instance(experiment, instance_id)
@@ -108,13 +115,13 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
                     object_string = None
                     grid_1 = None
                     grid_2 = None
-                    if modality == 'text':
+                    if modality in TEXT_BASED:
                         object_string = "'" + "', '".join([obj['id'] for obj in objects_1]) + "'"
                         grid_1 = str(GridState(background=self.background, objects=objects_1))
                         grid_2 = str(GridState(background=self.background, objects=objects_2))
                     
                     p1_initial_prompt = self.prepare_initial_prompt(grid=grid_1, max_penalties=max_penalties, max_rounds=max_rounds, object_string=object_string)
-                    if not grid_2:
+                    if not modality == 'text':
                         p2_initial_prompt = p1_initial_prompt
                     else:
                         p2_initial_prompt = self.prepare_initial_prompt(grid=grid_2, max_penalties=max_penalties, max_rounds=max_rounds, object_string=object_string)
@@ -122,7 +129,11 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
                     game_instance['p2_initial_prompt'] = p2_initial_prompt + self.p2_start
 
     def load_json(self, file_path: str) -> dict:
-        """Load a JSON file from the game directory."""
+        """
+        Load a JSON file from the game directory.
+        If the JSON file contains entries for different languages, load the specified language.
+        Then, for all keys that differ on modality, load the specified modality.
+        """
         data = super().load_json(file_path)
         if self.language in data:
             data = data[self.language]
@@ -130,6 +141,8 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
             data = data[modality]
         else:
             for key in data:
+                # If there are different entries for different modalities, take the one for the current modality
+                # Otherwise, keep the entry as it is
                 if isinstance(data[key], dict) and self.modality in data[key]:
                     data[key] = data[key][self.modality]
         return data
@@ -181,7 +194,10 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
         return objects
 
     def prepare_initial_prompt(self, max_penalties, max_rounds, grid=None, object_string=None) -> str:
-        initial_prompt = self.initial_prompt.safe_substitute(
+        initial_prompt = ""
+        for key, value in self.initial_prompt.items():
+            initial_prompt += value + "\n"
+        initial_prompt = Template(initial_prompt).safe_substitute(
             grid=grid,
             objects=object_string,
             max_rounds=max_rounds,

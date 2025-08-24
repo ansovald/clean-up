@@ -1,0 +1,30 @@
+{
+    "en": {
+        "board_description": {
+            "text": "I am your game master, and you are playing a collaborative game with the following grid as game board:\n\n```\n$grid\n```\n\n* The upper edge displays x-coordinates increasing to the right, and the right edge y-coordinates increasing downward.\n* The following objects are randomly placed on your grid: $objects.\n\n",
+            "image": "I am your game master, and your are playing a collaborative game based on the following two images:\n\n* The first image is a legend showing several objects, each with an associated ID on the left.\n\n* The second image is your game board, a background overlaid with these objects placed at random coordinates. An x–y coordinate system is shown along the left and bottom edges of the image. Note that the y-axis values increase downward.\n\n"
+        },
+        "introduction": {
+            "text": "The other player sees a variation of the grid, where the objects are placed at different random locations. You cannot see the other player's grid, and they cannot see yours.\n\n",
+            "image": "The other player sees a variation of the image, where the IDs are shuffled and the objects are placed at different random locations on the background. You cannot see the other player's grid, and they cannot see yours.\n\n"
+        },
+        "goal": "**Goal:**\n\nBoth players need to move the objects on their respective background so that identical objects end up at the same coordinates. You have to communicate with the other player to agree upon a common goal configuration.\n\n",
+        "rule_intro": "**Rules:**\n\n* In each turn, you can send exactly one of the following two commands:",
+        "explain_say": "  * `$say`: to send a message (everything up until the next line break) to the other player. I will forward it to your partner.",
+        "explain_move": {
+            "text": "  * `$move`: to move an object to a new position, where `<X>` is the column and `<Y>` is the row. I will inform you if your move was successful or not.",
+            "image": "    * `$move`: to move the object with id `<ID>` to the coordinates `(<X>,<y>)`. You will **not** receive visual feedback. The other player can't see which objects you move where."
+        },
+        "explain_restrictions": {
+            "text": "* If you don't stick to the format, or send several commands at once, I have to penalize you.",
+            "image": "* You must not use coordinates when communicating with the other player.\n* If you don't stick to the format, send several commands at once, or use coordinates in a message, I have to penalize you."
+        },
+        "rule_end": "* If both players accumulate more than $max_penalties penalties, you both lose the game.\n* It is vital that you communicate with the other player regarding your goal state! The *only* way you can transmit your strategy to the other player is using the `$say` command!\n\n",
+        "moving_objects": {
+            "text": "**Moving Objects**\n\n* You can only move objects to cells within the bounds of the grid. The target cell must be empty, i.e., it must only contain the symbol '$empty_symbol'.\n* If you try to move an object to a spot that is not empty, or try to move it outside of the grid, I have to penalize you. You get another try.\n* Before making a move, double check that the target spot is empty, and does not hold any letter, frame, or line!\n\n",
+            "image": "**Moving Objects**\n\n* You can only move the objects that you see in your legend.\n* To agree on which object to move, you have to make sure that you describe the object concisely so that the other player knows exactly which one you are talking about. Do *not* use the object's ID to describe it, since it might be different for the other player!\n* Describe the position you want to move the object to using only the background as reference, and not the other objects!\n\n"
+        },
+        "end_of_game": "**End of Game**\n\nIf you think you reached the goal of aligning all objects, you can ask the other player to finish the game by sending `$end_1`. If the other player asks you to finish the game, and you reply with `$end_2`, the game will end.\n\nBoth players win if the game ends within $max_rounds rounds, where one round is defined as two players each sending a valid command.",
+        "scoring": "**Scoring:**\n\nThe closer the identical objects are in both game boards, the more points you get. Penalties reduce your points. Can you beat the record?"
+    }
+}

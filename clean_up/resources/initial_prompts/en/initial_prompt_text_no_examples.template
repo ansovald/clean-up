@@ -1,13 +1,4 @@
-I am your game master, and you are playing a collaborative game based on the following grid:
-
-```
-$grid
-```
-
-* The upper edge displays x-coordinates increasing to the right, and the right edge y-coordinates increasing downward.
-* The following objects are randomly placed on your grid: $objects.
-
-. You both have identical grids, and the following objects are randomly placed on each grid: $objects.
+I am your game master, and you are playing a collaborative game with another player. You both have identical grids, and the following objects are randomly placed on each grid: $objects.
 
 You cannot see the other player's grid, and they cannot see yours.
 

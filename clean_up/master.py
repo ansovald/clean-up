@@ -7,8 +7,6 @@ from string import Template
 import time
 import random
 
-from regex import T
-
 from clemcore.backends import Model
 from clemcore.clemgame import GameSpec, GameMaster, GameBenchmark, Player, DialogueGameMaster, GameScorer, ParseError, GameError, RuleViolationError
 from clemcore.clemgame.events import GameEventSource
@@ -99,13 +97,8 @@ class CleanUpMaster(DialogueGameMaster):
         self.add_player(self.player_1, objects=self.game_instance['objects_1'])
         self.add_player(self.player_2, objects=self.game_instance['objects_2'])
 
-        # self.initial_grid_string = "Player 1 grid:\n```\n" + self.player_1.grid.__str__() + "```\nPlayer 2 grid:\n```\n" + self.player_2.grid.__str__() + "```"
-
         self.initial_distance = self.player_1.game_state.distance_sum(self.player_2.game_state)
-        # print(f"Initial distance: {self.initial_distance}")
 
-
-        self.finished = False   # This is for negotiating the end of the game using `terminate_question` and `terminate_answer`
         self.success = False    # True if game finished regularly
         self.terminate = False  # True if game is terminated because of rule violation or parse error
         self.aborted = False    # True if game is aborted due to a rule violation or parse error
@@ -125,8 +118,9 @@ class CleanUpMaster(DialogueGameMaster):
         if self.modality == 'image':
             # Initialize img_prefix, consisting of experiment name, game instance ID, and player ID
             id = len(self.players_by_names)  # Player IDs start from 1
-            model = str(player._model)
-            img_prefix = f"{self.experiment['name']}_{self.game_instance['game_id']}_player{id}_{model}"
+            # model = str(player._model)
+            img_prefix = f"{self.experiment['name']}_{self.game_instance['game_id']}_player{id}_{player._model.name}"
+            logger.info(f"Image prefix for player {id}: {img_prefix}")
             self.img_prefixes.append(img_prefix)
         player.game_state = state_dict[self.modality](background=self.game_instance['background'], move_messages=self.game_instance['move_messages'], objects=objects, img_prefix=img_prefix)
     
@@ -221,7 +215,7 @@ class CleanUpMaster(DialogueGameMaster):
         """
         Check if the player should pass their turn.
         """
-        time.sleep(random.uniform(1, 2))
+        # time.sleep(random.uniform(1, 2))
         return self.pass_turn
 
     def _start_next_round(self) -> bool:
@@ -449,7 +443,7 @@ class CleanUpScorer(GameScorer):
             logger.info(f'aborted, logging Main Score as np.nan')
             self.log_episode_score(BENCH_SCORE, np.nan)
 
-class SomeGameBenchmark(GameBenchmark):
+class CleanUpBenchmark(GameBenchmark):
 
     def __init__(self, game_spec: GameSpec):
         super().__init__(game_spec)
