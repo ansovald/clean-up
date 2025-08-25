@@ -391,7 +391,7 @@ class GridState(GameState):
         Only use for metric calculation!
         """
         return [{'id': obj['id'], 'coord': obj['coord']} for obj in self.objects]
-    
+        
     def move_abs(self, obj: str, x: str, y: str):
         """
         Move the object to the absolute coordinates (x, y).
@@ -428,6 +428,9 @@ class GridState(GameState):
                     distances[other_obj['id']] = dist
         return distances
     
+    def draw(self):
+        return None
+    
 
 class HybridState(GridState):
     """
@@ -436,6 +439,7 @@ class HybridState(GridState):
     """
     def __init__(self, background: str, move_messages: dict, objects: List[Icon], img_prefix: str):
         super().__init__(background=background, move_messages=move_messages, objects=objects, img_prefix=img_prefix)
+        logger.info(f"Initialized HybridState with img_prefix: {self.img_prefix}")
 
     def draw_legend(self):
         legend_text = f"Objects:\n{self.object_string()}"
@@ -462,7 +466,6 @@ class HybridState(GridState):
         text = str(self).split('\n')
         height = len(text)
         width = len(text[2])
-        print(height)
         for i, line in enumerate(text):
             # fill line with spaces to match width
             line = line.ljust(width)
@@ -484,12 +487,12 @@ class HybridState(GridState):
         Draw the game state with background and objects, save it to a file and return its path
         :param filename: Optional filename to save the figure
         """
-        images = [self.draw_legend(), self.draw_image()]
-        return images
+        # images = [self.draw_legend(), self.draw_image()]
+        return [self.draw_image()]
     
     def move_abs(self, obj: str, x: str, y: str):
         result, message, image = super().move_abs(obj, x, y)
         if result:
-            image = [self.draw()]
+            image = self.draw()
         return result, message, image
     

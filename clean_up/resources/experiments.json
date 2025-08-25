@@ -2,7 +2,7 @@
     "languages": [
         "en", "zh-CN", "de"
     ],
-    "n_instances": 3,
+    "n_instances": 1,
     "modalities": {
         "text": {
             "objects": {
@@ -32,16 +32,8 @@
             "penalty_factor": 2,
             "experiments": [
                 {
-                    "name": "easy",
+                    "name": "hyb_easy",
                     "grid_config": "9x9_e34_b7"
-                },
-                {
-                    "name": "medium",
-                    "grid_config": "9x9_e29_b11"
-                },
-                {
-                    "name": "hard",
-                    "grid_config": "9x9_e24_b15"
                 }
             ]
         },

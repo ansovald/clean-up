@@ -4,10 +4,7 @@
     "say": "SAY: <MESSAGE>",
     "say_pattern": "(?P<head>.*)SAY: (?P<message>[^\\n]+)(?P<tail>.*)",
     "move_keyword": "MOVE",
-    "move": {
-      "text": "MOVE: <OBJECT>, (<X>, <Y>)",
-      "image": "MOVE: <ID>, (<X>, <Y>)"
-    },
+    "move": "MOVE: <OBJECT>, (<X>, <Y>)",
     "move_pattern": "(?P<head>.*)MOVE: (?P<obj>[A-Z]), \\((?P<x>\\d+), ?(?P<y>\\d+)\\)(?P<tail>.*)",
     "end_1": "SAY: finished?",
     "terminate_question": "finished?",

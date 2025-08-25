@@ -6,6 +6,9 @@ import numpy as np
 from string import Template
 import time
 import random
+import abc
+
+from torch import log_
 
 from clemcore.backends import Model
 from clemcore.clemgame import GameSpec, GameMaster, GameBenchmark, Player, DialogueGameMaster, GameScorer, ParseError, GameError, RuleViolationError
@@ -13,13 +16,14 @@ from clemcore.clemgame.events import GameEventSource
 from clemcore.clemgame.metrics import METRIC_ABORTED, METRIC_SUCCESS, METRIC_LOSE, BENCH_SCORE
 # from clemcore.utils import file_utils, string_utils
 from resources.game_state.utils import GameObject, png_to_base64
-from resources.game_state.game_state import PicState, GridState
+from resources.game_state.game_state import PicState, GridState, HybridState
 from resources.metrics import MetricPreparer, MetricCalculator, END_DISTANCE_SUM, EXPECTED_DISTANCE_SUM, MOVES, INIT_STATES, END_STATES, ingredients_registry, sub_metrics_registry #, validate
 
 # Stores the game state class for each modality
-state_dict = {
+STATE_DICT = {
     "text": GridState,
-    "image": PicState
+    "image": PicState,
+    "hybrid": HybridState
 }
 
 logger = logging.getLogger(__name__)
@@ -27,41 +31,117 @@ logger = logging.getLogger(__name__)
 class Cleaner(Player):
     def __init__(self, model: Model):
         super().__init__(model)
-        self._custom_responses = [
-            "MOVE: C, (1, 1)",
-            # "MOVE: W, (3, 2)",
-            # "SAY: Move C to (1, 1).",
-            "SAY: Ok, let's start the game."
-            # "MOVE: C, (2, 1)\nSAY: I did it! C is now in the top-left corner."
-            ]
-        self.game_state = None  # This will be set in the game master
+        self._custom_responses = self._prepare_custom_responses()
+        self.game_state = None  # This will be set by the game master
         self._relay_message = ""
         self.finished = False # Used to store whether the player already suggested finishing the game
 
+    @abc.abstractmethod
+    def _prepare_custom_responses(self):
+        """
+        Prepare custom responses for the player. Differs per modality.
+        """
+        pass
+    
     def _custom_response(self, messages):
         response = self._custom_responses[np.random.randint(0, len(self._custom_responses))]
         return response
     
-    def store_relay_message(self, message: str):
+    @abc.abstractmethod
+    def store_relay_message(self, message: str, images: List[str] = None):
+        """
+        Store the relay message to add it to the next message.
+        For image and hybrid, images also have to be taken into account.
+        """
+        pass
+
+    def prepare_context(self, context: Dict) -> Dict:
+        """
+        Prepare the context used for perceive_context.
+        """
+        if self._relay_message:
+            context['content'] = self._relay_message + context['content']
+            self._relay_message = ""
+        return context
+
+    def perceive_context(self, context, *, log_event=True, memorize=True):
+        context = self.prepare_context(context)
+        return super().perceive_context(context, log_event=log_event, memorize=memorize)
+
+class GridCleaner(Cleaner):
+    def _prepare_custom_responses(self):
+        return [
+            "MOVE: C, (1, 1)",
+            "MOVE: W, (3, 2)",
+            "SAY: Move C to (1, 1).",
+            "SAY: Ok, let's start the game."
+            "MOVE: C, (2, 1)\nSAY: I did it! C is now in the top-left corner."
+            ]
+    
+    def store_relay_message(self, message: str, images: List[str] = None):
+        """
+        Store the relay message to add it to the next message.
+        Ignore images, as GridState does not have images.
+        """
+        self._relay_message = message
+    
+class PicCleaner(Cleaner):
+    def _prepare_custom_responses(self):
+        return [
+            "MOVE: C, (100, 100)",
+            "SAY: Move C to (100, 100).",
+            "SAY: Ok, let's start the game."
+            "MOVE: C, (200, 100)\nSAY: I did it! C is now in the top-left corner."
+            ]
+    
+    def store_relay_message(self, message: str, images: List[str] = None):
+        """
+        Store the relay message to add it to the next message.
+        Images are only logged and not added to the next message.
+        """
+        self._relay_message = message
+        if images:
+            log_images(self, images)
+    
+class HybridCleaner(Cleaner):
+    def __init__(self, model: Model):
+        super().__init__(model)
+        self._relay_images = []
+
+    def _prepare_custom_responses(self):
+        return [
+            "MOVE: C, (1, 1)",
+            "MOVE: W, (3, 2)",
+            "SAY: Move C to (1, 1).",
+            "SAY: Ok, let's start the game."
+            "MOVE: C, (2, 1)\nSAY: I did it! C is now in the top-left corner."
+            ]
+    
+    def store_relay_message(self, message: str, images: List[str] = None):
         """
         Store the relay message to add it to the next message.
         """
         self._relay_message = message
+        self._relay_images = images
 
-    def perceive_context(self, context, *, log_event=True, memorize=True):
-        if self._relay_message:
-            context['content'] = self._relay_message + context['content']
-        if 'image' in context:
-            log_images(self, context['image'], self)
-        self._relay_message = ""
-        return super().perceive_context(context, log_event=log_event, memorize=memorize)
+    def prepare_context(self, context):
+        context = super().prepare_context(context)
+        if self._relay_images:
+            context['image'] = self._relay_images
+            log_images(self, self._relay_images)
+            self._relay_images = []
+        return context
 
-
-def log_images(game_event_source: GameEventSource, images: list[str], player: Player):
+def log_images(game_event_source: GameEventSource, images: list[str], player: Player=None):
     """
-    image: an image path. Should have only one image.
+    images: list of image paths
+    player: if None, assume the game_event_source is the player
     """
+    if not player:
+        player = game_event_source
+    assert isinstance(player, Player), "player must be an instance of Player"
     for image in images:
+        logger.info(f"Logging image {image} for player {player.name}")
         image = png_to_base64(image)
         action = {
                     'type': 'send message', 
@@ -69,6 +149,12 @@ def log_images(game_event_source: GameEventSource, images: list[str], player: Pl
                     'content': f'<img src="{image}" alt="Image">',
                 }
         game_event_source.log_event(from_='GM', to=player.name, action=action)
+
+PLAYER_DICT = {
+    "text": GridCleaner,
+    "image": PicCleaner,
+    "hybrid": HybridCleaner
+}
 
 class CleanUpMaster(DialogueGameMaster):
     """
@@ -80,7 +166,6 @@ class CleanUpMaster(DialogueGameMaster):
     def _on_setup(self, **game_instance):
         self.game_instance = game_instance
         self.modality = game_instance['modality']
-        self.img_prefixes = []
 
         self.intermittent_prompts = game_instance['intermittent_prompts']
         self.parse_errors = game_instance['parse_errors']
@@ -92,15 +177,16 @@ class CleanUpMaster(DialogueGameMaster):
         for pattern in self.game_instance.get('restricted_patterns', []):
             self.restricted_patterns.append(re.compile(pattern, re.DOTALL))
 
-        self.player_1 = Cleaner(self.player_models[0])
-        self.player_2 = Cleaner(self.player_models[1])
+        self.img_prefixes = []  # List of image prefixes, one per player
+        self.player_1 = PLAYER_DICT[self.modality](self.player_models[0])
+        self.player_2 = PLAYER_DICT[self.modality](self.player_models[1])
         self.add_player(self.player_1, objects=self.game_instance['objects_1'])
         self.add_player(self.player_2, objects=self.game_instance['objects_2'])
 
         self.initial_distance = self.player_1.game_state.distance_sum(self.player_2.game_state)
 
         self.success = False    # True if game finished regularly
-        self.terminate = False  # True if game is terminated because of rule violation or parse error
+        self.terminate = False  # True if game game should end
         self.aborted = False    # True if game is aborted due to a rule violation or parse error
         self.penalties = 0      # Number of collectively accumulated penalties
         self.max_penalties = self.game_instance['max_penalties']    # For strict mode, max_penalties is 0
@@ -111,35 +197,29 @@ class CleanUpMaster(DialogueGameMaster):
 
     def add_player(self, player: Player, objects: List[GameObject] = None):
         """
-        Add a player to the game.
+        Add a player to the game. Needs to be implemented per modality.
         """
         super().add_player(player)
-        img_prefix = None
-        if self.modality == 'image':
-            # Initialize img_prefix, consisting of experiment name, game instance ID, and player ID
-            id = len(self.players_by_names)  # Player IDs start from 1
-            # model = str(player._model)
-            img_prefix = f"{self.experiment['name']}_{self.game_instance['game_id']}_player{id}_{player._model.name}"
-            logger.info(f"Image prefix for player {id}: {img_prefix}")
-            self.img_prefixes.append(img_prefix)
-        player.game_state = state_dict[self.modality](background=self.game_instance['background'], move_messages=self.game_instance['move_messages'], objects=objects, img_prefix=img_prefix)
+        # Initialize img_prefix, consisting of experiment name, game instance ID, and player ID
+        id = len(self.players_by_names)  # Player IDs start from 1
+        img_prefix = f"{self.experiment['name']}_{self.game_instance['game_id']}_player{id}_{player._model.name}"
+        self.img_prefixes.append(img_prefix)
+        player.game_state = STATE_DICT[self.modality](background=self.game_instance['background'], move_messages=self.game_instance['move_messages'], objects=objects, img_prefix=img_prefix)
     
-    def _on_before_game(self):
-        """
-        Set the initial context for the first player.
-        """
-        if self.modality == 'image':
-            images = self.player_1.game_state.draw()
-            self.set_context_for(self.player_1, self.game_instance['p1_initial_prompt'], image=images)
-        else:
-            self.set_context_for(self.player_1, self.game_instance['p1_initial_prompt'])
-
     def _other_player(self) -> Player:
         """
         Returns the player who will be next.
         """
         other_player_idx = (self._current_player_idx + 1) % len(self.players_by_names)
         return self.get_players()[other_player_idx]
+    
+    def _on_before_game(self):
+        """
+        Set the initial context for the first player.
+        """
+        images = self.player_1.game_state.draw()  # returns None for GridState
+        log_images(self, images, self.player_1)
+        self.set_context_for(self.player_1, self.game_instance['p1_initial_prompt'], image=images)
 
     def _check_head_tail(self, match: re.Match) -> bool:
         """
@@ -149,8 +229,6 @@ class CleanUpMaster(DialogueGameMaster):
         head = match.group('head')
         tail = match.group('tail')
         if head != '' and tail != '':
-            # self.terminate = True
-            # self.aborted = True
             self.log_to_self('parse_error', f"Invalid format: head and tail are not empty\nhead: '{head}'\ntail: '{tail}'")
             raise ParseError(reason=self.parse_errors["head_tail"], response=match.group(0))
         elif head != '':
@@ -169,7 +247,7 @@ class CleanUpMaster(DialogueGameMaster):
         if len(move_matches) + len(say_matches) > 1:
             self.log_to_self('parse_error', f"Invalid response format: {response}")
             logger.warning(f"Response '{response}' contains several commands.")
-            raise ParseError(reason=self.parse_errors["several_commands"], response=response) #, info="Response matches both move and message patterns, which is invalid.")
+            raise ParseError(reason=self.parse_errors["several_commands"], response=response)
         move_match = move_matches[0] if move_matches else None
         say_match = say_matches[0] if say_matches else None
         if player == self.player_1 and self.current_round == 0 and not say_match:
@@ -197,7 +275,7 @@ class CleanUpMaster(DialogueGameMaster):
             return response
         else:
             self.log_to_self('parse_error', f"Invalid response format")
-            raise ParseError(reason=self.parse_errors["invalid_format"], response=response) #, info="Response does not match any expected pattern.")
+            raise ParseError(reason=self.parse_errors["invalid_format"], response=response)
 
     def _on_parse_error(self, error: GameError):
         self.pass_turn = False
@@ -241,10 +319,7 @@ class CleanUpMaster(DialogueGameMaster):
                 self.metric_preparer.add_move((player.name, obj))
                 # log the move message to the player and add it to the message history (without response)
                 self.log_to_self('valid move', message)
-                player.store_relay_message(message) #, image=image)
-                if self.modality == 'image':
-                    # log the image to the player
-                    log_images(self, images, player)
+                player.store_relay_message(message, images=images)
                 # turn is passed to the other player
                 next_player_prompt = self._new_turn_prompt(self.intermittent_prompts["new_turn_move"])
                 self.set_context_for(self._other_player(), next_player_prompt)
@@ -254,7 +329,7 @@ class CleanUpMaster(DialogueGameMaster):
                 message = message + "\n" + Template(self.intermittent_prompts['penalty_counter']).substitute(penalty=self.penalties) + self.intermittent_prompts['penalty_reprompt']
                 self.log_to_self('invalid move', message)
                 self.set_context_for(player, message)
-                # raise RuleViolationError(f"Invalid move: {message}")
+                raise RuleViolationError(f"Invalid move: {message}")
         else:
             match = self.say_pattern.match(parsed_response)
             if match:
@@ -265,11 +340,9 @@ class CleanUpMaster(DialogueGameMaster):
                     p2_initial_prompt = Template(self.game_instance['p2_initial_prompt']).substitute(
                         start_message=message
                     )
-                    if self.game_instance['modality'] == 'image':
-                        images = self.player_2.game_state.draw()
-                        self.set_context_for(self.player_2, p2_initial_prompt, image=images)
-                    else:
-                        self.set_context_for(self.player_2, p2_initial_prompt)
+                    images = self.player_2.game_state.draw() # returns None for GridState
+                    log_images(self, images, self.player_2)
+                    self.set_context_for(self.player_2, p2_initial_prompt, image=images)
                 else:
                     next_player_prompt = self._new_turn_prompt(Template(self.intermittent_prompts['new_turn']).substitute(turn_message=message))
                     self.set_context_for(self._other_player(), next_player_prompt)
@@ -331,24 +404,23 @@ class CleanUpMaster(DialogueGameMaster):
         if self.success:
             return 100 / (self.current_round + 1)  # zero-based
         return 0
-
-    def _on_after_game(self):
-        for player in self.get_players():
-            if self.modality == 'image':
+    
+    def _after_game_logs(self):
+        if self.modality == 'image':
+            for player in self.get_players():
                 move_image = player.game_state.draw_moves()
                 if move_image:
                     log_images(self, move_image, player)
-        
+
+    def _on_after_game(self):
+        self._after_game_logs()
         # remove images from tmp directory
         for img_prefix in self.img_prefixes:
             for file in os.listdir('tmp'):
                 if file.startswith(img_prefix):
                     os.remove(os.path.join('tmp', file))
-                    # if not file.endswith('state_0.png'):
-                    #     os.remove(os.path.join('tmp', file))
+
         ingredients = self.metric_preparer.compute_ingredients()
-
-
         ingredients_string = ""
         for key, val in ingredients.items():
             # log all the necessary metrics to `interaction.json`
@@ -400,6 +472,7 @@ class CleanUpMaster(DialogueGameMaster):
         self.log_to_self('dev:game_finished', f"{bench_score_string}\n-------\n{sub_metrics_string}\n-------\n{temp_log_string}")
         # print(f"\n\n{bench_score_string}\n-------\n{sub_metrics_string}\n-------\n{temp_log_string}")
         # ----------------------------------------------------------
+
 
 class CleanUpScorer(GameScorer):
     def __init__(self, game_name: str, experiment: Dict, game_instance: Dict):
