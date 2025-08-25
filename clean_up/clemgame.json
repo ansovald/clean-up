@@ -17,5 +17,15 @@
     "image": "multi",
     "languages": ["en", "zh-CN", "de"],
     "benchmark": []
+  },
+  {
+    "game_name": "hybrid_clean_up",
+    "description": "Two players arrange objects on a background image generated from a text grid according to a negotiated goal state",
+    "main_game": "clean_up",
+    "players": 2,
+    "instances": "hybrid_instances",
+    "image": "multi",
+    "languages": ["en", "zh-CN", "de"],
+    "benchmark": []
   }
 ]

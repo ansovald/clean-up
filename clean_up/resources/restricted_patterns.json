@@ -1,14 +1,14 @@
 {
   "en": {
     "image": ["[0-9]+"],
-    "text": null
+    "text,hybrid": null
   },
   "zh-CN": {
     "image": ["[0-9]+"],
-    "text": null
+    "text,hybrid": null
   },
   "de": {
     "image": ["[0-9]+"],
-    "text": null
+    "text,hybrid": null
   }
 }

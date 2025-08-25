@@ -1,11 +1,12 @@
 from typing import List, Tuple, TypedDict
 import base64
-import math
 import random
 from PIL import Image
 
 EMPTY_SYMBOL = "◌"
 ICON_SIZE = 128 # Icons are square
+TEXT_BASED = ['text', 'hybrid']
+IMAGE_BASED = ['image']
 
 class GameObject(TypedDict):
     id: str
@@ -53,9 +54,9 @@ def place_objects(modality: str, objects: List[GameObject], background: str) -> 
     :param grid: The grid string representation
     :return: List of GameObject with updated coordinates
     """
-    if modality == 'text':
+    if modality in TEXT_BASED:
         return place_grid_objects(objects, background)
-    elif modality == 'image':
+    elif modality in  IMAGE_BASED:
         # Load the background image to get dimensions
         dim = Image.open(background).size
         return place_icons(objects, dim)

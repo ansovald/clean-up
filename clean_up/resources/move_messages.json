@@ -2,7 +2,8 @@
   "en": {
     "successful": {
       "text": "Moved '$object' to ($x,$y) successfully. Your updated grid looks like this:\n```\n$grid```\n",
-      "image": "Moved object '$object' to ($x,$y) successfully.\n\n"
+      "image": "Moved object '$object' to ($x,$y) successfully.\n\n",
+      "hybrid": "Moved '$object' to ($x,$y) successfully. Your updated image is attached.\n\n"
   },
     "out_of_bounds": "Invalid move: ($x,$y) is out of bounds. Please try again!\n\n",
     "not_empty": "Penalty: ($x,$y) is not empty, but contains '$object'.\n",
@@ -11,7 +12,8 @@
   "zh-CN": {
     "successful": {
       "text": "已成功将“$object”移动到 ($x,$y)。更新后的网格如下所示：\n```\n$grid```\n",
-      "image": "已成功将图标'$object'移动到 ($x,$y)。\n\n"
+      "image": "已成功将图标'$object'移动到 ($x,$y)。\n\n",
+      "hybrid": "已成功将“$object”移动到 ($x,$y)。更新后的图片已附上。\n\n"
     },
     "out_of_bounds": "无效移动：($x,$y)超出边界。请重试！\n\n",
     "not_empty": "犯规：单元格 ($x,$y) 不为空，“$object”在此位置。\n",
@@ -20,7 +22,8 @@
   "de": {
     "successful": {
       "text": "'$object' erfolgreich nach ($x,$y) verschoben. Dein Raster sieht jetzt so aus:\n```\n$grid```\n",
-      "image": "'$object' erfolgreich nach ($x,$y) verschoben.\n\n"
+      "image": "'$object' erfolgreich nach ($x,$y) verschoben.\n\n",
+      "hybrid": "'$object' erfolgreich nach ($x,$y) verschoben. Dein Bild sieht jetzt so aus:\n```\n$grid```\n"
     },
     "out_of_bounds": "Ungültiger Zug: ($x,$y) liegt außerhalb des Bildes. Bitte versuche es erneut!\n\n",
     "not_empty": "Strafpunkt: ($x,$y) ist nicht leer, sondern enthält '$object'.\n",

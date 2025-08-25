@@ -17,14 +17,12 @@ from string import Template
 from matplotlib.pyplot import grid
 from numpy import empty, object_
 from pandas import value_counts
+from regex import T
 from clemcore.clemgame import GameInstanceGenerator
-from resources.game_state.utils import EMPTY_SYMBOL, place_objects, GameObject
+from resources.game_state.utils import EMPTY_SYMBOL, TEXT_BASED, IMAGE_BASED, place_objects, GameObject
 from resources.game_state.game_state import GridState
 
 logger = logging.getLogger(__name__)
-
-TEXT_BASED = ['text', 'hybrid']
-IMAGE_BASED = ['image']
 
 # Seed for reproducibility
 SEED = 73128361
@@ -96,7 +94,7 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
                     game_instance['max_rounds'] = max_rounds
                     # self.background, background_stats = self.sample_background()
                     self.background, background_stats = sampled_backgrounds[instance_id]
-                    if modality == 'text':
+                    if self.modality in TEXT_BASED:
                         game_instance['empty_cells'] = background_stats['empty']
                         game_instance['total_cells'] = background_stats['total']
                         game_instance['empty_symbol'] = EMPTY_SYMBOL
@@ -113,13 +111,13 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
                     object_string = None
                     grid_1 = None
                     grid_2 = None
-                    if modality in TEXT_BASED:
+                    if self.modality in TEXT_BASED:
                         object_string = "'" + "', '".join([obj['id'] for obj in objects_1]) + "'"
                         grid_1 = str(GridState(background=self.background, objects=objects_1))
                         grid_2 = str(GridState(background=self.background, objects=objects_2))
                     
                     p1_initial_prompt = self.prepare_initial_prompt(grid=grid_1, max_penalties=max_penalties, max_rounds=max_rounds, object_string=object_string)
-                    if not modality == 'text':
+                    if modality in IMAGE_BASED:
                         p2_initial_prompt = p1_initial_prompt
                     else:
                         p2_initial_prompt = self.prepare_initial_prompt(grid=grid_2, max_penalties=max_penalties, max_rounds=max_rounds, object_string=object_string)
@@ -131,18 +129,24 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
         Load a JSON file from the game directory.
         If the JSON file contains entries for different languages, load the specified language.
         Then, for all keys that differ on modality, load the specified modality.
+        Modalities can also be combined with a comma, like 'text,hybrid'
         """
         data = super().load_json(file_path)
         if self.language in data:
             data = data[self.language]
-        if self.modality in data:
-            data = data[modality]
+        for key, value in data.items():
+            if self.modality in key.split(','):
+                data = value
+                break
         else:
             for key in data:
                 # If there are different entries for different modalities, take the one for the current modality
                 # Otherwise, keep the entry as it is
-                if isinstance(data[key], dict) and self.modality in data[key]:
-                    data[key] = data[key][self.modality]
+                if isinstance(data[key], dict):
+                    for subkey, value in data[key].items():
+                        if self.modality in subkey.split(','):
+                            data[key] = value
+                            break
         return data
     
     def sample_background(self):
@@ -150,7 +154,7 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
         Samples a background (text grid) from the provided dictionary.
         Might implement sampling background images in the future.
         """
-        if modality == 'text':
+        if modality in TEXT_BASED:
             grid_data = self.load_json('resources/backgrounds/grids.json')
             info = grid_data['info'][self.current_experiment_conf['grid_config']]
             empty_cells = info['empty_cells']
@@ -166,7 +170,7 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
     
     def get_objects(self, object_count):
         objects = []
-        if self.modality == 'text':
+        if self.modality in TEXT_BASED:
             for letter in self.objects[object_count]:
                 object = GameObject(id=letter, coord=(None, None))
                 objects.append(object)
@@ -214,11 +218,13 @@ if __name__ == '__main__':
     experiments = json.load(open('resources/experiments.json', 'r', encoding='utf-8'))
     n_instances = experiments.get('n_instances', 2)
     for language in experiments['languages']:
-        for modality in experiments['modalities']:
-            file_name = experiments['modalities'][modality].get('instances', 'instances')
-            if language == 'en':
-                file_name = file_name + '.json'
-            else:
-                file_name = f"{file_name}_{language}.json"
-            config = experiments['modalities'][modality]
-            CleanUpInstanceGenerator().generate(filename=file_name, language=language, modality=modality, config=config, n_instances=n_instances, seed=SEED)
+        for modalities, config in experiments['modalities'].items():
+            for modality in modalities.split(','):
+                print(f"Generating instances for language '{language}' and modality '{modality}'")
+                file_name = config.get('instances', 'instances')
+                if language == 'en':
+                    file_name = file_name + '.json'
+                else:
+                    file_name = f"{file_name}_{language}.json"
+                # config = experiments['modalities'][modality]
+                CleanUpInstanceGenerator().generate(filename=file_name, language=language, modality=modality, config=config, n_instances=n_instances, seed=SEED)

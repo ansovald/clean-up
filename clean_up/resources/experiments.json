@@ -1,12 +1,31 @@
 {
     "languages": [
-        "en",
-        "zh-CN",
-        "de"
+        "en", "zh-CN", "de"
     ],
     "n_instances": 3,
     "modalities": {
         "text": {
+            "objects": {
+                "3": "CLP"
+            },
+            "penalty_factor": 2,
+            "experiments": [
+                {
+                    "name": "easy",
+                    "grid_config": "9x9_e34_b7"
+                },
+                {
+                    "name": "medium",
+                    "grid_config": "9x9_e29_b11"
+                },
+                {
+                    "name": "hard",
+                    "grid_config": "9x9_e24_b15"
+                }
+            ]
+        },
+        "hybrid": {
+            "instances": "hybrid_instances",
             "objects": {
                 "3": "CLP"
             },
