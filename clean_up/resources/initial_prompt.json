@@ -2,7 +2,7 @@
     "en": {
         "board_description": {
             "text": "I am your game master, and you are playing a collaborative game with the following grid as game board:\n\n```\n$grid\n```\n\n* The upper edge displays x-coordinates increasing to the right, and the right edge y-coordinates increasing downward.\n* The following objects are randomly placed on your grid: $objects.\n\n",
-            "image": "I am your game master, and your are playing a collaborative game based on the two attached images:\n\n* The first image is a legend showing several objects, each with an associated ID on the left.\n\n* The second image is your game board, a background overlaid with these objects placed at random coordinates. An x–y coordinate system is shown along the left and bottom edges of the image. Note that the y-axis values increase downward.\n\n",
+            "image": "I am your game master, and your are playing a collaborative game based on the attached image:\n\n* On the right side is a legend showing several objects, each with an associated ID on the left. Valid IDs are: $objects\n\n* On the left side is your game board, a background overlaid with these objects placed at random coordinates. An x–y coordinate system is shown along the left and bottom edges of the image. Note that the y-axis values increase downward.\n\n",
             "hybrid": "I am your game master, and you are playing a collaborative game with the attached image as game board.\n\n* The image shows a grid with x-coordinates increasing to the right along the upper edge, and y-coordinates increasing downward along the right edge.\n* The following objects are randomly placed on your grid: $objects.\n\n"
         },
         "introduction": {
@@ -26,13 +26,13 @@
             "image": "**Moving Objects**\n\n* You can only move the objects that you see in your legend.\n* To agree on which object to move, you have to make sure that you describe the object concisely so that the other player knows exactly which one you are talking about. Do *not* use the object's ID to describe it, since it might be different for the other player!\n* Describe the position you want to move the object to using only the background as reference, and not the other objects!\n\n",
             "hybrid": "**Moving Objects**\n\n* You can only move objects to cells within the bounds of the grid. The target cell must be empty. Empty cells are marked with a small dotted circle.\n* If you try to move an object to a spot that is not empty, or try to move it outside of the grid, I have to penalize you. You get another try.\n* Before making a move, double check that the target spot is empty, and does not hold any letter, frame, or line!\n\n"
         },
-        "end_of_game": "**End of Game**\n\nIf you think you reached the goal of aligning all objects, you can ask the other player to finish the game by sending `$end_1`. If the other player asks you to finish the game, and you reply with `$end_2`, the game will end.\n\nBoth players win if the game ends within $max_rounds rounds, where one round is defined as two players each sending a valid command.",
+        "end_of_game": "**End of Game**\n\nIf you think you reached the goal of aligning all objects, you can ask the other player to finish the game by sending `$end_1`. If the other player asks you to finish the game, and you reply with `$end_2`, the game will end.\n\nBoth players win if the game ends within $max_rounds rounds, where one round is defined as two players each sending a valid command.\n",
         "scoring": "**Scoring:**\n\nThe closer the identical objects are in both game boards, the more points you get. Penalties reduce your points. Can you beat the record?"
     },
     "de": {
         "board_description": {
             "text": "Ich bin der Spielleiter, und du spielst ein kooperatives Spiel mit dem folgenden Raster als Spielbrett:\n\n```\n$grid\n```\n\n* Am oberen Rand sind die x-Koordinaten angegeben, die nach rechts hin zunehmen, und am rechten Rand die y-Koordinaten, die nach unten zunehmen.\n* Die folgenden Objekte sind zufällig auf deinem Raster platziert: $objects.\n\n",
-            "image": "Ich bin der Spielleiter, und du spielst ein kooperatives Spiel auf Grundlage der folgenden zwei angehängten Bilder:\n\n* Das erste Bild ist eine Legende mit mehreren Objekten und jeweils einer zugehörigen ID links davon.\n\n* Das zweite Bild ist dein Spielbrett. Es besteht aus einem Hintergrund, auf dem diese Objekte an zufälligen Koordinaten platziert sind. Am linken und unteren Rand des Bildes ist ein x-y-Koordinatensystem eingezeichnet. Beachte, dass die Werte auf der y-Achse nach unten hin zunehmen.\n\n",
+            "image": "Ich bin der Spielleiter, und du spielst ein kooperatives Spiel auf Grundlage des angehängten Bildes:\n\n* Auf der rechten Seite ist eine Legende mit mehreren Objekten und jeweils einer zugehörigen ID links davon zu sehen.\n\n* Auf der linken Seite ist dein Spielbrett. Es besteht aus einem Hintergrund, auf dem diese Objekte an zufälligen Koordinaten platziert sind. Am linken und unteren Rand des Bildes ist ein x-y-Koordinatensystem eingezeichnet. Beachte, dass die Werte auf der y-Achse nach unten hin zunehmen.\n\n",
             "hybrid": "Ich bin der Spielleiter, und du spielst ein kooperatives Spiel mit dem angehängten Bild als Spielbrett.\n\n* Das Bild zeigt ein Raster mit x-Koordinaten am oberen Rand, die nach rechts hin zunehmen, und y-Koordinaten am rechten Rand, die nach unten hin zunehmen.\n* Die folgenden Objekte sind zufällig auf deinem Raster platziert: $objects.\n\n"
         },
         "introduction": {
@@ -56,13 +56,13 @@
             "image": "**Objekte bewegen**\n\n* Du kannst nur die Objekte bewegen, die du in deiner Legende siehst.\n* Um euch auf ein Objekt zu einigen, das ihr bewegen wollt, musst du das Objekt so beschreiben, dass dein Mitspieler genau weiß, welches du meinst. Verwende *nicht* die ID des Objekts, da diese bei deinem Mitspieler anders sein könnte!\n* Du solltest die Position, an die du das Objekt bewegen willst, nur anhand des Hintergrunds beschreiben und nicht anhand der anderen Objekte!\n\n",
             "hybrid": "**Objekte bewegen**\n\n* Du kannst Objekte nur innerhalb des Rasters und in leere Zellen bewegen. Leere Zellen erkennst am gestrichelten Kreissymbol.\n* Solltest du versuchen, ein Objekt an eine Stelle zu bewegen, die entweder nicht leer ist oder sich außerhalb des Rasters befindet, muss ich euch einen Strafpunkt geben und du bekommst einen weiteren Versuch.\n* Wenn du ein Objekt bewegen willst, solltest du dich erst vergewissern, ob die Zielposition auch wirklich leer ist und weder Buchstaben noch Rahmenteile noch Linien enthält!\n\n"
         },
-        "end_of_game": "**Spielende:**\n\nWenn du glaubst, dass ihr das Ziel erreicht habt, kannst du deinem Mitspieler die Nachricht `$end_1` schicken. Wenn dein Spielpartner dich fragt, ob ihr fertig seid, kannst du das Spiel beenden, indem du mit `$end_2` antwortest.\n\nIhr gewinnt gemeinsam, wenn ihr das Spiel innerhalb von #max_rounds Runden beendet. Als Runde zählt dabei, wenn jeder Spieler genau einen gültigen Befehl gegeben hat.",
+        "end_of_game": "**Spielende:**\n\nWenn du glaubst, dass ihr das Ziel erreicht habt, kannst du deinem Mitspieler die Nachricht `$end_1` schicken. Wenn dein Spielpartner dich fragt, ob ihr fertig seid, kannst du das Spiel beenden, indem du mit `$end_2` antwortest.\n\nIhr gewinnt gemeinsam, wenn ihr das Spiel innerhalb von #max_rounds Runden beendet. Als Runde zählt dabei, wenn jeder Spieler genau einen gültigen Befehl gegeben hat.\n",
         "scoring": "**Punkte:**\n\nJe näher sich die jeweils gleichen Objekte auf beiden Rastern sind, desto mehr Punkte bekommt ihr. Für Strafpunkte gibt es Punktabzug. Könnt ihr den Rekord brechen?"
     },
     "zh-CN": {
         "board_description": {
             "text": "我是你的游戏主持人，而你正在和另一位玩家进行一场协作游戏。 游戏的棋盘如下所示：\n\n```\n$grid\n```\n\n* 上边缘显示 x 坐标，向右递增；右边缘显示 y 坐标，向下递增。\n* 你的棋盘上随机放置了以下物体：$objects。\n\n",
-            "image": "我是你的游戏主持人，而你正在进行一场基于以下两张图片的协作游戏：\n\n* 第一张图片是一个图例，展示了若干图标，每个图标左方标有一个对应的 ID。\n\n* 第二张图片是你的游戏棋盘，由一个背景图和随机放置在其上的这些图标组成。图片的左侧和底部显示了一个x-y坐标系。请注意，y轴上数值是向下递增的。\n\n",
+            "image": "我是你的游戏主持人，你正在根据所附的图片进行一场合作游戏：\n\n* 右侧是一个图例，展示了若干图标，每个图标左方标有一个对应的 ID。\n\n* 左侧是你的游戏棋盘，由一个背景图和随机放置在其上的这些图标组成。图片的左侧和底部显示了一个x-y坐标系。请注意，y轴上数值是向下递增的。\n\n",
             "hybrid": "我是你的游戏主持人，而你正在进行一场协作游戏，游戏的棋盘如附图所示。\n\n* 图片显示了一个网格，网格的上边缘显示 x 坐标，向右递增；右边缘显示 y 坐标，向下递增。\n* 你的棋盘上随机放置了以下物体：$objects。\n\n"
         },
         "introduction": {
@@ -86,7 +86,7 @@
             "image": "**移动物体**\n\n* 你只能移动图例中显示的那些物体。\n* 为了达成一致，你必须确保对所要移动的物体进行简明描述，以便另一位玩家确切知道你指的是哪个物体。**不要**使用物体的 ID 来描述它，因为对方玩家看到的 ID 可能不同！\n* 你应该仅使用背景来描述你想要将物体移动到的位置，而不是使用其他物体作为参考！\n\n",
             "hybrid": "**移动物体**\n\n* 物体只能移动到网格范围内的空格，目标位置必须是空的。空格用一个小的虚线圆圈标记。\n* 如果你将物体移动到了非空格子，或超出了网格范围，你将被记一次犯规，并需要重新尝试。\n* 在移动物体之前，请务必再次确认目标位置是空的，且**没有任何字母、边框或线条**！\n\n"
         },
-        "end_of_game": "**游戏结束：**\n\n如果你认为已达到目标，可以发送`$end_1`提议结束游戏。如果对方提议结束游戏，而你回复`$end_2`，游戏将结束。\n\n如果游戏在`$max_rounds`回合内结束（每回合定义为两位玩家各发送一个有效指令），则双方玩家获胜。",
+        "end_of_game": "**游戏结束：**\n\n如果你认为已达到目标，可以发送`$end_1`提议结束游戏。如果对方提议结束游戏，而你回复`$end_2`，游戏将结束。\n\n如果游戏在`$max_rounds`回合内结束（每回合定义为两位玩家各发送一个有效指令），则双方玩家获胜。\n",
         "scoring": "**评分规则：**\n\n两个网格中相同的物体越接近，你获得的分数就越高。犯规会导致扣分。你们能打破纪录吗？"
     }
 }

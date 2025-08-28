@@ -9,9 +9,9 @@
           "language": "en",
           "max_penalties": 5,
           "max_rounds": 12,
-          "background": "resources/backgrounds/kitchen.png",
+          "background": "/Users/karlosswald/repositories/clemclass/clean-up/clean_up/resources/backgrounds/kitchen.png",
           "intermittent_prompts": {
-            "invalid_response": "Penalty: $reason\n\nMake sure that \n\n* messages to the other player do not contain any numbers or coordinates!\n* your response only contains either `SAY: <MESSAGE>` or `MOVE: <OBJECT>, (<X>, <Y>)`, and nothing else! Do not use any formatting, comments, or reasoning!\n",
+            "invalid_response": "Penalty: $reason\n\nMake sure that \n\n* messages to the other player do not contain any numbers or coordinates!\n* your response only contains either `SAY: <MESSAGE>` or `MOVE: <ID>, (<X>, <Y>)`, and nothing else! Do not use any formatting, comments, or reasoning!\n",
             "message_relay": "Your message has been relayed to the other player.\n\n\n",
             "command_prompt": "\n\n\nWhat is your next command?",
             "new_turn_move": "The other player moved an icon on their image.",
@@ -21,7 +21,7 @@
             "round_counter": "You are currently playing round $round of maximum 12.\n"
           },
           "say_pattern": "(?P<head>.*)SAY: (?P<message>[^\\n]+)(?P<tail>.*)",
-          "move_pattern": "(?P<head>.*)MOVE: (?P<obj>[A-Z]), \\((?P<x>\\d+), ?(?P<y>\\d+)\\)(?P<tail>.*)",
+          "move_pattern": "(?P<head>.*)MOVE: (?P<obj>[^,]+), \\((?P<x>\\d+), ?(?P<y>\\d+)\\)(?P<tail>.*)",
           "parse_errors": {
             "head": "Your message must not contain anything before the command!",
             "tail": "Your message must not contain anything after the command!",
@@ -44,20 +44,20 @@
           ],
           "objects_1": [
             {
-              "freepik_id": 362094,
+              "freepik_id": 1989218,
               "name": "coin",
-              "url": "https://cdn-icons-png.freepik.com/128/362/362094.png",
-              "id": "B",
+              "url": "https://cdn-icons-png.freepik.com/128/1989/1989218.png",
+              "id": "A",
               "coord": [
                 416,
                 326
               ]
             },
             {
-              "freepik_id": 1456509,
+              "freepik_id": 17348290,
               "name": "key",
-              "url": "https://cdn-icons-png.freepik.com/128/1456/1456509.png",
-              "id": "C",
+              "url": "https://cdn-icons-png.freepik.com/128/17348/17348290.png",
+              "id": "B",
               "coord": [
                 286,
                 90
@@ -67,7 +67,7 @@
               "freepik_id": 3123513,
               "name": "chocolate",
               "url": "https://cdn-icons-png.freepik.com/128/3123/3123513.png",
-              "id": "D",
+              "id": "C",
               "coord": [
                 903,
                 152
@@ -79,35 +79,35 @@
               "freepik_id": 3123513,
               "name": "chocolate",
               "url": "https://cdn-icons-png.freepik.com/128/3123/3123513.png",
-              "id": "B",
+              "id": "A",
               "coord": [
                 642,
                 153
               ]
             },
             {
-              "freepik_id": 362094,
+              "freepik_id": 1989218,
               "name": "coin",
-              "url": "https://cdn-icons-png.freepik.com/128/362/362094.png",
-              "id": "C",
+              "url": "https://cdn-icons-png.freepik.com/128/1989/1989218.png",
+              "id": "B",
               "coord": [
                 232,
                 428
               ]
             },
             {
-              "freepik_id": 1456509,
+              "freepik_id": 17348290,
               "name": "key",
-              "url": "https://cdn-icons-png.freepik.com/128/1456/1456509.png",
-              "id": "D",
+              "url": "https://cdn-icons-png.freepik.com/128/17348/17348290.png",
+              "id": "C",
               "coord": [
                 82,
                 467
               ]
             }
           ],
-          "p1_initial_prompt": "I am your game master, and your are playing a collaborative game based on the two attached images:\n\n* The first image is a legend showing several objects, each with an associated ID on the left.\n\n* The second image is your game board, a background overlaid with these objects placed at random coordinates. An x–y coordinate system is shown along the left and bottom edges of the image. Note that the y-axis values increase downward.\n\n\nThe other player sees a variation of the images, where the IDs are shuffled and the objects are placed at different random locations on the game board. You cannot see the other player's board, and they cannot see yours.\n\n\n**Goal:**\n\nBoth players need to move the objects on their respective background so that identical objects end up at the same coordinates. You have to communicate with the other player to agree upon a common goal configuration.\n\n\n**Rules:**\n\n* In each turn, you can send exactly one of the following two commands:\n 1. `SAY: <MESSAGE>`: to send a message (everything up until the next line break) to the other player. I will forward it to your partner.\n2. `MOVE: <OBJECT>, (<X>, <Y>)`: to move the object with id `<ID>` to the coordinates `(<X>,<y>)`. You will **not** receive visual feedback. The other player can't see which objects you move where.\n* You must not use coordinates when communicating with the other player.\n* If you don't stick to the format, send several commands at once, or use coordinates in a message, I have to penalize you.\n* If both players accumulate more than 5 penalties, you both lose the game.\n* It is vital that you communicate with the other player regarding your goal state! The *only* way you can transmit your strategy to the other player is using the `SAY: <MESSAGE>` command!\n\n\n**Moving Objects**\n\n* You can only move the objects that you see in your legend.\n* To agree on which object to move, you have to make sure that you describe the object concisely so that the other player knows exactly which one you are talking about. Do *not* use the object's ID to describe it, since it might be different for the other player!\n* Describe the position you want to move the object to using only the background as reference, and not the other objects!\n\n\n**End of Game**\n\nIf you think you reached the goal of aligning all objects, you can ask the other player to finish the game by sending `SAY: finished?`. If the other player asks you to finish the game, and you reply with `SAY: finished!`, the game will end.\n\nBoth players win if the game ends within 12 rounds, where one round is defined as two players each sending a valid command.\n**Scoring:**\n\nThe closer the identical objects are in both game boards, the more points you get. Penalties reduce your points. Can you beat the record?\n\n\nPlease send a message to the other player to start the game!",
-          "p2_initial_prompt": "I am your game master, and your are playing a collaborative game based on the two attached images:\n\n* The first image is a legend showing several objects, each with an associated ID on the left.\n\n* The second image is your game board, a background overlaid with these objects placed at random coordinates. An x–y coordinate system is shown along the left and bottom edges of the image. Note that the y-axis values increase downward.\n\n\nThe other player sees a variation of the images, where the IDs are shuffled and the objects are placed at different random locations on the game board. You cannot see the other player's board, and they cannot see yours.\n\n\n**Goal:**\n\nBoth players need to move the objects on their respective background so that identical objects end up at the same coordinates. You have to communicate with the other player to agree upon a common goal configuration.\n\n\n**Rules:**\n\n* In each turn, you can send exactly one of the following two commands:\n 1. `SAY: <MESSAGE>`: to send a message (everything up until the next line break) to the other player. I will forward it to your partner.\n2. `MOVE: <OBJECT>, (<X>, <Y>)`: to move the object with id `<ID>` to the coordinates `(<X>,<y>)`. You will **not** receive visual feedback. The other player can't see which objects you move where.\n* You must not use coordinates when communicating with the other player.\n* If you don't stick to the format, send several commands at once, or use coordinates in a message, I have to penalize you.\n* If both players accumulate more than 5 penalties, you both lose the game.\n* It is vital that you communicate with the other player regarding your goal state! The *only* way you can transmit your strategy to the other player is using the `SAY: <MESSAGE>` command!\n\n\n**Moving Objects**\n\n* You can only move the objects that you see in your legend.\n* To agree on which object to move, you have to make sure that you describe the object concisely so that the other player knows exactly which one you are talking about. Do *not* use the object's ID to describe it, since it might be different for the other player!\n* Describe the position you want to move the object to using only the background as reference, and not the other objects!\n\n\n**End of Game**\n\nIf you think you reached the goal of aligning all objects, you can ask the other player to finish the game by sending `SAY: finished?`. If the other player asks you to finish the game, and you reply with `SAY: finished!`, the game will end.\n\nBoth players win if the game ends within 12 rounds, where one round is defined as two players each sending a valid command.\n**Scoring:**\n\nThe closer the identical objects are in both game boards, the more points you get. Penalties reduce your points. Can you beat the record?\n\nThe other player started the game by sending this message:\n\n\"$start_message\"\n\nWhat is your first command?"
+          "p1_initial_prompt": "I am your game master, and your are playing a collaborative game based on the attached image:\n\n* On the right side is a legend showing several objects, each with an associated ID on the left. Valid IDs are: 'A', 'B', 'C'\n\n* On the left side is your game board, a background overlaid with these objects placed at random coordinates. An x–y coordinate system is shown along the left and bottom edges of the image. Note that the y-axis values increase downward.\n\n\nThe other player sees a variation of the images, where the IDs are shuffled and the objects are placed at different random locations on the game board. You cannot see the other player's board, and they cannot see yours.\n\n\n**Goal:**\n\nBoth players need to move the objects on their respective background so that identical objects end up at the same coordinates. You have to communicate with the other player to agree upon a common goal configuration.\n\n\n**Rules:**\n\n* In each turn, you can send exactly one of the following two commands:\n 1. `SAY: <MESSAGE>`: to send a message (everything up until the next line break) to the other player. I will forward it to your partner.\n2. `MOVE: <ID>, (<X>, <Y>)`: to move the object with id `<ID>` to the coordinates `(<X>,<y>)`. You will **not** receive visual feedback. The other player can't see which objects you move where.\n* You must not use coordinates when communicating with the other player.\n* If you don't stick to the format, send several commands at once, or use coordinates in a message, I have to penalize you.\n* If both players accumulate more than 5 penalties, you both lose the game.\n* It is vital that you communicate with the other player regarding your goal state! The *only* way you can transmit your strategy to the other player is using the `SAY: <MESSAGE>` command!\n\n\n**Moving Objects**\n\n* You can only move the objects that you see in your legend.\n* To agree on which object to move, you have to make sure that you describe the object concisely so that the other player knows exactly which one you are talking about. Do *not* use the object's ID to describe it, since it might be different for the other player!\n* Describe the position you want to move the object to using only the background as reference, and not the other objects!\n\n\n**End of Game**\n\nIf you think you reached the goal of aligning all objects, you can ask the other player to finish the game by sending `SAY: finished?`. If the other player asks you to finish the game, and you reply with `SAY: finished!`, the game will end.\n\nBoth players win if the game ends within 12 rounds, where one round is defined as two players each sending a valid command.\n\n**Scoring:**\n\nThe closer the identical objects are in both game boards, the more points you get. Penalties reduce your points. Can you beat the record?\n\n\nPlease send a message to the other player to start the game!",
+          "p2_initial_prompt": "I am your game master, and your are playing a collaborative game based on the attached image:\n\n* On the right side is a legend showing several objects, each with an associated ID on the left. Valid IDs are: 'A', 'B', 'C'\n\n* On the left side is your game board, a background overlaid with these objects placed at random coordinates. An x–y coordinate system is shown along the left and bottom edges of the image. Note that the y-axis values increase downward.\n\n\nThe other player sees a variation of the images, where the IDs are shuffled and the objects are placed at different random locations on the game board. You cannot see the other player's board, and they cannot see yours.\n\n\n**Goal:**\n\nBoth players need to move the objects on their respective background so that identical objects end up at the same coordinates. You have to communicate with the other player to agree upon a common goal configuration.\n\n\n**Rules:**\n\n* In each turn, you can send exactly one of the following two commands:\n 1. `SAY: <MESSAGE>`: to send a message (everything up until the next line break) to the other player. I will forward it to your partner.\n2. `MOVE: <ID>, (<X>, <Y>)`: to move the object with id `<ID>` to the coordinates `(<X>,<y>)`. You will **not** receive visual feedback. The other player can't see which objects you move where.\n* You must not use coordinates when communicating with the other player.\n* If you don't stick to the format, send several commands at once, or use coordinates in a message, I have to penalize you.\n* If both players accumulate more than 5 penalties, you both lose the game.\n* It is vital that you communicate with the other player regarding your goal state! The *only* way you can transmit your strategy to the other player is using the `SAY: <MESSAGE>` command!\n\n\n**Moving Objects**\n\n* You can only move the objects that you see in your legend.\n* To agree on which object to move, you have to make sure that you describe the object concisely so that the other player knows exactly which one you are talking about. Do *not* use the object's ID to describe it, since it might be different for the other player!\n* Describe the position you want to move the object to using only the background as reference, and not the other objects!\n\n\n**End of Game**\n\nIf you think you reached the goal of aligning all objects, you can ask the other player to finish the game by sending `SAY: finished?`. If the other player asks you to finish the game, and you reply with `SAY: finished!`, the game will end.\n\nBoth players win if the game ends within 12 rounds, where one round is defined as two players each sending a valid command.\n\n**Scoring:**\n\nThe closer the identical objects are in both game boards, the more points you get. Penalties reduce your points. Can you beat the record?\n\nThe other player started the game by sending this message:\n\n\"$start_message\"\n\nWhat is your first command?"
         }
       ]
     },
@@ -120,9 +120,9 @@
           "language": "en",
           "max_penalties": 5,
           "max_rounds": 12,
-          "background": "resources/backgrounds/kitchen.png",
+          "background": "/Users/karlosswald/repositories/clemclass/clean-up/clean_up/resources/backgrounds/kitchen.png",
           "intermittent_prompts": {
-            "invalid_response": "Penalty: $reason\n\nMake sure that \n\n* messages to the other player do not contain any numbers or coordinates!\n* your response only contains either `SAY: <MESSAGE>` or `MOVE: <OBJECT>, (<X>, <Y>)`, and nothing else! Do not use any formatting, comments, or reasoning!\n",
+            "invalid_response": "Penalty: $reason\n\nMake sure that \n\n* messages to the other player do not contain any numbers or coordinates!\n* your response only contains either `SAY: <MESSAGE>` or `MOVE: <ID>, (<X>, <Y>)`, and nothing else! Do not use any formatting, comments, or reasoning!\n",
             "message_relay": "Your message has been relayed to the other player.\n\n\n",
             "command_prompt": "\n\n\nWhat is your next command?",
             "new_turn_move": "The other player moved an icon on their image.",
@@ -132,7 +132,7 @@
             "round_counter": "You are currently playing round $round of maximum 12.\n"
           },
           "say_pattern": "(?P<head>.*)SAY: (?P<message>[^\\n]+)(?P<tail>.*)",
-          "move_pattern": "(?P<head>.*)MOVE: (?P<obj>[A-Z]), \\((?P<x>\\d+), ?(?P<y>\\d+)\\)(?P<tail>.*)",
+          "move_pattern": "(?P<head>.*)MOVE: (?P<obj>[^,]+), \\((?P<x>\\d+), ?(?P<y>\\d+)\\)(?P<tail>.*)",
           "parse_errors": {
             "head": "Your message must not contain anything before the command!",
             "tail": "Your message must not contain anything after the command!",
@@ -158,7 +158,7 @@
               "freepik_id": 6256905,
               "name": "umbrella",
               "url": "https://cdn-icons-png.freepik.com/128/6256/6256905.png",
-              "id": "B",
+              "id": "A",
               "coord": [
                 228,
                 452
@@ -168,7 +168,7 @@
               "freepik_id": 577377,
               "name": "umbrella",
               "url": "https://cdn-icons-png.freepik.com/128/577/577377.png",
-              "id": "C",
+              "id": "B",
               "coord": [
                 765,
                 111
@@ -178,7 +178,7 @@
               "freepik_id": 8524309,
               "name": "umbrella",
               "url": "https://cdn-icons-png.freepik.com/128/8524/8524309.png",
-              "id": "D",
+              "id": "C",
               "coord": [
                 592,
                 160
@@ -190,7 +190,7 @@
               "freepik_id": 8524309,
               "name": "umbrella",
               "url": "https://cdn-icons-png.freepik.com/128/8524/8524309.png",
-              "id": "B",
+              "id": "A",
               "coord": [
                 190,
                 499
@@ -200,7 +200,7 @@
               "freepik_id": 577377,
               "name": "umbrella",
               "url": "https://cdn-icons-png.freepik.com/128/577/577377.png",
-              "id": "C",
+              "id": "B",
               "coord": [
                 720,
                 227
@@ -210,15 +210,15 @@
               "freepik_id": 6256905,
               "name": "umbrella",
               "url": "https://cdn-icons-png.freepik.com/128/6256/6256905.png",
-              "id": "D",
+              "id": "C",
               "coord": [
                 222,
                 307
               ]
             }
           ],
-          "p1_initial_prompt": "I am your game master, and your are playing a collaborative game based on the two attached images:\n\n* The first image is a legend showing several objects, each with an associated ID on the left.\n\n* The second image is your game board, a background overlaid with these objects placed at random coordinates. An x–y coordinate system is shown along the left and bottom edges of the image. Note that the y-axis values increase downward.\n\n\nThe other player sees a variation of the images, where the IDs are shuffled and the objects are placed at different random locations on the game board. You cannot see the other player's board, and they cannot see yours.\n\n\n**Goal:**\n\nBoth players need to move the objects on their respective background so that identical objects end up at the same coordinates. You have to communicate with the other player to agree upon a common goal configuration.\n\n\n**Rules:**\n\n* In each turn, you can send exactly one of the following two commands:\n 1. `SAY: <MESSAGE>`: to send a message (everything up until the next line break) to the other player. I will forward it to your partner.\n2. `MOVE: <OBJECT>, (<X>, <Y>)`: to move the object with id `<ID>` to the coordinates `(<X>,<y>)`. You will **not** receive visual feedback. The other player can't see which objects you move where.\n* You must not use coordinates when communicating with the other player.\n* If you don't stick to the format, send several commands at once, or use coordinates in a message, I have to penalize you.\n* If both players accumulate more than 5 penalties, you both lose the game.\n* It is vital that you communicate with the other player regarding your goal state! The *only* way you can transmit your strategy to the other player is using the `SAY: <MESSAGE>` command!\n\n\n**Moving Objects**\n\n* You can only move the objects that you see in your legend.\n* To agree on which object to move, you have to make sure that you describe the object concisely so that the other player knows exactly which one you are talking about. Do *not* use the object's ID to describe it, since it might be different for the other player!\n* Describe the position you want to move the object to using only the background as reference, and not the other objects!\n\n\n**End of Game**\n\nIf you think you reached the goal of aligning all objects, you can ask the other player to finish the game by sending `SAY: finished?`. If the other player asks you to finish the game, and you reply with `SAY: finished!`, the game will end.\n\nBoth players win if the game ends within 12 rounds, where one round is defined as two players each sending a valid command.\n**Scoring:**\n\nThe closer the identical objects are in both game boards, the more points you get. Penalties reduce your points. Can you beat the record?\n\n\nPlease send a message to the other player to start the game!",
-          "p2_initial_prompt": "I am your game master, and your are playing a collaborative game based on the two attached images:\n\n* The first image is a legend showing several objects, each with an associated ID on the left.\n\n* The second image is your game board, a background overlaid with these objects placed at random coordinates. An x–y coordinate system is shown along the left and bottom edges of the image. Note that the y-axis values increase downward.\n\n\nThe other player sees a variation of the images, where the IDs are shuffled and the objects are placed at different random locations on the game board. You cannot see the other player's board, and they cannot see yours.\n\n\n**Goal:**\n\nBoth players need to move the objects on their respective background so that identical objects end up at the same coordinates. You have to communicate with the other player to agree upon a common goal configuration.\n\n\n**Rules:**\n\n* In each turn, you can send exactly one of the following two commands:\n 1. `SAY: <MESSAGE>`: to send a message (everything up until the next line break) to the other player. I will forward it to your partner.\n2. `MOVE: <OBJECT>, (<X>, <Y>)`: to move the object with id `<ID>` to the coordinates `(<X>,<y>)`. You will **not** receive visual feedback. The other player can't see which objects you move where.\n* You must not use coordinates when communicating with the other player.\n* If you don't stick to the format, send several commands at once, or use coordinates in a message, I have to penalize you.\n* If both players accumulate more than 5 penalties, you both lose the game.\n* It is vital that you communicate with the other player regarding your goal state! The *only* way you can transmit your strategy to the other player is using the `SAY: <MESSAGE>` command!\n\n\n**Moving Objects**\n\n* You can only move the objects that you see in your legend.\n* To agree on which object to move, you have to make sure that you describe the object concisely so that the other player knows exactly which one you are talking about. Do *not* use the object's ID to describe it, since it might be different for the other player!\n* Describe the position you want to move the object to using only the background as reference, and not the other objects!\n\n\n**End of Game**\n\nIf you think you reached the goal of aligning all objects, you can ask the other player to finish the game by sending `SAY: finished?`. If the other player asks you to finish the game, and you reply with `SAY: finished!`, the game will end.\n\nBoth players win if the game ends within 12 rounds, where one round is defined as two players each sending a valid command.\n**Scoring:**\n\nThe closer the identical objects are in both game boards, the more points you get. Penalties reduce your points. Can you beat the record?\n\nThe other player started the game by sending this message:\n\n\"$start_message\"\n\nWhat is your first command?"
+          "p1_initial_prompt": "I am your game master, and your are playing a collaborative game based on the attached image:\n\n* On the right side is a legend showing several objects, each with an associated ID on the left. Valid IDs are: 'A', 'B', 'C'\n\n* On the left side is your game board, a background overlaid with these objects placed at random coordinates. An x–y coordinate system is shown along the left and bottom edges of the image. Note that the y-axis values increase downward.\n\n\nThe other player sees a variation of the images, where the IDs are shuffled and the objects are placed at different random locations on the game board. You cannot see the other player's board, and they cannot see yours.\n\n\n**Goal:**\n\nBoth players need to move the objects on their respective background so that identical objects end up at the same coordinates. You have to communicate with the other player to agree upon a common goal configuration.\n\n\n**Rules:**\n\n* In each turn, you can send exactly one of the following two commands:\n 1. `SAY: <MESSAGE>`: to send a message (everything up until the next line break) to the other player. I will forward it to your partner.\n2. `MOVE: <ID>, (<X>, <Y>)`: to move the object with id `<ID>` to the coordinates `(<X>,<y>)`. You will **not** receive visual feedback. The other player can't see which objects you move where.\n* You must not use coordinates when communicating with the other player.\n* If you don't stick to the format, send several commands at once, or use coordinates in a message, I have to penalize you.\n* If both players accumulate more than 5 penalties, you both lose the game.\n* It is vital that you communicate with the other player regarding your goal state! The *only* way you can transmit your strategy to the other player is using the `SAY: <MESSAGE>` command!\n\n\n**Moving Objects**\n\n* You can only move the objects that you see in your legend.\n* To agree on which object to move, you have to make sure that you describe the object concisely so that the other player knows exactly which one you are talking about. Do *not* use the object's ID to describe it, since it might be different for the other player!\n* Describe the position you want to move the object to using only the background as reference, and not the other objects!\n\n\n**End of Game**\n\nIf you think you reached the goal of aligning all objects, you can ask the other player to finish the game by sending `SAY: finished?`. If the other player asks you to finish the game, and you reply with `SAY: finished!`, the game will end.\n\nBoth players win if the game ends within 12 rounds, where one round is defined as two players each sending a valid command.\n\n**Scoring:**\n\nThe closer the identical objects are in both game boards, the more points you get. Penalties reduce your points. Can you beat the record?\n\n\nPlease send a message to the other player to start the game!",
+          "p2_initial_prompt": "I am your game master, and your are playing a collaborative game based on the attached image:\n\n* On the right side is a legend showing several objects, each with an associated ID on the left. Valid IDs are: 'A', 'B', 'C'\n\n* On the left side is your game board, a background overlaid with these objects placed at random coordinates. An x–y coordinate system is shown along the left and bottom edges of the image. Note that the y-axis values increase downward.\n\n\nThe other player sees a variation of the images, where the IDs are shuffled and the objects are placed at different random locations on the game board. You cannot see the other player's board, and they cannot see yours.\n\n\n**Goal:**\n\nBoth players need to move the objects on their respective background so that identical objects end up at the same coordinates. You have to communicate with the other player to agree upon a common goal configuration.\n\n\n**Rules:**\n\n* In each turn, you can send exactly one of the following two commands:\n 1. `SAY: <MESSAGE>`: to send a message (everything up until the next line break) to the other player. I will forward it to your partner.\n2. `MOVE: <ID>, (<X>, <Y>)`: to move the object with id `<ID>` to the coordinates `(<X>,<y>)`. You will **not** receive visual feedback. The other player can't see which objects you move where.\n* You must not use coordinates when communicating with the other player.\n* If you don't stick to the format, send several commands at once, or use coordinates in a message, I have to penalize you.\n* If both players accumulate more than 5 penalties, you both lose the game.\n* It is vital that you communicate with the other player regarding your goal state! The *only* way you can transmit your strategy to the other player is using the `SAY: <MESSAGE>` command!\n\n\n**Moving Objects**\n\n* You can only move the objects that you see in your legend.\n* To agree on which object to move, you have to make sure that you describe the object concisely so that the other player knows exactly which one you are talking about. Do *not* use the object's ID to describe it, since it might be different for the other player!\n* Describe the position you want to move the object to using only the background as reference, and not the other objects!\n\n\n**End of Game**\n\nIf you think you reached the goal of aligning all objects, you can ask the other player to finish the game by sending `SAY: finished?`. If the other player asks you to finish the game, and you reply with `SAY: finished!`, the game will end.\n\nBoth players win if the game ends within 12 rounds, where one round is defined as two players each sending a valid command.\n\n**Scoring:**\n\nThe closer the identical objects are in both game boards, the more points you get. Penalties reduce your points. Can you beat the record?\n\nThe other player started the game by sending this message:\n\n\"$start_message\"\n\nWhat is your first command?"
         }
       ]
     },
@@ -231,9 +231,9 @@
           "language": "en",
           "max_penalties": 5,
           "max_rounds": 12,
-          "background": "resources/backgrounds/kitchen.png",
+          "background": "/Users/karlosswald/repositories/clemclass/clean-up/clean_up/resources/backgrounds/kitchen.png",
           "intermittent_prompts": {
-            "invalid_response": "Penalty: $reason\n\nMake sure that \n\n* messages to the other player do not contain any numbers or coordinates!\n* your response only contains either `SAY: <MESSAGE>` or `MOVE: <OBJECT>, (<X>, <Y>)`, and nothing else! Do not use any formatting, comments, or reasoning!\n",
+            "invalid_response": "Penalty: $reason\n\nMake sure that \n\n* messages to the other player do not contain any numbers or coordinates!\n* your response only contains either `SAY: <MESSAGE>` or `MOVE: <ID>, (<X>, <Y>)`, and nothing else! Do not use any formatting, comments, or reasoning!\n",
             "message_relay": "Your message has been relayed to the other player.\n\n\n",
             "command_prompt": "\n\n\nWhat is your next command?",
             "new_turn_move": "The other player moved an icon on their image.",
@@ -243,7 +243,7 @@
             "round_counter": "You are currently playing round $round of maximum 12.\n"
           },
           "say_pattern": "(?P<head>.*)SAY: (?P<message>[^\\n]+)(?P<tail>.*)",
-          "move_pattern": "(?P<head>.*)MOVE: (?P<obj>[A-Z]), \\((?P<x>\\d+), ?(?P<y>\\d+)\\)(?P<tail>.*)",
+          "move_pattern": "(?P<head>.*)MOVE: (?P<obj>[^,]+), \\((?P<x>\\d+), ?(?P<y>\\d+)\\)(?P<tail>.*)",
           "parse_errors": {
             "head": "Your message must not contain anything before the command!",
             "tail": "Your message must not contain anything after the command!",
@@ -269,7 +269,7 @@
               "freepik_id": 4462283,
               "name": "cake",
               "url": "https://cdn-icons-png.freepik.com/128/4462/4462283.png",
-              "id": "B",
+              "id": "A",
               "coord": [
                 167,
                 290
@@ -279,7 +279,7 @@
               "freepik_id": 9481824,
               "name": "cake",
               "url": "https://cdn-icons-png.freepik.com/128/9481/9481824.png",
-              "id": "C",
+              "id": "B",
               "coord": [
                 406,
                 110
@@ -289,7 +289,7 @@
               "freepik_id": 16777863,
               "name": "cake",
               "url": "https://cdn-icons-png.freepik.com/128/16777/16777863.png",
-              "id": "D",
+              "id": "C",
               "coord": [
                 410,
                 428
@@ -301,7 +301,7 @@
               "freepik_id": 9481824,
               "name": "cake",
               "url": "https://cdn-icons-png.freepik.com/128/9481/9481824.png",
-              "id": "B",
+              "id": "A",
               "coord": [
                 159,
                 193
@@ -311,7 +311,7 @@
               "freepik_id": 4462283,
               "name": "cake",
               "url": "https://cdn-icons-png.freepik.com/128/4462/4462283.png",
-              "id": "C",
+              "id": "B",
               "coord": [
                 495,
                 361
@@ -321,15 +321,15 @@
               "freepik_id": 16777863,
               "name": "cake",
               "url": "https://cdn-icons-png.freepik.com/128/16777/16777863.png",
-              "id": "D",
+              "id": "C",
               "coord": [
                 759,
                 430
               ]
             }
           ],
-          "p1_initial_prompt": "I am your game master, and your are playing a collaborative game based on the two attached images:\n\n* The first image is a legend showing several objects, each with an associated ID on the left.\n\n* The second image is your game board, a background overlaid with these objects placed at random coordinates. An x–y coordinate system is shown along the left and bottom edges of the image. Note that the y-axis values increase downward.\n\n\nThe other player sees a variation of the images, where the IDs are shuffled and the objects are placed at different random locations on the game board. You cannot see the other player's board, and they cannot see yours.\n\n\n**Goal:**\n\nBoth players need to move the objects on their respective background so that identical objects end up at the same coordinates. You have to communicate with the other player to agree upon a common goal configuration.\n\n\n**Rules:**\n\n* In each turn, you can send exactly one of the following two commands:\n 1. `SAY: <MESSAGE>`: to send a message (everything up until the next line break) to the other player. I will forward it to your partner.\n2. `MOVE: <OBJECT>, (<X>, <Y>)`: to move the object with id `<ID>` to the coordinates `(<X>,<y>)`. You will **not** receive visual feedback. The other player can't see which objects you move where.\n* You must not use coordinates when communicating with the other player.\n* If you don't stick to the format, send several commands at once, or use coordinates in a message, I have to penalize you.\n* If both players accumulate more than 5 penalties, you both lose the game.\n* It is vital that you communicate with the other player regarding your goal state! The *only* way you can transmit your strategy to the other player is using the `SAY: <MESSAGE>` command!\n\n\n**Moving Objects**\n\n* You can only move the objects that you see in your legend.\n* To agree on which object to move, you have to make sure that you describe the object concisely so that the other player knows exactly which one you are talking about. Do *not* use the object's ID to describe it, since it might be different for the other player!\n* Describe the position you want to move the object to using only the background as reference, and not the other objects!\n\n\n**End of Game**\n\nIf you think you reached the goal of aligning all objects, you can ask the other player to finish the game by sending `SAY: finished?`. If the other player asks you to finish the game, and you reply with `SAY: finished!`, the game will end.\n\nBoth players win if the game ends within 12 rounds, where one round is defined as two players each sending a valid command.\n**Scoring:**\n\nThe closer the identical objects are in both game boards, the more points you get. Penalties reduce your points. Can you beat the record?\n\n\nPlease send a message to the other player to start the game!",
-          "p2_initial_prompt": "I am your game master, and your are playing a collaborative game based on the two attached images:\n\n* The first image is a legend showing several objects, each with an associated ID on the left.\n\n* The second image is your game board, a background overlaid with these objects placed at random coordinates. An x–y coordinate system is shown along the left and bottom edges of the image. Note that the y-axis values increase downward.\n\n\nThe other player sees a variation of the images, where the IDs are shuffled and the objects are placed at different random locations on the game board. You cannot see the other player's board, and they cannot see yours.\n\n\n**Goal:**\n\nBoth players need to move the objects on their respective background so that identical objects end up at the same coordinates. You have to communicate with the other player to agree upon a common goal configuration.\n\n\n**Rules:**\n\n* In each turn, you can send exactly one of the following two commands:\n 1. `SAY: <MESSAGE>`: to send a message (everything up until the next line break) to the other player. I will forward it to your partner.\n2. `MOVE: <OBJECT>, (<X>, <Y>)`: to move the object with id `<ID>` to the coordinates `(<X>,<y>)`. You will **not** receive visual feedback. The other player can't see which objects you move where.\n* You must not use coordinates when communicating with the other player.\n* If you don't stick to the format, send several commands at once, or use coordinates in a message, I have to penalize you.\n* If both players accumulate more than 5 penalties, you both lose the game.\n* It is vital that you communicate with the other player regarding your goal state! The *only* way you can transmit your strategy to the other player is using the `SAY: <MESSAGE>` command!\n\n\n**Moving Objects**\n\n* You can only move the objects that you see in your legend.\n* To agree on which object to move, you have to make sure that you describe the object concisely so that the other player knows exactly which one you are talking about. Do *not* use the object's ID to describe it, since it might be different for the other player!\n* Describe the position you want to move the object to using only the background as reference, and not the other objects!\n\n\n**End of Game**\n\nIf you think you reached the goal of aligning all objects, you can ask the other player to finish the game by sending `SAY: finished?`. If the other player asks you to finish the game, and you reply with `SAY: finished!`, the game will end.\n\nBoth players win if the game ends within 12 rounds, where one round is defined as two players each sending a valid command.\n**Scoring:**\n\nThe closer the identical objects are in both game boards, the more points you get. Penalties reduce your points. Can you beat the record?\n\nThe other player started the game by sending this message:\n\n\"$start_message\"\n\nWhat is your first command?"
+          "p1_initial_prompt": "I am your game master, and your are playing a collaborative game based on the attached image:\n\n* On the right side is a legend showing several objects, each with an associated ID on the left. Valid IDs are: 'A', 'B', 'C'\n\n* On the left side is your game board, a background overlaid with these objects placed at random coordinates. An x–y coordinate system is shown along the left and bottom edges of the image. Note that the y-axis values increase downward.\n\n\nThe other player sees a variation of the images, where the IDs are shuffled and the objects are placed at different random locations on the game board. You cannot see the other player's board, and they cannot see yours.\n\n\n**Goal:**\n\nBoth players need to move the objects on their respective background so that identical objects end up at the same coordinates. You have to communicate with the other player to agree upon a common goal configuration.\n\n\n**Rules:**\n\n* In each turn, you can send exactly one of the following two commands:\n 1. `SAY: <MESSAGE>`: to send a message (everything up until the next line break) to the other player. I will forward it to your partner.\n2. `MOVE: <ID>, (<X>, <Y>)`: to move the object with id `<ID>` to the coordinates `(<X>,<y>)`. You will **not** receive visual feedback. The other player can't see which objects you move where.\n* You must not use coordinates when communicating with the other player.\n* If you don't stick to the format, send several commands at once, or use coordinates in a message, I have to penalize you.\n* If both players accumulate more than 5 penalties, you both lose the game.\n* It is vital that you communicate with the other player regarding your goal state! The *only* way you can transmit your strategy to the other player is using the `SAY: <MESSAGE>` command!\n\n\n**Moving Objects**\n\n* You can only move the objects that you see in your legend.\n* To agree on which object to move, you have to make sure that you describe the object concisely so that the other player knows exactly which one you are talking about. Do *not* use the object's ID to describe it, since it might be different for the other player!\n* Describe the position you want to move the object to using only the background as reference, and not the other objects!\n\n\n**End of Game**\n\nIf you think you reached the goal of aligning all objects, you can ask the other player to finish the game by sending `SAY: finished?`. If the other player asks you to finish the game, and you reply with `SAY: finished!`, the game will end.\n\nBoth players win if the game ends within 12 rounds, where one round is defined as two players each sending a valid command.\n\n**Scoring:**\n\nThe closer the identical objects are in both game boards, the more points you get. Penalties reduce your points. Can you beat the record?\n\n\nPlease send a message to the other player to start the game!",
+          "p2_initial_prompt": "I am your game master, and your are playing a collaborative game based on the attached image:\n\n* On the right side is a legend showing several objects, each with an associated ID on the left. Valid IDs are: 'A', 'B', 'C'\n\n* On the left side is your game board, a background overlaid with these objects placed at random coordinates. An x–y coordinate system is shown along the left and bottom edges of the image. Note that the y-axis values increase downward.\n\n\nThe other player sees a variation of the images, where the IDs are shuffled and the objects are placed at different random locations on the game board. You cannot see the other player's board, and they cannot see yours.\n\n\n**Goal:**\n\nBoth players need to move the objects on their respective background so that identical objects end up at the same coordinates. You have to communicate with the other player to agree upon a common goal configuration.\n\n\n**Rules:**\n\n* In each turn, you can send exactly one of the following two commands:\n 1. `SAY: <MESSAGE>`: to send a message (everything up until the next line break) to the other player. I will forward it to your partner.\n2. `MOVE: <ID>, (<X>, <Y>)`: to move the object with id `<ID>` to the coordinates `(<X>,<y>)`. You will **not** receive visual feedback. The other player can't see which objects you move where.\n* You must not use coordinates when communicating with the other player.\n* If you don't stick to the format, send several commands at once, or use coordinates in a message, I have to penalize you.\n* If both players accumulate more than 5 penalties, you both lose the game.\n* It is vital that you communicate with the other player regarding your goal state! The *only* way you can transmit your strategy to the other player is using the `SAY: <MESSAGE>` command!\n\n\n**Moving Objects**\n\n* You can only move the objects that you see in your legend.\n* To agree on which object to move, you have to make sure that you describe the object concisely so that the other player knows exactly which one you are talking about. Do *not* use the object's ID to describe it, since it might be different for the other player!\n* Describe the position you want to move the object to using only the background as reference, and not the other objects!\n\n\n**End of Game**\n\nIf you think you reached the goal of aligning all objects, you can ask the other player to finish the game by sending `SAY: finished?`. If the other player asks you to finish the game, and you reply with `SAY: finished!`, the game will end.\n\nBoth players win if the game ends within 12 rounds, where one round is defined as two players each sending a valid command.\n\n**Scoring:**\n\nThe closer the identical objects are in both game boards, the more points you get. Penalties reduce your points. Can you beat the record?\n\nThe other player started the game by sending this message:\n\n\"$start_message\"\n\nWhat is your first command?"
         }
       ]
     }

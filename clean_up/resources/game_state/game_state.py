@@ -2,6 +2,7 @@ from email.mime import image
 from multiprocessing.util import abstract_sockets_supported
 import os
 from re import L
+from matplotlib import legend
 from regex import R, T
 import requests
 import matplotlib.pyplot as plt
@@ -15,6 +16,10 @@ from PIL import Image
 import numpy as np
 import logging
 
+# For drawing hybrid state
+from PIL import ImageDraw
+from PIL import ImageFont
+
 from sympy import im
 
 from resources.game_state.utils import GameObject, Icon, png_to_base64, number_to_letter, letter_to_number, EMPTY_SYMBOL, parse_grid
@@ -26,6 +31,7 @@ class GameState(abc.ABC):
     @abc.abstractmethod
     def __init__(self, background: str, move_messages: dict = None, objects: List[GameObject] = None, img_prefix: str=None):
         self.img_prefix = img_prefix
+        self.image_counter = 0
         self.width = None
         self.height = None
         self.background = None
@@ -128,7 +134,21 @@ class GameState(abc.ABC):
         x1, y1 = coord1
         x2, y2 = coord2
         return ((x1 - x2) ** 2 + (y1 - y2) ** 2) ** 0.5
-
+    
+    @final
+    def get_image_dir(self):
+        image_dir = "clean_up/images"
+        if not os.path.exists(image_dir):
+            os.makedirs(image_dir)
+        return image_dir
+    
+    @final
+    def get_image_prefix(self):
+        if self.img_prefix is None:
+            raise ValueError("img_prefix must be set to get the image prefix.")
+        img_prefix = self.img_prefix + f"_{self.image_counter:03d}"
+        self.image_counter += 1
+        return img_prefix
 
 class PicState(GameState):
     """
@@ -188,7 +208,7 @@ class PicState(GameState):
         # Update the coordinates of the object
         element['coord'] = (x, y)
         self.move_log[element['id']].append(element['coord'])
-        return True, Template(self.move_messages["successful"]).substitute(object=obj, x=x, y=y), self.draw_moves(obj_id=element['id'], last_move=True, dpi=50)
+        return True, Template(self.move_messages["successful"]).substitute(object=obj, x=x, y=y), self.draw_moves(obj_id=element['id'], last_move=True)
     
     def get_pairwise_distances(self, other_objects):
         distances = {}
@@ -201,14 +221,12 @@ class PicState(GameState):
                     distances[other_obj['id']] = dist
         return distances
     
-    def draw_legend(self, icon_bounds=[0.3, 0.15, 0.6, 0.7]):
+    def _draw_legend(self, ax, icon_bounds=[0.3, 0.15, 0.6, 0.7]):
         """
         Draw a legend for the objects.
         """
-        # make a plot with figsize 3x6
-        fig, ax = plt.subplots(figsize=(2, 4))
         ax.axis('off')  # Hide the axes
-        ax.set_title("Legend", fontsize=12, fontweight='bold')
+        ax.set_title("Objects", fontsize=12, fontweight='bold')
         rows = 3
         obj_count = len(self.objects)
         columns = int(np.ceil(obj_count / rows))
@@ -227,21 +245,12 @@ class PicState(GameState):
                     icon_inset.imshow(obj['img'])
                     icon_inset.axis('off')
         plt.tight_layout()
-        assert self.img_prefix is not None, "img_prefix must be set to save the image."
-        # save the legend to a file
-        if not os.path.exists('tmp'):
-                os.makedirs('tmp')
-        legend_path = f'tmp/{self.img_prefix}_legend.png'
-        plt.savefig(legend_path, transparent=True)
-        plt.close(fig)
-        return legend_path
 
-    def draw_image(self, dpi=100):
+    def _draw_game_board(self, ax):
         """
         Draw the game state with background and objects, save it to a file and return its path.
         """
-        fig, ax = plt.subplots(figsize=(7, 4))
-        ax.set_title("Your Image", fontsize=12, fontweight='bold')
+        ax.set_title("Game Board", fontsize=12, fontweight='bold')
         ax.imshow(self.background)
         ax.set_xticks([i for i in range(0, self.width, 50)])
         ax.set_yticks([i for i in range(0, self.height, 50)])
@@ -256,34 +265,14 @@ class PicState(GameState):
             img = obj['img']
             w, h  = img.size
             ax.imshow(obj['img'], extent=(x - w // 2, x + w // 2, y + h // 2, y - h // 2))
-        
         plt.tight_layout()
-        assert self.img_prefix is not None, "img_prefix must be set to save the image."
-        # create tmp directory if it does not exist
-        if not os.path.exists('tmp'):
-            os.makedirs('tmp')
-        filepath = f'tmp/{self.img_prefix}_state_{self.image_counter}.png'
-        self.image_counter += 1
-        plt.savefig(filepath, dpi=dpi, transparent=True)
-        plt.close(fig)
-        return filepath
     
-    def draw_moves(self, obj_id=None, last_move=False, dpi=100):
+    def _draw_moves_on_board(self, ax, obj_id=None, last_move=False):
         """
         Draws the two positions for each object in move_dict and connects them with an arrow.
         :param move_dict: Dictionary with object ids as keys and exactly two tuples of (x, y) coordinates as values.
         :return: List of file paths to the saved images.
         """
-        fig, ax = plt.subplots(figsize=(7, 4))
-        ax.set_title("Moves", fontsize=12, fontweight='bold')
-        ax.imshow(self.background)
-        ax.set_xticks([i for i in range(0, self.width, 50)])
-        ax.set_yticks([i for i in range(0, self.height, 50)])
-        ax.tick_params(labelsize=8)
-        # Fix view limits
-        ax.set_xlim(0, self.width)
-        ax.set_ylim(self.height, 0)  # Invert y-axis to match image
-
         if not obj_id:
             obj_ids = list(self.move_log.keys())
         else:
@@ -297,38 +286,66 @@ class PicState(GameState):
                     coords = coords[-2:]  # Only take the last two coordinates
                 else:
                     coords = coords[-1:]  # Only take the last coordinate
-            img = obj['img']
-            w, h  = img.size
             for i, (x, y) in enumerate(coords):
-                if i == len(coords) - 1:
-                    # Plot the image
-                    ax.imshow(img, extent=(x - w // 2, x + w // 2, y + h // 2, y - h // 2))
-                circle = Circle((x, y), radius=15, color='white', fill=True)
-                ax.add_patch(circle)
-                ax.annotate(obj_id, xy=(x, y), ha='center', va='center', fontsize=8)
+                if not last_move:
+                    # only draw circle with object id for logging at end of game
+                    circle = Circle((x, y), radius=15, color='white', fill=True)
+                    ax.add_patch(circle)
+                    ax.annotate(obj_id, xy=(x, y), ha='center', va='center', fontsize=8)
                 if i > 0:  # Draw an arrow from the previous position to the current one
                     x0, y0 = coords[i - 1]
                     x1, y1 = coords[i]
                     if x0 != x1 or y0 != y1:  # Only draw an arrow if the positions are different
                         ax.annotate("", xytext=(x0, y0), xy=(x1, y1), arrowprops=dict(arrowstyle="->", color='black', lw=1.5))        
         plt.tight_layout()
-        assert self.img_prefix is not None, "img_prefix must be set to save the image."
-        # create tmp directory if it does not exist
-        if not os.path.exists('tmp'):
-            os.makedirs('tmp')
-        filepath = f'tmp/{self.img_prefix}_moves.png'
-        self.image_counter += 1
-        plt.savefig(filepath, transparent=True, dpi=dpi)
-        plt.close(fig)
+
+    def _prepare_board_plot(self):
+        """
+        Draw game board and legend side by side, return the axis for the game board.
+        :return: Axis for the game board (can be used to draw moves on it).
+        """
+        fig, ax = plt.subplots(figsize=(10, 4))
+        ax.axis('off')
+        # add two subplots to the figure, one for the legend and one for the game state
+        gs = fig.add_gridspec(1, 2, width_ratios=[2, 1])
+        state_ax = fig.add_subplot(gs[0])
+        legend_ax = fig.add_subplot(gs[1])
+        self._draw_legend(legend_ax)
+        self._draw_game_board(state_ax)
+        return state_ax
+
+    def draw_moves(self, obj_id=None, last_move=False, dpi=80):
+        """
+        Draw the game state with background and objects, including moves, save it to a file and return its path
+        """
+        state_ax = self._prepare_board_plot()
+        self._draw_moves_on_board(state_ax, obj_id=obj_id, last_move=last_move)
+        plt.tight_layout()
+        filepath = self.save_plot(suffix="moves", dpi=dpi)
         return [filepath]
 
-    def draw(self):
+
+    def draw(self, dpi=80):
         """
         Draw the game state with background and objects, save it to a file and return its path
         :param filename: Optional filename to save the figure
         """
-        images = [self.draw_legend(), self.draw_image()]
-        return images
+        _ = self._prepare_board_plot()
+        plt.tight_layout()
+        filepath = self.save_plot(suffix="board", dpi=dpi)
+        return [filepath]
+    
+    def save_plot(self, suffix, dpi=80):
+        """
+        Save the current plot to a file with the given suffix.
+        :param suffix: Suffix to append to the filename
+        :return: Path to the saved file
+        """
+        assert self.img_prefix is not None, "img_prefix must be set to save the image."
+        filepath = f'{self.get_image_dir()}/{self.get_image_prefix()}_{suffix}.png'
+        plt.savefig(filepath, dpi=dpi, transparent=True)
+        plt.close()
+        return filepath
 
 class GridState(GameState):
     """
@@ -439,7 +456,6 @@ class HybridState(GridState):
     """
     def __init__(self, background: str, move_messages: dict, objects: List[Icon], img_prefix: str):
         super().__init__(background=background, move_messages=move_messages, objects=objects, img_prefix=img_prefix)
-        logger.info(f"Initialized HybridState with img_prefix: {self.img_prefix}")
 
     def draw_legend(self):
         legend_text = f"Objects:\n{self.object_string()}"
@@ -450,45 +466,30 @@ class HybridState(GridState):
         ax.set_ylim(0, 1)
         plt.show()
         assert self.img_prefix is not None, "img_prefix must be set to save the image."
-        # create tmp directory if it does not exist
-        if not os.path.exists('tmp'):
-            os.makedirs('tmp')
-        legend_path = f'tmp/{self.img_prefix}_legend.png'
+        legend_path = f'{self.get_image_dir()}/{self.get_image_prefix()}_legend.png'
         plt.savefig(legend_path, transparent=True)
         plt.close(fig)
         return legend_path
     
-    def draw_image(self, dpi=100):
+    def draw(self, dpi=100, font_size=20):
         """
         Draw the game state with background and objects, save it to a file and return its path.
         """
-        fig, ax = plt.subplots(figsize=(3.7, 5))
-        text = str(self).split('\n')
-        height = len(text)
-        width = len(text[2])
-        for i, line in enumerate(text):
-            # fill line with spaces to match width
-            line = line.ljust(width)
-            ax.text(0, 0.9 - i * 0.1, line, fontsize=30, ha='left', fontfamily='monospace')
-        ax.set_axis_off()
-        ax.set_xlim(0, 1)
-        ax.set_ylim(0, 1)
-        assert self.img_prefix is not None, "img_prefix must be set to save the image."
-        # create tmp directory if it does not exist
-        if not os.path.exists('tmp'):
-            os.makedirs('tmp')
-        filepath = f'tmp/{self.img_prefix}_state.png'
-        plt.savefig(filepath, transparent=True, bbox_inches='tight')
-        plt.close(fig)
-        return filepath
-    
-    def draw(self):
-        """
-        Draw the game state with background and objects, save it to a file and return its path
-        :param filename: Optional filename to save the figure
-        """
-        # images = [self.draw_legend(), self.draw_image()]
-        return [self.draw_image()]
+        width = self.width + 2
+        height = self.height + 1
+        font_width = font_size * 2 / 3 # approximate width of a monospace character
+        padding = font_size / 3
+        img_width = int(width * font_width + padding)
+        img_height = int(height * font_size + padding)
+        logger.info(f"width: {width}, height: {height}, font_size: {font_size}, font_width: {font_width}, padding: {padding}")
+        logger.info(f"Drawing HybridState with dimensions: {img_width}x{img_height}")
+        img = Image.new('RGBA', (img_width, img_height), color = (255, 255, 255, 0))
+        d = ImageDraw.Draw(img)
+        font = ImageFont.truetype("clean_up/resources/game_state/LiberationMono-Regular.ttf", font_size)
+        d.text((padding, padding), str(self), fill=(0,0,0), font=font, spacing=font_size/10)
+        filepath = f'{self.get_image_dir()}/{self.get_image_prefix()}_state.png'
+        img.save(filepath)
+        return [filepath]
     
     def move_abs(self, obj: str, x: str, y: str):
         result, message, image = super().move_abs(obj, x, y)

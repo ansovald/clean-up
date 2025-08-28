@@ -8,8 +8,6 @@ import time
 import random
 import abc
 
-from torch import log_
-
 from clemcore.backends import Model
 from clemcore.clemgame import GameSpec, GameMaster, GameBenchmark, Player, DialogueGameMaster, GameScorer, ParseError, GameError, RuleViolationError
 from clemcore.clemgame.events import GameEventSource
@@ -30,10 +28,12 @@ logger = logging.getLogger(__name__)
 
 class Cleaner(Player):
     def __init__(self, model: Model):
-        super().__init__(model)
+        logger.info(f"Initializing {self.__class__.__name__}")
+        super().__init__(model, forget_extras=["image"])
         self._custom_responses = self._prepare_custom_responses()
         self.game_state = None  # This will be set by the game master
         self._relay_message = ""
+        self._relay_images = []
         self.finished = False # Used to store whether the player already suggested finishing the game
 
     @abc.abstractmethod
@@ -62,6 +62,7 @@ class Cleaner(Player):
         if self._relay_message:
             context['content'] = self._relay_message + context['content']
             self._relay_message = ""
+        logger.info(f"Preparing Context: {context}")
         return context
 
     def perceive_context(self, context, *, log_event=True, memorize=True):
@@ -89,9 +90,8 @@ class PicCleaner(Cleaner):
     def _prepare_custom_responses(self):
         return [
             "MOVE: C, (100, 100)",
-            "SAY: Move C to (100, 100).",
+            "SAY: Move C to the top left corner.",
             "SAY: Ok, let's start the game."
-            "MOVE: C, (200, 100)\nSAY: I did it! C is now in the top-left corner."
             ]
     
     def store_relay_message(self, message: str, images: List[str] = None):
@@ -100,21 +100,23 @@ class PicCleaner(Cleaner):
         Images are only logged and not added to the next message.
         """
         self._relay_message = message
-        if images:
-            log_images(self, images)
+        # if images:
+        #     log_images(self, images)
+        self._relay_images = images
+
+    def prepare_context(self, context):
+        context = super().prepare_context(context)
+        if self._relay_images:
+            context['image'] = self._relay_images
+            self._relay_images = []
+        return context
     
 class HybridCleaner(Cleaner):
-    def __init__(self, model: Model):
-        super().__init__(model)
-        self._relay_images = []
-
     def _prepare_custom_responses(self):
         return [
             "MOVE: C, (1, 1)",
-            "MOVE: W, (3, 2)",
             "SAY: Move C to (1, 1).",
             "SAY: Ok, let's start the game."
-            "MOVE: C, (2, 1)\nSAY: I did it! C is now in the top-left corner."
             ]
     
     def store_relay_message(self, message: str, images: List[str] = None):
@@ -128,12 +130,12 @@ class HybridCleaner(Cleaner):
         context = super().prepare_context(context)
         if self._relay_images:
             context['image'] = self._relay_images
-            log_images(self, self._relay_images)
             self._relay_images = []
         return context
 
 def log_images(game_event_source: GameEventSource, images: list[str], player: Player=None):
     """
+    Logs images outside of normal messages
     images: list of image paths
     player: if None, assume the game_event_source is the player
     """
@@ -141,12 +143,14 @@ def log_images(game_event_source: GameEventSource, images: list[str], player: Pl
         player = game_event_source
     assert isinstance(player, Player), "player must be an instance of Player"
     for image in images:
-        logger.info(f"Logging image {image} for player {player.name}")
-        image = png_to_base64(image)
+        if image.startswith('clean_up/'):
+            image = image[len('clean_up/'):]
+        # logger.info(f"Logging image {image} for player {player.name}")
+        # image = png_to_base64(image)
         action = {
-                    'type': 'send message', 
-                    'label': 'base64_image', 
-                    'content': f'<img src="{image}" alt="Image">',
+                    'type': 'send message',  
+                    'content': 'logged image',
+                    'image': [image]
                 }
         game_event_source.log_event(from_='GM', to=player.name, action=action)
 
@@ -218,8 +222,10 @@ class CleanUpMaster(DialogueGameMaster):
         Set the initial context for the first player.
         """
         images = self.player_1.game_state.draw()  # returns None for GridState
-        log_images(self, images, self.player_1)
-        self.set_context_for(self.player_1, self.game_instance['p1_initial_prompt'], image=images)
+        if images:
+            self.set_context_for(self.player_1, self.game_instance['p1_initial_prompt'], image=images)
+        else:
+            self.set_context_for(self.player_1, self.game_instance['p1_initial_prompt'])
 
     def _check_head_tail(self, match: re.Match) -> bool:
         """
@@ -341,8 +347,10 @@ class CleanUpMaster(DialogueGameMaster):
                         start_message=message
                     )
                     images = self.player_2.game_state.draw() # returns None for GridState
-                    log_images(self, images, self.player_2)
-                    self.set_context_for(self.player_2, p2_initial_prompt, image=images)
+                    if images:
+                        self.set_context_for(self.player_2, p2_initial_prompt, image=images)
+                    else:
+                        self.set_context_for(self.player_2, p2_initial_prompt)
                 else:
                     next_player_prompt = self._new_turn_prompt(Template(self.intermittent_prompts['new_turn']).substitute(turn_message=message))
                     self.set_context_for(self._other_player(), next_player_prompt)
@@ -414,12 +422,6 @@ class CleanUpMaster(DialogueGameMaster):
 
     def _on_after_game(self):
         self._after_game_logs()
-        # remove images from tmp directory
-        for img_prefix in self.img_prefixes:
-            for file in os.listdir('tmp'):
-                if file.startswith(img_prefix):
-                    os.remove(os.path.join('tmp', file))
-
         ingredients = self.metric_preparer.compute_ingredients()
         ingredients_string = ""
         for key, val in ingredients.items():

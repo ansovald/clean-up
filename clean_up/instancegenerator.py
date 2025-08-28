@@ -37,18 +37,18 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
         self.modality = modality
         self.objects = config['objects']
         self.language = language
-        self.initial_prompt = self.load_json('resources/initial_prompt.json')
-        self.start_messages = self.load_json(f'resources/start_messages.json')
-        self.commands = self.load_json('resources/commands.json')
-        move_messages = self.load_json('resources/move_messages.json')
-        parse_errors = self.load_json('resources/parse_errors.json')
-        intermittent_prompts = self.load_json('resources/intermittent_prompts.json')
+        self.initial_prompt = self.load_config_json('resources/initial_prompt.json')
+        self.start_messages = self.load_config_json(f'resources/start_messages.json')
+        self.commands = self.load_config_json('resources/commands.json')
+        move_messages = self.load_config_json('resources/move_messages.json')
+        parse_errors = self.load_config_json('resources/parse_errors.json')
+        intermittent_prompts = self.load_config_json('resources/intermittent_prompts.json')
         intermittent_prompts['invalid_response'] = Template(intermittent_prompts['invalid_response']).safe_substitute(
             say=self.commands['say'],
             move=self.commands['move'],
             empty_symbol=EMPTY_SYMBOL
         )
-        self.examples = self.load_json('resources/examples.json')
+        self.examples = self.load_config_json('resources/examples.json')
         template_instance = {
             "intermittent_prompts": intermittent_prompts,
             "say_pattern": self.commands['say_pattern'],
@@ -59,7 +59,7 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
             "terminate_answer": self.commands['terminate_answer']
         }
 
-        restricted_patterns = self.load_json('resources/restricted_patterns.json')
+        restricted_patterns = self.load_config_json('resources/restricted_patterns.json')
         if restricted_patterns:
             template_instance["restricted_patterns"] = restricted_patterns
 
@@ -108,11 +108,10 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
                     game_instance['objects_1'] = place_objects(self.modality, objects_1, game_instance['background'])
                     game_instance['objects_2'] = place_objects(self.modality, objects_2, game_instance['background'])
                     
-                    object_string = None
+                    object_string = "'" + "', '".join([obj['id'] for obj in objects_1]) + "'"
                     grid_1 = None
                     grid_2 = None
                     if self.modality in TEXT_BASED:
-                        object_string = "'" + "', '".join([obj['id'] for obj in objects_1]) + "'"
                         grid_1 = str(GridState(background=self.background, objects=objects_1))
                         grid_2 = str(GridState(background=self.background, objects=objects_2))
                     
@@ -124,7 +123,7 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
                     game_instance['p1_initial_prompt'] = p1_initial_prompt + self.start_messages['p1_start']
                     game_instance['p2_initial_prompt'] = p2_initial_prompt + self.start_messages['p2_start']
 
-    def load_json(self, file_path: str) -> dict:
+    def load_config_json(self, file_path: str) -> dict:
         """
         Load a JSON file from the game directory.
         If the JSON file contains entries for different languages, load the specified language.
@@ -155,7 +154,7 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
         Might implement sampling background images in the future.
         """
         if modality in TEXT_BASED:
-            grid_data = self.load_json('resources/backgrounds/grids.json')
+            grid_data = self.load_config_json('resources/backgrounds/grids.json')
             info = grid_data['info'][self.current_experiment_conf['grid_config']]
             empty_cells = info['empty_cells']
             total_cells = info['total_cells']
@@ -165,7 +164,7 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
             background = random.choice(list(backgrounds.values()))
         else:
             background_stats = None
-            background = 'resources/backgrounds/kitchen.png'
+            background = self.game_path + '/resources/backgrounds/kitchen.png'
         return background, background_stats
     
     def get_objects(self, object_count):
@@ -215,7 +214,9 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
 
     
 if __name__ == '__main__':
-    experiments = json.load(open('resources/experiments.json', 'r', encoding='utf-8'))
+    instance_generator = CleanUpInstanceGenerator()
+    experiments = instance_generator.load_json('resources/experiments.json')
+    # experiments = json.load(open('resources/experiments.json', 'r', encoding='utf-8'))
     n_instances = experiments.get('n_instances', 2)
     for language in experiments['languages']:
         for modalities, config in experiments['modalities'].items():

@@ -1,9 +1,0 @@
-{
-  "game_name": "some_game",
-  "description": "There might be a game here in the future.",
-  "main_game": "some_game",
-  "players": "one",
-  "image": "none",
-  "languages": ["en"],
-  "benchmark": []
-}

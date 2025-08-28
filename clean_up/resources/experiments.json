@@ -27,13 +27,23 @@
         "hybrid": {
             "instances": "hybrid_instances",
             "objects": {
-                "3": "CLP"
+                "3": "CLP",
+                "5": "WITCH",
+                "7": "POTSDAM"
             },
             "penalty_factor": 2,
             "experiments": [
                 {
                     "name": "hyb_easy",
                     "grid_config": "9x9_e34_b7"
+                },
+                {
+                    "name": "medium",
+                    "grid_config": "9x9_e29_b11"
+                },
+                {
+                    "name": "hard",
+                    "grid_config": "9x9_e24_b15"
                 }
             ]
         },

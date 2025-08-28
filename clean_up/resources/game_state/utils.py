@@ -119,7 +119,7 @@ def place_icons(objects: List[Icon], img_size: Tuple[int, int]) -> List[Icon]:
                     overlap = True
                     break
         sampled_coordinates.append((x, y))
-        obj['id'] = chr(ord('A') + len(sampled_coordinates))
+        obj['id'] = chr(ord('A') + len(sampled_coordinates) - 1)
         obj['coord'] = (x, y)
 
     return objects
