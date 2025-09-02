@@ -1,0 +1,38 @@
+{
+  "en": {
+    "say_keyword": "SAY",
+    "say": "SAY: <MESSAGE>",
+    "say_pattern": "(?P<head>.*)SAY: (?P<message>[^\\n]+)(?P<tail>.*)",
+    "move_keyword": "MOVE",
+    "move": "MOVE: <OBJECT>, (<X>, <Y>)",
+    "move_pattern": "(?P<head>.*)MOVE: (?P<obj>[A-Z]), \\((?P<x>[A-Z]), ?(?P<y>\\d+)\\)(?P<tail>.*)",
+    "end_1": "SAY: finished?",
+    "terminate_question": "finished?",
+    "end_2": "SAY: finished!",
+    "terminate_answer": "finished!"
+  },
+  "zh-CN": {
+    "say_keyword": "发送",
+    "say": "发送：<消息>",
+    "say_pattern": "(?P<head>.*)发送[：:] ?(?P<message>[^\\n]+)(?P<tail>.*)",
+    "move_keyword": "移动",
+    "move": "移动：<物体>，（<X>，<Y>）",
+    "move_pattern": "(?P<head>.*)移动[：:] ?(?P<obj>[A-Z])[，,] ?[（\\(](?P<x>[A-Z])[，,] ?(?P<y>\\d+)[）\\)](?P<tail>.*)",
+    "end_1": "发送：结束了吗？",
+    "terminate_question": "结束了吗？",
+    "end_2": "发送：结束了！",
+    "terminate_answer": "结束了！"
+  },
+  "de": {
+    "say_keyword": "SPRICH",
+    "say": "SPRICH: <NACHRICHT>",
+    "say_pattern": "(?P<head>.*)SPRICH: (?P<message>[^\\n]+)(?P<tail>.*)",
+    "move_keyword": "VERSCHIEBE",
+    "move": "VERSCHIEBE: <OBJECT>, (<X>, <Y>)",
+    "move_pattern": "(?P<head>.*)VERSCHIEBE: (?P<obj>[A-Z]), \\((?P<x>[A-Z]), ?(?P<y>\\d+)\\)(?P<tail>.*)",
+    "end_1": "SPRICH: fertig?",
+    "terminate_question": "fertig?",
+    "end_2": "SPRICH: fertig!",
+    "terminate_answer": "fertig!"
+  }
+}

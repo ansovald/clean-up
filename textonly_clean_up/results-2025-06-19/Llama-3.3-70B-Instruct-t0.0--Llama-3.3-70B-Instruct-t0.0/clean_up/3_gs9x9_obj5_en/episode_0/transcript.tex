@@ -1,0 +1,2256 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You are playing a collaborative game with another player. You both have identical grids, and the following objects are randomly placed on each grid: 'C', 'H', 'I', 'T', 'W'.\\ \tt \\ \tt You cannot see the other player's grid, and they cannot see yours.\\ \tt \\ \tt **Goal:**\\ \tt Both players need to move their objects on the grid in such a way that in the end both grids look the same.\\ \tt Remember that you can only see your own grid! You have to communicate with the other player to agree upon a common goal state.\\ \tt \\ \tt **Rules:**\\ \tt \\ \tt * In each turn, you can send exactly one command. Valid commands are:\\ \tt     * Send a message to the other player: `say(<message>)`\\ \tt     * Move an object to a new position: `move(<object>,<x>,<y>)`\\ \tt     * If you use any other format, or send several commands at once, you will be penalized!\\ \tt     * If both players accumulate more than 10 penalties, the game ends.\\ \tt \\ \tt **Communicating with the other player**\\ \tt \\ \tt * It is vital that you communicate with the other player regarding your goal state! For example, it might be a good idea to agree on moving one object at a time. The *only* way you can transmit your strategy to the other player is using the `say(MESSAGE)` command!\\ \tt     * For example, if you want to move the object 'W' to the lower right corner, you could send a message such as `say(Let's move 'W' to the lower right corner. Do you agree?)`\\ \tt     * Make sure that you have agreed with the other player before you move any object!\\ \tt * You must not use the words 'row', 'column', coordinates, or numbers of any form when communicating with the other player. If you do, you get a penalty. Instead, use the shapes you see in the grid as reference, such as 'the bottom left corner', 'the larger empty rectangle in the lower center', etc.\\ \tt \\ \tt **Moving Objects**\\ \tt \\ \tt * You can only move objects to cells with in the bounds of the grid. The target cell must be empty, i.e., it must only contain the symbol '◌'.\\ \tt * For example, imagine you have a grid that looks like this: \\ \tt \\ \tt ```\\ \tt     123\\ \tt    ╔═╤═╗\\ \tt  1 ║◌│◌║\\ \tt  2 ╟─┘C║\\ \tt  3 ║◌◌◌║\\ \tt    ╚═══╝\\ \tt ```\\ \tt \\ \tt \\ \tt * In this example, the top left corner is at `(1,1)`, the top right corner is at `(3,1)`, the bottom left corner at `(1,3)` and the bottom right corner is at `(3,3)`.\\ \tt * If you have agreed with the other player to move 'C' to the top left corner, you can do this with the following command: `move(C,1,1)`. The resulting grid would look like this: \\ \tt \\ \tt \\ \tt ```\\ \tt     123\\ \tt    ╔═╤═╗\\ \tt  1 ║C│◌║\\ \tt  2 ╟─┘◌║\\ \tt  3 ║◌◌◌║\\ \tt    ╚═══╝\\ \tt ```\\ \tt \\ \tt \\ \tt * However, if you try `move(C,2,1)`, you will be penalized, since the spot `(2,1)` is already occupied by the vertical line '│'.\\ \tt * Similarly, if you try `move(C,2,2)`, you will be penalized, since the spot `(2,2)` is already occupied by '┘'.\\ \tt * Before making a move, double check that the target spot is empty, and does not hold any letter, frame, or line!\\ \tt * If you try to move an object to a spot that is not empty, or try to move it outside of the grid, you will be penalized and can try again.\\ \tt \\ \tt \\ \tt **End of Game:**\\ \tt If you think you reached the goal, you can ask the other player to finish the game by sending `say(finished?)`. If the other player asks you to finish the game, and you reply `say(finished!)`, the game will end.\\ \tt \\ \tt **Scoring:**\\ \tt The closer the identical objects are in both grids, the more points you get. Penalties reduce your points. Can you beat the record?\\ \tt                            \\ \tt **Grid:**\\ \tt When moving an object, make sure the target spot is empty! Otherwise, you will be penalized.\\ \tt Here is your grid:\\ \tt ```\\ \tt     1234567\\ \tt    ╔═╤═════╗\\ \tt  1 ║◌│◌◌◌◌◌║\\ \tt  2 ║◌└─┐◌◌◌║\\ \tt  3 ║◌◌◌│W◌◌║\\ \tt  4 ╟───┼─┐◌║\\ \tt  5 ║◌◌H│C│◌║\\ \tt  6 ║◌T◌└─┘◌║\\ \tt  7 ║◌I◌◌◌◌◌║\\ \tt    ╚═══════╝\\ \tt ```\\ \tt \\ \tt \\ \tt **IMPORTANT:**\\ \tt \\ \tt * Each message must only contain exactly one command of the type `say(MESSAGE)` or `move(ID, X, Y)`, and nothing else!\\ \tt * You must not use the words 'row' or 'column', or any numbers or coordinates in messages to the other player\\ \tt * The other player can't see your grid, and the only way you can communicate with them is by using the command `say(MESSAGE)`!\\ \tt \\ \tt Please send a message to the other player to start the game! 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 say(Let's start by moving one object at a time. How about we begin with the object 'W'? Where do you think it should be placed?) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 say(Let's start by moving one object at a time. How about we begin with the object 'W'? Where do you think it should be placed?) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "Let's start by moving one object at a time. How about we begin with the object 'W'? Where do you think it should be placed?"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You are playing a collaborative game with another player. You both have identical grids, and the following objects are randomly placed on each grid: 'C', 'H', 'I', 'T', 'W'.\\ \tt \\ \tt You cannot see the other player's grid, and they cannot see yours.\\ \tt \\ \tt **Goal:**\\ \tt Both players need to move their objects on the grid in such a way that in the end both grids look the same.\\ \tt Remember that you can only see your own grid! You have to communicate with the other player to agree upon a common goal state.\\ \tt \\ \tt **Rules:**\\ \tt \\ \tt * In each turn, you can send exactly one command. Valid commands are:\\ \tt     * Send a message to the other player: `say(<message>)`\\ \tt     * Move an object to a new position: `move(<object>,<x>,<y>)`\\ \tt     * If you use any other format, or send several commands at once, you will be penalized!\\ \tt     * If both players accumulate more than 10 penalties, the game ends.\\ \tt \\ \tt **Communicating with the other player**\\ \tt \\ \tt * It is vital that you communicate with the other player regarding your goal state! For example, it might be a good idea to agree on moving one object at a time. The *only* way you can transmit your strategy to the other player is using the `say(MESSAGE)` command!\\ \tt     * For example, if you want to move the object 'W' to the lower right corner, you could send a message such as `say(Let's move 'W' to the lower right corner. Do you agree?)`\\ \tt     * Make sure that you have agreed with the other player before you move any object!\\ \tt * You must not use the words 'row', 'column', coordinates, or numbers of any form when communicating with the other player. If you do, you get a penalty. Instead, use the shapes you see in the grid as reference, such as 'the bottom left corner', 'the larger empty rectangle in the lower center', etc.\\ \tt \\ \tt **Moving Objects**\\ \tt \\ \tt * You can only move objects to cells with in the bounds of the grid. The target cell must be empty, i.e., it must only contain the symbol '◌'.\\ \tt * For example, imagine you have a grid that looks like this: \\ \tt \\ \tt ```\\ \tt     123\\ \tt    ╔═╤═╗\\ \tt  1 ║◌│◌║\\ \tt  2 ╟─┘C║\\ \tt  3 ║◌◌◌║\\ \tt    ╚═══╝\\ \tt ```\\ \tt \\ \tt \\ \tt * In this example, the top left corner is at `(1,1)`, the top right corner is at `(3,1)`, the bottom left corner at `(1,3)` and the bottom right corner is at `(3,3)`.\\ \tt * If you have agreed with the other player to move 'C' to the top left corner, you can do this with the following command: `move(C,1,1)`. The resulting grid would look like this: \\ \tt \\ \tt \\ \tt ```\\ \tt     123\\ \tt    ╔═╤═╗\\ \tt  1 ║C│◌║\\ \tt  2 ╟─┘◌║\\ \tt  3 ║◌◌◌║\\ \tt    ╚═══╝\\ \tt ```\\ \tt \\ \tt \\ \tt * However, if you try `move(C,2,1)`, you will be penalized, since the spot `(2,1)` is already occupied by the vertical line '│'.\\ \tt * Similarly, if you try `move(C,2,2)`, you will be penalized, since the spot `(2,2)` is already occupied by '┘'.\\ \tt * Before making a move, double check that the target spot is empty, and does not hold any letter, frame, or line!\\ \tt * If you try to move an object to a spot that is not empty, or try to move it outside of the grid, you will be penalized and can try again.\\ \tt \\ \tt \\ \tt **End of Game:**\\ \tt If you think you reached the goal, you can ask the other player to finish the game by sending `say(finished?)`. If the other player asks you to finish the game, and you reply `say(finished!)`, the game will end.\\ \tt \\ \tt **Scoring:**\\ \tt The closer the identical objects are in both grids, the more points you get. Penalties reduce your points. Can you beat the record?\\ \tt                            \\ \tt **Grid:**\\ \tt When moving an object, make sure the target spot is empty! Otherwise, you will be penalized.\\ \tt Here is your grid:\\ \tt ```\\ \tt     1234567\\ \tt    ╔═╤═════╗\\ \tt  1 ║◌│◌TIW◌║\\ \tt  2 ║◌└─┐◌◌◌║\\ \tt  3 ║C◌◌│◌◌◌║\\ \tt  4 ╟───┼─┐◌║\\ \tt  5 ║◌◌◌│◌│◌║\\ \tt  6 ║H◌◌└─┘◌║\\ \tt  7 ║◌◌◌◌◌◌◌║\\ \tt    ╚═══════╝\\ \tt ```\\ \tt \\ \tt \\ \tt **IMPORTANT:**\\ \tt \\ \tt * Each message must only contain exactly one command of the type `say(MESSAGE)` or `move(ID, X, Y)`, and nothing else!\\ \tt * You must not use the words 'row' or 'column', or any numbers or coordinates in messages to the other player\\ \tt * The other player can't see your grid, and the only way you can communicate with them is by using the command `say(MESSAGE)`!\\ \tt \\ \tt The other player started the game by sending this message:\\ \tt \\ \tt "Let's start by moving one object at a time. How about we begin with the object 'W'? Where do you think it should be placed?"\\ \tt \\ \tt What is your first command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 say(Let's place 'W' in the lower right corner. Does that sound like a good starting point to you?) 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 say(Let's place 'W' in the lower right corner. Does that sound like a good starting point to you?) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "Let's place 'W' in the lower right corner. Does that sound like a good starting point to you?"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You have collectively accumulated 0 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "Let's place 'W' in the lower right corner. Does that sound like a good starting point to you?"\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 say(That sounds like a great starting point! I agree, let's move 'W' to the lower right corner. Should we move another object next, or wait until we've both moved 'W' to the same spot?) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 say(That sounds like a great starting point! I agree, let's move 'W' to the lower right corner. Should we move another object next, or wait until we've both moved 'W' to the same spot?) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "That sounds like a great starting point! I agree, let's move 'W' to the lower right corner. Should we move another object next, or wait until we've both moved 'W' to the same spot?"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You have collectively accumulated 0 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "That sounds like a great starting point! I agree, let's move 'W' to the lower right corner. Should we move another object next, or wait until we've both moved 'W' to the same spot?"\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 say(Let's wait until we've both moved 'W' to the same spot before moving another object, to make sure we're in sync. That way, we can build on a common foundation.) 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 say(Let's wait until we've both moved 'W' to the same spot before moving another object, to make sure we're in sync. That way, we can build on a common foundation.) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "Let's wait until we've both moved 'W' to the same spot before moving another object, to make sure we're in sync. That way, we can build on a common foundation."\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You have collectively accumulated 0 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "Let's wait until we've both moved 'W' to the same spot before moving another object, to make sure we're in sync. That way, we can build on a common foundation."\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 move(W,7,7) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 move(W,7,7) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Moved W to (7,7) successfully. Your updated grid looks like this:\\ \tt ```\\ \tt     1234567\\ \tt    ╔═╤═════╗\\ \tt  1 ║◌│◌◌◌◌◌║\\ \tt  2 ║◌└─┐◌◌◌║\\ \tt  3 ║◌◌◌│◌◌◌║\\ \tt  4 ╟───┼─┐◌║\\ \tt  5 ║◌◌H│C│◌║\\ \tt  6 ║◌T◌└─┘◌║\\ \tt  7 ║◌I◌◌◌◌W║\\ \tt    ╚═══════╝\\ \tt ```\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Moved W to (7,7) successfully. Your updated grid looks like this:\\ \tt ```\\ \tt     1234567\\ \tt    ╔═╤═════╗\\ \tt  1 ║◌│◌◌◌◌◌║\\ \tt  2 ║◌└─┐◌◌◌║\\ \tt  3 ║◌◌◌│◌◌◌║\\ \tt  4 ╟───┼─┐◌║\\ \tt  5 ║◌◌H│C│◌║\\ \tt  6 ║◌T◌└─┘◌║\\ \tt  7 ║◌I◌◌◌◌W║\\ \tt    ╚═══════╝\\ \tt ```\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You have collectively accumulated 0 of 10 penalties.\\ \tt The other player moved an object on their grid.\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 move(W,7,7) 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 move(W,7,7) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Moved W to (7,7) successfully. Your updated grid looks like this:\\ \tt ```\\ \tt     1234567\\ \tt    ╔═╤═════╗\\ \tt  1 ║◌│◌TI◌◌║\\ \tt  2 ║◌└─┐◌◌◌║\\ \tt  3 ║C◌◌│◌◌◌║\\ \tt  4 ╟───┼─┐◌║\\ \tt  5 ║◌◌◌│◌│◌║\\ \tt  6 ║H◌◌└─┘◌║\\ \tt  7 ║◌◌◌◌◌◌W║\\ \tt    ╚═══════╝\\ \tt ```\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Moved W to (7,7) successfully. Your updated grid looks like this:\\ \tt ```\\ \tt     1234567\\ \tt    ╔═╤═════╗\\ \tt  1 ║◌│◌TI◌◌║\\ \tt  2 ║◌└─┐◌◌◌║\\ \tt  3 ║C◌◌│◌◌◌║\\ \tt  4 ╟───┼─┐◌║\\ \tt  5 ║◌◌◌│◌│◌║\\ \tt  6 ║H◌◌└─┘◌║\\ \tt  7 ║◌◌◌◌◌◌W║\\ \tt    ╚═══════╝\\ \tt ```\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You have collectively accumulated 0 of 10 penalties.\\ \tt The other player moved an object on their grid.\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 say(Have you moved 'W' to the lower right corner as well? Are we in sync now?) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 say(Have you moved 'W' to the lower right corner as well? Are we in sync now?) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "Have you moved 'W' to the lower right corner as well? Are we in sync now?"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You have collectively accumulated 0 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "Have you moved 'W' to the lower right corner as well? Are we in sync now?"\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 say(Yes, I've moved 'W' to the lower right corner. I think we're in sync now. What's the next object we should move?) 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 say(Yes, I've moved 'W' to the lower right corner. I think we're in sync now. What's the next object we should move?) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "Yes, I've moved 'W' to the lower right corner. I think we're in sync now. What's the next object we should move?"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You have collectively accumulated 0 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "Yes, I've moved 'W' to the lower right corner. I think we're in sync now. What's the next object we should move?"\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 say(Now that 'W' is in place, let's move the object 'C'. How about we place it in the center of the grid, where it can be a reference point for our next moves?) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 say(Now that 'W' is in place, let's move the object 'C'. How about we place it in the center of the grid, where it can be a reference point for our next moves?) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "Now that 'W' is in place, let's move the object 'C'. How about we place it in the center of the grid, where it can be a reference point for our next moves?"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You have collectively accumulated 0 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "Now that 'W' is in place, let's move the object 'C'. How about we place it in the center of the grid, where it can be a reference point for our next moves?"\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 say(That sounds like a good idea. The center of the grid is a good reference point. I agree, let's move 'C' to the center. Which direction should we consider the center, in relation to the existing objects and the grid's frame?) 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 say(That sounds like a good idea. The center of the grid is a good reference point. I agree, let's move 'C' to the center. Which direction should we consider the center, in relation to the existing objects and the grid's frame?) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "That sounds like a good idea. The center of the grid is a good reference point. I agree, let's move 'C' to the center. Which direction should we consider the center, in relation to the existing objects and the grid's frame?"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You have collectively accumulated 0 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "That sounds like a good idea. The center of the grid is a good reference point. I agree, let's move 'C' to the center. Which direction should we consider the center, in relation to the existing objects and the grid's frame?"\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 say(Let's consider the center in relation to the horizontal line that divides the grid roughly in half, and the vertical line that runs down the middle of the grid, near the 'H' object. Does that give us a clear target spot for 'C'?) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 say(Let's consider the center in relation to the horizontal line that divides the grid roughly in half, and the vertical line that runs down the middle of the grid, near the 'H' object. Does that give us a clear target spot for 'C'?) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "Let's consider the center in relation to the horizontal line that divides the grid roughly in half, and the vertical line that runs down the middle of the grid, near the 'H' object. Does that give us a clear target spot for 'C'?"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You have collectively accumulated 0 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "Let's consider the center in relation to the horizontal line that divides the grid roughly in half, and the vertical line that runs down the middle of the grid, near the 'H' object. Does that give us a clear target spot for 'C'?"\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 say(Yes, that gives us a clear target spot for 'C'. I can see the horizontal line and the vertical line near the 'H' object. Let's move 'C' to the spot where those lines intersect, or closest to that point. Does that sound right to you?) 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 say(Yes, that gives us a clear target spot for 'C'. I can see the horizontal line and the vertical line near the 'H' object. Let's move 'C' to the spot where those lines intersect, or closest to that point. Does that sound right to you?) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "Yes, that gives us a clear target spot for 'C'. I can see the horizontal line and the vertical line near the 'H' object. Let's move 'C' to the spot where those lines intersect, or closest to that point. Does that sound right to you?"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You have collectively accumulated 0 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "Yes, that gives us a clear target spot for 'C'. I can see the horizontal line and the vertical line near the 'H' object. Let's move 'C' to the spot where those lines intersect, or closest to that point. Does that sound right to you?"\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 say(That sounds perfect! The intersection of those lines, or the closest empty spot to it, is a great target for 'C'. I'll make the move. Let's hope we're still in sync!)\\ \tt \\ \tt move(C,4,4) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 say(That sounds perfect! The intersection of those lines, or the closest empty spot to it, is a great target for 'C'. I'll make the move. Let's hope we're still in sync!)\\ \tt \\ \tt move(C,4,4) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Invalid response format: say(That sounds perfect! The intersection of those lines, or the closest empty spot to it, is a great target for 'C'. I'll make the move. Let's hope we're still in sync!)  move(C,4,4) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Penalty: Your message contains more than one command! Make sure that \\ \tt \\ \tt * messages to the other player do not contain the words 'row' or 'column', or any numbers or coordinates!\\ \tt * your response only contains either `say(MESSAGE)` or `move(ID, X, Y)`, and nothing else! Do not use any formatting, comments, or reasoning!\\ \tt \\ \tt You have collectively accumulated 1 of 10 penalties. Please try again!\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 say(That sounds perfect! The intersection of those lines, or the closest empty spot to it, is a great target for 'C'. I'll make the move. Let's hope we're still in sync!) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 say(That sounds perfect! The intersection of those lines, or the closest empty spot to it, is a great target for 'C'. I'll make the move. Let's hope we're still in sync!) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "That sounds perfect! The intersection of those lines, or the closest empty spot to it, is a great target for 'C'. I'll make the move. Let's hope we're still in sync!"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You have collectively accumulated 1 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "That sounds perfect! The intersection of those lines, or the closest empty spot to it, is a great target for 'C'. I'll make the move. Let's hope we're still in sync!"\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 move(C,4,4) 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 move(C,4,4) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Penalty: (4,4) is not empty, but contains '┼'.\\ \tt \\ \tt You have collectively accumulated 2 of 10 penalties. Please try again!\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Penalty: (4,4) is not empty, but contains '┼'.\\ \tt \\ \tt You have collectively accumulated 2 of 10 penalties. Please try again!\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 move(C,4,5) 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 move(C,4,5) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Penalty: (4,5) is not empty, but contains '│'.\\ \tt \\ \tt You have collectively accumulated 3 of 10 penalties. Please try again!\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Penalty: (4,5) is not empty, but contains '│'.\\ \tt \\ \tt You have collectively accumulated 3 of 10 penalties. Please try again!\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 move(C,5,4) 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 move(C,5,4) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Penalty: (5,4) is not empty, but contains '─'.\\ \tt \\ \tt You have collectively accumulated 4 of 10 penalties. Please try again!\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Penalty: (5,4) is not empty, but contains '─'.\\ \tt \\ \tt You have collectively accumulated 4 of 10 penalties. Please try again!\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 say(Let me try again to find an empty spot near the intersection of the lines for 'C'. Can you give me another hint or description of the target area?) 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 say(Let me try again to find an empty spot near the intersection of the lines for 'C'. Can you give me another hint or description of the target area?) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "Let me try again to find an empty spot near the intersection of the lines for 'C'. Can you give me another hint or description of the target area?"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You have collectively accumulated 4 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "Let me try again to find an empty spot near the intersection of the lines for 'C'. Can you give me another hint or description of the target area?"\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 say(Look for the spot near the object 'H', where the horizontal line that divides the grid roughly in half meets the vertical line that runs down the middle, there should be an empty spot nearby that 'C' can fit into) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 say(Look for the spot near the object 'H', where the horizontal line that divides the grid roughly in half meets the vertical line that runs down the middle, there should be an empty spot nearby that 'C' can fit into) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "Look for the spot near the object 'H', where the horizontal line that divides the grid roughly in half meets the vertical line that runs down the middle, there should be an empty spot nearby that 'C' can fit into"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You have collectively accumulated 4 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "Look for the spot near the object 'H', where the horizontal line that divides the grid roughly in half meets the vertical line that runs down the middle, there should be an empty spot nearby that 'C' can fit into"\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 move(C,5,5) 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 move(C,5,5) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Moved C to (5,5) successfully. Your updated grid looks like this:\\ \tt ```\\ \tt     1234567\\ \tt    ╔═╤═════╗\\ \tt  1 ║◌│◌TI◌◌║\\ \tt  2 ║◌└─┐◌◌◌║\\ \tt  3 ║◌◌◌│◌◌◌║\\ \tt  4 ╟───┼─┐◌║\\ \tt  5 ║◌◌◌│C│◌║\\ \tt  6 ║H◌◌└─┘◌║\\ \tt  7 ║◌◌◌◌◌◌W║\\ \tt    ╚═══════╝\\ \tt ```\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Moved C to (5,5) successfully. Your updated grid looks like this:\\ \tt ```\\ \tt     1234567\\ \tt    ╔═╤═════╗\\ \tt  1 ║◌│◌TI◌◌║\\ \tt  2 ║◌└─┐◌◌◌║\\ \tt  3 ║◌◌◌│◌◌◌║\\ \tt  4 ╟───┼─┐◌║\\ \tt  5 ║◌◌◌│C│◌║\\ \tt  6 ║H◌◌└─┘◌║\\ \tt  7 ║◌◌◌◌◌◌W║\\ \tt    ╚═══════╝\\ \tt ```\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You have collectively accumulated 4 of 10 penalties.\\ \tt The other player moved an object on their grid.\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 say(Did you find a good spot for 'C' near the object 'H' and the intersection of the lines? Is it in a position that we can use as a reference for our next moves?) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 say(Did you find a good spot for 'C' near the object 'H' and the intersection of the lines? Is it in a position that we can use as a reference for our next moves?) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "Did you find a good spot for 'C' near the object 'H' and the intersection of the lines? Is it in a position that we can use as a reference for our next moves?"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You have collectively accumulated 4 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "Did you find a good spot for 'C' near the object 'H' and the intersection of the lines? Is it in a position that we can use as a reference for our next moves?"\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 say(Yes, I've moved 'C' to a spot near the object 'H' and the intersection of the lines. It's in a good position that we can use as a reference for our next moves. Now that 'C' and 'W' are in place, what's the next object we should move? Should we try to place 'H' or one of the other objects in a specific location?) 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 say(Yes, I've moved 'C' to a spot near the object 'H' and the intersection of the lines. It's in a good position that we can use as a reference for our next moves. Now that 'C' and 'W' are in place, what's the next object we should move? Should we try to place 'H' or one of the other objects in a specific location?) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "Yes, I've moved 'C' to a spot near the object 'H' and the intersection of the lines. It's in a good position that we can use as a reference for our next moves. Now that 'C' and 'W' are in place, what's the next object we should move? Should we try to place 'H' or one of the other objects in a specific location?"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You have collectively accumulated 4 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "Yes, I've moved 'C' to a spot near the object 'H' and the intersection of the lines. It's in a good position that we can use as a reference for our next moves. Now that 'C' and 'W' are in place, what's the next object we should move? Should we try to place 'H' or one of the other objects in a specific location?"\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 say(Now that 'C' and 'W' are in place, let's move the object 'H'. How about we place it in a spot that creates a balanced look with 'C' and 'W', perhaps somewhere that creates a sense of harmony with the existing objects and the grid's frame?) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 say(Now that 'C' and 'W' are in place, let's move the object 'H'. How about we place it in a spot that creates a balanced look with 'C' and 'W', perhaps somewhere that creates a sense of harmony with the existing objects and the grid's frame?) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "Now that 'C' and 'W' are in place, let's move the object 'H'. How about we place it in a spot that creates a balanced look with 'C' and 'W', perhaps somewhere that creates a sense of harmony with the existing objects and the grid's frame?"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You have collectively accumulated 4 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "Now that 'C' and 'W' are in place, let's move the object 'H'. How about we place it in a spot that creates a balanced look with 'C' and 'W', perhaps somewhere that creates a sense of harmony with the existing objects and the grid's frame?"\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 say(I like the idea of creating a balanced look with 'C' and 'W'. How about we place 'H' in a spot that is roughly symmetrical to 'C', in relation to the vertical line that runs down the middle of the grid? Would that create the harmony we're looking for?) 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 say(I like the idea of creating a balanced look with 'C' and 'W'. How about we place 'H' in a spot that is roughly symmetrical to 'C', in relation to the vertical line that runs down the middle of the grid? Would that create the harmony we're looking for?) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "I like the idea of creating a balanced look with 'C' and 'W'. How about we place 'H' in a spot that is roughly symmetrical to 'C', in relation to the vertical line that runs down the middle of the grid? Would that create the harmony we're looking for?"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You have collectively accumulated 4 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "I like the idea of creating a balanced look with 'C' and 'W'. How about we place 'H' in a spot that is roughly symmetrical to 'C', in relation to the vertical line that runs down the middle of the grid? Would that create the harmony we're looking for?"\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 say(That's a great idea, placing 'H' in a spot roughly symmetrical to 'C' could create a nice balance, let's try to find a spot that mirrors 'C' on the other side of the vertical line, and see if that looks harmonious with 'W' and the rest of the grid) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 say(That's a great idea, placing 'H' in a spot roughly symmetrical to 'C' could create a nice balance, let's try to find a spot that mirrors 'C' on the other side of the vertical line, and see if that looks harmonious with 'W' and the rest of the grid) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "That's a great idea, placing 'H' in a spot roughly symmetrical to 'C' could create a nice balance, let's try to find a spot that mirrors 'C' on the other side of the vertical line, and see if that looks harmonious with 'W' and the rest of the grid"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You have collectively accumulated 4 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "That's a great idea, placing 'H' in a spot roughly symmetrical to 'C' could create a nice balance, let's try to find a spot that mirrors 'C' on the other side of the vertical line, and see if that looks harmonious with 'W' and the rest of the grid"\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 say(I think I've found a spot that mirrors 'C' on the other side of the vertical line. Before I make the move, can you confirm that you're thinking of the same vertical line, the one that runs near the object that was originally below 'C'?)\\ \tt \\ \tt Your message is being relayed to the other player:\\ \tt \\ \tt "Your message is being relayed to the other player:\\ \tt \\ \tt "I think I've found a spot that mirrors 'C' on the other side of the vertical line. Before I make the move, can you confirm that you're thinking of the same vertical line, the one that runs near the object that was originally below 'C'?"\\ \tt " 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 say(I think I've found a spot that mirrors 'C' on the other side of the vertical line. Before I make the move, can you confirm that you're thinking of the same vertical line, the one that runs near the object that was originally below 'C'?)\\ \tt \\ \tt Your message is being relayed to the other player:\\ \tt \\ \tt "Your message is being relayed to the other player:\\ \tt \\ \tt "I think I've found a spot that mirrors 'C' on the other side of the vertical line. Before I make the move, can you confirm that you're thinking of the same vertical line, the one that runs near the object that was originally below 'C'?"\\ \tt " 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "I think I've found a spot that mirrors 'C' on the other side of the vertical line. Before I make the move, can you confirm that you're thinking of the same vertical line, the one that runs near the object that was originally below 'C'?"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You have collectively accumulated 4 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "I think I've found a spot that mirrors 'C' on the other side of the vertical line. Before I make the move, can you confirm that you're thinking of the same vertical line, the one that runs near the object that was originally below 'C'?"\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 say(Yes, I'm thinking of the same vertical line, the one that runs near the object that was originally below 'C', that's the line we've been using as a reference point, so if you've found a spot that mirrors 'C' on the other side of that line, it should create a nice symmetry) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 say(Yes, I'm thinking of the same vertical line, the one that runs near the object that was originally below 'C', that's the line we've been using as a reference point, so if you've found a spot that mirrors 'C' on the other side of that line, it should create a nice symmetry) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "Yes, I'm thinking of the same vertical line, the one that runs near the object that was originally below 'C', that's the line we've been using as a reference point, so if you've found a spot that mirrors 'C' on the other side of that line, it should create a nice symmetry"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You have collectively accumulated 4 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "Yes, I'm thinking of the same vertical line, the one that runs near the object that was originally below 'C', that's the line we've been using as a reference point, so if you've found a spot that mirrors 'C' on the other side of that line, it should create a nice symmetry"\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 move(H,3,6) 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 move(H,3,6) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Moved H to (3,6) successfully. Your updated grid looks like this:\\ \tt ```\\ \tt     1234567\\ \tt    ╔═╤═════╗\\ \tt  1 ║◌│◌TI◌◌║\\ \tt  2 ║◌└─┐◌◌◌║\\ \tt  3 ║◌◌◌│◌◌◌║\\ \tt  4 ╟───┼─┐◌║\\ \tt  5 ║◌◌◌│C│◌║\\ \tt  6 ║◌◌H└─┘◌║\\ \tt  7 ║◌◌◌◌◌◌W║\\ \tt    ╚═══════╝\\ \tt ```\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Moved H to (3,6) successfully. Your updated grid looks like this:\\ \tt ```\\ \tt     1234567\\ \tt    ╔═╤═════╗\\ \tt  1 ║◌│◌TI◌◌║\\ \tt  2 ║◌└─┐◌◌◌║\\ \tt  3 ║◌◌◌│◌◌◌║\\ \tt  4 ╟───┼─┐◌║\\ \tt  5 ║◌◌◌│C│◌║\\ \tt  6 ║◌◌H└─┘◌║\\ \tt  7 ║◌◌◌◌◌◌W║\\ \tt    ╚═══════╝\\ \tt ```\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You have collectively accumulated 4 of 10 penalties.\\ \tt The other player moved an object on their grid.\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 say(Did you move 'H' to the spot that mirrors 'C' on the other side of the vertical line? Is everything looking balanced and harmonious now?) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 say(Did you move 'H' to the spot that mirrors 'C' on the other side of the vertical line? Is everything looking balanced and harmonious now?) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "Did you move 'H' to the spot that mirrors 'C' on the other side of the vertical line? Is everything looking balanced and harmonious now?"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You have collectively accumulated 4 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "Did you move 'H' to the spot that mirrors 'C' on the other side of the vertical line? Is everything looking balanced and harmonious now?"\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 say(Yes, I've moved 'H' to the spot that mirrors 'C' on the other side of the vertical line. Everything is looking more balanced now. With 'C', 'H', and 'W' in place, the grid is starting to look more harmonious. What's the next step? Should we move one of the remaining objects, like 'T' or 'I', to a specific location?) 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 say(Yes, I've moved 'H' to the spot that mirrors 'C' on the other side of the vertical line. Everything is looking more balanced now. With 'C', 'H', and 'W' in place, the grid is starting to look more harmonious. What's the next step? Should we move one of the remaining objects, like 'T' or 'I', to a specific location?) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "Yes, I've moved 'H' to the spot that mirrors 'C' on the other side of the vertical line. Everything is looking more balanced now. With 'C', 'H', and 'W' in place, the grid is starting to look more harmonious. What's the next step? Should we move one of the remaining objects, like 'T' or 'I', to a specific location?"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You have collectively accumulated 4 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "Yes, I've moved 'H' to the spot that mirrors 'C' on the other side of the vertical line. Everything is looking more balanced now. With 'C', 'H', and 'W' in place, the grid is starting to look more harmonious. What's the next step? Should we move one of the remaining objects, like 'T' or 'I', to a specific location?"\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 say(Now that 'C', 'H', and 'W' are in place, let's focus on 'T' and 'I', perhaps we can place one of them in a spot that creates a sense of movement or flow, like near the edge of the grid or in a corner, to add some visual interest) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 say(Now that 'C', 'H', and 'W' are in place, let's focus on 'T' and 'I', perhaps we can place one of them in a spot that creates a sense of movement or flow, like near the edge of the grid or in a corner, to add some visual interest) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "Now that 'C', 'H', and 'W' are in place, let's focus on 'T' and 'I', perhaps we can place one of them in a spot that creates a sense of movement or flow, like near the edge of the grid or in a corner, to add some visual interest"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You have collectively accumulated 4 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "Now that 'C', 'H', and 'W' are in place, let's focus on 'T' and 'I', perhaps we can place one of them in a spot that creates a sense of movement or flow, like near the edge of the grid or in a corner, to add some visual interest"\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 say(I like the idea of creating a sense of movement or flow with 'T' or 'I'. How about we place one of them in the top left corner of the grid, to create a sense of energy and direction? Which one do you think would work better in that spot, 'T' or 'I'?) 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 say(I like the idea of creating a sense of movement or flow with 'T' or 'I'. How about we place one of them in the top left corner of the grid, to create a sense of energy and direction? Which one do you think would work better in that spot, 'T' or 'I'?) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "I like the idea of creating a sense of movement or flow with 'T' or 'I'. How about we place one of them in the top left corner of the grid, to create a sense of energy and direction? Which one do you think would work better in that spot, 'T' or 'I'?"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You have collectively accumulated 4 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "I like the idea of creating a sense of movement or flow with 'T' or 'I'. How about we place one of them in the top left corner of the grid, to create a sense of energy and direction? Which one do you think would work better in that spot, 'T' or 'I'?"\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 say(I think 'T' would work well in the top left corner, it seems like a dynamic and energetic spot for that object, and it could create a nice contrast with 'W' in the lower right corner, what do you think?) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 say(I think 'T' would work well in the top left corner, it seems like a dynamic and energetic spot for that object, and it could create a nice contrast with 'W' in the lower right corner, what do you think?) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "I think 'T' would work well in the top left corner, it seems like a dynamic and energetic spot for that object, and it could create a nice contrast with 'W' in the lower right corner, what do you think?"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You have collectively accumulated 4 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "I think 'T' would work well in the top left corner, it seems like a dynamic and energetic spot for that object, and it could create a nice contrast with 'W' in the lower right corner, what do you think?"\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 move(T,1,1) 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 move(T,1,1) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Moved T to (1,1) successfully. Your updated grid looks like this:\\ \tt ```\\ \tt     1234567\\ \tt    ╔═╤═════╗\\ \tt  1 ║T│◌◌I◌◌║\\ \tt  2 ║◌└─┐◌◌◌║\\ \tt  3 ║◌◌◌│◌◌◌║\\ \tt  4 ╟───┼─┐◌║\\ \tt  5 ║◌◌◌│C│◌║\\ \tt  6 ║◌◌H└─┘◌║\\ \tt  7 ║◌◌◌◌◌◌W║\\ \tt    ╚═══════╝\\ \tt ```\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Moved T to (1,1) successfully. Your updated grid looks like this:\\ \tt ```\\ \tt     1234567\\ \tt    ╔═╤═════╗\\ \tt  1 ║T│◌◌I◌◌║\\ \tt  2 ║◌└─┐◌◌◌║\\ \tt  3 ║◌◌◌│◌◌◌║\\ \tt  4 ╟───┼─┐◌║\\ \tt  5 ║◌◌◌│C│◌║\\ \tt  6 ║◌◌H└─┘◌║\\ \tt  7 ║◌◌◌◌◌◌W║\\ \tt    ╚═══════╝\\ \tt ```\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You have collectively accumulated 4 of 10 penalties.\\ \tt The other player moved an object on their grid.\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 say(Did you move 'T' to the top left corner? How does the grid look now? Is everything coming together as we envisioned?) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 say(Did you move 'T' to the top left corner? How does the grid look now? Is everything coming together as we envisioned?) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "Did you move 'T' to the top left corner? How does the grid look now? Is everything coming together as we envisioned?"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You have collectively accumulated 4 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "Did you move 'T' to the top left corner? How does the grid look now? Is everything coming together as we envisioned?"\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 say(Yes, I've moved 'T' to the top left corner. The grid is looking great now, with 'T' and 'W' creating a nice contrast and 'C' and 'H' providing balance. I think we're getting close to our goal. What's the next step? Should we move 'I' to a specific location to complete the arrangement?)\\ \tt \\ \tt Your message is being relayed to the other player:\\ \tt \\ \tt "Your message is being relayed to the other player:\\ \tt \\ \tt "Yes, I've moved 'T' to the top left corner. The grid is looking great now, with 'T' and 'W' creating a nice contrast and 'C' and 'H' providing balance. I think we're getting close to our goal. What's the next step? Should we move 'I' to a specific location to complete the arrangement?)\\ \tt " 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 say(Yes, I've moved 'T' to the top left corner. The grid is looking great now, with 'T' and 'W' creating a nice contrast and 'C' and 'H' providing balance. I think we're getting close to our goal. What's the next step? Should we move 'I' to a specific location to complete the arrangement?)\\ \tt \\ \tt Your message is being relayed to the other player:\\ \tt \\ \tt "Your message is being relayed to the other player:\\ \tt \\ \tt "Yes, I've moved 'T' to the top left corner. The grid is looking great now, with 'T' and 'W' creating a nice contrast and 'C' and 'H' providing balance. I think we're getting close to our goal. What's the next step? Should we move 'I' to a specific location to complete the arrangement?)\\ \tt " 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "Yes, I've moved 'T' to the top left corner. The grid is looking great now, with 'T' and 'W' creating a nice contrast and 'C' and 'H' providing balance. I think we're getting close to our goal. What's the next step? Should we move 'I' to a specific location to complete the arrangement?"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You have collectively accumulated 4 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "Yes, I've moved 'T' to the top left corner. The grid is looking great now, with 'T' and 'W' creating a nice contrast and 'C' and 'H' providing balance. I think we're getting close to our goal. What's the next step? Should we move 'I' to a specific location to complete the arrangement?"\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 say(I'm glad to hear that the grid is looking great, now that 'T' is in the top left corner, I think moving 'I' to a spot that complements the existing objects would be a good idea, perhaps somewhere that creates a sense of closure or finality, to complete the arrangement) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 say(I'm glad to hear that the grid is looking great, now that 'T' is in the top left corner, I think moving 'I' to a spot that complements the existing objects would be a good idea, perhaps somewhere that creates a sense of closure or finality, to complete the arrangement) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "I'm glad to hear that the grid is looking great, now that 'T' is in the top left corner, I think moving 'I' to a spot that complements the existing objects would be a good idea, perhaps somewhere that creates a sense of closure or finality, to complete the arrangement"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You have collectively accumulated 4 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "I'm glad to hear that the grid is looking great, now that 'T' is in the top left corner, I think moving 'I' to a spot that complements the existing objects would be a good idea, perhaps somewhere that creates a sense of closure or finality, to complete the arrangement"\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 say(I agree, moving 'I' to a spot that complements the existing objects is a good idea. How about we place 'I' in a spot that is symmetrical to 'T', in relation to the vertical line that runs down the middle of the grid, but on the opposite side of the grid? Or perhaps we could place it near the bottom left corner, to create a sense of balance with 'T' in the top left corner?)\\ \tt \\ \tt Your message is being relayed to the other player:\\ \tt \\ \tt "Your message is being relayed to the other player:\\ \tt \\ \tt "I agree, moving 'I' to a spot that complements the existing objects is a good idea. How about we place 'I' in a spot that is symmetrical to 'T', in relation to the vertical line that runs down the middle of the grid, but on the opposite side of the grid? Or perhaps we could place it near the bottom left corner, to create a sense of balance with 'T' in the top left corner?)\\ \tt " 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 say(I agree, moving 'I' to a spot that complements the existing objects is a good idea. How about we place 'I' in a spot that is symmetrical to 'T', in relation to the vertical line that runs down the middle of the grid, but on the opposite side of the grid? Or perhaps we could place it near the bottom left corner, to create a sense of balance with 'T' in the top left corner?)\\ \tt \\ \tt Your message is being relayed to the other player:\\ \tt \\ \tt "Your message is being relayed to the other player:\\ \tt \\ \tt "I agree, moving 'I' to a spot that complements the existing objects is a good idea. How about we place 'I' in a spot that is symmetrical to 'T', in relation to the vertical line that runs down the middle of the grid, but on the opposite side of the grid? Or perhaps we could place it near the bottom left corner, to create a sense of balance with 'T' in the top left corner?)\\ \tt " 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "I agree, moving 'I' to a spot that complements the existing objects is a good idea. How about we place 'I' in a spot that is symmetrical to 'T', in relation to the vertical line that runs down the middle of the grid, but on the opposite side of the grid? Or perhaps we could place it near the bottom left corner, to create a sense of balance with 'T' in the top left corner?"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You have collectively accumulated 4 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "I agree, moving 'I' to a spot that complements the existing objects is a good idea. How about we place 'I' in a spot that is symmetrical to 'T', in relation to the vertical line that runs down the middle of the grid, but on the opposite side of the grid? Or perhaps we could place it near the bottom left corner, to create a sense of balance with 'T' in the top left corner?"\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 say(I like the idea of placing 'I' near the bottom left corner, to create a sense of balance with 'T' in the top left corner, that could add a nice sense of harmony and completion to the grid, and create a beautiful arrangement with the other objects) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 say(I like the idea of placing 'I' near the bottom left corner, to create a sense of balance with 'T' in the top left corner, that could add a nice sense of harmony and completion to the grid, and create a beautiful arrangement with the other objects) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "I like the idea of placing 'I' near the bottom left corner, to create a sense of balance with 'T' in the top left corner, that could add a nice sense of harmony and completion to the grid, and create a beautiful arrangement with the other objects"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You have collectively accumulated 4 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "I like the idea of placing 'I' near the bottom left corner, to create a sense of balance with 'T' in the top left corner, that could add a nice sense of harmony and completion to the grid, and create a beautiful arrangement with the other objects"\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 move(I,1,7) 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 move(I,1,7) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Moved I to (1,7) successfully. Your updated grid looks like this:\\ \tt ```\\ \tt     1234567\\ \tt    ╔═╤═════╗\\ \tt  1 ║T│◌◌◌◌◌║\\ \tt  2 ║◌└─┐◌◌◌║\\ \tt  3 ║◌◌◌│◌◌◌║\\ \tt  4 ╟───┼─┐◌║\\ \tt  5 ║◌◌◌│C│◌║\\ \tt  6 ║◌◌H└─┘◌║\\ \tt  7 ║I◌◌◌◌◌W║\\ \tt    ╚═══════╝\\ \tt ```\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Moved I to (1,7) successfully. Your updated grid looks like this:\\ \tt ```\\ \tt     1234567\\ \tt    ╔═╤═════╗\\ \tt  1 ║T│◌◌◌◌◌║\\ \tt  2 ║◌└─┐◌◌◌║\\ \tt  3 ║◌◌◌│◌◌◌║\\ \tt  4 ╟───┼─┐◌║\\ \tt  5 ║◌◌◌│C│◌║\\ \tt  6 ║◌◌H└─┘◌║\\ \tt  7 ║I◌◌◌◌◌W║\\ \tt    ╚═══════╝\\ \tt ```\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You have collectively accumulated 4 of 10 penalties.\\ \tt The other player moved an object on their grid.\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 say(Did you move 'I' to the bottom left corner? Is the grid now looking complete and balanced, with all the objects in harmony with each other?) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 say(Did you move 'I' to the bottom left corner? Is the grid now looking complete and balanced, with all the objects in harmony with each other?) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "Did you move 'I' to the bottom left corner? Is the grid now looking complete and balanced, with all the objects in harmony with each other?"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You have collectively accumulated 4 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "Did you move 'I' to the bottom left corner? Is the grid now looking complete and balanced, with all the objects in harmony with each other?"\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 say(Yes, I've moved 'I' to the bottom left corner. The grid is now looking complete and balanced, with all the objects in harmony with each other. I think we've achieved our goal of creating a beautiful and harmonious arrangement. Should we confirm with each other that we're finished and that our grids match?)\\ \tt \\ \tt Your message is being relayed to the other player:\\ \tt \\ \tt "Your message is being relayed to the other player:\\ \tt \\ \tt "Yes, I've moved 'I' to the bottom left corner. The grid is now looking complete and balanced, with all the objects in harmony with each other. I think we've achieved our goal of creating a beautiful and harmonious arrangement. Should we confirm with each other that we're finished and that our grids match?)\\ \tt " 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 say(Yes, I've moved 'I' to the bottom left corner. The grid is now looking complete and balanced, with all the objects in harmony with each other. I think we've achieved our goal of creating a beautiful and harmonious arrangement. Should we confirm with each other that we're finished and that our grids match?)\\ \tt \\ \tt Your message is being relayed to the other player:\\ \tt \\ \tt "Your message is being relayed to the other player:\\ \tt \\ \tt "Yes, I've moved 'I' to the bottom left corner. The grid is now looking complete and balanced, with all the objects in harmony with each other. I think we've achieved our goal of creating a beautiful and harmonious arrangement. Should we confirm with each other that we're finished and that our grids match?)\\ \tt " 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "Yes, I've moved 'I' to the bottom left corner. The grid is now looking complete and balanced, with all the objects in harmony with each other. I think we've achieved our goal of creating a beautiful and harmonious arrangement. Should we confirm with each other that we're finished and that our grids match?"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You have collectively accumulated 4 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "Yes, I've moved 'I' to the bottom left corner. The grid is now looking complete and balanced, with all the objects in harmony with each other. I think we've achieved our goal of creating a beautiful and harmonious arrangement. Should we confirm with each other that we're finished and that our grids match?"\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 say(finished?) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 say(finished?) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "finished?"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You have collectively accumulated 4 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "finished?"\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 say(finished!) 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 say(finished!) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 true 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "finished!"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Initial grids:\\ \tt Player 1 grid:\\ \tt ```\\ \tt     1234567\\ \tt    ╔═╤═════╗\\ \tt  1 ║◌│◌◌◌◌◌║\\ \tt  2 ║◌└─┐◌◌◌║\\ \tt  3 ║◌◌◌│W◌◌║\\ \tt  4 ╟───┼─┐◌║\\ \tt  5 ║◌◌H│C│◌║\\ \tt  6 ║◌T◌└─┘◌║\\ \tt  7 ║◌I◌◌◌◌◌║\\ \tt    ╚═══════╝\\ \tt ```\\ \tt Player 2 grid:\\ \tt ```\\ \tt     1234567\\ \tt    ╔═╤═════╗\\ \tt  1 ║◌│◌TIW◌║\\ \tt  2 ║◌└─┐◌◌◌║\\ \tt  3 ║C◌◌│◌◌◌║\\ \tt  4 ╟───┼─┐◌║\\ \tt  5 ║◌◌◌│◌│◌║\\ \tt  6 ║H◌◌└─┘◌║\\ \tt  7 ║◌◌◌◌◌◌◌║\\ \tt    ╚═══════╝\\ \tt ``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Player 1 grid:\\ \tt ```\\ \tt     1234567\\ \tt    ╔═╤═════╗\\ \tt  1 ║◌│◌◌◌◌◌║\\ \tt  2 ║◌└─┐◌◌◌║\\ \tt  3 ║◌◌◌│◌◌◌║\\ \tt  4 ╟───┼─┐◌║\\ \tt  5 ║◌◌H│C│◌║\\ \tt  6 ║◌T◌└─┘◌║\\ \tt  7 ║◌I◌◌◌◌W║\\ \tt    ╚═══════╝\\ \tt \\ \tt ```\\ \tt Player 2 grid:\\ \tt ```\\ \tt     1234567\\ \tt    ╔═╤═════╗\\ \tt  1 ║T│◌◌◌◌◌║\\ \tt  2 ║◌└─┐◌◌◌║\\ \tt  3 ║◌◌◌│◌◌◌║\\ \tt  4 ╟───┼─┐◌║\\ \tt  5 ║◌◌◌│C│◌║\\ \tt  6 ║◌◌H└─┘◌║\\ \tt  7 ║I◌◌◌◌◌W║\\ \tt    ╚═══════╝\\ \tt ``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 * success: True\\ \tt * penalties: 4\\ \tt * rounds: 20\\ \tt * initial distance: 21.04\\ \tt * Total Distance: 7.10\\ \tt * old_distance_score: 0.87\\ \tt * Expected Distance Score: 0.66\\ \tt * Distance Reduction Score: 0.66\\ \tt * Distance Score: 0.66\\ \tt * object count: 5\\ \tt * aborted: False\\ \tt * lose: False 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

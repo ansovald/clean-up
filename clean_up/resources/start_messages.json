@@ -1,0 +1,14 @@
+{
+    "en": {
+        "p1_start": "\n\nPlease send a message to the other player to start the game!",
+        "p2_start": "\nThe other player started the game by sending this message:\n\n\"$start_message\"\n\nWhat is your first command?"
+    },
+    "zh-CN": {
+        "p1_start": "\n请向另一位玩家发送一条消息以开始游戏！",
+        "p2_start": "\n另一位玩家开始了游戏并发送了以下消息：\n\n\"$start_message\"\n\n你的第一条指令是什么？"
+    },
+    "de": {
+        "p1_start": "\nSchicke eine Nachricht an deinen Mitspieler um das Spiel zu starten!",
+        "p2_start": "\nDein Mitspieler hat das Spiel mit dieser Nachricht begonnen:\n\n\"$start_message\"\n\nWie lautet dein erster Befehl?"
+    }
+}

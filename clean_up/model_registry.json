@@ -1,5 +1,18 @@
 [
     {
+        "model_name": "mistral-small-3.1-24b",
+        "model_id": "mistralai/mistral-small-3.1-24b-instruct:free",
+        "backend": "openai_compatible",
+        "model_config": {
+            "multimodality": {
+            "single_image": true,
+            "multiple_images": true,
+            "audio": false,
+            "video": false
+            }
+        }
+    },
+    {
         "model_name": "Meta-Llama-3.1-8B-Instruct",
         "model_id": "Meta-Llama-3.1-8B-Instruct",
         "backend": "huggingface_local",
@@ -385,7 +398,8 @@
         "parameters": "671B",
         "languages": [
             "en",
-            "zh"
+            "zh", 
+            "de"
         ],
         "context_size": "128k",
         "license": {
@@ -442,6 +456,29 @@
         "model_name": "mistral-small-2503",
         "model_id": "mistral-small-2503",
         "backend": "mistral",
+        "release_date": "2023-12-01",
+        "open_weight": true,
+        "parameters": "",
+        "languages": [
+            "en",
+            "de",
+            "fr",
+            "it",
+            "es"
+        ],
+        "context_size": "32k",
+        "license": {
+            "name": "Mistral",
+            "url": "https://mistral.ai/licenses/MRL-0.1.md"
+        },
+        "model_config": {
+
+        }
+    },
+    {
+        "model_name": "mistral-small-or",
+        "model_id": "mistralai/mistral-small-3.2-24b-instruct:free",
+        "backend": "openai_compatible",
         "release_date": "2023-12-01",
         "open_weight": true,
         "parameters": "",

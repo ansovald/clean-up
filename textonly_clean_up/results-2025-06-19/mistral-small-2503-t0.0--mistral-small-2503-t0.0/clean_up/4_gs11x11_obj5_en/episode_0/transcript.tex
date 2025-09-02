@@ -1,0 +1,1560 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You are playing a collaborative game with another player. You both have identical grids, and the following objects are randomly placed on each grid: 'C', 'H', 'I', 'T', 'W'.\\ \tt \\ \tt You cannot see the other player's grid, and they cannot see yours.\\ \tt \\ \tt **Goal:**\\ \tt Both players need to move their objects on the grid in such a way that in the end both grids look the same.\\ \tt Remember that you can only see your own grid! You have to communicate with the other player to agree upon a common goal state.\\ \tt \\ \tt **Rules:**\\ \tt \\ \tt * In each turn, you can send exactly one command. Valid commands are:\\ \tt     * Send a message to the other player: `say(<message>)`\\ \tt     * Move an object to a new position: `move(<object>,<x>,<y>)`\\ \tt     * If you use any other format, or send several commands at once, you will be penalized!\\ \tt     * If both players accumulate more than 10 penalties, the game ends.\\ \tt \\ \tt **Communicating with the other player**\\ \tt \\ \tt * It is vital that you communicate with the other player regarding your goal state! For example, it might be a good idea to agree on moving one object at a time. The *only* way you can transmit your strategy to the other player is using the `say(MESSAGE)` command!\\ \tt     * For example, if you want to move the object 'W' to the lower right corner, you could send a message such as `say(Let's move 'W' to the lower right corner. Do you agree?)`\\ \tt     * Make sure that you have agreed with the other player before you move any object!\\ \tt * You must not use the words 'row', 'column', coordinates, or numbers of any form when communicating with the other player. If you do, you get a penalty. Instead, use the shapes you see in the grid as reference, such as 'the bottom left corner', 'the larger empty rectangle in the lower center', etc.\\ \tt \\ \tt **Moving Objects**\\ \tt \\ \tt * You can only move objects to cells with in the bounds of the grid. The target cell must be empty, i.e., it must only contain the symbol '◌'.\\ \tt * For example, imagine you have a grid that looks like this: \\ \tt \\ \tt ```\\ \tt     123\\ \tt    ╔═╤═╗\\ \tt  1 ║◌│◌║\\ \tt  2 ╟─┘C║\\ \tt  3 ║◌◌◌║\\ \tt    ╚═══╝\\ \tt ```\\ \tt \\ \tt \\ \tt * In this example, the top left corner is at `(1,1)`, the top right corner is at `(3,1)`, the bottom left corner at `(1,3)` and the bottom right corner is at `(3,3)`.\\ \tt * If you have agreed with the other player to move 'C' to the top left corner, you can do this with the following command: `move(C,1,1)`. The resulting grid would look like this: \\ \tt \\ \tt \\ \tt ```\\ \tt     123\\ \tt    ╔═╤═╗\\ \tt  1 ║C│◌║\\ \tt  2 ╟─┘◌║\\ \tt  3 ║◌◌◌║\\ \tt    ╚═══╝\\ \tt ```\\ \tt \\ \tt \\ \tt * However, if you try `move(C,2,1)`, you will be penalized, since the spot `(2,1)` is already occupied by the vertical line '│'.\\ \tt * Similarly, if you try `move(C,2,2)`, you will be penalized, since the spot `(2,2)` is already occupied by '┘'.\\ \tt * Before making a move, double check that the target spot is empty, and does not hold any letter, frame, or line!\\ \tt * If you try to move an object to a spot that is not empty, or try to move it outside of the grid, you will be penalized and can try again.\\ \tt \\ \tt \\ \tt **End of Game:**\\ \tt If you think you reached the goal, you can ask the other player to finish the game by sending `say(finished?)`. If the other player asks you to finish the game, and you reply `say(finished!)`, the game will end.\\ \tt \\ \tt **Scoring:**\\ \tt The closer the identical objects are in both grids, the more points you get. Penalties reduce your points. Can you beat the record?\\ \tt                            \\ \tt **Grid:**\\ \tt When moving an object, make sure the target spot is empty! Otherwise, you will be penalized.\\ \tt Here is your grid:\\ \tt ```\\ \tt     123456789\\ \tt    ╔═════╤═╤═╗\\ \tt  1 ║◌◌◌H◌│◌│◌║\\ \tt  2 ║◌◌┌──┴─┘◌║\\ \tt  3 ║◌◌│◌◌◌◌◌◌║\\ \tt  4 ║◌◌└─┬────╢\\ \tt  5 ║◌◌◌◌│◌◌◌◌║\\ \tt  6 ║◌◌┌─┼─┐◌I║\\ \tt  7 ║◌◌│◌│◌│◌◌║\\ \tt  8 ║◌◌│C└─┘◌◌║\\ \tt  9 ║T◌│◌◌◌◌◌W║\\ \tt    ╚══╧══════╝\\ \tt ```\\ \tt \\ \tt \\ \tt **IMPORTANT:**\\ \tt \\ \tt * Each message must only contain exactly one command of the type `say(MESSAGE)` or `move(ID, X, Y)`, and nothing else!\\ \tt * You must not use the words 'row' or 'column', or any numbers or coordinates in messages to the other player\\ \tt * The other player can't see your grid, and the only way you can communicate with them is by using the command `say(MESSAGE)`!\\ \tt \\ \tt Please send a message to the other player to start the game! 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 To start the game, I'll propose a strategy to the other player. Let's begin by agreeing on a general approach to move the objects one by one. We'll start with the object 'C'.\\ \tt \\ \tt ```say(Let's move 'C' to the upper left corner. Do you agree?)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 To start the game, I'll propose a strategy to the other player. Let's begin by agreeing on a general approach to move the objects one by one. We'll start with the object 'C'.\\ \tt \\ \tt ```say(Let's move 'C' to the upper left corner. Do you agree?)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "Let's move 'C' to the upper left corner. Do you agree?"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You are playing a collaborative game with another player. You both have identical grids, and the following objects are randomly placed on each grid: 'C', 'H', 'I', 'T', 'W'.\\ \tt \\ \tt You cannot see the other player's grid, and they cannot see yours.\\ \tt \\ \tt **Goal:**\\ \tt Both players need to move their objects on the grid in such a way that in the end both grids look the same.\\ \tt Remember that you can only see your own grid! You have to communicate with the other player to agree upon a common goal state.\\ \tt \\ \tt **Rules:**\\ \tt \\ \tt * In each turn, you can send exactly one command. Valid commands are:\\ \tt     * Send a message to the other player: `say(<message>)`\\ \tt     * Move an object to a new position: `move(<object>,<x>,<y>)`\\ \tt     * If you use any other format, or send several commands at once, you will be penalized!\\ \tt     * If both players accumulate more than 10 penalties, the game ends.\\ \tt \\ \tt **Communicating with the other player**\\ \tt \\ \tt * It is vital that you communicate with the other player regarding your goal state! For example, it might be a good idea to agree on moving one object at a time. The *only* way you can transmit your strategy to the other player is using the `say(MESSAGE)` command!\\ \tt     * For example, if you want to move the object 'W' to the lower right corner, you could send a message such as `say(Let's move 'W' to the lower right corner. Do you agree?)`\\ \tt     * Make sure that you have agreed with the other player before you move any object!\\ \tt * You must not use the words 'row', 'column', coordinates, or numbers of any form when communicating with the other player. If you do, you get a penalty. Instead, use the shapes you see in the grid as reference, such as 'the bottom left corner', 'the larger empty rectangle in the lower center', etc.\\ \tt \\ \tt **Moving Objects**\\ \tt \\ \tt * You can only move objects to cells with in the bounds of the grid. The target cell must be empty, i.e., it must only contain the symbol '◌'.\\ \tt * For example, imagine you have a grid that looks like this: \\ \tt \\ \tt ```\\ \tt     123\\ \tt    ╔═╤═╗\\ \tt  1 ║◌│◌║\\ \tt  2 ╟─┘C║\\ \tt  3 ║◌◌◌║\\ \tt    ╚═══╝\\ \tt ```\\ \tt \\ \tt \\ \tt * In this example, the top left corner is at `(1,1)`, the top right corner is at `(3,1)`, the bottom left corner at `(1,3)` and the bottom right corner is at `(3,3)`.\\ \tt * If you have agreed with the other player to move 'C' to the top left corner, you can do this with the following command: `move(C,1,1)`. The resulting grid would look like this: \\ \tt \\ \tt \\ \tt ```\\ \tt     123\\ \tt    ╔═╤═╗\\ \tt  1 ║C│◌║\\ \tt  2 ╟─┘◌║\\ \tt  3 ║◌◌◌║\\ \tt    ╚═══╝\\ \tt ```\\ \tt \\ \tt \\ \tt * However, if you try `move(C,2,1)`, you will be penalized, since the spot `(2,1)` is already occupied by the vertical line '│'.\\ \tt * Similarly, if you try `move(C,2,2)`, you will be penalized, since the spot `(2,2)` is already occupied by '┘'.\\ \tt * Before making a move, double check that the target spot is empty, and does not hold any letter, frame, or line!\\ \tt * If you try to move an object to a spot that is not empty, or try to move it outside of the grid, you will be penalized and can try again.\\ \tt \\ \tt \\ \tt **End of Game:**\\ \tt If you think you reached the goal, you can ask the other player to finish the game by sending `say(finished?)`. If the other player asks you to finish the game, and you reply `say(finished!)`, the game will end.\\ \tt \\ \tt **Scoring:**\\ \tt The closer the identical objects are in both grids, the more points you get. Penalties reduce your points. Can you beat the record?\\ \tt                            \\ \tt **Grid:**\\ \tt When moving an object, make sure the target spot is empty! Otherwise, you will be penalized.\\ \tt Here is your grid:\\ \tt ```\\ \tt     123456789\\ \tt    ╔═════╤═╤═╗\\ \tt  1 ║◌◌◌◌◌│T│◌║\\ \tt  2 ║◌◌┌──┴─┘◌║\\ \tt  3 ║H◌│◌◌◌◌◌◌║\\ \tt  4 ║◌◌└─┬────╢\\ \tt  5 ║◌◌WC│◌◌◌◌║\\ \tt  6 ║◌◌┌─┼─┐◌◌║\\ \tt  7 ║◌◌│◌│◌│◌◌║\\ \tt  8 ║◌◌│◌└─┘I◌║\\ \tt  9 ║◌◌│◌◌◌◌◌◌║\\ \tt    ╚══╧══════╝\\ \tt ```\\ \tt \\ \tt \\ \tt **IMPORTANT:**\\ \tt \\ \tt * Each message must only contain exactly one command of the type `say(MESSAGE)` or `move(ID, X, Y)`, and nothing else!\\ \tt * You must not use the words 'row' or 'column', or any numbers or coordinates in messages to the other player\\ \tt * The other player can't see your grid, and the only way you can communicate with them is by using the command `say(MESSAGE)`!\\ \tt \\ \tt The other player started the game by sending this message:\\ \tt \\ \tt "Let's move 'C' to the upper left corner. Do you agree?"\\ \tt \\ \tt What is your first command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 To start the game, you need to agree on the first move with the other player. Since the other player suggested moving 'C' to the upper left corner, you should agree to this move. Here is your first command:\\ \tt \\ \tt ```say(Yes, let's move 'C' to the upper left corner.)``` 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 To start the game, you need to agree on the first move with the other player. Since the other player suggested moving 'C' to the upper left corner, you should agree to this move. Here is your first command:\\ \tt \\ \tt ```say(Yes, let's move 'C' to the upper left corner.)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "Yes, let's move 'C' to the upper left corner."\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You have collectively accumulated 0 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "Yes, let's move 'C' to the upper left corner."\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 Now that we have agreed on moving 'C' to the upper left corner, I will execute the move.\\ \tt \\ \tt ```move(C,1,1)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Now that we have agreed on moving 'C' to the upper left corner, I will execute the move.\\ \tt \\ \tt ```move(C,1,1)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Moved C to (1,1) successfully. Your updated grid looks like this:\\ \tt ```\\ \tt     123456789\\ \tt    ╔═════╤═╤═╗\\ \tt  1 ║C◌◌H◌│◌│◌║\\ \tt  2 ║◌◌┌──┴─┘◌║\\ \tt  3 ║◌◌│◌◌◌◌◌◌║\\ \tt  4 ║◌◌└─┬────╢\\ \tt  5 ║◌◌◌◌│◌◌◌◌║\\ \tt  6 ║◌◌┌─┼─┐◌I║\\ \tt  7 ║◌◌│◌│◌│◌◌║\\ \tt  8 ║◌◌│◌└─┘◌◌║\\ \tt  9 ║T◌│◌◌◌◌◌W║\\ \tt    ╚══╧══════╝\\ \tt ```\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Moved C to (1,1) successfully. Your updated grid looks like this:\\ \tt ```\\ \tt     123456789\\ \tt    ╔═════╤═╤═╗\\ \tt  1 ║C◌◌H◌│◌│◌║\\ \tt  2 ║◌◌┌──┴─┘◌║\\ \tt  3 ║◌◌│◌◌◌◌◌◌║\\ \tt  4 ║◌◌└─┬────╢\\ \tt  5 ║◌◌◌◌│◌◌◌◌║\\ \tt  6 ║◌◌┌─┼─┐◌I║\\ \tt  7 ║◌◌│◌│◌│◌◌║\\ \tt  8 ║◌◌│◌└─┘◌◌║\\ \tt  9 ║T◌│◌◌◌◌◌W║\\ \tt    ╚══╧══════╝\\ \tt ```\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You have collectively accumulated 0 of 10 penalties.\\ \tt The other player moved an object on their grid.\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 Now that the other player has moved 'C' to the upper left corner, you need to do the same on your grid. The upper left corner is at position (1,1). Here is your next command:\\ \tt \\ \tt ```move(C,1,1)``` 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Now that the other player has moved 'C' to the upper left corner, you need to do the same on your grid. The upper left corner is at position (1,1). Here is your next command:\\ \tt \\ \tt ```move(C,1,1)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Moved C to (1,1) successfully. Your updated grid looks like this:\\ \tt ```\\ \tt     123456789\\ \tt    ╔═════╤═╤═╗\\ \tt  1 ║C◌◌◌◌│T│◌║\\ \tt  2 ║◌◌┌──┴─┘◌║\\ \tt  3 ║H◌│◌◌◌◌◌◌║\\ \tt  4 ║◌◌└─┬────╢\\ \tt  5 ║◌◌W◌│◌◌◌◌║\\ \tt  6 ║◌◌┌─┼─┐◌◌║\\ \tt  7 ║◌◌│◌│◌│◌◌║\\ \tt  8 ║◌◌│◌└─┘I◌║\\ \tt  9 ║◌◌│◌◌◌◌◌◌║\\ \tt    ╚══╧══════╝\\ \tt ```\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Moved C to (1,1) successfully. Your updated grid looks like this:\\ \tt ```\\ \tt     123456789\\ \tt    ╔═════╤═╤═╗\\ \tt  1 ║C◌◌◌◌│T│◌║\\ \tt  2 ║◌◌┌──┴─┘◌║\\ \tt  3 ║H◌│◌◌◌◌◌◌║\\ \tt  4 ║◌◌└─┬────╢\\ \tt  5 ║◌◌W◌│◌◌◌◌║\\ \tt  6 ║◌◌┌─┼─┐◌◌║\\ \tt  7 ║◌◌│◌│◌│◌◌║\\ \tt  8 ║◌◌│◌└─┘I◌║\\ \tt  9 ║◌◌│◌◌◌◌◌◌║\\ \tt    ╚══╧══════╝\\ \tt ```\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You have collectively accumulated 0 of 10 penalties.\\ \tt The other player moved an object on their grid.\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 Next, let's agree on moving the object 'H' to the upper right corner.\\ \tt \\ \tt ```say(Let's move 'H' to the upper right corner. Do you agree?)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Next, let's agree on moving the object 'H' to the upper right corner.\\ \tt \\ \tt ```say(Let's move 'H' to the upper right corner. Do you agree?)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "Let's move 'H' to the upper right corner. Do you agree?"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You have collectively accumulated 0 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "Let's move 'H' to the upper right corner. Do you agree?"\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 To continue the game, you should agree to move 'H' to the upper right corner. Here is your next command:\\ \tt \\ \tt ```say(Yes, let's move 'H' to the upper right corner.)``` 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 To continue the game, you should agree to move 'H' to the upper right corner. Here is your next command:\\ \tt \\ \tt ```say(Yes, let's move 'H' to the upper right corner.)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "Yes, let's move 'H' to the upper right corner."\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You have collectively accumulated 0 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "Yes, let's move 'H' to the upper right corner."\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 Now that we have agreed on moving 'H' to the upper right corner, I will execute the move.\\ \tt \\ \tt ```move(H,1,9)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Now that we have agreed on moving 'H' to the upper right corner, I will execute the move.\\ \tt \\ \tt ```move(H,1,9)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Penalty: (1,9) is not empty, but contains 'T'.\\ \tt \\ \tt You have collectively accumulated 1 of 10 penalties. Please try again!\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Penalty: (1,9) is not empty, but contains 'T'.\\ \tt \\ \tt You have collectively accumulated 1 of 10 penalties. Please try again!\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 I apologize for the mistake. Let's correct the move for 'H' to the upper right corner.\\ \tt \\ \tt ```move(H,1,7)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 I apologize for the mistake. Let's correct the move for 'H' to the upper right corner.\\ \tt \\ \tt ```move(H,1,7)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Moved H to (1,7) successfully. Your updated grid looks like this:\\ \tt ```\\ \tt     123456789\\ \tt    ╔═════╤═╤═╗\\ \tt  1 ║C◌◌◌◌│◌│◌║\\ \tt  2 ║◌◌┌──┴─┘◌║\\ \tt  3 ║◌◌│◌◌◌◌◌◌║\\ \tt  4 ║◌◌└─┬────╢\\ \tt  5 ║◌◌◌◌│◌◌◌◌║\\ \tt  6 ║◌◌┌─┼─┐◌I║\\ \tt  7 ║H◌│◌│◌│◌◌║\\ \tt  8 ║◌◌│◌└─┘◌◌║\\ \tt  9 ║T◌│◌◌◌◌◌W║\\ \tt    ╚══╧══════╝\\ \tt ```\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Moved H to (1,7) successfully. Your updated grid looks like this:\\ \tt ```\\ \tt     123456789\\ \tt    ╔═════╤═╤═╗\\ \tt  1 ║C◌◌◌◌│◌│◌║\\ \tt  2 ║◌◌┌──┴─┘◌║\\ \tt  3 ║◌◌│◌◌◌◌◌◌║\\ \tt  4 ║◌◌└─┬────╢\\ \tt  5 ║◌◌◌◌│◌◌◌◌║\\ \tt  6 ║◌◌┌─┼─┐◌I║\\ \tt  7 ║H◌│◌│◌│◌◌║\\ \tt  8 ║◌◌│◌└─┘◌◌║\\ \tt  9 ║T◌│◌◌◌◌◌W║\\ \tt    ╚══╧══════╝\\ \tt ```\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You have collectively accumulated 1 of 10 penalties.\\ \tt The other player moved an object on their grid.\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 Since the other player has moved 'H' to the upper right corner, you need to do the same on your grid. The upper right corner is at position (9,1). Here is your next command:\\ \tt \\ \tt ```move(H,9,1)``` 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Since the other player has moved 'H' to the upper right corner, you need to do the same on your grid. The upper right corner is at position (9,1). Here is your next command:\\ \tt \\ \tt ```move(H,9,1)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Moved H to (9,1) successfully. Your updated grid looks like this:\\ \tt ```\\ \tt     123456789\\ \tt    ╔═════╤═╤═╗\\ \tt  1 ║C◌◌◌◌│T│H║\\ \tt  2 ║◌◌┌──┴─┘◌║\\ \tt  3 ║◌◌│◌◌◌◌◌◌║\\ \tt  4 ║◌◌└─┬────╢\\ \tt  5 ║◌◌W◌│◌◌◌◌║\\ \tt  6 ║◌◌┌─┼─┐◌◌║\\ \tt  7 ║◌◌│◌│◌│◌◌║\\ \tt  8 ║◌◌│◌└─┘I◌║\\ \tt  9 ║◌◌│◌◌◌◌◌◌║\\ \tt    ╚══╧══════╝\\ \tt ```\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Moved H to (9,1) successfully. Your updated grid looks like this:\\ \tt ```\\ \tt     123456789\\ \tt    ╔═════╤═╤═╗\\ \tt  1 ║C◌◌◌◌│T│H║\\ \tt  2 ║◌◌┌──┴─┘◌║\\ \tt  3 ║◌◌│◌◌◌◌◌◌║\\ \tt  4 ║◌◌└─┬────╢\\ \tt  5 ║◌◌W◌│◌◌◌◌║\\ \tt  6 ║◌◌┌─┼─┐◌◌║\\ \tt  7 ║◌◌│◌│◌│◌◌║\\ \tt  8 ║◌◌│◌└─┘I◌║\\ \tt  9 ║◌◌│◌◌◌◌◌◌║\\ \tt    ╚══╧══════╝\\ \tt ```\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You have collectively accumulated 1 of 10 penalties.\\ \tt The other player moved an object on their grid.\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 Next, let's agree on moving the object 'I' to the center of the grid.\\ \tt \\ \tt ```say(Let's move 'I' to the center of the grid. Do you agree?)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Next, let's agree on moving the object 'I' to the center of the grid.\\ \tt \\ \tt ```say(Let's move 'I' to the center of the grid. Do you agree?)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "Let's move 'I' to the center of the grid. Do you agree?"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You have collectively accumulated 1 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "Let's move 'I' to the center of the grid. Do you agree?"\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 To agree with the other player on moving 'I' to the center of the grid, you should confirm this move. The center of the grid can be described as the middle empty cell in the grid. Here is your next command:\\ \tt \\ \tt ```say(Yes, let's move 'I' to the center of the grid.)```\\ \tt \\ \tt Your message is being relayed to the other player:\\ \tt \\ \tt "Your message is being relayed to the other player:\\ \tt \\ \tt "Yes, let's move 'I' to the center of the grid."\\ \tt " 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 To agree with the other player on moving 'I' to the center of the grid, you should confirm this move. The center of the grid can be described as the middle empty cell in the grid. Here is your next command:\\ \tt \\ \tt ```say(Yes, let's move 'I' to the center of the grid.)```\\ \tt \\ \tt Your message is being relayed to the other player:\\ \tt \\ \tt "Your message is being relayed to the other player:\\ \tt \\ \tt "Yes, let's move 'I' to the center of the grid."\\ \tt " 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "Yes, let's move 'I' to the center of the grid."\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You have collectively accumulated 1 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "Yes, let's move 'I' to the center of the grid."\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 Now that we have agreed on moving 'I' to the center of the grid, I will execute the move.\\ \tt \\ \tt ```move(I,5,5)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Now that we have agreed on moving 'I' to the center of the grid, I will execute the move.\\ \tt \\ \tt ```move(I,5,5)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Penalty: (5,5) is not empty, but contains '│'.\\ \tt \\ \tt You have collectively accumulated 2 of 10 penalties. Please try again!\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Penalty: (5,5) is not empty, but contains '│'.\\ \tt \\ \tt You have collectively accumulated 2 of 10 penalties. Please try again!\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 I apologize for the oversight. Let's correct the move for 'I' to the center of the grid.\\ \tt \\ \tt ```move(I,5,4)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 I apologize for the oversight. Let's correct the move for 'I' to the center of the grid.\\ \tt \\ \tt ```move(I,5,4)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Penalty: (5,4) is not empty, but contains '┬'.\\ \tt \\ \tt You have collectively accumulated 3 of 10 penalties. Please try again!\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Penalty: (5,4) is not empty, but contains '┬'.\\ \tt \\ \tt You have collectively accumulated 3 of 10 penalties. Please try again!\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 I apologize for the repeated mistakes. Let's correct the move for 'I' to the center of the grid.\\ \tt \\ \tt ```move(I,5,6)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 I apologize for the repeated mistakes. Let's correct the move for 'I' to the center of the grid.\\ \tt \\ \tt ```move(I,5,6)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Penalty: (5,6) is not empty, but contains '┼'.\\ \tt \\ \tt You have collectively accumulated 4 of 10 penalties. Please try again!\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Penalty: (5,6) is not empty, but contains '┼'.\\ \tt \\ \tt You have collectively accumulated 4 of 10 penalties. Please try again!\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 I apologize for the errors. Let's find an appropriate empty spot for 'I' in the center of the grid.\\ \tt \\ \tt ```move(I,5,7)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 I apologize for the errors. Let's find an appropriate empty spot for 'I' in the center of the grid.\\ \tt \\ \tt ```move(I,5,7)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Penalty: (5,7) is not empty, but contains '│'.\\ \tt \\ \tt You have collectively accumulated 5 of 10 penalties. Please try again!\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Penalty: (5,7) is not empty, but contains '│'.\\ \tt \\ \tt You have collectively accumulated 5 of 10 penalties. Please try again!\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 I apologize for the repeated mistakes. Let's correct the move for 'I' to the center of the grid.\\ \tt \\ \tt ```move(I,4,5)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 I apologize for the repeated mistakes. Let's correct the move for 'I' to the center of the grid.\\ \tt \\ \tt ```move(I,4,5)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Moved I to (4,5) successfully. Your updated grid looks like this:\\ \tt ```\\ \tt     123456789\\ \tt    ╔═════╤═╤═╗\\ \tt  1 ║C◌◌◌◌│◌│◌║\\ \tt  2 ║◌◌┌──┴─┘◌║\\ \tt  3 ║◌◌│◌◌◌◌◌◌║\\ \tt  4 ║◌◌└─┬────╢\\ \tt  5 ║◌◌◌I│◌◌◌◌║\\ \tt  6 ║◌◌┌─┼─┐◌◌║\\ \tt  7 ║H◌│◌│◌│◌◌║\\ \tt  8 ║◌◌│◌└─┘◌◌║\\ \tt  9 ║T◌│◌◌◌◌◌W║\\ \tt    ╚══╧══════╝\\ \tt ```\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Moved I to (4,5) successfully. Your updated grid looks like this:\\ \tt ```\\ \tt     123456789\\ \tt    ╔═════╤═╤═╗\\ \tt  1 ║C◌◌◌◌│◌│◌║\\ \tt  2 ║◌◌┌──┴─┘◌║\\ \tt  3 ║◌◌│◌◌◌◌◌◌║\\ \tt  4 ║◌◌└─┬────╢\\ \tt  5 ║◌◌◌I│◌◌◌◌║\\ \tt  6 ║◌◌┌─┼─┐◌◌║\\ \tt  7 ║H◌│◌│◌│◌◌║\\ \tt  8 ║◌◌│◌└─┘◌◌║\\ \tt  9 ║T◌│◌◌◌◌◌W║\\ \tt    ╚══╧══════╝\\ \tt ```\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You have collectively accumulated 5 of 10 penalties.\\ \tt The other player moved an object on their grid.\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 Given the penalties, it seems there might have been some misunderstandings or issues with the communication. Let's proceed carefully. The center of the grid is at position (5,5). Here is your next command to move 'I' to the center:\\ \tt \\ \tt ```move(I,5,5)``` 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Given the penalties, it seems there might have been some misunderstandings or issues with the communication. Let's proceed carefully. The center of the grid is at position (5,5). Here is your next command to move 'I' to the center:\\ \tt \\ \tt ```move(I,5,5)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Penalty: (5,5) is not empty, but contains '│'.\\ \tt \\ \tt You have collectively accumulated 6 of 10 penalties. Please try again!\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Penalty: (5,5) is not empty, but contains '│'.\\ \tt \\ \tt You have collectively accumulated 6 of 10 penalties. Please try again!\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 I apologize for the oversight. The center of the grid is not empty. Let's find an appropriate empty spot near the center. A good candidate would be the empty cell directly to the right of the vertical line in the center, which is at position (5,6). Here is your next command:\\ \tt \\ \tt ```move(I,5,6)``` 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 I apologize for the oversight. The center of the grid is not empty. Let's find an appropriate empty spot near the center. A good candidate would be the empty cell directly to the right of the vertical line in the center, which is at position (5,6). Here is your next command:\\ \tt \\ \tt ```move(I,5,6)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Penalty: (5,6) is not empty, but contains '┼'.\\ \tt \\ \tt You have collectively accumulated 7 of 10 penalties. Please try again!\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Penalty: (5,6) is not empty, but contains '┼'.\\ \tt \\ \tt You have collectively accumulated 7 of 10 penalties. Please try again!\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 I apologize for the mistakes. Let's carefully identify an empty spot near the center. Looking at the grid, a suitable empty spot is at position (5,7). Here is your next command:\\ \tt \\ \tt ```move(I,5,7)``` 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 I apologize for the mistakes. Let's carefully identify an empty spot near the center. Looking at the grid, a suitable empty spot is at position (5,7). Here is your next command:\\ \tt \\ \tt ```move(I,5,7)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Penalty: (5,7) is not empty, but contains '│'.\\ \tt \\ \tt You have collectively accumulated 8 of 10 penalties. Please try again!\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Penalty: (5,7) is not empty, but contains '│'.\\ \tt \\ \tt You have collectively accumulated 8 of 10 penalties. Please try again!\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 I apologize for the repeated mistakes. Let's carefully identify an empty spot near the center. A suitable empty spot is at position (5,8). Here is your next command:\\ \tt \\ \tt ```move(I,5,8)``` 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 I apologize for the repeated mistakes. Let's carefully identify an empty spot near the center. A suitable empty spot is at position (5,8). Here is your next command:\\ \tt \\ \tt ```move(I,5,8)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Penalty: (5,8) is not empty, but contains '└'.\\ \tt \\ \tt You have collectively accumulated 9 of 10 penalties. Please try again!\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Penalty: (5,8) is not empty, but contains '└'.\\ \tt \\ \tt You have collectively accumulated 9 of 10 penalties. Please try again!\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 I apologize for the repeated errors. Let's carefully identify an empty spot near the center. A suitable empty spot is at position (6,5). Here is your next command:\\ \tt \\ \tt ```move(I,6,5)``` 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 I apologize for the repeated errors. Let's carefully identify an empty spot near the center. A suitable empty spot is at position (6,5). Here is your next command:\\ \tt \\ \tt ```move(I,6,5)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Moved I to (6,5) successfully. Your updated grid looks like this:\\ \tt ```\\ \tt     123456789\\ \tt    ╔═════╤═╤═╗\\ \tt  1 ║C◌◌◌◌│T│H║\\ \tt  2 ║◌◌┌──┴─┘◌║\\ \tt  3 ║◌◌│◌◌◌◌◌◌║\\ \tt  4 ║◌◌└─┬────╢\\ \tt  5 ║◌◌W◌│I◌◌◌║\\ \tt  6 ║◌◌┌─┼─┐◌◌║\\ \tt  7 ║◌◌│◌│◌│◌◌║\\ \tt  8 ║◌◌│◌└─┘◌◌║\\ \tt  9 ║◌◌│◌◌◌◌◌◌║\\ \tt    ╚══╧══════╝\\ \tt ```\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Moved I to (6,5) successfully. Your updated grid looks like this:\\ \tt ```\\ \tt     123456789\\ \tt    ╔═════╤═╤═╗\\ \tt  1 ║C◌◌◌◌│T│H║\\ \tt  2 ║◌◌┌──┴─┘◌║\\ \tt  3 ║◌◌│◌◌◌◌◌◌║\\ \tt  4 ║◌◌└─┬────╢\\ \tt  5 ║◌◌W◌│I◌◌◌║\\ \tt  6 ║◌◌┌─┼─┐◌◌║\\ \tt  7 ║◌◌│◌│◌│◌◌║\\ \tt  8 ║◌◌│◌└─┘◌◌║\\ \tt  9 ║◌◌│◌◌◌◌◌◌║\\ \tt    ╚══╧══════╝\\ \tt ```\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You have collectively accumulated 9 of 10 penalties.\\ \tt The other player moved an object on their grid.\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 Let's move on to the object 'T'. I suggest moving 'T' to the bottom left corner.\\ \tt \\ \tt ```say(Let's move 'T' to the bottom left corner. Do you agree?)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Let's move on to the object 'T'. I suggest moving 'T' to the bottom left corner.\\ \tt \\ \tt ```say(Let's move 'T' to the bottom left corner. Do you agree?)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "Let's move 'T' to the bottom left corner. Do you agree?"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You have collectively accumulated 9 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "Let's move 'T' to the bottom left corner. Do you agree?"\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 To avoid further penalties, let's agree with the other player's suggestion and move 'T' to the bottom left corner. Here is your next command:\\ \tt \\ \tt ```say(Yes, let's move 'T' to the bottom left corner.)```\\ \tt \\ \tt Your message is being relayed to the other player:\\ \tt \\ \tt "Your message is being relayed to the other player:\\ \tt \\ \tt "Yes, let's move 'T' to the bottom left corner."\\ \tt ``` 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 To avoid further penalties, let's agree with the other player's suggestion and move 'T' to the bottom left corner. Here is your next command:\\ \tt \\ \tt ```say(Yes, let's move 'T' to the bottom left corner.)```\\ \tt \\ \tt Your message is being relayed to the other player:\\ \tt \\ \tt "Your message is being relayed to the other player:\\ \tt \\ \tt "Yes, let's move 'T' to the bottom left corner."\\ \tt ``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "Yes, let's move 'T' to the bottom left corner."\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You have collectively accumulated 9 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "Yes, let's move 'T' to the bottom left corner."\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 Now that we have agreed on moving 'T' to the bottom left corner, I will execute the move.\\ \tt \\ \tt ```move(T,9,1)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Now that we have agreed on moving 'T' to the bottom left corner, I will execute the move.\\ \tt \\ \tt ```move(T,9,1)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Moved T to (9,1) successfully. Your updated grid looks like this:\\ \tt ```\\ \tt     123456789\\ \tt    ╔═════╤═╤═╗\\ \tt  1 ║C◌◌◌◌│◌│T║\\ \tt  2 ║◌◌┌──┴─┘◌║\\ \tt  3 ║◌◌│◌◌◌◌◌◌║\\ \tt  4 ║◌◌└─┬────╢\\ \tt  5 ║◌◌◌I│◌◌◌◌║\\ \tt  6 ║◌◌┌─┼─┐◌◌║\\ \tt  7 ║H◌│◌│◌│◌◌║\\ \tt  8 ║◌◌│◌└─┘◌◌║\\ \tt  9 ║◌◌│◌◌◌◌◌W║\\ \tt    ╚══╧══════╝\\ \tt ```\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Moved T to (9,1) successfully. Your updated grid looks like this:\\ \tt ```\\ \tt     123456789\\ \tt    ╔═════╤═╤═╗\\ \tt  1 ║C◌◌◌◌│◌│T║\\ \tt  2 ║◌◌┌──┴─┘◌║\\ \tt  3 ║◌◌│◌◌◌◌◌◌║\\ \tt  4 ║◌◌└─┬────╢\\ \tt  5 ║◌◌◌I│◌◌◌◌║\\ \tt  6 ║◌◌┌─┼─┐◌◌║\\ \tt  7 ║H◌│◌│◌│◌◌║\\ \tt  8 ║◌◌│◌└─┘◌◌║\\ \tt  9 ║◌◌│◌◌◌◌◌W║\\ \tt    ╚══╧══════╝\\ \tt ```\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You have collectively accumulated 9 of 10 penalties.\\ \tt The other player moved an object on their grid.\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 Now that the other player has moved 'T' to the bottom left corner, you need to do the same on your grid. The bottom left corner is at position (9,1). Here is your next command:\\ \tt \\ \tt ```move(T,9,1)``` 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Now that the other player has moved 'T' to the bottom left corner, you need to do the same on your grid. The bottom left corner is at position (9,1). Here is your next command:\\ \tt \\ \tt ```move(T,9,1)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Penalty: (9,1) is not empty, but contains 'H'.\\ \tt \\ \tt You have collectively accumulated 10 of 10 penalties. Please try again!\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Penalty: (9,1) is not empty, but contains 'H'.\\ \tt \\ \tt You have collectively accumulated 10 of 10 penalties. Please try again!\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 I apologize for the oversight. The bottom left corner is already occupied by 'H'. Let's move 'T' to the correct bottom left corner, which is at position (1,9). Here is your next command:\\ \tt \\ \tt ```move(T,1,9)``` 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 I apologize for the oversight. The bottom left corner is already occupied by 'H'. Let's move 'T' to the correct bottom left corner, which is at position (1,9). Here is your next command:\\ \tt \\ \tt ```move(T,1,9)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Moved T to (1,9) successfully. Your updated grid looks like this:\\ \tt ```\\ \tt     123456789\\ \tt    ╔═════╤═╤═╗\\ \tt  1 ║C◌◌◌◌│◌│H║\\ \tt  2 ║◌◌┌──┴─┘◌║\\ \tt  3 ║◌◌│◌◌◌◌◌◌║\\ \tt  4 ║◌◌└─┬────╢\\ \tt  5 ║◌◌W◌│I◌◌◌║\\ \tt  6 ║◌◌┌─┼─┐◌◌║\\ \tt  7 ║◌◌│◌│◌│◌◌║\\ \tt  8 ║◌◌│◌└─┘◌◌║\\ \tt  9 ║T◌│◌◌◌◌◌◌║\\ \tt    ╚══╧══════╝\\ \tt ```\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Moved T to (1,9) successfully. Your updated grid looks like this:\\ \tt ```\\ \tt     123456789\\ \tt    ╔═════╤═╤═╗\\ \tt  1 ║C◌◌◌◌│◌│H║\\ \tt  2 ║◌◌┌──┴─┘◌║\\ \tt  3 ║◌◌│◌◌◌◌◌◌║\\ \tt  4 ║◌◌└─┬────╢\\ \tt  5 ║◌◌W◌│I◌◌◌║\\ \tt  6 ║◌◌┌─┼─┐◌◌║\\ \tt  7 ║◌◌│◌│◌│◌◌║\\ \tt  8 ║◌◌│◌└─┘◌◌║\\ \tt  9 ║T◌│◌◌◌◌◌◌║\\ \tt    ╚══╧══════╝\\ \tt ```\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You have collectively accumulated 10 of 10 penalties.\\ \tt The other player moved an object on their grid.\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 Since we have accumulated 10 penalties, the game will end soon. Let's move on to the object 'W'. I suggest moving 'W' to the bottom right corner.\\ \tt \\ \tt ```say(Let's move 'W' to the bottom right corner. Do you agree?)```\\ \tt \\ \tt Your message is being relayed to the other player:\\ \tt \\ \tt "Your message is being relayed to the other player:\\ \tt \\ \tt "Let's move 'W' to the bottom right corner. Do you agree?"\\ \tt " 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Since we have accumulated 10 penalties, the game will end soon. Let's move on to the object 'W'. I suggest moving 'W' to the bottom right corner.\\ \tt \\ \tt ```say(Let's move 'W' to the bottom right corner. Do you agree?)```\\ \tt \\ \tt Your message is being relayed to the other player:\\ \tt \\ \tt "Your message is being relayed to the other player:\\ \tt \\ \tt "Let's move 'W' to the bottom right corner. Do you agree?"\\ \tt " 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "Let's move 'W' to the bottom right corner. Do you agree?"\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You have collectively accumulated 10 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "Let's move 'W' to the bottom right corner. Do you agree?"\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 To agree with the other player's suggestion and move 'W' to the bottom right corner, here is your next command:\\ \tt \\ \tt ```say(Yes, let's move 'W' to the bottom right corner.)```\\ \tt \\ \tt Your message is being relayed to the other player:\\ \tt \\ \tt "Your message is being relayed to the other player:\\ \tt \\ \tt "Yes, let's move 'W' to the bottom right corner."\\ \tt ``` 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 To agree with the other player's suggestion and move 'W' to the bottom right corner, here is your next command:\\ \tt \\ \tt ```say(Yes, let's move 'W' to the bottom right corner.)```\\ \tt \\ \tt Your message is being relayed to the other player:\\ \tt \\ \tt "Your message is being relayed to the other player:\\ \tt \\ \tt "Yes, let's move 'W' to the bottom right corner."\\ \tt ``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Your message is being relayed to the other player:\\ \tt \\ \tt "Yes, let's move 'W' to the bottom right corner."\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You have collectively accumulated 10 of 10 penalties.\\ \tt \\ \tt The other player sent this message:\\ \tt \\ \tt "Yes, let's move 'W' to the bottom right corner."\\ \tt \\ \tt What is your next command? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 Now that we have agreed on moving 'W' to the bottom right corner, I will execute the move.\\ \tt \\ \tt ```move(W,9,9)```\\ \tt \\ \tt After this move, let's check if both grids are identical. If so, we can finish the game.\\ \tt \\ \tt ```say(finished?)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Now that we have agreed on moving 'W' to the bottom right corner, I will execute the move.\\ \tt \\ \tt ```move(W,9,9)```\\ \tt \\ \tt After this move, let's check if both grids are identical. If so, we can finish the game.\\ \tt \\ \tt ```say(finished?)``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Invalid response format: Now that we have agreed on moving 'W' to the bottom right corner, I will execute the move.  move(W,9,9)  After this move, let's check if both grids are identical. If so, we can finish the game.  say(finished?) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Maximum number of penalties exceeded 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Initial grids:\\ \tt Player 1 grid:\\ \tt ```\\ \tt     123456789\\ \tt    ╔═════╤═╤═╗\\ \tt  1 ║◌◌◌H◌│◌│◌║\\ \tt  2 ║◌◌┌──┴─┘◌║\\ \tt  3 ║◌◌│◌◌◌◌◌◌║\\ \tt  4 ║◌◌└─┬────╢\\ \tt  5 ║◌◌◌◌│◌◌◌◌║\\ \tt  6 ║◌◌┌─┼─┐◌I║\\ \tt  7 ║◌◌│◌│◌│◌◌║\\ \tt  8 ║◌◌│C└─┘◌◌║\\ \tt  9 ║T◌│◌◌◌◌◌W║\\ \tt    ╚══╧══════╝\\ \tt ```\\ \tt Player 2 grid:\\ \tt ```\\ \tt     123456789\\ \tt    ╔═════╤═╤═╗\\ \tt  1 ║◌◌◌◌◌│T│◌║\\ \tt  2 ║◌◌┌──┴─┘◌║\\ \tt  3 ║H◌│◌◌◌◌◌◌║\\ \tt  4 ║◌◌└─┬────╢\\ \tt  5 ║◌◌WC│◌◌◌◌║\\ \tt  6 ║◌◌┌─┼─┐◌◌║\\ \tt  7 ║◌◌│◌│◌│◌◌║\\ \tt  8 ║◌◌│◌└─┘I◌║\\ \tt  9 ║◌◌│◌◌◌◌◌◌║\\ \tt    ╚══╧══════╝\\ \tt ``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Player 1 grid:\\ \tt ```\\ \tt     123456789\\ \tt    ╔═════╤═╤═╗\\ \tt  1 ║C◌◌◌◌│◌│T║\\ \tt  2 ║◌◌┌──┴─┘◌║\\ \tt  3 ║◌◌│◌◌◌◌◌◌║\\ \tt  4 ║◌◌└─┬────╢\\ \tt  5 ║◌◌◌I│◌◌◌◌║\\ \tt  6 ║◌◌┌─┼─┐◌◌║\\ \tt  7 ║H◌│◌│◌│◌◌║\\ \tt  8 ║◌◌│◌└─┘◌◌║\\ \tt  9 ║◌◌│◌◌◌◌◌W║\\ \tt    ╚══╧══════╝\\ \tt \\ \tt ```\\ \tt Player 2 grid:\\ \tt ```\\ \tt     123456789\\ \tt    ╔═════╤═╤═╗\\ \tt  1 ║C◌◌◌◌│◌│H║\\ \tt  2 ║◌◌┌──┴─┘◌║\\ \tt  3 ║◌◌│◌◌◌◌◌◌║\\ \tt  4 ║◌◌└─┬────╢\\ \tt  5 ║◌◌W◌│I◌◌◌║\\ \tt  6 ║◌◌┌─┼─┐◌◌║\\ \tt  7 ║◌◌│◌│◌│◌◌║\\ \tt  8 ║◌◌│◌└─┘◌◌║\\ \tt  9 ║T◌│◌◌◌◌◌◌║\\ \tt    ╚══╧══════╝\\ \tt ``` 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 * success: False\\ \tt * penalties: 11\\ \tt * rounds: 9\\ \tt * initial distance: 26.05\\ \tt * Total Distance: 30.52\\ \tt * old_distance_score: 0.57\\ \tt * Expected Distance Score: 0.00\\ \tt * Distance Reduction Score: 0.00\\ \tt * Distance Score: 0.00\\ \tt * object count: 5\\ \tt * aborted: True\\ \tt * lose: True 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

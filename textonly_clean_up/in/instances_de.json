@@ -1,0 +1,1449 @@
+{
+  "experiments": [
+    {
+      "name": "gs7x7_obj3_de",
+      "game_instances": [
+        {
+          "game_id": 0,
+          "language": "de",
+          "width": 7,
+          "height": 7,
+          "lenient": true,
+          "max_penalties": 6,
+          "max_rounds": 12,
+          "show_coords": true,
+          "empty_symbol": "◌",
+          "background": "╔═╤═╤═╗\n║◌│◌│◌║\n╟─┼─┴─╢\n║◌│◌◌◌║\n║◌└───╢\n║◌◌◌◌◌║\n╚═════╝\n",
+          "state1": [
+            {
+              "id": "C",
+              "coord": [
+                3,
+                3
+              ]
+            },
+            {
+              "id": "L",
+              "coord": [
+                1,
+                1
+              ]
+            },
+            {
+              "id": "P",
+              "coord": [
+                1,
+                5
+              ]
+            }
+          ],
+          "state2": [
+            {
+              "id": "C",
+              "coord": [
+                5,
+                1
+              ]
+            },
+            {
+              "id": "L",
+              "coord": [
+                3,
+                3
+              ]
+            },
+            {
+              "id": "P",
+              "coord": [
+                1,
+                3
+              ]
+            }
+          ],
+          "p1_initial_prompt": "Du spielst ein kooperatives Spiel mit einem Partner, und ich bin der Spielleiter. Ihr spielt beide auf einem identisches Raster, auf dem die folgenden Objekte jeweils zufällig verteilt sind: 'C', 'L', 'P'.\n\nDu kannst das Raster deines Mitspielers nicht sehen, und dein Mitspieler kann deines nicht sehen.\n\n**Ziel des Spiels:**\n\nBeide Spieler müssen die Objekte auf ihrem jeweiligen Raster so anordnen, dass sie am Ende gleich verteilt sind.\n\nDu musst dich mit deinem Spielpartner absprechen, damit ihr euch auf eine gemeinsame Anordnung der Objekte einigen könnt.\n\n**Spielregeln:**\n\n* In jedem Spielzug kannst du genau eine der folgenden zwei Aktionen ausführen:\n  * `SPRICH: <NACHRICHT>`: um eine Nachricht zu schicken, die ich dann an deinen Spielpartner weiterleite. Als Nachricht gilt alles bis zum nächsten Zeilenumbruch. \n  * `VERSCHIEBE: <OBJECT>, (<X>, <Y>)`: um ein Objekt an eine andere Position zu bewegen, wobei `<X>` die Spalte und `<Y>` die Zeile bezeichnet. Ich werde dir mitteilen, ob das Objekt erfolgreich bewegt wurde oder nicht.\n* Deine Nachricht darf nur genau einen Befehl enthalten und sonst nichts, insbesondere keine Argumentation oder Erklärungen vor oder nach dem Befehl.\n* Wenn du irgendein anderes Format verwendest oder mehrere Befehle gleichzeitig abschickst, muss ich euch einen Strafpunkt geben.\n* Wenn ihr gemeinsam mehr als 6 Strafpunkte ansammelt, verliert ihr das Spiel.\n* Es ist essenziell, dass du dich mit deinem Mitspieler auf eine gemeinsame Zielanordnung einigst! Zum Beispiel könntet ihr euch darauf einigen, ein Objekt nach dem anderen zu bewegen. Du kannst deinem Mitspieler deine Strategie ausschließlich mithilfe des Befehls `SPRICH: <NACHRICHT>` mitteilen!\n\n**Objekte bewegen**\n\n* Du kannst Objekte nur innerhalb des Rasters und in leere Zellen bewegen. Leere Zellen erkennst am Zeichen '◌'.\n* Solltest du versuchen, ein Objekt an eine Stelle zu bewegen, die entweder nicht leer ist oder sich außerhalb des Rasters befindet, muss ich euch einen Strafpunkt geben und du bekommst einen weiteren Versuch.\n* Angenommen, dein Raster sähe so aus:\n\n\n```\n ABC\n╔═╤═╗\n║◌│◌║ 1\n║◌│C║ 2\n╟─┘◌║ 3\n║◌◌◌║ 4\n╚═══╝\n```\n\n\n* In diesem Beispiel wäre die leere Zelle in der linken oberen Ecke an der Position `(A,1)`, die leere Zelle in der rechten obere Ecke bei `(C,1)`, die in der linken unteren Ecke bei `(A,4)` und die in der rechten unteren Ecke bei `(C,4)`. Das Object 'C' ist an der Position `(C,2)` und das Eckensymbol `┘` bei `(B,3)`.\n* Wenn du ein Objekt bewegen willst, solltest du dich erst vergewissern, ob die Zielposition auch wirklich leer ist und weder Buchstaben noch Rahmenteile noch Linien enthält!\n\n**Spielende:**\n\nWenn du glaubst, dass ihr das Ziel erreicht habt, kannst du deinem Mitspieler die Nachricht `SPRICH: fertig?` schicken. Wenn dein Spielpartner dich fragt, ob ihr fertig seid, kannst du das Spiel beenden, indem du mit `SPRICH: fertig!` antwortest.\n\nIhr gewinnt gemeinsam, wenn ihr das Spiel innerhalb von #max_rounds Runden beendet. Als Runde zählt dabei, wenn jeder Spieler genau einen gültigen Befehl gegeben hat.\n\n**Punkte:**\n\nJe näher sich die jeweils gleichen Objekte auf beiden Rastern sind, desto mehr Punkte bekommt ihr. Für Strafpunkte gibt es Punktabzug. Könnt ihr den Rekord brechen?\n\n                           \n**Dein Raster:**\n\nDein Raster sieht so aus:\n```\n ABCDE\n╔═╤═╤═╗\n║L│◌│◌║ 1\n╟─┼─┴─╢ 2\n║◌│C◌◌║ 3\n║◌└───╢ 4\n║P◌◌◌◌║ 5\n╚═════╝\n```\n\nSchicke eine Nachricht an deinen Mitspieler um das Spiel zu starten!",
+          "p2_initial_prompt": "Du spielst ein kooperatives Spiel mit einem Partner, und ich bin der Spielleiter. Ihr spielt beide auf einem identisches Raster, auf dem die folgenden Objekte jeweils zufällig verteilt sind: 'C', 'L', 'P'.\n\nDu kannst das Raster deines Mitspielers nicht sehen, und dein Mitspieler kann deines nicht sehen.\n\n**Ziel des Spiels:**\n\nBeide Spieler müssen die Objekte auf ihrem jeweiligen Raster so anordnen, dass sie am Ende gleich verteilt sind.\n\nDu musst dich mit deinem Spielpartner absprechen, damit ihr euch auf eine gemeinsame Anordnung der Objekte einigen könnt.\n\n**Spielregeln:**\n\n* In jedem Spielzug kannst du genau eine der folgenden zwei Aktionen ausführen:\n  * `SPRICH: <NACHRICHT>`: um eine Nachricht zu schicken, die ich dann an deinen Spielpartner weiterleite. Als Nachricht gilt alles bis zum nächsten Zeilenumbruch. \n  * `VERSCHIEBE: <OBJECT>, (<X>, <Y>)`: um ein Objekt an eine andere Position zu bewegen, wobei `<X>` die Spalte und `<Y>` die Zeile bezeichnet. Ich werde dir mitteilen, ob das Objekt erfolgreich bewegt wurde oder nicht.\n* Deine Nachricht darf nur genau einen Befehl enthalten und sonst nichts, insbesondere keine Argumentation oder Erklärungen vor oder nach dem Befehl.\n* Wenn du irgendein anderes Format verwendest oder mehrere Befehle gleichzeitig abschickst, muss ich euch einen Strafpunkt geben.\n* Wenn ihr gemeinsam mehr als 6 Strafpunkte ansammelt, verliert ihr das Spiel.\n* Es ist essenziell, dass du dich mit deinem Mitspieler auf eine gemeinsame Zielanordnung einigst! Zum Beispiel könntet ihr euch darauf einigen, ein Objekt nach dem anderen zu bewegen. Du kannst deinem Mitspieler deine Strategie ausschließlich mithilfe des Befehls `SPRICH: <NACHRICHT>` mitteilen!\n\n**Objekte bewegen**\n\n* Du kannst Objekte nur innerhalb des Rasters und in leere Zellen bewegen. Leere Zellen erkennst am Zeichen '◌'.\n* Solltest du versuchen, ein Objekt an eine Stelle zu bewegen, die entweder nicht leer ist oder sich außerhalb des Rasters befindet, muss ich euch einen Strafpunkt geben und du bekommst einen weiteren Versuch.\n* Angenommen, dein Raster sähe so aus:\n\n\n```\n ABC\n╔═╤═╗\n║◌│◌║ 1\n║◌│C║ 2\n╟─┘◌║ 3\n║◌◌◌║ 4\n╚═══╝\n```\n\n\n* In diesem Beispiel wäre die leere Zelle in der linken oberen Ecke an der Position `(A,1)`, die leere Zelle in der rechten obere Ecke bei `(C,1)`, die in der linken unteren Ecke bei `(A,4)` und die in der rechten unteren Ecke bei `(C,4)`. Das Object 'C' ist an der Position `(C,2)` und das Eckensymbol `┘` bei `(B,3)`.\n* Wenn du ein Objekt bewegen willst, solltest du dich erst vergewissern, ob die Zielposition auch wirklich leer ist und weder Buchstaben noch Rahmenteile noch Linien enthält!\n\n**Spielende:**\n\nWenn du glaubst, dass ihr das Ziel erreicht habt, kannst du deinem Mitspieler die Nachricht `SPRICH: fertig?` schicken. Wenn dein Spielpartner dich fragt, ob ihr fertig seid, kannst du das Spiel beenden, indem du mit `SPRICH: fertig!` antwortest.\n\nIhr gewinnt gemeinsam, wenn ihr das Spiel innerhalb von #max_rounds Runden beendet. Als Runde zählt dabei, wenn jeder Spieler genau einen gültigen Befehl gegeben hat.\n\n**Punkte:**\n\nJe näher sich die jeweils gleichen Objekte auf beiden Rastern sind, desto mehr Punkte bekommt ihr. Für Strafpunkte gibt es Punktabzug. Könnt ihr den Rekord brechen?\n\n                           \n**Dein Raster:**\n\nDein Raster sieht so aus:\n```\n ABCDE\n╔═╤═╤═╗\n║◌│◌│C║ 1\n╟─┼─┴─╢ 2\n║P│L◌◌║ 3\n║◌└───╢ 4\n║◌◌◌◌◌║ 5\n╚═════╝\n```\n\nDein Mitspieler hat das Spiel mit dieser Nachricht begonnen:\n\n\"$start_message\"\n\nWie lautet dein erster Befehl?",
+          "new_turn": "\nDein Mitspieler hat dir diese Nachricht geschickt:\n\n\n\"$turn_message\"\n\n\nWie lautet dein nächster Befehl?",
+          "new_turn_move": "Dein Mitspieler hat ein Objekt auf seinem Raster bewegt.\n\n\nWie lautet dein nächster Befehl?",
+          "round_counter": "Ihr seid gerade bei Runde $round von maximal 12.\n\n",
+          "invalid_response": "Strafpunkt: $reason Stelle sicher, dass deine Antwort ausschließlich einen der beiden Befehle `SPRICH: <NACHRICHT>` und `VERSCHIEBE: <OBJECT>, (<X>, <Y>)` und sonst nichts enthält!\n",
+          "penalty_message": "Ihr habt gemeinsam $penalty von maximal $max_penalties Strafpunkten angesammelt. Bitte versuche es noch mal!\n",
+          "penalty_counter": "Ihr habt gemeinsam $penalty von maximal $max_penalties Strafpunkten angesammelt.\n",
+          "message_relay": "Deine Nachricht wurde an deinen Mitspieler übermittelt.\n\n",
+          "move_pattern": "(?P<head>.*)VERSCHIEBE: (?P<obj>[A-Z]), \\((?P<x>[A-Z]), ?(?P<y>\\d+)\\)(?P<tail>.*)",
+          "message_pattern": "(?P<head>.*)SPRICH: (?P<message>[^\\n]+)(?P<tail>.*)",
+          "terminate_question": "fertig?",
+          "terminate_answer": "fertig!",
+          "parse_errors": {
+            "head": "Deine Nachricht darf nichts vor dem Befehl enthalten!",
+            "tail": "Deine Nachricht darf nichts nach dem Befehl enthalten!",
+            "head_tail": "Deine Nachricht darf nichts vor oder nach dem Befehl enthalten!",
+            "several_commands": "Deine Nachricht enthält mehr als einen Befehl!",
+            "restriction": "Deine Nachricht enthält regelwidrige Angaben!",
+            "invalid_format": "Deine Nachricht entspricht keinem gültigen Format!",
+            "invalid_start": "Du musst das Spiel beginnen, indem du eine Nachricht an den anderen Spieler sendest!"
+          },
+          "move_messages": {
+            "successful": "'$object' erfolgreich nach ($x,$y) verschoben. Dein Raster sieht jetzt so aus:\n```\n$grid```\n",
+            "out_of_bounds": "Ungültiger Zug: ($x,$y) liegt außerhalb des Gitters. Bitte versuche es erneut!\n",
+            "not_empty": "Strafpunkt: ($x,$y) ist nicht leer, sondern enthält '$object'.\n",
+            "obj_not_found": "Ungültiger Zug: Dein Raster enhält kein Objekt '$object'. Bitte versuche es erneut!\n"
+          }
+        },
+        {
+          "game_id": 1,
+          "language": "de",
+          "width": 7,
+          "height": 7,
+          "lenient": true,
+          "max_penalties": 6,
+          "max_rounds": 12,
+          "show_coords": true,
+          "empty_symbol": "◌",
+          "background": "╔═╤═╤═╗\n║◌│◌│◌║\n║◌├─┤◌║\n║◌│◌│◌║\n║◌└─┼─╢\n║◌◌◌│◌║\n╚═══╧═╝\n",
+          "state1": [
+            {
+              "id": "C",
+              "coord": [
+                1,
+                3
+              ]
+            },
+            {
+              "id": "L",
+              "coord": [
+                5,
+                2
+              ]
+            },
+            {
+              "id": "P",
+              "coord": [
+                1,
+                4
+              ]
+            }
+          ],
+          "state2": [
+            {
+              "id": "C",
+              "coord": [
+                1,
+                3
+              ]
+            },
+            {
+              "id": "L",
+              "coord": [
+                3,
+                5
+              ]
+            },
+            {
+              "id": "P",
+              "coord": [
+                5,
+                2
+              ]
+            }
+          ],
+          "p1_initial_prompt": "Du spielst ein kooperatives Spiel mit einem Partner, und ich bin der Spielleiter. Ihr spielt beide auf einem identisches Raster, auf dem die folgenden Objekte jeweils zufällig verteilt sind: 'C', 'L', 'P'.\n\nDu kannst das Raster deines Mitspielers nicht sehen, und dein Mitspieler kann deines nicht sehen.\n\n**Ziel des Spiels:**\n\nBeide Spieler müssen die Objekte auf ihrem jeweiligen Raster so anordnen, dass sie am Ende gleich verteilt sind.\n\nDu musst dich mit deinem Spielpartner absprechen, damit ihr euch auf eine gemeinsame Anordnung der Objekte einigen könnt.\n\n**Spielregeln:**\n\n* In jedem Spielzug kannst du genau eine der folgenden zwei Aktionen ausführen:\n  * `SPRICH: <NACHRICHT>`: um eine Nachricht zu schicken, die ich dann an deinen Spielpartner weiterleite. Als Nachricht gilt alles bis zum nächsten Zeilenumbruch. \n  * `VERSCHIEBE: <OBJECT>, (<X>, <Y>)`: um ein Objekt an eine andere Position zu bewegen, wobei `<X>` die Spalte und `<Y>` die Zeile bezeichnet. Ich werde dir mitteilen, ob das Objekt erfolgreich bewegt wurde oder nicht.\n* Deine Nachricht darf nur genau einen Befehl enthalten und sonst nichts, insbesondere keine Argumentation oder Erklärungen vor oder nach dem Befehl.\n* Wenn du irgendein anderes Format verwendest oder mehrere Befehle gleichzeitig abschickst, muss ich euch einen Strafpunkt geben.\n* Wenn ihr gemeinsam mehr als 6 Strafpunkte ansammelt, verliert ihr das Spiel.\n* Es ist essenziell, dass du dich mit deinem Mitspieler auf eine gemeinsame Zielanordnung einigst! Zum Beispiel könntet ihr euch darauf einigen, ein Objekt nach dem anderen zu bewegen. Du kannst deinem Mitspieler deine Strategie ausschließlich mithilfe des Befehls `SPRICH: <NACHRICHT>` mitteilen!\n\n**Objekte bewegen**\n\n* Du kannst Objekte nur innerhalb des Rasters und in leere Zellen bewegen. Leere Zellen erkennst am Zeichen '◌'.\n* Solltest du versuchen, ein Objekt an eine Stelle zu bewegen, die entweder nicht leer ist oder sich außerhalb des Rasters befindet, muss ich euch einen Strafpunkt geben und du bekommst einen weiteren Versuch.\n* Angenommen, dein Raster sähe so aus:\n\n\n```\n ABC\n╔═╤═╗\n║◌│◌║ 1\n║◌│C║ 2\n╟─┘◌║ 3\n║◌◌◌║ 4\n╚═══╝\n```\n\n\n* In diesem Beispiel wäre die leere Zelle in der linken oberen Ecke an der Position `(A,1)`, die leere Zelle in der rechten obere Ecke bei `(C,1)`, die in der linken unteren Ecke bei `(A,4)` und die in der rechten unteren Ecke bei `(C,4)`. Das Object 'C' ist an der Position `(C,2)` und das Eckensymbol `┘` bei `(B,3)`.\n* Wenn du ein Objekt bewegen willst, solltest du dich erst vergewissern, ob die Zielposition auch wirklich leer ist und weder Buchstaben noch Rahmenteile noch Linien enthält!\n\n**Spielende:**\n\nWenn du glaubst, dass ihr das Ziel erreicht habt, kannst du deinem Mitspieler die Nachricht `SPRICH: fertig?` schicken. Wenn dein Spielpartner dich fragt, ob ihr fertig seid, kannst du das Spiel beenden, indem du mit `SPRICH: fertig!` antwortest.\n\nIhr gewinnt gemeinsam, wenn ihr das Spiel innerhalb von #max_rounds Runden beendet. Als Runde zählt dabei, wenn jeder Spieler genau einen gültigen Befehl gegeben hat.\n\n**Punkte:**\n\nJe näher sich die jeweils gleichen Objekte auf beiden Rastern sind, desto mehr Punkte bekommt ihr. Für Strafpunkte gibt es Punktabzug. Könnt ihr den Rekord brechen?\n\n                           \n**Dein Raster:**\n\nDein Raster sieht so aus:\n```\n ABCDE\n╔═╤═╤═╗\n║◌│◌│◌║ 1\n║◌├─┤L║ 2\n║C│◌│◌║ 3\n║P└─┼─╢ 4\n║◌◌◌│◌║ 5\n╚═══╧═╝\n```\n\nSchicke eine Nachricht an deinen Mitspieler um das Spiel zu starten!",
+          "p2_initial_prompt": "Du spielst ein kooperatives Spiel mit einem Partner, und ich bin der Spielleiter. Ihr spielt beide auf einem identisches Raster, auf dem die folgenden Objekte jeweils zufällig verteilt sind: 'C', 'L', 'P'.\n\nDu kannst das Raster deines Mitspielers nicht sehen, und dein Mitspieler kann deines nicht sehen.\n\n**Ziel des Spiels:**\n\nBeide Spieler müssen die Objekte auf ihrem jeweiligen Raster so anordnen, dass sie am Ende gleich verteilt sind.\n\nDu musst dich mit deinem Spielpartner absprechen, damit ihr euch auf eine gemeinsame Anordnung der Objekte einigen könnt.\n\n**Spielregeln:**\n\n* In jedem Spielzug kannst du genau eine der folgenden zwei Aktionen ausführen:\n  * `SPRICH: <NACHRICHT>`: um eine Nachricht zu schicken, die ich dann an deinen Spielpartner weiterleite. Als Nachricht gilt alles bis zum nächsten Zeilenumbruch. \n  * `VERSCHIEBE: <OBJECT>, (<X>, <Y>)`: um ein Objekt an eine andere Position zu bewegen, wobei `<X>` die Spalte und `<Y>` die Zeile bezeichnet. Ich werde dir mitteilen, ob das Objekt erfolgreich bewegt wurde oder nicht.\n* Deine Nachricht darf nur genau einen Befehl enthalten und sonst nichts, insbesondere keine Argumentation oder Erklärungen vor oder nach dem Befehl.\n* Wenn du irgendein anderes Format verwendest oder mehrere Befehle gleichzeitig abschickst, muss ich euch einen Strafpunkt geben.\n* Wenn ihr gemeinsam mehr als 6 Strafpunkte ansammelt, verliert ihr das Spiel.\n* Es ist essenziell, dass du dich mit deinem Mitspieler auf eine gemeinsame Zielanordnung einigst! Zum Beispiel könntet ihr euch darauf einigen, ein Objekt nach dem anderen zu bewegen. Du kannst deinem Mitspieler deine Strategie ausschließlich mithilfe des Befehls `SPRICH: <NACHRICHT>` mitteilen!\n\n**Objekte bewegen**\n\n* Du kannst Objekte nur innerhalb des Rasters und in leere Zellen bewegen. Leere Zellen erkennst am Zeichen '◌'.\n* Solltest du versuchen, ein Objekt an eine Stelle zu bewegen, die entweder nicht leer ist oder sich außerhalb des Rasters befindet, muss ich euch einen Strafpunkt geben und du bekommst einen weiteren Versuch.\n* Angenommen, dein Raster sähe so aus:\n\n\n```\n ABC\n╔═╤═╗\n║◌│◌║ 1\n║◌│C║ 2\n╟─┘◌║ 3\n║◌◌◌║ 4\n╚═══╝\n```\n\n\n* In diesem Beispiel wäre die leere Zelle in der linken oberen Ecke an der Position `(A,1)`, die leere Zelle in der rechten obere Ecke bei `(C,1)`, die in der linken unteren Ecke bei `(A,4)` und die in der rechten unteren Ecke bei `(C,4)`. Das Object 'C' ist an der Position `(C,2)` und das Eckensymbol `┘` bei `(B,3)`.\n* Wenn du ein Objekt bewegen willst, solltest du dich erst vergewissern, ob die Zielposition auch wirklich leer ist und weder Buchstaben noch Rahmenteile noch Linien enthält!\n\n**Spielende:**\n\nWenn du glaubst, dass ihr das Ziel erreicht habt, kannst du deinem Mitspieler die Nachricht `SPRICH: fertig?` schicken. Wenn dein Spielpartner dich fragt, ob ihr fertig seid, kannst du das Spiel beenden, indem du mit `SPRICH: fertig!` antwortest.\n\nIhr gewinnt gemeinsam, wenn ihr das Spiel innerhalb von #max_rounds Runden beendet. Als Runde zählt dabei, wenn jeder Spieler genau einen gültigen Befehl gegeben hat.\n\n**Punkte:**\n\nJe näher sich die jeweils gleichen Objekte auf beiden Rastern sind, desto mehr Punkte bekommt ihr. Für Strafpunkte gibt es Punktabzug. Könnt ihr den Rekord brechen?\n\n                           \n**Dein Raster:**\n\nDein Raster sieht so aus:\n```\n ABCDE\n╔═╤═╤═╗\n║◌│◌│◌║ 1\n║◌├─┤P║ 2\n║C│◌│◌║ 3\n║◌└─┼─╢ 4\n║◌◌L│◌║ 5\n╚═══╧═╝\n```\n\nDein Mitspieler hat das Spiel mit dieser Nachricht begonnen:\n\n\"$start_message\"\n\nWie lautet dein erster Befehl?",
+          "new_turn": "\nDein Mitspieler hat dir diese Nachricht geschickt:\n\n\n\"$turn_message\"\n\n\nWie lautet dein nächster Befehl?",
+          "new_turn_move": "Dein Mitspieler hat ein Objekt auf seinem Raster bewegt.\n\n\nWie lautet dein nächster Befehl?",
+          "round_counter": "Ihr seid gerade bei Runde $round von maximal 12.\n\n",
+          "invalid_response": "Strafpunkt: $reason Stelle sicher, dass deine Antwort ausschließlich einen der beiden Befehle `SPRICH: <NACHRICHT>` und `VERSCHIEBE: <OBJECT>, (<X>, <Y>)` und sonst nichts enthält!\n",
+          "penalty_message": "Ihr habt gemeinsam $penalty von maximal $max_penalties Strafpunkten angesammelt. Bitte versuche es noch mal!\n",
+          "penalty_counter": "Ihr habt gemeinsam $penalty von maximal $max_penalties Strafpunkten angesammelt.\n",
+          "message_relay": "Deine Nachricht wurde an deinen Mitspieler übermittelt.\n\n",
+          "move_pattern": "(?P<head>.*)VERSCHIEBE: (?P<obj>[A-Z]), \\((?P<x>[A-Z]), ?(?P<y>\\d+)\\)(?P<tail>.*)",
+          "message_pattern": "(?P<head>.*)SPRICH: (?P<message>[^\\n]+)(?P<tail>.*)",
+          "terminate_question": "fertig?",
+          "terminate_answer": "fertig!",
+          "parse_errors": {
+            "head": "Deine Nachricht darf nichts vor dem Befehl enthalten!",
+            "tail": "Deine Nachricht darf nichts nach dem Befehl enthalten!",
+            "head_tail": "Deine Nachricht darf nichts vor oder nach dem Befehl enthalten!",
+            "several_commands": "Deine Nachricht enthält mehr als einen Befehl!",
+            "restriction": "Deine Nachricht enthält regelwidrige Angaben!",
+            "invalid_format": "Deine Nachricht entspricht keinem gültigen Format!",
+            "invalid_start": "Du musst das Spiel beginnen, indem du eine Nachricht an den anderen Spieler sendest!"
+          },
+          "move_messages": {
+            "successful": "'$object' erfolgreich nach ($x,$y) verschoben. Dein Raster sieht jetzt so aus:\n```\n$grid```\n",
+            "out_of_bounds": "Ungültiger Zug: ($x,$y) liegt außerhalb des Gitters. Bitte versuche es erneut!\n",
+            "not_empty": "Strafpunkt: ($x,$y) ist nicht leer, sondern enthält '$object'.\n",
+            "obj_not_found": "Ungültiger Zug: Dein Raster enhält kein Objekt '$object'. Bitte versuche es erneut!\n"
+          }
+        }
+      ]
+    },
+    {
+      "name": "gs9x9_obj5_de",
+      "game_instances": [
+        {
+          "game_id": 0,
+          "language": "de",
+          "width": 9,
+          "height": 9,
+          "lenient": true,
+          "max_penalties": 10,
+          "max_rounds": 20,
+          "show_coords": true,
+          "empty_symbol": "◌",
+          "background": "╔═══════╗\n║◌◌◌◌◌◌◌║\n║◌◌◌┌─┐◌║\n╟───┤◌│◌║\n║◌◌◌└─┼─╢\n║◌◌◌◌◌│◌║\n╟──┬──┤◌║\n║◌◌│◌◌│◌║\n╚══╧══╧═╝\n",
+          "state1": [
+            {
+              "id": "W",
+              "coord": [
+                7,
+                1
+              ]
+            },
+            {
+              "id": "I",
+              "coord": [
+                7,
+                3
+              ]
+            },
+            {
+              "id": "T",
+              "coord": [
+                5,
+                1
+              ]
+            },
+            {
+              "id": "C",
+              "coord": [
+                2,
+                4
+              ]
+            },
+            {
+              "id": "H",
+              "coord": [
+                2,
+                2
+              ]
+            }
+          ],
+          "state2": [
+            {
+              "id": "W",
+              "coord": [
+                3,
+                5
+              ]
+            },
+            {
+              "id": "I",
+              "coord": [
+                2,
+                5
+              ]
+            },
+            {
+              "id": "T",
+              "coord": [
+                7,
+                5
+              ]
+            },
+            {
+              "id": "C",
+              "coord": [
+                2,
+                7
+              ]
+            },
+            {
+              "id": "H",
+              "coord": [
+                4,
+                5
+              ]
+            }
+          ],
+          "p1_initial_prompt": "Du spielst ein kooperatives Spiel mit einem Partner, und ich bin der Spielleiter. Ihr spielt beide auf einem identisches Raster, auf dem die folgenden Objekte jeweils zufällig verteilt sind: 'W', 'I', 'T', 'C', 'H'.\n\nDu kannst das Raster deines Mitspielers nicht sehen, und dein Mitspieler kann deines nicht sehen.\n\n**Ziel des Spiels:**\n\nBeide Spieler müssen die Objekte auf ihrem jeweiligen Raster so anordnen, dass sie am Ende gleich verteilt sind.\n\nDu musst dich mit deinem Spielpartner absprechen, damit ihr euch auf eine gemeinsame Anordnung der Objekte einigen könnt.\n\n**Spielregeln:**\n\n* In jedem Spielzug kannst du genau eine der folgenden zwei Aktionen ausführen:\n  * `SPRICH: <NACHRICHT>`: um eine Nachricht zu schicken, die ich dann an deinen Spielpartner weiterleite. Als Nachricht gilt alles bis zum nächsten Zeilenumbruch. \n  * `VERSCHIEBE: <OBJECT>, (<X>, <Y>)`: um ein Objekt an eine andere Position zu bewegen, wobei `<X>` die Spalte und `<Y>` die Zeile bezeichnet. Ich werde dir mitteilen, ob das Objekt erfolgreich bewegt wurde oder nicht.\n* Deine Nachricht darf nur genau einen Befehl enthalten und sonst nichts, insbesondere keine Argumentation oder Erklärungen vor oder nach dem Befehl.\n* Wenn du irgendein anderes Format verwendest oder mehrere Befehle gleichzeitig abschickst, muss ich euch einen Strafpunkt geben.\n* Wenn ihr gemeinsam mehr als 10 Strafpunkte ansammelt, verliert ihr das Spiel.\n* Es ist essenziell, dass du dich mit deinem Mitspieler auf eine gemeinsame Zielanordnung einigst! Zum Beispiel könntet ihr euch darauf einigen, ein Objekt nach dem anderen zu bewegen. Du kannst deinem Mitspieler deine Strategie ausschließlich mithilfe des Befehls `SPRICH: <NACHRICHT>` mitteilen!\n\n**Objekte bewegen**\n\n* Du kannst Objekte nur innerhalb des Rasters und in leere Zellen bewegen. Leere Zellen erkennst am Zeichen '◌'.\n* Solltest du versuchen, ein Objekt an eine Stelle zu bewegen, die entweder nicht leer ist oder sich außerhalb des Rasters befindet, muss ich euch einen Strafpunkt geben und du bekommst einen weiteren Versuch.\n* Angenommen, dein Raster sähe so aus:\n\n\n```\n ABC\n╔═╤═╗\n║◌│◌║ 1\n║◌│C║ 2\n╟─┘◌║ 3\n║◌◌◌║ 4\n╚═══╝\n```\n\n\n* In diesem Beispiel wäre die leere Zelle in der linken oberen Ecke an der Position `(A,1)`, die leere Zelle in der rechten obere Ecke bei `(C,1)`, die in der linken unteren Ecke bei `(A,4)` und die in der rechten unteren Ecke bei `(C,4)`. Das Object 'C' ist an der Position `(C,2)` und das Eckensymbol `┘` bei `(B,3)`.\n* Wenn du ein Objekt bewegen willst, solltest du dich erst vergewissern, ob die Zielposition auch wirklich leer ist und weder Buchstaben noch Rahmenteile noch Linien enthält!\n\n**Spielende:**\n\nWenn du glaubst, dass ihr das Ziel erreicht habt, kannst du deinem Mitspieler die Nachricht `SPRICH: fertig?` schicken. Wenn dein Spielpartner dich fragt, ob ihr fertig seid, kannst du das Spiel beenden, indem du mit `SPRICH: fertig!` antwortest.\n\nIhr gewinnt gemeinsam, wenn ihr das Spiel innerhalb von #max_rounds Runden beendet. Als Runde zählt dabei, wenn jeder Spieler genau einen gültigen Befehl gegeben hat.\n\n**Punkte:**\n\nJe näher sich die jeweils gleichen Objekte auf beiden Rastern sind, desto mehr Punkte bekommt ihr. Für Strafpunkte gibt es Punktabzug. Könnt ihr den Rekord brechen?\n\n                           \n**Dein Raster:**\n\nDein Raster sieht so aus:\n```\n ABCDEFG\n╔═══════╗\n║◌◌◌◌T◌W║ 1\n║◌H◌┌─┐◌║ 2\n╟───┤◌│I║ 3\n║◌C◌└─┼─╢ 4\n║◌◌◌◌◌│◌║ 5\n╟──┬──┤◌║ 6\n║◌◌│◌◌│◌║ 7\n╚══╧══╧═╝\n```\n\nSchicke eine Nachricht an deinen Mitspieler um das Spiel zu starten!",
+          "p2_initial_prompt": "Du spielst ein kooperatives Spiel mit einem Partner, und ich bin der Spielleiter. Ihr spielt beide auf einem identisches Raster, auf dem die folgenden Objekte jeweils zufällig verteilt sind: 'W', 'I', 'T', 'C', 'H'.\n\nDu kannst das Raster deines Mitspielers nicht sehen, und dein Mitspieler kann deines nicht sehen.\n\n**Ziel des Spiels:**\n\nBeide Spieler müssen die Objekte auf ihrem jeweiligen Raster so anordnen, dass sie am Ende gleich verteilt sind.\n\nDu musst dich mit deinem Spielpartner absprechen, damit ihr euch auf eine gemeinsame Anordnung der Objekte einigen könnt.\n\n**Spielregeln:**\n\n* In jedem Spielzug kannst du genau eine der folgenden zwei Aktionen ausführen:\n  * `SPRICH: <NACHRICHT>`: um eine Nachricht zu schicken, die ich dann an deinen Spielpartner weiterleite. Als Nachricht gilt alles bis zum nächsten Zeilenumbruch. \n  * `VERSCHIEBE: <OBJECT>, (<X>, <Y>)`: um ein Objekt an eine andere Position zu bewegen, wobei `<X>` die Spalte und `<Y>` die Zeile bezeichnet. Ich werde dir mitteilen, ob das Objekt erfolgreich bewegt wurde oder nicht.\n* Deine Nachricht darf nur genau einen Befehl enthalten und sonst nichts, insbesondere keine Argumentation oder Erklärungen vor oder nach dem Befehl.\n* Wenn du irgendein anderes Format verwendest oder mehrere Befehle gleichzeitig abschickst, muss ich euch einen Strafpunkt geben.\n* Wenn ihr gemeinsam mehr als 10 Strafpunkte ansammelt, verliert ihr das Spiel.\n* Es ist essenziell, dass du dich mit deinem Mitspieler auf eine gemeinsame Zielanordnung einigst! Zum Beispiel könntet ihr euch darauf einigen, ein Objekt nach dem anderen zu bewegen. Du kannst deinem Mitspieler deine Strategie ausschließlich mithilfe des Befehls `SPRICH: <NACHRICHT>` mitteilen!\n\n**Objekte bewegen**\n\n* Du kannst Objekte nur innerhalb des Rasters und in leere Zellen bewegen. Leere Zellen erkennst am Zeichen '◌'.\n* Solltest du versuchen, ein Objekt an eine Stelle zu bewegen, die entweder nicht leer ist oder sich außerhalb des Rasters befindet, muss ich euch einen Strafpunkt geben und du bekommst einen weiteren Versuch.\n* Angenommen, dein Raster sähe so aus:\n\n\n```\n ABC\n╔═╤═╗\n║◌│◌║ 1\n║◌│C║ 2\n╟─┘◌║ 3\n║◌◌◌║ 4\n╚═══╝\n```\n\n\n* In diesem Beispiel wäre die leere Zelle in der linken oberen Ecke an der Position `(A,1)`, die leere Zelle in der rechten obere Ecke bei `(C,1)`, die in der linken unteren Ecke bei `(A,4)` und die in der rechten unteren Ecke bei `(C,4)`. Das Object 'C' ist an der Position `(C,2)` und das Eckensymbol `┘` bei `(B,3)`.\n* Wenn du ein Objekt bewegen willst, solltest du dich erst vergewissern, ob die Zielposition auch wirklich leer ist und weder Buchstaben noch Rahmenteile noch Linien enthält!\n\n**Spielende:**\n\nWenn du glaubst, dass ihr das Ziel erreicht habt, kannst du deinem Mitspieler die Nachricht `SPRICH: fertig?` schicken. Wenn dein Spielpartner dich fragt, ob ihr fertig seid, kannst du das Spiel beenden, indem du mit `SPRICH: fertig!` antwortest.\n\nIhr gewinnt gemeinsam, wenn ihr das Spiel innerhalb von #max_rounds Runden beendet. Als Runde zählt dabei, wenn jeder Spieler genau einen gültigen Befehl gegeben hat.\n\n**Punkte:**\n\nJe näher sich die jeweils gleichen Objekte auf beiden Rastern sind, desto mehr Punkte bekommt ihr. Für Strafpunkte gibt es Punktabzug. Könnt ihr den Rekord brechen?\n\n                           \n**Dein Raster:**\n\nDein Raster sieht so aus:\n```\n ABCDEFG\n╔═══════╗\n║◌◌◌◌◌◌◌║ 1\n║◌◌◌┌─┐◌║ 2\n╟───┤◌│◌║ 3\n║◌◌◌└─┼─╢ 4\n║◌IWH◌│T║ 5\n╟──┬──┤◌║ 6\n║◌C│◌◌│◌║ 7\n╚══╧══╧═╝\n```\n\nDein Mitspieler hat das Spiel mit dieser Nachricht begonnen:\n\n\"$start_message\"\n\nWie lautet dein erster Befehl?",
+          "new_turn": "\nDein Mitspieler hat dir diese Nachricht geschickt:\n\n\n\"$turn_message\"\n\n\nWie lautet dein nächster Befehl?",
+          "new_turn_move": "Dein Mitspieler hat ein Objekt auf seinem Raster bewegt.\n\n\nWie lautet dein nächster Befehl?",
+          "round_counter": "Ihr seid gerade bei Runde $round von maximal 20.\n\n",
+          "invalid_response": "Strafpunkt: $reason Stelle sicher, dass deine Antwort ausschließlich einen der beiden Befehle `SPRICH: <NACHRICHT>` und `VERSCHIEBE: <OBJECT>, (<X>, <Y>)` und sonst nichts enthält!\n",
+          "penalty_message": "Ihr habt gemeinsam $penalty von maximal $max_penalties Strafpunkten angesammelt. Bitte versuche es noch mal!\n",
+          "penalty_counter": "Ihr habt gemeinsam $penalty von maximal $max_penalties Strafpunkten angesammelt.\n",
+          "message_relay": "Deine Nachricht wurde an deinen Mitspieler übermittelt.\n\n",
+          "move_pattern": "(?P<head>.*)VERSCHIEBE: (?P<obj>[A-Z]), \\((?P<x>[A-Z]), ?(?P<y>\\d+)\\)(?P<tail>.*)",
+          "message_pattern": "(?P<head>.*)SPRICH: (?P<message>[^\\n]+)(?P<tail>.*)",
+          "terminate_question": "fertig?",
+          "terminate_answer": "fertig!",
+          "parse_errors": {
+            "head": "Deine Nachricht darf nichts vor dem Befehl enthalten!",
+            "tail": "Deine Nachricht darf nichts nach dem Befehl enthalten!",
+            "head_tail": "Deine Nachricht darf nichts vor oder nach dem Befehl enthalten!",
+            "several_commands": "Deine Nachricht enthält mehr als einen Befehl!",
+            "restriction": "Deine Nachricht enthält regelwidrige Angaben!",
+            "invalid_format": "Deine Nachricht entspricht keinem gültigen Format!",
+            "invalid_start": "Du musst das Spiel beginnen, indem du eine Nachricht an den anderen Spieler sendest!"
+          },
+          "move_messages": {
+            "successful": "'$object' erfolgreich nach ($x,$y) verschoben. Dein Raster sieht jetzt so aus:\n```\n$grid```\n",
+            "out_of_bounds": "Ungültiger Zug: ($x,$y) liegt außerhalb des Gitters. Bitte versuche es erneut!\n",
+            "not_empty": "Strafpunkt: ($x,$y) ist nicht leer, sondern enthält '$object'.\n",
+            "obj_not_found": "Ungültiger Zug: Dein Raster enhält kein Objekt '$object'. Bitte versuche es erneut!\n"
+          }
+        },
+        {
+          "game_id": 1,
+          "language": "de",
+          "width": 9,
+          "height": 9,
+          "lenient": true,
+          "max_penalties": 10,
+          "max_rounds": 20,
+          "show_coords": true,
+          "empty_symbol": "◌",
+          "background": "╔═╤═════╗\n║◌│◌◌◌◌◌║\n║◌│◌┌─┐◌║\n╟─┼─┤◌│◌║\n║◌│◌│◌├─╢\n║◌│◌├─┘◌║\n║◌└─┤◌◌◌║\n║◌◌◌│◌◌◌║\n╚═══╧═══╝\n",
+          "state1": [
+            {
+              "id": "W",
+              "coord": [
+                1,
+                4
+              ]
+            },
+            {
+              "id": "I",
+              "coord": [
+                3,
+                7
+              ]
+            },
+            {
+              "id": "T",
+              "coord": [
+                1,
+                5
+              ]
+            },
+            {
+              "id": "C",
+              "coord": [
+                7,
+                1
+              ]
+            },
+            {
+              "id": "H",
+              "coord": [
+                7,
+                3
+              ]
+            }
+          ],
+          "state2": [
+            {
+              "id": "W",
+              "coord": [
+                3,
+                5
+              ]
+            },
+            {
+              "id": "I",
+              "coord": [
+                3,
+                7
+              ]
+            },
+            {
+              "id": "T",
+              "coord": [
+                6,
+                7
+              ]
+            },
+            {
+              "id": "C",
+              "coord": [
+                7,
+                7
+              ]
+            },
+            {
+              "id": "H",
+              "coord": [
+                7,
+                1
+              ]
+            }
+          ],
+          "p1_initial_prompt": "Du spielst ein kooperatives Spiel mit einem Partner, und ich bin der Spielleiter. Ihr spielt beide auf einem identisches Raster, auf dem die folgenden Objekte jeweils zufällig verteilt sind: 'W', 'I', 'T', 'C', 'H'.\n\nDu kannst das Raster deines Mitspielers nicht sehen, und dein Mitspieler kann deines nicht sehen.\n\n**Ziel des Spiels:**\n\nBeide Spieler müssen die Objekte auf ihrem jeweiligen Raster so anordnen, dass sie am Ende gleich verteilt sind.\n\nDu musst dich mit deinem Spielpartner absprechen, damit ihr euch auf eine gemeinsame Anordnung der Objekte einigen könnt.\n\n**Spielregeln:**\n\n* In jedem Spielzug kannst du genau eine der folgenden zwei Aktionen ausführen:\n  * `SPRICH: <NACHRICHT>`: um eine Nachricht zu schicken, die ich dann an deinen Spielpartner weiterleite. Als Nachricht gilt alles bis zum nächsten Zeilenumbruch. \n  * `VERSCHIEBE: <OBJECT>, (<X>, <Y>)`: um ein Objekt an eine andere Position zu bewegen, wobei `<X>` die Spalte und `<Y>` die Zeile bezeichnet. Ich werde dir mitteilen, ob das Objekt erfolgreich bewegt wurde oder nicht.\n* Deine Nachricht darf nur genau einen Befehl enthalten und sonst nichts, insbesondere keine Argumentation oder Erklärungen vor oder nach dem Befehl.\n* Wenn du irgendein anderes Format verwendest oder mehrere Befehle gleichzeitig abschickst, muss ich euch einen Strafpunkt geben.\n* Wenn ihr gemeinsam mehr als 10 Strafpunkte ansammelt, verliert ihr das Spiel.\n* Es ist essenziell, dass du dich mit deinem Mitspieler auf eine gemeinsame Zielanordnung einigst! Zum Beispiel könntet ihr euch darauf einigen, ein Objekt nach dem anderen zu bewegen. Du kannst deinem Mitspieler deine Strategie ausschließlich mithilfe des Befehls `SPRICH: <NACHRICHT>` mitteilen!\n\n**Objekte bewegen**\n\n* Du kannst Objekte nur innerhalb des Rasters und in leere Zellen bewegen. Leere Zellen erkennst am Zeichen '◌'.\n* Solltest du versuchen, ein Objekt an eine Stelle zu bewegen, die entweder nicht leer ist oder sich außerhalb des Rasters befindet, muss ich euch einen Strafpunkt geben und du bekommst einen weiteren Versuch.\n* Angenommen, dein Raster sähe so aus:\n\n\n```\n ABC\n╔═╤═╗\n║◌│◌║ 1\n║◌│C║ 2\n╟─┘◌║ 3\n║◌◌◌║ 4\n╚═══╝\n```\n\n\n* In diesem Beispiel wäre die leere Zelle in der linken oberen Ecke an der Position `(A,1)`, die leere Zelle in der rechten obere Ecke bei `(C,1)`, die in der linken unteren Ecke bei `(A,4)` und die in der rechten unteren Ecke bei `(C,4)`. Das Object 'C' ist an der Position `(C,2)` und das Eckensymbol `┘` bei `(B,3)`.\n* Wenn du ein Objekt bewegen willst, solltest du dich erst vergewissern, ob die Zielposition auch wirklich leer ist und weder Buchstaben noch Rahmenteile noch Linien enthält!\n\n**Spielende:**\n\nWenn du glaubst, dass ihr das Ziel erreicht habt, kannst du deinem Mitspieler die Nachricht `SPRICH: fertig?` schicken. Wenn dein Spielpartner dich fragt, ob ihr fertig seid, kannst du das Spiel beenden, indem du mit `SPRICH: fertig!` antwortest.\n\nIhr gewinnt gemeinsam, wenn ihr das Spiel innerhalb von #max_rounds Runden beendet. Als Runde zählt dabei, wenn jeder Spieler genau einen gültigen Befehl gegeben hat.\n\n**Punkte:**\n\nJe näher sich die jeweils gleichen Objekte auf beiden Rastern sind, desto mehr Punkte bekommt ihr. Für Strafpunkte gibt es Punktabzug. Könnt ihr den Rekord brechen?\n\n                           \n**Dein Raster:**\n\nDein Raster sieht so aus:\n```\n ABCDEFG\n╔═╤═════╗\n║◌│◌◌◌◌C║ 1\n║◌│◌┌─┐◌║ 2\n╟─┼─┤◌│H║ 3\n║W│◌│◌├─╢ 4\n║T│◌├─┘◌║ 5\n║◌└─┤◌◌◌║ 6\n║◌◌I│◌◌◌║ 7\n╚═══╧═══╝\n```\n\nSchicke eine Nachricht an deinen Mitspieler um das Spiel zu starten!",
+          "p2_initial_prompt": "Du spielst ein kooperatives Spiel mit einem Partner, und ich bin der Spielleiter. Ihr spielt beide auf einem identisches Raster, auf dem die folgenden Objekte jeweils zufällig verteilt sind: 'W', 'I', 'T', 'C', 'H'.\n\nDu kannst das Raster deines Mitspielers nicht sehen, und dein Mitspieler kann deines nicht sehen.\n\n**Ziel des Spiels:**\n\nBeide Spieler müssen die Objekte auf ihrem jeweiligen Raster so anordnen, dass sie am Ende gleich verteilt sind.\n\nDu musst dich mit deinem Spielpartner absprechen, damit ihr euch auf eine gemeinsame Anordnung der Objekte einigen könnt.\n\n**Spielregeln:**\n\n* In jedem Spielzug kannst du genau eine der folgenden zwei Aktionen ausführen:\n  * `SPRICH: <NACHRICHT>`: um eine Nachricht zu schicken, die ich dann an deinen Spielpartner weiterleite. Als Nachricht gilt alles bis zum nächsten Zeilenumbruch. \n  * `VERSCHIEBE: <OBJECT>, (<X>, <Y>)`: um ein Objekt an eine andere Position zu bewegen, wobei `<X>` die Spalte und `<Y>` die Zeile bezeichnet. Ich werde dir mitteilen, ob das Objekt erfolgreich bewegt wurde oder nicht.\n* Deine Nachricht darf nur genau einen Befehl enthalten und sonst nichts, insbesondere keine Argumentation oder Erklärungen vor oder nach dem Befehl.\n* Wenn du irgendein anderes Format verwendest oder mehrere Befehle gleichzeitig abschickst, muss ich euch einen Strafpunkt geben.\n* Wenn ihr gemeinsam mehr als 10 Strafpunkte ansammelt, verliert ihr das Spiel.\n* Es ist essenziell, dass du dich mit deinem Mitspieler auf eine gemeinsame Zielanordnung einigst! Zum Beispiel könntet ihr euch darauf einigen, ein Objekt nach dem anderen zu bewegen. Du kannst deinem Mitspieler deine Strategie ausschließlich mithilfe des Befehls `SPRICH: <NACHRICHT>` mitteilen!\n\n**Objekte bewegen**\n\n* Du kannst Objekte nur innerhalb des Rasters und in leere Zellen bewegen. Leere Zellen erkennst am Zeichen '◌'.\n* Solltest du versuchen, ein Objekt an eine Stelle zu bewegen, die entweder nicht leer ist oder sich außerhalb des Rasters befindet, muss ich euch einen Strafpunkt geben und du bekommst einen weiteren Versuch.\n* Angenommen, dein Raster sähe so aus:\n\n\n```\n ABC\n╔═╤═╗\n║◌│◌║ 1\n║◌│C║ 2\n╟─┘◌║ 3\n║◌◌◌║ 4\n╚═══╝\n```\n\n\n* In diesem Beispiel wäre die leere Zelle in der linken oberen Ecke an der Position `(A,1)`, die leere Zelle in der rechten obere Ecke bei `(C,1)`, die in der linken unteren Ecke bei `(A,4)` und die in der rechten unteren Ecke bei `(C,4)`. Das Object 'C' ist an der Position `(C,2)` und das Eckensymbol `┘` bei `(B,3)`.\n* Wenn du ein Objekt bewegen willst, solltest du dich erst vergewissern, ob die Zielposition auch wirklich leer ist und weder Buchstaben noch Rahmenteile noch Linien enthält!\n\n**Spielende:**\n\nWenn du glaubst, dass ihr das Ziel erreicht habt, kannst du deinem Mitspieler die Nachricht `SPRICH: fertig?` schicken. Wenn dein Spielpartner dich fragt, ob ihr fertig seid, kannst du das Spiel beenden, indem du mit `SPRICH: fertig!` antwortest.\n\nIhr gewinnt gemeinsam, wenn ihr das Spiel innerhalb von #max_rounds Runden beendet. Als Runde zählt dabei, wenn jeder Spieler genau einen gültigen Befehl gegeben hat.\n\n**Punkte:**\n\nJe näher sich die jeweils gleichen Objekte auf beiden Rastern sind, desto mehr Punkte bekommt ihr. Für Strafpunkte gibt es Punktabzug. Könnt ihr den Rekord brechen?\n\n                           \n**Dein Raster:**\n\nDein Raster sieht so aus:\n```\n ABCDEFG\n╔═╤═════╗\n║◌│◌◌◌◌H║ 1\n║◌│◌┌─┐◌║ 2\n╟─┼─┤◌│◌║ 3\n║◌│◌│◌├─╢ 4\n║◌│W├─┘◌║ 5\n║◌└─┤◌◌◌║ 6\n║◌◌I│◌TC║ 7\n╚═══╧═══╝\n```\n\nDein Mitspieler hat das Spiel mit dieser Nachricht begonnen:\n\n\"$start_message\"\n\nWie lautet dein erster Befehl?",
+          "new_turn": "\nDein Mitspieler hat dir diese Nachricht geschickt:\n\n\n\"$turn_message\"\n\n\nWie lautet dein nächster Befehl?",
+          "new_turn_move": "Dein Mitspieler hat ein Objekt auf seinem Raster bewegt.\n\n\nWie lautet dein nächster Befehl?",
+          "round_counter": "Ihr seid gerade bei Runde $round von maximal 20.\n\n",
+          "invalid_response": "Strafpunkt: $reason Stelle sicher, dass deine Antwort ausschließlich einen der beiden Befehle `SPRICH: <NACHRICHT>` und `VERSCHIEBE: <OBJECT>, (<X>, <Y>)` und sonst nichts enthält!\n",
+          "penalty_message": "Ihr habt gemeinsam $penalty von maximal $max_penalties Strafpunkten angesammelt. Bitte versuche es noch mal!\n",
+          "penalty_counter": "Ihr habt gemeinsam $penalty von maximal $max_penalties Strafpunkten angesammelt.\n",
+          "message_relay": "Deine Nachricht wurde an deinen Mitspieler übermittelt.\n\n",
+          "move_pattern": "(?P<head>.*)VERSCHIEBE: (?P<obj>[A-Z]), \\((?P<x>[A-Z]), ?(?P<y>\\d+)\\)(?P<tail>.*)",
+          "message_pattern": "(?P<head>.*)SPRICH: (?P<message>[^\\n]+)(?P<tail>.*)",
+          "terminate_question": "fertig?",
+          "terminate_answer": "fertig!",
+          "parse_errors": {
+            "head": "Deine Nachricht darf nichts vor dem Befehl enthalten!",
+            "tail": "Deine Nachricht darf nichts nach dem Befehl enthalten!",
+            "head_tail": "Deine Nachricht darf nichts vor oder nach dem Befehl enthalten!",
+            "several_commands": "Deine Nachricht enthält mehr als einen Befehl!",
+            "restriction": "Deine Nachricht enthält regelwidrige Angaben!",
+            "invalid_format": "Deine Nachricht entspricht keinem gültigen Format!",
+            "invalid_start": "Du musst das Spiel beginnen, indem du eine Nachricht an den anderen Spieler sendest!"
+          },
+          "move_messages": {
+            "successful": "'$object' erfolgreich nach ($x,$y) verschoben. Dein Raster sieht jetzt so aus:\n```\n$grid```\n",
+            "out_of_bounds": "Ungültiger Zug: ($x,$y) liegt außerhalb des Gitters. Bitte versuche es erneut!\n",
+            "not_empty": "Strafpunkt: ($x,$y) ist nicht leer, sondern enthält '$object'.\n",
+            "obj_not_found": "Ungültiger Zug: Dein Raster enhält kein Objekt '$object'. Bitte versuche es erneut!\n"
+          }
+        }
+      ]
+    },
+    {
+      "name": "gs11x11_obj7_de",
+      "game_instances": [
+        {
+          "game_id": 0,
+          "language": "de",
+          "width": 11,
+          "height": 11,
+          "lenient": true,
+          "max_penalties": 14,
+          "max_rounds": 28,
+          "show_coords": true,
+          "empty_symbol": "◌",
+          "background": "╔═╤═══════╗\n║◌│◌◌◌◌◌◌◌║\n╟─┘◌◌◌◌◌┌─╢\n║◌◌┌─┬──┤◌║\n║◌◌│◌│◌◌└─╢\n║◌◌│◌│◌◌◌◌║\n║◌◌├─┼─┐◌◌║\n╟─┬┘◌│◌│◌◌║\n║◌│◌◌└─┘◌◌║\n║◌│◌◌◌◌◌◌◌║\n╚═╧═══════╝\n",
+          "state1": [
+            {
+              "id": "P",
+              "coord": [
+                7,
+                1
+              ]
+            },
+            {
+              "id": "O",
+              "coord": [
+                6,
+                9
+              ]
+            },
+            {
+              "id": "T",
+              "coord": [
+                1,
+                3
+              ]
+            },
+            {
+              "id": "S",
+              "coord": [
+                6,
+                5
+              ]
+            },
+            {
+              "id": "D",
+              "coord": [
+                4,
+                4
+              ]
+            },
+            {
+              "id": "A",
+              "coord": [
+                1,
+                6
+              ]
+            },
+            {
+              "id": "M",
+              "coord": [
+                1,
+                4
+              ]
+            }
+          ],
+          "state2": [
+            {
+              "id": "P",
+              "coord": [
+                4,
+                1
+              ]
+            },
+            {
+              "id": "O",
+              "coord": [
+                8,
+                6
+              ]
+            },
+            {
+              "id": "T",
+              "coord": [
+                5,
+                2
+              ]
+            },
+            {
+              "id": "S",
+              "coord": [
+                7,
+                5
+              ]
+            },
+            {
+              "id": "D",
+              "coord": [
+                7,
+                4
+              ]
+            },
+            {
+              "id": "A",
+              "coord": [
+                9,
+                3
+              ]
+            },
+            {
+              "id": "M",
+              "coord": [
+                8,
+                5
+              ]
+            }
+          ],
+          "p1_initial_prompt": "Du spielst ein kooperatives Spiel mit einem Partner, und ich bin der Spielleiter. Ihr spielt beide auf einem identisches Raster, auf dem die folgenden Objekte jeweils zufällig verteilt sind: 'P', 'O', 'T', 'S', 'D', 'A', 'M'.\n\nDu kannst das Raster deines Mitspielers nicht sehen, und dein Mitspieler kann deines nicht sehen.\n\n**Ziel des Spiels:**\n\nBeide Spieler müssen die Objekte auf ihrem jeweiligen Raster so anordnen, dass sie am Ende gleich verteilt sind.\n\nDu musst dich mit deinem Spielpartner absprechen, damit ihr euch auf eine gemeinsame Anordnung der Objekte einigen könnt.\n\n**Spielregeln:**\n\n* In jedem Spielzug kannst du genau eine der folgenden zwei Aktionen ausführen:\n  * `SPRICH: <NACHRICHT>`: um eine Nachricht zu schicken, die ich dann an deinen Spielpartner weiterleite. Als Nachricht gilt alles bis zum nächsten Zeilenumbruch. \n  * `VERSCHIEBE: <OBJECT>, (<X>, <Y>)`: um ein Objekt an eine andere Position zu bewegen, wobei `<X>` die Spalte und `<Y>` die Zeile bezeichnet. Ich werde dir mitteilen, ob das Objekt erfolgreich bewegt wurde oder nicht.\n* Deine Nachricht darf nur genau einen Befehl enthalten und sonst nichts, insbesondere keine Argumentation oder Erklärungen vor oder nach dem Befehl.\n* Wenn du irgendein anderes Format verwendest oder mehrere Befehle gleichzeitig abschickst, muss ich euch einen Strafpunkt geben.\n* Wenn ihr gemeinsam mehr als 14 Strafpunkte ansammelt, verliert ihr das Spiel.\n* Es ist essenziell, dass du dich mit deinem Mitspieler auf eine gemeinsame Zielanordnung einigst! Zum Beispiel könntet ihr euch darauf einigen, ein Objekt nach dem anderen zu bewegen. Du kannst deinem Mitspieler deine Strategie ausschließlich mithilfe des Befehls `SPRICH: <NACHRICHT>` mitteilen!\n\n**Objekte bewegen**\n\n* Du kannst Objekte nur innerhalb des Rasters und in leere Zellen bewegen. Leere Zellen erkennst am Zeichen '◌'.\n* Solltest du versuchen, ein Objekt an eine Stelle zu bewegen, die entweder nicht leer ist oder sich außerhalb des Rasters befindet, muss ich euch einen Strafpunkt geben und du bekommst einen weiteren Versuch.\n* Angenommen, dein Raster sähe so aus:\n\n\n```\n ABC\n╔═╤═╗\n║◌│◌║ 1\n║◌│C║ 2\n╟─┘◌║ 3\n║◌◌◌║ 4\n╚═══╝\n```\n\n\n* In diesem Beispiel wäre die leere Zelle in der linken oberen Ecke an der Position `(A,1)`, die leere Zelle in der rechten obere Ecke bei `(C,1)`, die in der linken unteren Ecke bei `(A,4)` und die in der rechten unteren Ecke bei `(C,4)`. Das Object 'C' ist an der Position `(C,2)` und das Eckensymbol `┘` bei `(B,3)`.\n* Wenn du ein Objekt bewegen willst, solltest du dich erst vergewissern, ob die Zielposition auch wirklich leer ist und weder Buchstaben noch Rahmenteile noch Linien enthält!\n\n**Spielende:**\n\nWenn du glaubst, dass ihr das Ziel erreicht habt, kannst du deinem Mitspieler die Nachricht `SPRICH: fertig?` schicken. Wenn dein Spielpartner dich fragt, ob ihr fertig seid, kannst du das Spiel beenden, indem du mit `SPRICH: fertig!` antwortest.\n\nIhr gewinnt gemeinsam, wenn ihr das Spiel innerhalb von #max_rounds Runden beendet. Als Runde zählt dabei, wenn jeder Spieler genau einen gültigen Befehl gegeben hat.\n\n**Punkte:**\n\nJe näher sich die jeweils gleichen Objekte auf beiden Rastern sind, desto mehr Punkte bekommt ihr. Für Strafpunkte gibt es Punktabzug. Könnt ihr den Rekord brechen?\n\n                           \n**Dein Raster:**\n\nDein Raster sieht so aus:\n```\n ABCDEFGHI\n╔═╤═══════╗\n║◌│◌◌◌◌P◌◌║ 1\n╟─┘◌◌◌◌◌┌─╢ 2\n║T◌┌─┬──┤◌║ 3\n║M◌│D│◌◌└─╢ 4\n║◌◌│◌│S◌◌◌║ 5\n║A◌├─┼─┐◌◌║ 6\n╟─┬┘◌│◌│◌◌║ 7\n║◌│◌◌└─┘◌◌║ 8\n║◌│◌◌◌O◌◌◌║ 9\n╚═╧═══════╝\n```\n\nSchicke eine Nachricht an deinen Mitspieler um das Spiel zu starten!",
+          "p2_initial_prompt": "Du spielst ein kooperatives Spiel mit einem Partner, und ich bin der Spielleiter. Ihr spielt beide auf einem identisches Raster, auf dem die folgenden Objekte jeweils zufällig verteilt sind: 'P', 'O', 'T', 'S', 'D', 'A', 'M'.\n\nDu kannst das Raster deines Mitspielers nicht sehen, und dein Mitspieler kann deines nicht sehen.\n\n**Ziel des Spiels:**\n\nBeide Spieler müssen die Objekte auf ihrem jeweiligen Raster so anordnen, dass sie am Ende gleich verteilt sind.\n\nDu musst dich mit deinem Spielpartner absprechen, damit ihr euch auf eine gemeinsame Anordnung der Objekte einigen könnt.\n\n**Spielregeln:**\n\n* In jedem Spielzug kannst du genau eine der folgenden zwei Aktionen ausführen:\n  * `SPRICH: <NACHRICHT>`: um eine Nachricht zu schicken, die ich dann an deinen Spielpartner weiterleite. Als Nachricht gilt alles bis zum nächsten Zeilenumbruch. \n  * `VERSCHIEBE: <OBJECT>, (<X>, <Y>)`: um ein Objekt an eine andere Position zu bewegen, wobei `<X>` die Spalte und `<Y>` die Zeile bezeichnet. Ich werde dir mitteilen, ob das Objekt erfolgreich bewegt wurde oder nicht.\n* Deine Nachricht darf nur genau einen Befehl enthalten und sonst nichts, insbesondere keine Argumentation oder Erklärungen vor oder nach dem Befehl.\n* Wenn du irgendein anderes Format verwendest oder mehrere Befehle gleichzeitig abschickst, muss ich euch einen Strafpunkt geben.\n* Wenn ihr gemeinsam mehr als 14 Strafpunkte ansammelt, verliert ihr das Spiel.\n* Es ist essenziell, dass du dich mit deinem Mitspieler auf eine gemeinsame Zielanordnung einigst! Zum Beispiel könntet ihr euch darauf einigen, ein Objekt nach dem anderen zu bewegen. Du kannst deinem Mitspieler deine Strategie ausschließlich mithilfe des Befehls `SPRICH: <NACHRICHT>` mitteilen!\n\n**Objekte bewegen**\n\n* Du kannst Objekte nur innerhalb des Rasters und in leere Zellen bewegen. Leere Zellen erkennst am Zeichen '◌'.\n* Solltest du versuchen, ein Objekt an eine Stelle zu bewegen, die entweder nicht leer ist oder sich außerhalb des Rasters befindet, muss ich euch einen Strafpunkt geben und du bekommst einen weiteren Versuch.\n* Angenommen, dein Raster sähe so aus:\n\n\n```\n ABC\n╔═╤═╗\n║◌│◌║ 1\n║◌│C║ 2\n╟─┘◌║ 3\n║◌◌◌║ 4\n╚═══╝\n```\n\n\n* In diesem Beispiel wäre die leere Zelle in der linken oberen Ecke an der Position `(A,1)`, die leere Zelle in der rechten obere Ecke bei `(C,1)`, die in der linken unteren Ecke bei `(A,4)` und die in der rechten unteren Ecke bei `(C,4)`. Das Object 'C' ist an der Position `(C,2)` und das Eckensymbol `┘` bei `(B,3)`.\n* Wenn du ein Objekt bewegen willst, solltest du dich erst vergewissern, ob die Zielposition auch wirklich leer ist und weder Buchstaben noch Rahmenteile noch Linien enthält!\n\n**Spielende:**\n\nWenn du glaubst, dass ihr das Ziel erreicht habt, kannst du deinem Mitspieler die Nachricht `SPRICH: fertig?` schicken. Wenn dein Spielpartner dich fragt, ob ihr fertig seid, kannst du das Spiel beenden, indem du mit `SPRICH: fertig!` antwortest.\n\nIhr gewinnt gemeinsam, wenn ihr das Spiel innerhalb von #max_rounds Runden beendet. Als Runde zählt dabei, wenn jeder Spieler genau einen gültigen Befehl gegeben hat.\n\n**Punkte:**\n\nJe näher sich die jeweils gleichen Objekte auf beiden Rastern sind, desto mehr Punkte bekommt ihr. Für Strafpunkte gibt es Punktabzug. Könnt ihr den Rekord brechen?\n\n                           \n**Dein Raster:**\n\nDein Raster sieht so aus:\n```\n ABCDEFGHI\n╔═╤═══════╗\n║◌│◌P◌◌◌◌◌║ 1\n╟─┘◌◌T◌◌┌─╢ 2\n║◌◌┌─┬──┤A║ 3\n║◌◌│◌│◌D└─╢ 4\n║◌◌│◌│◌SM◌║ 5\n║◌◌├─┼─┐O◌║ 6\n╟─┬┘◌│◌│◌◌║ 7\n║◌│◌◌└─┘◌◌║ 8\n║◌│◌◌◌◌◌◌◌║ 9\n╚═╧═══════╝\n```\n\nDein Mitspieler hat das Spiel mit dieser Nachricht begonnen:\n\n\"$start_message\"\n\nWie lautet dein erster Befehl?",
+          "new_turn": "\nDein Mitspieler hat dir diese Nachricht geschickt:\n\n\n\"$turn_message\"\n\n\nWie lautet dein nächster Befehl?",
+          "new_turn_move": "Dein Mitspieler hat ein Objekt auf seinem Raster bewegt.\n\n\nWie lautet dein nächster Befehl?",
+          "round_counter": "Ihr seid gerade bei Runde $round von maximal 28.\n\n",
+          "invalid_response": "Strafpunkt: $reason Stelle sicher, dass deine Antwort ausschließlich einen der beiden Befehle `SPRICH: <NACHRICHT>` und `VERSCHIEBE: <OBJECT>, (<X>, <Y>)` und sonst nichts enthält!\n",
+          "penalty_message": "Ihr habt gemeinsam $penalty von maximal $max_penalties Strafpunkten angesammelt. Bitte versuche es noch mal!\n",
+          "penalty_counter": "Ihr habt gemeinsam $penalty von maximal $max_penalties Strafpunkten angesammelt.\n",
+          "message_relay": "Deine Nachricht wurde an deinen Mitspieler übermittelt.\n\n",
+          "move_pattern": "(?P<head>.*)VERSCHIEBE: (?P<obj>[A-Z]), \\((?P<x>[A-Z]), ?(?P<y>\\d+)\\)(?P<tail>.*)",
+          "message_pattern": "(?P<head>.*)SPRICH: (?P<message>[^\\n]+)(?P<tail>.*)",
+          "terminate_question": "fertig?",
+          "terminate_answer": "fertig!",
+          "parse_errors": {
+            "head": "Deine Nachricht darf nichts vor dem Befehl enthalten!",
+            "tail": "Deine Nachricht darf nichts nach dem Befehl enthalten!",
+            "head_tail": "Deine Nachricht darf nichts vor oder nach dem Befehl enthalten!",
+            "several_commands": "Deine Nachricht enthält mehr als einen Befehl!",
+            "restriction": "Deine Nachricht enthält regelwidrige Angaben!",
+            "invalid_format": "Deine Nachricht entspricht keinem gültigen Format!",
+            "invalid_start": "Du musst das Spiel beginnen, indem du eine Nachricht an den anderen Spieler sendest!"
+          },
+          "move_messages": {
+            "successful": "'$object' erfolgreich nach ($x,$y) verschoben. Dein Raster sieht jetzt so aus:\n```\n$grid```\n",
+            "out_of_bounds": "Ungültiger Zug: ($x,$y) liegt außerhalb des Gitters. Bitte versuche es erneut!\n",
+            "not_empty": "Strafpunkt: ($x,$y) ist nicht leer, sondern enthält '$object'.\n",
+            "obj_not_found": "Ungültiger Zug: Dein Raster enhält kein Objekt '$object'. Bitte versuche es erneut!\n"
+          }
+        },
+        {
+          "game_id": 1,
+          "language": "de",
+          "width": 11,
+          "height": 11,
+          "lenient": true,
+          "max_penalties": 14,
+          "max_rounds": 28,
+          "show_coords": true,
+          "empty_symbol": "◌",
+          "background": "╔═════════╗\n║◌◌◌◌◌◌◌◌◌║\n║◌◌◌◌◌◌◌◌◌║\n║◌◌┌─┬──┐◌║\n╟──┤◌│◌◌│◌║\n║◌◌│◌│◌◌└─╢\n║◌◌├─┼─┐◌◌║\n╟──┤◌│◌│◌◌║\n║◌◌└─┘◌└┬─╢\n║◌◌◌◌◌◌◌│◌║\n╚═══════╧═╝\n",
+          "state1": [
+            {
+              "id": "P",
+              "coord": [
+                7,
+                2
+              ]
+            },
+            {
+              "id": "O",
+              "coord": [
+                3,
+                1
+              ]
+            },
+            {
+              "id": "T",
+              "coord": [
+                3,
+                2
+              ]
+            },
+            {
+              "id": "S",
+              "coord": [
+                5,
+                9
+              ]
+            },
+            {
+              "id": "D",
+              "coord": [
+                4,
+                2
+              ]
+            },
+            {
+              "id": "A",
+              "coord": [
+                4,
+                1
+              ]
+            },
+            {
+              "id": "M",
+              "coord": [
+                9,
+                6
+              ]
+            }
+          ],
+          "state2": [
+            {
+              "id": "P",
+              "coord": [
+                6,
+                2
+              ]
+            },
+            {
+              "id": "O",
+              "coord": [
+                1,
+                9
+              ]
+            },
+            {
+              "id": "T",
+              "coord": [
+                9,
+                9
+              ]
+            },
+            {
+              "id": "S",
+              "coord": [
+                4,
+                5
+              ]
+            },
+            {
+              "id": "D",
+              "coord": [
+                6,
+                4
+              ]
+            },
+            {
+              "id": "A",
+              "coord": [
+                1,
+                3
+              ]
+            },
+            {
+              "id": "M",
+              "coord": [
+                7,
+                4
+              ]
+            }
+          ],
+          "p1_initial_prompt": "Du spielst ein kooperatives Spiel mit einem Partner, und ich bin der Spielleiter. Ihr spielt beide auf einem identisches Raster, auf dem die folgenden Objekte jeweils zufällig verteilt sind: 'P', 'O', 'T', 'S', 'D', 'A', 'M'.\n\nDu kannst das Raster deines Mitspielers nicht sehen, und dein Mitspieler kann deines nicht sehen.\n\n**Ziel des Spiels:**\n\nBeide Spieler müssen die Objekte auf ihrem jeweiligen Raster so anordnen, dass sie am Ende gleich verteilt sind.\n\nDu musst dich mit deinem Spielpartner absprechen, damit ihr euch auf eine gemeinsame Anordnung der Objekte einigen könnt.\n\n**Spielregeln:**\n\n* In jedem Spielzug kannst du genau eine der folgenden zwei Aktionen ausführen:\n  * `SPRICH: <NACHRICHT>`: um eine Nachricht zu schicken, die ich dann an deinen Spielpartner weiterleite. Als Nachricht gilt alles bis zum nächsten Zeilenumbruch. \n  * `VERSCHIEBE: <OBJECT>, (<X>, <Y>)`: um ein Objekt an eine andere Position zu bewegen, wobei `<X>` die Spalte und `<Y>` die Zeile bezeichnet. Ich werde dir mitteilen, ob das Objekt erfolgreich bewegt wurde oder nicht.\n* Deine Nachricht darf nur genau einen Befehl enthalten und sonst nichts, insbesondere keine Argumentation oder Erklärungen vor oder nach dem Befehl.\n* Wenn du irgendein anderes Format verwendest oder mehrere Befehle gleichzeitig abschickst, muss ich euch einen Strafpunkt geben.\n* Wenn ihr gemeinsam mehr als 14 Strafpunkte ansammelt, verliert ihr das Spiel.\n* Es ist essenziell, dass du dich mit deinem Mitspieler auf eine gemeinsame Zielanordnung einigst! Zum Beispiel könntet ihr euch darauf einigen, ein Objekt nach dem anderen zu bewegen. Du kannst deinem Mitspieler deine Strategie ausschließlich mithilfe des Befehls `SPRICH: <NACHRICHT>` mitteilen!\n\n**Objekte bewegen**\n\n* Du kannst Objekte nur innerhalb des Rasters und in leere Zellen bewegen. Leere Zellen erkennst am Zeichen '◌'.\n* Solltest du versuchen, ein Objekt an eine Stelle zu bewegen, die entweder nicht leer ist oder sich außerhalb des Rasters befindet, muss ich euch einen Strafpunkt geben und du bekommst einen weiteren Versuch.\n* Angenommen, dein Raster sähe so aus:\n\n\n```\n ABC\n╔═╤═╗\n║◌│◌║ 1\n║◌│C║ 2\n╟─┘◌║ 3\n║◌◌◌║ 4\n╚═══╝\n```\n\n\n* In diesem Beispiel wäre die leere Zelle in der linken oberen Ecke an der Position `(A,1)`, die leere Zelle in der rechten obere Ecke bei `(C,1)`, die in der linken unteren Ecke bei `(A,4)` und die in der rechten unteren Ecke bei `(C,4)`. Das Object 'C' ist an der Position `(C,2)` und das Eckensymbol `┘` bei `(B,3)`.\n* Wenn du ein Objekt bewegen willst, solltest du dich erst vergewissern, ob die Zielposition auch wirklich leer ist und weder Buchstaben noch Rahmenteile noch Linien enthält!\n\n**Spielende:**\n\nWenn du glaubst, dass ihr das Ziel erreicht habt, kannst du deinem Mitspieler die Nachricht `SPRICH: fertig?` schicken. Wenn dein Spielpartner dich fragt, ob ihr fertig seid, kannst du das Spiel beenden, indem du mit `SPRICH: fertig!` antwortest.\n\nIhr gewinnt gemeinsam, wenn ihr das Spiel innerhalb von #max_rounds Runden beendet. Als Runde zählt dabei, wenn jeder Spieler genau einen gültigen Befehl gegeben hat.\n\n**Punkte:**\n\nJe näher sich die jeweils gleichen Objekte auf beiden Rastern sind, desto mehr Punkte bekommt ihr. Für Strafpunkte gibt es Punktabzug. Könnt ihr den Rekord brechen?\n\n                           \n**Dein Raster:**\n\nDein Raster sieht so aus:\n```\n ABCDEFGHI\n╔═════════╗\n║◌◌OA◌◌◌◌◌║ 1\n║◌◌TD◌◌P◌◌║ 2\n║◌◌┌─┬──┐◌║ 3\n╟──┤◌│◌◌│◌║ 4\n║◌◌│◌│◌◌└─╢ 5\n║◌◌├─┼─┐◌M║ 6\n╟──┤◌│◌│◌◌║ 7\n║◌◌└─┘◌└┬─╢ 8\n║◌◌◌◌S◌◌│◌║ 9\n╚═══════╧═╝\n```\n\nSchicke eine Nachricht an deinen Mitspieler um das Spiel zu starten!",
+          "p2_initial_prompt": "Du spielst ein kooperatives Spiel mit einem Partner, und ich bin der Spielleiter. Ihr spielt beide auf einem identisches Raster, auf dem die folgenden Objekte jeweils zufällig verteilt sind: 'P', 'O', 'T', 'S', 'D', 'A', 'M'.\n\nDu kannst das Raster deines Mitspielers nicht sehen, und dein Mitspieler kann deines nicht sehen.\n\n**Ziel des Spiels:**\n\nBeide Spieler müssen die Objekte auf ihrem jeweiligen Raster so anordnen, dass sie am Ende gleich verteilt sind.\n\nDu musst dich mit deinem Spielpartner absprechen, damit ihr euch auf eine gemeinsame Anordnung der Objekte einigen könnt.\n\n**Spielregeln:**\n\n* In jedem Spielzug kannst du genau eine der folgenden zwei Aktionen ausführen:\n  * `SPRICH: <NACHRICHT>`: um eine Nachricht zu schicken, die ich dann an deinen Spielpartner weiterleite. Als Nachricht gilt alles bis zum nächsten Zeilenumbruch. \n  * `VERSCHIEBE: <OBJECT>, (<X>, <Y>)`: um ein Objekt an eine andere Position zu bewegen, wobei `<X>` die Spalte und `<Y>` die Zeile bezeichnet. Ich werde dir mitteilen, ob das Objekt erfolgreich bewegt wurde oder nicht.\n* Deine Nachricht darf nur genau einen Befehl enthalten und sonst nichts, insbesondere keine Argumentation oder Erklärungen vor oder nach dem Befehl.\n* Wenn du irgendein anderes Format verwendest oder mehrere Befehle gleichzeitig abschickst, muss ich euch einen Strafpunkt geben.\n* Wenn ihr gemeinsam mehr als 14 Strafpunkte ansammelt, verliert ihr das Spiel.\n* Es ist essenziell, dass du dich mit deinem Mitspieler auf eine gemeinsame Zielanordnung einigst! Zum Beispiel könntet ihr euch darauf einigen, ein Objekt nach dem anderen zu bewegen. Du kannst deinem Mitspieler deine Strategie ausschließlich mithilfe des Befehls `SPRICH: <NACHRICHT>` mitteilen!\n\n**Objekte bewegen**\n\n* Du kannst Objekte nur innerhalb des Rasters und in leere Zellen bewegen. Leere Zellen erkennst am Zeichen '◌'.\n* Solltest du versuchen, ein Objekt an eine Stelle zu bewegen, die entweder nicht leer ist oder sich außerhalb des Rasters befindet, muss ich euch einen Strafpunkt geben und du bekommst einen weiteren Versuch.\n* Angenommen, dein Raster sähe so aus:\n\n\n```\n ABC\n╔═╤═╗\n║◌│◌║ 1\n║◌│C║ 2\n╟─┘◌║ 3\n║◌◌◌║ 4\n╚═══╝\n```\n\n\n* In diesem Beispiel wäre die leere Zelle in der linken oberen Ecke an der Position `(A,1)`, die leere Zelle in der rechten obere Ecke bei `(C,1)`, die in der linken unteren Ecke bei `(A,4)` und die in der rechten unteren Ecke bei `(C,4)`. Das Object 'C' ist an der Position `(C,2)` und das Eckensymbol `┘` bei `(B,3)`.\n* Wenn du ein Objekt bewegen willst, solltest du dich erst vergewissern, ob die Zielposition auch wirklich leer ist und weder Buchstaben noch Rahmenteile noch Linien enthält!\n\n**Spielende:**\n\nWenn du glaubst, dass ihr das Ziel erreicht habt, kannst du deinem Mitspieler die Nachricht `SPRICH: fertig?` schicken. Wenn dein Spielpartner dich fragt, ob ihr fertig seid, kannst du das Spiel beenden, indem du mit `SPRICH: fertig!` antwortest.\n\nIhr gewinnt gemeinsam, wenn ihr das Spiel innerhalb von #max_rounds Runden beendet. Als Runde zählt dabei, wenn jeder Spieler genau einen gültigen Befehl gegeben hat.\n\n**Punkte:**\n\nJe näher sich die jeweils gleichen Objekte auf beiden Rastern sind, desto mehr Punkte bekommt ihr. Für Strafpunkte gibt es Punktabzug. Könnt ihr den Rekord brechen?\n\n                           \n**Dein Raster:**\n\nDein Raster sieht so aus:\n```\n ABCDEFGHI\n╔═════════╗\n║◌◌◌◌◌◌◌◌◌║ 1\n║◌◌◌◌◌P◌◌◌║ 2\n║A◌┌─┬──┐◌║ 3\n╟──┤◌│DM│◌║ 4\n║◌◌│S│◌◌└─╢ 5\n║◌◌├─┼─┐◌◌║ 6\n╟──┤◌│◌│◌◌║ 7\n║◌◌└─┘◌└┬─╢ 8\n║O◌◌◌◌◌◌│T║ 9\n╚═══════╧═╝\n```\n\nDein Mitspieler hat das Spiel mit dieser Nachricht begonnen:\n\n\"$start_message\"\n\nWie lautet dein erster Befehl?",
+          "new_turn": "\nDein Mitspieler hat dir diese Nachricht geschickt:\n\n\n\"$turn_message\"\n\n\nWie lautet dein nächster Befehl?",
+          "new_turn_move": "Dein Mitspieler hat ein Objekt auf seinem Raster bewegt.\n\n\nWie lautet dein nächster Befehl?",
+          "round_counter": "Ihr seid gerade bei Runde $round von maximal 28.\n\n",
+          "invalid_response": "Strafpunkt: $reason Stelle sicher, dass deine Antwort ausschließlich einen der beiden Befehle `SPRICH: <NACHRICHT>` und `VERSCHIEBE: <OBJECT>, (<X>, <Y>)` und sonst nichts enthält!\n",
+          "penalty_message": "Ihr habt gemeinsam $penalty von maximal $max_penalties Strafpunkten angesammelt. Bitte versuche es noch mal!\n",
+          "penalty_counter": "Ihr habt gemeinsam $penalty von maximal $max_penalties Strafpunkten angesammelt.\n",
+          "message_relay": "Deine Nachricht wurde an deinen Mitspieler übermittelt.\n\n",
+          "move_pattern": "(?P<head>.*)VERSCHIEBE: (?P<obj>[A-Z]), \\((?P<x>[A-Z]), ?(?P<y>\\d+)\\)(?P<tail>.*)",
+          "message_pattern": "(?P<head>.*)SPRICH: (?P<message>[^\\n]+)(?P<tail>.*)",
+          "terminate_question": "fertig?",
+          "terminate_answer": "fertig!",
+          "parse_errors": {
+            "head": "Deine Nachricht darf nichts vor dem Befehl enthalten!",
+            "tail": "Deine Nachricht darf nichts nach dem Befehl enthalten!",
+            "head_tail": "Deine Nachricht darf nichts vor oder nach dem Befehl enthalten!",
+            "several_commands": "Deine Nachricht enthält mehr als einen Befehl!",
+            "restriction": "Deine Nachricht enthält regelwidrige Angaben!",
+            "invalid_format": "Deine Nachricht entspricht keinem gültigen Format!",
+            "invalid_start": "Du musst das Spiel beginnen, indem du eine Nachricht an den anderen Spieler sendest!"
+          },
+          "move_messages": {
+            "successful": "'$object' erfolgreich nach ($x,$y) verschoben. Dein Raster sieht jetzt so aus:\n```\n$grid```\n",
+            "out_of_bounds": "Ungültiger Zug: ($x,$y) liegt außerhalb des Gitters. Bitte versuche es erneut!\n",
+            "not_empty": "Strafpunkt: ($x,$y) ist nicht leer, sondern enthält '$object'.\n",
+            "obj_not_found": "Ungültiger Zug: Dein Raster enhält kein Objekt '$object'. Bitte versuche es erneut!\n"
+          }
+        }
+      ]
+    },
+    {
+      "name": "gs13x13_obj9_de",
+      "game_instances": [
+        {
+          "game_id": 0,
+          "language": "de",
+          "width": 13,
+          "height": 13,
+          "lenient": true,
+          "max_penalties": 18,
+          "max_rounds": 36,
+          "show_coords": true,
+          "empty_symbol": "◌",
+          "background": "╔════╤══════╗\n║◌◌◌◌│◌◌◌◌◌◌║\n║◌◌◌◌│◌◌◌◌◌◌║\n║◌◌┌─┼─┬─┐◌◌║\n║◌◌│◌│◌│◌│◌◌║\n║◌◌├─┼─┼─┤◌◌║\n║◌◌│◌│◌│◌│◌◌║\n║◌◌├─┴─┴─┤◌◌║\n║◌◌│◌◌◌◌◌│◌◌║\n╟──┘◌◌◌◌◌│◌◌║\n║◌◌◌◌┌───┘◌◌║\n║◌◌◌◌│◌◌◌◌◌◌║\n╚════╧══════╝\n",
+          "state1": [
+            {
+              "id": "A",
+              "coord": [
+                4,
+                10
+              ]
+            },
+            {
+              "id": "P",
+              "coord": [
+                8,
+                8
+              ]
+            },
+            {
+              "id": "H",
+              "coord": [
+                7,
+                1
+              ]
+            },
+            {
+              "id": "R",
+              "coord": [
+                2,
+                3
+              ]
+            },
+            {
+              "id": "O",
+              "coord": [
+                11,
+                11
+              ]
+            },
+            {
+              "id": "D",
+              "coord": [
+                11,
+                5
+              ]
+            },
+            {
+              "id": "I",
+              "coord": [
+                3,
+                2
+              ]
+            },
+            {
+              "id": "T",
+              "coord": [
+                1,
+                1
+              ]
+            },
+            {
+              "id": "E",
+              "coord": [
+                2,
+                10
+              ]
+            }
+          ],
+          "state2": [
+            {
+              "id": "A",
+              "coord": [
+                3,
+                11
+              ]
+            },
+            {
+              "id": "P",
+              "coord": [
+                2,
+                7
+              ]
+            },
+            {
+              "id": "H",
+              "coord": [
+                5,
+                8
+              ]
+            },
+            {
+              "id": "R",
+              "coord": [
+                2,
+                11
+              ]
+            },
+            {
+              "id": "O",
+              "coord": [
+                10,
+                7
+              ]
+            },
+            {
+              "id": "D",
+              "coord": [
+                1,
+                5
+              ]
+            },
+            {
+              "id": "I",
+              "coord": [
+                9,
+                1
+              ]
+            },
+            {
+              "id": "T",
+              "coord": [
+                11,
+                9
+              ]
+            },
+            {
+              "id": "E",
+              "coord": [
+                1,
+                11
+              ]
+            }
+          ],
+          "p1_initial_prompt": "Du spielst ein kooperatives Spiel mit einem Partner, und ich bin der Spielleiter. Ihr spielt beide auf einem identisches Raster, auf dem die folgenden Objekte jeweils zufällig verteilt sind: 'A', 'P', 'H', 'R', 'O', 'D', 'I', 'T', 'E'.\n\nDu kannst das Raster deines Mitspielers nicht sehen, und dein Mitspieler kann deines nicht sehen.\n\n**Ziel des Spiels:**\n\nBeide Spieler müssen die Objekte auf ihrem jeweiligen Raster so anordnen, dass sie am Ende gleich verteilt sind.\n\nDu musst dich mit deinem Spielpartner absprechen, damit ihr euch auf eine gemeinsame Anordnung der Objekte einigen könnt.\n\n**Spielregeln:**\n\n* In jedem Spielzug kannst du genau eine der folgenden zwei Aktionen ausführen:\n  * `SPRICH: <NACHRICHT>`: um eine Nachricht zu schicken, die ich dann an deinen Spielpartner weiterleite. Als Nachricht gilt alles bis zum nächsten Zeilenumbruch. \n  * `VERSCHIEBE: <OBJECT>, (<X>, <Y>)`: um ein Objekt an eine andere Position zu bewegen, wobei `<X>` die Spalte und `<Y>` die Zeile bezeichnet. Ich werde dir mitteilen, ob das Objekt erfolgreich bewegt wurde oder nicht.\n* Deine Nachricht darf nur genau einen Befehl enthalten und sonst nichts, insbesondere keine Argumentation oder Erklärungen vor oder nach dem Befehl.\n* Wenn du irgendein anderes Format verwendest oder mehrere Befehle gleichzeitig abschickst, muss ich euch einen Strafpunkt geben.\n* Wenn ihr gemeinsam mehr als 18 Strafpunkte ansammelt, verliert ihr das Spiel.\n* Es ist essenziell, dass du dich mit deinem Mitspieler auf eine gemeinsame Zielanordnung einigst! Zum Beispiel könntet ihr euch darauf einigen, ein Objekt nach dem anderen zu bewegen. Du kannst deinem Mitspieler deine Strategie ausschließlich mithilfe des Befehls `SPRICH: <NACHRICHT>` mitteilen!\n\n**Objekte bewegen**\n\n* Du kannst Objekte nur innerhalb des Rasters und in leere Zellen bewegen. Leere Zellen erkennst am Zeichen '◌'.\n* Solltest du versuchen, ein Objekt an eine Stelle zu bewegen, die entweder nicht leer ist oder sich außerhalb des Rasters befindet, muss ich euch einen Strafpunkt geben und du bekommst einen weiteren Versuch.\n* Angenommen, dein Raster sähe so aus:\n\n\n```\n ABC\n╔═╤═╗\n║◌│◌║ 1\n║◌│C║ 2\n╟─┘◌║ 3\n║◌◌◌║ 4\n╚═══╝\n```\n\n\n* In diesem Beispiel wäre die leere Zelle in der linken oberen Ecke an der Position `(A,1)`, die leere Zelle in der rechten obere Ecke bei `(C,1)`, die in der linken unteren Ecke bei `(A,4)` und die in der rechten unteren Ecke bei `(C,4)`. Das Object 'C' ist an der Position `(C,2)` und das Eckensymbol `┘` bei `(B,3)`.\n* Wenn du ein Objekt bewegen willst, solltest du dich erst vergewissern, ob die Zielposition auch wirklich leer ist und weder Buchstaben noch Rahmenteile noch Linien enthält!\n\n**Spielende:**\n\nWenn du glaubst, dass ihr das Ziel erreicht habt, kannst du deinem Mitspieler die Nachricht `SPRICH: fertig?` schicken. Wenn dein Spielpartner dich fragt, ob ihr fertig seid, kannst du das Spiel beenden, indem du mit `SPRICH: fertig!` antwortest.\n\nIhr gewinnt gemeinsam, wenn ihr das Spiel innerhalb von #max_rounds Runden beendet. Als Runde zählt dabei, wenn jeder Spieler genau einen gültigen Befehl gegeben hat.\n\n**Punkte:**\n\nJe näher sich die jeweils gleichen Objekte auf beiden Rastern sind, desto mehr Punkte bekommt ihr. Für Strafpunkte gibt es Punktabzug. Könnt ihr den Rekord brechen?\n\n                           \n**Dein Raster:**\n\nDein Raster sieht so aus:\n```\n ABCDEFGHIJK\n╔════╤══════╗\n║T◌◌◌│◌H◌◌◌◌║ 1\n║◌◌I◌│◌◌◌◌◌◌║ 2\n║◌R┌─┼─┬─┐◌◌║ 3\n║◌◌│◌│◌│◌│◌◌║ 4\n║◌◌├─┼─┼─┤◌D║ 5\n║◌◌│◌│◌│◌│◌◌║ 6\n║◌◌├─┴─┴─┤◌◌║ 7\n║◌◌│◌◌◌◌P│◌◌║ 8\n╟──┘◌◌◌◌◌│◌◌║ 9\n║◌E◌A┌───┘◌◌║ 10\n║◌◌◌◌│◌◌◌◌◌O║ 11\n╚════╧══════╝\n```\n\nSchicke eine Nachricht an deinen Mitspieler um das Spiel zu starten!",
+          "p2_initial_prompt": "Du spielst ein kooperatives Spiel mit einem Partner, und ich bin der Spielleiter. Ihr spielt beide auf einem identisches Raster, auf dem die folgenden Objekte jeweils zufällig verteilt sind: 'A', 'P', 'H', 'R', 'O', 'D', 'I', 'T', 'E'.\n\nDu kannst das Raster deines Mitspielers nicht sehen, und dein Mitspieler kann deines nicht sehen.\n\n**Ziel des Spiels:**\n\nBeide Spieler müssen die Objekte auf ihrem jeweiligen Raster so anordnen, dass sie am Ende gleich verteilt sind.\n\nDu musst dich mit deinem Spielpartner absprechen, damit ihr euch auf eine gemeinsame Anordnung der Objekte einigen könnt.\n\n**Spielregeln:**\n\n* In jedem Spielzug kannst du genau eine der folgenden zwei Aktionen ausführen:\n  * `SPRICH: <NACHRICHT>`: um eine Nachricht zu schicken, die ich dann an deinen Spielpartner weiterleite. Als Nachricht gilt alles bis zum nächsten Zeilenumbruch. \n  * `VERSCHIEBE: <OBJECT>, (<X>, <Y>)`: um ein Objekt an eine andere Position zu bewegen, wobei `<X>` die Spalte und `<Y>` die Zeile bezeichnet. Ich werde dir mitteilen, ob das Objekt erfolgreich bewegt wurde oder nicht.\n* Deine Nachricht darf nur genau einen Befehl enthalten und sonst nichts, insbesondere keine Argumentation oder Erklärungen vor oder nach dem Befehl.\n* Wenn du irgendein anderes Format verwendest oder mehrere Befehle gleichzeitig abschickst, muss ich euch einen Strafpunkt geben.\n* Wenn ihr gemeinsam mehr als 18 Strafpunkte ansammelt, verliert ihr das Spiel.\n* Es ist essenziell, dass du dich mit deinem Mitspieler auf eine gemeinsame Zielanordnung einigst! Zum Beispiel könntet ihr euch darauf einigen, ein Objekt nach dem anderen zu bewegen. Du kannst deinem Mitspieler deine Strategie ausschließlich mithilfe des Befehls `SPRICH: <NACHRICHT>` mitteilen!\n\n**Objekte bewegen**\n\n* Du kannst Objekte nur innerhalb des Rasters und in leere Zellen bewegen. Leere Zellen erkennst am Zeichen '◌'.\n* Solltest du versuchen, ein Objekt an eine Stelle zu bewegen, die entweder nicht leer ist oder sich außerhalb des Rasters befindet, muss ich euch einen Strafpunkt geben und du bekommst einen weiteren Versuch.\n* Angenommen, dein Raster sähe so aus:\n\n\n```\n ABC\n╔═╤═╗\n║◌│◌║ 1\n║◌│C║ 2\n╟─┘◌║ 3\n║◌◌◌║ 4\n╚═══╝\n```\n\n\n* In diesem Beispiel wäre die leere Zelle in der linken oberen Ecke an der Position `(A,1)`, die leere Zelle in der rechten obere Ecke bei `(C,1)`, die in der linken unteren Ecke bei `(A,4)` und die in der rechten unteren Ecke bei `(C,4)`. Das Object 'C' ist an der Position `(C,2)` und das Eckensymbol `┘` bei `(B,3)`.\n* Wenn du ein Objekt bewegen willst, solltest du dich erst vergewissern, ob die Zielposition auch wirklich leer ist und weder Buchstaben noch Rahmenteile noch Linien enthält!\n\n**Spielende:**\n\nWenn du glaubst, dass ihr das Ziel erreicht habt, kannst du deinem Mitspieler die Nachricht `SPRICH: fertig?` schicken. Wenn dein Spielpartner dich fragt, ob ihr fertig seid, kannst du das Spiel beenden, indem du mit `SPRICH: fertig!` antwortest.\n\nIhr gewinnt gemeinsam, wenn ihr das Spiel innerhalb von #max_rounds Runden beendet. Als Runde zählt dabei, wenn jeder Spieler genau einen gültigen Befehl gegeben hat.\n\n**Punkte:**\n\nJe näher sich die jeweils gleichen Objekte auf beiden Rastern sind, desto mehr Punkte bekommt ihr. Für Strafpunkte gibt es Punktabzug. Könnt ihr den Rekord brechen?\n\n                           \n**Dein Raster:**\n\nDein Raster sieht so aus:\n```\n ABCDEFGHIJK\n╔════╤══════╗\n║◌◌◌◌│◌◌◌I◌◌║ 1\n║◌◌◌◌│◌◌◌◌◌◌║ 2\n║◌◌┌─┼─┬─┐◌◌║ 3\n║◌◌│◌│◌│◌│◌◌║ 4\n║D◌├─┼─┼─┤◌◌║ 5\n║◌◌│◌│◌│◌│◌◌║ 6\n║◌P├─┴─┴─┤O◌║ 7\n║◌◌│◌H◌◌◌│◌◌║ 8\n╟──┘◌◌◌◌◌│◌T║ 9\n║◌◌◌◌┌───┘◌◌║ 10\n║ERA◌│◌◌◌◌◌◌║ 11\n╚════╧══════╝\n```\n\nDein Mitspieler hat das Spiel mit dieser Nachricht begonnen:\n\n\"$start_message\"\n\nWie lautet dein erster Befehl?",
+          "new_turn": "\nDein Mitspieler hat dir diese Nachricht geschickt:\n\n\n\"$turn_message\"\n\n\nWie lautet dein nächster Befehl?",
+          "new_turn_move": "Dein Mitspieler hat ein Objekt auf seinem Raster bewegt.\n\n\nWie lautet dein nächster Befehl?",
+          "round_counter": "Ihr seid gerade bei Runde $round von maximal 36.\n\n",
+          "invalid_response": "Strafpunkt: $reason Stelle sicher, dass deine Antwort ausschließlich einen der beiden Befehle `SPRICH: <NACHRICHT>` und `VERSCHIEBE: <OBJECT>, (<X>, <Y>)` und sonst nichts enthält!\n",
+          "penalty_message": "Ihr habt gemeinsam $penalty von maximal $max_penalties Strafpunkten angesammelt. Bitte versuche es noch mal!\n",
+          "penalty_counter": "Ihr habt gemeinsam $penalty von maximal $max_penalties Strafpunkten angesammelt.\n",
+          "message_relay": "Deine Nachricht wurde an deinen Mitspieler übermittelt.\n\n",
+          "move_pattern": "(?P<head>.*)VERSCHIEBE: (?P<obj>[A-Z]), \\((?P<x>[A-Z]), ?(?P<y>\\d+)\\)(?P<tail>.*)",
+          "message_pattern": "(?P<head>.*)SPRICH: (?P<message>[^\\n]+)(?P<tail>.*)",
+          "terminate_question": "fertig?",
+          "terminate_answer": "fertig!",
+          "parse_errors": {
+            "head": "Deine Nachricht darf nichts vor dem Befehl enthalten!",
+            "tail": "Deine Nachricht darf nichts nach dem Befehl enthalten!",
+            "head_tail": "Deine Nachricht darf nichts vor oder nach dem Befehl enthalten!",
+            "several_commands": "Deine Nachricht enthält mehr als einen Befehl!",
+            "restriction": "Deine Nachricht enthält regelwidrige Angaben!",
+            "invalid_format": "Deine Nachricht entspricht keinem gültigen Format!",
+            "invalid_start": "Du musst das Spiel beginnen, indem du eine Nachricht an den anderen Spieler sendest!"
+          },
+          "move_messages": {
+            "successful": "'$object' erfolgreich nach ($x,$y) verschoben. Dein Raster sieht jetzt so aus:\n```\n$grid```\n",
+            "out_of_bounds": "Ungültiger Zug: ($x,$y) liegt außerhalb des Gitters. Bitte versuche es erneut!\n",
+            "not_empty": "Strafpunkt: ($x,$y) ist nicht leer, sondern enthält '$object'.\n",
+            "obj_not_found": "Ungültiger Zug: Dein Raster enhält kein Objekt '$object'. Bitte versuche es erneut!\n"
+          }
+        },
+        {
+          "game_id": 1,
+          "language": "de",
+          "width": 13,
+          "height": 13,
+          "lenient": true,
+          "max_penalties": 18,
+          "max_rounds": 36,
+          "show_coords": true,
+          "empty_symbol": "◌",
+          "background": "╔══════╤════╗\n║◌◌◌◌◌◌│◌◌◌◌║\n║◌◌◌◌◌◌│◌◌◌◌║\n║◌◌┌─┬─┼─┐◌◌║\n║◌◌│◌│◌│◌│◌◌║\n║◌◌├─┼─┼─┼──╢\n║◌◌│◌│◌│◌│◌◌║\n║◌◌└─┼─┴─┤◌◌║\n║◌◌◌◌│◌◌◌└──╢\n║◌◌◌◌└─┐◌◌◌◌║\n║◌◌◌◌◌◌│◌◌◌◌║\n║◌◌◌◌◌◌│◌◌◌◌║\n╚══════╧════╝\n",
+          "state1": [
+            {
+              "id": "A",
+              "coord": [
+                1,
+                10
+              ]
+            },
+            {
+              "id": "P",
+              "coord": [
+                2,
+                11
+              ]
+            },
+            {
+              "id": "H",
+              "coord": [
+                3,
+                1
+              ]
+            },
+            {
+              "id": "R",
+              "coord": [
+                3,
+                10
+              ]
+            },
+            {
+              "id": "O",
+              "coord": [
+                4,
+                10
+              ]
+            },
+            {
+              "id": "D",
+              "coord": [
+                11,
+                11
+              ]
+            },
+            {
+              "id": "I",
+              "coord": [
+                10,
+                3
+              ]
+            },
+            {
+              "id": "T",
+              "coord": [
+                1,
+                11
+              ]
+            },
+            {
+              "id": "E",
+              "coord": [
+                10,
+                10
+              ]
+            }
+          ],
+          "state2": [
+            {
+              "id": "A",
+              "coord": [
+                9,
+                11
+              ]
+            },
+            {
+              "id": "P",
+              "coord": [
+                1,
+                5
+              ]
+            },
+            {
+              "id": "H",
+              "coord": [
+                11,
+                3
+              ]
+            },
+            {
+              "id": "R",
+              "coord": [
+                10,
+                9
+              ]
+            },
+            {
+              "id": "O",
+              "coord": [
+                10,
+                4
+              ]
+            },
+            {
+              "id": "D",
+              "coord": [
+                3,
+                9
+              ]
+            },
+            {
+              "id": "I",
+              "coord": [
+                4,
+                8
+              ]
+            },
+            {
+              "id": "T",
+              "coord": [
+                6,
+                11
+              ]
+            },
+            {
+              "id": "E",
+              "coord": [
+                1,
+                9
+              ]
+            }
+          ],
+          "p1_initial_prompt": "Du spielst ein kooperatives Spiel mit einem Partner, und ich bin der Spielleiter. Ihr spielt beide auf einem identisches Raster, auf dem die folgenden Objekte jeweils zufällig verteilt sind: 'A', 'P', 'H', 'R', 'O', 'D', 'I', 'T', 'E'.\n\nDu kannst das Raster deines Mitspielers nicht sehen, und dein Mitspieler kann deines nicht sehen.\n\n**Ziel des Spiels:**\n\nBeide Spieler müssen die Objekte auf ihrem jeweiligen Raster so anordnen, dass sie am Ende gleich verteilt sind.\n\nDu musst dich mit deinem Spielpartner absprechen, damit ihr euch auf eine gemeinsame Anordnung der Objekte einigen könnt.\n\n**Spielregeln:**\n\n* In jedem Spielzug kannst du genau eine der folgenden zwei Aktionen ausführen:\n  * `SPRICH: <NACHRICHT>`: um eine Nachricht zu schicken, die ich dann an deinen Spielpartner weiterleite. Als Nachricht gilt alles bis zum nächsten Zeilenumbruch. \n  * `VERSCHIEBE: <OBJECT>, (<X>, <Y>)`: um ein Objekt an eine andere Position zu bewegen, wobei `<X>` die Spalte und `<Y>` die Zeile bezeichnet. Ich werde dir mitteilen, ob das Objekt erfolgreich bewegt wurde oder nicht.\n* Deine Nachricht darf nur genau einen Befehl enthalten und sonst nichts, insbesondere keine Argumentation oder Erklärungen vor oder nach dem Befehl.\n* Wenn du irgendein anderes Format verwendest oder mehrere Befehle gleichzeitig abschickst, muss ich euch einen Strafpunkt geben.\n* Wenn ihr gemeinsam mehr als 18 Strafpunkte ansammelt, verliert ihr das Spiel.\n* Es ist essenziell, dass du dich mit deinem Mitspieler auf eine gemeinsame Zielanordnung einigst! Zum Beispiel könntet ihr euch darauf einigen, ein Objekt nach dem anderen zu bewegen. Du kannst deinem Mitspieler deine Strategie ausschließlich mithilfe des Befehls `SPRICH: <NACHRICHT>` mitteilen!\n\n**Objekte bewegen**\n\n* Du kannst Objekte nur innerhalb des Rasters und in leere Zellen bewegen. Leere Zellen erkennst am Zeichen '◌'.\n* Solltest du versuchen, ein Objekt an eine Stelle zu bewegen, die entweder nicht leer ist oder sich außerhalb des Rasters befindet, muss ich euch einen Strafpunkt geben und du bekommst einen weiteren Versuch.\n* Angenommen, dein Raster sähe so aus:\n\n\n```\n ABC\n╔═╤═╗\n║◌│◌║ 1\n║◌│C║ 2\n╟─┘◌║ 3\n║◌◌◌║ 4\n╚═══╝\n```\n\n\n* In diesem Beispiel wäre die leere Zelle in der linken oberen Ecke an der Position `(A,1)`, die leere Zelle in der rechten obere Ecke bei `(C,1)`, die in der linken unteren Ecke bei `(A,4)` und die in der rechten unteren Ecke bei `(C,4)`. Das Object 'C' ist an der Position `(C,2)` und das Eckensymbol `┘` bei `(B,3)`.\n* Wenn du ein Objekt bewegen willst, solltest du dich erst vergewissern, ob die Zielposition auch wirklich leer ist und weder Buchstaben noch Rahmenteile noch Linien enthält!\n\n**Spielende:**\n\nWenn du glaubst, dass ihr das Ziel erreicht habt, kannst du deinem Mitspieler die Nachricht `SPRICH: fertig?` schicken. Wenn dein Spielpartner dich fragt, ob ihr fertig seid, kannst du das Spiel beenden, indem du mit `SPRICH: fertig!` antwortest.\n\nIhr gewinnt gemeinsam, wenn ihr das Spiel innerhalb von #max_rounds Runden beendet. Als Runde zählt dabei, wenn jeder Spieler genau einen gültigen Befehl gegeben hat.\n\n**Punkte:**\n\nJe näher sich die jeweils gleichen Objekte auf beiden Rastern sind, desto mehr Punkte bekommt ihr. Für Strafpunkte gibt es Punktabzug. Könnt ihr den Rekord brechen?\n\n                           \n**Dein Raster:**\n\nDein Raster sieht so aus:\n```\n ABCDEFGHIJK\n╔══════╤════╗\n║◌◌H◌◌◌│◌◌◌◌║ 1\n║◌◌◌◌◌◌│◌◌◌◌║ 2\n║◌◌┌─┬─┼─┐I◌║ 3\n║◌◌│◌│◌│◌│◌◌║ 4\n║◌◌├─┼─┼─┼──╢ 5\n║◌◌│◌│◌│◌│◌◌║ 6\n║◌◌└─┼─┴─┤◌◌║ 7\n║◌◌◌◌│◌◌◌└──╢ 8\n║◌◌◌◌└─┐◌◌◌◌║ 9\n║A◌RO◌◌│◌◌E◌║ 10\n║TP◌◌◌◌│◌◌◌D║ 11\n╚══════╧════╝\n```\n\nSchicke eine Nachricht an deinen Mitspieler um das Spiel zu starten!",
+          "p2_initial_prompt": "Du spielst ein kooperatives Spiel mit einem Partner, und ich bin der Spielleiter. Ihr spielt beide auf einem identisches Raster, auf dem die folgenden Objekte jeweils zufällig verteilt sind: 'A', 'P', 'H', 'R', 'O', 'D', 'I', 'T', 'E'.\n\nDu kannst das Raster deines Mitspielers nicht sehen, und dein Mitspieler kann deines nicht sehen.\n\n**Ziel des Spiels:**\n\nBeide Spieler müssen die Objekte auf ihrem jeweiligen Raster so anordnen, dass sie am Ende gleich verteilt sind.\n\nDu musst dich mit deinem Spielpartner absprechen, damit ihr euch auf eine gemeinsame Anordnung der Objekte einigen könnt.\n\n**Spielregeln:**\n\n* In jedem Spielzug kannst du genau eine der folgenden zwei Aktionen ausführen:\n  * `SPRICH: <NACHRICHT>`: um eine Nachricht zu schicken, die ich dann an deinen Spielpartner weiterleite. Als Nachricht gilt alles bis zum nächsten Zeilenumbruch. \n  * `VERSCHIEBE: <OBJECT>, (<X>, <Y>)`: um ein Objekt an eine andere Position zu bewegen, wobei `<X>` die Spalte und `<Y>` die Zeile bezeichnet. Ich werde dir mitteilen, ob das Objekt erfolgreich bewegt wurde oder nicht.\n* Deine Nachricht darf nur genau einen Befehl enthalten und sonst nichts, insbesondere keine Argumentation oder Erklärungen vor oder nach dem Befehl.\n* Wenn du irgendein anderes Format verwendest oder mehrere Befehle gleichzeitig abschickst, muss ich euch einen Strafpunkt geben.\n* Wenn ihr gemeinsam mehr als 18 Strafpunkte ansammelt, verliert ihr das Spiel.\n* Es ist essenziell, dass du dich mit deinem Mitspieler auf eine gemeinsame Zielanordnung einigst! Zum Beispiel könntet ihr euch darauf einigen, ein Objekt nach dem anderen zu bewegen. Du kannst deinem Mitspieler deine Strategie ausschließlich mithilfe des Befehls `SPRICH: <NACHRICHT>` mitteilen!\n\n**Objekte bewegen**\n\n* Du kannst Objekte nur innerhalb des Rasters und in leere Zellen bewegen. Leere Zellen erkennst am Zeichen '◌'.\n* Solltest du versuchen, ein Objekt an eine Stelle zu bewegen, die entweder nicht leer ist oder sich außerhalb des Rasters befindet, muss ich euch einen Strafpunkt geben und du bekommst einen weiteren Versuch.\n* Angenommen, dein Raster sähe so aus:\n\n\n```\n ABC\n╔═╤═╗\n║◌│◌║ 1\n║◌│C║ 2\n╟─┘◌║ 3\n║◌◌◌║ 4\n╚═══╝\n```\n\n\n* In diesem Beispiel wäre die leere Zelle in der linken oberen Ecke an der Position `(A,1)`, die leere Zelle in der rechten obere Ecke bei `(C,1)`, die in der linken unteren Ecke bei `(A,4)` und die in der rechten unteren Ecke bei `(C,4)`. Das Object 'C' ist an der Position `(C,2)` und das Eckensymbol `┘` bei `(B,3)`.\n* Wenn du ein Objekt bewegen willst, solltest du dich erst vergewissern, ob die Zielposition auch wirklich leer ist und weder Buchstaben noch Rahmenteile noch Linien enthält!\n\n**Spielende:**\n\nWenn du glaubst, dass ihr das Ziel erreicht habt, kannst du deinem Mitspieler die Nachricht `SPRICH: fertig?` schicken. Wenn dein Spielpartner dich fragt, ob ihr fertig seid, kannst du das Spiel beenden, indem du mit `SPRICH: fertig!` antwortest.\n\nIhr gewinnt gemeinsam, wenn ihr das Spiel innerhalb von #max_rounds Runden beendet. Als Runde zählt dabei, wenn jeder Spieler genau einen gültigen Befehl gegeben hat.\n\n**Punkte:**\n\nJe näher sich die jeweils gleichen Objekte auf beiden Rastern sind, desto mehr Punkte bekommt ihr. Für Strafpunkte gibt es Punktabzug. Könnt ihr den Rekord brechen?\n\n                           \n**Dein Raster:**\n\nDein Raster sieht so aus:\n```\n ABCDEFGHIJK\n╔══════╤════╗\n║◌◌◌◌◌◌│◌◌◌◌║ 1\n║◌◌◌◌◌◌│◌◌◌◌║ 2\n║◌◌┌─┬─┼─┐◌H║ 3\n║◌◌│◌│◌│◌│O◌║ 4\n║P◌├─┼─┼─┼──╢ 5\n║◌◌│◌│◌│◌│◌◌║ 6\n║◌◌└─┼─┴─┤◌◌║ 7\n║◌◌◌I│◌◌◌└──╢ 8\n║E◌D◌└─┐◌◌R◌║ 9\n║◌◌◌◌◌◌│◌◌◌◌║ 10\n║◌◌◌◌◌T│◌A◌◌║ 11\n╚══════╧════╝\n```\n\nDein Mitspieler hat das Spiel mit dieser Nachricht begonnen:\n\n\"$start_message\"\n\nWie lautet dein erster Befehl?",
+          "new_turn": "\nDein Mitspieler hat dir diese Nachricht geschickt:\n\n\n\"$turn_message\"\n\n\nWie lautet dein nächster Befehl?",
+          "new_turn_move": "Dein Mitspieler hat ein Objekt auf seinem Raster bewegt.\n\n\nWie lautet dein nächster Befehl?",
+          "round_counter": "Ihr seid gerade bei Runde $round von maximal 36.\n\n",
+          "invalid_response": "Strafpunkt: $reason Stelle sicher, dass deine Antwort ausschließlich einen der beiden Befehle `SPRICH: <NACHRICHT>` und `VERSCHIEBE: <OBJECT>, (<X>, <Y>)` und sonst nichts enthält!\n",
+          "penalty_message": "Ihr habt gemeinsam $penalty von maximal $max_penalties Strafpunkten angesammelt. Bitte versuche es noch mal!\n",
+          "penalty_counter": "Ihr habt gemeinsam $penalty von maximal $max_penalties Strafpunkten angesammelt.\n",
+          "message_relay": "Deine Nachricht wurde an deinen Mitspieler übermittelt.\n\n",
+          "move_pattern": "(?P<head>.*)VERSCHIEBE: (?P<obj>[A-Z]), \\((?P<x>[A-Z]), ?(?P<y>\\d+)\\)(?P<tail>.*)",
+          "message_pattern": "(?P<head>.*)SPRICH: (?P<message>[^\\n]+)(?P<tail>.*)",
+          "terminate_question": "fertig?",
+          "terminate_answer": "fertig!",
+          "parse_errors": {
+            "head": "Deine Nachricht darf nichts vor dem Befehl enthalten!",
+            "tail": "Deine Nachricht darf nichts nach dem Befehl enthalten!",
+            "head_tail": "Deine Nachricht darf nichts vor oder nach dem Befehl enthalten!",
+            "several_commands": "Deine Nachricht enthält mehr als einen Befehl!",
+            "restriction": "Deine Nachricht enthält regelwidrige Angaben!",
+            "invalid_format": "Deine Nachricht entspricht keinem gültigen Format!",
+            "invalid_start": "Du musst das Spiel beginnen, indem du eine Nachricht an den anderen Spieler sendest!"
+          },
+          "move_messages": {
+            "successful": "'$object' erfolgreich nach ($x,$y) verschoben. Dein Raster sieht jetzt so aus:\n```\n$grid```\n",
+            "out_of_bounds": "Ungültiger Zug: ($x,$y) liegt außerhalb des Gitters. Bitte versuche es erneut!\n",
+            "not_empty": "Strafpunkt: ($x,$y) ist nicht leer, sondern enthält '$object'.\n",
+            "obj_not_found": "Ungültiger Zug: Dein Raster enhält kein Objekt '$object'. Bitte versuche es erneut!\n"
+          }
+        }
+      ]
+    },
+    {
+      "name": "gs15x15_obj11_de",
+      "game_instances": [
+        {
+          "game_id": 0,
+          "language": "de",
+          "width": 15,
+          "height": 15,
+          "lenient": true,
+          "max_penalties": 22,
+          "max_rounds": 44,
+          "show_coords": true,
+          "empty_symbol": "◌",
+          "background": "╔═══╤══╤══════╗\n║◌◌◌│◌◌│◌◌◌◌◌◌║\n║◌◌◌└┬─┼─┐◌◌◌◌║\n║◌◌◌◌│◌│◌├────╢\n╟─┐◌◌│◌│◌│◌◌◌◌║\n║◌├──┴─┘◌├─┐◌◌║\n╟─┘◌◌◌◌◌◌│◌│◌◌║\n║◌◌◌◌┌─┐◌│◌│◌◌║\n║◌┌──┤◌│◌└─┘◌◌║\n║◌│◌◌│◌│◌◌◌◌◌◌║\n║◌│◌┌┴─┘◌┌──┐◌║\n╟─┘◌│◌◌◌◌│◌◌│◌║\n║◌◌◌└────┴──┘◌║\n║◌◌◌◌◌◌◌◌◌◌◌◌◌║\n╚═════════════╝\n",
+          "state1": [
+            {
+              "id": "M",
+              "coord": [
+                10,
+                1
+              ]
+            },
+            {
+              "id": "A",
+              "coord": [
+                6,
+                3
+              ]
+            },
+            {
+              "id": "G",
+              "coord": [
+                8,
+                13
+              ]
+            },
+            {
+              "id": "I",
+              "coord": [
+                2,
+                1
+              ]
+            },
+            {
+              "id": "C",
+              "coord": [
+                10,
+                7
+              ]
+            },
+            {
+              "id": "R",
+              "coord": [
+                1,
+                1
+              ]
+            },
+            {
+              "id": "E",
+              "coord": [
+                9,
+                13
+              ]
+            },
+            {
+              "id": "D",
+              "coord": [
+                1,
+                13
+              ]
+            },
+            {
+              "id": "F",
+              "coord": [
+                6,
+                13
+              ]
+            },
+            {
+              "id": "O",
+              "coord": [
+                10,
+                13
+              ]
+            },
+            {
+              "id": "X",
+              "coord": [
+                9,
+                9
+              ]
+            }
+          ],
+          "state2": [
+            {
+              "id": "M",
+              "coord": [
+                2,
+                3
+              ]
+            },
+            {
+              "id": "A",
+              "coord": [
+                8,
+                8
+              ]
+            },
+            {
+              "id": "G",
+              "coord": [
+                13,
+                13
+              ]
+            },
+            {
+              "id": "I",
+              "coord": [
+                8,
+                1
+              ]
+            },
+            {
+              "id": "C",
+              "coord": [
+                12,
+                4
+              ]
+            },
+            {
+              "id": "R",
+              "coord": [
+                10,
+                6
+              ]
+            },
+            {
+              "id": "E",
+              "coord": [
+                8,
+                7
+              ]
+            },
+            {
+              "id": "D",
+              "coord": [
+                10,
+                1
+              ]
+            },
+            {
+              "id": "F",
+              "coord": [
+                13,
+                12
+              ]
+            },
+            {
+              "id": "O",
+              "coord": [
+                5,
+                1
+              ]
+            },
+            {
+              "id": "X",
+              "coord": [
+                8,
+                10
+              ]
+            }
+          ],
+          "p1_initial_prompt": "Du spielst ein kooperatives Spiel mit einem Partner, und ich bin der Spielleiter. Ihr spielt beide auf einem identisches Raster, auf dem die folgenden Objekte jeweils zufällig verteilt sind: 'M', 'A', 'G', 'I', 'C', 'R', 'E', 'D', 'F', 'O', 'X'.\n\nDu kannst das Raster deines Mitspielers nicht sehen, und dein Mitspieler kann deines nicht sehen.\n\n**Ziel des Spiels:**\n\nBeide Spieler müssen die Objekte auf ihrem jeweiligen Raster so anordnen, dass sie am Ende gleich verteilt sind.\n\nDu musst dich mit deinem Spielpartner absprechen, damit ihr euch auf eine gemeinsame Anordnung der Objekte einigen könnt.\n\n**Spielregeln:**\n\n* In jedem Spielzug kannst du genau eine der folgenden zwei Aktionen ausführen:\n  * `SPRICH: <NACHRICHT>`: um eine Nachricht zu schicken, die ich dann an deinen Spielpartner weiterleite. Als Nachricht gilt alles bis zum nächsten Zeilenumbruch. \n  * `VERSCHIEBE: <OBJECT>, (<X>, <Y>)`: um ein Objekt an eine andere Position zu bewegen, wobei `<X>` die Spalte und `<Y>` die Zeile bezeichnet. Ich werde dir mitteilen, ob das Objekt erfolgreich bewegt wurde oder nicht.\n* Deine Nachricht darf nur genau einen Befehl enthalten und sonst nichts, insbesondere keine Argumentation oder Erklärungen vor oder nach dem Befehl.\n* Wenn du irgendein anderes Format verwendest oder mehrere Befehle gleichzeitig abschickst, muss ich euch einen Strafpunkt geben.\n* Wenn ihr gemeinsam mehr als 22 Strafpunkte ansammelt, verliert ihr das Spiel.\n* Es ist essenziell, dass du dich mit deinem Mitspieler auf eine gemeinsame Zielanordnung einigst! Zum Beispiel könntet ihr euch darauf einigen, ein Objekt nach dem anderen zu bewegen. Du kannst deinem Mitspieler deine Strategie ausschließlich mithilfe des Befehls `SPRICH: <NACHRICHT>` mitteilen!\n\n**Objekte bewegen**\n\n* Du kannst Objekte nur innerhalb des Rasters und in leere Zellen bewegen. Leere Zellen erkennst am Zeichen '◌'.\n* Solltest du versuchen, ein Objekt an eine Stelle zu bewegen, die entweder nicht leer ist oder sich außerhalb des Rasters befindet, muss ich euch einen Strafpunkt geben und du bekommst einen weiteren Versuch.\n* Angenommen, dein Raster sähe so aus:\n\n\n```\n ABC\n╔═╤═╗\n║◌│◌║ 1\n║◌│C║ 2\n╟─┘◌║ 3\n║◌◌◌║ 4\n╚═══╝\n```\n\n\n* In diesem Beispiel wäre die leere Zelle in der linken oberen Ecke an der Position `(A,1)`, die leere Zelle in der rechten obere Ecke bei `(C,1)`, die in der linken unteren Ecke bei `(A,4)` und die in der rechten unteren Ecke bei `(C,4)`. Das Object 'C' ist an der Position `(C,2)` und das Eckensymbol `┘` bei `(B,3)`.\n* Wenn du ein Objekt bewegen willst, solltest du dich erst vergewissern, ob die Zielposition auch wirklich leer ist und weder Buchstaben noch Rahmenteile noch Linien enthält!\n\n**Spielende:**\n\nWenn du glaubst, dass ihr das Ziel erreicht habt, kannst du deinem Mitspieler die Nachricht `SPRICH: fertig?` schicken. Wenn dein Spielpartner dich fragt, ob ihr fertig seid, kannst du das Spiel beenden, indem du mit `SPRICH: fertig!` antwortest.\n\nIhr gewinnt gemeinsam, wenn ihr das Spiel innerhalb von #max_rounds Runden beendet. Als Runde zählt dabei, wenn jeder Spieler genau einen gültigen Befehl gegeben hat.\n\n**Punkte:**\n\nJe näher sich die jeweils gleichen Objekte auf beiden Rastern sind, desto mehr Punkte bekommt ihr. Für Strafpunkte gibt es Punktabzug. Könnt ihr den Rekord brechen?\n\n                           \n**Dein Raster:**\n\nDein Raster sieht so aus:\n```\n ABCDEFGHIJKLM\n╔═══╤══╤══════╗\n║RI◌│◌◌│◌◌M◌◌◌║ 1\n║◌◌◌└┬─┼─┐◌◌◌◌║ 2\n║◌◌◌◌│A│◌├────╢ 3\n╟─┐◌◌│◌│◌│◌◌◌◌║ 4\n║◌├──┴─┘◌├─┐◌◌║ 5\n╟─┘◌◌◌◌◌◌│◌│◌◌║ 6\n║◌◌◌◌┌─┐◌│C│◌◌║ 7\n║◌┌──┤◌│◌└─┘◌◌║ 8\n║◌│◌◌│◌│◌X◌◌◌◌║ 9\n║◌│◌┌┴─┘◌┌──┐◌║ 10\n╟─┘◌│◌◌◌◌│◌◌│◌║ 11\n║◌◌◌└────┴──┘◌║ 12\n║D◌◌◌◌F◌GEO◌◌◌║ 13\n╚═════════════╝\n```\n\nSchicke eine Nachricht an deinen Mitspieler um das Spiel zu starten!",
+          "p2_initial_prompt": "Du spielst ein kooperatives Spiel mit einem Partner, und ich bin der Spielleiter. Ihr spielt beide auf einem identisches Raster, auf dem die folgenden Objekte jeweils zufällig verteilt sind: 'M', 'A', 'G', 'I', 'C', 'R', 'E', 'D', 'F', 'O', 'X'.\n\nDu kannst das Raster deines Mitspielers nicht sehen, und dein Mitspieler kann deines nicht sehen.\n\n**Ziel des Spiels:**\n\nBeide Spieler müssen die Objekte auf ihrem jeweiligen Raster so anordnen, dass sie am Ende gleich verteilt sind.\n\nDu musst dich mit deinem Spielpartner absprechen, damit ihr euch auf eine gemeinsame Anordnung der Objekte einigen könnt.\n\n**Spielregeln:**\n\n* In jedem Spielzug kannst du genau eine der folgenden zwei Aktionen ausführen:\n  * `SPRICH: <NACHRICHT>`: um eine Nachricht zu schicken, die ich dann an deinen Spielpartner weiterleite. Als Nachricht gilt alles bis zum nächsten Zeilenumbruch. \n  * `VERSCHIEBE: <OBJECT>, (<X>, <Y>)`: um ein Objekt an eine andere Position zu bewegen, wobei `<X>` die Spalte und `<Y>` die Zeile bezeichnet. Ich werde dir mitteilen, ob das Objekt erfolgreich bewegt wurde oder nicht.\n* Deine Nachricht darf nur genau einen Befehl enthalten und sonst nichts, insbesondere keine Argumentation oder Erklärungen vor oder nach dem Befehl.\n* Wenn du irgendein anderes Format verwendest oder mehrere Befehle gleichzeitig abschickst, muss ich euch einen Strafpunkt geben.\n* Wenn ihr gemeinsam mehr als 22 Strafpunkte ansammelt, verliert ihr das Spiel.\n* Es ist essenziell, dass du dich mit deinem Mitspieler auf eine gemeinsame Zielanordnung einigst! Zum Beispiel könntet ihr euch darauf einigen, ein Objekt nach dem anderen zu bewegen. Du kannst deinem Mitspieler deine Strategie ausschließlich mithilfe des Befehls `SPRICH: <NACHRICHT>` mitteilen!\n\n**Objekte bewegen**\n\n* Du kannst Objekte nur innerhalb des Rasters und in leere Zellen bewegen. Leere Zellen erkennst am Zeichen '◌'.\n* Solltest du versuchen, ein Objekt an eine Stelle zu bewegen, die entweder nicht leer ist oder sich außerhalb des Rasters befindet, muss ich euch einen Strafpunkt geben und du bekommst einen weiteren Versuch.\n* Angenommen, dein Raster sähe so aus:\n\n\n```\n ABC\n╔═╤═╗\n║◌│◌║ 1\n║◌│C║ 2\n╟─┘◌║ 3\n║◌◌◌║ 4\n╚═══╝\n```\n\n\n* In diesem Beispiel wäre die leere Zelle in der linken oberen Ecke an der Position `(A,1)`, die leere Zelle in der rechten obere Ecke bei `(C,1)`, die in der linken unteren Ecke bei `(A,4)` und die in der rechten unteren Ecke bei `(C,4)`. Das Object 'C' ist an der Position `(C,2)` und das Eckensymbol `┘` bei `(B,3)`.\n* Wenn du ein Objekt bewegen willst, solltest du dich erst vergewissern, ob die Zielposition auch wirklich leer ist und weder Buchstaben noch Rahmenteile noch Linien enthält!\n\n**Spielende:**\n\nWenn du glaubst, dass ihr das Ziel erreicht habt, kannst du deinem Mitspieler die Nachricht `SPRICH: fertig?` schicken. Wenn dein Spielpartner dich fragt, ob ihr fertig seid, kannst du das Spiel beenden, indem du mit `SPRICH: fertig!` antwortest.\n\nIhr gewinnt gemeinsam, wenn ihr das Spiel innerhalb von #max_rounds Runden beendet. Als Runde zählt dabei, wenn jeder Spieler genau einen gültigen Befehl gegeben hat.\n\n**Punkte:**\n\nJe näher sich die jeweils gleichen Objekte auf beiden Rastern sind, desto mehr Punkte bekommt ihr. Für Strafpunkte gibt es Punktabzug. Könnt ihr den Rekord brechen?\n\n                           \n**Dein Raster:**\n\nDein Raster sieht so aus:\n```\n ABCDEFGHIJKLM\n╔═══╤══╤══════╗\n║◌◌◌│O◌│I◌D◌◌◌║ 1\n║◌◌◌└┬─┼─┐◌◌◌◌║ 2\n║◌M◌◌│◌│◌├────╢ 3\n╟─┐◌◌│◌│◌│◌◌C◌║ 4\n║◌├──┴─┘◌├─┐◌◌║ 5\n╟─┘◌◌◌◌◌◌│R│◌◌║ 6\n║◌◌◌◌┌─┐E│◌│◌◌║ 7\n║◌┌──┤◌│A└─┘◌◌║ 8\n║◌│◌◌│◌│◌◌◌◌◌◌║ 9\n║◌│◌┌┴─┘X┌──┐◌║ 10\n╟─┘◌│◌◌◌◌│◌◌│◌║ 11\n║◌◌◌└────┴──┘F║ 12\n║◌◌◌◌◌◌◌◌◌◌◌◌G║ 13\n╚═════════════╝\n```\n\nDein Mitspieler hat das Spiel mit dieser Nachricht begonnen:\n\n\"$start_message\"\n\nWie lautet dein erster Befehl?",
+          "new_turn": "\nDein Mitspieler hat dir diese Nachricht geschickt:\n\n\n\"$turn_message\"\n\n\nWie lautet dein nächster Befehl?",
+          "new_turn_move": "Dein Mitspieler hat ein Objekt auf seinem Raster bewegt.\n\n\nWie lautet dein nächster Befehl?",
+          "round_counter": "Ihr seid gerade bei Runde $round von maximal 44.\n\n",
+          "invalid_response": "Strafpunkt: $reason Stelle sicher, dass deine Antwort ausschließlich einen der beiden Befehle `SPRICH: <NACHRICHT>` und `VERSCHIEBE: <OBJECT>, (<X>, <Y>)` und sonst nichts enthält!\n",
+          "penalty_message": "Ihr habt gemeinsam $penalty von maximal $max_penalties Strafpunkten angesammelt. Bitte versuche es noch mal!\n",
+          "penalty_counter": "Ihr habt gemeinsam $penalty von maximal $max_penalties Strafpunkten angesammelt.\n",
+          "message_relay": "Deine Nachricht wurde an deinen Mitspieler übermittelt.\n\n",
+          "move_pattern": "(?P<head>.*)VERSCHIEBE: (?P<obj>[A-Z]), \\((?P<x>[A-Z]), ?(?P<y>\\d+)\\)(?P<tail>.*)",
+          "message_pattern": "(?P<head>.*)SPRICH: (?P<message>[^\\n]+)(?P<tail>.*)",
+          "terminate_question": "fertig?",
+          "terminate_answer": "fertig!",
+          "parse_errors": {
+            "head": "Deine Nachricht darf nichts vor dem Befehl enthalten!",
+            "tail": "Deine Nachricht darf nichts nach dem Befehl enthalten!",
+            "head_tail": "Deine Nachricht darf nichts vor oder nach dem Befehl enthalten!",
+            "several_commands": "Deine Nachricht enthält mehr als einen Befehl!",
+            "restriction": "Deine Nachricht enthält regelwidrige Angaben!",
+            "invalid_format": "Deine Nachricht entspricht keinem gültigen Format!",
+            "invalid_start": "Du musst das Spiel beginnen, indem du eine Nachricht an den anderen Spieler sendest!"
+          },
+          "move_messages": {
+            "successful": "'$object' erfolgreich nach ($x,$y) verschoben. Dein Raster sieht jetzt so aus:\n```\n$grid```\n",
+            "out_of_bounds": "Ungültiger Zug: ($x,$y) liegt außerhalb des Gitters. Bitte versuche es erneut!\n",
+            "not_empty": "Strafpunkt: ($x,$y) ist nicht leer, sondern enthält '$object'.\n",
+            "obj_not_found": "Ungültiger Zug: Dein Raster enhält kein Objekt '$object'. Bitte versuche es erneut!\n"
+          }
+        },
+        {
+          "game_id": 1,
+          "language": "de",
+          "width": 15,
+          "height": 15,
+          "lenient": true,
+          "max_penalties": 22,
+          "max_rounds": 44,
+          "show_coords": true,
+          "empty_symbol": "◌",
+          "background": "╔═══╤══╤══════╗\n║◌◌◌│◌◌│◌◌◌◌◌◌║\n║◌◌◌└┬─┼─┐◌◌◌◌║\n║◌◌◌◌│◌│◌├────╢\n╟─┐◌◌│◌│◌│◌◌◌◌║\n║◌├──┴─┘◌├─┐◌◌║\n║◌│◌◌◌◌◌◌│◌│◌◌║\n║◌│◌◌┌─┐◌│◌│◌◌║\n║◌├──┤◌│◌├─┘◌◌║\n║◌│◌◌└─┘◌│◌◌◌◌║\n║◌├─┐◌◌◌◌└─┐◌◌║\n╟─┘◌│◌◌◌◌◌◌│◌◌║\n║◌◌◌└──────┘◌◌║\n║◌◌◌◌◌◌◌◌◌◌◌◌◌║\n╚═════════════╝\n",
+          "state1": [
+            {
+              "id": "M",
+              "coord": [
+                2,
+                1
+              ]
+            },
+            {
+              "id": "A",
+              "coord": [
+                6,
+                3
+              ]
+            },
+            {
+              "id": "G",
+              "coord": [
+                12,
+                11
+              ]
+            },
+            {
+              "id": "I",
+              "coord": [
+                6,
+                8
+              ]
+            },
+            {
+              "id": "C",
+              "coord": [
+                2,
+                3
+              ]
+            },
+            {
+              "id": "R",
+              "coord": [
+                6,
+                10
+              ]
+            },
+            {
+              "id": "E",
+              "coord": [
+                12,
+                1
+              ]
+            },
+            {
+              "id": "D",
+              "coord": [
+                5,
+                6
+              ]
+            },
+            {
+              "id": "F",
+              "coord": [
+                11,
+                2
+              ]
+            },
+            {
+              "id": "O",
+              "coord": [
+                12,
+                6
+              ]
+            },
+            {
+              "id": "X",
+              "coord": [
+                1,
+                3
+              ]
+            }
+          ],
+          "state2": [
+            {
+              "id": "M",
+              "coord": [
+                13,
+                5
+              ]
+            },
+            {
+              "id": "A",
+              "coord": [
+                3,
+                2
+              ]
+            },
+            {
+              "id": "G",
+              "coord": [
+                10,
+                2
+              ]
+            },
+            {
+              "id": "I",
+              "coord": [
+                13,
+                12
+              ]
+            },
+            {
+              "id": "C",
+              "coord": [
+                2,
+                13
+              ]
+            },
+            {
+              "id": "R",
+              "coord": [
+                6,
+                6
+              ]
+            },
+            {
+              "id": "E",
+              "coord": [
+                6,
+                3
+              ]
+            },
+            {
+              "id": "D",
+              "coord": [
+                10,
+                11
+              ]
+            },
+            {
+              "id": "F",
+              "coord": [
+                13,
+                8
+              ]
+            },
+            {
+              "id": "O",
+              "coord": [
+                3,
+                6
+              ]
+            },
+            {
+              "id": "X",
+              "coord": [
+                4,
+                3
+              ]
+            }
+          ],
+          "p1_initial_prompt": "Du spielst ein kooperatives Spiel mit einem Partner, und ich bin der Spielleiter. Ihr spielt beide auf einem identisches Raster, auf dem die folgenden Objekte jeweils zufällig verteilt sind: 'M', 'A', 'G', 'I', 'C', 'R', 'E', 'D', 'F', 'O', 'X'.\n\nDu kannst das Raster deines Mitspielers nicht sehen, und dein Mitspieler kann deines nicht sehen.\n\n**Ziel des Spiels:**\n\nBeide Spieler müssen die Objekte auf ihrem jeweiligen Raster so anordnen, dass sie am Ende gleich verteilt sind.\n\nDu musst dich mit deinem Spielpartner absprechen, damit ihr euch auf eine gemeinsame Anordnung der Objekte einigen könnt.\n\n**Spielregeln:**\n\n* In jedem Spielzug kannst du genau eine der folgenden zwei Aktionen ausführen:\n  * `SPRICH: <NACHRICHT>`: um eine Nachricht zu schicken, die ich dann an deinen Spielpartner weiterleite. Als Nachricht gilt alles bis zum nächsten Zeilenumbruch. \n  * `VERSCHIEBE: <OBJECT>, (<X>, <Y>)`: um ein Objekt an eine andere Position zu bewegen, wobei `<X>` die Spalte und `<Y>` die Zeile bezeichnet. Ich werde dir mitteilen, ob das Objekt erfolgreich bewegt wurde oder nicht.\n* Deine Nachricht darf nur genau einen Befehl enthalten und sonst nichts, insbesondere keine Argumentation oder Erklärungen vor oder nach dem Befehl.\n* Wenn du irgendein anderes Format verwendest oder mehrere Befehle gleichzeitig abschickst, muss ich euch einen Strafpunkt geben.\n* Wenn ihr gemeinsam mehr als 22 Strafpunkte ansammelt, verliert ihr das Spiel.\n* Es ist essenziell, dass du dich mit deinem Mitspieler auf eine gemeinsame Zielanordnung einigst! Zum Beispiel könntet ihr euch darauf einigen, ein Objekt nach dem anderen zu bewegen. Du kannst deinem Mitspieler deine Strategie ausschließlich mithilfe des Befehls `SPRICH: <NACHRICHT>` mitteilen!\n\n**Objekte bewegen**\n\n* Du kannst Objekte nur innerhalb des Rasters und in leere Zellen bewegen. Leere Zellen erkennst am Zeichen '◌'.\n* Solltest du versuchen, ein Objekt an eine Stelle zu bewegen, die entweder nicht leer ist oder sich außerhalb des Rasters befindet, muss ich euch einen Strafpunkt geben und du bekommst einen weiteren Versuch.\n* Angenommen, dein Raster sähe so aus:\n\n\n```\n ABC\n╔═╤═╗\n║◌│◌║ 1\n║◌│C║ 2\n╟─┘◌║ 3\n║◌◌◌║ 4\n╚═══╝\n```\n\n\n* In diesem Beispiel wäre die leere Zelle in der linken oberen Ecke an der Position `(A,1)`, die leere Zelle in der rechten obere Ecke bei `(C,1)`, die in der linken unteren Ecke bei `(A,4)` und die in der rechten unteren Ecke bei `(C,4)`. Das Object 'C' ist an der Position `(C,2)` und das Eckensymbol `┘` bei `(B,3)`.\n* Wenn du ein Objekt bewegen willst, solltest du dich erst vergewissern, ob die Zielposition auch wirklich leer ist und weder Buchstaben noch Rahmenteile noch Linien enthält!\n\n**Spielende:**\n\nWenn du glaubst, dass ihr das Ziel erreicht habt, kannst du deinem Mitspieler die Nachricht `SPRICH: fertig?` schicken. Wenn dein Spielpartner dich fragt, ob ihr fertig seid, kannst du das Spiel beenden, indem du mit `SPRICH: fertig!` antwortest.\n\nIhr gewinnt gemeinsam, wenn ihr das Spiel innerhalb von #max_rounds Runden beendet. Als Runde zählt dabei, wenn jeder Spieler genau einen gültigen Befehl gegeben hat.\n\n**Punkte:**\n\nJe näher sich die jeweils gleichen Objekte auf beiden Rastern sind, desto mehr Punkte bekommt ihr. Für Strafpunkte gibt es Punktabzug. Könnt ihr den Rekord brechen?\n\n                           \n**Dein Raster:**\n\nDein Raster sieht so aus:\n```\n ABCDEFGHIJKLM\n╔═══╤══╤══════╗\n║◌M◌│◌◌│◌◌◌◌E◌║ 1\n║◌◌◌└┬─┼─┐◌F◌◌║ 2\n║XC◌◌│A│◌├────╢ 3\n╟─┐◌◌│◌│◌│◌◌◌◌║ 4\n║◌├──┴─┘◌├─┐◌◌║ 5\n║◌│◌◌D◌◌◌│◌│O◌║ 6\n║◌│◌◌┌─┐◌│◌│◌◌║ 7\n║◌├──┤I│◌├─┘◌◌║ 8\n║◌│◌◌└─┘◌│◌◌◌◌║ 9\n║◌├─┐◌R◌◌└─┐◌◌║ 10\n╟─┘◌│◌◌◌◌◌◌│G◌║ 11\n║◌◌◌└──────┘◌◌║ 12\n║◌◌◌◌◌◌◌◌◌◌◌◌◌║ 13\n╚═════════════╝\n```\n\nSchicke eine Nachricht an deinen Mitspieler um das Spiel zu starten!",
+          "p2_initial_prompt": "Du spielst ein kooperatives Spiel mit einem Partner, und ich bin der Spielleiter. Ihr spielt beide auf einem identisches Raster, auf dem die folgenden Objekte jeweils zufällig verteilt sind: 'M', 'A', 'G', 'I', 'C', 'R', 'E', 'D', 'F', 'O', 'X'.\n\nDu kannst das Raster deines Mitspielers nicht sehen, und dein Mitspieler kann deines nicht sehen.\n\n**Ziel des Spiels:**\n\nBeide Spieler müssen die Objekte auf ihrem jeweiligen Raster so anordnen, dass sie am Ende gleich verteilt sind.\n\nDu musst dich mit deinem Spielpartner absprechen, damit ihr euch auf eine gemeinsame Anordnung der Objekte einigen könnt.\n\n**Spielregeln:**\n\n* In jedem Spielzug kannst du genau eine der folgenden zwei Aktionen ausführen:\n  * `SPRICH: <NACHRICHT>`: um eine Nachricht zu schicken, die ich dann an deinen Spielpartner weiterleite. Als Nachricht gilt alles bis zum nächsten Zeilenumbruch. \n  * `VERSCHIEBE: <OBJECT>, (<X>, <Y>)`: um ein Objekt an eine andere Position zu bewegen, wobei `<X>` die Spalte und `<Y>` die Zeile bezeichnet. Ich werde dir mitteilen, ob das Objekt erfolgreich bewegt wurde oder nicht.\n* Deine Nachricht darf nur genau einen Befehl enthalten und sonst nichts, insbesondere keine Argumentation oder Erklärungen vor oder nach dem Befehl.\n* Wenn du irgendein anderes Format verwendest oder mehrere Befehle gleichzeitig abschickst, muss ich euch einen Strafpunkt geben.\n* Wenn ihr gemeinsam mehr als 22 Strafpunkte ansammelt, verliert ihr das Spiel.\n* Es ist essenziell, dass du dich mit deinem Mitspieler auf eine gemeinsame Zielanordnung einigst! Zum Beispiel könntet ihr euch darauf einigen, ein Objekt nach dem anderen zu bewegen. Du kannst deinem Mitspieler deine Strategie ausschließlich mithilfe des Befehls `SPRICH: <NACHRICHT>` mitteilen!\n\n**Objekte bewegen**\n\n* Du kannst Objekte nur innerhalb des Rasters und in leere Zellen bewegen. Leere Zellen erkennst am Zeichen '◌'.\n* Solltest du versuchen, ein Objekt an eine Stelle zu bewegen, die entweder nicht leer ist oder sich außerhalb des Rasters befindet, muss ich euch einen Strafpunkt geben und du bekommst einen weiteren Versuch.\n* Angenommen, dein Raster sähe so aus:\n\n\n```\n ABC\n╔═╤═╗\n║◌│◌║ 1\n║◌│C║ 2\n╟─┘◌║ 3\n║◌◌◌║ 4\n╚═══╝\n```\n\n\n* In diesem Beispiel wäre die leere Zelle in der linken oberen Ecke an der Position `(A,1)`, die leere Zelle in der rechten obere Ecke bei `(C,1)`, die in der linken unteren Ecke bei `(A,4)` und die in der rechten unteren Ecke bei `(C,4)`. Das Object 'C' ist an der Position `(C,2)` und das Eckensymbol `┘` bei `(B,3)`.\n* Wenn du ein Objekt bewegen willst, solltest du dich erst vergewissern, ob die Zielposition auch wirklich leer ist und weder Buchstaben noch Rahmenteile noch Linien enthält!\n\n**Spielende:**\n\nWenn du glaubst, dass ihr das Ziel erreicht habt, kannst du deinem Mitspieler die Nachricht `SPRICH: fertig?` schicken. Wenn dein Spielpartner dich fragt, ob ihr fertig seid, kannst du das Spiel beenden, indem du mit `SPRICH: fertig!` antwortest.\n\nIhr gewinnt gemeinsam, wenn ihr das Spiel innerhalb von #max_rounds Runden beendet. Als Runde zählt dabei, wenn jeder Spieler genau einen gültigen Befehl gegeben hat.\n\n**Punkte:**\n\nJe näher sich die jeweils gleichen Objekte auf beiden Rastern sind, desto mehr Punkte bekommt ihr. Für Strafpunkte gibt es Punktabzug. Könnt ihr den Rekord brechen?\n\n                           \n**Dein Raster:**\n\nDein Raster sieht so aus:\n```\n ABCDEFGHIJKLM\n╔═══╤══╤══════╗\n║◌◌◌│◌◌│◌◌◌◌◌◌║ 1\n║◌◌A└┬─┼─┐G◌◌◌║ 2\n║◌◌◌X│E│◌├────╢ 3\n╟─┐◌◌│◌│◌│◌◌◌◌║ 4\n║◌├──┴─┘◌├─┐◌M║ 5\n║◌│O◌◌R◌◌│◌│◌◌║ 6\n║◌│◌◌┌─┐◌│◌│◌◌║ 7\n║◌├──┤◌│◌├─┘◌F║ 8\n║◌│◌◌└─┘◌│◌◌◌◌║ 9\n║◌├─┐◌◌◌◌└─┐◌◌║ 10\n╟─┘◌│◌◌◌◌◌D│◌◌║ 11\n║◌◌◌└──────┘◌I║ 12\n║◌C◌◌◌◌◌◌◌◌◌◌◌║ 13\n╚═════════════╝\n```\n\nDein Mitspieler hat das Spiel mit dieser Nachricht begonnen:\n\n\"$start_message\"\n\nWie lautet dein erster Befehl?",
+          "new_turn": "\nDein Mitspieler hat dir diese Nachricht geschickt:\n\n\n\"$turn_message\"\n\n\nWie lautet dein nächster Befehl?",
+          "new_turn_move": "Dein Mitspieler hat ein Objekt auf seinem Raster bewegt.\n\n\nWie lautet dein nächster Befehl?",
+          "round_counter": "Ihr seid gerade bei Runde $round von maximal 44.\n\n",
+          "invalid_response": "Strafpunkt: $reason Stelle sicher, dass deine Antwort ausschließlich einen der beiden Befehle `SPRICH: <NACHRICHT>` und `VERSCHIEBE: <OBJECT>, (<X>, <Y>)` und sonst nichts enthält!\n",
+          "penalty_message": "Ihr habt gemeinsam $penalty von maximal $max_penalties Strafpunkten angesammelt. Bitte versuche es noch mal!\n",
+          "penalty_counter": "Ihr habt gemeinsam $penalty von maximal $max_penalties Strafpunkten angesammelt.\n",
+          "message_relay": "Deine Nachricht wurde an deinen Mitspieler übermittelt.\n\n",
+          "move_pattern": "(?P<head>.*)VERSCHIEBE: (?P<obj>[A-Z]), \\((?P<x>[A-Z]), ?(?P<y>\\d+)\\)(?P<tail>.*)",
+          "message_pattern": "(?P<head>.*)SPRICH: (?P<message>[^\\n]+)(?P<tail>.*)",
+          "terminate_question": "fertig?",
+          "terminate_answer": "fertig!",
+          "parse_errors": {
+            "head": "Deine Nachricht darf nichts vor dem Befehl enthalten!",
+            "tail": "Deine Nachricht darf nichts nach dem Befehl enthalten!",
+            "head_tail": "Deine Nachricht darf nichts vor oder nach dem Befehl enthalten!",
+            "several_commands": "Deine Nachricht enthält mehr als einen Befehl!",
+            "restriction": "Deine Nachricht enthält regelwidrige Angaben!",
+            "invalid_format": "Deine Nachricht entspricht keinem gültigen Format!",
+            "invalid_start": "Du musst das Spiel beginnen, indem du eine Nachricht an den anderen Spieler sendest!"
+          },
+          "move_messages": {
+            "successful": "'$object' erfolgreich nach ($x,$y) verschoben. Dein Raster sieht jetzt so aus:\n```\n$grid```\n",
+            "out_of_bounds": "Ungültiger Zug: ($x,$y) liegt außerhalb des Gitters. Bitte versuche es erneut!\n",
+            "not_empty": "Strafpunkt: ($x,$y) ist nicht leer, sondern enthält '$object'.\n",
+            "obj_not_found": "Ungültiger Zug: Dein Raster enhält kein Objekt '$object'. Bitte versuche es erneut!\n"
+          }
+        }
+      ]
+    }
+  ]
+}

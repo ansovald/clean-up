@@ -1,0 +1,6 @@
+,"-, clemscore","all, Average % Played","all, Average Quality Score","clean_up, % Played","clean_up, Quality Score","clean_up, Quality Score (std)"
+Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,0.22,91.67,0.24,91.67,0.24,0.25
+deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,0.24,83.33,0.29,83.33,0.29,0.22
+gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,0.29,91.67,0.32,91.67,0.32,0.34
+mistral-small-2503-t0.0--mistral-small-2503-t0.0,0.21,83.33,0.25,83.33,0.25,0.37
+qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,,0.0,,0.0,,

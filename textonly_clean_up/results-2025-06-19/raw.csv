@@ -1,0 +1,1021 @@
+,game,model,experiment,episode,metric,value
+0,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,2_gs9x9_obj4_en,episode_1,Request Count,18.0
+1,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,2_gs9x9_obj4_en,episode_1,Parsed Request Count,18.0
+2,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,2_gs9x9_obj4_en,episode_1,Violated Request Count,0.0
+3,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,2_gs9x9_obj4_en,episode_1,Request Success Ratio,1.0
+4,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,2_gs9x9_obj4_en,episode_1,Aborted,0.0
+5,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,2_gs9x9_obj4_en,episode_1,Lose,0.0
+6,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,2_gs9x9_obj4_en,episode_1,Success,1.0
+7,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,2_gs9x9_obj4_en,episode_1,Penalties,0.0
+8,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,2_gs9x9_obj4_en,episode_1,Turn Count,9.0
+9,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,2_gs9x9_obj4_en,episode_1,Initial Distance,10.99070478491457
+10,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,2_gs9x9_obj4_en,episode_1,Total Distance,0.0
+11,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,2_gs9x9_obj4_en,episode_1,Expected Distance Score,1.0
+12,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,2_gs9x9_obj4_en,episode_1,Distance Reduction Score,1.0
+13,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,2_gs9x9_obj4_en,episode_1,Distance Score,1.0
+14,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,2_gs9x9_obj4_en,episode_1,Penalty Score,1.0
+15,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,2_gs9x9_obj4_en,episode_1,Main Score,1.0
+16,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,2_gs9x9_obj4_en,episode_0,Request Count,21.0
+17,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,2_gs9x9_obj4_en,episode_0,Parsed Request Count,20.0
+18,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,2_gs9x9_obj4_en,episode_0,Violated Request Count,1.0
+19,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,2_gs9x9_obj4_en,episode_0,Request Success Ratio,0.9523809523809523
+20,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,2_gs9x9_obj4_en,episode_0,Aborted,1.0
+21,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,2_gs9x9_obj4_en,episode_0,Lose,0.0
+22,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,2_gs9x9_obj4_en,episode_0,Success,0.0
+23,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,2_gs9x9_obj4_en,episode_0,Penalties,9.0
+24,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,2_gs9x9_obj4_en,episode_0,Turn Count,7.0
+25,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,2_gs9x9_obj4_en,episode_0,Initial Distance,21.86118637758232
+26,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,2_gs9x9_obj4_en,episode_0,Total Distance,16.536631057245557
+27,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,2_gs9x9_obj4_en,episode_0,Expected Distance Score,0.013389290996634884
+28,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,2_gs9x9_obj4_en,episode_0,Distance Reduction Score,0.24356204774855494
+29,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,2_gs9x9_obj4_en,episode_0,Distance Score,0.12847566937259491
+30,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,2_gs9x9_obj4_en,episode_0,Penalty Score,0.0
+31,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,2_gs9x9_obj4_en,episode_0,Main Score,
+32,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,5_gs11x11_obj7_en,episode_1,Request Count,41.0
+33,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,5_gs11x11_obj7_en,episode_1,Parsed Request Count,41.0
+34,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,5_gs11x11_obj7_en,episode_1,Violated Request Count,0.0
+35,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,5_gs11x11_obj7_en,episode_1,Request Success Ratio,1.0
+36,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,5_gs11x11_obj7_en,episode_1,Aborted,0.0
+37,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,5_gs11x11_obj7_en,episode_1,Lose,0.0
+38,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,5_gs11x11_obj7_en,episode_1,Success,1.0
+39,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,5_gs11x11_obj7_en,episode_1,Penalties,9.0
+40,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,5_gs11x11_obj7_en,episode_1,Turn Count,16.0
+41,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,5_gs11x11_obj7_en,episode_1,Initial Distance,43.209276031199515
+42,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,5_gs11x11_obj7_en,episode_1,Total Distance,10.23606797749979
+43,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,5_gs11x11_obj7_en,episode_1,Expected Distance Score,0.7156502718737776
+44,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,5_gs11x11_obj7_en,episode_1,Distance Reduction Score,0.7631048488267016
+45,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,5_gs11x11_obj7_en,episode_1,Distance Score,0.7393775603502396
+46,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,5_gs11x11_obj7_en,episode_1,Penalty Score,0.4
+47,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,5_gs11x11_obj7_en,episode_1,Main Score,0.29575102414009585
+48,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,5_gs11x11_obj7_en,episode_0,Request Count,42.0
+49,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,5_gs11x11_obj7_en,episode_0,Parsed Request Count,42.0
+50,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,5_gs11x11_obj7_en,episode_0,Violated Request Count,0.0
+51,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,5_gs11x11_obj7_en,episode_0,Request Success Ratio,1.0
+52,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,5_gs11x11_obj7_en,episode_0,Aborted,0.0
+53,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,5_gs11x11_obj7_en,episode_0,Lose,0.0
+54,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,5_gs11x11_obj7_en,episode_0,Success,1.0
+55,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,5_gs11x11_obj7_en,episode_0,Penalties,12.0
+56,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,5_gs11x11_obj7_en,episode_0,Turn Count,15.0
+57,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,5_gs11x11_obj7_en,episode_0,Initial Distance,35.24621125123532
+58,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,5_gs11x11_obj7_en,episode_0,Total Distance,28.716832736417608
+59,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,5_gs11x11_obj7_en,episode_0,Expected Distance Score,0.20226950434525692
+60,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,5_gs11x11_obj7_en,episode_0,Distance Reduction Score,0.18525050730350123
+61,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,5_gs11x11_obj7_en,episode_0,Distance Score,0.19376000582437908
+62,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,5_gs11x11_obj7_en,episode_0,Penalty Score,0.19999999999999996
+63,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,5_gs11x11_obj7_en,episode_0,Main Score,0.03875200116487581
+64,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,0_gs7x7_obj3_en,episode_1,Request Count,18.0
+65,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,0_gs7x7_obj3_en,episode_1,Parsed Request Count,17.0
+66,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,0_gs7x7_obj3_en,episode_1,Violated Request Count,1.0
+67,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,0_gs7x7_obj3_en,episode_1,Request Success Ratio,0.9444444444444444
+68,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,0_gs7x7_obj3_en,episode_1,Aborted,0.0
+69,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,0_gs7x7_obj3_en,episode_1,Lose,0.0
+70,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,0_gs7x7_obj3_en,episode_1,Success,1.0
+71,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,0_gs7x7_obj3_en,episode_1,Penalties,4.0
+72,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,0_gs7x7_obj3_en,episode_1,Turn Count,7.0
+73,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,0_gs7x7_obj3_en,episode_1,Initial Distance,7.773387165490545
+74,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,0_gs7x7_obj3_en,episode_1,Total Distance,3.0
+75,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,0_gs7x7_obj3_en,episode_1,Expected Distance Score,0.6906407832308854
+76,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,0_gs7x7_obj3_en,episode_1,Distance Reduction Score,0.6140678527735879
+77,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,0_gs7x7_obj3_en,episode_1,Distance Score,0.6523543180022366
+78,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,0_gs7x7_obj3_en,episode_1,Penalty Score,0.4285714285714286
+79,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,0_gs7x7_obj3_en,episode_1,Main Score,0.27958042200095856
+80,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,0_gs7x7_obj3_en,episode_0,Request Count,20.0
+81,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,0_gs7x7_obj3_en,episode_0,Parsed Request Count,19.0
+82,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,0_gs7x7_obj3_en,episode_0,Violated Request Count,1.0
+83,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,0_gs7x7_obj3_en,episode_0,Request Success Ratio,0.95
+84,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,0_gs7x7_obj3_en,episode_0,Aborted,0.0
+85,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,0_gs7x7_obj3_en,episode_0,Lose,1.0
+86,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,0_gs7x7_obj3_en,episode_0,Success,1.0
+87,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,0_gs7x7_obj3_en,episode_0,Penalties,5.0
+88,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,0_gs7x7_obj3_en,episode_0,Turn Count,8.0
+89,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,0_gs7x7_obj3_en,episode_0,Initial Distance,9.359173603117451
+90,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,0_gs7x7_obj3_en,episode_0,Total Distance,11.12899020449196
+91,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,0_gs7x7_obj3_en,episode_0,Expected Distance Score,0.0
+92,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,0_gs7x7_obj3_en,episode_0,Distance Reduction Score,0.0
+93,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,0_gs7x7_obj3_en,episode_0,Distance Score,0.0
+94,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,0_gs7x7_obj3_en,episode_0,Penalty Score,0.2857142857142857
+95,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,0_gs7x7_obj3_en,episode_0,Main Score,0.0
+96,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,1_gs7x7_obj4_en,episode_1,Request Count,17.0
+97,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,1_gs7x7_obj4_en,episode_1,Parsed Request Count,17.0
+98,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,1_gs7x7_obj4_en,episode_1,Violated Request Count,0.0
+99,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,1_gs7x7_obj4_en,episode_1,Request Success Ratio,1.0
+100,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,1_gs7x7_obj4_en,episode_1,Aborted,0.0
+101,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,1_gs7x7_obj4_en,episode_1,Lose,0.0
+102,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,1_gs7x7_obj4_en,episode_1,Success,1.0
+103,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,1_gs7x7_obj4_en,episode_1,Penalties,1.0
+104,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,1_gs7x7_obj4_en,episode_1,Turn Count,8.0
+105,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,1_gs7x7_obj4_en,episode_1,Initial Distance,11.727968770336455
+106,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,1_gs7x7_obj4_en,episode_1,Total Distance,1.0
+107,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,1_gs7x7_obj4_en,episode_1,Expected Distance Score,0.9226601958077214
+108,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,1_gs7x7_obj4_en,episode_1,Distance Reduction Score,0.9147337429368588
+109,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,1_gs7x7_obj4_en,episode_1,Distance Score,0.9186969693722902
+110,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,1_gs7x7_obj4_en,episode_1,Penalty Score,0.8888888888888888
+111,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,1_gs7x7_obj4_en,episode_1,Main Score,0.8166195283309245
+112,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,1_gs7x7_obj4_en,episode_0,Request Count,18.0
+113,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,1_gs7x7_obj4_en,episode_0,Parsed Request Count,18.0
+114,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,1_gs7x7_obj4_en,episode_0,Violated Request Count,0.0
+115,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,1_gs7x7_obj4_en,episode_0,Request Success Ratio,1.0
+116,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,1_gs7x7_obj4_en,episode_0,Aborted,0.0
+117,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,1_gs7x7_obj4_en,episode_0,Lose,1.0
+118,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,1_gs7x7_obj4_en,episode_0,Success,1.0
+119,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,1_gs7x7_obj4_en,episode_0,Penalties,0.0
+120,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,1_gs7x7_obj4_en,episode_0,Turn Count,9.0
+121,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,1_gs7x7_obj4_en,episode_0,Initial Distance,5.414213562373095
+122,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,1_gs7x7_obj4_en,episode_0,Total Distance,11.313708498984761
+123,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,1_gs7x7_obj4_en,episode_0,Expected Distance Score,0.12499999999999989
+124,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,1_gs7x7_obj4_en,episode_0,Distance Reduction Score,0.0
+125,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,1_gs7x7_obj4_en,episode_0,Distance Score,0.062499999999999944
+126,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,1_gs7x7_obj4_en,episode_0,Penalty Score,1.0
+127,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,1_gs7x7_obj4_en,episode_0,Main Score,0.0
+128,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,3_gs9x9_obj5_en,episode_1,Request Count,24.0
+129,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,3_gs9x9_obj5_en,episode_1,Parsed Request Count,23.0
+130,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,3_gs9x9_obj5_en,episode_1,Violated Request Count,1.0
+131,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,3_gs9x9_obj5_en,episode_1,Request Success Ratio,0.9583333333333334
+132,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,3_gs9x9_obj5_en,episode_1,Aborted,0.0
+133,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,3_gs9x9_obj5_en,episode_1,Lose,0.0
+134,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,3_gs9x9_obj5_en,episode_1,Success,1.0
+135,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,3_gs9x9_obj5_en,episode_1,Penalties,2.0
+136,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,3_gs9x9_obj5_en,episode_1,Turn Count,11.0
+137,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,3_gs9x9_obj5_en,episode_1,Initial Distance,21.970320244888892
+138,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,3_gs9x9_obj5_en,episode_1,Total Distance,19.20663072597693
+139,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,3_gs9x9_obj5_en,episode_1,Expected Distance Score,0.08327312896931705
+140,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,3_gs9x9_obj5_en,episode_1,Distance Reduction Score,0.12579195424130873
+141,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,3_gs9x9_obj5_en,episode_1,Distance Score,0.10453254160531289
+142,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,3_gs9x9_obj5_en,episode_1,Penalty Score,0.8181818181818181
+143,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,3_gs9x9_obj5_en,episode_1,Main Score,0.08552662494980146
+144,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,3_gs9x9_obj5_en,episode_0,Request Count,31.0
+145,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,3_gs9x9_obj5_en,episode_0,Parsed Request Count,31.0
+146,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,3_gs9x9_obj5_en,episode_0,Violated Request Count,0.0
+147,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,3_gs9x9_obj5_en,episode_0,Request Success Ratio,1.0
+148,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,3_gs9x9_obj5_en,episode_0,Aborted,0.0
+149,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,3_gs9x9_obj5_en,episode_0,Lose,0.0
+150,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,3_gs9x9_obj5_en,episode_0,Success,1.0
+151,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,3_gs9x9_obj5_en,episode_0,Penalties,9.0
+152,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,3_gs9x9_obj5_en,episode_0,Turn Count,11.0
+153,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,3_gs9x9_obj5_en,episode_0,Initial Distance,21.037640649633033
+154,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,3_gs9x9_obj5_en,episode_0,Total Distance,18.97056274847714
+155,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,3_gs9x9_obj5_en,episode_0,Expected Distance Score,0.09454058453981595
+156,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,3_gs9x9_obj5_en,episode_0,Distance Reduction Score,0.09825616548840288
+157,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,3_gs9x9_obj5_en,episode_0,Distance Score,0.09639837501410942
+158,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,3_gs9x9_obj5_en,episode_0,Penalty Score,0.18181818181818177
+159,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,3_gs9x9_obj5_en,episode_0,Main Score,0.017526977275292618
+160,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,4_gs11x11_obj5_en,episode_1,Request Count,22.0
+161,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,4_gs11x11_obj5_en,episode_1,Parsed Request Count,22.0
+162,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,4_gs11x11_obj5_en,episode_1,Violated Request Count,0.0
+163,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,4_gs11x11_obj5_en,episode_1,Request Success Ratio,1.0
+164,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,4_gs11x11_obj5_en,episode_1,Aborted,0.0
+165,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,4_gs11x11_obj5_en,episode_1,Lose,1.0
+166,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,4_gs11x11_obj5_en,episode_1,Success,1.0
+167,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,4_gs11x11_obj5_en,episode_1,Penalties,2.0
+168,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,4_gs11x11_obj5_en,episode_1,Turn Count,10.0
+169,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,4_gs11x11_obj5_en,episode_1,Initial Distance,25.21747754732893
+170,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,4_gs11x11_obj5_en,episode_1,Total Distance,27.62741699796952
+171,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,4_gs11x11_obj5_en,episode_1,Expected Distance Score,0.0
+172,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,4_gs11x11_obj5_en,episode_1,Distance Reduction Score,0.0
+173,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,4_gs11x11_obj5_en,episode_1,Distance Score,0.0
+174,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,4_gs11x11_obj5_en,episode_1,Penalty Score,0.8181818181818181
+175,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,4_gs11x11_obj5_en,episode_1,Main Score,0.0
+176,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,4_gs11x11_obj5_en,episode_0,Request Count,29.0
+177,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,4_gs11x11_obj5_en,episode_0,Parsed Request Count,28.0
+178,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,4_gs11x11_obj5_en,episode_0,Violated Request Count,1.0
+179,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,4_gs11x11_obj5_en,episode_0,Request Success Ratio,0.9655172413793104
+180,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,4_gs11x11_obj5_en,episode_0,Aborted,1.0
+181,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,4_gs11x11_obj5_en,episode_0,Lose,1.0
+182,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,4_gs11x11_obj5_en,episode_0,Success,0.0
+183,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,4_gs11x11_obj5_en,episode_0,Penalties,11.0
+184,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,4_gs11x11_obj5_en,episode_0,Turn Count,10.0
+185,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,4_gs11x11_obj5_en,episode_0,Initial Distance,26.05272180389176
+186,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,4_gs11x11_obj5_en,episode_0,Total Distance,30.52481104991274
+187,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,4_gs11x11_obj5_en,episode_0,Expected Distance Score,0.0
+188,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,4_gs11x11_obj5_en,episode_0,Distance Reduction Score,0.0
+189,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,4_gs11x11_obj5_en,episode_0,Distance Score,0.0
+190,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,4_gs11x11_obj5_en,episode_0,Penalty Score,0.0
+191,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,4_gs11x11_obj5_en,episode_0,Main Score,
+192,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,2_gs9x9_obj4_en,episode_1,Request Count,24.0
+193,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,2_gs9x9_obj4_en,episode_1,Parsed Request Count,19.0
+194,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,2_gs9x9_obj4_en,episode_1,Violated Request Count,5.0
+195,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,2_gs9x9_obj4_en,episode_1,Request Success Ratio,0.7916666666666666
+196,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,2_gs9x9_obj4_en,episode_1,Aborted,0.0
+197,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,2_gs9x9_obj4_en,episode_1,Lose,0.0
+198,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,2_gs9x9_obj4_en,episode_1,Success,1.0
+199,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,2_gs9x9_obj4_en,episode_1,Penalties,6.0
+200,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,2_gs9x9_obj4_en,episode_1,Turn Count,9.0
+201,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,2_gs9x9_obj4_en,episode_1,Initial Distance,10.99070478491457
+202,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,2_gs9x9_obj4_en,episode_1,Total Distance,7.812559200041265
+203,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,2_gs9x9_obj4_en,episode_1,Expected Distance Score,0.5338860409474867
+204,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,2_gs9x9_obj4_en,episode_1,Distance Reduction Score,0.28916667739411117
+205,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,2_gs9x9_obj4_en,episode_1,Distance Score,0.41152635917079894
+206,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,2_gs9x9_obj4_en,episode_1,Penalty Score,0.33333333333333337
+207,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,2_gs9x9_obj4_en,episode_1,Main Score,0.137175453056933
+208,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,2_gs9x9_obj4_en,episode_0,Request Count,23.0
+209,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,2_gs9x9_obj4_en,episode_0,Parsed Request Count,16.0
+210,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,2_gs9x9_obj4_en,episode_0,Violated Request Count,7.0
+211,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,2_gs9x9_obj4_en,episode_0,Request Success Ratio,0.6956521739130435
+212,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,2_gs9x9_obj4_en,episode_0,Aborted,1.0
+213,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,2_gs9x9_obj4_en,episode_0,Lose,0.0
+214,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,2_gs9x9_obj4_en,episode_0,Success,0.0
+215,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,2_gs9x9_obj4_en,episode_0,Penalties,9.0
+216,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,2_gs9x9_obj4_en,episode_0,Turn Count,8.0
+217,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,2_gs9x9_obj4_en,episode_0,Initial Distance,21.86118637758232
+218,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,2_gs9x9_obj4_en,episode_0,Total Distance,9.53663105724556
+219,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,2_gs9x9_obj4_en,episode_0,Expected Distance Score,0.43102423363493947
+220,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,2_gs9x9_obj4_en,episode_0,Distance Reduction Score,0.5637642489967996
+221,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,2_gs9x9_obj4_en,episode_0,Distance Score,0.4973942413158695
+222,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,2_gs9x9_obj4_en,episode_0,Penalty Score,0.0
+223,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,2_gs9x9_obj4_en,episode_0,Main Score,
+224,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,5_gs11x11_obj7_en,episode_1,Request Count,34.0
+225,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,5_gs11x11_obj7_en,episode_1,Parsed Request Count,31.0
+226,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,5_gs11x11_obj7_en,episode_1,Violated Request Count,3.0
+227,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,5_gs11x11_obj7_en,episode_1,Request Success Ratio,0.9117647058823529
+228,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,5_gs11x11_obj7_en,episode_1,Aborted,0.0
+229,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,5_gs11x11_obj7_en,episode_1,Lose,0.0
+230,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,5_gs11x11_obj7_en,episode_1,Success,1.0
+231,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,5_gs11x11_obj7_en,episode_1,Penalties,3.0
+232,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,5_gs11x11_obj7_en,episode_1,Turn Count,16.0
+233,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,5_gs11x11_obj7_en,episode_1,Initial Distance,43.209276031199515
+234,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,5_gs11x11_obj7_en,episode_1,Total Distance,6.0
+235,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,5_gs11x11_obj7_en,episode_1,Expected Distance Score,0.8333248301488851
+236,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,5_gs11x11_obj7_en,episode_1,Distance Reduction Score,0.8611409273400539
+237,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,5_gs11x11_obj7_en,episode_1,Distance Score,0.8472328787444695
+238,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,5_gs11x11_obj7_en,episode_1,Penalty Score,0.8
+239,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,5_gs11x11_obj7_en,episode_1,Main Score,0.6777863029955756
+240,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,5_gs11x11_obj7_en,episode_0,Request Count,33.0
+241,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,5_gs11x11_obj7_en,episode_0,Parsed Request Count,31.0
+242,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,5_gs11x11_obj7_en,episode_0,Violated Request Count,2.0
+243,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,5_gs11x11_obj7_en,episode_0,Request Success Ratio,0.9393939393939394
+244,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,5_gs11x11_obj7_en,episode_0,Aborted,0.0
+245,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,5_gs11x11_obj7_en,episode_0,Lose,1.0
+246,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,5_gs11x11_obj7_en,episode_0,Success,1.0
+247,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,5_gs11x11_obj7_en,episode_0,Penalties,5.0
+248,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,5_gs11x11_obj7_en,episode_0,Turn Count,14.0
+249,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,5_gs11x11_obj7_en,episode_0,Initial Distance,35.24621125123532
+250,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,5_gs11x11_obj7_en,episode_0,Total Distance,47.290537059420124
+251,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,5_gs11x11_obj7_en,episode_0,Expected Distance Score,0.0
+252,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,5_gs11x11_obj7_en,episode_0,Distance Reduction Score,0.0
+253,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,5_gs11x11_obj7_en,episode_0,Distance Score,0.0
+254,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,5_gs11x11_obj7_en,episode_0,Penalty Score,0.6666666666666667
+255,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,5_gs11x11_obj7_en,episode_0,Main Score,0.0
+256,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,0_gs7x7_obj3_en,episode_1,Request Count,23.0
+257,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,0_gs7x7_obj3_en,episode_1,Parsed Request Count,18.0
+258,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,0_gs7x7_obj3_en,episode_1,Violated Request Count,5.0
+259,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,0_gs7x7_obj3_en,episode_1,Request Success Ratio,0.782608695652174
+260,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,0_gs7x7_obj3_en,episode_1,Aborted,0.0
+261,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,0_gs7x7_obj3_en,episode_1,Lose,0.0
+262,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,0_gs7x7_obj3_en,episode_1,Success,1.0
+263,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,0_gs7x7_obj3_en,episode_1,Penalties,6.0
+264,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,0_gs7x7_obj3_en,episode_1,Turn Count,9.0
+265,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,0_gs7x7_obj3_en,episode_1,Initial Distance,7.773387165490545
+266,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,0_gs7x7_obj3_en,episode_1,Total Distance,2.0
+267,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,0_gs7x7_obj3_en,episode_1,Expected Distance Score,0.7937605221539237
+268,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,0_gs7x7_obj3_en,episode_1,Distance Reduction Score,0.7427119018490586
+269,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,0_gs7x7_obj3_en,episode_1,Distance Score,0.7682362120014912
+270,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,0_gs7x7_obj3_en,episode_1,Penalty Score,0.1428571428571429
+271,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,0_gs7x7_obj3_en,episode_1,Main Score,0.10974803028592735
+272,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,0_gs7x7_obj3_en,episode_0,Request Count,13.0
+273,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,0_gs7x7_obj3_en,episode_0,Parsed Request Count,8.0
+274,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,0_gs7x7_obj3_en,episode_0,Violated Request Count,5.0
+275,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,0_gs7x7_obj3_en,episode_0,Request Success Ratio,0.6153846153846154
+276,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,0_gs7x7_obj3_en,episode_0,Aborted,1.0
+277,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,0_gs7x7_obj3_en,episode_0,Lose,0.0
+278,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,0_gs7x7_obj3_en,episode_0,Success,0.0
+279,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,0_gs7x7_obj3_en,episode_0,Penalties,7.0
+280,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,0_gs7x7_obj3_en,episode_0,Turn Count,4.0
+281,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,0_gs7x7_obj3_en,episode_0,Initial Distance,9.359173603117451
+282,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,0_gs7x7_obj3_en,episode_0,Total Distance,9.359173603117451
+283,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,0_gs7x7_obj3_en,episode_0,Expected Distance Score,0.034884461511137776
+284,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,0_gs7x7_obj3_en,episode_0,Distance Reduction Score,0.0
+285,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,0_gs7x7_obj3_en,episode_0,Distance Score,0.017442230755568888
+286,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,0_gs7x7_obj3_en,episode_0,Penalty Score,0.0
+287,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,0_gs7x7_obj3_en,episode_0,Main Score,
+288,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,1_gs7x7_obj4_en,episode_1,Request Count,15.0
+289,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,1_gs7x7_obj4_en,episode_1,Parsed Request Count,13.0
+290,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,1_gs7x7_obj4_en,episode_1,Violated Request Count,2.0
+291,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,1_gs7x7_obj4_en,episode_1,Request Success Ratio,0.8666666666666667
+292,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,1_gs7x7_obj4_en,episode_1,Aborted,0.0
+293,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,1_gs7x7_obj4_en,episode_1,Lose,0.0
+294,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,1_gs7x7_obj4_en,episode_1,Success,1.0
+295,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,1_gs7x7_obj4_en,episode_1,Penalties,2.0
+296,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,1_gs7x7_obj4_en,episode_1,Turn Count,7.0
+297,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,1_gs7x7_obj4_en,episode_1,Initial Distance,11.727968770336455
+298,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,1_gs7x7_obj4_en,episode_1,Total Distance,7.708203932499369
+299,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,1_gs7x7_obj4_en,episode_1,Expected Distance Score,0.4038490171863466
+300,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,1_gs7x7_obj4_en,episode_1,Distance Reduction Score,0.342750301996393
+301,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,1_gs7x7_obj4_en,episode_1,Distance Score,0.3732996595913698
+302,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,1_gs7x7_obj4_en,episode_1,Penalty Score,0.7777777777777778
+303,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,1_gs7x7_obj4_en,episode_1,Main Score,0.2903441796821765
+304,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,1_gs7x7_obj4_en,episode_0,Request Count,21.0
+305,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,1_gs7x7_obj4_en,episode_0,Parsed Request Count,18.0
+306,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,1_gs7x7_obj4_en,episode_0,Violated Request Count,3.0
+307,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,1_gs7x7_obj4_en,episode_0,Request Success Ratio,0.8571428571428571
+308,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,1_gs7x7_obj4_en,episode_0,Aborted,0.0
+309,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,1_gs7x7_obj4_en,episode_0,Lose,0.0
+310,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,1_gs7x7_obj4_en,episode_0,Success,1.0
+311,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,1_gs7x7_obj4_en,episode_0,Penalties,3.0
+312,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,1_gs7x7_obj4_en,episode_0,Turn Count,9.0
+313,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,1_gs7x7_obj4_en,episode_0,Initial Distance,5.414213562373095
+314,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,1_gs7x7_obj4_en,episode_0,Total Distance,0.0
+315,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,1_gs7x7_obj4_en,episode_0,Expected Distance Score,1.0
+316,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,1_gs7x7_obj4_en,episode_0,Distance Reduction Score,1.0
+317,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,1_gs7x7_obj4_en,episode_0,Distance Score,1.0
+318,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,1_gs7x7_obj4_en,episode_0,Penalty Score,0.6666666666666667
+319,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,1_gs7x7_obj4_en,episode_0,Main Score,0.6666666666666667
+320,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,3_gs9x9_obj5_en,episode_1,Request Count,31.0
+321,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,3_gs9x9_obj5_en,episode_1,Parsed Request Count,25.0
+322,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,3_gs9x9_obj5_en,episode_1,Violated Request Count,6.0
+323,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,3_gs9x9_obj5_en,episode_1,Request Success Ratio,0.8064516129032258
+324,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,3_gs9x9_obj5_en,episode_1,Aborted,0.0
+325,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,3_gs9x9_obj5_en,episode_1,Lose,0.0
+326,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,3_gs9x9_obj5_en,episode_1,Success,1.0
+327,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,3_gs9x9_obj5_en,episode_1,Penalties,7.0
+328,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,3_gs9x9_obj5_en,episode_1,Turn Count,12.0
+329,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,3_gs9x9_obj5_en,episode_1,Initial Distance,21.970320244888892
+330,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,3_gs9x9_obj5_en,episode_1,Total Distance,4.0
+331,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,3_gs9x9_obj5_en,episode_1,Expected Distance Score,0.8090811690796321
+332,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,3_gs9x9_obj5_en,episode_1,Distance Reduction Score,0.8179361995904203
+333,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,3_gs9x9_obj5_en,episode_1,Distance Score,0.8135086843350262
+334,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,3_gs9x9_obj5_en,episode_1,Penalty Score,0.36363636363636365
+335,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,3_gs9x9_obj5_en,episode_1,Main Score,0.29582133975819136
+336,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,3_gs9x9_obj5_en,episode_0,Request Count,26.0
+337,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,3_gs9x9_obj5_en,episode_0,Parsed Request Count,24.0
+338,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,3_gs9x9_obj5_en,episode_0,Violated Request Count,2.0
+339,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,3_gs9x9_obj5_en,episode_0,Request Success Ratio,0.9230769230769231
+340,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,3_gs9x9_obj5_en,episode_0,Aborted,0.0
+341,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,3_gs9x9_obj5_en,episode_0,Lose,0.0
+342,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,3_gs9x9_obj5_en,episode_0,Success,1.0
+343,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,3_gs9x9_obj5_en,episode_0,Penalties,4.0
+344,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,3_gs9x9_obj5_en,episode_0,Turn Count,11.0
+345,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,3_gs9x9_obj5_en,episode_0,Initial Distance,21.037640649633033
+346,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,3_gs9x9_obj5_en,episode_0,Total Distance,10.70820393249937
+347,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,3_gs9x9_obj5_en,episode_0,Expected Distance Score,0.48890055598758364
+348,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,3_gs9x9_obj5_en,episode_0,Distance Reduction Score,0.4909978684950037
+349,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,3_gs9x9_obj5_en,episode_0,Distance Score,0.4899492122412937
+350,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,3_gs9x9_obj5_en,episode_0,Penalty Score,0.6363636363636364
+351,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,3_gs9x9_obj5_en,episode_0,Main Score,0.3117858623353687
+352,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,4_gs11x11_obj5_en,episode_1,Request Count,33.0
+353,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,4_gs11x11_obj5_en,episode_1,Parsed Request Count,29.0
+354,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,4_gs11x11_obj5_en,episode_1,Violated Request Count,4.0
+355,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,4_gs11x11_obj5_en,episode_1,Request Success Ratio,0.8787878787878788
+356,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,4_gs11x11_obj5_en,episode_1,Aborted,0.0
+357,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,4_gs11x11_obj5_en,episode_1,Lose,0.0
+358,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,4_gs11x11_obj5_en,episode_1,Success,1.0
+359,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,4_gs11x11_obj5_en,episode_1,Penalties,7.0
+360,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,4_gs11x11_obj5_en,episode_1,Turn Count,13.0
+361,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,4_gs11x11_obj5_en,episode_1,Initial Distance,25.21747754732893
+362,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,4_gs11x11_obj5_en,episode_1,Total Distance,8.0
+363,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,4_gs11x11_obj5_en,episode_1,Expected Distance Score,0.6888730162779191
+364,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,4_gs11x11_obj5_en,episode_1,Distance Reduction Score,0.6827597056452075
+365,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,4_gs11x11_obj5_en,episode_1,Distance Score,0.6858163609615633
+366,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,4_gs11x11_obj5_en,episode_1,Penalty Score,0.36363636363636365
+367,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,4_gs11x11_obj5_en,episode_1,Main Score,0.24938776762238665
+368,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,4_gs11x11_obj5_en,episode_0,Request Count,25.0
+369,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,4_gs11x11_obj5_en,episode_0,Parsed Request Count,24.0
+370,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,4_gs11x11_obj5_en,episode_0,Violated Request Count,1.0
+371,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,4_gs11x11_obj5_en,episode_0,Request Success Ratio,0.96
+372,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,4_gs11x11_obj5_en,episode_0,Aborted,0.0
+373,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,4_gs11x11_obj5_en,episode_0,Lose,0.0
+374,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,4_gs11x11_obj5_en,episode_0,Success,1.0
+375,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,4_gs11x11_obj5_en,episode_0,Penalties,2.0
+376,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,4_gs11x11_obj5_en,episode_0,Turn Count,12.0
+377,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,4_gs11x11_obj5_en,episode_0,Initial Distance,26.05272180389176
+378,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,4_gs11x11_obj5_en,episode_0,Total Distance,20.928665969738162
+379,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,4_gs11x11_obj5_en,episode_0,Expected Distance Score,0.1860659104385507
+380,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,4_gs11x11_obj5_en,episode_0,Distance Reduction Score,0.19668024986887034
+381,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,4_gs11x11_obj5_en,episode_0,Distance Score,0.19137308015371052
+382,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,4_gs11x11_obj5_en,episode_0,Penalty Score,0.8181818181818181
+383,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,4_gs11x11_obj5_en,episode_0,Main Score,0.15657797467121767
+384,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,2_gs9x9_obj4_en,episode_1,Request Count,28.0
+385,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,2_gs9x9_obj4_en,episode_1,Parsed Request Count,27.0
+386,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,2_gs9x9_obj4_en,episode_1,Violated Request Count,1.0
+387,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,2_gs9x9_obj4_en,episode_1,Request Success Ratio,0.9642857142857143
+388,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,2_gs9x9_obj4_en,episode_1,Aborted,0.0
+389,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,2_gs9x9_obj4_en,episode_1,Lose,0.0
+390,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,2_gs9x9_obj4_en,episode_1,Success,1.0
+391,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,2_gs9x9_obj4_en,episode_1,Penalties,8.0
+392,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,2_gs9x9_obj4_en,episode_1,Turn Count,10.0
+393,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,2_gs9x9_obj4_en,episode_1,Initial Distance,10.99070478491457
+394,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,2_gs9x9_obj4_en,episode_1,Total Distance,7.99070478491457
+395,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,2_gs9x9_obj4_en,episode_1,Expected Distance Score,0.5232574950732253
+396,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,2_gs9x9_obj4_en,episode_1,Distance Reduction Score,0.2729579275132281
+397,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,2_gs9x9_obj4_en,episode_1,Distance Score,0.3981077112932267
+398,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,2_gs9x9_obj4_en,episode_1,Penalty Score,0.11111111111111116
+399,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,2_gs9x9_obj4_en,episode_1,Main Score,0.04423419014369188
+400,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,2_gs9x9_obj4_en,episode_0,Request Count,18.0
+401,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,2_gs9x9_obj4_en,episode_0,Parsed Request Count,18.0
+402,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,2_gs9x9_obj4_en,episode_0,Violated Request Count,0.0
+403,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,2_gs9x9_obj4_en,episode_0,Request Success Ratio,1.0
+404,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,2_gs9x9_obj4_en,episode_0,Aborted,0.0
+405,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,2_gs9x9_obj4_en,episode_0,Lose,0.0
+406,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,2_gs9x9_obj4_en,episode_0,Success,1.0
+407,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,2_gs9x9_obj4_en,episode_0,Penalties,0.0
+408,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,2_gs9x9_obj4_en,episode_0,Turn Count,9.0
+409,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,2_gs9x9_obj4_en,episode_0,Initial Distance,21.86118637758232
+410,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,2_gs9x9_obj4_en,episode_0,Total Distance,6.0
+411,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,2_gs9x9_obj4_en,episode_0,Expected Distance Score,0.6420271920243104
+412,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,2_gs9x9_obj4_en,episode_0,Distance Reduction Score,0.7255409703586474
+413,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,2_gs9x9_obj4_en,episode_0,Distance Score,0.6837840811914788
+414,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,2_gs9x9_obj4_en,episode_0,Penalty Score,1.0
+415,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,2_gs9x9_obj4_en,episode_0,Main Score,0.6837840811914788
+416,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,5_gs11x11_obj7_en,episode_1,Request Count,42.0
+417,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,5_gs11x11_obj7_en,episode_1,Parsed Request Count,42.0
+418,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,5_gs11x11_obj7_en,episode_1,Violated Request Count,0.0
+419,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,5_gs11x11_obj7_en,episode_1,Request Success Ratio,1.0
+420,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,5_gs11x11_obj7_en,episode_1,Aborted,0.0
+421,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,5_gs11x11_obj7_en,episode_1,Lose,0.0
+422,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,5_gs11x11_obj7_en,episode_1,Success,1.0
+423,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,5_gs11x11_obj7_en,episode_1,Penalties,4.0
+424,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,5_gs11x11_obj7_en,episode_1,Turn Count,19.0
+425,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,5_gs11x11_obj7_en,episode_1,Initial Distance,43.209276031199515
+426,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,5_gs11x11_obj7_en,episode_1,Total Distance,39.045523980443896
+427,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,5_gs11x11_obj7_en,episode_1,Expected Distance Score,0.0
+428,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,5_gs11x11_obj7_en,episode_1,Distance Reduction Score,0.09636245809231236
+429,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,5_gs11x11_obj7_en,episode_1,Distance Score,0.04818122904615618
+430,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,5_gs11x11_obj7_en,episode_1,Penalty Score,0.7333333333333334
+431,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,5_gs11x11_obj7_en,episode_1,Main Score,0.03533290130051454
+432,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,5_gs11x11_obj7_en,episode_0,Request Count,63.0
+433,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,5_gs11x11_obj7_en,episode_0,Parsed Request Count,63.0
+434,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,5_gs11x11_obj7_en,episode_0,Violated Request Count,0.0
+435,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,5_gs11x11_obj7_en,episode_0,Request Success Ratio,1.0
+436,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,5_gs11x11_obj7_en,episode_0,Aborted,0.0
+437,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,5_gs11x11_obj7_en,episode_0,Lose,0.0
+438,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,5_gs11x11_obj7_en,episode_0,Success,1.0
+439,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,5_gs11x11_obj7_en,episode_0,Penalties,7.0
+440,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,5_gs11x11_obj7_en,episode_0,Turn Count,28.0
+441,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,5_gs11x11_obj7_en,episode_0,Initial Distance,35.24621125123532
+442,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,5_gs11x11_obj7_en,episode_0,Total Distance,21.919259774448747
+443,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,5_gs11x11_obj7_en,episode_0,Expected Distance Score,0.39110060901384114
+444,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,5_gs11x11_obj7_en,episode_0,Distance Reduction Score,0.3781101855683705
+445,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,5_gs11x11_obj7_en,episode_0,Distance Score,0.3846053972911058
+446,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,5_gs11x11_obj7_en,episode_0,Penalty Score,0.5333333333333333
+447,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,5_gs11x11_obj7_en,episode_0,Main Score,0.20512287855525643
+448,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,0_gs7x7_obj3_en,episode_1,Request Count,14.0
+449,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,0_gs7x7_obj3_en,episode_1,Parsed Request Count,14.0
+450,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,0_gs7x7_obj3_en,episode_1,Violated Request Count,0.0
+451,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,0_gs7x7_obj3_en,episode_1,Request Success Ratio,1.0
+452,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,0_gs7x7_obj3_en,episode_1,Aborted,0.0
+453,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,0_gs7x7_obj3_en,episode_1,Lose,0.0
+454,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,0_gs7x7_obj3_en,episode_1,Success,1.0
+455,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,0_gs7x7_obj3_en,episode_1,Penalties,0.0
+456,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,0_gs7x7_obj3_en,episode_1,Turn Count,7.0
+457,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,0_gs7x7_obj3_en,episode_1,Initial Distance,7.773387165490545
+458,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,0_gs7x7_obj3_en,episode_1,Total Distance,0.0
+459,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,0_gs7x7_obj3_en,episode_1,Expected Distance Score,1.0
+460,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,0_gs7x7_obj3_en,episode_1,Distance Reduction Score,1.0
+461,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,0_gs7x7_obj3_en,episode_1,Distance Score,1.0
+462,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,0_gs7x7_obj3_en,episode_1,Penalty Score,1.0
+463,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,0_gs7x7_obj3_en,episode_1,Main Score,1.0
+464,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,0_gs7x7_obj3_en,episode_0,Request Count,18.0
+465,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,0_gs7x7_obj3_en,episode_0,Parsed Request Count,18.0
+466,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,0_gs7x7_obj3_en,episode_0,Violated Request Count,0.0
+467,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,0_gs7x7_obj3_en,episode_0,Request Success Ratio,1.0
+468,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,0_gs7x7_obj3_en,episode_0,Aborted,0.0
+469,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,0_gs7x7_obj3_en,episode_0,Lose,0.0
+470,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,0_gs7x7_obj3_en,episode_0,Success,1.0
+471,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,0_gs7x7_obj3_en,episode_0,Penalties,1.0
+472,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,0_gs7x7_obj3_en,episode_0,Turn Count,9.0
+473,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,0_gs7x7_obj3_en,episode_0,Initial Distance,9.359173603117451
+474,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,0_gs7x7_obj3_en,episode_0,Total Distance,1.0
+475,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,0_gs7x7_obj3_en,episode_0,Expected Distance Score,0.8968802610769618
+476,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,0_gs7x7_obj3_en,episode_0,Distance Reduction Score,0.893152959608858
+477,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,0_gs7x7_obj3_en,episode_0,Distance Score,0.8950166103429099
+478,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,0_gs7x7_obj3_en,episode_0,Penalty Score,0.8571428571428572
+479,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,0_gs7x7_obj3_en,episode_0,Main Score,0.7671570945796371
+480,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,1_gs7x7_obj4_en,episode_1,Request Count,28.0
+481,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,1_gs7x7_obj4_en,episode_1,Parsed Request Count,25.0
+482,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,1_gs7x7_obj4_en,episode_1,Violated Request Count,3.0
+483,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,1_gs7x7_obj4_en,episode_1,Request Success Ratio,0.8928571428571429
+484,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,1_gs7x7_obj4_en,episode_1,Aborted,1.0
+485,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,1_gs7x7_obj4_en,episode_1,Lose,0.0
+486,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,1_gs7x7_obj4_en,episode_1,Success,0.0
+487,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,1_gs7x7_obj4_en,episode_1,Penalties,9.0
+488,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,1_gs7x7_obj4_en,episode_1,Turn Count,10.0
+489,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,1_gs7x7_obj4_en,episode_1,Initial Distance,11.727968770336455
+490,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,1_gs7x7_obj4_en,episode_1,Total Distance,10.009455142990337
+491,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,1_gs7x7_obj4_en,episode_1,Expected Distance Score,0.2258706991697309
+492,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,1_gs7x7_obj4_en,episode_1,Distance Reduction Score,0.14653122471580526
+493,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,1_gs7x7_obj4_en,episode_1,Distance Score,0.18620096194276808
+494,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,1_gs7x7_obj4_en,episode_1,Penalty Score,0.0
+495,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,1_gs7x7_obj4_en,episode_1,Main Score,
+496,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,1_gs7x7_obj4_en,episode_0,Request Count,33.0
+497,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,1_gs7x7_obj4_en,episode_0,Parsed Request Count,33.0
+498,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,1_gs7x7_obj4_en,episode_0,Violated Request Count,0.0
+499,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,1_gs7x7_obj4_en,episode_0,Request Success Ratio,1.0
+500,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,1_gs7x7_obj4_en,episode_0,Aborted,0.0
+501,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,1_gs7x7_obj4_en,episode_0,Lose,0.0
+502,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,1_gs7x7_obj4_en,episode_0,Success,1.0
+503,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,1_gs7x7_obj4_en,episode_0,Penalties,6.0
+504,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,1_gs7x7_obj4_en,episode_0,Turn Count,14.0
+505,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,1_gs7x7_obj4_en,episode_0,Initial Distance,5.414213562373095
+506,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,1_gs7x7_obj4_en,episode_0,Total Distance,4.0
+507,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,1_gs7x7_obj4_en,episode_0,Expected Distance Score,0.6906407832308854
+508,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,1_gs7x7_obj4_en,episode_0,Distance Reduction Score,0.2612038749637414
+509,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,1_gs7x7_obj4_en,episode_0,Distance Score,0.4759223290973134
+510,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,1_gs7x7_obj4_en,episode_0,Penalty Score,0.33333333333333337
+511,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,1_gs7x7_obj4_en,episode_0,Main Score,0.15864077636577115
+512,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,3_gs9x9_obj5_en,episode_1,Request Count,46.0
+513,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,3_gs9x9_obj5_en,episode_1,Parsed Request Count,46.0
+514,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,3_gs9x9_obj5_en,episode_1,Violated Request Count,0.0
+515,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,3_gs9x9_obj5_en,episode_1,Request Success Ratio,1.0
+516,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,3_gs9x9_obj5_en,episode_1,Aborted,0.0
+517,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,3_gs9x9_obj5_en,episode_1,Lose,0.0
+518,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,3_gs9x9_obj5_en,episode_1,Success,1.0
+519,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,3_gs9x9_obj5_en,episode_1,Penalties,6.0
+520,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,3_gs9x9_obj5_en,episode_1,Turn Count,20.0
+521,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,3_gs9x9_obj5_en,episode_1,Initial Distance,21.970320244888892
+522,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,3_gs9x9_obj5_en,episode_1,Total Distance,2.0
+523,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,3_gs9x9_obj5_en,episode_1,Expected Distance Score,0.904540584539816
+524,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,3_gs9x9_obj5_en,episode_1,Distance Reduction Score,0.9089680997952101
+525,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,3_gs9x9_obj5_en,episode_1,Distance Score,0.906754342167513
+526,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,3_gs9x9_obj5_en,episode_1,Penalty Score,0.4545454545454546
+527,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,3_gs9x9_obj5_en,episode_1,Main Score,0.41216106462159685
+528,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,3_gs9x9_obj5_en,episode_0,Request Count,38.0
+529,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,3_gs9x9_obj5_en,episode_0,Parsed Request Count,38.0
+530,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,3_gs9x9_obj5_en,episode_0,Violated Request Count,0.0
+531,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,3_gs9x9_obj5_en,episode_0,Request Success Ratio,1.0
+532,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,3_gs9x9_obj5_en,episode_0,Aborted,0.0
+533,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,3_gs9x9_obj5_en,episode_0,Lose,0.0
+534,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,3_gs9x9_obj5_en,episode_0,Success,1.0
+535,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,3_gs9x9_obj5_en,episode_0,Penalties,7.0
+536,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,3_gs9x9_obj5_en,episode_0,Turn Count,16.0
+537,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,3_gs9x9_obj5_en,episode_0,Initial Distance,21.037640649633033
+538,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,3_gs9x9_obj5_en,episode_0,Total Distance,8.47213595499958
+539,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,3_gs9x9_obj5_en,episode_0,Expected Distance Score,0.5956274270182664
+540,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,3_gs9x9_obj5_en,episode_0,Distance Reduction Score,0.5972867824820765
+541,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,3_gs9x9_obj5_en,episode_0,Distance Score,0.5964571047501714
+542,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,3_gs9x9_obj5_en,episode_0,Penalty Score,0.36363636363636365
+543,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,3_gs9x9_obj5_en,episode_0,Main Score,0.216893492636426
+544,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,4_gs11x11_obj5_en,episode_1,Request Count,23.0
+545,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,4_gs11x11_obj5_en,episode_1,Parsed Request Count,23.0
+546,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,4_gs11x11_obj5_en,episode_1,Violated Request Count,0.0
+547,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,4_gs11x11_obj5_en,episode_1,Request Success Ratio,1.0
+548,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,4_gs11x11_obj5_en,episode_1,Aborted,0.0
+549,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,4_gs11x11_obj5_en,episode_1,Lose,1.0
+550,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,4_gs11x11_obj5_en,episode_1,Success,1.0
+551,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,4_gs11x11_obj5_en,episode_1,Penalties,1.0
+552,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,4_gs11x11_obj5_en,episode_1,Turn Count,11.0
+553,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,4_gs11x11_obj5_en,episode_1,Initial Distance,25.21747754732893
+554,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,4_gs11x11_obj5_en,episode_1,Total Distance,39.698484809834994
+555,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,4_gs11x11_obj5_en,episode_1,Expected Distance Score,0.0
+556,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,4_gs11x11_obj5_en,episode_1,Distance Reduction Score,0.0
+557,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,4_gs11x11_obj5_en,episode_1,Distance Score,0.0
+558,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,4_gs11x11_obj5_en,episode_1,Penalty Score,0.9090909090909091
+559,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,4_gs11x11_obj5_en,episode_1,Main Score,0.0
+560,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,4_gs11x11_obj5_en,episode_0,Request Count,40.0
+561,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,4_gs11x11_obj5_en,episode_0,Parsed Request Count,39.0
+562,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,4_gs11x11_obj5_en,episode_0,Violated Request Count,1.0
+563,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,4_gs11x11_obj5_en,episode_0,Request Success Ratio,0.975
+564,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,4_gs11x11_obj5_en,episode_0,Aborted,0.0
+565,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,4_gs11x11_obj5_en,episode_0,Lose,0.0
+566,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,4_gs11x11_obj5_en,episode_0,Success,1.0
+567,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,4_gs11x11_obj5_en,episode_0,Penalties,10.0
+568,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,4_gs11x11_obj5_en,episode_0,Turn Count,15.0
+569,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,4_gs11x11_obj5_en,episode_0,Initial Distance,26.05272180389176
+570,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,4_gs11x11_obj5_en,episode_0,Total Distance,13.053405777305734
+571,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,4_gs11x11_obj5_en,episode_0,Expected Distance Score,0.4923416541508102
+572,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,4_gs11x11_obj5_en,episode_0,Distance Reduction Score,0.4989619174701426
+573,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,4_gs11x11_obj5_en,episode_0,Distance Score,0.4956517858104764
+574,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,4_gs11x11_obj5_en,episode_0,Penalty Score,0.09090909090909094
+575,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,4_gs11x11_obj5_en,episode_0,Main Score,0.04505925325549787
+576,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,2_gs9x9_obj4_en,episode_1,Request Count,40.0
+577,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,2_gs9x9_obj4_en,episode_1,Parsed Request Count,36.0
+578,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,2_gs9x9_obj4_en,episode_1,Violated Request Count,4.0
+579,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,2_gs9x9_obj4_en,episode_1,Request Success Ratio,0.9
+580,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,2_gs9x9_obj4_en,episode_1,Aborted,1.0
+581,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,2_gs9x9_obj4_en,episode_1,Lose,0.0
+582,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,2_gs9x9_obj4_en,episode_1,Success,0.0
+583,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,2_gs9x9_obj4_en,episode_1,Penalties,9.0
+584,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,2_gs9x9_obj4_en,episode_1,Turn Count,16.0
+585,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,2_gs9x9_obj4_en,episode_1,Initial Distance,10.99070478491457
+586,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,2_gs9x9_obj4_en,episode_1,Total Distance,10.72134935173836
+587,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,2_gs9x9_obj4_en,episode_1,Expected Distance Score,0.3603414112116464
+588,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,2_gs9x9_obj4_en,episode_1,Distance Reduction Score,0.024507566934735436
+589,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,2_gs9x9_obj4_en,episode_1,Distance Score,0.19242448907319093
+590,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,2_gs9x9_obj4_en,episode_1,Penalty Score,0.0
+591,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,2_gs9x9_obj4_en,episode_1,Main Score,
+592,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,2_gs9x9_obj4_en,episode_0,Request Count,34.0
+593,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,2_gs9x9_obj4_en,episode_0,Parsed Request Count,34.0
+594,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,2_gs9x9_obj4_en,episode_0,Violated Request Count,0.0
+595,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,2_gs9x9_obj4_en,episode_0,Request Success Ratio,1.0
+596,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,2_gs9x9_obj4_en,episode_0,Aborted,0.0
+597,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,2_gs9x9_obj4_en,episode_0,Lose,0.0
+598,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,2_gs9x9_obj4_en,episode_0,Success,1.0
+599,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,2_gs9x9_obj4_en,episode_0,Penalties,8.0
+600,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,2_gs9x9_obj4_en,episode_0,Turn Count,13.0
+601,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,2_gs9x9_obj4_en,episode_0,Initial Distance,21.86118637758232
+602,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,2_gs9x9_obj4_en,episode_0,Total Distance,5.82842712474619
+603,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,2_gs9x9_obj4_en,episode_0,Expected Distance Score,0.6522635960121551
+604,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,2_gs9x9_obj4_en,episode_0,Distance Reduction Score,0.7333892578344703
+605,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,2_gs9x9_obj4_en,episode_0,Distance Score,0.6928264269233126
+606,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,2_gs9x9_obj4_en,episode_0,Penalty Score,0.11111111111111116
+607,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,2_gs9x9_obj4_en,episode_0,Main Score,0.07698071410259033
+608,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,5_gs11x11_obj7_en,episode_1,Request Count,44.0
+609,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,5_gs11x11_obj7_en,episode_1,Parsed Request Count,42.0
+610,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,5_gs11x11_obj7_en,episode_1,Violated Request Count,2.0
+611,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,5_gs11x11_obj7_en,episode_1,Request Success Ratio,0.9545454545454546
+612,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,5_gs11x11_obj7_en,episode_1,Aborted,0.0
+613,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,5_gs11x11_obj7_en,episode_1,Lose,0.0
+614,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,5_gs11x11_obj7_en,episode_1,Success,1.0
+615,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,5_gs11x11_obj7_en,episode_1,Penalties,14.0
+616,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,5_gs11x11_obj7_en,episode_1,Turn Count,15.0
+617,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,5_gs11x11_obj7_en,episode_1,Initial Distance,43.209276031199515
+618,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,5_gs11x11_obj7_en,episode_1,Total Distance,34.368027667536886
+619,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,5_gs11x11_obj7_en,episode_1,Expected Distance Score,0.04528385851091277
+620,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,5_gs11x11_obj7_en,episode_1,Distance Reduction Score,0.20461459148907635
+621,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,5_gs11x11_obj7_en,episode_1,Distance Score,0.12494922499999456
+622,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,5_gs11x11_obj7_en,episode_1,Penalty Score,0.06666666666666665
+623,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,5_gs11x11_obj7_en,episode_1,Main Score,0.008329948333332969
+624,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,5_gs11x11_obj7_en,episode_0,Request Count,50.0
+625,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,5_gs11x11_obj7_en,episode_0,Parsed Request Count,48.0
+626,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,5_gs11x11_obj7_en,episode_0,Violated Request Count,2.0
+627,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,5_gs11x11_obj7_en,episode_0,Request Success Ratio,0.96
+628,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,5_gs11x11_obj7_en,episode_0,Aborted,0.0
+629,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,5_gs11x11_obj7_en,episode_0,Lose,0.0
+630,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,5_gs11x11_obj7_en,episode_0,Success,1.0
+631,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,5_gs11x11_obj7_en,episode_0,Penalties,14.0
+632,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,5_gs11x11_obj7_en,episode_0,Turn Count,18.0
+633,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,5_gs11x11_obj7_en,episode_0,Initial Distance,35.24621125123532
+634,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,5_gs11x11_obj7_en,episode_0,Total Distance,31.246211251235323
+635,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,5_gs11x11_obj7_en,episode_0,Expected Distance Score,0.13200540541608974
+636,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,5_gs11x11_obj7_en,episode_0,Distance Reduction Score,0.11348737518163199
+637,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,5_gs11x11_obj7_en,episode_0,Distance Score,0.12274639029886086
+638,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,5_gs11x11_obj7_en,episode_0,Penalty Score,0.06666666666666665
+639,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,5_gs11x11_obj7_en,episode_0,Main Score,0.008183092686590723
+640,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,0_gs7x7_obj3_en,episode_1,Request Count,24.0
+641,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,0_gs7x7_obj3_en,episode_1,Parsed Request Count,24.0
+642,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,0_gs7x7_obj3_en,episode_1,Violated Request Count,0.0
+643,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,0_gs7x7_obj3_en,episode_1,Request Success Ratio,1.0
+644,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,0_gs7x7_obj3_en,episode_1,Aborted,0.0
+645,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,0_gs7x7_obj3_en,episode_1,Lose,0.0
+646,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,0_gs7x7_obj3_en,episode_1,Success,1.0
+647,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,0_gs7x7_obj3_en,episode_1,Penalties,2.0
+648,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,0_gs7x7_obj3_en,episode_1,Turn Count,11.0
+649,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,0_gs7x7_obj3_en,episode_1,Initial Distance,7.773387165490545
+650,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,0_gs7x7_obj3_en,episode_1,Total Distance,0.0
+651,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,0_gs7x7_obj3_en,episode_1,Expected Distance Score,1.0
+652,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,0_gs7x7_obj3_en,episode_1,Distance Reduction Score,1.0
+653,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,0_gs7x7_obj3_en,episode_1,Distance Score,1.0
+654,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,0_gs7x7_obj3_en,episode_1,Penalty Score,0.7142857142857143
+655,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,0_gs7x7_obj3_en,episode_1,Main Score,0.7142857142857143
+656,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,0_gs7x7_obj3_en,episode_0,Request Count,23.0
+657,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,0_gs7x7_obj3_en,episode_0,Parsed Request Count,22.0
+658,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,0_gs7x7_obj3_en,episode_0,Violated Request Count,1.0
+659,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,0_gs7x7_obj3_en,episode_0,Request Success Ratio,0.9565217391304348
+660,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,0_gs7x7_obj3_en,episode_0,Aborted,0.0
+661,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,0_gs7x7_obj3_en,episode_0,Lose,0.0
+662,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,0_gs7x7_obj3_en,episode_0,Success,1.0
+663,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,0_gs7x7_obj3_en,episode_0,Penalties,2.0
+664,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,0_gs7x7_obj3_en,episode_0,Turn Count,11.0
+665,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,0_gs7x7_obj3_en,episode_0,Initial Distance,9.359173603117451
+666,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,0_gs7x7_obj3_en,episode_0,Total Distance,4.123105625617661
+667,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,0_gs7x7_obj3_en,episode_0,Expected Distance Score,0.5748264243341967
+668,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,0_gs7x7_obj3_en,episode_0,Distance Reduction Score,0.5594583666826851
+669,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,0_gs7x7_obj3_en,episode_0,Distance Score,0.5671423955084409
+670,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,0_gs7x7_obj3_en,episode_0,Penalty Score,0.7142857142857143
+671,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,0_gs7x7_obj3_en,episode_0,Main Score,0.4051017110774578
+672,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,1_gs7x7_obj4_en,episode_1,Request Count,35.0
+673,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,1_gs7x7_obj4_en,episode_1,Parsed Request Count,34.0
+674,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,1_gs7x7_obj4_en,episode_1,Violated Request Count,1.0
+675,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,1_gs7x7_obj4_en,episode_1,Request Success Ratio,0.9714285714285714
+676,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,1_gs7x7_obj4_en,episode_1,Aborted,0.0
+677,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,1_gs7x7_obj4_en,episode_1,Lose,0.0
+678,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,1_gs7x7_obj4_en,episode_1,Success,1.0
+679,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,1_gs7x7_obj4_en,episode_1,Penalties,3.0
+680,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,1_gs7x7_obj4_en,episode_1,Turn Count,16.0
+681,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,1_gs7x7_obj4_en,episode_1,Initial Distance,11.727968770336455
+682,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,1_gs7x7_obj4_en,episode_1,Total Distance,5.0197648378370845
+683,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,1_gs7x7_obj4_en,episode_1,Expected Distance Score,0.6117723703503946
+684,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,1_gs7x7_obj4_en,episode_1,Distance Reduction Score,0.5719834409404659
+685,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,1_gs7x7_obj4_en,episode_1,Distance Score,0.5918779056454302
+686,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,1_gs7x7_obj4_en,episode_1,Penalty Score,0.6666666666666667
+687,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,1_gs7x7_obj4_en,episode_1,Main Score,0.39458527043028685
+688,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,1_gs7x7_obj4_en,episode_0,Request Count,36.0
+689,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,1_gs7x7_obj4_en,episode_0,Parsed Request Count,34.0
+690,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,1_gs7x7_obj4_en,episode_0,Violated Request Count,2.0
+691,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,1_gs7x7_obj4_en,episode_0,Request Success Ratio,0.9444444444444444
+692,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,1_gs7x7_obj4_en,episode_0,Aborted,0.0
+693,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,1_gs7x7_obj4_en,episode_0,Lose,0.0
+694,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,1_gs7x7_obj4_en,episode_0,Success,1.0
+695,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,1_gs7x7_obj4_en,episode_0,Penalties,4.0
+696,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,1_gs7x7_obj4_en,episode_0,Turn Count,16.0
+697,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,1_gs7x7_obj4_en,episode_0,Initial Distance,5.414213562373095
+698,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,1_gs7x7_obj4_en,episode_0,Total Distance,1.0
+699,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,1_gs7x7_obj4_en,episode_0,Expected Distance Score,0.9226601958077214
+700,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,1_gs7x7_obj4_en,episode_0,Distance Reduction Score,0.8153009687409354
+701,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,1_gs7x7_obj4_en,episode_0,Distance Score,0.8689805822743284
+702,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,1_gs7x7_obj4_en,episode_0,Penalty Score,0.5555555555555556
+703,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,1_gs7x7_obj4_en,episode_0,Main Score,0.4827669901524047
+704,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,3_gs9x9_obj5_en,episode_1,Request Count,38.0
+705,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,3_gs9x9_obj5_en,episode_1,Parsed Request Count,36.0
+706,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,3_gs9x9_obj5_en,episode_1,Violated Request Count,2.0
+707,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,3_gs9x9_obj5_en,episode_1,Request Success Ratio,0.9473684210526315
+708,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,3_gs9x9_obj5_en,episode_1,Aborted,0.0
+709,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,3_gs9x9_obj5_en,episode_1,Lose,0.0
+710,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,3_gs9x9_obj5_en,episode_1,Success,1.0
+711,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,3_gs9x9_obj5_en,episode_1,Penalties,10.0
+712,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,3_gs9x9_obj5_en,episode_1,Turn Count,14.0
+713,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,3_gs9x9_obj5_en,episode_1,Initial Distance,21.970320244888892
+714,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,3_gs9x9_obj5_en,episode_1,Total Distance,17.333230833233596
+715,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,3_gs9x9_obj5_en,episode_1,Expected Distance Score,0.172689958311542
+716,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,3_gs9x9_obj5_en,episode_1,Distance Reduction Score,0.2110615302812463
+717,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,3_gs9x9_obj5_en,episode_1,Distance Score,0.19187574429639415
+718,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,3_gs9x9_obj5_en,episode_1,Penalty Score,0.09090909090909094
+719,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,3_gs9x9_obj5_en,episode_1,Main Score,0.017443249481490383
+720,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,3_gs9x9_obj5_en,episode_0,Request Count,44.0
+721,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,3_gs9x9_obj5_en,episode_0,Parsed Request Count,43.0
+722,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,3_gs9x9_obj5_en,episode_0,Violated Request Count,1.0
+723,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,3_gs9x9_obj5_en,episode_0,Request Success Ratio,0.9772727272727273
+724,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,3_gs9x9_obj5_en,episode_0,Aborted,0.0
+725,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,3_gs9x9_obj5_en,episode_0,Lose,0.0
+726,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,3_gs9x9_obj5_en,episode_0,Success,1.0
+727,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,3_gs9x9_obj5_en,episode_0,Penalties,4.0
+728,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,3_gs9x9_obj5_en,episode_0,Turn Count,20.0
+729,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,3_gs9x9_obj5_en,episode_0,Initial Distance,21.037640649633033
+730,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,3_gs9x9_obj5_en,episode_0,Total Distance,7.0990195135927845
+731,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,3_gs9x9_obj5_en,episode_0,Expected Distance Score,0.6611658734459968
+732,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,3_gs9x9_obj5_en,episode_0,Distance Reduction Score,0.6625562898510382
+733,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,3_gs9x9_obj5_en,episode_0,Distance Score,0.6618610816485175
+734,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,3_gs9x9_obj5_en,episode_0,Penalty Score,0.6363636363636364
+735,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,3_gs9x9_obj5_en,episode_0,Main Score,0.4211843246854202
+736,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,4_gs11x11_obj5_en,episode_1,Request Count,43.0
+737,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,4_gs11x11_obj5_en,episode_1,Parsed Request Count,42.0
+738,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,4_gs11x11_obj5_en,episode_1,Violated Request Count,1.0
+739,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,4_gs11x11_obj5_en,episode_1,Request Success Ratio,0.9767441860465116
+740,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,4_gs11x11_obj5_en,episode_1,Aborted,0.0
+741,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,4_gs11x11_obj5_en,episode_1,Lose,0.0
+742,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,4_gs11x11_obj5_en,episode_1,Success,1.0
+743,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,4_gs11x11_obj5_en,episode_1,Penalties,5.0
+744,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,4_gs11x11_obj5_en,episode_1,Turn Count,19.0
+745,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,4_gs11x11_obj5_en,episode_1,Initial Distance,25.21747754732893
+746,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,4_gs11x11_obj5_en,episode_1,Total Distance,18.071067811865476
+747,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,4_gs11x11_obj5_en,episode_1,Expected Distance Score,0.29720039738213866
+748,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,4_gs11x11_obj5_en,episode_1,Distance Reduction Score,0.28339114100729756
+749,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,4_gs11x11_obj5_en,episode_1,Distance Score,0.2902957691947181
+750,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,4_gs11x11_obj5_en,episode_1,Penalty Score,0.5454545454545454
+751,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,4_gs11x11_obj5_en,episode_1,Main Score,0.1583431468334826
+752,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,4_gs11x11_obj5_en,episode_0,Request Count,48.0
+753,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,4_gs11x11_obj5_en,episode_0,Parsed Request Count,47.0
+754,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,4_gs11x11_obj5_en,episode_0,Violated Request Count,1.0
+755,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,4_gs11x11_obj5_en,episode_0,Request Success Ratio,0.9791666666666666
+756,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,4_gs11x11_obj5_en,episode_0,Aborted,0.0
+757,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,4_gs11x11_obj5_en,episode_0,Lose,1.0
+758,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,4_gs11x11_obj5_en,episode_0,Success,1.0
+759,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,4_gs11x11_obj5_en,episode_0,Penalties,8.0
+760,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,4_gs11x11_obj5_en,episode_0,Turn Count,20.0
+761,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,4_gs11x11_obj5_en,episode_0,Initial Distance,26.05272180389176
+762,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,4_gs11x11_obj5_en,episode_0,Total Distance,28.605551275463988
+763,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,4_gs11x11_obj5_en,episode_0,Expected Distance Score,0.0
+764,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,4_gs11x11_obj5_en,episode_0,Distance Reduction Score,0.0
+765,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,4_gs11x11_obj5_en,episode_0,Distance Score,0.0
+766,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,4_gs11x11_obj5_en,episode_0,Penalty Score,0.2727272727272727
+767,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,4_gs11x11_obj5_en,episode_0,Main Score,0.0
+768,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,2_gs9x9_obj4_en,episode_1,Request Count,20.0
+769,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,2_gs9x9_obj4_en,episode_1,Parsed Request Count,12.0
+770,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,2_gs9x9_obj4_en,episode_1,Violated Request Count,8.0
+771,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,2_gs9x9_obj4_en,episode_1,Request Success Ratio,0.6
+772,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,2_gs9x9_obj4_en,episode_1,Aborted,1.0
+773,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,2_gs9x9_obj4_en,episode_1,Lose,0.0
+774,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,2_gs9x9_obj4_en,episode_1,Success,0.0
+775,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,2_gs9x9_obj4_en,episode_1,Penalties,9.0
+776,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,2_gs9x9_obj4_en,episode_1,Turn Count,6.0
+777,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,2_gs9x9_obj4_en,episode_1,Initial Distance,10.99070478491457
+778,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,2_gs9x9_obj4_en,episode_1,Total Distance,5.99070478491457
+779,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,2_gs9x9_obj4_en,episode_1,Expected Distance Score,0.6425817643984552
+780,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,2_gs9x9_obj4_en,episode_1,Distance Reduction Score,0.4549298791887134
+781,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,2_gs9x9_obj4_en,episode_1,Distance Score,0.5487558217935843
+782,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,2_gs9x9_obj4_en,episode_1,Penalty Score,0.0
+783,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,2_gs9x9_obj4_en,episode_1,Main Score,
+784,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,2_gs9x9_obj4_en,episode_0,Request Count,16.0
+785,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,2_gs9x9_obj4_en,episode_0,Parsed Request Count,8.0
+786,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,2_gs9x9_obj4_en,episode_0,Violated Request Count,8.0
+787,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,2_gs9x9_obj4_en,episode_0,Request Success Ratio,0.5
+788,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,2_gs9x9_obj4_en,episode_0,Aborted,1.0
+789,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,2_gs9x9_obj4_en,episode_0,Lose,0.0
+790,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,2_gs9x9_obj4_en,episode_0,Success,0.0
+791,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,2_gs9x9_obj4_en,episode_0,Penalties,9.0
+792,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,2_gs9x9_obj4_en,episode_0,Turn Count,4.0
+793,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,2_gs9x9_obj4_en,episode_0,Initial Distance,21.86118637758232
+794,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,2_gs9x9_obj4_en,episode_0,Total Distance,15.53663105724556
+795,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,2_gs9x9_obj4_en,episode_0,Expected Distance Score,0.07305142565924971
+796,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,2_gs9x9_obj4_en,episode_0,Distance Reduction Score,0.28930521935544695
+797,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,2_gs9x9_obj4_en,episode_0,Distance Score,0.18117832250734833
+798,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,2_gs9x9_obj4_en,episode_0,Penalty Score,0.0
+799,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,2_gs9x9_obj4_en,episode_0,Main Score,
+800,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,5_gs11x11_obj7_en,episode_1,Request Count,36.0
+801,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,5_gs11x11_obj7_en,episode_1,Parsed Request Count,23.0
+802,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,5_gs11x11_obj7_en,episode_1,Violated Request Count,13.0
+803,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,5_gs11x11_obj7_en,episode_1,Request Success Ratio,0.6388888888888888
+804,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,5_gs11x11_obj7_en,episode_1,Aborted,1.0
+805,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,5_gs11x11_obj7_en,episode_1,Lose,0.0
+806,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,5_gs11x11_obj7_en,episode_1,Success,0.0
+807,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,5_gs11x11_obj7_en,episode_1,Penalties,15.0
+808,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,5_gs11x11_obj7_en,episode_1,Turn Count,11.0
+809,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,5_gs11x11_obj7_en,episode_1,Initial Distance,43.209276031199515
+810,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,5_gs11x11_obj7_en,episode_1,Total Distance,42.95135014362251
+811,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,5_gs11x11_obj7_en,episode_1,Expected Distance Score,0.0
+812,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,5_gs11x11_obj7_en,episode_1,Distance Reduction Score,0.005969224927322658
+813,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,5_gs11x11_obj7_en,episode_1,Distance Score,0.002984612463661329
+814,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,5_gs11x11_obj7_en,episode_1,Penalty Score,0.0
+815,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,5_gs11x11_obj7_en,episode_1,Main Score,
+816,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,5_gs11x11_obj7_en,episode_0,Request Count,34.0
+817,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,5_gs11x11_obj7_en,episode_0,Parsed Request Count,27.0
+818,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,5_gs11x11_obj7_en,episode_0,Violated Request Count,7.0
+819,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,5_gs11x11_obj7_en,episode_0,Request Success Ratio,0.7941176470588235
+820,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,5_gs11x11_obj7_en,episode_0,Aborted,1.0
+821,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,5_gs11x11_obj7_en,episode_0,Lose,0.0
+822,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,5_gs11x11_obj7_en,episode_0,Success,0.0
+823,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,5_gs11x11_obj7_en,episode_0,Penalties,15.0
+824,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,5_gs11x11_obj7_en,episode_0,Turn Count,10.0
+825,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,5_gs11x11_obj7_en,episode_0,Initial Distance,35.24621125123532
+826,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,5_gs11x11_obj7_en,episode_0,Total Distance,35.24621125123532
+827,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,5_gs11x11_obj7_en,episode_0,Expected Distance Score,0.020888625515346537
+828,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,5_gs11x11_obj7_en,episode_0,Distance Reduction Score,0.0
+829,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,5_gs11x11_obj7_en,episode_0,Distance Score,0.010444312757673269
+830,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,5_gs11x11_obj7_en,episode_0,Penalty Score,0.0
+831,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,5_gs11x11_obj7_en,episode_0,Main Score,
+832,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,0_gs7x7_obj3_en,episode_1,Request Count,18.0
+833,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,0_gs7x7_obj3_en,episode_1,Parsed Request Count,12.0
+834,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,0_gs7x7_obj3_en,episode_1,Violated Request Count,6.0
+835,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,0_gs7x7_obj3_en,episode_1,Request Success Ratio,0.6666666666666666
+836,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,0_gs7x7_obj3_en,episode_1,Aborted,1.0
+837,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,0_gs7x7_obj3_en,episode_1,Lose,0.0
+838,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,0_gs7x7_obj3_en,episode_1,Success,0.0
+839,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,0_gs7x7_obj3_en,episode_1,Penalties,7.0
+840,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,0_gs7x7_obj3_en,episode_1,Turn Count,6.0
+841,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,0_gs7x7_obj3_en,episode_1,Initial Distance,7.773387165490545
+842,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,0_gs7x7_obj3_en,episode_1,Total Distance,3.414213562373095
+843,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,0_gs7x7_obj3_en,episode_1,Expected Distance Score,0.6479271888205903
+844,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,0_gs7x7_obj3_en,episode_1,Distance Reduction Score,0.5607817429279378
+845,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,0_gs7x7_obj3_en,episode_1,Distance Score,0.6043544658742641
+846,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,0_gs7x7_obj3_en,episode_1,Penalty Score,0.0
+847,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,0_gs7x7_obj3_en,episode_1,Main Score,
+848,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,0_gs7x7_obj3_en,episode_0,Request Count,18.0
+849,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,0_gs7x7_obj3_en,episode_0,Parsed Request Count,15.0
+850,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,0_gs7x7_obj3_en,episode_0,Violated Request Count,3.0
+851,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,0_gs7x7_obj3_en,episode_0,Request Success Ratio,0.8333333333333334
+852,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,0_gs7x7_obj3_en,episode_0,Aborted,1.0
+853,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,0_gs7x7_obj3_en,episode_0,Lose,0.0
+854,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,0_gs7x7_obj3_en,episode_0,Success,0.0
+855,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,0_gs7x7_obj3_en,episode_0,Penalties,7.0
+856,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,0_gs7x7_obj3_en,episode_0,Turn Count,6.0
+857,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,0_gs7x7_obj3_en,episode_0,Initial Distance,9.359173603117451
+858,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,0_gs7x7_obj3_en,episode_0,Total Distance,7.35917360311745
+859,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,0_gs7x7_obj3_en,episode_0,Expected Distance Score,0.2411239393572142
+860,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,0_gs7x7_obj3_en,episode_0,Distance Reduction Score,0.21369408078228402
+861,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,0_gs7x7_obj3_en,episode_0,Distance Score,0.22740901006974912
+862,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,0_gs7x7_obj3_en,episode_0,Penalty Score,0.0
+863,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,0_gs7x7_obj3_en,episode_0,Main Score,
+864,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,1_gs7x7_obj4_en,episode_1,Request Count,34.0
+865,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,1_gs7x7_obj4_en,episode_1,Parsed Request Count,31.0
+866,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,1_gs7x7_obj4_en,episode_1,Violated Request Count,3.0
+867,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,1_gs7x7_obj4_en,episode_1,Request Success Ratio,0.9117647058823529
+868,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,1_gs7x7_obj4_en,episode_1,Aborted,1.0
+869,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,1_gs7x7_obj4_en,episode_1,Lose,0.0
+870,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,1_gs7x7_obj4_en,episode_1,Success,0.0
+871,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,1_gs7x7_obj4_en,episode_1,Penalties,9.0
+872,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,1_gs7x7_obj4_en,episode_1,Turn Count,13.0
+873,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,1_gs7x7_obj4_en,episode_1,Initial Distance,11.727968770336455
+874,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,1_gs7x7_obj4_en,episode_1,Total Distance,11.12899020449196
+875,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,1_gs7x7_obj4_en,episode_1,Expected Distance Score,0.13928607672680482
+876,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,1_gs7x7_obj4_en,episode_1,Distance Reduction Score,0.051072660370608425
+877,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,1_gs7x7_obj4_en,episode_1,Distance Score,0.09517936854870662
+878,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,1_gs7x7_obj4_en,episode_1,Penalty Score,0.0
+879,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,1_gs7x7_obj4_en,episode_1,Main Score,
+880,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,1_gs7x7_obj4_en,episode_0,Request Count,35.0
+881,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,1_gs7x7_obj4_en,episode_0,Parsed Request Count,29.0
+882,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,1_gs7x7_obj4_en,episode_0,Violated Request Count,6.0
+883,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,1_gs7x7_obj4_en,episode_0,Request Success Ratio,0.8285714285714286
+884,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,1_gs7x7_obj4_en,episode_0,Aborted,1.0
+885,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,1_gs7x7_obj4_en,episode_0,Lose,0.0
+886,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,1_gs7x7_obj4_en,episode_0,Success,0.0
+887,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,1_gs7x7_obj4_en,episode_0,Penalties,9.0
+888,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,1_gs7x7_obj4_en,episode_0,Turn Count,14.0
+889,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,1_gs7x7_obj4_en,episode_0,Initial Distance,5.414213562373095
+890,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,1_gs7x7_obj4_en,episode_0,Total Distance,1.4142135623730951
+891,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,1_gs7x7_obj4_en,episode_0,Expected Distance Score,0.890625
+892,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,1_gs7x7_obj4_en,episode_0,Distance Reduction Score,0.7387961250362585
+893,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,1_gs7x7_obj4_en,episode_0,Distance Score,0.8147105625181292
+894,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,1_gs7x7_obj4_en,episode_0,Penalty Score,0.0
+895,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,1_gs7x7_obj4_en,episode_0,Main Score,
+896,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,3_gs9x9_obj5_en,episode_1,Request Count,24.0
+897,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,3_gs9x9_obj5_en,episode_1,Parsed Request Count,15.0
+898,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,3_gs9x9_obj5_en,episode_1,Violated Request Count,9.0
+899,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,3_gs9x9_obj5_en,episode_1,Request Success Ratio,0.625
+900,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,3_gs9x9_obj5_en,episode_1,Aborted,1.0
+901,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,3_gs9x9_obj5_en,episode_1,Lose,0.0
+902,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,3_gs9x9_obj5_en,episode_1,Success,0.0
+903,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,3_gs9x9_obj5_en,episode_1,Penalties,11.0
+904,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,3_gs9x9_obj5_en,episode_1,Turn Count,7.0
+905,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,3_gs9x9_obj5_en,episode_1,Initial Distance,21.970320244888892
+906,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,3_gs9x9_obj5_en,episode_1,Total Distance,19.141893120142704
+907,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,3_gs9x9_obj5_en,episode_1,Expected Distance Score,0.08636303597493056
+908,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,3_gs9x9_obj5_en,episode_1,Distance Reduction Score,0.12873854787820782
+909,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,3_gs9x9_obj5_en,episode_1,Distance Score,0.10755079192656919
+910,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,3_gs9x9_obj5_en,episode_1,Penalty Score,0.0
+911,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,3_gs9x9_obj5_en,episode_1,Main Score,
+912,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,3_gs9x9_obj5_en,episode_0,Request Count,13.0
+913,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,3_gs9x9_obj5_en,episode_0,Parsed Request Count,2.0
+914,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,3_gs9x9_obj5_en,episode_0,Violated Request Count,11.0
+915,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,3_gs9x9_obj5_en,episode_0,Request Success Ratio,0.15384615384615385
+916,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,3_gs9x9_obj5_en,episode_0,Aborted,1.0
+917,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,3_gs9x9_obj5_en,episode_0,Lose,0.0
+918,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,3_gs9x9_obj5_en,episode_0,Success,0.0
+919,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,3_gs9x9_obj5_en,episode_0,Penalties,11.0
+920,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,3_gs9x9_obj5_en,episode_0,Turn Count,2.0
+921,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,3_gs9x9_obj5_en,episode_0,Initial Distance,21.037640649633033
+922,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,3_gs9x9_obj5_en,episode_0,Total Distance,21.037640649633033
+923,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,3_gs9x9_obj5_en,episode_0,Expected Distance Score,0.0
+924,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,3_gs9x9_obj5_en,episode_0,Distance Reduction Score,0.0
+925,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,3_gs9x9_obj5_en,episode_0,Distance Score,0.0
+926,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,3_gs9x9_obj5_en,episode_0,Penalty Score,0.0
+927,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,3_gs9x9_obj5_en,episode_0,Main Score,
+928,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,4_gs11x11_obj5_en,episode_1,Request Count,24.0
+929,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,4_gs11x11_obj5_en,episode_1,Parsed Request Count,13.0
+930,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,4_gs11x11_obj5_en,episode_1,Violated Request Count,11.0
+931,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,4_gs11x11_obj5_en,episode_1,Request Success Ratio,0.5416666666666666
+932,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,4_gs11x11_obj5_en,episode_1,Aborted,1.0
+933,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,4_gs11x11_obj5_en,episode_1,Lose,0.0
+934,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,4_gs11x11_obj5_en,episode_1,Success,0.0
+935,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,4_gs11x11_obj5_en,episode_1,Penalties,11.0
+936,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,4_gs11x11_obj5_en,episode_1,Turn Count,7.0
+937,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,4_gs11x11_obj5_en,episode_1,Initial Distance,25.21747754732893
+938,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,4_gs11x11_obj5_en,episode_1,Total Distance,19.48528137423857
+939,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,4_gs11x11_obj5_en,episode_1,Expected Distance Score,0.2422003973821386
+940,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,4_gs11x11_obj5_en,episode_1,Distance Reduction Score,0.227310450156325
+941,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,4_gs11x11_obj5_en,episode_1,Distance Score,0.2347554237692318
+942,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,4_gs11x11_obj5_en,episode_1,Penalty Score,0.0
+943,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,4_gs11x11_obj5_en,episode_1,Main Score,
+944,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,4_gs11x11_obj5_en,episode_0,Request Count,37.0
+945,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,4_gs11x11_obj5_en,episode_0,Parsed Request Count,30.0
+946,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,4_gs11x11_obj5_en,episode_0,Violated Request Count,7.0
+947,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,4_gs11x11_obj5_en,episode_0,Request Success Ratio,0.8108108108108109
+948,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,4_gs11x11_obj5_en,episode_0,Aborted,1.0
+949,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,4_gs11x11_obj5_en,episode_0,Lose,0.0
+950,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,4_gs11x11_obj5_en,episode_0,Success,0.0
+951,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,4_gs11x11_obj5_en,episode_0,Penalties,11.0
+952,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,4_gs11x11_obj5_en,episode_0,Turn Count,14.0
+953,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,4_gs11x11_obj5_en,episode_0,Initial Distance,26.05272180389176
+954,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,4_gs11x11_obj5_en,episode_0,Total Distance,23.861384090800865
+955,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,4_gs11x11_obj5_en,episode_0,Expected Distance Score,0.07200994254938475
+956,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,4_gs11x11_obj5_en,episode_0,Distance Reduction Score,0.08411166132989423
+957,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,4_gs11x11_obj5_en,episode_0,Distance Score,0.07806080193963949
+958,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,4_gs11x11_obj5_en,episode_0,Penalty Score,0.0
+959,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,4_gs11x11_obj5_en,episode_0,Main Score,
+960,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,2_gs9x9_obj4_en,episode_1,Played,1.0
+961,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,2_gs9x9_obj4_en,episode_0,Played,0.0
+962,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,5_gs11x11_obj7_en,episode_1,Played,1.0
+963,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,5_gs11x11_obj7_en,episode_0,Played,1.0
+964,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,0_gs7x7_obj3_en,episode_1,Played,1.0
+965,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,0_gs7x7_obj3_en,episode_0,Played,1.0
+966,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,1_gs7x7_obj4_en,episode_1,Played,1.0
+967,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,1_gs7x7_obj4_en,episode_0,Played,1.0
+968,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,3_gs9x9_obj5_en,episode_1,Played,1.0
+969,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,3_gs9x9_obj5_en,episode_0,Played,1.0
+970,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,4_gs11x11_obj5_en,episode_1,Played,1.0
+971,clean_up,mistral-small-2503-t0.0--mistral-small-2503-t0.0,4_gs11x11_obj5_en,episode_0,Played,0.0
+972,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,2_gs9x9_obj4_en,episode_1,Played,1.0
+973,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,2_gs9x9_obj4_en,episode_0,Played,0.0
+974,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,5_gs11x11_obj7_en,episode_1,Played,1.0
+975,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,5_gs11x11_obj7_en,episode_0,Played,1.0
+976,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,0_gs7x7_obj3_en,episode_1,Played,1.0
+977,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,0_gs7x7_obj3_en,episode_0,Played,0.0
+978,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,1_gs7x7_obj4_en,episode_1,Played,1.0
+979,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,1_gs7x7_obj4_en,episode_0,Played,1.0
+980,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,3_gs9x9_obj5_en,episode_1,Played,1.0
+981,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,3_gs9x9_obj5_en,episode_0,Played,1.0
+982,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,4_gs11x11_obj5_en,episode_1,Played,1.0
+983,clean_up,deepseek-v3-0324-t0.0--deepseek-v3-0324-t0.0,4_gs11x11_obj5_en,episode_0,Played,1.0
+984,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,2_gs9x9_obj4_en,episode_1,Played,1.0
+985,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,2_gs9x9_obj4_en,episode_0,Played,1.0
+986,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,5_gs11x11_obj7_en,episode_1,Played,1.0
+987,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,5_gs11x11_obj7_en,episode_0,Played,1.0
+988,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,0_gs7x7_obj3_en,episode_1,Played,1.0
+989,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,0_gs7x7_obj3_en,episode_0,Played,1.0
+990,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,1_gs7x7_obj4_en,episode_1,Played,0.0
+991,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,1_gs7x7_obj4_en,episode_0,Played,1.0
+992,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,3_gs9x9_obj5_en,episode_1,Played,1.0
+993,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,3_gs9x9_obj5_en,episode_0,Played,1.0
+994,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,4_gs11x11_obj5_en,episode_1,Played,1.0
+995,clean_up,gemma-3-27b-it-t0.0--gemma-3-27b-it-t0.0,4_gs11x11_obj5_en,episode_0,Played,1.0
+996,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,2_gs9x9_obj4_en,episode_1,Played,0.0
+997,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,2_gs9x9_obj4_en,episode_0,Played,1.0
+998,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,5_gs11x11_obj7_en,episode_1,Played,1.0
+999,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,5_gs11x11_obj7_en,episode_0,Played,1.0
+1000,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,0_gs7x7_obj3_en,episode_1,Played,1.0
+1001,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,0_gs7x7_obj3_en,episode_0,Played,1.0
+1002,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,1_gs7x7_obj4_en,episode_1,Played,1.0
+1003,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,1_gs7x7_obj4_en,episode_0,Played,1.0
+1004,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,3_gs9x9_obj5_en,episode_1,Played,1.0
+1005,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,3_gs9x9_obj5_en,episode_0,Played,1.0
+1006,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,4_gs11x11_obj5_en,episode_1,Played,1.0
+1007,clean_up,Llama-3.3-70B-Instruct-t0.0--Llama-3.3-70B-Instruct-t0.0,4_gs11x11_obj5_en,episode_0,Played,1.0
+1008,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,2_gs9x9_obj4_en,episode_1,Played,0.0
+1009,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,2_gs9x9_obj4_en,episode_0,Played,0.0
+1010,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,5_gs11x11_obj7_en,episode_1,Played,0.0
+1011,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,5_gs11x11_obj7_en,episode_0,Played,0.0
+1012,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,0_gs7x7_obj3_en,episode_1,Played,0.0
+1013,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,0_gs7x7_obj3_en,episode_0,Played,0.0
+1014,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,1_gs7x7_obj4_en,episode_1,Played,0.0
+1015,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,1_gs7x7_obj4_en,episode_0,Played,0.0
+1016,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,3_gs9x9_obj5_en,episode_1,Played,0.0
+1017,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,3_gs9x9_obj5_en,episode_0,Played,0.0
+1018,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,4_gs11x11_obj5_en,episode_1,Played,0.0
+1019,clean_up,qwen2.5-vl-72b-instruct-t0.0--qwen2.5-vl-72b-instruct-t0.0,4_gs11x11_obj5_en,episode_0,Played,0.0
