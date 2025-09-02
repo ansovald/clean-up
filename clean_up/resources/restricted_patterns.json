@@ -1,14 +1,17 @@
 {
   "en": {
     "image": ["[0-9]+"],
-    "text,hybrid": null
+    "text,hybrid": null,
+    "semantic_text": ["[0-9]+", "row", "column", "line"]
   },
   "zh-CN": {
     "image": ["[0-9]+"],
-    "text,hybrid": null
+    "text,hybrid": null,
+    "semantic_text": ["[0-9]+", "行", "列"]
   },
   "de": {
     "image": ["[0-9]+"],
-    "text,hybrid": null
+    "text,hybrid": null,
+    "semantic_text": ["[0-9]+", "Reihe", "Zeile", "Spalte", "Linie"]
   }
 }

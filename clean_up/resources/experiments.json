@@ -73,6 +73,21 @@
                     "objects_per_color": "OBJECT_COUNT"
                 }
             ]
-        }
+        }, 
+        "semantic_text": {
+		"instances": "st_instances",
+		"objects": {
+            "3": "CLP",
+            "6": "SYNTAX"
+		},
+		"penalty_factor": 2,
+		"experiments": [
+    		{
+                "name": "st",
+                "grid_config": "config_35"
+		  }
+		]
+	  }
+	}
     }
 }

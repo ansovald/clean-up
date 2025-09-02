@@ -2,12 +2,13 @@
     "en": {
         "invalid_response": {
             "text,hybrid": "Penalty: $reason\n\nMake sure that your response only contains either `$say` or `$move`, and nothing else!\n",
-            "image": "Penalty: $reason\n\nMake sure that \n\n* messages to the other player do not contain any numbers or coordinates!\n* your response only contains either `$say` or `$move`, and nothing else! Do not use any formatting, comments, or reasoning!\n"
+            "image": "Penalty: $reason\n\nMake sure that \n\n* messages to the other player do not contain any numbers or coordinates!\n* your response only contains either `$say` or `$move`, and nothing else! Do not use any formatting, comments, or reasoning!\n",
+            "semantic_text": "Penalty: $reason\n\nMake sure that \n\n* messages to the other player do not contain any numbers, coordinates, or the keywords 'row/column/line'. Use background objects as anchors, and use relative terms like 'left/right/above/below' to describe the target location!\n* your response only contains either `$say` or `$move`, and nothing else!\n"            
         },
         "message_relay": "Your message has been relayed to the other player.\n\n\n",
         "command_prompt": "\n\n\nWhat is your next command?",
         "new_turn_move": {
-            "text": "The other player moved an object on their grid.",
+            "text,semantic_text": "The other player moved an object on their grid.",
             "image,hybrid": "The other player moved an icon on their image."
         },
         "new_turn": "The other player sent this message:\n\n\n\"$turn_message\"",
@@ -18,12 +19,13 @@
     "de": {
         "invalid_response": {
             "text,hybrid": "Strafpunkt: $reason Stelle sicher, dass deine Antwort ausschließlich einen der beiden Befehle `$say` und `$move` und sonst nichts enthält!\n",
-            "image": "Strafpunkt: $reason Stelle sicher, dass\n\n* Nachrichten an deinen Mitspieler weder Zahlen noch Koordinaten enthalten!\n* deine Antwort ausschließlich einen der beiden Befehle `$say` und `$move` und sonst nichts enthält!\n"
+            "image": "Strafpunkt: $reason Stelle sicher, dass\n\n* Nachrichten an deinen Mitspieler weder Zahlen noch Koordinaten enthalten!\n* deine Antwort ausschließlich einen der beiden Befehle `$say` und `$move` und sonst nichts enthält!\n", 
+            "semantic_text": "Strafpunkt: $reason Stelle sicher, dass\n\n* Nachrichten an deinen Mitspieler weder Zahlen, Koordinaten noch die Schlüsselwörter 'Reihe/Zeile/Spalte/Linie' enthalten. Verwende Hintergrundobjekte als Anker und benutze relative Begriffe wie 'links/rechts/oberhalb/unterhalb', um den Zielort zu beschreiben!\n* deine Antwort ausschließlich einen der beiden Befehle `$say` und `$move` und sonst nichts enthält!\n"
         },
         "message_relay": "Deine Nachricht wurde an deinen Mitspieler übermittelt.\n\n\n",
         "command_prompt": "\n\n\nWie lautet dein nächster Befehl?",
         "new_turn_move": {
-            "text": "Dein Mitspieler hat ein Objekt auf seinem Raster bewegt.",
+            "text,semantic_text": "Dein Mitspieler hat ein Objekt auf seinem Raster bewegt.",
             "image,hybrid": "Dein Mitspieler hat ein Objekt auf seinem Bild bewegt."
         },
         "new_turn": "Dein Mitspieler hat dir diese Nachricht geschickt:\n\n\n\"$turn_message\"",
@@ -34,12 +36,13 @@
     "zh-CN": {
         "invalid_response": {
             "text,hybrid": "犯规：$reason 请确保你的回复仅包含`$say`或`$move`，不得包含任何其他内容！\n",
-            "image": "犯规：$reason\n\n请确保：\n\n* 发给另一位玩家的消息中**不得**包含任何数字或坐标！\n* 你的回应只能是 `$say` 或 `$move` 其中之一，**不得有其他任何内容**！不要使用任何其它格式，或增加任何注解！"
+            "image": "犯规：$reason\n\n请确保：\n\n* 发给另一位玩家的消息中**不得**包含任何数字或坐标！\n* 你的回应只能是 `$say` 或 `$move` 其中之一，**不得有其他任何内容**！不要使用任何其它格式，或增加任何注解！",
+            "semantic_text": "犯规：$reason\n\n请确保：\n\n* 发给另一位玩家的消息中**不得**包含任何数字、坐标，或关键词“行/列”！请使用背景物体作为参照，并使用“上/下/左/右”等相对词汇来描述目标位置！\n* 你的回复只能是 `$say` 或 `$move` 其中之一，**不得有其他任何内容**！"
         },
         "message_relay": "你的消息已发送给了其他玩家。\n\n\n",
         "command_prompt": "\n\n\n你的下一个指令是什么？",
         "new_turn_move": {
-            "text": "另一位玩家移动了TA的网格上的一个物体。",
+            "text,semantic_text": "另一位玩家移动了TA的网格上的一个物体。",
             "image,hybrid": "另一位玩家在TA自己的图像上移动了一个图标。"
         },
         "new_turn": "另一位玩家发送了以下消息：\n\n\n\"$turn_message\"",

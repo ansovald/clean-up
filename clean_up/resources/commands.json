@@ -5,7 +5,7 @@
     "say_pattern": "(?P<head>.*)SAY: (?P<message>[^\\n]+)(?P<tail>.*)",
     "move_keyword": "MOVE",
     "move": {
-      "text,hybrid": "MOVE: <OBJECT>, (<X>, <Y>)",
+      "text,hybrid,semantic_text": "MOVE: <OBJECT>, (<X>, <Y>)",
       "image": "MOVE: <ID>, (<X>, <Y>)"
     },
     "move_pattern": "(?P<head>.*)MOVE: (?P<obj>[^,]+), \\((?P<x>\\d+), ?(?P<y>\\d+)\\)(?P<tail>.*)",
@@ -20,7 +20,7 @@
     "say_pattern": "(?P<head>.*)发送[：:] ?(?P<message>[^\\n]+)(?P<tail>.*)",
     "move_keyword": "移动",
     "move": {
-      "text,hybrid": "移动：<物体>，（<X>，<Y>）",
+      "text,hybrid,semantic_text": "移动：<物体>，（<X>，<Y>）",
       "image": "移动：<ID>，（<X>，<Y>）"
     },
     "move_pattern": "(?P<head>.*)移动[：:] ?(?P<obj>[A-Z])[，,] ?[（\\(](?P<x>\\d+)[，,] ?(?P<y>\\d+)[）\\)](?P<tail>.*)",
@@ -35,7 +35,7 @@
     "say_pattern": "(?P<head>.*)SPRICH: (?P<message>[^\\n]+)(?P<tail>.*)",
     "move_keyword": "VERSCHIEBE",
     "move": {
-      "text,hybrid": "VERSCHIEBE: <OBJECT>, (<X>, <Y>)",
+      "text,hybrid,semantic_text": "VERSCHIEBE: <OBJECT>, (<X>, <Y>)",
       "image":"VERSCHIEBE: <ID>, (<X>, <Y>)"
     },
     "move_pattern": "(?P<head>.*)VERSCHIEBE: (?P<obj>[A-Z]), \\((?P<x>\\d+), ?(?P<y>\\d+)\\)(?P<tail>.*)",

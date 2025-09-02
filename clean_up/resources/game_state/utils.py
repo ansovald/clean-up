@@ -5,7 +5,7 @@ from PIL import Image
 
 EMPTY_SYMBOL = "◌"
 ICON_SIZE = 128 # Icons are square
-TEXT_BASED = ['text', 'hybrid']
+TEXT_BASED = ['text', 'hybrid', 'semantic_text']
 IMAGE_BASED = ['image']
 
 class GameObject(TypedDict):

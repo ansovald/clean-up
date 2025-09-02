@@ -364,13 +364,16 @@ class GridState(GameState):
         self.width = len(self.background[0])
         self.height = len(self.background)
 
+    def get_x_ticks(self): 
+        return " " + "".join([str(i+1) for i in range(self.width-2)]) + "\n"
+    
     def __str__(self, empty=False):
         """
         Returns a string representation of the grid.
         :param empty: don't show objects if True
         :return: String representation of the grid
         """
-        grid_str = " " + "".join([str(i+1) for i in range(self.width-2)]) + "\n"
+        grid_str = self.get_x_ticks()
         i = 0 if empty else -1
         for j, row in enumerate(self.background):
             grid_str += ''.join([cell[i] for cell in row])
@@ -497,3 +500,19 @@ class HybridState(GridState):
             image = self.draw()
         return result, message, image
     
+class SemanticGridState(GridState):
+    """
+    A semantic variant of GridState:
+    - ignores empty-cell checks
+    - uses semantic x-ticks formatting
+    """
+    def __init__(self, background=None, move_messages=None, objects=None, **kwargs):
+        super().__init__(background, move_messages, objects, **kwargs)
+        self.check_empty = False
+
+    # override x-ticks only
+    def get_x_ticks(self, tick_block=5):
+        n_cols = self.width - 2
+        return " " + ''.join(
+            str(tick).ljust(tick_block) for tick in range(1, n_cols + 1, tick_block)
+        ) + '\n'    

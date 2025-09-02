@@ -14,14 +14,15 @@ from clemcore.clemgame.events import GameEventSource
 from clemcore.clemgame.metrics import METRIC_ABORTED, METRIC_SUCCESS, METRIC_LOSE, BENCH_SCORE
 # from clemcore.utils import file_utils, string_utils
 from resources.game_state.utils import GameObject, png_to_base64
-from resources.game_state.game_state import PicState, GridState, HybridState
+from resources.game_state.game_state import PicState, GridState, HybridState, SemanticGridState
 from resources.metrics import MetricPreparer, MetricCalculator, END_DISTANCE_SUM, EXPECTED_DISTANCE_SUM, MOVES, INIT_STATES, END_STATES, ingredients_registry, sub_metrics_registry #, validate
 
 # Stores the game state class for each modality
 STATE_DICT = {
     "text": GridState,
     "image": PicState,
-    "hybrid": HybridState
+    "hybrid": HybridState, 
+    "semantic_text": SemanticGridState
 }
 
 logger = logging.getLogger(__name__)
@@ -157,7 +158,8 @@ def log_images(game_event_source: GameEventSource, images: list[str], player: Pl
 PLAYER_DICT = {
     "text": GridCleaner,
     "image": PicCleaner,
-    "hybrid": HybridCleaner
+    "hybrid": HybridCleaner, 
+    "semantic_text": GridCleaner
 }
 
 class CleanUpMaster(DialogueGameMaster):

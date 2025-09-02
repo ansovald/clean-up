@@ -1,17 +1,17 @@
 {
   "en": {
     "successful": {
-      "text": "Moved '$object' to ($x,$y) successfully. Your updated grid looks like this:\n```\n$grid```\n",
+      "text,semantic_text": "Moved '$object' to ($x,$y) successfully. Your updated grid looks like this:\n```\n$grid```\n",
       "image": "Moved object '$object' to ($x,$y) successfully.\n\n",
       "hybrid": "Moved '$object' to ($x,$y) successfully. Your updated image is attached.\n\n"
-  },
+    },
     "out_of_bounds": "Invalid move: ($x,$y) is out of bounds. Please try again!\n\n",
     "not_empty": "Penalty: ($x,$y) is not empty, but contains '$object'.\n",
     "obj_not_found": "Invalid move: Your image has no object with ID '$object'. Please try again!\n\n"
   },
   "zh-CN": {
     "successful": {
-      "text": "已成功将“$object”移动到 ($x,$y)。更新后的网格如下所示：\n```\n$grid```\n",
+      "text,semantic_text": "已成功将“$object”移动到 ($x,$y)。更新后的网格如下所示：\n```\n$grid```\n",
       "image": "已成功将图标'$object'移动到 ($x,$y)。\n\n",
       "hybrid": "已成功将“$object”移动到 ($x,$y)。更新后的图片已附上。\n\n"
     },
@@ -21,7 +21,7 @@
   },
   "de": {
     "successful": {
-      "text": "'$object' erfolgreich nach ($x,$y) verschoben. Dein Raster sieht jetzt so aus:\n```\n$grid```\n",
+      "text,semantic_text": "'$object' erfolgreich nach ($x,$y) verschoben. Dein Raster sieht jetzt so aus:\n```\n$grid```\n",
       "image": "'$object' erfolgreich nach ($x,$y) verschoben.\n\n",
       "hybrid": "'$object' erfolgreich nach ($x,$y) verschoben. Dein Bild sieht jetzt so aus:\n```\n$grid```\n"
     },

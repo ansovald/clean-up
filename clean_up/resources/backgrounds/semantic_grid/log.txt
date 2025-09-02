@@ -1,0 +1,3208 @@
+config_70-1: solving with these empty cells:
+	empty_cell(6,9). empty_cell(19,2). 
+	Elapsed: 93.0702 seconds
+Total models: 50
+
+config_70-2: solving with these empty cells:
+	empty_cell(3,4). empty_cell(31,8). 
+	Elapsed: 99.0450 seconds
+Total models: 50
+
+config_70-3: solving with these empty cells:
+	empty_cell(4,9). empty_cell(9,7). 
+	Elapsed: 99.0252 seconds
+Total models: 50
+
+config_70-4: solving with these empty cells:
+	empty_cell(29,6). empty_cell(43,2). 
+	Elapsed: 99.0227 seconds
+Total models: 50
+
+config_70-5: solving with these empty cells:
+	empty_cell(11,7). empty_cell(36,5). 
+	Elapsed: 99.0233 seconds
+Total models: 50
+
+config_70-6: solving with these empty cells:
+	empty_cell(37,6). empty_cell(18,9). 
+	Elapsed: 99.0214 seconds
+Total models: 50
+
+config_70-7: solving with these empty cells:
+	empty_cell(44,8). empty_cell(4,3). 
+	Elapsed: 12.8188 seconds
+Total models: 100
+
+config_70-8: solving with these empty cells:
+	empty_cell(11,10). empty_cell(6,9). 
+	Elapsed: 99.0227 seconds
+Total models: 108
+
+config_70-9: solving with these empty cells:
+	empty_cell(26,1). empty_cell(46,10). 
+	Elapsed: 99.0185 seconds
+Total models: 135
+
+config_70-10: solving with these empty cells:
+	empty_cell(50,8). empty_cell(22,10). 
+	Elapsed: 99.0218 seconds
+Total models: 135
+
+config_70-11: solving with these empty cells:
+	empty_cell(25,1). empty_cell(28,4). 
+	Elapsed: 99.0235 seconds
+Total models: 159
+
+config_70-12: solving with these empty cells:
+	empty_cell(6,1). empty_cell(46,2). 
+	Elapsed: 99.0282 seconds
+Total models: 159
+
+config_70-13: solving with these empty cells:
+	empty_cell(37,4). empty_cell(50,5). 
+	Elapsed: 99.0247 seconds
+Total models: 159
+
+config_70-14: solving with these empty cells:
+	empty_cell(47,7). empty_cell(17,6). 
+	Elapsed: 91.6931 seconds
+Total models: 209
+
+config_70-15: solving with these empty cells:
+	empty_cell(44,4). empty_cell(39,3). 
+	Elapsed: 46.0219 seconds
+Total models: 259
+
+config_70-16: solving with these empty cells:
+	empty_cell(37,3). empty_cell(2,4). 
+	Elapsed: 5.0428 seconds
+Total models: 309
+
+config_70-17: solving with these empty cells:
+	empty_cell(5,10). empty_cell(25,5). 
+	Elapsed: 32.6647 seconds
+Total models: 359
+
+config_70-18: solving with these empty cells:
+	empty_cell(17,10). empty_cell(39,6). 
+	Elapsed: 77.3731 seconds
+Total models: 409
+
+config_70-19: solving with these empty cells:
+	empty_cell(33,5). empty_cell(20,4). 
+	Elapsed: 4.9898 seconds
+Total models: 459
+
+config_70-20: solving with these empty cells:
+	empty_cell(29,9). empty_cell(9,3). 
+	Elapsed: 99.0332 seconds
+Total models: 459
+
+config_70-21: solving with these empty cells:
+	empty_cell(36,3). empty_cell(31,4). 
+	Elapsed: 99.0220 seconds
+Total models: 459
+
+config_70-22: solving with these empty cells:
+	empty_cell(38,7). empty_cell(30,10). 
+	Elapsed: 99.0242 seconds
+Total models: 459
+
+config_70-23: solving with these empty cells:
+	empty_cell(18,8). empty_cell(7,1). 
+	Elapsed: 99.0215 seconds
+Total models: 471
+
+config_70-24: solving with these empty cells:
+	empty_cell(33,2). empty_cell(25,10). 
+	Elapsed: 81.7100 seconds
+Total models: 521
+
+config_70-25: solving with these empty cells:
+	empty_cell(14,1). empty_cell(21,4). 
+	Elapsed: 99.0354 seconds
+Total models: 521
+
+config_70-26: solving with these empty cells:
+	empty_cell(38,8). empty_cell(2,1). 
+	Elapsed: 35.0935 seconds
+Total models: 571
+
+config_70-27: solving with these empty cells:
+	empty_cell(28,10). empty_cell(42,4). 
+	Elapsed: 99.0261 seconds
+Total models: 571
+
+config_70-28: solving with these empty cells:
+	empty_cell(1,5). empty_cell(42,10). 
+	Elapsed: 99.0216 seconds
+Total models: 571
+
+config_70-29: solving with these empty cells:
+	empty_cell(44,8). empty_cell(27,9). 
+	Elapsed: 99.0253 seconds
+Total models: 579
+
+config_70-30: solving with these empty cells:
+	empty_cell(48,3). empty_cell(24,8). 
+	Elapsed: 99.0249 seconds
+Total models: 579
+
+config_70-31: solving with these empty cells:
+	empty_cell(11,7). empty_cell(5,6). 
+	Elapsed: 53.3678 seconds
+Total models: 629
+
+config_70-32: solving with these empty cells:
+	empty_cell(19,2). empty_cell(23,8). 
+	Elapsed: 99.0438 seconds
+Total models: 629
+
+config_70-33: solving with these empty cells:
+	empty_cell(20,9). empty_cell(50,3). 
+	Elapsed: 99.0190 seconds
+Total models: 629
+
+config_70-34: solving with these empty cells:
+	empty_cell(29,5). empty_cell(4,4). 
+	Elapsed: 99.0236 seconds
+Total models: 629
+
+config_70-35: solving with these empty cells:
+	empty_cell(2,2). empty_cell(41,7). 
+	Elapsed: 81.4518 seconds
+Total models: 679
+
+config_70-36: solving with these empty cells:
+	empty_cell(19,2). empty_cell(24,10). 
+	Elapsed: 4.5817 seconds
+Total models: 729
+
+config_70-37: solving with these empty cells:
+	empty_cell(47,4). empty_cell(19,8). 
+	Elapsed: 11.9397 seconds
+Total models: 779
+
+config_70-38: solving with these empty cells:
+	empty_cell(4,5). empty_cell(37,4). 
+	Elapsed: 18.2185 seconds
+Total models: 829
+
+config_70-39: solving with these empty cells:
+	empty_cell(47,10). empty_cell(15,3). 
+	Elapsed: 99.0313 seconds
+Total models: 829
+
+config_70-40: solving with these empty cells:
+	empty_cell(50,10). empty_cell(37,3). 
+	Elapsed: 84.5596 seconds
+Total models: 879
+
+config_70-41: solving with these empty cells:
+	empty_cell(35,1). empty_cell(45,10). 
+	Elapsed: 9.1510 seconds
+Total models: 929
+
+config_70-42: solving with these empty cells:
+	empty_cell(30,8). empty_cell(49,4). 
+	Elapsed: 2.2578 seconds
+Total models: 979
+
+config_70-43: solving with these empty cells:
+	empty_cell(10,8). empty_cell(7,9). 
+	Elapsed: 12.9363 seconds
+Total models: 1029
+
+config_70-44: solving with these empty cells:
+	empty_cell(27,9). empty_cell(25,2). 
+	Elapsed: 99.0285 seconds
+Total models: 1029
+
+config_70-45: solving with these empty cells:
+	empty_cell(20,10). empty_cell(27,2). 
+	Elapsed: 99.0222 seconds
+Total models: 1029
+
+config_70-46: solving with these empty cells:
+	empty_cell(25,9). empty_cell(10,5). 
+	Elapsed: 99.0220 seconds
+Total models: 1029
+
+config_70-47: solving with these empty cells:
+	empty_cell(26,9). empty_cell(24,4). 
+	Elapsed: 99.0215 seconds
+Total models: 1029
+
+config_70-48: solving with these empty cells:
+	empty_cell(10,6). empty_cell(42,4). 
+	Elapsed: 99.0257 seconds
+Total models: 1029
+
+config_70-49: solving with these empty cells:
+	empty_cell(19,8). empty_cell(25,3). 
+	Elapsed: 84.0933 seconds
+Total models: 1079
+
+config_70-50: solving with these empty cells:
+	empty_cell(44,10). empty_cell(17,7). 
+	Elapsed: 11.9656 seconds
+Total models: 1129
+
+config_70-51: solving with these empty cells:
+	empty_cell(39,7). empty_cell(49,1). 
+	Elapsed: 99.0215 seconds
+Total models: 1129
+
+config_70-52: solving with these empty cells:
+	empty_cell(33,7). empty_cell(11,1). 
+	Elapsed: 99.0261 seconds
+Total models: 1129
+
+config_70-53: solving with these empty cells:
+	empty_cell(11,4). empty_cell(39,1). 
+	Elapsed: 99.0217 seconds
+Total models: 1129
+
+config_70-54: solving with these empty cells:
+	empty_cell(38,10). empty_cell(2,7). 
+	Elapsed: 99.0254 seconds
+Total models: 1129
+
+config_70-55: solving with these empty cells:
+	empty_cell(31,6). empty_cell(33,2). 
+	Elapsed: 28.4273 seconds
+Total models: 1179
+
+config_70-56: solving with these empty cells:
+	empty_cell(16,2). empty_cell(5,6). 
+	Elapsed: 6.4020 seconds
+Total models: 1229
+
+config_70-57: solving with these empty cells:
+	empty_cell(35,7). empty_cell(1,9). 
+	Elapsed: 2.6230 seconds
+Total models: 1279
+
+config_70-58: solving with these empty cells:
+	empty_cell(18,1). empty_cell(11,5). 
+	Elapsed: 99.0347 seconds
+Total models: 1279
+
+config_70-59: solving with these empty cells:
+	empty_cell(35,7). empty_cell(42,1). 
+	Elapsed: 99.0206 seconds
+Total models: 1279
+
+config_70-60: solving with these empty cells:
+	empty_cell(37,8). empty_cell(44,3). 
+	Elapsed: 99.0280 seconds
+Total models: 1279
+
+config_70-61: solving with these empty cells:
+	empty_cell(44,6). empty_cell(31,4). 
+	Elapsed: 99.0261 seconds
+Total models: 1279
+
+config_70-62: solving with these empty cells:
+	empty_cell(8,4). empty_cell(16,3). 
+	Elapsed: 25.2567 seconds
+Total models: 1329
+
+config_70-63: solving with these empty cells:
+	empty_cell(50,6). empty_cell(30,10). 
+	Elapsed: 99.0294 seconds
+Total models: 1331
+
+config_70-64: solving with these empty cells:
+	empty_cell(2,6). empty_cell(35,10). 
+	Elapsed: 99.0241 seconds
+Total models: 1331
+
+config_70-65: solving with these empty cells:
+	empty_cell(42,7). empty_cell(21,5). 
+	Elapsed: 99.0202 seconds
+Total models: 1331
+
+config_70-66: solving with these empty cells:
+	empty_cell(46,4). empty_cell(43,8). 
+	Elapsed: 99.0206 seconds
+Total models: 1340
+
+config_70-67: solving with these empty cells:
+	empty_cell(12,10). empty_cell(43,9). 
+	Elapsed: 99.0196 seconds
+Total models: 1340
+
+config_70-68: solving with these empty cells:
+	empty_cell(14,6). empty_cell(29,1). 
+	Elapsed: 33.3633 seconds
+Total models: 1390
+
+config_70-69: solving with these empty cells:
+	empty_cell(9,4). empty_cell(6,5). 
+	Elapsed: 93.1647 seconds
+Total models: 1440
+
+config_70-70: solving with these empty cells:
+	empty_cell(26,5). empty_cell(18,4). 
+	Elapsed: 99.0217 seconds
+Total models: 1487
+
+config_70-71: solving with these empty cells:
+	empty_cell(40,6). empty_cell(49,8). 
+	Elapsed: 99.0198 seconds
+Total models: 1487
+
+config_70-72: solving with these empty cells:
+	empty_cell(43,9). empty_cell(9,7). 
+	Elapsed: 99.0201 seconds
+Total models: 1487
+
+config_70-73: solving with these empty cells:
+	empty_cell(19,3). empty_cell(11,7). 
+	Elapsed: 99.0225 seconds
+Total models: 1517
+
+config_70-74: solving with these empty cells:
+	empty_cell(8,7). empty_cell(43,5). 
+	Elapsed: 99.0258 seconds
+Total models: 1517
+
+config_70-75: solving with these empty cells:
+	empty_cell(48,7). empty_cell(12,3). 
+	Elapsed: 99.0223 seconds
+Total models: 1517
+
+config_70-76: solving with these empty cells:
+	empty_cell(37,7). empty_cell(21,1). 
+	Elapsed: 99.0215 seconds
+Total models: 1517
+
+config_70-77: solving with these empty cells:
+	empty_cell(21,1). empty_cell(39,7). 
+	Elapsed: 99.0257 seconds
+Total models: 1517
+
+config_70-78: solving with these empty cells:
+	empty_cell(50,7). empty_cell(19,10). 
+	Elapsed: 99.0269 seconds
+Total models: 1517
+
+config_70-79: solving with these empty cells:
+	empty_cell(10,3). empty_cell(20,7). 
+	Elapsed: 92.7466 seconds
+Total models: 1567
+
+config_70-80: solving with these empty cells:
+	empty_cell(30,4). empty_cell(34,1). 
+	Elapsed: 8.7352 seconds
+Total models: 1617
+
+config_70-81: solving with these empty cells:
+	empty_cell(46,1). empty_cell(44,4). 
+	Elapsed: 20.6833 seconds
+Total models: 1667
+
+config_70-82: solving with these empty cells:
+	empty_cell(42,5). empty_cell(35,7). 
+	Elapsed: 99.0405 seconds
+Total models: 1667
+
+config_70-83: solving with these empty cells:
+	empty_cell(11,5). empty_cell(45,9). 
+	Elapsed: 99.0238 seconds
+Total models: 1667
+
+config_70-84: solving with these empty cells:
+	empty_cell(23,7). empty_cell(48,6). 
+	Elapsed: 99.0253 seconds
+Total models: 1667
+
+config_70-85: solving with these empty cells:
+	empty_cell(15,6). empty_cell(7,8). 
+	Elapsed: 99.0238 seconds
+Total models: 1667
+
+config_70-86: solving with these empty cells:
+	empty_cell(49,1). empty_cell(11,2). 
+	Elapsed: 99.0283 seconds
+Total models: 1667
+
+config_70-87: solving with these empty cells:
+	empty_cell(14,7). empty_cell(35,10). 
+	Elapsed: 99.0259 seconds
+Total models: 1668
+
+config_70-88: solving with these empty cells:
+	empty_cell(19,4). empty_cell(5,6). 
+	Elapsed: 40.1698 seconds
+Total models: 1718
+
+config_70-89: solving with these empty cells:
+	empty_cell(50,6). empty_cell(21,1). 
+	Elapsed: 99.0315 seconds
+Total models: 1718
+
+config_70-90: solving with these empty cells:
+	empty_cell(18,4). empty_cell(45,3). 
+	Elapsed: 99.0201 seconds
+Total models: 1722
+
+config_70-91: solving with these empty cells:
+	empty_cell(2,10). empty_cell(49,5). 
+	Elapsed: 99.0224 seconds
+Total models: 1722
+
+config_70-92: solving with these empty cells:
+	empty_cell(45,7). empty_cell(13,9). 
+	Elapsed: 99.0235 seconds
+Total models: 1722
+
+config_70-93: solving with these empty cells:
+	empty_cell(23,9). empty_cell(45,3). 
+	Elapsed: 99.0186 seconds
+Total models: 1722
+
+config_70-94: solving with these empty cells:
+	empty_cell(3,2). empty_cell(32,9). 
+	Elapsed: 99.0241 seconds
+Total models: 1722
+
+config_70-95: solving with these empty cells:
+	empty_cell(24,10). empty_cell(28,2). 
+	Elapsed: 99.0246 seconds
+Total models: 1722
+
+config_70-96: solving with these empty cells:
+	empty_cell(18,2). empty_cell(24,5). 
+	Elapsed: 99.0270 seconds
+Total models: 1747
+
+config_70-97: solving with these empty cells:
+	empty_cell(21,5). empty_cell(26,1). 
+	Elapsed: 99.0239 seconds
+Total models: 1747
+
+config_70-98: solving with these empty cells:
+	empty_cell(7,4). empty_cell(3,9). 
+	Elapsed: 99.0245 seconds
+Total models: 1747
+
+config_70-99: solving with these empty cells:
+	empty_cell(11,7). empty_cell(17,4). 
+	Elapsed: 93.3535 seconds
+Total models: 1797
+
+config_70-100: solving with these empty cells:
+	empty_cell(49,9). empty_cell(44,5). 
+	Elapsed: 99.0287 seconds
+Total models: 1797
+
+config_70-101: solving with these empty cells:
+	empty_cell(35,6). empty_cell(32,8). 
+	Elapsed: 99.0205 seconds
+Total models: 1797
+
+config_70-102: solving with these empty cells:
+	empty_cell(33,9). empty_cell(46,4). 
+	Elapsed: 99.0254 seconds
+Total models: 1797
+
+config_70-103: solving with these empty cells:
+	empty_cell(1,10). empty_cell(42,5). 
+	Elapsed: 99.0277 seconds
+Total models: 1797
+
+config_70-104: solving with these empty cells:
+	empty_cell(32,2). empty_cell(1,9). 
+	Elapsed: 99.0342 seconds
+Total models: 1797
+
+config_70-105: solving with these empty cells:
+	empty_cell(6,7). empty_cell(29,10). 
+	Elapsed: 99.0182 seconds
+Total models: 1797
+
+config_70-106: solving with these empty cells:
+	empty_cell(35,6). empty_cell(31,7). 
+	Elapsed: 99.0228 seconds
+Total models: 1797
+
+config_70-107: solving with these empty cells:
+	empty_cell(31,8). empty_cell(33,5). 
+	Elapsed: 99.0212 seconds
+Total models: 1797
+
+config_70-108: solving with these empty cells:
+	empty_cell(37,5). empty_cell(12,6). 
+	Elapsed: 99.0209 seconds
+Total models: 1797
+
+config_70-109: solving with these empty cells:
+	empty_cell(25,1). empty_cell(41,7). 
+	Elapsed: 79.2912 seconds
+Total models: 1847
+
+config_70-110: solving with these empty cells:
+	empty_cell(48,9). empty_cell(12,3). 
+	Elapsed: 99.0428 seconds
+Total models: 1847
+
+config_70-111: solving with these empty cells:
+	empty_cell(39,1). empty_cell(18,9). 
+	Elapsed: 99.0196 seconds
+Total models: 1847
+
+config_70-112: solving with these empty cells:
+	empty_cell(21,3). empty_cell(23,6). 
+	Elapsed: 61.0025 seconds
+Total models: 1897
+
+config_70-113: solving with these empty cells:
+	empty_cell(45,10). empty_cell(37,2). 
+	Elapsed: 11.9655 seconds
+Total models: 1947
+
+config_70-114: solving with these empty cells:
+	empty_cell(23,7). empty_cell(37,4). 
+	Elapsed: 21.0823 seconds
+Total models: 1997
+
+config_70-115: solving with these empty cells:
+	empty_cell(47,4). empty_cell(15,1). 
+	Elapsed: 52.5958 seconds
+Total models: 2047
+
+config_70-116: solving with these empty cells:
+	empty_cell(37,3). empty_cell(9,5). 
+	Elapsed: 1.8989 seconds
+Total models: 2097
+
+config_70-117: solving with these empty cells:
+	empty_cell(21,1). empty_cell(40,6). 
+	Elapsed: 19.2516 seconds
+Total models: 2147
+
+config_70-118: solving with these empty cells:
+	empty_cell(47,4). empty_cell(43,5). 
+	Elapsed: 2.2195 seconds
+Total models: 2197
+
+config_70-119: solving with these empty cells:
+	empty_cell(40,3). empty_cell(10,10). 
+	Elapsed: 74.0163 seconds
+Total models: 2247
+
+config_70-120: solving with these empty cells:
+	empty_cell(4,6). empty_cell(32,4). 
+	Elapsed: 99.0244 seconds
+Total models: 2247
+
+config_70-121: solving with these empty cells:
+	empty_cell(17,2). empty_cell(36,9). 
+	Elapsed: 99.0245 seconds
+Total models: 2247
+
+config_70-122: solving with these empty cells:
+	empty_cell(29,8). empty_cell(27,5). 
+	Elapsed: 99.0352 seconds
+Total models: 2247
+
+config_70-123: solving with these empty cells:
+	empty_cell(26,7). empty_cell(18,1). 
+	Elapsed: 99.0216 seconds
+Total models: 2247
+
+config_70-124: solving with these empty cells:
+	empty_cell(5,1). empty_cell(47,4). 
+	Elapsed: 99.0221 seconds
+Total models: 2283
+
+config_70-125: solving with these empty cells:
+	empty_cell(33,7). empty_cell(26,6). 
+	Elapsed: 99.0218 seconds
+Total models: 2283
+
+config_70-126: solving with these empty cells:
+	empty_cell(21,9). empty_cell(23,4). 
+	Elapsed: 46.0406 seconds
+Total models: 2333
+
+config_70-127: solving with these empty cells:
+	empty_cell(29,9). empty_cell(28,3). 
+	Elapsed: 78.0576 seconds
+Total models: 2383
+
+config_70-128: solving with these empty cells:
+	empty_cell(49,8). empty_cell(1,3). 
+	Elapsed: 99.0285 seconds
+Total models: 2383
+
+config_70-129: solving with these empty cells:
+	empty_cell(9,7). empty_cell(43,3). 
+	Elapsed: 79.1125 seconds
+Total models: 2433
+
+config_70-130: solving with these empty cells:
+	empty_cell(2,2). empty_cell(35,10). 
+	Elapsed: 1.8452 seconds
+Total models: 2483
+
+config_70-131: solving with these empty cells:
+	empty_cell(32,5). empty_cell(18,10). 
+	Elapsed: 99.0378 seconds
+Total models: 2483
+
+config_70-132: solving with these empty cells:
+	empty_cell(27,3). empty_cell(17,1). 
+	Elapsed: 64.3400 seconds
+Total models: 2533
+
+config_70-133: solving with these empty cells:
+	empty_cell(24,6). empty_cell(49,9). 
+	Elapsed: 25.1451 seconds
+Total models: 2583
+
+config_70-134: solving with these empty cells:
+	empty_cell(36,6). empty_cell(12,2). 
+	Elapsed: 12.1875 seconds
+Total models: 2633
+
+config_70-135: solving with these empty cells:
+	empty_cell(11,1). empty_cell(33,4). 
+	Elapsed: 1.0338 seconds
+Total models: 2683
+
+config_70-136: solving with these empty cells:
+	empty_cell(34,8). empty_cell(30,5). 
+	Elapsed: 1.2927 seconds
+Total models: 2733
+
+config_70-137: solving with these empty cells:
+	empty_cell(6,7). empty_cell(50,1). 
+	Elapsed: 99.0277 seconds
+Total models: 2733
+
+config_70-138: solving with these empty cells:
+	empty_cell(36,1). empty_cell(28,8). 
+	Elapsed: 99.0237 seconds
+Total models: 2733
+
+config_70-139: solving with these empty cells:
+	empty_cell(3,1). empty_cell(9,6). 
+	Elapsed: 99.0233 seconds
+Total models: 2733
+
+config_70-140: solving with these empty cells:
+	empty_cell(29,3). empty_cell(5,4). 
+	Elapsed: 99.0201 seconds
+Total models: 2733
+
+config_70-141: solving with these empty cells:
+	empty_cell(42,3). empty_cell(40,8). 
+	Elapsed: 99.0224 seconds
+Total models: 2733
+
+config_70-142: solving with these empty cells:
+	empty_cell(19,3). empty_cell(2,7). 
+	Elapsed: 99.0218 seconds
+Total models: 2733
+
+config_70-143: solving with these empty cells:
+	empty_cell(40,1). empty_cell(24,6). 
+	Elapsed: 99.0263 seconds
+Total models: 2733
+
+config_70-144: solving with these empty cells:
+	empty_cell(44,2). empty_cell(15,3). 
+	Elapsed: 43.0627 seconds
+Total models: 2783
+
+config_70-145: solving with these empty cells:
+	empty_cell(11,7). empty_cell(3,9). 
+	Elapsed: 99.0221 seconds
+Total models: 2783
+
+config_70-146: solving with these empty cells:
+	empty_cell(5,8). empty_cell(22,6). 
+	Elapsed: 99.0239 seconds
+Total models: 2783
+
+config_70-147: solving with these empty cells:
+	empty_cell(37,8). empty_cell(38,4). 
+	Elapsed: 91.0528 seconds
+Total models: 2833
+
+config_70-148: solving with these empty cells:
+	empty_cell(18,5). empty_cell(7,10). 
+	Elapsed: 99.0306 seconds
+Total models: 2833
+
+config_70-149: solving with these empty cells:
+	empty_cell(26,8). empty_cell(46,1). 
+	Elapsed: 77.8106 seconds
+Total models: 2883
+
+config_70-150: solving with these empty cells:
+	empty_cell(30,2). empty_cell(10,6). 
+	Elapsed: 99.0330 seconds
+Total models: 2883
+
+config_70-151: solving with these empty cells:
+	empty_cell(31,7). empty_cell(24,2). 
+	Elapsed: 99.0232 seconds
+Total models: 2911
+
+config_70-152: solving with these empty cells:
+	empty_cell(10,5). empty_cell(21,6). 
+	Elapsed: 99.0231 seconds
+Total models: 2927
+
+config_70-153: solving with these empty cells:
+	empty_cell(20,8). empty_cell(7,2). 
+	Elapsed: 77.0484 seconds
+Total models: 2977
+
+config_70-154: solving with these empty cells:
+	empty_cell(6,7). empty_cell(36,9). 
+	Elapsed: 99.0278 seconds
+Total models: 2977
+
+config_70-155: solving with these empty cells:
+	empty_cell(32,9). empty_cell(14,1). 
+	Elapsed: 99.0225 seconds
+Total models: 3001
+
+config_70-156: solving with these empty cells:
+	empty_cell(44,7). empty_cell(34,10). 
+	Elapsed: 99.0246 seconds
+Total models: 3001
+
+config_70-157: solving with these empty cells:
+	empty_cell(22,9). empty_cell(41,2). 
+	Elapsed: 99.0206 seconds
+Total models: 3001
+
+config_70-158: solving with these empty cells:
+	empty_cell(36,2). empty_cell(6,3). 
+	Elapsed: 99.0231 seconds
+Total models: 3001
+
+config_70-159: solving with these empty cells:
+	empty_cell(31,5). empty_cell(11,7). 
+	Elapsed: 99.0280 seconds
+Total models: 3001
+
+config_70-160: solving with these empty cells:
+	empty_cell(28,7). empty_cell(31,10). 
+	Elapsed: 99.0250 seconds
+Total models: 3032
+
+config_70-161: solving with these empty cells:
+	empty_cell(48,2). empty_cell(5,6). 
+	Elapsed: 64.1207 seconds
+Total models: 3082
+
+config_70-162: solving with these empty cells:
+	empty_cell(36,2). empty_cell(38,3). 
+	Elapsed: 4.8869 seconds
+Total models: 3132
+
+config_70-163: solving with these empty cells:
+	empty_cell(10,1). empty_cell(25,8). 
+	Elapsed: 99.0340 seconds
+Total models: 3151
+
+config_70-164: solving with these empty cells:
+	empty_cell(17,1). empty_cell(34,3). 
+	Elapsed: 43.1289 seconds
+Total models: 3201
+
+config_70-165: solving with these empty cells:
+	empty_cell(20,2). empty_cell(3,8). 
+	Elapsed: 4.8888 seconds
+Total models: 3251
+
+config_70-166: solving with these empty cells:
+	empty_cell(47,2). empty_cell(42,7). 
+	Elapsed: 99.0305 seconds
+Total models: 3253
+
+config_70-167: solving with these empty cells:
+	empty_cell(12,7). empty_cell(29,6). 
+	Elapsed: 99.0204 seconds
+Total models: 3253
+
+config_70-168: solving with these empty cells:
+	empty_cell(47,2). empty_cell(4,7). 
+	Elapsed: 99.0284 seconds
+Total models: 3253
+
+config_70-169: solving with these empty cells:
+	empty_cell(8,6). empty_cell(9,5). 
+	Elapsed: 15.8195 seconds
+Total models: 3303
+
+config_70-170: solving with these empty cells:
+	empty_cell(32,9). empty_cell(35,2). 
+	Elapsed: 74.5882 seconds
+Total models: 3353
+
+config_70-171: solving with these empty cells:
+	empty_cell(15,9). empty_cell(32,1). 
+	Elapsed: 99.0228 seconds
+Total models: 3353
+
+config_70-172: solving with these empty cells:
+	empty_cell(44,4). empty_cell(30,7). 
+	Elapsed: 99.0245 seconds
+Total models: 3353
+
+config_70-173: solving with these empty cells:
+	empty_cell(32,6). empty_cell(5,9). 
+	Elapsed: 99.0246 seconds
+Total models: 3353
+
+config_70-174: solving with these empty cells:
+	empty_cell(41,2). empty_cell(37,9). 
+	Elapsed: 99.0224 seconds
+Total models: 3353
+
+config_70-175: solving with these empty cells:
+	empty_cell(18,4). empty_cell(25,7). 
+	Elapsed: 99.0275 seconds
+Total models: 3353
+
+config_70-176: solving with these empty cells:
+	empty_cell(20,6). empty_cell(30,2). 
+	Elapsed: 99.0243 seconds
+Total models: 3353
+
+config_70-177: solving with these empty cells:
+	empty_cell(41,3). empty_cell(20,9). 
+	Elapsed: 99.0258 seconds
+Total models: 3353
+
+config_70-178: solving with these empty cells:
+	empty_cell(36,5). empty_cell(25,1). 
+	Elapsed: 99.0273 seconds
+Total models: 3353
+
+config_70-179: solving with these empty cells:
+	empty_cell(35,3). empty_cell(47,9). 
+	Elapsed: 99.0232 seconds
+Total models: 3353
+
+config_70-180: solving with these empty cells:
+	empty_cell(33,8). empty_cell(37,9). 
+	Elapsed: 99.0222 seconds
+Total models: 3353
+
+config_70-181: solving with these empty cells:
+	empty_cell(8,10). empty_cell(37,2). 
+	Elapsed: 29.9608 seconds
+Total models: 3403
+
+config_70-182: solving with these empty cells:
+	empty_cell(19,8). empty_cell(7,4). 
+	Elapsed: 99.0389 seconds
+Total models: 3403
+
+config_70-183: solving with these empty cells:
+	empty_cell(4,7). empty_cell(10,5). 
+	Elapsed: 22.8341 seconds
+Total models: 3453
+
+config_70-184: solving with these empty cells:
+	empty_cell(1,6). empty_cell(36,3). 
+	Elapsed: 15.2593 seconds
+Total models: 3503
+
+config_70-185: solving with these empty cells:
+	empty_cell(25,1). empty_cell(38,8). 
+	Elapsed: 99.0309 seconds
+Total models: 3507
+
+config_70-186: solving with these empty cells:
+	empty_cell(21,3). empty_cell(50,5). 
+	Elapsed: 99.0275 seconds
+Total models: 3507
+
+config_70-187: solving with these empty cells:
+	empty_cell(45,2). empty_cell(2,1). 
+	Elapsed: 59.1301 seconds
+Total models: 3557
+
+config_70-188: solving with these empty cells:
+	empty_cell(9,8). empty_cell(23,1). 
+	Elapsed: 6.7165 seconds
+Total models: 3607
+
+config_70-189: solving with these empty cells:
+	empty_cell(8,7). empty_cell(17,10). 
+	Elapsed: 99.0377 seconds
+Total models: 3607
+
+config_70-190: solving with these empty cells:
+	empty_cell(35,3). empty_cell(40,10). 
+	Elapsed: 99.0208 seconds
+Total models: 3607
+
+config_70-191: solving with these empty cells:
+	empty_cell(22,3). empty_cell(35,2). 
+	Elapsed: 99.0254 seconds
+Total models: 3607
+
+config_70-192: solving with these empty cells:
+	empty_cell(28,9). empty_cell(17,7). 
+	Elapsed: 99.0269 seconds
+Total models: 3607
+
+config_70-193: solving with these empty cells:
+	empty_cell(3,3). empty_cell(1,8). 
+	Elapsed: 99.0215 seconds
+Total models: 3607
+
+config_70-194: solving with these empty cells:
+	empty_cell(26,5). empty_cell(25,4). 
+	Elapsed: 99.0208 seconds
+Total models: 3623
+
+config_70-195: solving with these empty cells:
+	empty_cell(18,5). empty_cell(1,4). 
+	Elapsed: 99.0237 seconds
+Total models: 3623
+
+config_70-196: solving with these empty cells:
+	empty_cell(17,4). empty_cell(48,6). 
+	Elapsed: 99.0202 seconds
+Total models: 3623
+
+config_70-197: solving with these empty cells:
+	empty_cell(45,4). empty_cell(16,8). 
+	Elapsed: 6.8156 seconds
+Total models: 3673
+
+config_70-198: solving with these empty cells:
+	empty_cell(41,7). empty_cell(45,3). 
+	Elapsed: 99.0361 seconds
+Total models: 3673
+
+config_70-199: solving with these empty cells:
+	empty_cell(49,4). empty_cell(2,2). 
+	Elapsed: 99.0242 seconds
+Total models: 3673
+
+config_70-200: solving with these empty cells:
+	empty_cell(50,7). empty_cell(34,3). 
+	Elapsed: 99.0231 seconds
+Total models: 3673
+
+config_70-201: solving with these empty cells:
+	empty_cell(25,5). empty_cell(29,1). 
+	Elapsed: 99.0241 seconds
+Total models: 3673
+
+config_70-202: solving with these empty cells:
+	empty_cell(48,9). empty_cell(7,8). 
+	Elapsed: 99.0255 seconds
+Total models: 3673
+
+config_70-203: solving with these empty cells:
+	empty_cell(20,8). empty_cell(19,1). 
+	Elapsed: 99.0287 seconds
+Total models: 3673
+
+config_70-204: solving with these empty cells:
+	empty_cell(1,10). empty_cell(38,1). 
+	Elapsed: 49.8656 seconds
+Total models: 3723
+
+config_70-205: solving with these empty cells:
+	empty_cell(45,4). empty_cell(40,6). 
+	Elapsed: 99.0250 seconds
+Total models: 3723
+
+config_70-206: solving with these empty cells:
+	empty_cell(33,3). empty_cell(15,6). 
+	Elapsed: 99.0273 seconds
+Total models: 3723
+
+config_70-207: solving with these empty cells:
+	empty_cell(14,8). empty_cell(20,9). 
+	Elapsed: 99.0239 seconds
+Total models: 3727
+
+config_70-208: solving with these empty cells:
+	empty_cell(3,6). empty_cell(27,3). 
+	Elapsed: 11.4422 seconds
+Total models: 3777
+
+config_70-209: solving with these empty cells:
+	empty_cell(6,6). empty_cell(8,4). 
+	Elapsed: 99.0328 seconds
+Total models: 3781
+
+config_70-210: solving with these empty cells:
+	empty_cell(49,8). empty_cell(46,2). 
+	Elapsed: 99.0227 seconds
+Total models: 3781
+
+config_70-211: solving with these empty cells:
+	empty_cell(50,7). empty_cell(30,3). 
+	Elapsed: 99.0221 seconds
+Total models: 3791
+
+config_70-212: solving with these empty cells:
+	empty_cell(11,6). empty_cell(23,3). 
+	Elapsed: 99.0265 seconds
+Total models: 3791
+
+config_70-213: solving with these empty cells:
+	empty_cell(9,9). empty_cell(3,5). 
+	Elapsed: 99.0241 seconds
+Total models: 3791
+
+config_70-214: solving with these empty cells:
+	empty_cell(17,1). empty_cell(46,2). 
+	Elapsed: 99.0271 seconds
+Total models: 3791
+
+config_70-215: solving with these empty cells:
+	empty_cell(43,7). empty_cell(28,6). 
+	Elapsed: 83.7760 seconds
+Total models: 3841
+
+config_70-216: solving with these empty cells:
+	empty_cell(20,2). empty_cell(1,7). 
+	Elapsed: 49.2946 seconds
+Total models: 3891
+
+config_70-217: solving with these empty cells:
+	empty_cell(23,9). empty_cell(46,1). 
+	Elapsed: 99.0261 seconds
+Total models: 3891
+
+config_70-218: solving with these empty cells:
+	empty_cell(37,7). empty_cell(11,9). 
+	Elapsed: 99.0249 seconds
+Total models: 3891
+
+config_70-219: solving with these empty cells:
+	empty_cell(45,5). empty_cell(26,4). 
+	Elapsed: 99.0228 seconds
+Total models: 3891
+
+config_70-220: solving with these empty cells:
+	empty_cell(5,2). empty_cell(13,1). 
+	Elapsed: 81.8613 seconds
+Total models: 3941
+
+config_70-221: solving with these empty cells:
+	empty_cell(11,9). empty_cell(43,8). 
+	Elapsed: 99.0339 seconds
+Total models: 3941
+
+config_70-222: solving with these empty cells:
+	empty_cell(47,10). empty_cell(32,7). 
+	Elapsed: 85.8500 seconds
+Total models: 3991
+
+config_70-223: solving with these empty cells:
+	empty_cell(43,10). empty_cell(29,7). 
+	Elapsed: 16.0181 seconds
+Total models: 4041
+
+config_70-224: solving with these empty cells:
+	empty_cell(31,3). empty_cell(46,7). 
+	Elapsed: 99.0268 seconds
+Total models: 4041
+
+config_70-225: solving with these empty cells:
+	empty_cell(30,4). empty_cell(3,5). 
+	Elapsed: 99.0234 seconds
+Total models: 4041
+
+config_70-226: solving with these empty cells:
+	empty_cell(44,9). empty_cell(14,3). 
+	Elapsed: 82.0415 seconds
+Total models: 4091
+
+config_70-227: solving with these empty cells:
+	empty_cell(26,6). empty_cell(41,5). 
+	Elapsed: 99.0270 seconds
+Total models: 4091
+
+config_70-228: solving with these empty cells:
+	empty_cell(13,4). empty_cell(34,8). 
+	Elapsed: 99.0230 seconds
+Total models: 4091
+
+config_70-229: solving with these empty cells:
+	empty_cell(37,8). empty_cell(39,9). 
+	Elapsed: 99.0262 seconds
+Total models: 4127
+
+config_70-230: solving with these empty cells:
+	empty_cell(32,10). empty_cell(1,9). 
+	Elapsed: 69.7547 seconds
+Total models: 4177
+
+config_70-231: solving with these empty cells:
+	empty_cell(17,4). empty_cell(22,8). 
+	Elapsed: 99.0256 seconds
+Total models: 4177
+
+config_70-232: solving with these empty cells:
+	empty_cell(18,9). empty_cell(21,6). 
+	Elapsed: 99.0225 seconds
+Total models: 4177
+
+config_70-233: solving with these empty cells:
+	empty_cell(4,10). empty_cell(42,3). 
+	Elapsed: 99.0261 seconds
+Total models: 4177
+
+config_70-234: solving with these empty cells:
+	empty_cell(24,5). empty_cell(31,4). 
+	Elapsed: 99.0230 seconds
+Total models: 4177
+
+config_70-235: solving with these empty cells:
+	empty_cell(12,7). empty_cell(45,3). 
+	Elapsed: 99.0226 seconds
+Total models: 4177
+
+config_70-236: solving with these empty cells:
+	empty_cell(35,4). empty_cell(6,6). 
+	Elapsed: 99.0223 seconds
+Total models: 4177
+
+config_70-237: solving with these empty cells:
+	empty_cell(30,7). empty_cell(13,3). 
+	Elapsed: 56.7714 seconds
+Total models: 4227
+
+config_70-238: solving with these empty cells:
+	empty_cell(2,3). empty_cell(28,10). 
+	Elapsed: 99.0321 seconds
+Total models: 4227
+
+config_70-239: solving with these empty cells:
+	empty_cell(26,4). empty_cell(34,2). 
+	Elapsed: 99.0230 seconds
+Total models: 4227
+
+config_70-240: solving with these empty cells:
+	empty_cell(48,3). empty_cell(16,5). 
+	Elapsed: 41.5252 seconds
+Total models: 4277
+
+config_70-241: solving with these empty cells:
+	empty_cell(25,3). empty_cell(37,5). 
+	Elapsed: 99.0299 seconds
+Total models: 4277
+
+config_70-242: solving with these empty cells:
+	empty_cell(28,2). empty_cell(37,9). 
+	Elapsed: 99.0241 seconds
+Total models: 4277
+
+config_70-243: solving with these empty cells:
+	empty_cell(4,8). empty_cell(24,1). 
+	Elapsed: 84.4990 seconds
+Total models: 4327
+
+config_70-244: solving with these empty cells:
+	empty_cell(41,9). empty_cell(18,1). 
+	Elapsed: 99.0234 seconds
+Total models: 4327
+
+config_70-245: solving with these empty cells:
+	empty_cell(33,5). empty_cell(17,6). 
+	Elapsed: 28.0733 seconds
+Total models: 4377
+
+config_70-246: solving with these empty cells:
+	empty_cell(2,9). empty_cell(44,2). 
+	Elapsed: 60.0515 seconds
+Total models: 4427
+
+config_70-247: solving with these empty cells:
+	empty_cell(30,10). empty_cell(23,3). 
+	Elapsed: 99.0259 seconds
+Total models: 4427
+
+config_70-248: solving with these empty cells:
+	empty_cell(3,6). empty_cell(37,1). 
+	Elapsed: 99.0301 seconds
+Total models: 4427
+
+config_70-249: solving with these empty cells:
+	empty_cell(29,2). empty_cell(49,8). 
+	Elapsed: 99.0244 seconds
+Total models: 4427
+
+config_70-250: solving with these empty cells:
+	empty_cell(43,5). empty_cell(29,4). 
+	Elapsed: 93.1244 seconds
+Total models: 4477
+
+config_70-251: solving with these empty cells:
+	empty_cell(15,9). empty_cell(48,2). 
+	Elapsed: 99.0305 seconds
+Total models: 4493
+
+config_70-252: solving with these empty cells:
+	empty_cell(31,3). empty_cell(26,9). 
+	Elapsed: 99.0274 seconds
+Total models: 4496
+
+config_70-253: solving with these empty cells:
+	empty_cell(49,6). empty_cell(16,1). 
+	Elapsed: 99.0248 seconds
+Total models: 4496
+
+config_70-254: solving with these empty cells:
+	empty_cell(21,5). empty_cell(26,7). 
+	Elapsed: 55.8159 seconds
+Total models: 4546
+
+config_70-255: solving with these empty cells:
+	empty_cell(33,1). empty_cell(24,3). 
+	Elapsed: 2.0682 seconds
+Total models: 4596
+
+config_70-256: solving with these empty cells:
+	empty_cell(49,3). empty_cell(18,10). 
+	Elapsed: 5.0230 seconds
+Total models: 4646
+
+config_70-257: solving with these empty cells:
+	empty_cell(3,3). empty_cell(12,6). 
+	Elapsed: 4.6161 seconds
+Total models: 4696
+
+config_70-258: solving with these empty cells:
+	empty_cell(21,7). empty_cell(12,5). 
+	Elapsed: 99.0339 seconds
+Total models: 4696
+
+config_70-259: solving with these empty cells:
+	empty_cell(26,5). empty_cell(7,3). 
+	Elapsed: 99.0273 seconds
+Total models: 4696
+
+config_70-260: solving with these empty cells:
+	empty_cell(45,10). empty_cell(30,6). 
+	Elapsed: 99.0247 seconds
+Total models: 4696
+
+config_70-261: solving with these empty cells:
+	empty_cell(45,6). empty_cell(21,1). 
+	Elapsed: 99.0238 seconds
+Total models: 4696
+
+config_70-262: solving with these empty cells:
+	empty_cell(28,9). empty_cell(9,6). 
+	Elapsed: 99.0243 seconds
+Total models: 4696
+
+config_70-263: solving with these empty cells:
+	empty_cell(6,6). empty_cell(48,2). 
+	Elapsed: 99.0211 seconds
+Total models: 4696
+
+config_70-264: solving with these empty cells:
+	empty_cell(5,4). empty_cell(8,2). 
+	Elapsed: 73.5446 seconds
+Total models: 4746
+
+config_70-265: solving with these empty cells:
+	empty_cell(20,10). empty_cell(31,8). 
+	Elapsed: 99.0227 seconds
+Total models: 4746
+
+config_70-266: solving with these empty cells:
+	empty_cell(14,4). empty_cell(15,7). 
+	Elapsed: 59.8353 seconds
+Total models: 4796
+
+config_70-267: solving with these empty cells:
+	empty_cell(7,8). empty_cell(41,6). 
+	Elapsed: 90.3822 seconds
+Total models: 4846
+
+config_70-268: solving with these empty cells:
+	empty_cell(39,3). empty_cell(42,1). 
+	Elapsed: 8.3639 seconds
+Total models: 4896
+
+config_70-269: solving with these empty cells:
+	empty_cell(40,2). empty_cell(50,6). 
+	Elapsed: 4.5484 seconds
+Total models: 4946
+
+config_70-270: solving with these empty cells:
+	empty_cell(20,9). empty_cell(46,2). 
+	Elapsed: 99.0324 seconds
+Total models: 4946
+
+config_70-271: solving with these empty cells:
+	empty_cell(13,8). empty_cell(17,7). 
+	Elapsed: 23.0754 seconds
+Total models: 4996
+
+config_70-272: solving with these empty cells:
+	empty_cell(26,6). empty_cell(24,7). 
+	Elapsed: 99.0250 seconds
+Total models: 4996
+
+config_70-273: solving with these empty cells:
+	empty_cell(32,9). empty_cell(28,5). 
+	Elapsed: 99.0233 seconds
+Total models: 4996
+
+config_70-274: solving with these empty cells:
+	empty_cell(46,8). empty_cell(42,4). 
+	Elapsed: 67.0228 seconds
+Total models: 5046
+
+=======================================================
+config_70 total time: 21890.1360 seconds
+=======================================================
+config_35-1: solving with these empty cells:
+	empty_cell(22,5). empty_cell(46,1). empty_cell(42,6). empty_cell(23,10). empty_cell(18,3). 
+	Elapsed: 28.7287 seconds
+Total models: 50
+
+config_35-2: solving with these empty cells:
+	empty_cell(16,6). empty_cell(41,9). empty_cell(29,7). empty_cell(34,4). empty_cell(32,5). 
+	Elapsed: 1.1382 seconds
+Total models: 100
+
+config_35-3: solving with these empty cells:
+	empty_cell(43,10). empty_cell(36,4). empty_cell(40,6). empty_cell(8,8). empty_cell(38,2). 
+	Elapsed: 0.9211 seconds
+Total models: 150
+
+config_35-4: solving with these empty cells:
+	empty_cell(30,3). empty_cell(14,10). empty_cell(3,8). empty_cell(28,4). empty_cell(9,5). 
+	Elapsed: 33.0246 seconds
+Total models: 170
+
+config_35-5: solving with these empty cells:
+	empty_cell(31,1). empty_cell(48,5). empty_cell(38,6). empty_cell(9,9). empty_cell(37,8). 
+	Elapsed: 10.6550 seconds
+Total models: 220
+
+config_35-6: solving with these empty cells:
+	empty_cell(16,10). empty_cell(7,1). empty_cell(2,8). empty_cell(45,6). empty_cell(18,4). 
+	Elapsed: 33.0200 seconds
+Total models: 232
+
+config_35-7: solving with these empty cells:
+	empty_cell(43,7). empty_cell(28,2). empty_cell(5,3). empty_cell(16,1). empty_cell(40,5). 
+	Elapsed: 33.0188 seconds
+Total models: 244
+
+config_35-8: solving with these empty cells:
+	empty_cell(39,10). empty_cell(48,3). empty_cell(18,2). empty_cell(2,5). empty_cell(32,8). 
+	Elapsed: 33.0202 seconds
+Total models: 264
+
+config_35-9: solving with these empty cells:
+	empty_cell(50,5). empty_cell(16,10). empty_cell(7,9). empty_cell(37,8). empty_cell(22,7). 
+	Elapsed: 33.0226 seconds
+Total models: 279
+
+config_35-10: solving with these empty cells:
+	empty_cell(18,3). empty_cell(50,2). empty_cell(11,4). empty_cell(27,6). empty_cell(25,7). 
+	Elapsed: 6.7030 seconds
+Total models: 329
+
+config_35-11: solving with these empty cells:
+	empty_cell(27,9). empty_cell(29,6). empty_cell(31,8). empty_cell(18,10). empty_cell(9,2). 
+	Elapsed: 7.1604 seconds
+Total models: 379
+
+config_35-12: solving with these empty cells:
+	empty_cell(13,4). empty_cell(3,2). empty_cell(35,8). empty_cell(50,5). empty_cell(29,10). 
+	Elapsed: 7.5751 seconds
+Total models: 429
+
+config_35-13: solving with these empty cells:
+	empty_cell(35,6). empty_cell(3,10). empty_cell(48,4). empty_cell(36,7). empty_cell(16,9). 
+	Elapsed: 16.3877 seconds
+Total models: 479
+
+config_35-14: solving with these empty cells:
+	empty_cell(22,6). empty_cell(42,1). empty_cell(2,9). empty_cell(6,8). empty_cell(49,4). 
+	Elapsed: 1.6967 seconds
+Total models: 529
+
+config_35-15: solving with these empty cells:
+	empty_cell(36,10). empty_cell(20,8). empty_cell(49,4). empty_cell(14,9). empty_cell(13,5). 
+	Elapsed: 33.0232 seconds
+Total models: 529
+
+config_35-16: solving with these empty cells:
+	empty_cell(38,6). empty_cell(33,2). empty_cell(49,7). empty_cell(3,8). empty_cell(13,1). 
+	Elapsed: 20.2182 seconds
+Total models: 579
+
+config_35-17: solving with these empty cells:
+	empty_cell(27,10). empty_cell(25,5). empty_cell(31,7). empty_cell(28,1). empty_cell(40,8). 
+	Elapsed: 33.0212 seconds
+Total models: 579
+
+config_35-18: solving with these empty cells:
+	empty_cell(15,4). empty_cell(1,3). empty_cell(26,6). empty_cell(30,8). empty_cell(16,7). 
+	Elapsed: 33.0178 seconds
+Total models: 579
+
+config_35-19: solving with these empty cells:
+	empty_cell(44,10). empty_cell(8,6). empty_cell(6,2). empty_cell(37,7). empty_cell(11,3). 
+	Elapsed: 33.0185 seconds
+Total models: 615
+
+config_35-20: solving with these empty cells:
+	empty_cell(9,4). empty_cell(49,5). empty_cell(22,9). empty_cell(37,1). empty_cell(50,6). 
+	Elapsed: 7.5490 seconds
+Total models: 665
+
+config_35-21: solving with these empty cells:
+	empty_cell(10,4). empty_cell(45,10). empty_cell(22,3). empty_cell(1,1). empty_cell(20,6). 
+	Elapsed: 33.0209 seconds
+Total models: 697
+
+config_35-22: solving with these empty cells:
+	empty_cell(30,5). empty_cell(40,7). empty_cell(5,2). empty_cell(18,8). empty_cell(19,4). 
+	Elapsed: 21.7557 seconds
+Total models: 747
+
+config_35-23: solving with these empty cells:
+	empty_cell(5,10). empty_cell(49,8). empty_cell(29,7). empty_cell(10,1). empty_cell(47,9). 
+	Elapsed: 12.7476 seconds
+Total models: 797
+
+config_35-24: solving with these empty cells:
+	empty_cell(34,8). empty_cell(7,1). empty_cell(40,7). empty_cell(1,4). empty_cell(4,9). 
+	Elapsed: 2.3113 seconds
+Total models: 847
+
+config_35-25: solving with these empty cells:
+	empty_cell(24,2). empty_cell(9,8). empty_cell(28,6). empty_cell(11,10). empty_cell(39,3). 
+	Elapsed: 1.4258 seconds
+Total models: 897
+
+config_35-26: solving with these empty cells:
+	empty_cell(20,2). empty_cell(7,10). empty_cell(38,9). empty_cell(14,7). empty_cell(3,5). 
+	Elapsed: 1.3844 seconds
+Total models: 947
+
+config_35-27: solving with these empty cells:
+	empty_cell(43,9). empty_cell(41,1). empty_cell(46,10). empty_cell(48,5). empty_cell(13,4). 
+	Elapsed: 1.1110 seconds
+Total models: 997
+
+config_35-28: solving with these empty cells:
+	empty_cell(24,1). empty_cell(39,10). empty_cell(13,4). empty_cell(43,9). empty_cell(9,3). 
+	Elapsed: 1.9497 seconds
+Total models: 1047
+
+config_35-29: solving with these empty cells:
+	empty_cell(37,3). empty_cell(6,7). empty_cell(22,10). empty_cell(4,9). empty_cell(5,2). 
+	Elapsed: 10.0889 seconds
+Total models: 1097
+
+config_35-30: solving with these empty cells:
+	empty_cell(11,10). empty_cell(34,6). empty_cell(16,5). empty_cell(15,3). empty_cell(31,2). 
+	Elapsed: 33.0225 seconds
+Total models: 1123
+
+config_35-31: solving with these empty cells:
+	empty_cell(18,7). empty_cell(23,4). empty_cell(24,9). empty_cell(45,10). empty_cell(33,2). 
+	Elapsed: 10.1742 seconds
+Total models: 1173
+
+config_35-32: solving with these empty cells:
+	empty_cell(26,5). empty_cell(32,4). empty_cell(48,7). empty_cell(18,8). empty_cell(29,1). 
+	Elapsed: 1.5331 seconds
+Total models: 1223
+
+config_35-33: solving with these empty cells:
+	empty_cell(22,4). empty_cell(49,10). empty_cell(29,8). empty_cell(23,3). empty_cell(3,9). 
+	Elapsed: 4.5865 seconds
+Total models: 1273
+
+config_35-34: solving with these empty cells:
+	empty_cell(13,4). empty_cell(20,7). empty_cell(2,5). empty_cell(49,1). empty_cell(35,8). 
+	Elapsed: 4.2835 seconds
+Total models: 1323
+
+config_35-35: solving with these empty cells:
+	empty_cell(22,5). empty_cell(15,4). empty_cell(48,7). empty_cell(17,2). empty_cell(39,10). 
+	Elapsed: 18.2905 seconds
+Total models: 1373
+
+config_35-36: solving with these empty cells:
+	empty_cell(9,6). empty_cell(26,2). empty_cell(8,10). empty_cell(22,4). empty_cell(47,9). 
+	Elapsed: 3.0265 seconds
+Total models: 1423
+
+config_35-37: solving with these empty cells:
+	empty_cell(3,2). empty_cell(19,5). empty_cell(30,3). empty_cell(31,1). empty_cell(37,10). 
+	Elapsed: 8.2997 seconds
+Total models: 1473
+
+config_35-38: solving with these empty cells:
+	empty_cell(44,10). empty_cell(46,8). empty_cell(35,2). empty_cell(15,1). empty_cell(25,6). 
+	Elapsed: 8.4002 seconds
+Total models: 1523
+
+config_35-39: solving with these empty cells:
+	empty_cell(20,6). empty_cell(13,2). empty_cell(36,4). empty_cell(42,1). empty_cell(47,8). 
+	Elapsed: 22.4711 seconds
+Total models: 1573
+
+config_35-40: solving with these empty cells:
+	empty_cell(43,2). empty_cell(29,3). empty_cell(8,8). empty_cell(35,6). empty_cell(33,7). 
+	Elapsed: 33.0305 seconds
+Total models: 1591
+
+config_35-41: solving with these empty cells:
+	empty_cell(34,4). empty_cell(35,10). empty_cell(50,9). empty_cell(48,6). empty_cell(7,8). 
+	Elapsed: 13.0507 seconds
+Total models: 1641
+
+config_35-42: solving with these empty cells:
+	empty_cell(19,10). empty_cell(39,4). empty_cell(21,6). empty_cell(50,7). empty_cell(44,9). 
+	Elapsed: 8.4110 seconds
+Total models: 1691
+
+config_35-43: solving with these empty cells:
+	empty_cell(2,2). empty_cell(30,10). empty_cell(34,1). empty_cell(3,3). empty_cell(7,7). 
+	Elapsed: 19.2329 seconds
+Total models: 1741
+
+config_35-44: solving with these empty cells:
+	empty_cell(10,5). empty_cell(31,6). empty_cell(43,1). empty_cell(21,10). empty_cell(13,2). 
+	Elapsed: 1.8633 seconds
+Total models: 1791
+
+config_35-45: solving with these empty cells:
+	empty_cell(36,9). empty_cell(7,1). empty_cell(10,8). empty_cell(21,7). empty_cell(30,3). 
+	Elapsed: 11.2753 seconds
+Total models: 1841
+
+config_35-46: solving with these empty cells:
+	empty_cell(9,8). empty_cell(23,1). empty_cell(20,3). empty_cell(21,5). empty_cell(1,6). 
+	Elapsed: 27.9455 seconds
+Total models: 1891
+
+config_35-47: solving with these empty cells:
+	empty_cell(45,10). empty_cell(28,6). empty_cell(25,5). empty_cell(11,7). empty_cell(2,9). 
+	Elapsed: 2.1113 seconds
+Total models: 1941
+
+config_35-48: solving with these empty cells:
+	empty_cell(40,8). empty_cell(24,1). empty_cell(44,10). empty_cell(18,9). empty_cell(4,3). 
+	Elapsed: 27.5969 seconds
+Total models: 1991
+
+config_35-49: solving with these empty cells:
+	empty_cell(43,7). empty_cell(45,4). empty_cell(9,10). empty_cell(40,5). empty_cell(21,1). 
+	Elapsed: 33.0261 seconds
+Total models: 1991
+
+config_35-50: solving with these empty cells:
+	empty_cell(46,3). empty_cell(6,8). empty_cell(26,9). empty_cell(25,7). empty_cell(15,2). 
+	Elapsed: 33.0158 seconds
+Total models: 1991
+
+config_35-51: solving with these empty cells:
+	empty_cell(12,10). empty_cell(8,8). empty_cell(32,5). empty_cell(39,7). empty_cell(33,2). 
+	Elapsed: 14.0564 seconds
+Total models: 2041
+
+config_35-52: solving with these empty cells:
+	empty_cell(41,5). empty_cell(49,2). empty_cell(30,6). empty_cell(18,10). empty_cell(26,1). 
+	Elapsed: 19.7042 seconds
+Total models: 2091
+
+config_35-53: solving with these empty cells:
+	empty_cell(43,9). empty_cell(49,4). empty_cell(11,2). empty_cell(42,5). empty_cell(22,8). 
+	Elapsed: 30.0093 seconds
+Total models: 2141
+
+config_35-54: solving with these empty cells:
+	empty_cell(32,9). empty_cell(38,8). empty_cell(20,1). empty_cell(46,4). empty_cell(1,3). 
+	Elapsed: 17.2512 seconds
+Total models: 2191
+
+config_35-55: solving with these empty cells:
+	empty_cell(11,1). empty_cell(13,4). empty_cell(37,2). empty_cell(42,5). empty_cell(6,9). 
+	Elapsed: 25.2105 seconds
+Total models: 2241
+
+config_35-56: solving with these empty cells:
+	empty_cell(36,7). empty_cell(12,9). empty_cell(25,2). empty_cell(40,8). empty_cell(39,6). 
+	Elapsed: 18.1374 seconds
+Total models: 2291
+
+config_35-57: solving with these empty cells:
+	empty_cell(23,7). empty_cell(12,5). empty_cell(26,8). empty_cell(27,6). empty_cell(46,3). 
+	Elapsed: 11.5945 seconds
+Total models: 2341
+
+config_35-58: solving with these empty cells:
+	empty_cell(14,3). empty_cell(18,4). empty_cell(36,5). empty_cell(38,2). empty_cell(20,8). 
+	Elapsed: 33.0189 seconds
+Total models: 2341
+
+config_35-59: solving with these empty cells:
+	empty_cell(4,5). empty_cell(49,2). empty_cell(38,10). empty_cell(13,1). empty_cell(12,6). 
+	Elapsed: 10.3414 seconds
+Total models: 2391
+
+config_35-60: solving with these empty cells:
+	empty_cell(29,10). empty_cell(11,7). empty_cell(14,6). empty_cell(6,3). empty_cell(33,5). 
+	Elapsed: 5.3570 seconds
+Total models: 2441
+
+config_35-61: solving with these empty cells:
+	empty_cell(3,2). empty_cell(25,1). empty_cell(36,4). empty_cell(19,9). empty_cell(17,6). 
+	Elapsed: 9.9713 seconds
+Total models: 2491
+
+config_35-62: solving with these empty cells:
+	empty_cell(29,1). empty_cell(12,2). empty_cell(38,4). empty_cell(7,3). empty_cell(39,6). 
+	Elapsed: 33.0207 seconds
+Total models: 2491
+
+config_35-63: solving with these empty cells:
+	empty_cell(23,5). empty_cell(37,1). empty_cell(33,6). empty_cell(48,7). empty_cell(47,10). 
+	Elapsed: 7.3694 seconds
+Total models: 2541
+
+config_35-64: solving with these empty cells:
+	empty_cell(39,5). empty_cell(3,7). empty_cell(29,4). empty_cell(50,9). empty_cell(16,3). 
+	Elapsed: 26.4304 seconds
+Total models: 2591
+
+config_35-65: solving with these empty cells:
+	empty_cell(15,2). empty_cell(18,10). empty_cell(17,7). empty_cell(26,4). empty_cell(20,6). 
+	Elapsed: 33.0218 seconds
+Total models: 2591
+
+config_35-66: solving with these empty cells:
+	empty_cell(21,7). empty_cell(6,4). empty_cell(9,6). empty_cell(5,10). empty_cell(29,5). 
+	Elapsed: 18.2870 seconds
+Total models: 2641
+
+config_35-67: solving with these empty cells:
+	empty_cell(23,6). empty_cell(33,10). empty_cell(21,8). empty_cell(20,1). empty_cell(47,3). 
+	Elapsed: 7.5589 seconds
+Total models: 2691
+
+config_35-68: solving with these empty cells:
+	empty_cell(7,7). empty_cell(26,4). empty_cell(17,8). empty_cell(21,2). empty_cell(5,9). 
+	Elapsed: 33.0219 seconds
+Total models: 2691
+
+config_35-69: solving with these empty cells:
+	empty_cell(7,10). empty_cell(23,7). empty_cell(27,4). empty_cell(6,5). empty_cell(48,8). 
+	Elapsed: 13.0780 seconds
+Total models: 2741
+
+config_35-70: solving with these empty cells:
+	empty_cell(47,8). empty_cell(27,7). empty_cell(17,1). empty_cell(25,3). empty_cell(45,2). 
+	Elapsed: 9.5604 seconds
+Total models: 2791
+
+config_35-71: solving with these empty cells:
+	empty_cell(1,9). empty_cell(4,10). empty_cell(20,7). empty_cell(3,1). empty_cell(50,6). 
+	Elapsed: 6.0250 seconds
+Total models: 2841
+
+config_35-72: solving with these empty cells:
+	empty_cell(18,1). empty_cell(5,10). empty_cell(31,9). empty_cell(9,7). empty_cell(50,6). 
+	Elapsed: 1.0447 seconds
+Total models: 2891
+
+config_35-73: solving with these empty cells:
+	empty_cell(24,8). empty_cell(45,6). empty_cell(13,2). empty_cell(5,3). empty_cell(15,1). 
+	Elapsed: 11.6961 seconds
+Total models: 2941
+
+config_35-74: solving with these empty cells:
+	empty_cell(16,10). empty_cell(12,5). empty_cell(8,3). empty_cell(27,9). empty_cell(36,4). 
+	Elapsed: 1.9112 seconds
+Total models: 2991
+
+config_35-75: solving with these empty cells:
+	empty_cell(35,2). empty_cell(23,6). empty_cell(50,8). empty_cell(47,1). empty_cell(38,5). 
+	Elapsed: 1.9140 seconds
+Total models: 3041
+
+config_35-76: solving with these empty cells:
+	empty_cell(33,3). empty_cell(20,9). empty_cell(16,1). empty_cell(42,4). empty_cell(27,10). 
+	Elapsed: 13.5540 seconds
+Total models: 3091
+
+config_35-77: solving with these empty cells:
+	empty_cell(6,5). empty_cell(4,4). empty_cell(22,8). empty_cell(1,2). empty_cell(41,6). 
+	Elapsed: 15.7643 seconds
+Total models: 3141
+
+config_35-78: solving with these empty cells:
+	empty_cell(14,5). empty_cell(9,2). empty_cell(45,10). empty_cell(28,7). empty_cell(24,6). 
+	Elapsed: 9.2213 seconds
+Total models: 3191
+
+config_35-79: solving with these empty cells:
+	empty_cell(15,1). empty_cell(16,5). empty_cell(50,8). empty_cell(13,4). empty_cell(41,3). 
+	Elapsed: 9.6655 seconds
+Total models: 3241
+
+config_35-80: solving with these empty cells:
+	empty_cell(16,7). empty_cell(28,9). empty_cell(12,8). empty_cell(31,3). empty_cell(45,4). 
+	Elapsed: 4.1857 seconds
+Total models: 3291
+
+config_35-81: solving with these empty cells:
+	empty_cell(2,2). empty_cell(19,1). empty_cell(35,10). empty_cell(10,7). empty_cell(28,3). 
+	Elapsed: 1.5865 seconds
+Total models: 3341
+
+config_35-82: solving with these empty cells:
+	empty_cell(17,9). empty_cell(35,4). empty_cell(12,10). empty_cell(21,7). empty_cell(27,3). 
+	Elapsed: 1.9996 seconds
+Total models: 3391
+
+config_35-83: solving with these empty cells:
+	empty_cell(36,3). empty_cell(7,9). empty_cell(49,6). empty_cell(26,2). empty_cell(24,8). 
+	Elapsed: 7.2709 seconds
+Total models: 3441
+
+config_35-84: solving with these empty cells:
+	empty_cell(31,1). empty_cell(28,6). empty_cell(49,4). empty_cell(13,5). empty_cell(8,7). 
+	Elapsed: 1.1939 seconds
+Total models: 3491
+
+config_35-85: solving with these empty cells:
+	empty_cell(46,3). empty_cell(25,10). empty_cell(50,4). empty_cell(12,5). empty_cell(22,8). 
+	Elapsed: 1.6296 seconds
+Total models: 3541
+
+config_35-86: solving with these empty cells:
+	empty_cell(14,10). empty_cell(5,7). empty_cell(41,9). empty_cell(26,5). empty_cell(12,6). 
+	Elapsed: 7.5429 seconds
+Total models: 3591
+
+config_35-87: solving with these empty cells:
+	empty_cell(38,6). empty_cell(3,7). empty_cell(12,5). empty_cell(26,8). empty_cell(25,4). 
+	Elapsed: 1.0936 seconds
+Total models: 3641
+
+config_35-88: solving with these empty cells:
+	empty_cell(29,5). empty_cell(40,9). empty_cell(27,4). empty_cell(7,6). empty_cell(19,2). 
+	Elapsed: 11.7047 seconds
+Total models: 3691
+
+config_35-89: solving with these empty cells:
+	empty_cell(18,6). empty_cell(8,3). empty_cell(25,8). empty_cell(24,5). empty_cell(49,4). 
+	Elapsed: 33.0245 seconds
+Total models: 3691
+
+config_35-90: solving with these empty cells:
+	empty_cell(15,2). empty_cell(42,3). empty_cell(21,7). empty_cell(36,5). empty_cell(7,6). 
+	Elapsed: 10.6293 seconds
+Total models: 3741
+
+config_35-91: solving with these empty cells:
+	empty_cell(25,3). empty_cell(32,4). empty_cell(21,2). empty_cell(19,10). empty_cell(38,9). 
+	Elapsed: 3.6439 seconds
+Total models: 3791
+
+config_35-92: solving with these empty cells:
+	empty_cell(21,9). empty_cell(5,8). empty_cell(12,6). empty_cell(26,1). empty_cell(31,4). 
+	Elapsed: 8.1877 seconds
+Total models: 3841
+
+config_35-93: solving with these empty cells:
+	empty_cell(40,1). empty_cell(25,7). empty_cell(5,6). empty_cell(11,3). empty_cell(18,10). 
+	Elapsed: 7.9334 seconds
+Total models: 3891
+
+config_35-94: solving with these empty cells:
+	empty_cell(21,4). empty_cell(34,5). empty_cell(35,9). empty_cell(13,10). empty_cell(38,3). 
+	Elapsed: 33.0197 seconds
+Total models: 3891
+
+config_35-95: solving with these empty cells:
+	empty_cell(28,10). empty_cell(5,2). empty_cell(26,7). empty_cell(35,4). empty_cell(38,8). 
+	Elapsed: 33.0206 seconds
+Total models: 3916
+
+config_35-96: solving with these empty cells:
+	empty_cell(40,7). empty_cell(32,5). empty_cell(1,10). empty_cell(18,1). empty_cell(38,9). 
+	Elapsed: 32.6003 seconds
+Total models: 3966
+
+config_35-97: solving with these empty cells:
+	empty_cell(40,3). empty_cell(12,1). empty_cell(35,4). empty_cell(7,7). empty_cell(27,9). 
+	Elapsed: 33.0221 seconds
+Total models: 4014
+
+config_35-98: solving with these empty cells:
+	empty_cell(12,8). empty_cell(15,7). empty_cell(23,2). empty_cell(17,10). empty_cell(1,5). 
+	Elapsed: 33.0271 seconds
+Total models: 4014
+
+config_35-99: solving with these empty cells:
+	empty_cell(28,5). empty_cell(9,6). empty_cell(36,7). empty_cell(16,10). empty_cell(14,1). 
+	Elapsed: 14.4229 seconds
+Total models: 4064
+
+config_35-100: solving with these empty cells:
+	empty_cell(11,4). empty_cell(44,5). empty_cell(41,2). empty_cell(15,7). empty_cell(36,9). 
+	Elapsed: 33.0281 seconds
+Total models: 4070
+
+config_35-101: solving with these empty cells:
+	empty_cell(10,8). empty_cell(45,9). empty_cell(30,3). empty_cell(12,1). empty_cell(1,6). 
+	Elapsed: 9.6038 seconds
+Total models: 4120
+
+config_35-102: solving with these empty cells:
+	empty_cell(40,1). empty_cell(14,8). empty_cell(42,6). empty_cell(21,9). empty_cell(44,3). 
+	Elapsed: 16.2914 seconds
+Total models: 4170
+
+config_35-103: solving with these empty cells:
+	empty_cell(50,4). empty_cell(23,5). empty_cell(3,7). empty_cell(16,1). empty_cell(31,3). 
+	Elapsed: 2.4000 seconds
+Total models: 4220
+
+config_35-104: solving with these empty cells:
+	empty_cell(40,5). empty_cell(44,9). empty_cell(1,3). empty_cell(26,8). empty_cell(47,4). 
+	Elapsed: 33.0254 seconds
+Total models: 4226
+
+config_35-105: solving with these empty cells:
+	empty_cell(11,5). empty_cell(24,10). empty_cell(15,7). empty_cell(6,6). empty_cell(45,3). 
+	Elapsed: 33.0199 seconds
+Total models: 4226
+
+config_35-106: solving with these empty cells:
+	empty_cell(13,9). empty_cell(17,3). empty_cell(35,2). empty_cell(9,10). empty_cell(34,1). 
+	Elapsed: 10.7831 seconds
+Total models: 4276
+
+config_35-107: solving with these empty cells:
+	empty_cell(36,1). empty_cell(9,8). empty_cell(24,10). empty_cell(41,7). empty_cell(16,9). 
+	Elapsed: 2.9802 seconds
+Total models: 4326
+
+config_35-108: solving with these empty cells:
+	empty_cell(42,6). empty_cell(25,5). empty_cell(23,7). empty_cell(1,8). empty_cell(9,2). 
+	Elapsed: 12.6029 seconds
+Total models: 4376
+
+config_35-109: solving with these empty cells:
+	empty_cell(11,6). empty_cell(1,10). empty_cell(21,7). empty_cell(30,4). empty_cell(18,3). 
+	Elapsed: 33.0232 seconds
+Total models: 4385
+
+config_35-110: solving with these empty cells:
+	empty_cell(4,9). empty_cell(14,10). empty_cell(44,7). empty_cell(16,5). empty_cell(20,3). 
+	Elapsed: 33.0213 seconds
+Total models: 4385
+
+config_35-111: solving with these empty cells:
+	empty_cell(17,8). empty_cell(19,7). empty_cell(4,1). empty_cell(30,4). empty_cell(13,6). 
+	Elapsed: 33.0199 seconds
+Total models: 4395
+
+config_35-112: solving with these empty cells:
+	empty_cell(37,8). empty_cell(3,2). empty_cell(39,1). empty_cell(25,7). empty_cell(7,10). 
+	Elapsed: 17.0616 seconds
+Total models: 4445
+
+config_35-113: solving with these empty cells:
+	empty_cell(17,4). empty_cell(38,1). empty_cell(14,6). empty_cell(31,2). empty_cell(34,7). 
+	Elapsed: 1.3643 seconds
+Total models: 4495
+
+config_35-114: solving with these empty cells:
+	empty_cell(47,4). empty_cell(48,7). empty_cell(7,2). empty_cell(17,8). empty_cell(32,1). 
+	Elapsed: 7.3123 seconds
+Total models: 4545
+
+config_35-115: solving with these empty cells:
+	empty_cell(11,1). empty_cell(2,4). empty_cell(38,7). empty_cell(19,3). empty_cell(18,9). 
+	Elapsed: 4.5311 seconds
+Total models: 4595
+
+config_35-116: solving with these empty cells:
+	empty_cell(39,7). empty_cell(29,2). empty_cell(48,3). empty_cell(24,5). empty_cell(33,9). 
+	Elapsed: 27.6189 seconds
+Total models: 4645
+
+config_35-117: solving with these empty cells:
+	empty_cell(6,10). empty_cell(11,1). empty_cell(12,2). empty_cell(16,6). empty_cell(35,9). 
+	Elapsed: 3.6281 seconds
+Total models: 4695
+
+config_35-118: solving with these empty cells:
+	empty_cell(20,7). empty_cell(24,8). empty_cell(40,9). empty_cell(41,4). empty_cell(25,6). 
+	Elapsed: 3.1844 seconds
+Total models: 4745
+
+config_35-119: solving with these empty cells:
+	empty_cell(23,10). empty_cell(28,3). empty_cell(48,6). empty_cell(13,5). empty_cell(17,8). 
+	Elapsed: 2.1764 seconds
+Total models: 4795
+
+config_35-120: solving with these empty cells:
+	empty_cell(38,7). empty_cell(33,4). empty_cell(47,10). empty_cell(36,8). empty_cell(50,9). 
+	Elapsed: 3.0298 seconds
+Total models: 4845
+
+config_35-121: solving with these empty cells:
+	empty_cell(4,2). empty_cell(32,6). empty_cell(28,9). empty_cell(49,10). empty_cell(39,1). 
+	Elapsed: 3.8684 seconds
+Total models: 4895
+
+config_35-122: solving with these empty cells:
+	empty_cell(48,7). empty_cell(23,9). empty_cell(40,4). empty_cell(13,1). empty_cell(36,6). 
+	Elapsed: 4.2563 seconds
+Total models: 4945
+
+config_35-123: solving with these empty cells:
+	empty_cell(23,3). empty_cell(13,4). empty_cell(11,2). empty_cell(42,1). empty_cell(15,9). 
+	Elapsed: 1.2798 seconds
+Total models: 4995
+
+config_35-124: solving with these empty cells:
+	empty_cell(8,10). empty_cell(27,2). empty_cell(17,5). empty_cell(10,1). empty_cell(19,7). 
+	Elapsed: 9.4722 seconds
+Total models: 5045
+
+=======================================================
+config_35 total time: 1892.2753 seconds
+=======================================================
+config_50-1: solving with these empty cells:
+	empty_cell(44,1). empty_cell(8,3). empty_cell(50,2). 
+	Elapsed: 1.3496 seconds
+Total models: 50
+
+config_50-2: solving with these empty cells:
+	empty_cell(12,9). empty_cell(8,3). empty_cell(1,6). 
+	Elapsed: 0.7960 seconds
+Total models: 100
+
+config_50-3: solving with these empty cells:
+	empty_cell(1,10). empty_cell(4,1). empty_cell(32,5). 
+	Elapsed: 1.1168 seconds
+Total models: 150
+
+config_50-4: solving with these empty cells:
+	empty_cell(5,2). empty_cell(31,8). empty_cell(15,9). 
+	Elapsed: 0.9006 seconds
+Total models: 200
+
+config_50-5: solving with these empty cells:
+	empty_cell(43,3). empty_cell(45,4). empty_cell(12,8). 
+	Elapsed: 1.1791 seconds
+Total models: 250
+
+config_50-6: solving with these empty cells:
+	empty_cell(26,4). empty_cell(31,10). empty_cell(25,6). 
+	Elapsed: 0.6363 seconds
+Total models: 300
+
+config_50-7: solving with these empty cells:
+	empty_cell(27,9). empty_cell(41,5). empty_cell(18,8). 
+	Elapsed: 0.6595 seconds
+Total models: 350
+
+config_50-8: solving with these empty cells:
+	empty_cell(21,9). empty_cell(25,4). empty_cell(18,7). 
+	Elapsed: 0.7798 seconds
+Total models: 400
+
+config_50-9: solving with these empty cells:
+	empty_cell(16,3). empty_cell(50,10). empty_cell(46,2). 
+	Elapsed: 0.8060 seconds
+Total models: 450
+
+config_50-10: solving with these empty cells:
+	empty_cell(36,10). empty_cell(6,4). empty_cell(27,8). 
+	Elapsed: 0.6631 seconds
+Total models: 500
+
+config_50-11: solving with these empty cells:
+	empty_cell(11,7). empty_cell(44,3). empty_cell(40,5). 
+	Elapsed: 0.7096 seconds
+Total models: 550
+
+config_50-12: solving with these empty cells:
+	empty_cell(41,1). empty_cell(2,2). empty_cell(45,10). 
+	Elapsed: 0.6474 seconds
+Total models: 600
+
+config_50-13: solving with these empty cells:
+	empty_cell(26,8). empty_cell(22,3). empty_cell(9,2). 
+	Elapsed: 0.6276 seconds
+Total models: 650
+
+config_50-14: solving with these empty cells:
+	empty_cell(15,7). empty_cell(26,8). empty_cell(33,9). 
+	Elapsed: 0.6120 seconds
+Total models: 700
+
+config_50-15: solving with these empty cells:
+	empty_cell(32,8). empty_cell(10,3). empty_cell(3,6). 
+	Elapsed: 0.6844 seconds
+Total models: 750
+
+config_50-16: solving with these empty cells:
+	empty_cell(25,3). empty_cell(37,5). empty_cell(44,2). 
+	Elapsed: 0.6688 seconds
+Total models: 800
+
+config_50-17: solving with these empty cells:
+	empty_cell(10,4). empty_cell(1,2). empty_cell(35,9). 
+	Elapsed: 0.7343 seconds
+Total models: 850
+
+config_50-18: solving with these empty cells:
+	empty_cell(29,7). empty_cell(7,4). empty_cell(14,8). 
+	Elapsed: 0.6566 seconds
+Total models: 900
+
+config_50-19: solving with these empty cells:
+	empty_cell(25,3). empty_cell(24,4). empty_cell(2,2). 
+	Elapsed: 0.6130 seconds
+Total models: 950
+
+config_50-20: solving with these empty cells:
+	empty_cell(23,8). empty_cell(14,3). empty_cell(43,1). 
+	Elapsed: 0.6726 seconds
+Total models: 1000
+
+config_50-21: solving with these empty cells:
+	empty_cell(13,9). empty_cell(25,7). empty_cell(36,8). 
+	Elapsed: 0.6742 seconds
+Total models: 1050
+
+config_50-22: solving with these empty cells:
+	empty_cell(39,8). empty_cell(33,5). empty_cell(5,10). 
+	Elapsed: 0.7347 seconds
+Total models: 1100
+
+config_50-23: solving with these empty cells:
+	empty_cell(19,8). empty_cell(11,4). empty_cell(47,1). 
+	Elapsed: 0.6886 seconds
+Total models: 1150
+
+config_50-24: solving with these empty cells:
+	empty_cell(42,5). empty_cell(4,1). empty_cell(26,7). 
+	Elapsed: 0.6543 seconds
+Total models: 1200
+
+config_50-25: solving with these empty cells:
+	empty_cell(31,6). empty_cell(43,1). empty_cell(40,2). 
+	Elapsed: 0.6454 seconds
+Total models: 1250
+
+config_50-26: solving with these empty cells:
+	empty_cell(50,8). empty_cell(20,4). empty_cell(43,5). 
+	Elapsed: 0.6405 seconds
+Total models: 1300
+
+config_50-27: solving with these empty cells:
+	empty_cell(47,8). empty_cell(34,5). empty_cell(19,10). 
+	Elapsed: 0.6389 seconds
+Total models: 1350
+
+config_50-28: solving with these empty cells:
+	empty_cell(11,5). empty_cell(26,2). empty_cell(45,8). 
+config_50-1: solving with these empty cells:
+	empty_cell(50,5). empty_cell(10,2). empty_cell(23,4). 
+	Elapsed: 16.3143 seconds
+Total models: 50
+
+config_50-2: solving with these empty cells:
+	empty_cell(40,6). empty_cell(19,5). empty_cell(34,10). 
+	Elapsed: 66.0225 seconds
+Total models: 92
+
+config_50-3: solving with these empty cells:
+	empty_cell(20,7). empty_cell(50,5). empty_cell(3,8). 
+	Elapsed: 24.5981 seconds
+Total models: 142
+
+config_50-4: solving with these empty cells:
+	empty_cell(10,2). empty_cell(6,9). empty_cell(34,4). 
+	Elapsed: 66.0249 seconds
+Total models: 142
+
+config_50-5: solving with these empty cells:
+	empty_cell(40,6). empty_cell(16,3). empty_cell(50,4). 
+	Elapsed: 66.0164 seconds
+Total models: 142
+
+config_50-6: solving with these empty cells:
+	empty_cell(37,9). empty_cell(45,8). empty_cell(39,10). 
+	Elapsed: 21.9558 seconds
+Total models: 192
+
+config_50-7: solving with these empty cells:
+	empty_cell(38,5). empty_cell(17,9). empty_cell(43,10). 
+	Elapsed: 3.6739 seconds
+Total models: 242
+
+config_50-8: solving with these empty cells:
+	empty_cell(20,5). empty_cell(50,8). empty_cell(27,1). 
+	Elapsed: 1.8798 seconds
+Total models: 292
+
+config_50-9: solving with these empty cells:
+	empty_cell(22,5). empty_cell(25,2). empty_cell(29,8). 
+	Elapsed: 3.7158 seconds
+Total models: 342
+
+config_50-10: solving with these empty cells:
+	empty_cell(12,6). empty_cell(2,5). empty_cell(28,9). 
+	Elapsed: 3.1052 seconds
+Total models: 392
+
+config_50-11: solving with these empty cells:
+	empty_cell(2,9). empty_cell(21,4). empty_cell(28,1). 
+	Elapsed: 1.1437 seconds
+Total models: 442
+
+config_50-12: solving with these empty cells:
+	empty_cell(33,1). empty_cell(49,5). empty_cell(42,10). 
+	Elapsed: 2.8497 seconds
+Total models: 492
+
+config_50-13: solving with these empty cells:
+	empty_cell(31,3). empty_cell(3,9). empty_cell(2,5). 
+	Elapsed: 2.5574 seconds
+Total models: 542
+
+config_50-14: solving with these empty cells:
+	empty_cell(2,8). empty_cell(44,4). empty_cell(4,5). 
+	Elapsed: 66.0163 seconds
+Total models: 542
+
+config_50-15: solving with these empty cells:
+	empty_cell(32,5). empty_cell(46,1). empty_cell(29,2). 
+	Elapsed: 44.2329 seconds
+Total models: 592
+
+config_50-16: solving with these empty cells:
+	empty_cell(20,1). empty_cell(50,6). empty_cell(37,3). 
+	Elapsed: 30.9146 seconds
+Total models: 642
+
+config_50-17: solving with these empty cells:
+	empty_cell(13,1). empty_cell(44,4). empty_cell(37,8). 
+	Elapsed: 3.5609 seconds
+Total models: 692
+
+config_50-18: solving with these empty cells:
+	empty_cell(18,10). empty_cell(1,6). empty_cell(6,8). 
+	Elapsed: 16.6483 seconds
+Total models: 742
+
+config_50-19: solving with these empty cells:
+	empty_cell(45,3). empty_cell(40,7). empty_cell(46,9). 
+	Elapsed: 12.4391 seconds
+Total models: 792
+
+config_50-20: solving with these empty cells:
+	empty_cell(19,3). empty_cell(38,4). empty_cell(20,10). 
+	Elapsed: 29.9794 seconds
+Total models: 842
+
+config_50-21: solving with these empty cells:
+	empty_cell(21,9). empty_cell(37,3). empty_cell(23,4). 
+	Elapsed: 52.6228 seconds
+Total models: 892
+
+config_50-22: solving with these empty cells:
+	empty_cell(32,6). empty_cell(33,10). empty_cell(23,8). 
+	Elapsed: 54.9751 seconds
+Total models: 942
+
+config_50-23: solving with these empty cells:
+	empty_cell(23,8). empty_cell(32,10). empty_cell(37,9). 
+	Elapsed: 34.6640 seconds
+Total models: 992
+
+config_50-24: solving with these empty cells:
+	empty_cell(29,6). empty_cell(37,9). empty_cell(14,10). 
+	Elapsed: 2.4772 seconds
+Total models: 1042
+
+config_50-25: solving with these empty cells:
+	empty_cell(7,10). empty_cell(41,8). empty_cell(24,9). 
+	Elapsed: 66.0243 seconds
+Total models: 1042
+
+config_50-26: solving with these empty cells:
+	empty_cell(50,5). empty_cell(39,4). empty_cell(44,1). 
+	Elapsed: 66.0132 seconds
+Total models: 1078
+
+config_50-27: solving with these empty cells:
+	empty_cell(47,10). empty_cell(50,8). empty_cell(31,7). 
+	Elapsed: 35.6808 seconds
+Total models: 1128
+
+config_50-28: solving with these empty cells:
+	empty_cell(8,1). empty_cell(43,4). empty_cell(41,10). 
+	Elapsed: 61.0951 seconds
+Total models: 1178
+
+config_50-29: solving with these empty cells:
+	empty_cell(43,3). empty_cell(31,4). empty_cell(19,6). 
+	Elapsed: 66.0165 seconds
+Total models: 1178
+
+config_50-30: solving with these empty cells:
+	empty_cell(36,4). empty_cell(43,3). empty_cell(33,7). 
+	Elapsed: 5.9695 seconds
+Total models: 1228
+
+config_50-31: solving with these empty cells:
+	empty_cell(21,8). empty_cell(31,7). empty_cell(9,3). 
+	Elapsed: 35.0905 seconds
+Total models: 1278
+
+config_50-32: solving with these empty cells:
+	empty_cell(32,3). empty_cell(48,8). empty_cell(33,5). 
+	Elapsed: 17.8759 seconds
+Total models: 1328
+
+config_50-33: solving with these empty cells:
+	empty_cell(32,5). empty_cell(17,6). empty_cell(1,7). 
+	Elapsed: 10.2416 seconds
+Total models: 1378
+
+config_50-34: solving with these empty cells:
+	empty_cell(45,6). empty_cell(41,3). empty_cell(48,5). 
+	Elapsed: 6.0687 seconds
+Total models: 1428
+
+config_50-35: solving with these empty cells:
+	empty_cell(28,10). empty_cell(42,7). empty_cell(45,3). 
+	Elapsed: 57.1235 seconds
+Total models: 1478
+
+config_50-36: solving with these empty cells:
+	empty_cell(33,2). empty_cell(32,10). empty_cell(44,7). 
+	Elapsed: 66.0148 seconds
+Total models: 1518
+
+config_50-37: solving with these empty cells:
+	empty_cell(15,1). empty_cell(25,10). empty_cell(34,4). 
+	Elapsed: 22.3848 seconds
+Total models: 1568
+
+config_50-38: solving with these empty cells:
+	empty_cell(44,4). empty_cell(4,7). empty_cell(38,8). 
+	Elapsed: 66.0161 seconds
+Total models: 1576
+
+config_50-39: solving with these empty cells:
+	empty_cell(32,3). empty_cell(39,9). empty_cell(42,1). 
+	Elapsed: 44.4799 seconds
+Total models: 1626
+
+config_50-40: solving with these empty cells:
+	empty_cell(38,8). empty_cell(11,4). empty_cell(29,1). 
+	Elapsed: 3.1566 seconds
+Total models: 1676
+
+config_50-41: solving with these empty cells:
+	empty_cell(50,3). empty_cell(23,5). empty_cell(13,9). 
+	Elapsed: 66.0210 seconds
+Total models: 1676
+
+config_50-42: solving with these empty cells:
+	empty_cell(28,4). empty_cell(46,9). empty_cell(10,3). 
+	Elapsed: 66.0170 seconds
+Total models: 1676
+
+config_50-43: solving with these empty cells:
+	empty_cell(47,7). empty_cell(35,1). empty_cell(32,8). 
+	Elapsed: 66.0145 seconds
+Total models: 1676
+
+config_50-44: solving with these empty cells:
+	empty_cell(15,6). empty_cell(33,7). empty_cell(29,5). 
+	Elapsed: 66.0183 seconds
+Total models: 1676
+
+config_50-45: solving with these empty cells:
+	empty_cell(27,7). empty_cell(3,4). empty_cell(6,9). 
+	Elapsed: 66.0173 seconds
+Total models: 1676
+
+config_50-46: solving with these empty cells:
+	empty_cell(7,8). empty_cell(16,5). empty_cell(37,1). 
+	Elapsed: 66.0133 seconds
+Total models: 1686
+
+config_50-47: solving with these empty cells:
+	empty_cell(27,8). empty_cell(23,3). empty_cell(12,5). 
+	Elapsed: 66.0188 seconds
+Total models: 1714
+
+config_50-48: solving with these empty cells:
+	empty_cell(6,8). empty_cell(11,6). empty_cell(1,9). 
+	Elapsed: 30.6501 seconds
+Total models: 1764
+
+config_50-49: solving with these empty cells:
+	empty_cell(30,10). empty_cell(32,3). empty_cell(4,2). 
+	Elapsed: 4.4659 seconds
+Total models: 1814
+
+config_50-50: solving with these empty cells:
+	empty_cell(31,1). empty_cell(3,2). empty_cell(43,5). 
+	Elapsed: 66.0262 seconds
+Total models: 1814
+
+config_50-51: solving with these empty cells:
+	empty_cell(49,9). empty_cell(14,10). empty_cell(32,6). 
+	Elapsed: 66.0131 seconds
+Total models: 1814
+
+config_50-52: solving with these empty cells:
+	empty_cell(3,2). empty_cell(48,3). empty_cell(6,10). 
+	Elapsed: 66.0135 seconds
+Total models: 1862
+
+config_50-53: solving with these empty cells:
+	empty_cell(11,7). empty_cell(22,5). empty_cell(44,3). 
+	Elapsed: 64.5130 seconds
+Total models: 1912
+
+config_50-54: solving with these empty cells:
+	empty_cell(16,8). empty_cell(12,3). empty_cell(38,6). 
+	Elapsed: 30.9592 seconds
+Total models: 1962
+
+config_50-55: solving with these empty cells:
+	empty_cell(35,5). empty_cell(29,7). empty_cell(17,6). 
+	Elapsed: 66.0264 seconds
+Total models: 1990
+
+config_50-56: solving with these empty cells:
+	empty_cell(23,3). empty_cell(1,6). empty_cell(6,7). 
+	Elapsed: 66.0133 seconds
+Total models: 1990
+
+config_50-57: solving with these empty cells:
+	empty_cell(35,4). empty_cell(17,5). empty_cell(2,10). 
+	Elapsed: 64.1341 seconds
+Total models: 2040
+
+config_50-58: solving with these empty cells:
+	empty_cell(22,5). empty_cell(39,4). empty_cell(8,3). 
+	Elapsed: 66.0268 seconds
+Total models: 2078
+
+config_50-59: solving with these empty cells:
+	empty_cell(29,4). empty_cell(49,3). empty_cell(31,7). 
+	Elapsed: 66.0210 seconds
+Total models: 2078
+
+config_50-60: solving with these empty cells:
+	empty_cell(21,8). empty_cell(31,1). empty_cell(29,6). 
+	Elapsed: 66.0142 seconds
+Total models: 2078
+
+config_50-61: solving with these empty cells:
+	empty_cell(30,9). empty_cell(22,3). empty_cell(40,10). 
+	Elapsed: 58.2975 seconds
+Total models: 2128
+
+config_50-62: solving with these empty cells:
+	empty_cell(40,6). empty_cell(7,5). empty_cell(3,8). 
+	Elapsed: 66.0211 seconds
+Total models: 2128
+
+config_50-63: solving with these empty cells:
+	empty_cell(50,8). empty_cell(31,10). empty_cell(43,9). 
+	Elapsed: 54.6363 seconds
+Total models: 2178
+
+config_50-64: solving with these empty cells:
+	empty_cell(16,3). empty_cell(43,8). empty_cell(15,1). 
+	Elapsed: 66.0229 seconds
+Total models: 2228
+
+config_50-65: solving with these empty cells:
+	empty_cell(47,2). empty_cell(16,3). empty_cell(24,6). 
+	Elapsed: 11.3225 seconds
+Total models: 2278
+
+config_50-66: solving with these empty cells:
+	empty_cell(27,6). empty_cell(24,5). empty_cell(47,10). 
+	Elapsed: 8.7377 seconds
+Total models: 2328
+
+config_50-67: solving with these empty cells:
+	empty_cell(37,4). empty_cell(17,6). empty_cell(2,7). 
+	Elapsed: 42.3091 seconds
+Total models: 2378
+
+config_50-68: solving with these empty cells:
+	empty_cell(26,2). empty_cell(11,10). empty_cell(28,5). 
+	Elapsed: 66.0177 seconds
+Total models: 2378
+
+config_50-69: solving with these empty cells:
+	empty_cell(23,6). empty_cell(18,3). empty_cell(44,4). 
+	Elapsed: 66.0145 seconds
+Total models: 2402
+
+config_50-70: solving with these empty cells:
+	empty_cell(21,7). empty_cell(19,3). empty_cell(13,6). 
+	Elapsed: 33.0460 seconds
+Total models: 2452
+
+config_50-71: solving with these empty cells:
+	empty_cell(14,10). empty_cell(9,3). empty_cell(24,6). 
+	Elapsed: 52.0329 seconds
+Total models: 2502
+
+config_50-72: solving with these empty cells:
+	empty_cell(21,1). empty_cell(26,7). empty_cell(24,10). 
+	Elapsed: 3.8542 seconds
+Total models: 2552
+
+config_50-73: solving with these empty cells:
+	empty_cell(6,7). empty_cell(15,6). empty_cell(4,9). 
+	Elapsed: 58.7524 seconds
+Total models: 2602
+
+config_50-74: solving with these empty cells:
+	empty_cell(10,2). empty_cell(15,9). empty_cell(41,1). 
+	Elapsed: 66.0143 seconds
+Total models: 2602
+
+config_50-75: solving with these empty cells:
+	empty_cell(35,2). empty_cell(46,1). empty_cell(10,8). 
+	Elapsed: 66.0146 seconds
+Total models: 2606
+
+config_50-76: solving with these empty cells:
+	empty_cell(39,1). empty_cell(7,4). empty_cell(6,7). 
+	Elapsed: 66.0142 seconds
+Total models: 2606
+
+config_50-77: solving with these empty cells:
+	empty_cell(46,3). empty_cell(42,10). empty_cell(19,1). 
+	Elapsed: 66.0147 seconds
+Total models: 2606
+
+config_50-78: solving with these empty cells:
+	empty_cell(20,10). empty_cell(48,2). empty_cell(25,4). 
+	Elapsed: 66.0145 seconds
+Total models: 2606
+
+config_50-79: solving with these empty cells:
+	empty_cell(11,9). empty_cell(49,2). empty_cell(10,8). 
+	Elapsed: 66.0152 seconds
+Total models: 2606
+
+config_50-80: solving with these empty cells:
+	empty_cell(25,7). empty_cell(1,8). empty_cell(36,3). 
+	Elapsed: 66.0138 seconds
+Total models: 2606
+
+config_50-81: solving with these empty cells:
+	empty_cell(4,6). empty_cell(6,2). empty_cell(19,7). 
+	Elapsed: 66.0202 seconds
+Total models: 2606
+
+config_50-82: solving with these empty cells:
+	empty_cell(27,5). empty_cell(28,1). empty_cell(12,8). 
+	Elapsed: 66.0160 seconds
+Total models: 2606
+
+config_50-83: solving with these empty cells:
+	empty_cell(21,8). empty_cell(33,4). empty_cell(38,7). 
+	Elapsed: 66.0137 seconds
+Total models: 2612
+
+config_50-84: solving with these empty cells:
+	empty_cell(23,9). empty_cell(27,10). empty_cell(37,3). 
+	Elapsed: 66.0172 seconds
+Total models: 2629
+
+config_50-85: solving with these empty cells:
+	empty_cell(2,7). empty_cell(29,4). empty_cell(50,1). 
+	Elapsed: 66.0148 seconds
+Total models: 2629
+
+config_50-86: solving with these empty cells:
+	empty_cell(49,7). empty_cell(41,2). empty_cell(43,6). 
+	Elapsed: 66.0144 seconds
+Total models: 2629
+
+config_50-87: solving with these empty cells:
+	empty_cell(23,10). empty_cell(47,4). empty_cell(21,5). 
+	Elapsed: 43.8564 seconds
+Total models: 2679
+
+config_50-88: solving with these empty cells:
+	empty_cell(8,7). empty_cell(31,8). empty_cell(49,9). 
+	Elapsed: 54.4073 seconds
+Total models: 2729
+
+config_50-89: solving with these empty cells:
+	empty_cell(22,8). empty_cell(43,4). empty_cell(35,1). 
+	Elapsed: 56.1605 seconds
+Total models: 2779
+
+config_50-90: solving with these empty cells:
+	empty_cell(6,10). empty_cell(3,1). empty_cell(47,8). 
+	Elapsed: 2.4366 seconds
+Total models: 2829
+
+config_50-91: solving with these empty cells:
+	empty_cell(46,5). empty_cell(4,3). empty_cell(47,9). 
+	Elapsed: 11.5266 seconds
+Total models: 2879
+
+config_50-92: solving with these empty cells:
+	empty_cell(28,3). empty_cell(31,6). empty_cell(6,5). 
+	Elapsed: 66.0151 seconds
+Total models: 2907
+
+config_50-93: solving with these empty cells:
+	empty_cell(29,9). empty_cell(40,7). empty_cell(46,10). 
+	Elapsed: 7.8516 seconds
+Total models: 2957
+
+config_50-94: solving with these empty cells:
+	empty_cell(29,9). empty_cell(8,2). empty_cell(22,8). 
+	Elapsed: 66.0158 seconds
+Total models: 2957
+
+config_50-95: solving with these empty cells:
+	empty_cell(17,4). empty_cell(31,10). empty_cell(13,8). 
+	Elapsed: 66.0124 seconds
+Total models: 2957
+
+config_50-96: solving with these empty cells:
+	empty_cell(31,9). empty_cell(10,10). empty_cell(6,4). 
+	Elapsed: 66.0140 seconds
+Total models: 2957
+
+config_50-97: solving with these empty cells:
+	empty_cell(7,5). empty_cell(10,7). empty_cell(3,6). 
+	Elapsed: 66.0120 seconds
+Total models: 2957
+
+config_50-98: solving with these empty cells:
+	empty_cell(3,10). empty_cell(11,2). empty_cell(22,5). 
+	Elapsed: 66.0137 seconds
+Total models: 2957
+
+config_50-99: solving with these empty cells:
+	empty_cell(6,4). empty_cell(32,1). empty_cell(15,10). 
+	Elapsed: 66.0164 seconds
+Total models: 2957
+
+config_50-100: solving with these empty cells:
+	empty_cell(31,9). empty_cell(26,10). empty_cell(15,8). 
+	Elapsed: 66.0140 seconds
+Total models: 2957
+
+config_50-101: solving with these empty cells:
+	empty_cell(18,5). empty_cell(44,7). empty_cell(3,10). 
+	Elapsed: 45.1282 seconds
+Total models: 3007
+
+config_50-102: solving with these empty cells:
+	empty_cell(46,8). empty_cell(45,1). empty_cell(28,4). 
+	Elapsed: 66.0234 seconds
+Total models: 3007
+
+config_50-103: solving with these empty cells:
+	empty_cell(43,10). empty_cell(39,3). empty_cell(1,2). 
+	Elapsed: 66.0162 seconds
+Total models: 3007
+
+config_50-104: solving with these empty cells:
+	empty_cell(9,3). empty_cell(21,10). empty_cell(11,2). 
+	Elapsed: 66.0166 seconds
+Total models: 3007
+
+config_50-105: solving with these empty cells:
+	empty_cell(50,4). empty_cell(12,10). empty_cell(46,8). 
+	Elapsed: 57.5885 seconds
+Total models: 3057
+
+config_50-106: solving with these empty cells:
+	empty_cell(10,5). empty_cell(43,8). empty_cell(35,10). 
+	Elapsed: 66.0139 seconds
+Total models: 3057
+
+config_50-107: solving with these empty cells:
+	empty_cell(43,2). empty_cell(23,8). empty_cell(50,3). 
+	Elapsed: 66.0131 seconds
+Total models: 3057
+
+config_50-108: solving with these empty cells:
+	empty_cell(1,5). empty_cell(50,10). empty_cell(23,2). 
+	Elapsed: 66.0147 seconds
+Total models: 3057
+
+config_50-109: solving with these empty cells:
+	empty_cell(21,4). empty_cell(13,8). empty_cell(30,2). 
+	Elapsed: 66.0157 seconds
+Total models: 3057
+
+config_50-110: solving with these empty cells:
+	empty_cell(2,7). empty_cell(7,8). empty_cell(41,1). 
+	Elapsed: 66.0158 seconds
+Total models: 3057
+
+config_50-111: solving with these empty cells:
+	empty_cell(24,10). empty_cell(30,6). empty_cell(32,4). 
+	Elapsed: 66.0132 seconds
+Total models: 3085
+
+config_50-112: solving with these empty cells:
+	empty_cell(34,6). empty_cell(16,5). empty_cell(46,2). 
+	Elapsed: 66.0210 seconds
+Total models: 3085
+
+config_50-113: solving with these empty cells:
+	empty_cell(23,7). empty_cell(22,3). empty_cell(38,6). 
+	Elapsed: 66.0225 seconds
+Total models: 3087
+
+config_50-114: solving with these empty cells:
+	empty_cell(17,3). empty_cell(19,2). empty_cell(1,6). 
+	Elapsed: 37.1887 seconds
+Total models: 3137
+
+config_50-115: solving with these empty cells:
+	empty_cell(7,5). empty_cell(26,3). empty_cell(18,10). 
+	Elapsed: 17.1182 seconds
+Total models: 3187
+
+config_50-116: solving with these empty cells:
+	empty_cell(8,3). empty_cell(6,2). empty_cell(17,9). 
+	Elapsed: 66.0144 seconds
+Total models: 3193
+
+config_50-117: solving with these empty cells:
+	empty_cell(20,1). empty_cell(17,5). empty_cell(42,2). 
+	Elapsed: 66.0165 seconds
+Total models: 3193
+
+config_50-118: solving with these empty cells:
+	empty_cell(44,10). empty_cell(29,4). empty_cell(46,6). 
+	Elapsed: 66.0150 seconds
+Total models: 3193
+
+config_50-119: solving with these empty cells:
+	empty_cell(13,7). empty_cell(9,8). empty_cell(41,1). 
+	Elapsed: 7.2762 seconds
+Total models: 3243
+
+config_50-120: solving with these empty cells:
+	empty_cell(42,7). empty_cell(23,5). empty_cell(11,6). 
+	Elapsed: 24.1013 seconds
+Total models: 3293
+
+config_50-121: solving with these empty cells:
+	empty_cell(33,5). empty_cell(50,6). empty_cell(36,1). 
+	Elapsed: 1.1391 seconds
+Total models: 3343
+
+config_50-122: solving with these empty cells:
+	empty_cell(27,6). empty_cell(48,2). empty_cell(6,4). 
+	Elapsed: 66.0193 seconds
+Total models: 3343
+
+config_50-123: solving with these empty cells:
+	empty_cell(21,10). empty_cell(47,9). empty_cell(46,5). 
+	Elapsed: 9.0022 seconds
+Total models: 3393
+
+config_50-124: solving with these empty cells:
+	empty_cell(15,8). empty_cell(16,2). empty_cell(41,7). 
+	Elapsed: 27.5861 seconds
+Total models: 3443
+
+config_50-125: solving with these empty cells:
+	empty_cell(15,6). empty_cell(46,8). empty_cell(4,10). 
+	Elapsed: 28.2950 seconds
+Total models: 3493
+
+config_50-126: solving with these empty cells:
+	empty_cell(21,5). empty_cell(29,6). empty_cell(8,10). 
+	Elapsed: 31.8359 seconds
+Total models: 3543
+
+config_50-127: solving with these empty cells:
+	empty_cell(41,2). empty_cell(33,9). empty_cell(29,10). 
+	Elapsed: 2.3841 seconds
+Total models: 3593
+
+config_50-128: solving with these empty cells:
+	empty_cell(37,10). empty_cell(20,2). empty_cell(7,4). 
+	Elapsed: 10.3177 seconds
+Total models: 3643
+
+config_50-129: solving with these empty cells:
+	empty_cell(16,10). empty_cell(20,9). empty_cell(35,6). 
+	Elapsed: 14.3876 seconds
+Total models: 3693
+
+config_50-130: solving with these empty cells:
+	empty_cell(24,8). empty_cell(48,5). empty_cell(15,6). 
+	Elapsed: 29.4452 seconds
+Total models: 3743
+
+config_50-131: solving with these empty cells:
+	empty_cell(11,10). empty_cell(18,8). empty_cell(19,1). 
+	Elapsed: 8.8371 seconds
+Total models: 3793
+
+config_50-132: solving with these empty cells:
+	empty_cell(18,3). empty_cell(41,2). empty_cell(10,7). 
+	Elapsed: 66.0148 seconds
+Total models: 3793
+
+config_50-133: solving with these empty cells:
+	empty_cell(4,5). empty_cell(44,7). empty_cell(9,10). 
+	Elapsed: 66.0145 seconds
+Total models: 3793
+
+config_50-134: solving with these empty cells:
+	empty_cell(43,10). empty_cell(39,7). empty_cell(12,9). 
+	Elapsed: 66.0141 seconds
+Total models: 3793
+
+config_50-135: solving with these empty cells:
+	empty_cell(46,8). empty_cell(27,10). empty_cell(33,4). 
+	Elapsed: 66.0128 seconds
+Total models: 3793
+
+config_50-136: solving with these empty cells:
+	empty_cell(3,9). empty_cell(40,3). empty_cell(33,6). 
+	Elapsed: 66.0126 seconds
+Total models: 3809
+
+config_50-137: solving with these empty cells:
+	empty_cell(6,7). empty_cell(8,10). empty_cell(30,9). 
+	Elapsed: 66.0132 seconds
+Total models: 3809
+
+config_50-138: solving with these empty cells:
+	empty_cell(1,1). empty_cell(29,3). empty_cell(13,7). 
+	Elapsed: 66.0130 seconds
+Total models: 3809
+
+config_50-139: solving with these empty cells:
+	empty_cell(7,7). empty_cell(3,10). empty_cell(21,3). 
+	Elapsed: 66.0175 seconds
+Total models: 3811
+
+config_50-140: solving with these empty cells:
+	empty_cell(16,9). empty_cell(46,10). empty_cell(1,6). 
+	Elapsed: 66.0125 seconds
+Total models: 3811
+
+config_50-141: solving with these empty cells:
+	empty_cell(9,2). empty_cell(6,5). empty_cell(26,7). 
+	Elapsed: 66.0120 seconds
+Total models: 3811
+
+config_50-142: solving with these empty cells:
+	empty_cell(10,6). empty_cell(31,1). empty_cell(7,4). 
+	Elapsed: 66.0155 seconds
+Total models: 3811
+
+config_50-143: solving with these empty cells:
+	empty_cell(7,1). empty_cell(1,5). empty_cell(44,10). 
+	Elapsed: 17.8579 seconds
+Total models: 3861
+
+config_50-144: solving with these empty cells:
+	empty_cell(11,8). empty_cell(34,9). empty_cell(6,1). 
+	Elapsed: 66.0134 seconds
+Total models: 3885
+
+config_50-145: solving with these empty cells:
+	empty_cell(44,1). empty_cell(1,7). empty_cell(7,3). 
+	Elapsed: 20.3453 seconds
+Total models: 3935
+
+config_50-146: solving with these empty cells:
+	empty_cell(11,7). empty_cell(13,5). empty_cell(35,2). 
+	Elapsed: 9.6250 seconds
+Total models: 3985
+
+config_50-147: solving with these empty cells:
+	empty_cell(26,4). empty_cell(42,1). empty_cell(28,2). 
+	Elapsed: 39.7850 seconds
+Total models: 4035
+
+config_50-148: solving with these empty cells:
+	empty_cell(45,1). empty_cell(23,5). empty_cell(1,10). 
+	Elapsed: 4.6986 seconds
+Total models: 4085
+
+config_50-149: solving with these empty cells:
+	empty_cell(16,9). empty_cell(5,4). empty_cell(11,5). 
+	Elapsed: 24.6034 seconds
+Total models: 4135
+
+config_50-150: solving with these empty cells:
+	empty_cell(9,9). empty_cell(22,6). empty_cell(4,2). 
+	Elapsed: 6.0582 seconds
+Total models: 4185
+
+config_50-151: solving with these empty cells:
+	empty_cell(28,3). empty_cell(8,2). empty_cell(45,5). 
+	Elapsed: 66.0179 seconds
+Total models: 4185
+
+config_50-152: solving with these empty cells:
+	empty_cell(38,4). empty_cell(25,5). empty_cell(11,2). 
+	Elapsed: 66.0147 seconds
+Total models: 4185
+
+config_50-153: solving with these empty cells:
+	empty_cell(13,10). empty_cell(35,1). empty_cell(3,4). 
+	Elapsed: 66.0177 seconds
+Total models: 4185
+
+config_50-154: solving with these empty cells:
+	empty_cell(9,5). empty_cell(1,6). empty_cell(46,1). 
+	Elapsed: 66.0121 seconds
+Total models: 4199
+
+config_50-155: solving with these empty cells:
+	empty_cell(34,3). empty_cell(45,7). empty_cell(16,4). 
+	Elapsed: 61.8606 seconds
+Total models: 4249
+
+config_50-156: solving with these empty cells:
+	empty_cell(40,3). empty_cell(16,7). empty_cell(6,6). 
+	Elapsed: 66.0158 seconds
+Total models: 4249
+
+config_50-157: solving with these empty cells:
+	empty_cell(8,2). empty_cell(6,3). empty_cell(4,7). 
+	Elapsed: 66.0131 seconds
+Total models: 4295
+
+config_50-158: solving with these empty cells:
+	empty_cell(45,10). empty_cell(43,7). empty_cell(38,1). 
+	Elapsed: 66.0160 seconds
+Total models: 4295
+
+config_50-159: solving with these empty cells:
+	empty_cell(24,10). empty_cell(43,2). empty_cell(17,3). 
+	Elapsed: 66.0134 seconds
+Total models: 4295
+
+config_50-160: solving with these empty cells:
+	empty_cell(9,8). empty_cell(23,7). empty_cell(28,6). 
+	Elapsed: 66.0125 seconds
+Total models: 4295
+
+config_50-161: solving with these empty cells:
+	empty_cell(8,7). empty_cell(50,3). empty_cell(48,6). 
+	Elapsed: 16.4547 seconds
+Total models: 4345
+
+config_50-162: solving with these empty cells:
+	empty_cell(9,8). empty_cell(38,5). empty_cell(44,1). 
+	Elapsed: 66.0185 seconds
+Total models: 4345
+
+config_50-163: solving with these empty cells:
+	empty_cell(15,5). empty_cell(38,10). empty_cell(16,9). 
+	Elapsed: 66.0143 seconds
+Total models: 4345
+
+config_50-164: solving with these empty cells:
+	empty_cell(7,1). empty_cell(4,2). empty_cell(20,7). 
+	Elapsed: 24.5232 seconds
+Total models: 4395
+
+config_50-165: solving with these empty cells:
+	empty_cell(7,1). empty_cell(29,4). empty_cell(38,9). 
+	Elapsed: 23.4182 seconds
+Total models: 4445
+
+config_50-166: solving with these empty cells:
+	empty_cell(30,7). empty_cell(15,2). empty_cell(7,3). 
+	Elapsed: 66.0157 seconds
+Total models: 4445
+
+config_50-167: solving with these empty cells:
+	empty_cell(13,9). empty_cell(45,7). empty_cell(16,4). 
+	Elapsed: 12.4284 seconds
+Total models: 4495
+
+config_50-168: solving with these empty cells:
+	empty_cell(34,10). empty_cell(49,5). empty_cell(44,4). 
+	Elapsed: 12.9733 seconds
+Total models: 4545
+
+config_50-169: solving with these empty cells:
+	empty_cell(45,2). empty_cell(26,9). empty_cell(24,8). 
+	Elapsed: 66.0145 seconds
+Total models: 4545
+
+config_50-170: solving with these empty cells:
+	empty_cell(22,8). empty_cell(13,2). empty_cell(9,5). 
+	Elapsed: 66.0158 seconds
+Total models: 4545
+
+config_50-171: solving with these empty cells:
+	empty_cell(20,2). empty_cell(32,7). empty_cell(3,10). 
+	Elapsed: 66.0240 seconds
+Total models: 4569
+
+config_50-172: solving with these empty cells:
+	empty_cell(15,9). empty_cell(3,4). empty_cell(44,7). 
+	Elapsed: 13.4088 seconds
+Total models: 4619
+
+config_50-173: solving with these empty cells:
+	empty_cell(19,3). empty_cell(42,6). empty_cell(12,1). 
+	Elapsed: 2.6683 seconds
+Total models: 4669
+
+config_50-174: solving with these empty cells:
+	empty_cell(37,6). empty_cell(11,7). empty_cell(28,10). 
+	Elapsed: 61.1863 seconds
+Total models: 4719
+
+config_50-175: solving with these empty cells:
+	empty_cell(15,3). empty_cell(49,8). empty_cell(30,10). 
+	Elapsed: 66.0143 seconds
+Total models: 4719
+
+config_50-176: solving with these empty cells:
+	empty_cell(13,10). empty_cell(2,6). empty_cell(18,1). 
+	Elapsed: 66.0128 seconds
+Total models: 4743
+
+config_50-177: solving with these empty cells:
+	empty_cell(47,3). empty_cell(46,10). empty_cell(11,5). 
+	Elapsed: 66.0120 seconds
+Total models: 4743
+
+config_50-178: solving with these empty cells:
+	empty_cell(44,2). empty_cell(12,7). empty_cell(4,1). 
+	Elapsed: 35.9443 seconds
+Total models: 4793
+
+config_50-179: solving with these empty cells:
+	empty_cell(42,1). empty_cell(8,5). empty_cell(50,2). 
+	Elapsed: 15.5745 seconds
+Total models: 4843
+
+config_50-180: solving with these empty cells:
+	empty_cell(24,4). empty_cell(30,10). empty_cell(17,1). 
+	Elapsed: 66.0157 seconds
+Total models: 4855
+
+config_50-181: solving with these empty cells:
+	empty_cell(28,7). empty_cell(17,9). empty_cell(6,3). 
+	Elapsed: 66.0135 seconds
+Total models: 4855
+
+config_50-182: solving with these empty cells:
+	empty_cell(44,8). empty_cell(37,1). empty_cell(27,6). 
+	Elapsed: 66.0155 seconds
+Total models: 4855
+
+config_50-183: solving with these empty cells:
+	empty_cell(32,2). empty_cell(27,8). empty_cell(50,7). 
+	Elapsed: 46.6480 seconds
+Total models: 4905
+
+config_50-184: solving with these empty cells:
+	empty_cell(11,8). empty_cell(24,10). empty_cell(44,9). 
+	Elapsed: 22.6097 seconds
+Total models: 4955
+
+config_50-185: solving with these empty cells:
+	empty_cell(13,7). empty_cell(18,5). empty_cell(30,2). 
+	Elapsed: 66.0167 seconds
+Total models: 4955
+
+config_50-186: solving with these empty cells:
+	empty_cell(22,8). empty_cell(41,1). empty_cell(49,2). 
+	Elapsed: 66.0140 seconds
+Total models: 4955
+
+config_50-187: solving with these empty cells:
+	empty_cell(3,10). empty_cell(1,7). empty_cell(32,3). 
+	Elapsed: 24.5891 seconds
+Total models: 5005
+
+=======================================================
+config_50 total time: 8747.4743 seconds
+=======================================================
+config_75-1: solving with these empty cells:
+	empty_cell(41,3). empty_cell(37,7). 
+	Elapsed: 1.8732 seconds
+Total models: 50
+
+config_75-2: solving with these empty cells:
+	empty_cell(23,1). empty_cell(1,8). 
+	Elapsed: 1.2586 seconds
+Total models: 100
+
+config_75-3: solving with these empty cells:
+	empty_cell(43,5). empty_cell(35,10). 
+	Elapsed: 11.4965 seconds
+Total models: 150
+
+config_75-4: solving with these empty cells:
+	empty_cell(41,8). empty_cell(38,6). 
+	Elapsed: 99.0381 seconds
+Total models: 150
+
+config_75-5: solving with these empty cells:
+	empty_cell(47,8). empty_cell(24,2). 
+	Elapsed: 85.3212 seconds
+Total models: 200
+
+config_75-6: solving with these empty cells:
+	empty_cell(15,7). empty_cell(43,3). 
+	Elapsed: 1.8424 seconds
+Total models: 250
+
+config_75-7: solving with these empty cells:
+	empty_cell(44,9). empty_cell(37,8). 
+	Elapsed: 99.0369 seconds
+Total models: 250
+
+config_75-8: solving with these empty cells:
+	empty_cell(10,6). empty_cell(24,2). 
+	Elapsed: 99.0256 seconds
+Total models: 250
+
+config_75-9: solving with these empty cells:
+	empty_cell(24,7). empty_cell(38,8). 
+	Elapsed: 99.0313 seconds
+Total models: 250
+
+config_75-10: solving with these empty cells:
+	empty_cell(49,5). empty_cell(44,6). 
+	Elapsed: 99.0490 seconds
+Total models: 250
+
+config_75-11: solving with these empty cells:
+	empty_cell(3,1). empty_cell(40,2). 
+	Elapsed: 28.5547 seconds
+Total models: 300
+
+config_75-12: solving with these empty cells:
+	empty_cell(40,1). empty_cell(41,7). 
+	Elapsed: 99.0551 seconds
+Total models: 300
+
+config_75-13: solving with these empty cells:
+	empty_cell(31,8). empty_cell(40,10). 
+	Elapsed: 99.0498 seconds
+Total models: 300
+
+config_75-14: solving with these empty cells:
+	empty_cell(37,8). empty_cell(44,3). 
+	Elapsed: 74.7666 seconds
+Total models: 350
+
+config_75-15: solving with these empty cells:
+	empty_cell(35,8). empty_cell(29,10). 
+	Elapsed: 2.4702 seconds
+Total models: 400
+
+config_75-16: solving with these empty cells:
+	empty_cell(50,1). empty_cell(49,9). 
+	Elapsed: 99.0395 seconds
+Total models: 400
+
+config_75-17: solving with these empty cells:
+	empty_cell(37,2). empty_cell(43,8). 
+	Elapsed: 99.0250 seconds
+Total models: 400
+
+config_75-18: solving with these empty cells:
+	empty_cell(19,4). empty_cell(33,10). 
+	Elapsed: 99.0388 seconds
+Total models: 400
+
+config_75-19: solving with these empty cells:
+	empty_cell(19,5). empty_cell(6,1). 
+	Elapsed: 99.0276 seconds
+Total models: 400
+
+config_75-20: solving with these empty cells:
+	empty_cell(9,5). empty_cell(48,4). 
+	Elapsed: 99.0356 seconds
+Total models: 400
+
+config_75-21: solving with these empty cells:
+	empty_cell(34,9). empty_cell(44,3). 
+	Elapsed: 99.0345 seconds
+Total models: 400
+
+config_75-22: solving with these empty cells:
+	empty_cell(6,6). empty_cell(22,9). 
+	Elapsed: 99.0544 seconds
+Total models: 400
+
+config_75-23: solving with these empty cells:
+	empty_cell(46,7). empty_cell(38,1). 
+	Elapsed: 99.0338 seconds
+Total models: 400
+
+config_75-24: solving with these empty cells:
+	empty_cell(18,3). empty_cell(40,2). 
+	Elapsed: 99.0320 seconds
+Total models: 400
+
+config_75-25: solving with these empty cells:
+	empty_cell(30,4). empty_cell(25,6). 
+	Elapsed: 99.0389 seconds
+Total models: 432
+
+config_75-26: solving with these empty cells:
+	empty_cell(2,2). empty_cell(48,4). 
+	Elapsed: 60.6041 seconds
+Total models: 482
+
+config_75-27: solving with these empty cells:
+	empty_cell(15,1). empty_cell(6,3). 
+	Elapsed: 99.0387 seconds
+Total models: 482
+
+config_75-28: solving with these empty cells:
+	empty_cell(20,8). empty_cell(41,1). 

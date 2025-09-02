@@ -20,7 +20,7 @@ from pandas import value_counts
 from regex import T
 from clemcore.clemgame import GameInstanceGenerator
 from resources.game_state.utils import EMPTY_SYMBOL, TEXT_BASED, IMAGE_BASED, place_objects, GameObject
-from resources.game_state.game_state import GridState
+from resources.game_state.game_state import GridState, SemanticGridState
 
 logger = logging.getLogger(__name__)
 
@@ -95,8 +95,9 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
                     # self.background, background_stats = self.sample_background()
                     self.background, background_stats = sampled_backgrounds[instance_id]
                     if self.modality in TEXT_BASED:
-                        game_instance['empty_cells'] = background_stats['empty']
-                        game_instance['total_cells'] = background_stats['total']
+                        if self.modality != 'semantic_text':
+                            game_instance['empty_cells'] = background_stats['empty']
+                            game_instance['total_cells'] = background_stats['total']
                         game_instance['empty_symbol'] = EMPTY_SYMBOL
                     game_instance['background'] = self.background
                     objects_1 = self.get_objects(object_count)
@@ -112,8 +113,13 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
                     grid_1 = None
                     grid_2 = None
                     if self.modality in TEXT_BASED:
-                        grid_1 = str(GridState(background=self.background, objects=objects_1))
-                        grid_2 = str(GridState(background=self.background, objects=objects_2))
+                        cls = SemanticGridState if self.modality == 'semantic_text' else GridState
+                        grid_1 = str(cls(background=self.background, objects=objects_1))
+                        grid_2 = str(cls(background=self.background, objects=objects_2))
+                        # gridstate_cls = SemanticGridState if self.modality == 'semantic_text' else GridState
+                        # object_string = "'" + "', '".join([obj['id'] for obj in objects_1]) + "'"
+                        # grid_1 = str(SemanticGridState(background=self.background, objects=objects_1))
+                        # grid_2 = str(SemanticGridState(background=self.background, objects=objects_2))
                     
                     p1_initial_prompt = self.prepare_initial_prompt(grid=grid_1, max_penalties=max_penalties, max_rounds=max_rounds, object_string=object_string)
                     if modality in IMAGE_BASED:
@@ -154,11 +160,15 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
         Might implement sampling background images in the future.
         """
         if modality in TEXT_BASED:
-            grid_data = self.load_config_json('resources/backgrounds/grids.json')
-            info = grid_data['info'][self.current_experiment_conf['grid_config']]
-            empty_cells = info['empty_cells']
-            total_cells = info['total_cells']
-            background_stats = {'empty': empty_cells, 'total': total_cells}
+            if modality == 'semantic_text': 
+                grid_data = self.load_config_json('resources/backgrounds/semantic_grids.json')
+                background_stats = None
+            else: 
+                grid_data = self.load_config_json('resources/backgrounds/grids.json')
+                info = grid_data['info'][self.current_experiment_conf['grid_config']]
+                empty_cells = info['empty_cells']
+                total_cells = info['total_cells']
+                background_stats = {'empty': empty_cells, 'total': total_cells}
 
             backgrounds = grid_data[self.current_experiment_conf['grid_config']]
             background = random.choice(list(backgrounds.values()))

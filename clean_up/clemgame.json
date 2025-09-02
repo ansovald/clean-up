@@ -27,5 +27,15 @@
     "image": "multi",
     "languages": ["en", "zh-CN", "de"],
     "benchmark": []
+  },
+  {
+    "game_name": "st_clean_up",
+    "description": "Two players arrange objects on a grid according to a negotiated goal state, with background objects as anchors.",
+    "main_game": "clean_up",
+    "players": 2,
+    "instances": "st_instances",
+    "image": "multi",
+    "languages": ["en", "zh-CN", "de"],
+    "benchmark": []
   }
 ]
