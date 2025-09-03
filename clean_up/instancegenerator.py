@@ -48,7 +48,6 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
             move=self.commands['move'],
             empty_symbol=EMPTY_SYMBOL
         )
-        self.examples = self.load_config_json('resources/examples.json')
         template_instance = {
             "intermittent_prompts": intermittent_prompts,
             "say_pattern": self.commands['say_pattern'],
@@ -103,7 +102,7 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
                     objects_1 = self.get_objects(object_count)
                     objects_2 = deepcopy(objects_1)
                     for key in template_instance:
-                        game_instance[key] = template_instance[key]
+                        game_instance[key] = deepcopy(template_instance[key])
                     game_instance['intermittent_prompts']['penalty_counter'] = Template(game_instance['intermittent_prompts']['penalty_counter']).safe_substitute(max_penalties=max_penalties)
                     game_instance['intermittent_prompts']['round_counter'] = Template(game_instance['intermittent_prompts']['round_counter']).safe_substitute(max_rounds=max_rounds)
                     game_instance['objects_1'] = place_objects(self.modality, objects_1, game_instance['background'])
@@ -217,8 +216,7 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
             move=self.commands['move'],
             end_1=self.commands['end_1'],
             end_2=self.commands['end_2'],
-            empty_symbol=EMPTY_SYMBOL,
-            **self.examples
+            empty_symbol=EMPTY_SYMBOL
         )
         return initial_prompt
 

@@ -2,7 +2,7 @@
   "en": {
     "successful": {
       "text,semantic_text": "Moved '$object' to ($x,$y) successfully. Your updated grid looks like this:\n```\n$grid```\n",
-      "image": "Moved object '$object' to ($x,$y) successfully.\n\n",
+      "image": "Moved object '$object' to ($x,$y) successfully. Your updated image is attached.\n\n",
       "hybrid": "Moved '$object' to ($x,$y) successfully. Your updated image is attached.\n\n"
     },
     "out_of_bounds": "Invalid move: ($x,$y) is out of bounds. Please try again!\n\n",
@@ -12,7 +12,7 @@
   "zh-CN": {
     "successful": {
       "text,semantic_text": "已成功将“$object”移动到 ($x,$y)。更新后的网格如下所示：\n```\n$grid```\n",
-      "image": "已成功将图标'$object'移动到 ($x,$y)。\n\n",
+      "image": "已成功将图标'$object'移动到 ($x,$y)。更新后的图片已附上。\n\n",
       "hybrid": "已成功将“$object”移动到 ($x,$y)。更新后的图片已附上。\n\n"
     },
     "out_of_bounds": "无效移动：($x,$y)超出边界。请重试！\n\n",
@@ -22,11 +22,11 @@
   "de": {
     "successful": {
       "text,semantic_text": "'$object' erfolgreich nach ($x,$y) verschoben. Dein Raster sieht jetzt so aus:\n```\n$grid```\n",
-      "image": "'$object' erfolgreich nach ($x,$y) verschoben.\n\n",
-      "hybrid": "'$object' erfolgreich nach ($x,$y) verschoben. Dein Bild sieht jetzt so aus:\n```\n$grid```\n"
+      "image": "'$object' erfolgreich nach ($x,$y) verschoben. Angehängt findest du dein aktuelles Spielfeld.\n\n",
+      "hybrid": "'$object' erfolgreich nach ($x,$y) verschoben. Angehängt findest du dein aktuelles Spielfeld.\n\n"
     },
-    "out_of_bounds": "Ungültiger Zug: ($x,$y) liegt außerhalb des Bildes. Bitte versuche es erneut!\n\n",
+    "out_of_bounds": "Ungültiger Zug: ($x,$y) liegt außerhalb des Spielfeldes. Bitte versuche es erneut!\n\n",
     "not_empty": "Strafpunkt: ($x,$y) ist nicht leer, sondern enthält '$object'.\n",
-    "obj_not_found": "Ungültiger Zug: Dein Bild enhält kein Objekt mit der ID '$object'. Bitte versuche es erneut!\n\n"
+    "obj_not_found": "Ungültiger Zug: Dein Bild enthält kein Objekt mit der ID '$object'. Bitte versuche es erneut!\n\n"
   }
 }

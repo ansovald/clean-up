@@ -1,8 +1,0 @@
-records/*
-*.ipynb
-.idea/*
-
-resources/icons/*/  
-
-temp.ipynb
-temp.py

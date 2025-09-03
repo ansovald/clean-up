@@ -3,7 +3,7 @@
         "invalid_response": {
             "text,hybrid": "Penalty: $reason\n\nMake sure that your response only contains either `$say` or `$move`, and nothing else!\n",
             "image": "Penalty: $reason\n\nMake sure that \n\n* messages to the other player do not contain any numbers or coordinates!\n* your response only contains either `$say` or `$move`, and nothing else! Do not use any formatting, comments, or reasoning!\n",
-            "semantic_text": "Penalty: $reason\n\nMake sure that \n\n* messages to the other player do not contain any numbers, coordinates, or the keywords 'row/column/line'. Use background objects as anchors, and use relative terms like 'left/right/above/below' to describe the target location!\n* your response only contains either `$say` or `$move`, and nothing else!\n"            
+            "semantic_text": "Penalty: $reason\n\n* Make sure that messages to the other player do not contain any numbers, coordinates, or the keywords 'row/column/line'. Use background objects as anchors, and use relative terms like 'left/right/above/below' to describe the target location!\n* Make sure that your response only contains either `$say` or `$move`, and nothing else!\n"            
         },
         "message_relay": "Your message has been relayed to the other player.\n\n\n",
         "command_prompt": "\n\n\nWhat is your next command?",
@@ -20,7 +20,7 @@
         "invalid_response": {
             "text,hybrid": "Strafpunkt: $reason Stelle sicher, dass deine Antwort ausschließlich einen der beiden Befehle `$say` und `$move` und sonst nichts enthält!\n",
             "image": "Strafpunkt: $reason Stelle sicher, dass\n\n* Nachrichten an deinen Mitspieler weder Zahlen noch Koordinaten enthalten!\n* deine Antwort ausschließlich einen der beiden Befehle `$say` und `$move` und sonst nichts enthält!\n", 
-            "semantic_text": "Strafpunkt: $reason Stelle sicher, dass\n\n* Nachrichten an deinen Mitspieler weder Zahlen, Koordinaten noch die Schlüsselwörter 'Reihe/Zeile/Spalte/Linie' enthalten. Verwende Hintergrundobjekte als Anker und benutze relative Begriffe wie 'links/rechts/oberhalb/unterhalb', um den Zielort zu beschreiben!\n* deine Antwort ausschließlich einen der beiden Befehle `$say` und `$move` und sonst nichts enthält!\n"
+            "semantic_text": "Strafpunkt: $reason \n\n* Stelle sicher, dass Nachrichten an deinen Mitspieler weder Zahlen, Koordinaten noch die Schlüsselwörter 'Reihe/Zeile/Spalte' enthalten. Verwende Hintergrundobjekte als Referenz und benutze relative Begriffe wie 'links/rechts/oberhalb/unterhalb', um den Zielort zu beschreiben!\n* Stelle sicher, dass deine Antwort ausschließlich einen der beiden Befehle `$say` und `$move` und sonst nichts enthält!\n"
         },
         "message_relay": "Deine Nachricht wurde an deinen Mitspieler übermittelt.\n\n\n",
         "command_prompt": "\n\n\nWie lautet dein nächster Befehl?",

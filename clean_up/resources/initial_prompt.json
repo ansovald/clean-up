@@ -14,16 +14,16 @@
         "rule_intro": "**Rules:**\n\n* In each turn, you can send exactly one of the following two commands:",
         "explain_say": {
           "text,hybrid,image": " 1. `$say`: to send a message (everything up until the next line break) to the other player. I will forward it to your partner.",
-          "semantic_text": " 1. `$say`: to send a message (everything up until the next line break) to the other player. I will forward it to your partner. Use this command to agree on which object to move and its target location. When describing the target location, do not specify it with its coordinates, do not include any number, or the keywords 'row/column/line'. Instead, use background objects as anchors, and use relative terms like 'left/right/above/below' in relation to the anchors."
+          "semantic_text": " 1. `$say`: to send a message (everything up until the next line break) to the other player. I will forward it to your partner. Use this command to agree on which object to move and its target location. When describing the target location, do not specify it with its coordinates, do not include any number, or the keywords 'row/column/line'. Instead, use background objects as reference points."
         },
         "explain_move": {
             "text,hybrid,semantic_text": "2. `$move`: to move an object to a new position, where `<X>` is the column and `<Y>` is the row. I will inform you if your move was successful or not.",
-            "image": "2. `$move`: to move the object with id `<ID>` to the coordinates `(<X>,<y>)`. You will **not** receive visual feedback. The other player can't see which objects you move where."
+            "image": "2. `$move`: to move the object with id `<ID>` to the coordinates `(<X>,<y>)`. The other player can't see which objects you move where."
         },
         "explain_restrictions": {
             "text,hybrid": "* If you don't stick to the format, or send several commands at once, I have to penalize you.",
             "image": "* You must not use coordinates when communicating with the other player.\n* If you don't stick to the format, send several commands at once, or use coordinates in a message, I have to penalize you.", 
-            "semantic_text": "* You must not use coordinates, no number digits, or no keywords 'row/column/line' when communicating with the other player.\n* If you don't stick to the format, send several commands at once, or use the forbidden content in a message, I have to penalize you."
+            "semantic_text": "* You must not use coordinates, digits, or one of the keywords 'row/column/line' when communicating with the other player.\n* If you don't stick to the format, send several commands at once, or use forbidden content in a message, I have to penalize you."
         },
         "rule_end": "* If both players accumulate more than $max_penalties penalties, you both lose the game.\n* It is vital that you communicate with the other player regarding your goal state! The *only* way you can transmit your strategy to the other player is using the `$say` command!\n\n",
         "moving_objects": {
@@ -50,7 +50,7 @@
         "rule_intro": "**Spielregeln:**\n\n* In jedem Spielzug kannst du genau eine der folgenden zwei Aktionen ausführen:",
         "explain_say": {
             "text,hybrid,image": "1. `$say`: um eine Nachricht zu schicken, die ich dann an deinen Spielpartner weiterleite. Als Nachricht gilt alles bis zum nächsten Zeilenumbruch.",
-            "semantic_text": "1. `$say`: um eine Nachricht zu schicken, die ich dann an deinen Spielpartner weiterleite. Als Nachricht gilt alles bis zum nächsten Zeilenumbruch. Verwende diesen Befehl, um dich mit deinem Mitspieler darauf zu einigen, welches Objekt du bewegen möchtest und wohin. Beschreibe die Zielposition nicht anhand von Koordinaten, Zahlen oder den Schlüsselwörtern 'Reihe/Zeile/Spalte/Linie'. Nutze stattdessen Hintergrundobjekte als Anker und verwende relative Begriffe wie 'links/rechts/oberhalb/unterhalb' in Bezug auf diese Anker."
+            "semantic_text": "1. `$say`: um eine Nachricht zu schicken, die ich dann an deinen Spielpartner weiterleite. Als Nachricht gilt alles bis zum nächsten Zeilenumbruch. Verwende diesen Befehl, um dich mit deinem Mitspieler darauf zu einigen, welches Objekt du bewegen möchtest und wohin. Beschreibe die Zielposition nicht anhand von Koordinaten, Zahlen oder den Schlüsselwörtern 'Reihe/Zeile/Spalte'. Nutze stattdessen Hintergrundobjekte als Referenz."
         },
         "explain_move": {
             "text,hybrid,semantic_text": "2. `$move`: um ein Objekt an eine andere Position zu bewegen, wobei `<X>` die Spalte und `<Y>` die Zeile bezeichnet. Ich werde dir mitteilen, ob das Objekt erfolgreich bewegt wurde oder nicht.",
@@ -59,7 +59,7 @@
         "explain_restrictions": {
             "text,hybrid": "* Wenn du irgendein anderes Format verwendest oder mehrere Befehle gleichzeitig abschickst, muss ich euch einen Strafpunkt geben.",
             "image": "* Du darfst keine Koordinaten verwenden, wenn du mit dem anderen Spieler kommunizierst.\n* Wenn du irgendein anderes Format verwendest oder mehrere Befehle gleichzeitig abschickst, muss ich euch einen Strafpunkt geben.", 
-            "semantic_text": "* Du darfst keine Koordinaten, keine Zahlen und keine Schlüsselwörter wie 'Reihe/Zeile/Spalte/Linie' verwenden, wenn du mit dem anderen Spieler kommunizierst.\n* Wenn du irgendein anderes Format verwendest, mehrere Befehle gleichzeitig abschickst oder verbotene Inhalte in einer Nachricht verwendest, muss ich euch einen Strafpunkt geben."
+            "semantic_text": "* Du darfst keine Koordinaten, keine Zahlen und keines Schlüsselwörter 'Reihe/Zeile/Spalte' verwenden, wenn du mit dem anderen Spieler kommunizierst.\n* Wenn du irgendein anderes Format verwendest, mehrere Befehle gleichzeitig abschickst oder verbotene Inhalte in einer Nachricht verwendest, muss ich euch einen Strafpunkt geben."
         },
         "rule_end": "* Wenn ihr gemeinsam mehr als $max_penalties Strafpunkte ansammelt, verliert ihr das Spiel.\n* Es ist essenziell, dass du dich mit deinem Mitspieler auf eine gemeinsame Zielanordnung einigst! Du kannst deinem Mitspieler deine Strategie ausschließlich mithilfe des Befehls `$say` mitteilen!\n\n",
         "moving_objects": {
@@ -76,7 +76,7 @@
             "text": "我是你的游戏主持人，而你正在和另一位玩家进行一场协作游戏。 游戏的棋盘如下所示：\n\n```\n$grid\n```\n\n* 上边缘显示 x 坐标，向右递增；右边缘显示 y 坐标，向下递增。\n* 你的棋盘上随机放置了以下物体：$objects。\n\n",
             "image": "我是你的游戏主持人，你正在根据所附的图片进行一场合作游戏：\n\n* 右侧是一个图例，展示了若干图标，每个图标左方标有一个对应的 ID。\n\n* 左侧是你的游戏棋盘，由一个背景图和随机放置在其上的这些图标组成。图片的左侧和底部显示了一个x-y坐标系。请注意，y轴上数值是向下递增的。\n\n",
             "hybrid": "我是你的游戏主持人，而你正在进行一场协作游戏，游戏的棋盘如附图所示。\n\n* 图片显示了一个网格，网格的上边缘显示 x 坐标，向右递增；右边缘显示 y 坐标，向下递增。\n* 你的棋盘上随机放置了以下物体：$objects。\n\n", 
-            "semantic_text": "我是你的游戏主持人，你正在进行一场协作游戏，游戏棋盘如下所示：\n\n```\n$grid\n```\n\n* 网格由一个外框、用'$empty_symbol'标记的空格，以及用方括号(‘[]’)括起的符号块表示的背景物体组成。\n\n* 上边缘显示 x 坐标，向右递增（步长为5）；右边缘显示 y 坐标，向下递增。\n* 你的棋盘上随机放置了以下物体：：$objects。\n\n"
+            "semantic_text": "我是你的游戏主持人，你正在进行一场协作游戏，游戏棋盘如下所示：\n\n```\n$grid\n```\n\n* 网格由一个外框、用'$empty_symbol'标记的空格，以及用方括号(‘[]’)括起的符号块表示的背景物体组成。\n\n* 上边缘显示 x 坐标，向右递增（步长为5）；右边缘显示 y 坐标，向下递增。\n* 你的棋盘上随机放置了以下物体：$objects。\n\n"
         },
         "introduction": {
             "text,hybrid,semantic_text": "另一位玩家看到的是该棋盘的一个变体，其中物体的位置与你的不同。你无法看到对方的棋盘，对方也无法看到你的。\n\n",

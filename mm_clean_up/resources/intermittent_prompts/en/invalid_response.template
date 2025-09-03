@@ -1,6 +1,0 @@
-Penalty: $reason 
-
-Make sure that 
-
-* messages to the other player do not contain any numbers or coordinates!
-* your response only contains either `$say` or `$move`, and nothing else! Do not use any formatting, comments, or reasoning!
