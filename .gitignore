@@ -184,6 +184,7 @@ cython_debug/
 
 # Temporary files
 tmp
+images
 
 # Exhaustive grid files (up to 800MB)
 *_exhaustive.json

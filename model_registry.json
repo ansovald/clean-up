@@ -409,7 +409,6 @@
         "model_name": "mistral-small-2503",
         "model_id": "mistral-small-2503",
         "backend": "mistral",
-        "release_date": "2023-12-01",
         "open_weight": true,
         "parameters": "",
         "languages": [
@@ -425,7 +424,12 @@
             "url": "https://mistral.ai/licenses/MRL-0.1.md"
         },
         "model_config": {
-
+            "multimodality": {
+                "single_image": true,
+                "multiple_images": true,
+                "audio": false,
+                "video": false
+            }
         }
     },
     {
