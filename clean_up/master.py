@@ -165,6 +165,8 @@ class CleanUpMaster(DialogueGameMaster):
         self.game_instance = game_instance
         self.modality = game_instance['modality']
 
+        self.log_key("markdown", True)
+
         self.intermittent_prompts = game_instance['intermittent_prompts']
         self.parse_errors = game_instance['parse_errors']
 
@@ -181,7 +183,7 @@ class CleanUpMaster(DialogueGameMaster):
         self.add_player(self.player_1, objects=self.game_instance['objects_1'])
         self.add_player(self.player_2, objects=self.game_instance['objects_2'])
         if self.modality in ['text', 'semantic_text']:
-            self.initial_board = "Player 1:\n" + str(self.player_1.game_state) + "\n\nPlayer 2:\n" + str(self.player_2.game_state)
+            self.initial_board = "```\nPlayer 1:\n" + str(self.player_1.game_state) + "\n\nPlayer 2:\n" + str(self.player_2.game_state) + "\n```"
 
         self.initial_distance = self.player_1.game_state.distance_sum(self.player_2.game_state)
 
@@ -443,8 +445,8 @@ class CleanUpMaster(DialogueGameMaster):
         self.log_key(METRIC_LOSE, int(lose))
         self.log_key(METRIC_SUCCESS, int(self.success))
         if self.modality in ['text', 'semantic_text']:
-            self.log_to_self("initial_state", self.initial_board)
-            self.log_to_self("end_state", "Player 1:\n" + str(self.player_1.game_state) + "\n\nPlayer 2:\n" + str(self.player_2.game_state))
+            self.log_to_self("initial_state", "Initial states:\n" + self.initial_board)
+            self.log_to_self("end_state", "End states:\n```\nPlayer 1:\n" + str(self.player_1.game_state) + "\n\nPlayer 2:\n" + str(self.player_2.game_state) + "\n```")
 
         self.log_to_self('game_finished', f"* success: {self.success}\n* lose: {lose}\n* aborted: {self.aborted}\n-------\n{ingredients_string}")            
         
