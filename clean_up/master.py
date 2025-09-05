@@ -63,7 +63,6 @@ class Cleaner(Player):
         if self._relay_message:
             context['content'] = self._relay_message + context['content']
             self._relay_message = ""
-        logger.info(f"Preparing Context: {context}")
         return context
 
     def perceive_context(self, context, *, log_event=True, memorize=True):
@@ -101,8 +100,6 @@ class PicCleaner(Cleaner):
         Images are only logged and not added to the next message.
         """
         self._relay_message = message
-        # if images:
-        #     log_images(self, images)
         self._relay_images = images
 
     def prepare_context(self, context):
@@ -146,8 +143,6 @@ def log_images(game_event_source: GameEventSource, images: list[str], player: Pl
     for image in images:
         if image.startswith('clean_up/'):
             image = image[len('clean_up/'):]
-        # logger.info(f"Logging image {image} for player {player.name}")
-        # image = png_to_base64(image)
         action = {
                     'type': 'send message',  
                     'content': 'logged image',
@@ -163,9 +158,6 @@ PLAYER_DICT = {
 }
 
 class CleanUpMaster(DialogueGameMaster):
-    """
-    Template class for game master.
-    """
     def __init__(self, game_spec, experiment: Dict, player_models: List[Model]):
         super().__init__(game_spec, experiment, player_models)
 
@@ -188,6 +180,8 @@ class CleanUpMaster(DialogueGameMaster):
         self.player_2 = PLAYER_DICT[self.modality](self.player_models[1])
         self.add_player(self.player_1, objects=self.game_instance['objects_1'])
         self.add_player(self.player_2, objects=self.game_instance['objects_2'])
+        if self.modality in ['text', 'semantic_text']:
+            self.initial_board = "Player 1:\n" + str(self.player_1.game_state) + "\n\nPlayer 2:\n" + str(self.player_2.game_state)
 
         self.initial_distance = self.player_1.game_state.distance_sum(self.player_2.game_state)
 
@@ -247,6 +241,7 @@ class CleanUpMaster(DialogueGameMaster):
             raise ParseError(reason=self.parse_errors["tail"], response=match.group(0))
 
     def _parse_response(self, player: Player, response: str) -> str:
+        logger.info(f"{player.name}: {response}")
         self.log_to_self('player_response', response)
         # We just remove backticks
         response = response.replace('`', '').strip()
@@ -301,7 +296,7 @@ class CleanUpMaster(DialogueGameMaster):
         """
         Check if the player should pass their turn.
         """
-        time.sleep(random.uniform(1, 2))
+        # time.sleep(random.uniform(1, 2))
         return self.pass_turn
 
     def _start_next_round(self) -> bool:
@@ -324,14 +319,16 @@ class CleanUpMaster(DialogueGameMaster):
             success, message, images = player.game_state.move_abs(obj, x, y)
             self.pass_turn = success
             if success:
+                logger.info(f"{player.name} moved {obj} to ({x}, {y}) successfully.")
                 self.metric_preparer.add_move((player.name, obj))
                 # log the move message to the player and add it to the message history (without response)
-                self.log_to_self('valid move', message)
+                self.log_to_self('valid move', f'{obj} moved to ({x}, {y})')
                 player.store_relay_message(message, images=images)
                 # turn is passed to the other player
                 next_player_prompt = self._new_turn_prompt(self.intermittent_prompts["new_turn_move"])
                 self.set_context_for(self._other_player(), next_player_prompt)
             if not success:
+                logger.warning(f"{player.name} failed to move {obj} to ({x}, {y}): {message}")
                 # Player is reprompted with a penalty, their turn continues. 
                 self.penalties += 1
                 message = message + "\n" + Template(self.intermittent_prompts['penalty_counter']).substitute(penalty=self.penalties) + self.intermittent_prompts['penalty_reprompt']
@@ -348,7 +345,7 @@ class CleanUpMaster(DialogueGameMaster):
                     p2_initial_prompt = Template(self.game_instance['p2_initial_prompt']).substitute(
                         start_message=message
                     )
-                    images = self.player_2.game_state.draw() # returns None for GridState
+                    images = self.player_2.game_state.draw() # returns None for text-based versions
                     if images:
                         self.set_context_for(self.player_2, p2_initial_prompt, image=images)
                     else:
@@ -430,7 +427,6 @@ class CleanUpMaster(DialogueGameMaster):
             # log all the necessary metrics to `interaction.json`
             self.log_key(key, val)
             # not display some of the ingredients in transcript
-            # if key not in [MOVES, INIT_STATES, END_STATES]:
             if key not in [INIT_STATES, END_STATES]:
                 if type(val) is list:
                     continue
@@ -445,35 +441,32 @@ class CleanUpMaster(DialogueGameMaster):
 
         self.log_key(METRIC_ABORTED, int(self.aborted))
         self.log_key(METRIC_LOSE, int(lose))
-        self.log_key(METRIC_SUCCESS, int(self.success))  
-
-        # Log the grids to show up in the transcript
-        # self.log_to_self('initial grids', f"Initial grids:\n{self.initial_grid_string}")
-        # self.log_to_self('grids', f"Player 1 grid:\n```\n{self.player_1.grid.__str__(show_coords=self.game_instance['show_coords'])}\n```\nPlayer 2 grid:\n```\n{self.player_2.grid.__str__(show_coords=self.game_instance['show_coords'])}```")
+        self.log_key(METRIC_SUCCESS, int(self.success))
+        if self.modality in ['text', 'semantic_text']:
+            self.log_to_self("initial_state", self.initial_board)
+            self.log_to_self("end_state", "Player 1:\n" + str(self.player_1.game_state) + "\n\nPlayer 2:\n" + str(self.player_2.game_state))
 
         self.log_to_self('game_finished', f"* success: {self.success}\n* lose: {lose}\n* aborted: {self.aborted}\n-------\n{ingredients_string}")            
-
-        # print(f"game_finished\n * success: {self.success}\n* lose: {lose}\n* aborted: {self.aborted}\n-------\n{ingredients_string}")
         
         # ----------------------------------------------------------
         # dev: also compute sub-metrics and bench score to show on transcript
-        metrics_calculator = MetricCalculator(ingredients)
-        sub_metrics, bench_score, temp_log  = metrics_calculator.compute_metrics()
+        # metrics_calculator = MetricCalculator(ingredients)
+        # sub_metrics, bench_score, temp_log  = metrics_calculator.compute_metrics()
 
-        bench_score_string = f"* {BENCH_SCORE}: {float(bench_score):.2f}\n"
+        # bench_score_string = f"* {BENCH_SCORE}: {float(bench_score):.2f}\n"
 
-        sub_metrics_string = ""
-        for key, val in sub_metrics.items(): 
-            sub_metrics_string += f"* {key}: {float(val):.2f}\n"
+        # sub_metrics_string = ""
+        # for key, val in sub_metrics.items(): 
+        #     sub_metrics_string += f"* {key}: {float(val):.2f}\n"
 
-        temp_log_string = ""
-        for key, val in temp_log.items(): 
-            if type(val) is list or type(val) is dict:
-                continue
-            else:
-                temp_log_string += f"* {key}: {float(val):.2f}\n"
+        # temp_log_string = ""
+        # for key, val in temp_log.items(): 
+        #     if type(val) is list or type(val) is dict:
+        #         continue
+        #     else:
+        #         temp_log_string += f"* {key}: {float(val):.2f}\n"
 
-        self.log_to_self('dev:game_finished', f"{bench_score_string}\n-------\n{sub_metrics_string}\n-------\n{temp_log_string}")
+        # self.log_to_self('dev:game_finished', f"{bench_score_string}\n-------\n{sub_metrics_string}\n-------\n{temp_log_string}")
         # print(f"\n\n{bench_score_string}\n-------\n{sub_metrics_string}\n-------\n{temp_log_string}")
         # ----------------------------------------------------------
 
@@ -493,8 +486,6 @@ class CleanUpScorer(GameScorer):
     def compute_episode_scores(self, episode_interactions: Dict) -> float:
         """ Compute the episode score based on the ingredients logged in interactions """
         # reconstruct ingredients from episode_interactions
-        # validate(ingredients_registry, episode_interactions, self.__class__.__name__)
-
         ingredients = {}
         for key in ingredients_registry:
             if key not in episode_interactions:
@@ -503,7 +494,6 @@ class CleanUpScorer(GameScorer):
         
         metrics_calculator = MetricCalculator(ingredients)
         sub_metrics, bench_score, temp_log = metrics_calculator.compute_metrics()        
-        # validate(sub_metrics_registry, sub_metrics, self.__class__.__name__)
 
         # log sub-metrics
         for key in sub_metrics:
