@@ -178,18 +178,11 @@ class MetricCalculator:
         return prod(coverage_per_player) # we can also plug it in a monotonously increasing function on (0, 1]
 
     def compute_penalty_score(self):
-        # We allow 2 'free' penalties for each player to account for format errors etc.
-        penalties = self.ingredients[PENALTIES] - 2
-        # with (penalties-2)==max_penalties, score should still be slightly above 0
-        max_penalties = self.ingredients[MAX_PENALTIES] - 1
+        penalties = self.ingredients[PENALTIES]
+        max_penalties = self.ingredients[MAX_PENALTIES]
         normalized = penalties / max_penalties
-        return 1 - normalized  # we can use different function at this step
-    
-    def alt_penalty_score(self):
-        penalties = self.ingredients[PENALTIES] - 2
-        max_penalties = self.ingredients[MAX_PENALTIES] - 1
-        normalized = penalties / max_penalties
-        return 1 / (0.5 * normalized - 1) + 2
+        # penalty score is in the range of [0.5, 1]
+        return 1 / (normalized - 2) + 1.5
 
     def compute_metrics(self): 
         sub_metrics = {name: func() for name, func in self.sub_metric_funcs.items()}
@@ -207,17 +200,12 @@ class MetricCalculator:
             del sub_metrics[CONSISTENCY_SCORE]
             
         penalty_score = self.compute_penalty_score()
-        alt_penalty_score = self.alt_penalty_score()
-        print(f"{self.ingredients[PENALTIES]}/{self.ingredients[MAX_PENALTIES]}, {penalty_score:.2f} -> {alt_penalty_score:.2f}")
-        
 
         # Take the harmonic mean of the sub-metrics, and multiply by the penalty score
-        bench_score = harmonic_mean(sub_metrics.values()) * penalty_score * 100
-        # bench_score = sub_metrics[DISTANCE_SCORE] * penalty_score * 100
+        # bench_score = harmonic_mean(sub_metrics.values()) * penalty_score * 100
+        bench_score = sub_metrics[DISTANCE_SCORE] * penalty_score * 100
 
         sub_metrics[PENALTY_SCORE] = penalty_score
-        sub_metrics[ALT_PENALTY_SCORE] = alt_penalty_score
-        sub_metrics[ALT_MAIN_SCORE] = sub_metrics[DISTANCE_SCORE] * alt_penalty_score * 100
 
         # overwrite MAX_SHIFT for existing interactions.json file
         self.ingredients[MAX_SHIFTS] = self.ingredients[MIN_SHIFTS] * 2 

@@ -5,9 +5,9 @@
       "image": "Moved object '$object' to ($x,$y) successfully. Your updated image is attached.\n\n",
       "hybrid": "Moved '$object' to ($x,$y) successfully. Your updated image is attached.\n\n"
     },
-    "out_of_bounds": "Invalid move: ($x,$y) is out of bounds. Please try again!\n\n",
+    "out_of_bounds": "Invalid move: ($x,$y) is out of bounds.\n",
     "not_empty": "Penalty: ($x,$y) is not empty, but contains '$object'.\n",
-    "obj_not_found": "Invalid move: Your image has no object with ID '$object'. Please try again!\n\n"
+    "obj_not_found": "Invalid move: Your image has no object with ID '$object'.\n"
   },
   "zh-CN": {
     "successful": {
@@ -17,7 +17,7 @@
     },
     "out_of_bounds": "无效移动：($x,$y)超出边界。请重试！\n\n",
     "not_empty": "犯规：单元格 ($x,$y) 不为空，“$object”在此位置。\n",
-    "obj_not_found": "无效移动：你的图片中没有ID为'$object'的图标。请重试！\n\n"
+    "obj_not_found": "无效移动：你的图片中没有ID为'$object'的图标。！\n\n"
   },
   "de": {
     "successful": {
@@ -25,8 +25,8 @@
       "image": "'$object' erfolgreich nach ($x,$y) verschoben. Angehängt findest du dein aktuelles Spielfeld.\n\n",
       "hybrid": "'$object' erfolgreich nach ($x,$y) verschoben. Angehängt findest du dein aktuelles Spielfeld.\n\n"
     },
-    "out_of_bounds": "Ungültiger Zug: ($x,$y) liegt außerhalb des Spielfeldes. Bitte versuche es erneut!\n\n",
+    "out_of_bounds": "Ungültiger Zug: ($x,$y) liegt außerhalb des Spielfeldes.\n\n",
     "not_empty": "Strafpunkt: ($x,$y) ist nicht leer, sondern enthält '$object'.\n",
-    "obj_not_found": "Ungültiger Zug: Dein Bild enthält kein Objekt mit der ID '$object'. Bitte versuche es erneut!\n\n"
+    "obj_not_found": "Ungültiger Zug: Dein Bild enthält kein Objekt mit der ID '$object'.\n\n"
   }
 }

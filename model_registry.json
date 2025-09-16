@@ -561,5 +561,18 @@
                 "video": false
             }
         }
+    },
+    {
+        "model_name": "gemini-2.0-flash-exp",
+        "model_id": "google/gemini-2.0-flash-exp:free",
+        "backend": "openai_compatible",
+        "model_config": {
+            "multimodality": {
+                "single_image": true,
+                "multiple_images": true,
+                "audio": false,
+                "video": false
+            }
+        }
     }
 ]

@@ -173,7 +173,7 @@ class CleanUpInstanceGenerator(GameInstanceGenerator):
             background = random.choice(list(backgrounds.values()))
         else:
             background_stats = None
-            background = self.game_path + '/resources/backgrounds/kitchen.png'
+            background = 'clean_up/resources/backgrounds/kitchen.png'
         return background, background_stats
     
     def get_objects(self, object_count):
